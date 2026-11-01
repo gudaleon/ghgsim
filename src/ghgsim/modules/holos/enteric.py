@@ -4,7 +4,7 @@ Holos Route A enteric CH4.
 Default equations are IPCC 2006 Vol 4 Ch 10 (Eq 10.21 daily/annual, Eq 10.3 GE).
 Confirmed Holos discrepancies are labelled holos_as_coded forks, not defaults.
 
-No Holos GPL code is copied. Holos file:line citations are traceability only.
+Holos file:line citations are traceability only and are not copied source.
 """
 
 from collections.abc import Mapping

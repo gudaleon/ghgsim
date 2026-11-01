@@ -4,7 +4,7 @@ Holos Route A volatile solids excretion.
 Default is IPCC 2006 Vol 4 Ch 10 Equation 10.24 (DE%, IPCC UE).
 Confirmed Holos discrepancies are labelled holos_as_coded forks.
 
-No Holos GPL code is copied. Holos file:line citations are traceability only.
+Holos file:line citations are traceability only and are not copied source.
 """
 
 from collections.abc import Mapping

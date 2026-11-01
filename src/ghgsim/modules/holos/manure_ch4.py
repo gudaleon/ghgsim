@@ -5,7 +5,7 @@ Default is IPCC 2006 Vol 4 Ch 10 Equation 10.23.
 CE-14 cover/crust multiplicative factors are a labelled holos_as_coded fork
 (UNVERIFIED coefficients). Default uses Table 10.17 MCF by system instead.
 
-No Holos GPL code is copied.
+Holos file:line citations are traceability only and are not copied source.
 """
 
 from collections.abc import Mapping

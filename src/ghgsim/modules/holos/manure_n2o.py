@@ -9,7 +9,7 @@ Pasture N is returned as N_PRP_kg (Chapter 11), not manure EF3.
 Leaching (Eq 10.28-10.29) is omitted: IPCC 2006 provides no default FracLeachMS.
 
 The dairy-calf 0.078 kg N/head/day value is a labelled holos_as_coded fork
-(UNVERIFIED). No Holos GPL code is copied.
+(UNVERIFIED). Holos file:line citations are traceability only.
 """
 
 from collections.abc import Mapping

@@ -3,7 +3,7 @@ Holos Route A process definitions (Reichert 1995 ProcessDef).
 
 Equations are taken from IPCC 2006 Vol 4 Ch 10, not from Holos source.
 holos_as_coded forks encode confirmed Holos discrepancies as alternate
-rate strings. No Holos GPL code is copied or translated.
+rate strings. Holos behaviour is described, not copied, in fork equations.
 """
 
 from ghgsim.core.processes import ForkOption, ProcessDef

@@ -17,7 +17,7 @@ climate and soil conditions.
 from collections.abc import Mapping
 from typing import Any
 
-from ghgsim.core.module import Citation, Module, ParamRef, VarSpec
+from ghgsim.core.module import Citation, ParamRef, VarSpec, validate_module
 
 # Molecular weight conversion
 N2ON_TO_N2O = 44.0 / 28.0
@@ -149,9 +149,6 @@ class HolosSoilN2O:
             "N2O_indirect_leach": n2o_leach,
         }
 
-
-# Validate module
-from ghgsim.core.module import validate_module
 
 errors = validate_module(HolosSoilN2O())
 if errors:
