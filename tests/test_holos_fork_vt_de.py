@@ -67,3 +67,20 @@ def test_measurement_csv_matches_command_and_county_count():
     assert (zeros["delta_CH4_kg"].abs() < 1e-6).all()
     assert (zeros["delta_N2O_kg"].abs() < 1e-6).all()
     assert (ym["evidence"] == "MEASURED").all()
+
+
+def test_fourway_csv_matches_committed_ipcc_and_command():
+    path = ROOT / "data" / "holos_fourway_vt_de_AN_v1.csv"
+    if not path.exists():
+        pytest.skip("four-way CSV not generated yet")
+    df = pd.read_csv(path)
+    assert df["command"].iloc[0] == "python3 scripts/compare_holos_fourway_vt_de_AN_v1.py"
+    assert df["fips"].nunique() == 17
+    assert (df["evidence"] == "MEASURED").all()
+    rel_2006 = (df["IPCC2006_CO2e_t"] - df["csv_IPCC2006_CO2e_t"]).abs() / df["csv_IPCC2006_CO2e_t"]
+    rel_2019 = (df["IPCC2019_CO2e_t"] - df["csv_IPCC2019_CO2e_t"]).abs() / df["csv_IPCC2019_CO2e_t"]
+    assert rel_2006.max() < 1e-12
+    assert rel_2019.max() < 1e-12
+    # Holos N2O uses EPA Nex + IPCC 2006 EF3; must match IPCC 2006 N2O on this dataset.
+    assert (df["HolosCanada_N2O_kg"] - df["IPCC2006_N2O_kg"]).abs().max() < 1e-6
+    assert (df["HolosUS_N2O_kg"] - df["IPCC2006_N2O_kg"]).abs().max() < 1e-6
