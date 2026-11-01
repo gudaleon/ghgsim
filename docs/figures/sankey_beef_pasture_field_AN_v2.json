@@ -1,0 +1,779 @@
+{
+  "engine_version": "0.4.0",
+  "farm_id": "beef_pasture_field",
+  "fork_set": {
+    "catalog": [
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.CH4.cover_reduction",
+        "issue_ref": "CE-14",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.CH4.turkey_zero",
+        "issue_ref": "CE-10",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.ENTERIC.calf_zero",
+        "issue_ref": "CE-06",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.GE.digestibility",
+        "issue_ref": "AUDIT-GE-TDN",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.N2O.ef1",
+        "issue_ref": "HOLOS-EF1-ROCHETTE",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.NEX.calf_nrate",
+        "issue_ref": "AUDIT-CALF-NRATE",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.VS.calf_coeff",
+        "issue_ref": "CE-07",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.VS.digestibility",
+        "issue_ref": "AUDIT-VS-TDN",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.VS.urinary_energy",
+        "issue_ref": "AUDIT-VS-UE",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "ipcc2006_table_10_12",
+        "default": "eccc_2022_canada",
+        "fork_id": "HOLOS.YM.dairy",
+        "issue_ref": "AUDIT-YM-DAIRY",
+        "label": "parameter_refinement"
+      }
+    ],
+    "holos_as_coded": {
+      "HOLOS.CH4.cover_reduction": "holos_as_coded",
+      "HOLOS.CH4.turkey_zero": "holos_as_coded",
+      "HOLOS.ENTERIC.calf_zero": "holos_as_coded",
+      "HOLOS.GE.digestibility": "holos_as_coded",
+      "HOLOS.N2O.ef1": "holos_as_coded",
+      "HOLOS.NEX.calf_nrate": "holos_as_coded",
+      "HOLOS.VS.calf_coeff": "holos_as_coded",
+      "HOLOS.VS.digestibility": "holos_as_coded",
+      "HOLOS.VS.urinary_energy": "holos_as_coded",
+      "HOLOS.YM.dairy": "ipcc2006_table_10_12"
+    },
+    "source_correct": {}
+  },
+  "gwp": {
+    "CH4": 28.0,
+    "CO2": 1.0,
+    "N2O": 265.0,
+    "source": "IPCC Fifth Assessment Report, 100-year GWP without climate-carbon feedbacks"
+  },
+  "inputs_file": "data/stylized_farms_AN_v5.yaml",
+  "run_metadata": {
+    "holos_as_coded": {
+      "EF1_used": 0.01,
+      "F_AM_kg": 0.0,
+      "F_CR": 0.0,
+      "F_ON": 0.0,
+      "F_PRP_CPP": 9962.3,
+      "F_SN": 0.0,
+      "F_SOM": 0.0,
+      "N2O_soil_direct_kg": 313.1008571428571,
+      "N2O_soil_indirect_leach_kg": 35.22384642857143,
+      "N2O_soil_indirect_vol_kg": 31.310085714285716,
+      "N_MMS_Avb_kg": 0.0,
+      "N_PRP_kg": 9962.3,
+      "P_PE": null,
+      "diet_id": "beef_forage",
+      "farm_type": "beef_cowcalf",
+      "field_id": "prp_only",
+      "manure_id": "cattle_pasture",
+      "residue_crops": [],
+      "run": "holos_as_coded",
+      "soil_n2o_by_source": {
+        "F_CR": 0.0,
+        "F_ON": 0.0,
+        "F_PRP_CPP": 379.63478928571425,
+        "F_SN": 0.0,
+        "F_SOM": 0.0
+      }
+    },
+    "source_correct": {
+      "EF1_used": 0.01,
+      "F_AM_kg": 0.0,
+      "F_CR": 0.0,
+      "F_ON": 0.0,
+      "F_PRP_CPP": 8651.791790871544,
+      "F_SN": 0.0,
+      "F_SOM": 0.0,
+      "N2O_soil_direct_kg": 271.9134562845343,
+      "N2O_soil_indirect_leach_kg": 30.5902638320101,
+      "N2O_soil_indirect_vol_kg": 27.191345628453426,
+      "N_MMS_Avb_kg": 0.0,
+      "N_PRP_kg": 8651.791790871544,
+      "P_PE": null,
+      "diet_id": "beef_forage",
+      "farm_type": "beef_cowcalf",
+      "field_id": "prp_only",
+      "manure_id": "cattle_pasture",
+      "residue_crops": [],
+      "run": "source_correct",
+      "soil_n2o_by_source": {
+        "F_CR": 0.0,
+        "F_ON": 0.0,
+        "F_PRP_CPP": 329.6950657449978,
+        "F_SN": 0.0,
+        "F_SOM": 0.0
+      }
+    }
+  },
+  "schema": "ghgsim.emissions_sankey.v1",
+  "units": {
+    "native_ch4": "kg CH4 / year",
+    "native_n2o": "kg N2O / year",
+    "total_displayed": "t CO2e = kg CO2e / 1000",
+    "value": "kg CO2e"
+  },
+  "version": "AN_v2",
+  "views": {
+    "fork_delta": {
+      "fork_deltas_kg_co2e": {
+        "HOLOS.CH4.cover_reduction": 0.0,
+        "HOLOS.CH4.turkey_zero": 0.0,
+        "HOLOS.ENTERIC.calf_zero": -38663.316149794,
+        "HOLOS.GE.digestibility": -15645.58119604,
+        "HOLOS.N2O.ef1": 0.0,
+        "HOLOS.NEX.calf_nrate": 13234.02673829,
+        "HOLOS.VS.calf_coeff": 682.575324932,
+        "HOLOS.VS.digestibility": -753.335727506,
+        "HOLOS.VS.urinary_energy": 0.0,
+        "HOLOS.YM.dairy": 0.0
+      },
+      "gwp": {
+        "CH4": 28.0,
+        "CO2": 1.0,
+        "N2O": 265.0
+      },
+      "links": [
+        {
+          "delta_kg_co2e": 13234.02673829,
+          "fork_id": "HOLOS.NEX.calf_nrate",
+          "sign": "added",
+          "source": "fork.HOLOS.NEX.calf_nrate.added",
+          "target": "sink.holos_as_coded",
+          "units": "kg CO2e",
+          "value": 13234.02673829
+        },
+        {
+          "delta_kg_co2e": 682.575324932,
+          "fork_id": "HOLOS.VS.calf_coeff",
+          "sign": "added",
+          "source": "fork.HOLOS.VS.calf_coeff.added",
+          "target": "sink.holos_as_coded",
+          "units": "kg CO2e",
+          "value": 682.575324932
+        },
+        {
+          "delta_kg_co2e": 2199.008002073,
+          "fork_id": "INTERACTION",
+          "sign": "added",
+          "source": "fork.interaction.added",
+          "target": "sink.holos_as_coded",
+          "units": "kg CO2e",
+          "value": 2199.008002073
+        },
+        {
+          "delta_kg_co2e": -38663.316149794,
+          "fork_id": "HOLOS.ENTERIC.calf_zero",
+          "sign": "removed",
+          "source": "source.source_correct",
+          "target": "fork.HOLOS.ENTERIC.calf_zero.removed",
+          "units": "kg CO2e",
+          "value": 38663.316149794
+        },
+        {
+          "delta_kg_co2e": -15645.58119604,
+          "fork_id": "HOLOS.GE.digestibility",
+          "sign": "removed",
+          "source": "source.source_correct",
+          "target": "fork.HOLOS.GE.digestibility.removed",
+          "units": "kg CO2e",
+          "value": 15645.58119604
+        },
+        {
+          "delta_kg_co2e": -753.335727506,
+          "fork_id": "HOLOS.VS.digestibility",
+          "sign": "removed",
+          "source": "source.source_correct",
+          "target": "fork.HOLOS.VS.digestibility.removed",
+          "units": "kg CO2e",
+          "value": 753.335727506
+        },
+        {
+          "sign": "retained",
+          "source": "source.source_correct",
+          "target": "sink.holos_as_coded",
+          "units": "kg CO2e",
+          "value": 240207.685880353
+        }
+      ],
+      "nodes": [
+        {
+          "color": "#455A64",
+          "id": "source.source_correct",
+          "inflow": 0.0,
+          "kind": "source_total",
+          "label": "source_correct (295.269918954 t CO2e)",
+          "layer": 0,
+          "outflow": 295269.918953693,
+          "value": 295269.918953693
+        },
+        {
+          "color": "#2E7D32",
+          "id": "fork.HOLOS.ENTERIC.calf_zero.removed",
+          "inflow": 38663.316149794,
+          "kind": "fork_removed",
+          "label": "HOLOS.ENTERIC.calf_zero removed",
+          "layer": 1,
+          "outflow": 0.0,
+          "value": 38663.316149794
+        },
+        {
+          "color": "#2E7D32",
+          "id": "fork.HOLOS.GE.digestibility.removed",
+          "inflow": 15645.58119604,
+          "kind": "fork_removed",
+          "label": "HOLOS.GE.digestibility removed",
+          "layer": 1,
+          "outflow": 0.0,
+          "value": 15645.58119604
+        },
+        {
+          "color": "#C62828",
+          "id": "fork.HOLOS.NEX.calf_nrate.added",
+          "inflow": 0.0,
+          "kind": "fork_added",
+          "label": "HOLOS.NEX.calf_nrate added",
+          "layer": 1,
+          "outflow": 13234.02673829,
+          "value": 13234.02673829
+        },
+        {
+          "color": "#C62828",
+          "id": "fork.HOLOS.VS.calf_coeff.added",
+          "inflow": 0.0,
+          "kind": "fork_added",
+          "label": "HOLOS.VS.calf_coeff added",
+          "layer": 1,
+          "outflow": 682.575324932,
+          "value": 682.575324932
+        },
+        {
+          "color": "#2E7D32",
+          "id": "fork.HOLOS.VS.digestibility.removed",
+          "inflow": 753.335727506,
+          "kind": "fork_removed",
+          "label": "HOLOS.VS.digestibility removed",
+          "layer": 1,
+          "outflow": 0.0,
+          "value": 753.335727506
+        },
+        {
+          "color": "#C62828",
+          "id": "fork.interaction.added",
+          "inflow": 0.0,
+          "kind": "fork_added",
+          "label": "fork interaction added",
+          "layer": 1,
+          "outflow": 2199.008002073,
+          "value": 2199.008002073
+        },
+        {
+          "color": "#37474F",
+          "id": "sink.holos_as_coded",
+          "inflow": 256323.295945648,
+          "kind": "sink",
+          "label": "holos_as_coded (256.323295946 t CO2e)",
+          "layer": 2,
+          "outflow": 0.0,
+          "value": 256323.295945648
+        }
+      ],
+      "totals": {
+        "CO2e_kg": 256323.295945647,
+        "CO2e_t": 256.323295946,
+        "holos_as_coded_CO2e_kg": 256323.295945647,
+        "interaction_kg": 2199.008002073,
+        "source_correct_CO2e_kg": 295269.918953693,
+        "sum_single_fork_delta_kg": -41145.631010119
+      },
+      "units": "kg CO2e",
+      "view": "fork_delta"
+    },
+    "holos_as_coded": {
+      "gwp": {
+        "CH4": 28.0,
+        "CO2": 1.0,
+        "N2O": 265.0
+      },
+      "links": [
+        {
+          "gas": "N2O",
+          "n_source": "F_PRP",
+          "native_kg": 97.641932143,
+          "source": "animal.beef_calf",
+          "target": "field.prp",
+          "units": "kg CO2e",
+          "value": 25875.112017857
+        },
+        {
+          "gas": "CH4",
+          "native_kg": 64.160588241,
+          "source": "animal.beef_calf",
+          "system": "pasture",
+          "target": "process.manure_ch4.pasture",
+          "units": "kg CO2e",
+          "value": 1796.496470751
+        },
+        {
+          "gas": "N2O",
+          "n_source": "F_PRP",
+          "native_kg": 281.992857143,
+          "source": "animal.beef_cow",
+          "target": "field.prp",
+          "units": "kg CO2e",
+          "value": 74728.107142857
+        },
+        {
+          "gas": "CH4",
+          "native_kg": 5356.616965851,
+          "source": "animal.beef_cow",
+          "target": "process.enteric_ch4",
+          "units": "kg CO2e",
+          "value": 149985.275043838
+        },
+        {
+          "gas": "CH4",
+          "native_kg": 140.653759655,
+          "source": "animal.beef_cow",
+          "system": "pasture",
+          "target": "process.manure_ch4.pasture",
+          "units": "kg CO2e",
+          "value": 3938.305270343
+        },
+        {
+          "gas": "N2O",
+          "n_source": "F_PRP",
+          "native_kg": 379.634789286,
+          "source": "field.prp",
+          "target": "process.soil_n2o",
+          "units": "kg CO2e",
+          "value": 100603.219160714
+        },
+        {
+          "gas": "CH4",
+          "source": "gas.CH4",
+          "target": "sink.CO2e",
+          "units": "kg CO2e",
+          "value": 155720.076784932
+        },
+        {
+          "gas": "N2O",
+          "source": "gas.N2O",
+          "target": "sink.CO2e",
+          "units": "kg CO2e",
+          "value": 100603.219160714
+        },
+        {
+          "gas": "CH4",
+          "source": "process.enteric_ch4",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 149985.275043838
+        },
+        {
+          "gas": "CH4",
+          "source": "process.manure_ch4.pasture",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 1796.496470751
+        },
+        {
+          "gas": "CH4",
+          "source": "process.manure_ch4.pasture",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 3938.305270343
+        },
+        {
+          "gas": "N2O",
+          "source": "process.soil_n2o",
+          "target": "gas.N2O",
+          "units": "kg CO2e",
+          "value": 100603.219160714
+        }
+      ],
+      "nodes": [
+        {
+          "color": "#1565C0",
+          "id": "animal.beef_calf",
+          "inflow": 0.0,
+          "kind": "animal",
+          "label": "beef calves",
+          "layer": 0,
+          "outflow": 27671.608488608,
+          "value": 27671.608488608
+        },
+        {
+          "color": "#1565C0",
+          "id": "animal.beef_cow",
+          "inflow": 0.0,
+          "kind": "animal",
+          "label": "beef cows",
+          "layer": 0,
+          "outflow": 228651.687457038,
+          "value": 228651.687457038
+        },
+        {
+          "color": "#558B2F",
+          "id": "field.prp",
+          "inflow": 100603.219160714,
+          "kind": "field",
+          "label": "pasture urine/dung N",
+          "layer": 1,
+          "outflow": 100603.219160714,
+          "value": 100603.219160714
+        },
+        {
+          "color": "#00838F",
+          "id": "process.enteric_ch4",
+          "inflow": 149985.275043838,
+          "kind": "process",
+          "label": "enteric CH4",
+          "layer": 1,
+          "outflow": 149985.275043838,
+          "value": 149985.275043838
+        },
+        {
+          "color": "#00838F",
+          "id": "process.manure_ch4.pasture",
+          "inflow": 5734.801741094,
+          "kind": "process",
+          "label": "manure CH4 (pasture)",
+          "layer": 1,
+          "outflow": 5734.801741094,
+          "value": 5734.801741094
+        },
+        {
+          "color": "#00838F",
+          "id": "process.soil_n2o",
+          "inflow": 100603.219160714,
+          "kind": "process",
+          "label": "soil N2O",
+          "layer": 1,
+          "outflow": 100603.219160714,
+          "value": 100603.219160714
+        },
+        {
+          "color": "#EF6C00",
+          "id": "gas.CH4",
+          "inflow": 155720.076784932,
+          "kind": "gas",
+          "label": "CH4 (GWP 28)",
+          "layer": 2,
+          "outflow": 155720.076784932,
+          "value": 155720.076784932
+        },
+        {
+          "color": "#6A1B9A",
+          "id": "gas.N2O",
+          "inflow": 100603.219160714,
+          "kind": "gas",
+          "label": "N2O (GWP 265)",
+          "layer": 2,
+          "outflow": 100603.219160714,
+          "value": 100603.219160714
+        },
+        {
+          "color": "#37474F",
+          "id": "sink.CO2e",
+          "inflow": 256323.295945646,
+          "kind": "sink",
+          "label": "total CO2e",
+          "layer": 3,
+          "outflow": 0.0,
+          "value": 256323.295945646
+        }
+      ],
+      "totals": {
+        "CH4_enteric_kg": 5356.616965851,
+        "CH4_kg": 5561.431313748,
+        "CH4_manure_kg": 204.814347896,
+        "CO2_kg": 0.0,
+        "CO2_lime_kg": 0.0,
+        "CO2_urea_kg": 0.0,
+        "CO2e_kg": 256323.295945647,
+        "CO2e_t": 256.323295946,
+        "N2O_direct_kg": 0.0,
+        "N2O_indirect_kg": 0.0,
+        "N2O_kg": 379.634789286,
+        "N2O_soil_kg": 379.634789286
+      },
+      "units": "kg CO2e",
+      "view": "holos_as_coded"
+    },
+    "source_correct": {
+      "gwp": {
+        "CH4": 28.0,
+        "CO2": 1.0,
+        "N2O": 265.0
+      },
+      "links": [
+        {
+          "gas": "N2O",
+          "n_source": "F_PRP",
+          "native_kg": 47.702208602,
+          "source": "animal.beef_calf",
+          "target": "field.prp",
+          "units": "kg CO2e",
+          "value": 12641.085279567
+        },
+        {
+          "gas": "CH4",
+          "native_kg": 1380.832719635,
+          "source": "animal.beef_calf",
+          "target": "process.enteric_ch4",
+          "units": "kg CO2e",
+          "value": 38663.316149794
+        },
+        {
+          "gas": "CH4",
+          "native_kg": 39.782898065,
+          "source": "animal.beef_calf",
+          "system": "pasture",
+          "target": "process.manure_ch4.pasture",
+          "units": "kg CO2e",
+          "value": 1113.92114582
+        },
+        {
+          "gas": "N2O",
+          "n_source": "F_PRP",
+          "native_kg": 281.992857143,
+          "source": "animal.beef_cow",
+          "target": "field.prp",
+          "units": "kg CO2e",
+          "value": 74728.107142857
+        },
+        {
+          "gas": "CH4",
+          "native_kg": 5827.999258846,
+          "source": "animal.beef_cow",
+          "target": "process.enteric_ch4",
+          "units": "kg CO2e",
+          "value": 163183.979247696
+        },
+        {
+          "gas": "CH4",
+          "native_kg": 176.411070999,
+          "source": "animal.beef_cow",
+          "system": "pasture",
+          "target": "process.manure_ch4.pasture",
+          "units": "kg CO2e",
+          "value": 4939.509987959
+        },
+        {
+          "gas": "N2O",
+          "n_source": "F_PRP",
+          "native_kg": 329.695065745,
+          "source": "field.prp",
+          "target": "process.soil_n2o",
+          "units": "kg CO2e",
+          "value": 87369.192422424
+        },
+        {
+          "gas": "CH4",
+          "source": "gas.CH4",
+          "target": "sink.CO2e",
+          "units": "kg CO2e",
+          "value": 207900.726531269
+        },
+        {
+          "gas": "N2O",
+          "source": "gas.N2O",
+          "target": "sink.CO2e",
+          "units": "kg CO2e",
+          "value": 87369.192422424
+        },
+        {
+          "gas": "CH4",
+          "source": "process.enteric_ch4",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 38663.316149794
+        },
+        {
+          "gas": "CH4",
+          "source": "process.enteric_ch4",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 163183.979247696
+        },
+        {
+          "gas": "CH4",
+          "source": "process.manure_ch4.pasture",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 1113.92114582
+        },
+        {
+          "gas": "CH4",
+          "source": "process.manure_ch4.pasture",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 4939.509987959
+        },
+        {
+          "gas": "N2O",
+          "source": "process.soil_n2o",
+          "target": "gas.N2O",
+          "units": "kg CO2e",
+          "value": 87369.192422424
+        }
+      ],
+      "nodes": [
+        {
+          "color": "#1565C0",
+          "id": "animal.beef_calf",
+          "inflow": 0.0,
+          "kind": "animal",
+          "label": "beef calves",
+          "layer": 0,
+          "outflow": 52418.322575181,
+          "value": 52418.322575181
+        },
+        {
+          "color": "#1565C0",
+          "id": "animal.beef_cow",
+          "inflow": 0.0,
+          "kind": "animal",
+          "label": "beef cows",
+          "layer": 0,
+          "outflow": 242851.596378512,
+          "value": 242851.596378512
+        },
+        {
+          "color": "#558B2F",
+          "id": "field.prp",
+          "inflow": 87369.192422424,
+          "kind": "field",
+          "label": "pasture urine/dung N",
+          "layer": 1,
+          "outflow": 87369.192422424,
+          "value": 87369.192422424
+        },
+        {
+          "color": "#00838F",
+          "id": "process.enteric_ch4",
+          "inflow": 201847.29539749,
+          "kind": "process",
+          "label": "enteric CH4",
+          "layer": 1,
+          "outflow": 201847.29539749,
+          "value": 201847.29539749
+        },
+        {
+          "color": "#00838F",
+          "id": "process.manure_ch4.pasture",
+          "inflow": 6053.431133779,
+          "kind": "process",
+          "label": "manure CH4 (pasture)",
+          "layer": 1,
+          "outflow": 6053.431133779,
+          "value": 6053.431133779
+        },
+        {
+          "color": "#00838F",
+          "id": "process.soil_n2o",
+          "inflow": 87369.192422424,
+          "kind": "process",
+          "label": "soil N2O",
+          "layer": 1,
+          "outflow": 87369.192422424,
+          "value": 87369.192422424
+        },
+        {
+          "color": "#EF6C00",
+          "id": "gas.CH4",
+          "inflow": 207900.726531269,
+          "kind": "gas",
+          "label": "CH4 (GWP 28)",
+          "layer": 2,
+          "outflow": 207900.726531269,
+          "value": 207900.726531269
+        },
+        {
+          "color": "#6A1B9A",
+          "id": "gas.N2O",
+          "inflow": 87369.192422424,
+          "kind": "gas",
+          "label": "N2O (GWP 265)",
+          "layer": 2,
+          "outflow": 87369.192422424,
+          "value": 87369.192422424
+        },
+        {
+          "color": "#37474F",
+          "id": "sink.CO2e",
+          "inflow": 295269.918953693,
+          "kind": "sink",
+          "label": "total CO2e",
+          "layer": 3,
+          "outflow": 0.0,
+          "value": 295269.918953693
+        }
+      ],
+      "totals": {
+        "CH4_enteric_kg": 7208.831978482,
+        "CH4_kg": 7425.025947545,
+        "CH4_manure_kg": 216.193969064,
+        "CO2_kg": 0.0,
+        "CO2_lime_kg": 0.0,
+        "CO2_urea_kg": 0.0,
+        "CO2e_kg": 295269.918953693,
+        "CO2e_t": 295.269918954,
+        "N2O_direct_kg": 0.0,
+        "N2O_indirect_kg": 0.0,
+        "N2O_kg": 329.695065745,
+        "N2O_soil_kg": 329.695065745
+      },
+      "units": "kg CO2e",
+      "view": "source_correct"
+    }
+  }
+}

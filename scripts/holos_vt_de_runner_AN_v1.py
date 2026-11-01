@@ -137,7 +137,25 @@ def holos_compute_params(
         "EF_urea": _reg_get(ipcc, "IPCC2006.EF_urea.all"),
         "C_TO_CO2": _reg_get(ipcc, "BOTH.C_TO_CO2.all"),
         "FracFEED_default": _reg_get(ipcc, "IPCC2006.FracFEED.default_zero"),
+        "FracRenew_annual": _reg_get(ipcc, "IPCC2019.FracRenew.annual"),
+        "FracRemove_default": _reg_get(ipcc, "IPCC2019.FracRemove.default_zero"),
+        "FracBurnt_default": _reg_get(ipcc, "IPCC2019.FracBurnt.default_zero"),
+        "CF_default": _reg_get(ipcc, "IPCC2019.CF.unused_when_unburnt"),
+        "ACRE_TO_HA": _reg_get(ipcc, "BOTH.ACRE_TO_HA.all"),
+        "LB_TO_KG": _reg_get(ipcc, "BOTH.LB_TO_KG.nist"),
+        "EFeco_slope": _reg_get(canada, "HOLOS.N2O.EFeco.slope"),
+        "EFeco_intercept": _reg_get(canada, "HOLOS.N2O.EFeco.intercept"),
+        "EFeco_min": _reg_get(canada, "HOLOS.N2O.EFeco.min"),
+        "EFeco_max": _reg_get(canada, "HOLOS.N2O.EFeco.max"),
     }
+    # Bushel masses: 56-lb corn / 60-lb soy and wheat are customary USDA
+    # weights. AH-697 was not re-opened; NIST lb is VERIFIED.
+    params["kg_per_bu_maize"] = 56.0 * params["LB_TO_KG"]
+    params["kg_per_bu_soybeans"] = 60.0 * params["LB_TO_KG"]
+    params["kg_per_bu_wheat"] = 60.0 * params["LB_TO_KG"]
+    for crop in ("maize", "soybeans", "winter_wheat", "spring_wheat", "grains"):
+        for coeff in ("N_AG", "N_BG", "R_AG", "RS", "DRY"):
+            params[f"{coeff}_{crop}"] = _reg_get(ipcc, f"IPCC2019.{coeff}.{crop}")
     for system in (
         "liquid_nocrust",
         "liquid_crust",

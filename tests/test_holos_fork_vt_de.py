@@ -47,6 +47,7 @@ def test_registered_forks_include_turkey_zero():
         "HOLOS.CH4.cover_reduction",
         "HOLOS.CH4.turkey_zero",
         "HOLOS.NEX.calf_nrate",
+        "HOLOS.N2O.ef1",
     }
 
 

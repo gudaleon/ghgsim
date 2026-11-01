@@ -33,7 +33,20 @@ class HolosFieldN:
         "F_ON_other_kg": VarSpec(
             "F_ON_other_kg", "kg N / year", "Sewage/compost/other organic N (Eq 11.3 FSEW+FCOMP+FOOA)", "scalar", False
         ),
-        "F_CR": VarSpec("F_CR", "kg N / year", "Crop residue N (user-supplied; Eq 11.6 not expanded)", "scalar", False),
+        "F_CR": VarSpec(
+            "F_CR",
+            "kg N / year",
+            "Crop residue N (Eq 11.6 when crops are supplied; else user-supplied)",
+            "scalar",
+            False,
+        ),
+        "crops": VarSpec(
+            "crops",
+            "dimensionless",
+            "List of {crop, area_ha, yield_fresh_kg_ha} for IPCC 2019 Eq 11.6",
+            "scalar",
+            False,
+        ),
         "F_SOM": VarSpec("F_SOM", "kg N / year", "Mineralised soil organic matter N", "scalar", False),
         "FracFEED": VarSpec("FracFEED", "dimensionless", "Managed manure used as feed (Eq 11.4)", "scalar", False),
         "FracFUEL": VarSpec("FracFUEL", "dimensionless", "Managed manure burned for fuel (Eq 11.4)", "scalar", False),
@@ -69,6 +82,12 @@ class HolosFieldN:
             equation="Eq 11.3, 11.4, 11.5",
             page="11.12-11.13",
         ),
+        Citation(
+            source="2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 11",
+            table="Table 11.1a (New)",
+            equation="Eq 11.6 (Updated), Eq 11.7",
+            page="11.14-11.18",
+        ),
     ]
 
     def compute(self, inputs: Mapping[str, Any], params: Mapping[str, Any]) -> dict[str, Any]:
@@ -93,13 +112,24 @@ class HolosFieldN:
             f_on = fam + float(inputs.get("F_ON_other_kg") or 0.0)
         else:
             f_on = float(inputs.get("F_ON_other_kg") or 0.0)
+        crops = inputs.get("crops") or []
+        residue_rows: list[dict[str, Any]] = []
+        if crops:
+            from ghgsim.modules.ipcc2019.crop_residue import f_cr_from_crops
+
+            residue = f_cr_from_crops(list(crops), params)
+            f_cr = float(residue["F_CR"])
+            residue_rows = list(residue["crops"])
+        else:
+            f_cr = float(inputs.get("F_CR") or 0.0)
         return {
             "F_SN": float(inputs.get("F_SN") or 0.0),
             "F_ON": f_on,
-            "F_CR": float(inputs.get("F_CR") or 0.0),
+            "F_CR": f_cr,
             "F_SOM": float(inputs.get("F_SOM") or 0.0),
             "F_PRP_CPP": n_prp,
             "F_AM_kg": fam if link else 0.0,
+            "residue_crops": residue_rows,
         }
 
 

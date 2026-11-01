@@ -379,6 +379,66 @@ def field_fam_process() -> ProcessDef:
     return process
 
 
+def crop_residue_n_process() -> ProcessDef:
+    """F_CR from IPCC 2019 Eq 11.6 (Updated) and Eq 11.7 (dry-matter crop)."""
+    process = ProcessDef(
+        name="crop_residue_n",
+        description="Crop residue N returned to soils (IPCC 2019 Eq 11.6 Updated / Eq 11.7)",
+        rate_equation=(
+            "(yield_fresh_kg_ha * DRY * R_AG * area_ha) * N_AG "
+            "* (1.0 - FracRemove - FracBurnt * CF) "
+            "+ (yield_fresh_kg_ha * DRY * (1.0 + R_AG) * RS * area_ha * FracRenew) * N_BG"
+        ),
+        stoichiometry={"F_CR_kg": 1.0},
+        unit="kg N",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2019rf/pdf/4_Volume4/19R_V4_Ch11_Soils_N2O_CO2.pdf",
+        equation="Equation 11.6 (Updated) and Equation 11.7",
+        page="11.14-11.18",
+        notes=(
+            "Crop = Yield_fresh * DRY; AGDM = Crop * R_AG; AGR = AGDM * Area; "
+            "BGR = (Crop + AGDM) * RS * Area * FracRenew. "
+            "Annual crops FracRenew = 1. FracRemove and FracBurnt default to 0 when data are absent."
+        ),
+    )
+    return process
+
+
+def rochette_efeco_process() -> ProcessDef:
+    """Canadian ecodistrict EF1 from Rochette et al. 2008 (CJSS 88:641-654) Eq 3."""
+    process = ProcessDef(
+        name="rochette_efeco",
+        description="EFeco = 0.022*(P/PE)-0.0048 clamped to [0.0016, 0.017] (Rochette 2008 Eq 3)",
+        rate_equation="min(EFeco_max, max(EFeco_min, EFeco_slope * P_PE + EFeco_intercept))",
+        stoichiometry={"EF1": 1.0},
+        unit="kg N2O-N / kg N",
+        forks={
+            "holos_as_coded": ForkOption(
+                name="holos_as_coded",
+                description=(
+                    "ghgsim HolosSoilN2O as coded uses IPCC 2006 Table 11.1 EF1=0.01 "
+                    "with no P/PE or topography modifier. Holos C# soil N2O was not opened."
+                ),
+                modified_equation="EF1_ipcc",
+                issue_ref="HOLOS-EF1-ROCHETTE",
+                label="holos_as_coded",
+            ),
+        },
+    )
+    process.add_source(
+        doi_or_url="https://doi.org/10.4141/cjss07025",
+        equation="Equation 3",
+        page="641-654 (CJSS 88)",
+        notes=(
+            "Rochette et al. 2008 Can. J. Soil Sci. 88:641-654. "
+            "Holos docs cite SSSAJ DOI 10.2136/sssaj2007.0351 (that URL 404s). "
+            "This is the opened CJSS paper. Holos C# / V4 soil N2O section UNVERIFIED."
+        ),
+    )
+    return process
+
+
 def turkey_manure_ch4_holos_process() -> ProcessDef:
     """Turkey manure CH4: IPCC Eq 10.23 default; holos_as_coded CE-10 is zero."""
     process = ProcessDef(

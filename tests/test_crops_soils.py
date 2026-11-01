@@ -10,13 +10,16 @@ from ghgsim.modules.holos.fields import HolosFieldN
 from ghgsim.modules.holos.lime_urea import HolosLimeUreaCO2
 from ghgsim.modules.holos.manure import HolosManure
 from ghgsim.modules.holos.process_defs import (
+    crop_residue_n_process,
     field_fam_process,
     lime_co2_process,
+    rochette_efeco_process,
     soil_n2o_direct_process,
     urea_co2_process,
 )
 from ghgsim.modules.holos.soil_n2o import HolosSoilN2O
 from ghgsim.modules.ipcc2006 import IPCC2006LimeUreaCO2, IPCC2006SoilN2O
+from ghgsim.modules.ipcc2019.crop_residue import IPCC2019CropResidue
 from ghgsim.report.emissions_sankey import compute_stylized_farm_flows, stylized_params
 from ghgsim.report.fork_diagram import latest_versioned
 
@@ -27,7 +30,7 @@ C_TO_CO2 = 44.0 / 12.0
 
 @pytest.fixture
 def ipcc_params():
-    return load_parameter_csv(ROOT / "data" / "ipcc_params_AN_v6.csv", allow_unverified=False)
+    return load_parameter_csv(latest_versioned(ROOT / "data", "ipcc_params", ".csv"), allow_unverified=False)
 
 
 @pytest.fixture
@@ -45,12 +48,30 @@ def soil_params(ipcc_params):
         "EF_urea": ipcc_params.get_value("IPCC2006.EF_urea.all"),
         "C_TO_CO2": ipcc_params.get_value("BOTH.C_TO_CO2.all"),
         "FracFEED_default": ipcc_params.get_value("IPCC2006.FracFEED.default_zero"),
+        "N_AG_maize": ipcc_params.get_value("IPCC2019.N_AG.maize"),
+        "N_BG_maize": ipcc_params.get_value("IPCC2019.N_BG.maize"),
+        "R_AG_maize": ipcc_params.get_value("IPCC2019.R_AG.maize"),
+        "RS_maize": ipcc_params.get_value("IPCC2019.RS.maize"),
+        "DRY_maize": ipcc_params.get_value("IPCC2019.DRY.maize"),
+        "N_AG_soybeans": ipcc_params.get_value("IPCC2019.N_AG.soybeans"),
+        "N_BG_soybeans": ipcc_params.get_value("IPCC2019.N_BG.soybeans"),
+        "R_AG_soybeans": ipcc_params.get_value("IPCC2019.R_AG.soybeans"),
+        "RS_soybeans": ipcc_params.get_value("IPCC2019.RS.soybeans"),
+        "DRY_soybeans": ipcc_params.get_value("IPCC2019.DRY.soybeans"),
+        "FracRenew_annual": ipcc_params.get_value("IPCC2019.FracRenew.annual"),
+        "FracRemove_default": ipcc_params.get_value("IPCC2019.FracRemove.default_zero"),
+        "FracBurnt_default": ipcc_params.get_value("IPCC2019.FracBurnt.default_zero"),
+        "CF_default": ipcc_params.get_value("IPCC2019.CF.unused_when_unburnt"),
+        "EFeco_slope": 0.022,
+        "EFeco_intercept": -0.0048,
+        "EFeco_min": 0.0016,
+        "EFeco_max": 0.017,
     }
 
 
 @pytest.fixture
 def stylized():
-    spec = yaml.safe_load((ROOT / "data" / "stylized_farms_AN_v4.yaml").read_text())
+    spec = yaml.safe_load(latest_versioned(ROOT / "data", "stylized_farms", ".yaml").read_text())
     params = stylized_params(ROOT, spec)
     return spec, params
 
@@ -202,8 +223,11 @@ def test_broiler_litter_field_links_manure_n_once(stylized, ipcc_params):
     assert flows.extras["N_MMS_Avb_kg"] == pytest.approx(n_mms)
     assert flows.extras["F_ON"] == pytest.approx(n_mms)
     assert flows.extras["F_ON"] != pytest.approx(nex_total)
-    f_cr = 200.0
-    direct_n = (n_mms + f_cr) * 0.01
+    # 3 ha maize x 8000 kg/ha: F_CR = 189.5904; P_PE=1 -> EF1=0.017
+    f_cr = 189.5904
+    assert flows.extras["F_CR"] == pytest.approx(f_cr)
+    assert flows.extras["EF1_used"] == pytest.approx(0.017)
+    direct_n = (n_mms + f_cr) * 0.017
     vol_n = n_mms * 0.20 * 0.01
     leach_n = (n_mms + f_cr) * 0.30 * 0.0075
     expected_soil = (direct_n + vol_n + leach_n) * N2ON_TO_N2O
@@ -222,9 +246,11 @@ def test_market_swine_field_synthetic_plus_linked_manure(stylized, ipcc_params):
     n_mms = nex_total * (1.0 - frac_gas)
     assert flows.extras["F_ON"] == pytest.approx(n_mms)
     assert flows.extras["F_SN"] == pytest.approx(500.0)
-    assert flows.extras["F_CR"] == pytest.approx(150.0)
-    f_sn, f_on, f_cr = 500.0, n_mms, 150.0
-    direct_n = (f_sn + f_on + f_cr) * 0.01
+    f_cr = 117.45552
+    assert flows.extras["F_CR"] == pytest.approx(f_cr)
+    assert flows.extras["EF1_used"] == pytest.approx(0.017)
+    f_sn, f_on = 500.0, n_mms
+    direct_n = (f_sn + f_on + f_cr) * 0.017
     vol_n = (f_sn * 0.10 + f_on * 0.20) * 0.01
     leach_n = (f_sn + f_on + f_cr) * 0.30 * 0.0075
     assert flows.soil_n2o_kg == pytest.approx((direct_n + vol_n + leach_n) * N2ON_TO_N2O)
@@ -236,10 +262,12 @@ def test_crop_urea_lime_empty_herd_hand_calc(stylized):
     assert farm["herds"] == []
     flows = compute_stylized_farm_flows(spec, farm, params, {}, run="source_correct")
     assert flows.groups == []
-    # Eq 11.1: (1000+0+200+100)*0.01 = 13 kg N2O-N
-    # Vol: 1000*0.10*0.01 = 1.0
-    # Leach: 1300*0.30*0.0075 = 2.925
-    expected_soil = (13.0 + 1.0 + 2.925) * N2ON_TO_N2O
+    f_cr = 631.968
+    assert flows.extras["F_CR"] == pytest.approx(f_cr)
+    assert flows.extras["EF1_used"] == pytest.approx(0.017)
+    # Eq 11.1: (1000+0+631.968+100)*0.017; vol 1000*0.10*0.01; leach *0.30*0.0075
+    n_managed = 1000.0 + f_cr + 100.0
+    expected_soil = (n_managed * 0.017 + 1.0 + n_managed * 0.30 * 0.0075) * N2ON_TO_N2O
     lime = (2.0 * 0.12 + 1.0 * 0.13) * 1000.0 * C_TO_CO2
     urea = 1.0 * 0.20 * 1000.0 * C_TO_CO2
     assert flows.soil_n2o_kg == pytest.approx(expected_soil)
@@ -282,6 +310,100 @@ def test_turkey_litter_has_no_field(stylized):
     } <= farm_ids
 
 
-def test_latest_stylized_yaml_is_v4():
+def test_latest_stylized_yaml_is_v5():
     path = latest_versioned(ROOT / "data", "stylized_farms", ".yaml")
-    assert path.name == "stylized_farms_AN_v4.yaml"
+    assert path.name == "stylized_farms_AN_v5.yaml"
+
+
+def test_eq_11_6_maize_hand_calc(soil_params):
+    """10 ha x 8000 kg/ha maize: Crop=6960; AGDM=6960; AGR=69600; BGR=30624; F_CR=631.968."""
+    out = IPCC2019CropResidue().compute(
+        {"crop": "maize", "area_ha": 10.0, "yield_fresh_kg_ha": 8000.0},
+        soil_params,
+    )
+    assert out["Crop_kg_ha"] == pytest.approx(6960.0)
+    assert out["AGDM_kg_ha"] == pytest.approx(6960.0)
+    assert out["AGR_kg"] == pytest.approx(69600.0)
+    assert out["BGR_kg"] == pytest.approx(30624.0)
+    assert out["F_CR"] == pytest.approx(631.968)
+    assert crop_residue_n_process().compute_rate(
+        {
+            "yield_fresh_kg_ha": 8000.0,
+            "DRY": 0.87,
+            "R_AG": 1.0,
+            "area_ha": 10.0,
+            "N_AG": 0.006,
+            "FracRemove": 0.0,
+            "FracBurnt": 0.0,
+            "CF": 0.0,
+            "RS": 0.22,
+            "FracRenew": 1.0,
+            "N_BG": 0.007,
+        }
+    ) == pytest.approx(631.968)
+    assert soil_params["N_AG_maize"] == pytest.approx(0.006)
+    assert soil_params["DRY_maize"] == pytest.approx(0.87)
+
+
+def test_table_11_1a_cells_are_verified(ipcc_params):
+    assert ipcc_params.get("IPCC2019.N_AG.maize").status.value == "VERIFIED"
+    assert ipcc_params.get("IPCC2019.N_AG.soybeans").value == pytest.approx(0.008)
+    assert ipcc_params.get("IPCC2019.RS.spring_wheat").value == pytest.approx(0.28)
+    assert ipcc_params.get("IPCC2019.RS.winter_wheat").value == pytest.approx(0.23)
+    assert ipcc_params.get("IPCC2019.DRY.grains").value == pytest.approx(0.88)
+    traced = load_parameter_csv(latest_versioned(ROOT / "data", "ipcc_params", ".csv"), allow_unverified=True)
+    assert traced.get("IPCC2019.kg_per_bu.maize").status.value == "SOURCE-TRACED"
+
+
+def test_field_n_uses_eq_11_6_when_crops_supplied(soil_params):
+    linked = HolosFieldN().compute(
+        {
+            "N_MMS_Avb_kg": 100.0,
+            "crops": [{"crop": "maize", "area_ha": 10.0, "yield_fresh_kg_ha": 8000.0}],
+        },
+        soil_params,
+    )
+    assert linked["F_CR"] == pytest.approx(631.968)
+    assert linked["F_CR"] != pytest.approx(200.0)
+
+
+def test_rochette_efeco_clamp_and_holos_as_coded_fork(soil_params):
+    assert rochette_efeco_process().compute_rate(
+        {
+            "P_PE": 1.0,
+            "EFeco_slope": 0.022,
+            "EFeco_intercept": -0.0048,
+            "EFeco_min": 0.0016,
+            "EFeco_max": 0.017,
+        }
+    ) == pytest.approx(0.017)
+    inputs = {
+        "F_SN": 1000.0,
+        "F_ON": 0.0,
+        "F_CR": 0.0,
+        "F_SOM": 0.0,
+        "F_PRP_CPP": 0.0,
+        "climate": "wet",
+        "P_PE": 1.0,
+    }
+    source = HolosSoilN2O().compute(inputs, soil_params)
+    holos = HolosSoilN2O().compute({**inputs, "forks": {"HOLOS.N2O.ef1": "holos_as_coded"}}, soil_params)
+    no_ppe = HolosSoilN2O().compute({k: v for k, v in inputs.items() if k != "P_PE"}, soil_params)
+    assert source["EF1_used"] == pytest.approx(0.017)
+    assert holos["EF1_used"] == pytest.approx(0.01)
+    assert no_ppe["EF1_used"] == pytest.approx(0.01)
+    assert source["N2O_direct"] == pytest.approx(1000.0 * 0.017 * N2ON_TO_N2O)
+    assert holos["N2O_direct"] == pytest.approx(1000.0 * 0.01 * N2ON_TO_N2O)
+
+
+def test_crop_urea_lime_ef1_fork_delta(stylized):
+    spec, params = stylized
+    farm = _farm(spec, "crop_urea_lime")
+    source = compute_stylized_farm_flows(spec, farm, params, {}, run="source_correct")
+    holos = compute_stylized_farm_flows(
+        spec, farm, params, {"HOLOS.N2O.ef1": "holos_as_coded"}, run="holos_as_coded"
+    )
+    assert source.extras["EF1_used"] == pytest.approx(0.017)
+    assert holos.extras["EF1_used"] == pytest.approx(0.01)
+    assert source.n2o_kg != pytest.approx(holos.n2o_kg)
+    assert "F_CR" not in spec["fields"]["crop_urea_lime"] or spec["fields"]["crop_urea_lime"].get("crops")
