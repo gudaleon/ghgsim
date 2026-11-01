@@ -1,0 +1,139 @@
+key,value,units,dist,dist_lower,dist_upper,source_doi_or_url,table,equation,page,region,status,verified_by,verified_date,notes
+IPCC2006.EF1.all,0.01,kg N2O-N/kg N,uniform,0.003,0.03,2006 IPCC GL Vol4 Ch11,Table 11.1,,11.11,all,VERIFIED,,,as published
+IPCC2006.EF3PRP_CPP.all,0.02,kg N2O-N/kg N,uniform,0.007,0.06,2006 IPCC GL Vol4 Ch11,Table 11.1,,11.11,all,VERIFIED,,,as published
+IPCC2006.EF3PRP_SO.all,0.01,kg N2O-N/kg N,uniform,0.003,0.03,2006 IPCC GL Vol4 Ch11,Table 11.1,,11.11,all,VERIFIED,,,as published
+IPCC2006.EF4.all,0.01,kg N2O-N/kg N volatilised,uniform,0.002,0.05,2006 IPCC GL Vol4 Ch11,Table 11.3,,11.24,all,VERIFIED,,,as published
+IPCC2006.EF5.all,0.0075,kg N2O-N/kg N leached,uniform,0.0005,0.025,2006 IPCC GL Vol4 Ch11,Table 11.3,,11.24,all,VERIFIED,,,as published
+IPCC2006.FracGASF.all,0.1,kg N/kg N,uniform,0.03,0.3,2006 IPCC GL Vol4 Ch11,Table 11.3,,11.24,all,VERIFIED,,,as published
+IPCC2006.FracGASM.all,0.2,kg N/kg N,uniform,0.05,0.5,2006 IPCC GL Vol4 Ch11,Table 11.3,,11.24,all,VERIFIED,,,as published
+IPCC2006.FracLEACH.wet,0.3,kg N/kg N,uniform,0.1,0.8,2006 IPCC GL Vol4 Ch11,Table 11.3,,11.24,all,VERIFIED,,,as published
+IPCC2006.Ym.dairy,6.5,% GE,uniform,5.5,7.5,2006 IPCC GL Vol4 Ch10,Table 10.12,,10.30,all,VERIFIED,,,+/- is range (fn b)
+IPCC2006.Ym.feedlot,3.0,% GE,uniform,2.0,4.0,2006 IPCC GL Vol4 Ch10,Table 10.12,,10.30,all,VERIFIED,,,+/- is range (fn b)
+IPCC2006.Ym.other_cattle,6.5,% GE,uniform,5.5,7.5,2006 IPCC GL Vol4 Ch10,Table 10.12,,10.30,all,VERIFIED,,,+/- is range (fn b)
+IPCC2019.EF1.all,0.01,kg N2O-N/kg N,uniform,0.002,0.018,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),,11.13 (table start),all,VERIFIED,,,2.5-97.5 pct
+IPCC2019.EF1.wet_synthetic,0.016,kg N2O-N/kg N,uniform,0.013,0.019,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),,11.13 (table start),all,VERIFIED,,,95% CI fitted
+IPCC2019.EF1.wet_other,0.006,kg N2O-N/kg N,uniform,0.001,0.011,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),,11.13 (table start),all,VERIFIED,,,95% CI fitted
+IPCC2019.EF1.dry,0.005,kg N2O-N/kg N,uniform,0.0,0.011,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),,11.13 (table start),all,VERIFIED,,,95% CI fitted
+IPCC2019.EF3PRP_CPP.all,0.004,kg N2O-N/kg N,uniform,0.0,0.014,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),,11.13 (table start),all,VERIFIED,,,2.5-97.5 pct
+IPCC2019.EF3PRP_CPP.wet,0.006,kg N2O-N/kg N,uniform,0.0,0.027,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),,11.13 (table start),all,VERIFIED,,,2.5-97.5 pct
+IPCC2019.EF3PRP_CPP.dry,0.002,kg N2O-N/kg N,uniform,0.0,0.007,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),,11.13 (table start),all,VERIFIED,,,2.5-97.5 pct
+IPCC2019.EF3PRP_SO.all,0.003,kg N2O-N/kg N,uniform,0.0,0.01,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),,11.13 (table start),all,VERIFIED,,,2.5-97.5 pct
+IPCC2019.EF4.all,0.01,kg N2O-N/kg N volatilised,uniform,0.002,0.018,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,2.5-97.5 pct
+IPCC2019.EF4.wet,0.014,kg N2O-N/kg N volatilised,uniform,0.011,0.017,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,95% CI fitted
+IPCC2019.EF4.dry,0.005,kg N2O-N/kg N volatilised,uniform,0.0,0.011,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,95% CI fitted
+IPCC2019.EF5.all,0.011,kg N2O-N/kg N leached,uniform,0.0,0.02,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,as published
+IPCC2019.FracGASF.all,0.11,kg N/kg N,uniform,0.02,0.33,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,as published
+IPCC2019.FracGASF.urea,0.15,kg N/kg N,uniform,0.03,0.43,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,as published
+IPCC2019.FracGASF.ammonium,0.08,kg N/kg N,uniform,0.02,0.3,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,as published
+IPCC2019.FracGASF.nitrate,0.01,kg N/kg N,uniform,0.0,0.02,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,as published
+IPCC2019.FracGASF.ammonium_nitrate,0.05,kg N/kg N,uniform,0.0,0.2,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,as published
+IPCC2019.FracGASM.all,0.21,kg N/kg N,uniform,0.0,0.31,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,as published
+IPCC2019.FracLEACH.wet,0.24,kg N/kg N,uniform,0.01,0.73,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),,11.26,all,VERIFIED,,,as published
+IPCC2019.Ym.dairy_high_ndf_le35,5.7,% GE,uniform,4.56,6.84,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),,10.46 (table start; fn 3 on table),all,VERIFIED,,,+/-20% (fn 3) bounds derived
+IPCC2019.Ym.dairy_high_ndf_ge35,6.0,% GE,uniform,4.8,7.2,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),,10.46 (table start; fn 3 on table),all,VERIFIED,,,+/-20% (fn 3) bounds derived
+IPCC2019.Ym.dairy_medium,6.3,% GE,uniform,5.04,7.56,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),,10.46 (table start; fn 3 on table),all,VERIFIED,,,+/-20% (fn 3) bounds derived
+IPCC2019.Ym.dairy_low,6.5,% GE,uniform,5.2,7.8,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),,10.46 (table start; fn 3 on table),all,VERIFIED,,,+/-20% (fn 3) bounds derived
+IPCC2019.Ym.nondairy_forage_gt75,7.0,% GE,uniform,5.6,8.4,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),,10.46 (table start; fn 3 on table),all,VERIFIED,,,+/-20% (fn 3) bounds derived
+IPCC2019.Ym.nondairy_mixed,6.3,% GE,uniform,5.04,7.56,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),,10.46 (table start; fn 3 on table),all,VERIFIED,,,+/-20% (fn 3) bounds derived
+IPCC2019.Ym.feedlot_grain,4.0,% GE,uniform,3.2,4.8,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),,10.46 (table start; fn 3 on table),all,VERIFIED,,,+/-20% (fn 3) bounds derived
+IPCC2019.Ym.feedlot_sfc,3.0,% GE,uniform,2.4,3.6,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),,10.46 (table start; fn 3 on table),all,VERIFIED,,,+/-20% (fn 3) bounds derived
+BOTH.CH4_ENERGY.all,55.65,MJ/kg CH4,fixed,,,2006 GL Ch10 p10.31 and 2019 Refinement Ch10 p10.47,Eq 10.21,,10.31 (2006) / 10.47 (2019),all,VERIFIED,,,constant
+BOTH.GE_PER_KG_DM.all,18.45,MJ/kg DM,fixed,,,2006 GL Ch10 text and 2019 Refinement Ch10 text,text (GE from DMI),,10.21 (2006) / 10.30 (2019),all,VERIFIED,,,constant
+IPCC2019.FracLEACH.dry,0.0,kg N/kg N,fixed,,,2019 Refinement Vol4 Ch11 text + Table 11.3 fn,Section 11.2.2.3 text,,11.25,all,VERIFIED,,,zero for dry climates (non-irrigated); irrigated dry uses 0.24
+IPCC2006.Nrate.dairy|north_america,0.44,kg N/(1000 kg mass)/day,uniform,0.22,0.66,2006 GL Vol4 Ch10,Table 10.19,,10.59,all,VERIFIED,,,+/-50% (table note)
+IPCC2006.Nrate.other_cattle|north_america,0.31,kg N/(1000 kg mass)/day,uniform,0.155,0.465,2006 GL Vol4 Ch10,Table 10.19,,10.59,all,VERIFIED,,,+/-50% (table note)
+IPCC2019.Nrate.dairy|north_america,0.59,kg N/(1000 kg mass)/day,fixed,,,2019 Refinement Vol4 Ch10,Table 10.19 (Updated),,10.83,all,VERIFIED,,,not transcribed
+IPCC2019.Nrate.other_cattle|north_america,0.4,kg N/(1000 kg mass)/day,fixed,,,2019 Refinement Vol4 Ch10,Table 10.19 (Updated),,10.83,all,VERIFIED,,,not transcribed
+IPCC2006.B0.dairy|north_america,0.24,m3 CH4/kg VS,fixed,,,2006 GL Vol4 Ch10,Table 10A-4,,10.77,all,VERIFIED,,,
+IPCC2006.B0.other_cattle|north_america,0.19,m3 CH4/kg VS,fixed,,,2006 GL Vol4 Ch10,Table 10A-5,,10.78,all,VERIFIED,,,
+IPCC2006.TAM.dairy|north_america,604.0,kg,fixed,,,2006 GL Vol4 Ch10,Table 10A-4,,10.77,all,VERIFIED,,,
+IPCC2006.TAM.other_cattle|north_america,389.0,kg,fixed,,,2006 GL Vol4 Ch10,Table 10A-5,,10.78,all,VERIFIED,,,
+IPCC2006.VS.dairy|north_america,5.4,kg VS/head/day,fixed,,,2006 GL Vol4 Ch10,Table 10A-4,,10.77,all,VERIFIED,,,
+IPCC2006.VS.other_cattle|north_america,2.4,kg VS/head/day,fixed,,,2006 GL Vol4 Ch10,Table 10A-5,,10.78,all,VERIFIED,,,
+IPCC2019.B0.dairy|north_america,0.24,m3 CH4/kg VS,fixed,,,2019 Refinement Vol4 Ch10,Table 10.16A (Updated),,10.67,all,VERIFIED,,,merged cell spanning NA-Oceania
+IPCC2019.B0.other_cattle|north_america,0.19,m3 CH4/kg VS,fixed,,,2019 Refinement Vol4 Ch10,Table 10.16A (Updated),,10.67,all,VERIFIED,,,non-dairy cattle
+BOTH.CH4_M3_TO_KG.all,0.67,kg/m3,fixed,,,2019 Refinement Vol4 Ch10 Eq 10.23,Eq 10.23,,10.64 (2019) / 10.41 (2006),all,VERIFIED,,,constant
+IPCC2006.MCF.pasture|le10C,0.01,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.pasture|15C,0.015,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.daily_spread|le10C,0.001,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.daily_spread|15C,0.005,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.solid_storage|le10C,0.02,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.solid_storage|15C,0.04,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.dry_lot|le10C,0.01,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.dry_lot|15C,0.015,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.liquid_crust|le10C,0.1,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.liquid_crust|15C,0.17,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.liquid_nocrust|le10C,0.17,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.liquid_nocrust|15C,0.27,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10.17,,10.44,all,VERIFIED,,,
+IPCC2006.MCF.lagoon|15C,0.74,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10A-4 MCF header (reproduces Table 10.17),,10.77,all,VERIFIED,,,
+IPCC2006.MCF.lagoon|le10C,0.66,fraction,fixed,,,2006 GL Vol4 Ch10,Table 10A-4 MCF header (reproduces Table 10.17),,10.77,all,VERIFIED,,,
+IPCC2019.MCF.lagoon|cool_temperate_moist,0.6,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,12-month retention
+IPCC2019.MCF.liquid_6mo|cool_temperate_moist,0.21,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,"liquid/slurry + pit, 6 month"
+IPCC2019.MCF.liquid_12mo|cool_temperate_moist,0.31,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,"liquid/slurry + pit, 12 month"
+IPCC2019.MCF.lagoon|cool_temperate_dry,0.67,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,12-month retention
+IPCC2019.MCF.liquid_6mo|cool_temperate_dry,0.26,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,"liquid/slurry + pit, 6 month"
+IPCC2019.MCF.liquid_12mo|cool_temperate_dry,0.42,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,"liquid/slurry + pit, 12 month"
+IPCC2019.MCF.lagoon|warm_temperate_moist,0.73,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,12-month retention
+IPCC2019.MCF.liquid_6mo|warm_temperate_moist,0.37,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,"liquid/slurry + pit, 6 month"
+IPCC2019.MCF.liquid_12mo|warm_temperate_moist,0.55,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,"liquid/slurry + pit, 12 month"
+IPCC2019.MCF.lagoon|warm_temperate_dry,0.76,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,12-month retention
+IPCC2019.MCF.liquid_6mo|warm_temperate_dry,0.41,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,"liquid/slurry + pit, 6 month"
+IPCC2019.MCF.liquid_12mo|warm_temperate_dry,0.64,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,"liquid/slurry + pit, 12 month"
+IPCC2019.MCF.solid_storage|cool,0.02,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,
+IPCC2019.MCF.solid_storage|temperate,0.04,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,
+IPCC2019.MCF.solid_storage|warm,0.05,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,
+IPCC2019.MCF.dry_lot|cool,0.01,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,
+IPCC2019.MCF.dry_lot|temperate,0.015,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,
+IPCC2019.MCF.dry_lot|warm,0.02,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,
+IPCC2019.MCF.daily_spread|cool,0.001,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,
+IPCC2019.MCF.daily_spread|temperate,0.005,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,
+IPCC2019.MCF.daily_spread|warm,0.01,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated),,10.68,all,VERIFIED,,,
+IPCC2019.MCF.pasture|all,0.0047,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.17 (Updated) (cont.),,10.69,all,VERIFIED,,,use with B0=0.19 (fn 2)
+IPCC2006.EF3.daily_spread,0.0,kg N2O-N/kg N excreted,fixed,,,2006 GL Vol4 Ch10,Table 10.21,,10.62,all,VERIFIED,,,
+IPCC2006.EF3.solid_storage,0.005,kg N2O-N/kg N excreted,uniform,0.0025,0.01,2006 GL Vol4 Ch10,Table 10.21,,10.62,all,VERIFIED,,,factor of 2
+IPCC2006.EF3.dry_lot,0.02,kg N2O-N/kg N excreted,uniform,0.01,0.04,2006 GL Vol4 Ch10,Table 10.21,,10.62,all,VERIFIED,,,factor of 2
+IPCC2006.EF3.liquid_crust,0.005,kg N2O-N/kg N excreted,uniform,0.0025,0.01,2006 GL Vol4 Ch10,Table 10.21,,10.62,all,VERIFIED,,,factor of 2
+IPCC2006.EF3.liquid_nocrust,0.0,kg N2O-N/kg N excreted,fixed,,,2006 GL Vol4 Ch10,Table 10.21,,10.62,all,VERIFIED,,,
+IPCC2006.EF3.lagoon,0.0,kg N2O-N/kg N excreted,fixed,,,2006 GL Vol4 Ch10,Table 10.21,,10.62,all,VERIFIED,,,
+IPCC2006.EF3.pit,0.002,kg N2O-N/kg N excreted,uniform,0.001,0.004,2006 GL Vol4 Ch10,Table 10.21,,10.62,all,VERIFIED,,,factor of 2
+IPCC2019.EF3.daily_spread,0.0,kg N2O-N/kg N excreted,fixed,,,2019 Refinement Vol4 Ch10,Table 10.21 (Updated),,10.91,all,VERIFIED,,,
+IPCC2019.EF3.solid_storage,0.01,kg N2O-N/kg N excreted,fixed,,,2019 Refinement Vol4 Ch10,Table 10.21 (Updated),,10.91,all,VERIFIED,,,
+IPCC2019.EF3.dry_lot,0.02,kg N2O-N/kg N excreted,fixed,,,2019 Refinement Vol4 Ch10,Table 10.21 (Updated),,10.91,all,VERIFIED,,,
+IPCC2019.EF3.liquid_crust,0.005,kg N2O-N/kg N excreted,fixed,,,2019 Refinement Vol4 Ch10,Table 10.21 (Updated),,10.91,all,VERIFIED,,,
+IPCC2019.EF3.liquid_nocrust,0.0,kg N2O-N/kg N excreted,fixed,,,2019 Refinement Vol4 Ch10,Table 10.21 (Updated),,10.91,all,VERIFIED,,,
+IPCC2019.EF3.liquid_cover,0.005,kg N2O-N/kg N excreted,fixed,,,2019 Refinement Vol4 Ch10,Table 10.21 (Updated),,10.91,all,VERIFIED,,,
+IPCC2019.EF3.lagoon,0.0,kg N2O-N/kg N excreted,fixed,,,2019 Refinement Vol4 Ch10,Table 10.21 (Updated),,10.91,all,VERIFIED,,,
+IPCC2019.EF3.pit,0.002,kg N2O-N/kg N excreted,fixed,,,2019 Refinement Vol4 Ch10,Table 10.21 (Updated),,10.91,all,VERIFIED,,,
+IPCC2019.EF3.digester,0.0006,kg N2O-N/kg N excreted,fixed,,,2019 Refinement Vol4 Ch10,Table 10.21 (Updated),,10.91,all,VERIFIED,,,
+IPCC2006.FracGasMS.dairy|lagoon,0.35,fraction,uniform,0.2,0.8,2006 GL Vol4 Ch10,Table 10.22,,10.65,all,VERIFIED,,,as published (%)
+IPCC2006.FracGasMS.dairy|liquid_slurry,0.4,fraction,uniform,0.15,0.45,2006 GL Vol4 Ch10,Table 10.22,,10.65,all,VERIFIED,,,as published (%)
+IPCC2006.FracGasMS.dairy|pit,0.28,fraction,uniform,0.1,0.4,2006 GL Vol4 Ch10,Table 10.22,,10.65,all,VERIFIED,,,as published (%)
+IPCC2006.FracGasMS.dairy|dry_lot,0.2,fraction,uniform,0.1,0.35,2006 GL Vol4 Ch10,Table 10.22,,10.65,all,VERIFIED,,,as published (%)
+IPCC2006.FracGasMS.dairy|solid_storage,0.3,fraction,uniform,0.1,0.4,2006 GL Vol4 Ch10,Table 10.22,,10.65,all,VERIFIED,,,as published (%)
+IPCC2006.FracGasMS.dairy|daily_spread,0.07,fraction,uniform,0.05,0.6,2006 GL Vol4 Ch10,Table 10.22,,10.65,all,VERIFIED,,,as published (%)
+IPCC2006.FracGasMS.other_cattle|dry_lot,0.3,fraction,uniform,0.2,0.5,2006 GL Vol4 Ch10,Table 10.22,,10.65,all,VERIFIED,,,as published (%)
+IPCC2006.FracGasMS.other_cattle|solid_storage,0.45,fraction,uniform,0.1,0.65,2006 GL Vol4 Ch10,Table 10.22,,10.65,all,VERIFIED,,,as published (%)
+IPCC2019.FracGasMS.dairy|lagoon,0.35,fraction,uniform,0.2,0.8,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.dairy|lagoon,0.0,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.dairy|liquid_crust,0.3,fraction,uniform,0.09,0.36,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.dairy|liquid_crust,0.0,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.dairy|liquid_nocrust,0.48,fraction,uniform,0.15,0.6,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.dairy|liquid_nocrust,0.0,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.dairy|liquid_cover,0.1,fraction,uniform,0.03,0.12,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.dairy|liquid_cover,0.0,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.dairy|pit,0.28,fraction,uniform,0.1,0.4,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.dairy|pit,0.0,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.dairy|daily_spread,0.07,fraction,uniform,0.05,0.6,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.dairy|daily_spread,0.0,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.dairy|solid_storage,0.3,fraction,uniform,0.1,0.4,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published plain solid row; matches 2006
+IPCC2019.FracLeachMS.dairy|solid_storage,0.02,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.dairy|dry_lot,0.3,fraction,uniform,0.2,0.5,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.dairy|dry_lot,0.035,fraction,uniform,0.0,0.07,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.other_cattle|liquid_nocrust,0.48,fraction,uniform,0.15,0.6,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.other_cattle|liquid_nocrust,0.0,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.other_cattle|solid_storage,0.45,fraction,uniform,0.1,0.65,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published plain solid row; matches 2006
+IPCC2019.FracLeachMS.other_cattle|solid_storage,0.02,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.other_cattle|dry_lot,0.3,fraction,uniform,0.2,0.5,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.other_cattle|dry_lot,0.035,fraction,uniform,0.0,0.07,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
+IPCC2019.FracGasMS.other_cattle|daily_spread,0.07,fraction,uniform,0.05,0.6,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published 
+IPCC2019.FracLeachMS.other_cattle|daily_spread,0.0,fraction,fixed,,,2019 Refinement Vol4 Ch10,Table 10.22 (Updated),,10.97-10.98,all,VERIFIED,,,as published
