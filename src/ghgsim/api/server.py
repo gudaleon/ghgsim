@@ -50,41 +50,135 @@ async def root():
 
 
 @app.get("/api/runs")
-async def list_runs(limit: int = 50, offset: int = 0) -> dict[str, Any]:
+async def list_runs(limit: int = 50, offset: int = 0, results_dir: str = "results") -> dict[str, Any]:
     """
-    List available runs.
+    List available runs by scanning results directory for manifests.
     
     Args:
         limit: Max results (default 50)
         offset: Pagination offset
+        results_dir: Results directory path (default: "results")
         
     Returns:
         {"runs": [...], "total": N}
     """
-    # Stub: would scan results/ directory for manifests
-    return {
-        "runs": [],
-        "total": 0,
-        "message": "Stub implementation - no runs loaded",
-    }
+    try:
+        from ghgsim.core.manifest import load_manifest
+        
+        results_path = Path(results_dir)
+        if not results_path.exists():
+            return {
+                "runs": [],
+                "total": 0,
+                "message": f"Results directory not found: {results_dir}",
+            }
+        
+        # Scan for manifest.yaml files
+        manifests = []
+        for manifest_path in results_path.glob("*/manifest.yaml"):
+            try:
+                manifest = load_manifest(manifest_path)
+                run_dir = manifest_path.parent
+                
+                # Load results summary if available
+                results_file = run_dir / "results.csv"
+                summary = {"n_counties": 0, "total_co2e_t": 0.0}
+                if results_file.exists():
+                    import pandas as pd
+                    df = pd.read_csv(results_file)
+                    summary["n_counties"] = len(df)
+                    if "CO2e_t" in df.columns:
+                        summary["total_co2e_t"] = df["CO2e_t"].sum()
+                
+                manifests.append({
+                    "run_id": manifest.run_id,
+                    "created_at": manifest.created_at,
+                    "package_version": manifest.package_version,
+                    "git_commit": manifest.git.commit_sha if manifest.git else None,
+                    "git_branch": manifest.git.branch if manifest.git else None,
+                    "is_dirty": manifest.git.is_dirty if manifest.git else None,
+                    "n_counties": summary["n_counties"],
+                    "total_co2e_t": summary["total_co2e_t"],
+                    "rng_seed": manifest.rng_seed,
+                    "allow_unverified": manifest.allow_unverified,
+                    "manifest_path": str(manifest_path),
+                })
+            except Exception as e:
+                logger.warning(f"Failed to load manifest {manifest_path}: {e}")
+                continue
+        
+        # Sort by created_at (newest first)
+        manifests.sort(key=lambda x: x["created_at"], reverse=True)
+        
+        # Paginate
+        total = len(manifests)
+        paginated = manifests[offset:offset + limit]
+        
+        return {
+            "runs": paginated,
+            "total": total,
+            "limit": limit,
+            "offset": offset,
+        }
+        
+    except Exception as e:
+        logger.error(f"Error listing runs: {e}")
+        return {
+            "runs": [],
+            "total": 0,
+            "error": str(e),
+        }
 
 
 @app.get("/api/run/{run_id}")
-async def get_run(run_id: str) -> dict[str, Any]:
+async def get_run(run_id: str, results_dir: str = "results") -> dict[str, Any]:
     """
-    Get single run results.
+    Get single run results with full details.
     
     Args:
         run_id: Run identifier
+        results_dir: Results directory path (default: "results")
         
     Returns:
-        Run manifest and summary
+        Run manifest and summary with county-level results
         
     Raises:
         HTTPException: If run not found
     """
-    # Stub: would load from results/{run_id}/manifest.yaml
-    raise HTTPException(status_code=404, detail=f"Run '{run_id}' not found (stub)")
+    try:
+        from ghgsim.core.manifest import load_manifest
+        
+        results_path = Path(results_dir)
+        manifest_path = results_path / run_id / "manifest.yaml"
+        
+        if not manifest_path.exists():
+            raise HTTPException(
+                status_code=404, 
+                detail=f"Run '{run_id}' not found at {manifest_path}"
+            )
+        
+        manifest = load_manifest(manifest_path)
+        run_dir = manifest_path.parent
+        
+        # Load results if available
+        results_file = run_dir / "results.csv"
+        results_data = None
+        if results_file.exists():
+            import pandas as pd
+            df = pd.read_csv(results_file)
+            results_data = df.to_dict(orient="records")
+        
+        return {
+            "manifest": manifest.to_dict(),
+            "results": results_data,
+            "run_dir": str(run_dir),
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error loading run {run_id}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.get("/api/manifest/{run_id}")
