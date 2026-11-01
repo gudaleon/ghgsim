@@ -57,6 +57,11 @@ STATUS_CLASS = {
     "UNVERIFIED": "unverified",
 }
 
+# Strongest first. A fork that maps to several coefficients shows the weakest.
+CANONICAL_STATUSES = ("VERIFIED", "SOURCE-TRACED", "HOLOS-ONLY", "UNVERIFIED")
+STATUS_WEAKNESS = {name: index for index, name in enumerate(CANONICAL_STATUSES)}
+STATUS_COLUMN_RE = re.compile(r"^v(\d+)\s+status$", re.IGNORECASE)
+
 PCT_DECIMALS = 3
 
 
@@ -170,21 +175,121 @@ def load_forks_json(path: Path) -> list[dict[str, Any]]:
     return data
 
 
-def load_trace_status(path: Path) -> dict[str, str]:
-    """Map coefficient-trace param id -> status (exact param key)."""
-    status: dict[str, str] = {}
+def normalize_trace_status(raw: str) -> str:
+    """Take the leftmost canonical token from a status cell (parentheticals dropped)."""
+    text = str(raw or "").strip()
+    if not text:
+        return ""
+    found: list[tuple[int, int, str]] = []
+    for token in CANONICAL_STATUSES:
+        idx = text.find(token)
+        if idx >= 0:
+            found.append((idx, -len(token), token))
+    if not found:
+        return "UNVERIFIED"
+    found.sort()
+    return found[0][2]
+
+
+def newest_status_column(fieldnames: Sequence[str] | None) -> str:
+    """Highest `vN status` column, else the unversioned `status` field."""
+    versioned: list[tuple[int, str]] = []
+    status_col = "status"
+    for name in fieldnames or ():
+        stripped = str(name).strip()
+        match = STATUS_COLUMN_RE.match(stripped)
+        if match:
+            versioned.append((int(match.group(1)), name))
+        elif stripped.lower() == "status":
+            status_col = name
+    if versioned:
+        versioned.sort(key=lambda item: item[0])
+        return versioned[-1][1]
+    return status_col
+
+
+def row_trace_status(row: Mapping[str, str], fieldnames: Sequence[str] | None = None) -> str:
+    """Newest non-empty versioned status on a row, normalized to a canonical token."""
+    names = list(fieldnames if fieldnames is not None else row.keys())
+    versioned: list[tuple[int, str]] = []
+    status_col: str | None = None
+    for name in names:
+        stripped = str(name).strip()
+        match = STATUS_COLUMN_RE.match(stripped)
+        if match:
+            versioned.append((int(match.group(1)), name))
+        elif stripped.lower() == "status":
+            status_col = name
+    versioned.sort(key=lambda item: item[0], reverse=True)
+    for _, name in versioned:
+        raw = str(row.get(name, "")).strip()
+        if raw:
+            return normalize_trace_status(raw)
+    if status_col:
+        raw = str(row.get(status_col, "")).strip()
+        if raw:
+            return normalize_trace_status(raw)
+    return "UNVERIFIED"
+
+
+def load_trace_table(path: Path) -> list[dict[str, str]]:
+    """Load param / where-used / newest-column status from a coefficient-trace CSV."""
+    rows: list[dict[str, str]] = []
     with Path(path).open(encoding="utf-8") as handle:
-        for row in csv.DictReader(handle):
+        reader = csv.DictReader(handle)
+        fieldnames = reader.fieldnames or []
+        for row in reader:
             key = str(row.get("param", "")).strip()
-            value = str(row.get("status", "")).strip()
-            if key:
-                status[key] = value
-    return status
+            if not key:
+                continue
+            rows.append(
+                {
+                    "param": key,
+                    "where_used": str(row.get("where used", "")),
+                    "status": row_trace_status(row, fieldnames),
+                    "note": str(row.get("note", "")),
+                }
+            )
+    return rows
+
+
+def load_trace_status(path: Path) -> dict[str, str]:
+    """Map coefficient-trace param id -> newest-column status."""
+    return {row["param"]: row["status"] for row in load_trace_table(path)}
+
+
+def weakest_status(statuses: Sequence[str]) -> str:
+    """Weakest canonical status in `statuses`, or UNVERIFIED if none map."""
+    mapped = [normalize_trace_status(item) or "UNVERIFIED" for item in statuses if str(item).strip()]
+    if not mapped:
+        return "UNVERIFIED"
+    return max(mapped, key=lambda item: STATUS_WEAKNESS.get(item, len(STATUS_WEAKNESS)))
+
+
+def _row_maps_to_fork(row: Mapping[str, str], fork_id: str) -> bool:
+    param = str(row.get("param", "")).strip()
+    where = str(row.get("where_used", row.get("where used", "")))
+    if param == fork_id or param.startswith(f"{fork_id}|"):
+        return True
+    return fork_id in where
+
+
+def fork_status_from_trace(fork_id: str, rows: Sequence[Mapping[str, str]]) -> str:
+    """Weakest newest-column status among every coefficient that maps to `fork_id`."""
+    matched = [str(row["status"]) for row in rows if _row_maps_to_fork(row, fork_id)]
+    return weakest_status(matched)
+
+
+def map_fork_statuses(
+    fork_ids: Sequence[str],
+    rows: Sequence[Mapping[str, str]],
+) -> dict[str, str]:
+    return {fork_id: fork_status_from_trace(fork_id, rows) for fork_id in fork_ids}
 
 
 def _status_for(fork_id: str, trace: Mapping[str, str]) -> str:
     if fork_id in trace:
-        return trace[fork_id]
+        return normalize_trace_status(trace[fork_id]) or "UNVERIFIED"
     return "UNVERIFIED"
 
 
@@ -455,10 +560,12 @@ def build_from_data_dir(data_dir: Path, *, output_version: str) -> dict[str, Any
         except ValueError:
             return resolved.as_posix()
 
+    rows = load_trace_table(paths["coefficient_trace"])
+    trace_status = map_fork_statuses([str(fork["id"]) for fork in forks], rows)
     return build_fork_diagram(
         forks,
         observations=observations,
-        trace_status=load_trace_status(paths["coefficient_trace"]),
+        trace_status=trace_status,
         sources={key: _rel(path) for key, path in paths.items()},
         output_version=output_version,
     )
