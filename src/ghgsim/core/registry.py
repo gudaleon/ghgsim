@@ -14,9 +14,19 @@ from pathlib import Path
 
 
 class VerificationStatus(Enum):
-    """Parameter verification status."""
+    """Parameter verification status.
+
+    VERIFIED: value taken from a primary published source with page and table
+        (or equation). A Holos file:line citation is never VERIFIED.
+    SOURCE-TRACED: value traced to Holos (or another intermediate implementation)
+        with a file:line or table citation, but not independently confirmed
+        against a primary published source.
+    UNVERIFIED: no adequate source for the numeric value.
+    ASSUMPTION: explicit modelling assumption, not a published factor.
+    """
 
     VERIFIED = "VERIFIED"
+    SOURCE_TRACED = "SOURCE-TRACED"
     UNVERIFIED = "UNVERIFIED"
     ASSUMPTION = "ASSUMPTION"
 
