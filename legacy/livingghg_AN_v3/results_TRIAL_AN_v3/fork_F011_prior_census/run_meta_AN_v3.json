@@ -1,0 +1,16 @@
+{
+ "label": "TRIAL RUN - not results",
+ "args": {
+  "states": "VT,DE",
+  "n": 0,
+  "workers": 2,
+  "out": "results_TRIAL_AN_v3/fork_F011_prior_census",
+  "withheld_fill": "prior_census",
+  "manure_n_basis": "noncattle_excreted",
+  "unpermitted_facility_factor": 1.0,
+  "allow_watershed_factor": false,
+  "trial": true,
+  "nass": "/workspace/paperB/livingghg_AN_v3/data_nass/nass_census2022_county_AN_v1.csv.gz"
+ },
+ "suffix": "_AN_v3"
+}

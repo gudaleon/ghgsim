@@ -1,0 +1,18 @@
+NOTE: STYLIZED EXAMPLE INPUTS - illustrative only, not data for any real farm (v2: adds manure systems)
+IPCC2006: N2O 1108.7 kg, CH4 38976.7 kg, 1385.2 t CO2e
+IPCC2019: N2O 1342.9 kg, CH4 35524.7 kg, 1350.6 t CO2e
+Delta 2019-2006: -34.6 t CO2e (-2.5%)
+
+OAT fork ranking (IPCC2019 base 1350.6 t CO2e):
+rank fork  type             option                  delta_t  delta_%  flag
+1    F009  bug              exclude                  -308.1    -22.8  
+2    F002  input_assumption dry                      -210.9    -15.6  
+3    F008  input_assumption 12mo                     +106.5     +7.9  
+4    F005  bug              omit_44_28               -101.4     -7.5  
+5    F007  input_assumption dairy_high_ndf_le35       -72.7     -5.4  
+6    F006  code_choice      from_dmi                  +47.6     +3.5  
+7    F001  code_choice      aggregated                -38.6     -2.9  
+8    F004  bug              exclude                   -28.8     -2.1  
+9    F003  input_assumption urea                       +4.7     +0.3  
+
+LHS (n=500, uniform placeholder) IPCC2019 CO2e t: median 1369.5, 2.5-97.5% [1175.3, 1591.5]

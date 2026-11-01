@@ -1,0 +1,181 @@
+[
+ {
+  "id": "F001",
+  "key": "ef1_mode",
+  "title": "EF1 aggregated vs climate/N-type disaggregated (2019)",
+  "type": "code_choice",
+  "description": "2019 Table 11.1 offers aggregated or disaggregated EF1/EF3PRP/EF4.",
+  "options": [
+   "disaggregated",
+   "aggregated"
+  ],
+  "default": "disaggregated",
+  "provenance": {
+   "source": "2019 Refinement Vol4 Ch11 Table 11.1/11.3",
+   "reported_by": "AN",
+   "date": "2026-10-31"
+  },
+  "status": "open"
+ },
+ {
+  "id": "F002",
+  "key": "climate",
+  "title": "Farm climate classification wet vs dry",
+  "type": "input_assumption",
+  "description": "Wet/dry per P:PET ratio; misclassification near threshold.",
+  "options": [
+   "wet",
+   "dry"
+  ],
+  "default": "wet",
+  "provenance": {
+   "source": "2019 Refinement Vol4 Ch11 Table 11.1 fn 4",
+   "reported_by": "AN",
+   "date": "2026-10-31"
+  },
+  "status": "open"
+ },
+ {
+  "id": "F003",
+  "key": "fracgasf",
+  "title": "FracGASF aggregated vs urea-specific (2019)",
+  "type": "input_assumption",
+  "description": "Fertiliser type unknown vs urea.",
+  "options": [
+   "all",
+   "urea"
+  ],
+  "default": "all",
+  "provenance": {
+   "source": "2019 Refinement Vol4 Ch11 Table 11.3",
+   "reported_by": "AN",
+   "date": "2026-10-31"
+  },
+  "status": "open"
+ },
+ {
+  "id": "F004",
+  "key": "crop_residue",
+  "title": "Crop residue N included vs omitted",
+  "type": "bug",
+  "description": "Simulated omission of F_CR from N inputs.",
+  "options": [
+   "include",
+   "exclude"
+  ],
+  "default": "include",
+  "provenance": {
+   "source": "synthetic test fork",
+   "reported_by": "AN",
+   "date": "2026-10-31"
+  },
+  "status": "open"
+ },
+ {
+  "id": "F005",
+  "key": "unit_bug",
+  "title": "N2O-N to N2O conversion (44/28) omitted",
+  "type": "bug",
+  "description": "Simulated unit-conversion bug.",
+  "options": [
+   "none",
+   "omit_44_28"
+  ],
+  "default": "none",
+  "provenance": {
+   "source": "synthetic test fork",
+   "reported_by": "AN",
+   "date": "2026-10-31"
+  },
+  "status": "open"
+ },
+ {
+  "id": "F006",
+  "key": "ge_source",
+  "title": "GE from input vs DMI x 18.45 MJ/kg DM",
+  "type": "code_choice",
+  "description": "Gross energy supplied directly vs derived from DMI.",
+  "options": [
+   "input",
+   "from_dmi"
+  ],
+  "default": "input",
+  "provenance": {
+   "source": "2019 Refinement Vol4 Ch10 (18.45 default)",
+   "reported_by": "AN",
+   "date": "2026-10-31"
+  },
+  "status": "open"
+ },
+ {
+  "id": "F007",
+  "key": "ym_category",
+  "title": "Dairy Ym category: medium vs high-producing (2019)",
+  "type": "input_assumption",
+  "description": "Milk-yield class choice for Table 10.12 (Updated).",
+  "options": [
+   "dairy_medium",
+   "dairy_high_ndf_le35"
+  ],
+  "default": "dairy_medium",
+  "provenance": {
+   "source": "2019 Refinement Vol4 Ch10 Table 10.12 (Updated)",
+   "reported_by": "AN",
+   "date": "2026-10-31"
+  },
+  "status": "open"
+ },
+ {
+  "id": "F008",
+  "key": "liquid_retention",
+  "title": "2019 liquid/slurry MCF: 6-month vs 12-month retention",
+  "type": "input_assumption",
+  "description": "Storage duration unknown; Table 10.17 (Updated) default is 6 month when unknown (fn 1).",
+  "options": [
+   "6mo",
+   "12mo"
+  ],
+  "default": "6mo",
+  "provenance": {
+   "source": "2019 Refinement Vol4 Ch10 Table 10.17 (Updated) p10.68, fn 1 p10.70",
+   "reported_by": "AN",
+   "date": "2026-10-31"
+  },
+  "status": "open"
+ },
+ {
+  "id": "F009",
+  "key": "manure",
+  "title": "Manure module included vs omitted",
+  "type": "bug",
+  "description": "Simulated omission of the manure management category.",
+  "options": [
+   "include",
+   "exclude"
+  ],
+  "default": "include",
+  "provenance": {
+   "source": "synthetic test fork",
+   "reported_by": "AN",
+   "date": "2026-10-31"
+  },
+  "status": "open"
+ },
+ {
+  "id": "F013",
+  "key": "ym_source",
+  "title": "Ym source for county cattle",
+  "type": "input_assumption",
+  "description": "'epa_state': use the herd's Ym_pct (EPA Inventory 2025 Annex 3.11 Table A-139 dairy regional Ym; Table A-138 beef cow Ym 6.5%), which together with GE derived from EPA's state EF reproduces EPA Table A-142 EF exactly. 'ipcc_default': use the IPCC table Ym for the herd's ym_category (GE unchanged). Herds without Ym_pct always use the IPCC table.",
+  "options": [
+   "epa_state",
+   "ipcc_default"
+  ],
+  "default": "epa_state",
+  "provenance": {
+   "source": "EPA (2025) EPA 430-R-25-003 Annex 3.11 Tables A-138, A-139, A-142; IPCC 2006/2019 Vol4 Ch10 Table 10.12",
+   "status": "VERIFIED"
+  },
+  "status": "VERIFIED"
+ }
+]

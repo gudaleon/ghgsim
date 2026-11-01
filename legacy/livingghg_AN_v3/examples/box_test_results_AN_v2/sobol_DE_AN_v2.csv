@@ -1,0 +1,17 @@
+state,guideline,factor,S1,ST,n_base,n_evals,note
+DE,IPCC2006,EF3PRP_CPP[all],0.005746529680500342,0.006407627527816275,8,72,county (D) values excluded from state sum
+DE,IPCC2006,EF4[all],0.013982721528542658,0.011122547000173136,8,72,county (D) values excluded from state sum
+DE,IPCC2006,EF5[all],-0.006362084558019798,8.230260174956416e-05,8,72,county (D) values excluded from state sum
+DE,IPCC2006,FracGASM[all],0.0027355783961925317,4.882732581237171e-05,8,72,county (D) values excluded from state sum
+DE,IPCC2006,Ym[dairy],0.13181957318599288,0.13164809552326412,8,72,county (D) values excluded from state sum
+DE,IPCC2006,Ym[other_cattle],-0.03108422613792951,0.01351871211633662,8,72,county (D) values excluded from state sum
+DE,IPCC2006,fork:F009,1.0817796437561995,0.9473150981245004,8,72,county (D) values excluded from state sum
+DE,IPCC2019,EF3PRP_CPP[all],-0.008907778251707311,0.0003036520964181625,8,88,county (D) values excluded from state sum
+DE,IPCC2019,EF4[all],0.02024695891004994,0.008965076752765406,8,88,county (D) values excluded from state sum
+DE,IPCC2019,EF5[all],-0.005963836683754917,0.0002895519025036721,8,88,county (D) values excluded from state sum
+DE,IPCC2019,FracGASM[all],0.0013931733868596417,0.00015574507118960116,8,88,county (D) values excluded from state sum
+DE,IPCC2019,Ym[dairy_medium],-0.26766215978293173,0.23658508646023718,8,88,county (D) values excluded from state sum
+DE,IPCC2019,Ym[nondairy_forage_gt75],0.017753860494806994,0.008187501285334122,8,88,county (D) values excluded from state sum
+DE,IPCC2019,fork:F001,0.010331830259015903,0.0023450664297608816,8,88,county (D) values excluded from state sum
+DE,IPCC2019,fork:F008,0.06905244299992887,0.03636412299727416,8,88,county (D) values excluded from state sum
+DE,IPCC2019,fork:F009,0.8532823740479262,1.0307194392559944,8,88,county (D) values excluded from state sum

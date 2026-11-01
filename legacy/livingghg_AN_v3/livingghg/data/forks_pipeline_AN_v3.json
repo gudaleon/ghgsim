@@ -1,0 +1,55 @@
+[
+ {
+  "id": "F010",
+  "key": "unpermitted_facility_factor",
+  "title": "Watershed-only sensitivity: livestock at facilities outside the permit system (REFRAMED; formerly 'census_undercount_factor')",
+  "type": "input_assumption",
+  "description": "REFRAMED v3. Kast et al. (2019) compared barn-imagery livestock estimates (EWG 2019, 2018 imagery) with permitted-CAFO / 2012-Census-bounded estimates for the Ohio Maumee watershed and found more animals than the permit-based accounting (cattle +54%, swine +30%, poultry +544%). This is evidence of a REGULATORY gap (animals at unpermitted, smaller facilities), NOT evidence that the USDA Census undercounts animals. The factor is therefore a watershed-only sensitivity for analyses that start from permit records; it must NOT be applied to NASS Census county totals. Default 1.0 (no adjustment). run_counties ignores values other than 1.0 unless --allow-watershed-factor is given, and labels outputs accordingly.",
+  "options": [
+   1.0,
+   1.54
+  ],
+  "default": 1.0,
+  "scope": "watershed-only (Maumee, Ohio); not national; not a census correction",
+  "provenance": {
+   "source": "Kast JB, Long CM, Muenich RL, Martin JF, Kalcic MM (2019) Manure management at ultra-high resolution: Insights from the Maumee River watershed. J. Great Lakes Res. 45:1162-1170, doi:10.1016/j.jglr.2019.09.015; EWG (2019) Explosion of unregulated factory farms in Maumee watershed fuels Lake Erie's toxic blooms",
+   "status": "VERIFIED (figures as read in Phase 2 gap-fill task); interpretation corrected by Alex Neumann"
+  },
+  "status": "VERIFIED"
+ },
+ {
+  "id": "F011",
+  "key": "withheld_fill",
+  "title": "Fill for NASS county cow counts withheld as (D)",
+  "type": "input_assumption",
+  "description": "'sizeclass' (default): state residual allocated by size-class estimates (livingghg.gapfill; validation by masking 20% of disclosed counties: milk cows median 21.5% / head-weighted 22.9% abs error, beef cows 3.6% / 6.7%). 'prior_census': USGS approach, most recent disclosed value in 2017/2012/2007/2002 Census (Falcone 2021); not constrained to 2022 state totals. 'none': withheld = 0.",
+  "options": [
+   "sizeclass",
+   "prior_census",
+   "none"
+  ],
+  "default": "sizeclass",
+  "provenance": {
+   "source": "USDA NASS Census of Agriculture 2002-2022 Quick Stats bulk files; Falcone JA (2021) USGS Open-File Report 2020-1153 and data release doi:10.5066/P9VSQN3C",
+   "status": "VERIFIED"
+  },
+  "status": "VERIFIED"
+ },
+ {
+  "id": "F012",
+  "key": "manure_n_basis",
+  "title": "Non-cattle manure N applied to soil (F_ON)",
+  "type": "input_assumption",
+  "description": "'noncattle_excreted' (default): F_ON = Falcone 2021 county 2017 excreted manure N for hogs + poultry + other (upper bound: no storage/handling losses). Cattle manure N is excluded because cattle are modelled explicitly (pasture N enters as F_PRP_CPP); applied managed cattle manure is NOT counted (known limitation, underestimate). 'none': F_ON = 0.",
+  "options": [
+   "noncattle_excreted",
+   "none"
+  ],
+  "default": "noncattle_excreted",
+  "provenance": {
+   "source": "Falcone JA (2021) Estimates of county-level nitrogen and phosphorus from fertilizer and manure from 1950 through 2017 in the conterminous United States, USGS data release doi:10.5066/P9VSQN3C (manure2017.txt)",
+   "status": "VERIFIED"
+  },
+  "status": "VERIFIED"
+ }
+]

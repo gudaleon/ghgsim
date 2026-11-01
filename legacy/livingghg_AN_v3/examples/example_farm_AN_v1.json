@@ -1,0 +1,4 @@
+{"_label":"STYLIZED EXAMPLE INPUTS - illustrative only, not data for any real farm",
+ "soil":{"climate":"wet","F_SN":20000,"F_ON":15000,"F_CR":8000,"F_SOM":0,"F_PRP_CPP":2000},
+ "herds":[{"name":"dairy cows","head":200,"GE_MJ_day":330,"DMI_kg_day":19,
+           "ym_category":{"IPCC2006":"dairy","IPCC2019":"dairy_medium"}}]}

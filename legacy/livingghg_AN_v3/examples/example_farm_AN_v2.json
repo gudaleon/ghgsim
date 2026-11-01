@@ -1,0 +1,39 @@
+{
+ "_label": "STYLIZED EXAMPLE INPUTS - illustrative only, not data for any real farm (v2: adds manure systems)",
+ "soil": {
+  "climate": "wet",
+  "F_SN": 20000,
+  "F_ON": 15000,
+  "F_CR": 8000,
+  "F_SOM": 0,
+  "F_PRP_CPP": 2000
+ },
+ "herds": [
+  {
+   "name": "dairy cows",
+   "head": 200,
+   "GE_MJ_day": 330,
+   "DMI_kg_day": 19,
+   "ym_category": {
+    "IPCC2006": "dairy",
+    "IPCC2019": "dairy_medium"
+   },
+   "manure": {
+    "animal": "dairy",
+    "region": "north_america",
+    "systems": {
+     "liquid_nocrust": 0.6,
+     "solid_storage": 0.2,
+     "daily_spread": 0.2
+    },
+    "mcf_zone": {
+     "IPCC2006": "15C",
+     "IPCC2019": "cool_temperate_moist"
+    },
+    "TAM_kg": 604,
+    "VS_kg_day": 5.4,
+    "_note": "TAM/VS example inputs = 2006 NA defaults (Table 10A-4) for both guidelines; 2019 TAM/VS defaults not transcribed"
+   }
+  }
+ ]
+}
