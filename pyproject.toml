@@ -28,6 +28,7 @@ dependencies = [
     "scipy>=1.7",
     "pint>=0.20",
     "pyyaml>=6.0",
+    "click>=8.0",
 ]
 
 [project.optional-dependencies]
@@ -49,6 +50,9 @@ dev = [
     "ruff>=0.1",
     "mypy>=1.0",
 ]
+
+[project.scripts]
+ghgsim = "ghgsim.api.cli:main"
 
 [project.urls]
 Repository = "https://github.com/gudaleon/ghgsim"
