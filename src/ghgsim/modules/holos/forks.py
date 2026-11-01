@@ -5,12 +5,12 @@ from pathlib import Path
 
 from ghgsim.services.forks import Fork, ForkRegistry
 
-_FORKS_JSON = Path(__file__).resolve().parents[3].parent / "data" / "holos_forks_AN_v1.json"
+_FORKS_JSON = Path(__file__).resolve().parents[3].parent / "data" / "holos_forks_AN_v2.json"
 
 
 @lru_cache(maxsize=1)
 def get_holos_fork_registry() -> ForkRegistry:
-    """Load the Holos Phase 2 fork registry from data/holos_forks_AN_v1.json."""
+    """Load the Holos fork registry from data/holos_forks_AN_v2.json."""
     registry = ForkRegistry()
     registry.load_from_json(_FORKS_JSON)
     return registry

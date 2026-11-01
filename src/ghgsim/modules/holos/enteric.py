@@ -143,7 +143,7 @@ class HolosEnteric:
         Compute enteric CH4.
 
         Default: IPCC 2006 Eq 10.21. Optional Eq 10.3 GE when NE and DE are supplied.
-        Forks (see data/holos_forks_AN_v1.json): HOLOS.GE.digestibility,
+        Forks (see data/holos_forks_AN_v2.json): HOLOS.GE.digestibility,
         HOLOS.ENTERIC.calf_zero, HOLOS.YM.dairy.
         """
         fork_settings = forks_from_inputs(inputs)

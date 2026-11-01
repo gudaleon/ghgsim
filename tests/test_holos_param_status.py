@@ -9,7 +9,7 @@ from ghgsim.core.registry import VerificationStatus, load_parameter_csv
 from ghgsim.modules.holos.forks import get_holos_fork_registry, list_holos_as_coded_forks
 
 ROOT = Path(__file__).resolve().parents[1]
-CANADA = ROOT / "data" / "holos_params_canada_AN_v3.csv"
+CANADA = ROOT / "data" / "holos_params_canada_AN_v4.csv"
 US = ROOT / "data" / "holos_params_us_AN_v2.csv"
 ALLOWED = {item.value for item in VerificationStatus}
 
@@ -53,17 +53,17 @@ def test_verified_is_not_only_a_holos_file_line(path):
         assert not holos_only, f"{row['key']} VERIFIED from Holos only"
 
 
-def test_canada_v3_loads_with_allow_unverified():
+def test_canada_v4_loads_with_allow_unverified():
     registry = load_parameter_csv(CANADA, allow_unverified=True)
     unverified = {p.key: p.status for p in registry.list_unverified()}
     assert unverified["HOLOS.VS.dairy_calves_coeff|canada"] == VerificationStatus.UNVERIFIED
-    assert unverified["HOLOS.Ym.dairy_lactating|canada"] == VerificationStatus.SOURCE_TRACED
+    assert unverified["HOLOS.Ym.dairy_lactating|canada"] == VerificationStatus.UNVERIFIED
     assert registry.get("HOLOS.B0.dairy|canada").status == VerificationStatus.VERIFIED
 
 
-def test_source_traced_refused_without_flag():
+def test_unverified_dairy_ym_refused_without_flag():
     registry = load_parameter_csv(CANADA, allow_unverified=False)
-    with pytest.raises(ValueError, match="SOURCE-TRACED"):
+    with pytest.raises(ValueError, match="UNVERIFIED"):
         registry.get("HOLOS.Ym.dairy_lactating|canada")
 
 

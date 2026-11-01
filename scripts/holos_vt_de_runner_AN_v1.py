@@ -55,7 +55,7 @@ def load_registries() -> dict[str, ParameterRegistry]:
     return {
         "ipcc": load_parameter_csv(ROOT / "data" / "ipcc_params_AN_v4.csv", allow_unverified=False),
         "canada": load_parameter_csv(
-            ROOT / "data" / "holos_params_canada_AN_v3.csv", allow_unverified=True
+            ROOT / "data" / "holos_params_canada_AN_v4.csv", allow_unverified=True
         ),
         "us": load_parameter_csv(ROOT / "data" / "holos_params_us_AN_v2.csv", allow_unverified=True),
     }
