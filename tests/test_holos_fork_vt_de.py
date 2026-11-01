@@ -50,12 +50,12 @@ def test_eight_forks_registered():
 
 
 def test_measurement_csv_matches_command_and_county_count():
-    path = ROOT / "data" / "holos_fork_deltas_vt_de_AN_v1.csv"
+    path = ROOT / "data" / "holos_fork_deltas_vt_de_AN_v2.csv"
     if not path.exists():
         pytest.skip("measurement CSV not generated yet")
     df = pd.read_csv(path)
     assert df["command"].nunique() == 1
-    assert df["command"].iloc[0] == "python3 scripts/measure_holos_forks_vt_de_AN_v1.py"
+    assert df["command"].iloc[0] == "python3 scripts/measure_holos_forks_vt_de_AN_v2.py"
     assert df["fips"].nunique() == 17
     ym = df[(df["pathway"] == "epa_vs") & (df["fork_id"] == "HOLOS.YM.dairy")]
     zeros = df[

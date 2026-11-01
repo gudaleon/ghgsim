@@ -37,7 +37,13 @@ class HolosManure:
         "VS_kg_day": VarSpec("VS_kg_day", "kg / day", "Volatile solids override", "scalar", False),
         "Nex_kg_yr": VarSpec("Nex_kg_yr", "kg N / year", "Nitrogen excretion override", "scalar", False),
         "animal_class": VarSpec("animal_class", "dimensionless", "adult or calf", "scalar", False),
-        "cover_type": VarSpec("cover_type", "dimensionless", "none, natural_crust, or other_cover", "scalar", False),
+        "cover_type": VarSpec(
+            "cover_type",
+            "dimensionless",
+            "none, natural_crust, or solid_cover (0.25 only for solid_cover)",
+            "scalar",
+            False,
+        ),
         "forks": VarSpec("forks", "dimensionless", "Dict of fork_id -> option", "scalar", False),
     }
 

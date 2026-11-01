@@ -55,7 +55,7 @@ def load_registries() -> dict[str, ParameterRegistry]:
     return {
         "ipcc": load_parameter_csv(ROOT / "data" / "ipcc_params_AN_v4.csv", allow_unverified=False),
         "canada": load_parameter_csv(
-            ROOT / "data" / "holos_params_canada_AN_v4.csv", allow_unverified=True
+            ROOT / "data" / "holos_params_canada_AN_v5.csv", allow_unverified=True
         ),
         "us": load_parameter_csv(ROOT / "data" / "holos_params_us_AN_v2.csv", allow_unverified=True),
     }
@@ -113,8 +113,8 @@ def holos_compute_params(
         "TAM_beef_canada": _reg_get(canada, "HOLOS.TAM.beef_cow_lactating|canada"),
         "calf_n_kg_head_day": _reg_get(canada, "HOLOS.Nrate.dairy_calves_kg_head_day|canada"),
         "calf_vs_coeff": _reg_get(canada, "HOLOS.VS.dairy_calves_coeff|canada"),
-        "cover_crust_factor": _reg_get(canada, "HOLOS.COVER.natural_crust_factor"),
-        "cover_other_factor": _reg_get(canada, "HOLOS.COVER.other_cover_factor"),
+        "cover_crust_reduction": _reg_get(canada, "HOLOS.COVER.natural_crust_reduction"),
+        "cover_solid_reduction": _reg_get(canada, "HOLOS.COVER.solid_cover_reduction"),
         "EF1": _reg_get(ipcc, "IPCC2006.EF1.all"),
         "EF3PRP_CPP": _reg_get(ipcc, "IPCC2006.EF3PRP_CPP.all"),
         "EF4": _reg_get(ipcc, "IPCC2006.EF4.all"),

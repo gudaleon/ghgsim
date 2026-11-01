@@ -145,8 +145,8 @@ def test_holos_manure_facade_splits_direct_and_indirect():
             "MCF_pasture_cool": 0.015,
             "MCF_daily_spread_cool": 0.001,
             "CH4_M3_TO_KG": 0.67,
-            "cover_crust_factor": 0.4,
-            "cover_other_factor": 0.25,
+            "cover_crust_reduction": 0.40,
+            "cover_solid_reduction": 0.25,
         },
     )
     assert result["CH4"] > 0

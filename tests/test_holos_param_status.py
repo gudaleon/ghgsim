@@ -10,6 +10,7 @@ from ghgsim.modules.holos.forks import get_holos_fork_registry, list_holos_as_co
 
 ROOT = Path(__file__).resolve().parents[1]
 CANADA = ROOT / "data" / "holos_params_canada_AN_v4.csv"
+CANADA_V5 = ROOT / "data" / "holos_params_canada_AN_v5.csv"
 US = ROOT / "data" / "holos_params_us_AN_v2.csv"
 ALLOWED = {item.value for item in VerificationStatus}
 
@@ -22,7 +23,7 @@ def _rows(path: Path):
         return list(csv.DictReader(handle))
 
 
-@pytest.mark.parametrize("path", [CANADA, US])
+@pytest.mark.parametrize("path", [CANADA, CANADA_V5, US])
 def test_status_values_are_known(path):
     rows = _rows(path)
     assert rows
@@ -59,6 +60,18 @@ def test_canada_v4_loads_with_allow_unverified():
     assert unverified["HOLOS.VS.dairy_calves_coeff|canada"] == VerificationStatus.UNVERIFIED
     assert unverified["HOLOS.Ym.dairy_lactating|canada"] == VerificationStatus.UNVERIFIED
     assert registry.get("HOLOS.B0.dairy|canada").status == VerificationStatus.VERIFIED
+
+
+def test_canada_v5_cover_params_are_reduction_fractions():
+    registry = load_parameter_csv(CANADA_V5, allow_unverified=True)
+    crust = registry.get("HOLOS.COVER.natural_crust_reduction")
+    solid = registry.get("HOLOS.COVER.solid_cover_reduction")
+    assert crust.value == 0.40
+    assert solid.value == 0.25
+    assert crust.units == "reduction fraction"
+    assert solid.units == "reduction fraction"
+    assert crust.status == VerificationStatus.SOURCE_TRACED
+    assert solid.status == VerificationStatus.UNVERIFIED
 
 
 def test_unverified_dairy_ym_refused_without_flag():

@@ -159,8 +159,11 @@ def manure_ch4_process() -> ProcessDef:
         forks={
             "holos_as_coded": ForkOption(
                 name="holos_as_coded",
-                description="CE-14: extra multiplicative cover/crust reduction",
-                modified_equation="VS * B0 * MCF * CH4_M3_TO_KG * cover_reduction",
+                description=(
+                    "CE-14: Holos cover remaining = 1 - reduction "
+                    "(0.40 crust / 0.25 solid cover); MCF is uncovered-tank"
+                ),
+                modified_equation="VS * B0 * MCF * CH4_M3_TO_KG * (1.0 - cover_reduction)",
                 issue_ref="CE-14",
                 label="holos_as_coded",
             ),

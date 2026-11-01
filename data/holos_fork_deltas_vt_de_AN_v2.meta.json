@@ -1,0 +1,16 @@
+{
+  "command": "python3 scripts/measure_holos_forks_vt_de_AN_v2.py",
+  "date": "2026-11-01",
+  "n_counties": 17,
+  "gwp": {
+    "CH4": 28.0,
+    "N2O": 265.0
+  },
+  "baseline": "Holos modules, registered fork defaults, EPA GE/VS/Nex/systems, dairy Ym_canada=5.6, beef Ym=EPA state, MCF=IPCC 2006 15C",
+  "pathways": {
+    "epa_vs": "Manure CH4 uses EPA VS_kg_day override",
+    "eq1024_vs": "Manure CH4 uses IPCC Eq 10.24 VS from EPA GE and DE% with ASH=8% (IPCC example, SOURCE-TRACED); TDN set equal to DE"
+  },
+  "county_csv": "data/holos_fork_deltas_vt_de_AN_v2.csv",
+  "summary_csv": "data/holos_fork_deltas_vt_de_summary_AN_v2.csv"
+}

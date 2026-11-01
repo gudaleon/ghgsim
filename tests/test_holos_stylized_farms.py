@@ -7,9 +7,9 @@ import pytest
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-YAML_PATH = ROOT / "data" / "stylized_farms_AN_v1.yaml"
-CSV_PATH = ROOT / "data" / "holos_fork_deltas_stylized_AN_v1.csv"
-COMMAND = "python3 scripts/measure_holos_forks_stylized_AN_v1.py"
+YAML_PATH = ROOT / "data" / "stylized_farms_AN_v2.yaml"
+CSV_PATH = ROOT / "data" / "holos_fork_deltas_stylized_AN_v2.csv"
+COMMAND = "python3 scripts/measure_holos_forks_stylized_AN_v2.py"
 
 ZERO_ON_COUNTY = {
     "HOLOS.GE.digestibility",
@@ -104,3 +104,17 @@ def test_cover_fork_fires_only_when_covered(deltas):
     uncovered = cover[cover["manure_id"] == "liquid_uncovered"]
     assert (covered["delta_CH4_kg"] < -1.0).all()
     assert (uncovered["delta_CH4_kg"].abs() < 1e-6).all()
+
+
+def test_cover_remaining_is_0_6_crust_and_0_75_solid(deltas):
+    cover = deltas[deltas["fork_id"] == "HOLOS.CH4.cover_reduction"]
+    for _, row in cover.iterrows():
+        if row["manure_id"] == "liquid_uncovered":
+            continue
+        remaining = (row["CH4_manure_kg"]) / (row["CH4_manure_kg"] - row["delta_CH4_manure_kg"])
+        if row["manure_id"] == "liquid_covered_crust":
+            assert remaining == pytest.approx(0.60, rel=1e-9)
+        elif row["manure_id"] == "liquid_covered_solid":
+            assert remaining == pytest.approx(0.75, rel=1e-9)
+        else:
+            raise AssertionError(f"unexpected manure_id {row['manure_id']}")
