@@ -202,6 +202,45 @@ def fork_diagram(repo, figures_dir, no_svg):
         click.echo("  svg: not rendered (mmdc/npx mermaid-cli unavailable; see docs/FORK_DIAGRAM_AN_v1.md)")
 
 
+@cli.command("sankey")
+@click.option("--repo", type=click.Path(exists=True, file_okay=False), help="Repository root")
+@click.option(
+    "--figures-dir",
+    type=click.Path(file_okay=False),
+    help="Output directory (default: docs/figures)",
+)
+@click.option("--farm", "farm_ids", multiple=True, help="Stylized farm id (repeatable; default: all)")
+@click.option("--county", "counties", multiple=True, help="Optional VT/DE county name (repeatable)")
+@click.option("--no-static", is_flag=True, help="Skip kaleido SVG/PNG even if plotly+kaleido are installed")
+def sankey(repo, figures_dir, farm_ids, counties, no_static):
+    """
+    Write per-farm Plotly Sankey diagrams from computed Holos module outputs.
+
+    Default: every farm in the newest stylized_farms_AN_vN.yaml. Views are
+    source_correct, holos_as_coded, and fork-delta. Writes
+    docs/figures/sankey_<farm>_AN_vN.html and .json without overwriting.
+
+    Example:
+        ghgsim sankey
+        ghgsim sankey --farm dairy_forage_uncovered --county ADDISON
+    """
+    from ghgsim.report.emissions_sankey import generate
+
+    result = generate(
+        repo=Path(repo) if repo else None,
+        figures_dir=Path(figures_dir) if figures_dir else None,
+        farm_ids=list(farm_ids) or None,
+        counties=list(counties) or None,
+        render_static=not no_static,
+    )
+    click.echo(f"sankey: {result['n']} diagram(s) from {result['inputs_file']}")
+    for item in result["items"]:
+        click.echo(f"  {item['farm_id']} AN_v{item['version']}")
+        for kind, path in item["paths"].items():
+            if path is not None:
+                click.echo(f"    {kind}: {path}")
+
+
 @cli.command("modules-list")
 def modules_list():
     """
