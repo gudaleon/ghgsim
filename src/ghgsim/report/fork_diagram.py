@@ -14,6 +14,7 @@ import json
 import re
 import shutil
 import subprocess
+import tempfile
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
@@ -504,21 +505,46 @@ def render_mermaid(payload: Mapping[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def try_render_svg(mmd_path: Path, svg_path: Path) -> dict[str, Any]:
+def _puppeteer_config_path() -> Path | None:
+    """Chrome path + no-sandbox args for mermaid-cli in this VM."""
+    chrome = (
+        shutil.which("google-chrome")
+        or shutil.which("google-chrome-stable")
+        or shutil.which("chromium")
+        or shutil.which("chromium-browser")
+    )
+    if not chrome:
+        return None
+    path = Path(tempfile.mkdtemp(prefix="ghgsim-mmdc-")) / "puppeteer.json"
+    path.write_text(
+        json.dumps({"executablePath": chrome, "args": ["--no-sandbox", "--disable-setuid-sandbox"]}),
+        encoding="utf-8",
+    )
+    return path
+
+
+def try_render_mermaid(mmd_path: Path, dest: Path) -> dict[str, Any]:
     """
-    Render SVG with mermaid-cli when the binary is on PATH.
+    Render SVG or PNG with mermaid-cli when mmdc/npx is on PATH.
 
     CI (`.github/workflows/ci.yml`) is Python-only and does not install
     mermaid-cli. Callers should treat a miss as documented, not fatal.
     """
+    dest = Path(dest)
+    if dest.exists():
+        return {"rendered": False, "reason": f"exists {dest}"}
+    puppeteer = _puppeteer_config_path()
+    extra: list[str] = ["-b", "white"]
+    if puppeteer is not None:
+        extra.extend(["-p", str(puppeteer)])
     commands: list[list[str]] = []
     mmdc = shutil.which("mmdc")
     if mmdc:
-        commands.append([mmdc, "-i", str(mmd_path), "-o", str(svg_path)])
+        commands.append([mmdc, "-i", str(mmd_path), "-o", str(dest), *extra])
     npx = shutil.which("npx")
     if npx:
         commands.append(
-            [npx, "--yes", "@mermaid-js/mermaid-cli", "-i", str(mmd_path), "-o", str(svg_path)]
+            [npx, "--yes", "@mermaid-js/mermaid-cli", "-i", str(mmd_path), "-o", str(dest), *extra]
         )
     if not commands:
         return {"rendered": False, "reason": "mmdc/npx not on PATH"}
@@ -529,9 +555,37 @@ def try_render_svg(mmd_path: Path, svg_path: Path) -> dict[str, Any]:
         except (OSError, subprocess.CalledProcessError) as exc:
             errors.append(str(exc))
             continue
-        if svg_path.exists():
+        if dest.exists():
             return {"rendered": True, "reason": command[0]}
     return {"rendered": False, "reason": "; ".join(errors) or "render failed"}
+
+
+def try_render_svg(mmd_path: Path, svg_path: Path) -> dict[str, Any]:
+    """Backward-compatible SVG wrapper around try_render_mermaid."""
+    return try_render_mermaid(mmd_path, svg_path)
+
+
+def render_existing_fork_diagrams(figures_dir: Path) -> list[dict[str, Any]]:
+    """Write missing SVG/PNG for every fork_diagram_AN_vN.mmd. Never overwrites."""
+    figures_dir = Path(figures_dir)
+    results: list[dict[str, Any]] = []
+    for mmd_path in sorted(figures_dir.glob("fork_diagram_AN_v*.mmd")):
+        if re.match(r"^fork_diagram_AN_v\d+\.mmd$", mmd_path.name) is None:
+            continue
+        for suffix in (".svg", ".png"):
+            dest = mmd_path.with_suffix(suffix)
+            if dest.exists():
+                results.append({"path": dest, "wrote": False, "reason": "exists"})
+                continue
+            result = try_render_mermaid(mmd_path, dest)
+            results.append(
+                {
+                    "path": dest,
+                    "wrote": bool(result["rendered"]),
+                    "reason": result["reason"],
+                }
+            )
+    return results
 
 
 def discover_inputs(data_dir: Path) -> dict[str, Path]:

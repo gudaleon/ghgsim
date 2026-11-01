@@ -16,9 +16,12 @@ from ghgsim.report.emissions_sankey import (
     build_stylized_payload,
     combined_forks,
     compute_stylized_farm_flows,
+    discover_sankey_payloads,
     load_stylized_spec,
+    next_view_version,
     node_balances,
     stylized_params,
+    view_image_paths,
     write_sankey,
 )
 from ghgsim.report.fork_diagram import latest_versioned, repo_root
@@ -153,6 +156,22 @@ def test_cli_writes_every_farm_next_version(tmp_path, farm_payloads):
 
 def test_generate_uses_repo_root():
     assert repo_root(ROOT) == ROOT
+
+
+def test_view_image_paths_are_versioned_and_distinct(tmp_path):
+    svg, png = view_image_paths(tmp_path, "dairy_forage_uncovered", "source_correct", 1).values()
+    assert svg.name == "sankey_dairy_forage_uncovered_source_correct_AN_v1.svg"
+    assert png.name == "sankey_dairy_forage_uncovered_source_correct_AN_v1.png"
+    (tmp_path / svg.name).write_text("x")
+    assert next_view_version(tmp_path, "dairy_forage_uncovered", "source_correct") == 2
+
+
+def test_discover_sankey_payloads_skips_view_stems(tmp_path):
+    (tmp_path / "sankey_dairy_forage_uncovered_AN_v1.json").write_text("{}")
+    (tmp_path / "sankey_dairy_forage_uncovered_source_correct_AN_v1.json").write_text("{}")
+    (tmp_path / "sankey_dairy_forage_uncovered_AN_v2.json").write_text("{}")
+    found = discover_sankey_payloads(tmp_path)
+    assert [path.name for path in found] == ["sankey_dairy_forage_uncovered_AN_v2.json"]
 
 
 def test_committed_sankeys_cover_every_farm():

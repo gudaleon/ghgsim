@@ -50,6 +50,10 @@ dev = [
     "ruff>=0.1",
     "mypy>=1.0",
 ]
+figures = [
+    "plotly>=6",
+    "kaleido>=1",
+]
 
 [project.scripts]
 ghgsim = "ghgsim.api.cli:main"

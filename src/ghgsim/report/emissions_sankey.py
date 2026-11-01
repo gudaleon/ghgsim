@@ -73,6 +73,8 @@ NODE_COLORS = {
 }
 
 PLOTLY_CDN = "https://cdn.plot.ly/plotly-2.35.2.min.js"
+SANKEY_VIEWS = ("source_correct", "holos_as_coded", "fork_delta")
+PAYLOAD_JSON_RE = re.compile(r"^sankey_(.+)_AN_v(\d+)\.json$")
 
 
 def _round(value: float) -> float:
@@ -983,13 +985,36 @@ def render_plotly_html(payload: Mapping[str, Any]) -> str:
 """
 
 
-def try_render_static(payload: Mapping[str, Any], dest: Path) -> dict[str, Any]:
-    """Write SVG/PNG with plotly+kaleido when both are installed."""
-    try:
-        import plotly.graph_objects as go
-    except ImportError:
-        return {"rendered": False, "reason": "plotly not installed"}
-    view = payload["views"]["source_correct"]
+def view_image_paths(
+    figures_dir: Path,
+    farm_id: str,
+    view_name: str,
+    version: int,
+) -> dict[str, Path]:
+    """Versioned per-view SVG/PNG paths. Never the html/json stem."""
+    prefix = f"sankey_{_slug(farm_id)}_{view_name}"
+    stem = f"{prefix}_AN_v{version}"
+    return {
+        "svg": Path(figures_dir) / f"{stem}.svg",
+        "png": Path(figures_dir) / f"{stem}.png",
+    }
+
+
+def next_view_version(figures_dir: Path, farm_id: str, view_name: str) -> int:
+    """Next AN_vN free for both the SVG and PNG of this farm view."""
+    figures_dir = Path(figures_dir)
+    prefix = f"sankey_{_slug(farm_id)}_{view_name}"
+    return max(
+        next_an_version(figures_dir, prefix, ".svg"),
+        next_an_version(figures_dir, prefix, ".png"),
+    )
+
+
+def sankey_figure(payload: Mapping[str, Any], view_name: str):
+    """Plotly Sankey for one view. Requires plotly (optional extra `figures`)."""
+    import plotly.graph_objects as go
+
+    view = payload["views"][view_name]
     nodes = view["nodes"]
     index = {node["id"]: i for i, node in enumerate(nodes)}
     fig = go.Figure(
@@ -1006,16 +1031,114 @@ def try_render_static(payload: Mapping[str, Any], dest: Path) -> dict[str, Any]:
                     source=[index[link["source"]] for link in view["links"]],
                     target=[index[link["target"]] for link in view["links"]],
                     value=[link["value"] for link in view["links"]],
+                    color=["rgba(120,144,156,0.35)" for _ in view["links"]],
                 ),
             )
         ]
     )
-    fig.update_layout(title=f"{payload['farm_id']} source_correct", font_size=12, width=1200, height=720)
+    fig.update_layout(
+        title=f"{payload['farm_id']} — {view_name} ({view.get('units', 'kg CO2e')})",
+        font_size=12,
+        width=1400,
+        height=800,
+        margin=dict(l=20, r=20, t=48, b=20),
+    )
+    return fig
+
+
+def try_render_static(
+    payload: Mapping[str, Any],
+    dest: Path,
+    *,
+    view_name: str = "source_correct",
+    scale: int = 1,
+) -> dict[str, Any]:
+    """Write one SVG/PNG with plotly+kaleido when both are installed."""
+    dest = Path(dest)
+    if dest.exists():
+        return {"rendered": False, "reason": f"exists {dest}"}
     try:
-        fig.write_image(str(dest))
+        fig = sankey_figure(payload, view_name)
+    except ImportError:
+        return {"rendered": False, "reason": "plotly not installed"}
+    try:
+        kwargs: dict[str, Any] = {}
+        if dest.suffix.lower() == ".png" and scale != 1:
+            kwargs["scale"] = scale
+        fig.write_image(str(dest), **kwargs)
     except Exception as exc:  # kaleido / chrome missing
         return {"rendered": False, "reason": str(exc)}
     return {"rendered": dest.exists(), "reason": "plotly+kaleido"}
+
+
+def write_sankey_view_images(
+    payload: Mapping[str, Any],
+    figures_dir: Path,
+    *,
+    scale: int = 2,
+    version: int | None = None,
+) -> dict[str, dict[str, Any]]:
+    """Write per-view SVG + PNG (scale 2). Never overwrites."""
+    figures_dir = Path(figures_dir)
+    figures_dir.mkdir(parents=True, exist_ok=True)
+    farm_id = str(payload["farm_id"])
+    written: dict[str, dict[str, Any]] = {}
+    for view_name in SANKEY_VIEWS:
+        ver = int(version) if version is not None else next_view_version(figures_dir, farm_id, view_name)
+        paths = view_image_paths(figures_dir, farm_id, view_name, ver)
+        for path in paths.values():
+            if path.exists():
+                raise FileExistsError(f"Refusing to overwrite {path}")
+        svg_result = try_render_static(payload, paths["svg"], view_name=view_name, scale=1)
+        png_result = try_render_static(payload, paths["png"], view_name=view_name, scale=scale)
+        written[view_name] = {
+            "version": ver,
+            "svg": paths["svg"] if svg_result["rendered"] else None,
+            "png": paths["png"] if png_result["rendered"] else None,
+            "svg_reason": svg_result["reason"],
+            "png_reason": png_result["reason"],
+        }
+    return written
+
+
+def discover_sankey_payloads(figures_dir: Path) -> list[Path]:
+    """Newest sankey_<farm>_AN_vN.json per farm (not per-view image stems)."""
+    figures_dir = Path(figures_dir)
+    newest: dict[str, tuple[int, Path]] = {}
+    for path in figures_dir.glob("sankey_*_AN_v*.json"):
+        match = PAYLOAD_JSON_RE.match(path.name)
+        if match is None:
+            continue
+        farm = match.group(1)
+        if any(farm.endswith(f"_{view}") for view in SANKEY_VIEWS):
+            continue
+        version = int(match.group(2))
+        prev = newest.get(farm)
+        if prev is None or version > prev[0]:
+            newest[farm] = (version, path)
+    return [item[1] for _, item in sorted(newest.items())]
+
+
+def export_static_views(
+    *,
+    repo: Path | None = None,
+    figures_dir: Path | None = None,
+    scale: int = 2,
+    farm_ids: Sequence[str] | None = None,
+) -> dict[str, Any]:
+    """Export per-view SVG/PNG from existing Sankey JSON. Does not bump html/json."""
+    root = repo_root(repo)
+    out_dir = Path(figures_dir) if figures_dir is not None else root / "docs" / "figures"
+    wanted = {_slug(name) for name in farm_ids} if farm_ids else None
+    items: list[dict[str, Any]] = []
+    for json_path in discover_sankey_payloads(out_dir):
+        payload = json.loads(json_path.read_text(encoding="utf-8"))
+        farm = _slug(str(payload["farm_id"]))
+        if wanted is not None and farm not in wanted:
+            continue
+        views = write_sankey_view_images(payload, out_dir, scale=scale)
+        items.append({"farm_id": payload["farm_id"], "source": json_path.name, "views": views})
+    return {"n": len(items), "scale": scale, "items": items}
 
 
 def write_sankey(
@@ -1024,29 +1147,27 @@ def write_sankey(
     *,
     version: int,
     render_static: bool = True,
-) -> dict[str, Path | None]:
-    """Write versioned html/json and optional svg/png. Never overwrites."""
+    scale: int = 2,
+) -> dict[str, Path | None | dict[str, Any]]:
+    """Write versioned html/json and optional per-view svg/png. Never overwrites."""
     figures_dir = Path(figures_dir)
     figures_dir.mkdir(parents=True, exist_ok=True)
     farm = _slug(str(payload["farm_id"]))
     stem = f"sankey_{farm}_AN_v{version}"
     html_path = figures_dir / f"{stem}.html"
     json_path = figures_dir / f"{stem}.json"
-    svg_path = figures_dir / f"{stem}.svg"
-    png_path = figures_dir / f"{stem}.png"
-    for path in (html_path, json_path, svg_path, png_path):
+    for path in (html_path, json_path):
         if path.exists():
             raise FileExistsError(f"Refusing to overwrite {path}")
     html_path.write_text(render_plotly_html(payload), encoding="utf-8")
     json_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    written: dict[str, Path | None] = {"html": html_path, "json": json_path, "svg": None, "png": None}
+    written: dict[str, Path | None | dict[str, Any]] = {
+        "html": html_path,
+        "json": json_path,
+        "views": None,
+    }
     if render_static:
-        svg_result = try_render_static(payload, svg_path)
-        if svg_result["rendered"]:
-            written["svg"] = svg_path
-        png_result = try_render_static(payload, png_path)
-        if png_result["rendered"]:
-            written["png"] = png_path
+        written["views"] = write_sankey_view_images(payload, figures_dir, scale=scale)
     return written
 
 
