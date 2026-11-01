@@ -86,8 +86,11 @@ def ensemble(mode, workers, output, states):
             click.echo("Aborted.")
             return
     
-    # TODO: Implement county ensemble
-    click.secho("✓ County ensemble complete", fg="green")
+    # Stub: ensemble runner implemented but needs data loaders
+    from ghgsim.core import ensemble
+    click.echo("\n⚠️  Ensemble runner framework complete but blocked on data loaders")
+    click.echo("   See src/ghgsim/core/ensemble.py and src/ghgsim/io/")
+    click.secho("✓ County ensemble (stub)", fg="yellow")
 
 
 @cli.command()
@@ -123,8 +126,14 @@ def archive(run_id, format, output):
     click.echo(f"Archiving run: {run_id}")
     click.echo(f"Format: {format}")
     
-    # TODO: Implement archiving
-    click.secho(f"✓ Run archived", fg="green")
+    # Archive functionality implemented
+    from ghgsim.core.archive import RunArchiver
+    from pathlib import Path
+    
+    archiver = RunArchiver(run_id)
+    click.echo(f"\n⚠️  Archive framework complete, needs run results")
+    click.echo(f"   See src/ghgsim/core/archive.py")
+    click.secho(f"✓ Run archive (stub)", fg="yellow")
 
 
 @cli.command()
@@ -147,8 +156,16 @@ def serve(host, port):
     click.echo(f"Starting dashboard on http://{host}:{port}")
     click.echo("Press Ctrl+C to stop")
     
-    # TODO: Implement dashboard
-    click.secho("✓ Dashboard started", fg="green")
+    # Dashboard server implemented (stub endpoints)
+    from ghgsim.api.server import serve as start_server
+    from pathlib import Path
+    
+    click.echo("\n⚠️  Dashboard server STUB - endpoints return mock data")
+    click.echo("   See src/ghgsim/api/server.py")
+    try:
+        start_server(host=host, port=port, results_dir=Path("results"))
+    except KeyboardInterrupt:
+        click.echo("\n\n✓ Dashboard stopped")
 
 
 @cli.command("modules-list")
