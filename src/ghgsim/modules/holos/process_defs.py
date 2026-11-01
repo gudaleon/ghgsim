@@ -271,6 +271,114 @@ def manure_n2o_indirect_leach_process() -> ProcessDef:
     return process
 
 
+def soil_n2o_direct_process() -> ProcessDef:
+    """Direct soil N2O-N, IPCC 2006 Eq 11.1 (before 44/28)."""
+    process = ProcessDef(
+        name="soil_n2o_direct",
+        description="Direct soil N2O-N (IPCC 2006 Eq 11.1)",
+        rate_equation="(F_SN + F_ON + F_CR + F_SOM) * EF1 + F_PRP_CPP * EF3PRP",
+        stoichiometry={"N2O_N_kg": 1.0},
+        unit="kg N2O-N",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O&CO2.pdf",
+        equation="Equation 11.1",
+        page="11.7",
+        notes="EF1 for F_SN/F_ON/F_CR/F_SOM; EF3PRP for urine/dung on PRP",
+    )
+    return process
+
+
+def soil_n2o_indirect_vol_process() -> ProcessDef:
+    """Indirect soil N2O-N from volatilisation, IPCC 2006 Eq 11.9."""
+    process = ProcessDef(
+        name="soil_n2o_indirect_vol",
+        description="Indirect soil N2O-N via volatilisation (IPCC 2006 Eq 11.9)",
+        rate_equation="(F_SN * FracGASF + (F_ON + F_PRP_CPP) * FracGASM) * EF4",
+        stoichiometry={"N2O_N_kg": 1.0},
+        unit="kg N2O-N",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O&CO2.pdf",
+        equation="Equation 11.9",
+        page="11.21",
+        notes="2006 does not subtract volatilisation from the Eq 11.1 N inputs",
+    )
+    return process
+
+
+def soil_n2o_indirect_leach_process() -> ProcessDef:
+    """Indirect soil N2O-N from leaching, IPCC 2006 Eq 11.10."""
+    process = ProcessDef(
+        name="soil_n2o_indirect_leach",
+        description="Indirect soil N2O-N via leaching (IPCC 2006 Eq 11.10)",
+        rate_equation="(F_SN + F_ON + F_CR + F_SOM + F_PRP_CPP) * FracLEACH * EF5",
+        stoichiometry={"N2O_N_kg": 1.0},
+        unit="kg N2O-N",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O&CO2.pdf",
+        equation="Equation 11.10",
+        page="11.21",
+        notes="2006 Table 11.3 FracLEACH = 0.30 where leaching/runoff occurs",
+    )
+    return process
+
+
+def lime_co2_process() -> ProcessDef:
+    """CO2-C from limestone and dolomite, IPCC 2006 Eq 11.12."""
+    process = ProcessDef(
+        name="lime_co2",
+        description="CO2-C from lime application (IPCC 2006 Eq 11.12)",
+        rate_equation="M_limestone_t * EF_limestone + M_dolomite_t * EF_dolomite",
+        stoichiometry={"CO2_C_t": 1.0},
+        unit="tonne C",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O&CO2.pdf",
+        equation="Equation 11.12",
+        page="11.27",
+        notes="EF limestone 0.12 and dolomite 0.13 tonne C / tonne lime; convert with 44/12",
+    )
+    return process
+
+
+def urea_co2_process() -> ProcessDef:
+    """CO2-C from urea application, IPCC 2006 Eq 11.13."""
+    process = ProcessDef(
+        name="urea_co2",
+        description="CO2-C from urea application (IPCC 2006 Eq 11.13)",
+        rate_equation="M_urea_t * EF_urea",
+        stoichiometry={"CO2_C_t": 1.0},
+        unit="tonne C",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O&CO2.pdf",
+        equation="Equation 11.13",
+        page="11.32",
+        notes="EF urea 0.20 tonne C / tonne urea; convert with 44/12",
+    )
+    return process
+
+
+def field_fam_process() -> ProcessDef:
+    """Animal manure N applied to soils, IPCC 2006 Eq 11.4."""
+    process = ProcessDef(
+        name="field_fam",
+        description="FAM from managed manure remaining after storage (IPCC 2006 Eq 11.4)",
+        rate_equation="N_MMS_Avb_kg * (1.0 - FracFEED - FracFUEL - FracCNST)",
+        stoichiometry={"F_AM_kg": 1.0},
+        unit="kg N",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O&CO2.pdf",
+        equation="Equation 11.4",
+        page="11.13",
+        notes="If FracFEED/FracFUEL/FracCNST are unavailable, Chapter 11 uses N_MMS_Avb as FAM (fractions = 0)",
+    )
+    return process
+
+
 def turkey_manure_ch4_holos_process() -> ProcessDef:
     """Turkey manure CH4: IPCC Eq 10.23 default; holos_as_coded CE-10 is zero."""
     process = ProcessDef(

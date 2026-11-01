@@ -18,9 +18,17 @@ from collections.abc import Mapping
 from typing import Any
 
 from ghgsim.core.module import Citation, ParamRef, VarSpec, validate_module
+from ghgsim.modules.holos.process_defs import (
+    soil_n2o_direct_process,
+    soil_n2o_indirect_leach_process,
+    soil_n2o_indirect_vol_process,
+)
 
 # Molecular weight conversion
 N2ON_TO_N2O = 44.0 / 28.0
+_DIRECT = soil_n2o_direct_process()
+_VOL = soil_n2o_indirect_vol_process()
+_LEACH = soil_n2o_indirect_leach_process()
 
 
 class HolosSoilN2O:
@@ -37,7 +45,7 @@ class HolosSoilN2O:
 
     inputs = {
         "F_SN": VarSpec("F_SN", "kg N / year", "Synthetic fertilizer N", "scalar", True),
-        "F_ON": VarSpec("F_ON", "kg N / year", "Organic fertilizer N (non-manure)", "scalar", True),
+        "F_ON": VarSpec("F_ON", "kg N / year", "Organic N applied (Eq 11.3; typically FAM = N_MMS_Avb)", "scalar", True),
         "F_CR": VarSpec("F_CR", "kg N / year", "Crop residue N", "scalar", True),
         "F_SOM": VarSpec("F_SOM", "kg N / year", "Soil organic matter mineralization N", "scalar", False),
         "F_PRP_CPP": VarSpec("F_PRP_CPP", "kg N / year", "Pasture/range/paddock manure N", "scalar", False),
@@ -124,18 +132,39 @@ class HolosSoilN2O:
         else:
             fracleach = params.get("FracLEACH_dry", 0.1)  # Fallback for dry
         
-        # Direct N2O (Equation 11.1)
-        n_inputs = f_sn + f_on + f_cr + f_som
-        n2o_direct_n = n_inputs * ef1 + f_prp_cpp * ef3prp
-        
-        # Indirect via volatilization (Equation 11.9)
-        n_volatilized = f_sn * fracgasf + (f_on + f_prp_cpp) * fracgasm
-        n2o_vol_n = n_volatilized * ef4
-        
-        # Indirect via leaching (Equation 11.10)
-        n_total = n_inputs + f_prp_cpp
-        n_leached = n_total * fracleach
-        n2o_leach_n = n_leached * ef5
+        # Direct N2O (Equation 11.1) and indirect (11.9, 11.10) via ProcessDefs
+        n2o_direct_n = _DIRECT.compute_rate(
+            {
+                "F_SN": f_sn,
+                "F_ON": f_on,
+                "F_CR": f_cr,
+                "F_SOM": f_som,
+                "EF1": ef1,
+                "F_PRP_CPP": f_prp_cpp,
+                "EF3PRP": ef3prp,
+            }
+        )
+        n2o_vol_n = _VOL.compute_rate(
+            {
+                "F_SN": f_sn,
+                "FracGASF": fracgasf,
+                "F_ON": f_on,
+                "F_PRP_CPP": f_prp_cpp,
+                "FracGASM": fracgasm,
+                "EF4": ef4,
+            }
+        )
+        n2o_leach_n = _LEACH.compute_rate(
+            {
+                "F_SN": f_sn,
+                "F_ON": f_on,
+                "F_CR": f_cr,
+                "F_SOM": f_som,
+                "F_PRP_CPP": f_prp_cpp,
+                "FracLEACH": fracleach,
+                "EF5": ef5,
+            }
+        )
         
         # Convert N2O-N to N2O
         n2o_direct = n2o_direct_n * N2ON_TO_N2O

@@ -188,7 +188,9 @@ def test_newest_status_column_and_weakest_mapped_status(tmp_path):
 
 def test_v4_trace_fork_statuses():
     payload = build_from_data_dir(DATA, output_version="AN_v2")
-    assert payload["generated_from"]["coefficient_trace"].endswith("coefficient_trace_AN_v5.csv")
+    assert payload["generated_from"]["coefficient_trace"].endswith(
+        latest_versioned(DATA, "coefficient_trace", ".csv").name
+    )
     assert payload["status"]["HOLOS.GE.digestibility"] == "HOLOS-ONLY"
     assert payload["status"]["HOLOS.ENTERIC.calf_zero"] == "VERIFIED"
     assert payload["status"]["HOLOS.YM.dairy"] == "HOLOS-ONLY"

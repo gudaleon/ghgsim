@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CANADA = ROOT / "data" / "holos_params_canada_AN_v4.csv"
 CANADA_V5 = ROOT / "data" / "holos_params_canada_AN_v5.csv"
 CANADA_V6 = ROOT / "data" / "holos_params_canada_AN_v6.csv"
+CANADA_V7 = ROOT / "data" / "holos_params_canada_AN_v7.csv"
 US = ROOT / "data" / "holos_params_us_AN_v2.csv"
 ALLOWED = {item.value for item in VerificationStatus}
 
@@ -24,7 +25,7 @@ def _rows(path: Path):
         return list(csv.DictReader(handle))
 
 
-@pytest.mark.parametrize("path", [CANADA, CANADA_V5, CANADA_V6, US])
+@pytest.mark.parametrize("path", [CANADA, CANADA_V5, CANADA_V6, CANADA_V7, US])
 def test_status_values_are_known(path):
     rows = _rows(path)
     assert rows

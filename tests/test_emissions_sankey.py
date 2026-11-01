@@ -79,7 +79,7 @@ def test_flows_conserve_mass(farm_payloads):
             balances = node_balances(view)
             for node in view["nodes"]:
                 balance = balances[node["id"]]
-                if node["kind"] in {"animal", "source_total", "fork_added", "soil"}:
+                if node["kind"] in {"animal", "source_total", "fork_added", "soil", "amendment"}:
                     assert balance["inflow"] == pytest.approx(0.0, abs=MASS_TOL_KG_CO2E)
                     assert balance["outflow"] == pytest.approx(node["value"], abs=MASS_TOL_KG_CO2E)
                 elif node["kind"] in {"sink", "fork_removed"}:

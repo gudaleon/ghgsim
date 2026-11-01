@@ -132,6 +132,11 @@ def holos_compute_params(
         "FracGASM": _reg_get(ipcc, "IPCC2006.FracGASM.all"),
         "FracLEACH_wet": _reg_get(ipcc, "IPCC2006.FracLEACH.wet"),
         # IPCC 2006 CSV has no dry FracLEACH row. VT/DE climate is wet, so unused.
+        "EF_limestone": _reg_get(ipcc, "IPCC2006.EF_lime.limestone"),
+        "EF_dolomite": _reg_get(ipcc, "IPCC2006.EF_lime.dolomite"),
+        "EF_urea": _reg_get(ipcc, "IPCC2006.EF_urea.all"),
+        "C_TO_CO2": _reg_get(ipcc, "BOTH.C_TO_CO2.all"),
+        "FracFEED_default": _reg_get(ipcc, "IPCC2006.FracFEED.default_zero"),
     }
     for system in (
         "liquid_nocrust",
