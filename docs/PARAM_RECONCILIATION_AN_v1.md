@@ -7,11 +7,13 @@
 
 ## Summary
 
-**v3 (ipcc_params_AN_v2.csv):** 139 parameters  
-**v4 (ipcc_params_AN_v4.csv):** 138 parameters  
-**Excluded:** 1 parameter (no default value in IPCC Guidelines)  
+**v3 (ipcc_params_AN_v2.csv):** 139 parameters (138 VERIFIED + 1 UNVERIFIED)  
+**v4 (ipcc_params_AN_v4.csv):** 138 parameters (138 VERIFIED + 0 UNVERIFIED)  
+**Excluded:** 1 parameter (IPCC2006.FracLeachMS.all - was UNVERIFIED in v2, excluded in v4)  
 **Added:** 0 parameters  
 **Modified:** 0 parameter values (all transcribed exactly as published)
+
+**Clarification:** Phase 3 incorrectly reported "134 VERIFIED + 1 excluded" but the correct count is 138 VERIFIED + 1 excluded (139 → 138).
 
 ---
 
