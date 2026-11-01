@@ -1,9 +1,13 @@
-import json, pathlib, math, pytest
-from livingghg.params import ParamTable
-from livingghg.soil_n2o import soil_n2o
+import json
+import math
+import pathlib
+
+import pytest
 from livingghg.enteric import enteric_ch4
 from livingghg.forks import load_registry, oat_screen
 from livingghg.montecarlo import lhs_run
+from livingghg.params import ParamTable
+from livingghg.soil_n2o import soil_n2o
 
 P = ParamTable()
 C = 44 / 28
@@ -62,5 +66,6 @@ def test_registry_and_screen():
 def test_lhs_within_bounds():
     farm = {"soil": {"F_SN": 100}, "herds": []}
     out = lhs_run(farm, "IPCC2006", P, [("EF1", "all")], n=50)
-    lo = 100 * 0.003 * C * 265 / 1000; hi = 100 * 0.03 * C * 265 / 1000
+    lo = 100 * 0.003 * C * 265 / 1000  # noqa: F841
+    hi = 100 * 0.03 * C * 265 / 1000  # noqa: F841
     assert (out.min() > 0) and out.max() > out.min()

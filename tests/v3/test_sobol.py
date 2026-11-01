@@ -1,8 +1,13 @@
-import pytest, json, pathlib
+import json
+import pathlib
+
+import pytest
+
 SALib = pytest.importorskip("SALib")
-from livingghg.params import ParamTable
 from livingghg.forks import load_registry
+from livingghg.params import ParamTable
 from livingghg.sobol import sobol_indices
+
 
 def test_sobol_tiny():
     legacy_root = pathlib.Path(__file__).parents[2] / "legacy" / "livingghg_AN_v3"

@@ -1,8 +1,11 @@
-import numpy as np, pandas as pd, pytest
+import numpy as np
+import pandas as pd
+import pytest
 from livingghg import gapfill
 from livingghg.crop_residue import f_cr
 from livingghg.enteric import enteric_ch4
 from livingghg.params import ParamTable
+
 
 def test_class_range_and_finest():
     assert gapfill.class_range("INVENTORY OF COWS: (1 TO 9 HEAD)") == (1, 9)
@@ -57,7 +60,8 @@ def test_epa_ym_reproduces_epa_ef():
     assert enteric_ch4(h, "IPCC2019", P, {"ym_source": "ipcc_default"})["EF_kg_head"] != pytest.approx(150.0, abs=0.1)
 
 def test_assumptions_file_complete():
-    import json, pathlib
+    import json
+    import pathlib
     legacy_root = pathlib.Path(__file__).parents[2] / "legacy" / "livingghg_AN_v3"
     a = json.loads((legacy_root / "scripts" / "county_assumptions_AN_v3.json").read_text())
     assert len(a["states"]) == 50

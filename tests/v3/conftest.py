@@ -16,7 +16,7 @@ if str(legacy_root) not in sys.path:
 
 # Force import of livingghg to ensure it's available for all tests
 try:
-    import livingghg
+    import livingghg  # noqa: F401
 except ImportError as e:
     raise ImportError(
         f"Failed to import livingghg from {legacy_root}. "

@@ -1,6 +1,8 @@
 import math
-from livingghg.params import ParamTable
+
 from livingghg.manure import manure_emissions
+from livingghg.params import ParamTable
+
 P = ParamTable(); C = 44 / 28
 
 def herd(systems, zone06="15C", zone19="cool_temperate_moist"):

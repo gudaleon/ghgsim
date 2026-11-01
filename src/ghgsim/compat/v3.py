@@ -5,8 +5,8 @@ This module redirects imports from 'livingghg' to 'legacy.livingghg_AN_v3.living
 so that all v3 tests can run unchanged.
 """
 
-import sys
 import importlib
+import sys
 from pathlib import Path
 
 _legacy_root = Path(__file__).parents[3] / "legacy" / "livingghg_AN_v3"
