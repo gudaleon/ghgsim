@@ -1,0 +1,34 @@
+key,value,units,dist,dist_lower,dist_upper,source_doi_or_url,table,equation,page,region,status,verified_by,verified_date,notes
+HOLOS.GE.dairy|VT,401.2,MJ/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA-derived GE VT dairy
+HOLOS.Ym.dairy|VT,5.7,% GE,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA per-state Ym VT
+HOLOS.GE.beef|VT,220.5,MJ/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA-derived GE VT beef
+HOLOS.Ym.beef|VT,6.5,% GE,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA per-state Ym VT beef
+HOLOS.GE.dairy|DE,382.9,MJ/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA-derived GE DE dairy
+HOLOS.Ym.dairy|DE,5.8,% GE,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA per-state Ym DE
+HOLOS.GE.beef|DE,197.1,MJ/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA-derived GE DE beef
+HOLOS.Ym.beef|DE,6.5,% GE,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA per-state Ym DE beef
+HOLOS.VS.dairy|VT,7.4466,kg/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA VS VT dairy
+HOLOS.Nrate.dairy|VT,0.47,kg N/kg TAM,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-5,,10.78,VT,VERIFIED,,,IPCC NA default
+HOLOS.TAM.dairy|VT,679.9,kg,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA TAM VT dairy
+HOLOS.B0.dairy|VT,0.24,m3 CH4/kg VS,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-7,,10.82,VT,VERIFIED,,,IPCC NA default
+HOLOS.Nex.dairy|VT,153.0,kg N/year,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA Nex VT dairy overrides Nrate*TAM
+HOLOS.VS.beef|VT,4.0,kg/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA VS VT beef
+HOLOS.Nrate.beef|VT,0.31,kg N/kg TAM,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-5,,10.78,VT,VERIFIED,,,IPCC NA default
+HOLOS.TAM.beef|VT,488.7,kg,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA TAM VT beef
+HOLOS.B0.beef|VT,0.17,m3 CH4/kg VS,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-7,,10.82,VT,VERIFIED,,,IPCC NA default
+HOLOS.Nex.beef|VT,44.0,kg N/year,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA Nex VT beef
+HOLOS.VS.dairy|DE,7.1,kg/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA VS DE dairy
+HOLOS.Nrate.dairy|DE,0.47,kg N/kg TAM,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-5,,10.78,DE,VERIFIED,,,IPCC NA default
+HOLOS.TAM.dairy|DE,679.9,kg,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA TAM DE dairy
+HOLOS.B0.dairy|DE,0.24,m3 CH4/kg VS,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-7,,10.82,DE,VERIFIED,,,IPCC NA default
+HOLOS.Nex.dairy|DE,145.8,kg N/year,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA Nex DE dairy
+HOLOS.VS.beef|DE,3.6,kg/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA VS DE beef
+HOLOS.Nrate.beef|DE,0.31,kg N/kg TAM,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-5,,10.78,DE,VERIFIED,,,IPCC NA default
+HOLOS.TAM.beef|DE,488.7,kg,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA TAM DE beef
+HOLOS.B0.beef|DE,0.17,m3 CH4/kg VS,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-7,,10.82,DE,VERIFIED,,,IPCC NA default
+HOLOS.Nex.beef|DE,39.5,kg N/year,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA Nex DE beef
+HOLOS.MCF.liquid_nocrust|US,0.27,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,US,VERIFIED,,,15C zone US northeast
+HOLOS.MCF.solid_storage|US,0.04,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,US,VERIFIED,,,15C zone
+HOLOS.MCF.pasture|US,0.02,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,US,VERIFIED,,,15C zone
+HOLOS.MCF.daily_spread|US,0.005,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,US,VERIFIED,,,15C zone
+HOLOS.MCF.lagoon|US,0.74,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,US,VERIFIED,,,15C zone
