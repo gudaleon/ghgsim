@@ -16,9 +16,10 @@ from typing import Any
 
 from ghgsim.core.module import Citation, ParamRef, VarSpec, validate_module
 from ghgsim.modules.holos.common import forks_from_inputs, option_is
-from ghgsim.modules.holos.process_defs import manure_ch4_process
+from ghgsim.modules.holos.process_defs import manure_ch4_process, turkey_manure_ch4_holos_process
 
 _CH4 = manure_ch4_process()
+_TURKEY_HOLOS = turkey_manure_ch4_holos_process()
 
 # Map user system names to MCF parameter stem (IPCC 2006 Table 10.17).
 SYSTEM_MCF_KEY = {
@@ -29,6 +30,9 @@ SYSTEM_MCF_KEY = {
     "dry_lot": "dry_lot",
     "daily_spread": "daily_spread",
     "pasture": "pasture",
+    "poultry_with_litter": "poultry_with_litter",
+    "poultry_without_litter": "poultry_without_litter",
+    "pit": "pit_gt1mo",
 }
 
 # Holos IsCoveredSystem is true only for LiquidWithNaturalCrust and
@@ -75,6 +79,22 @@ def _weighted_mcf(systems: Mapping[str, float], climate: str, params: Mapping[st
     return sum(_mcf_for_system(system, climate, params) * float(fraction) for system, fraction in systems.items())
 
 
+def _vs_for(animal: str, inputs: Mapping[str, Any], params: Mapping[str, Any]) -> float:
+    if inputs.get("VS_kg_day") not in (None, ""):
+        return float(inputs["VS_kg_day"])
+    for name in (f"VS_{animal}", f"VS_{animal}_canada"):
+        if name in params:
+            return float(params[name])
+    raise ValueError(f"No VS parameter for animal_type '{animal}'")
+
+
+def _b0_for(animal: str, params: Mapping[str, Any]) -> float:
+    for name in (f"B0_{animal}", f"B0_{animal}_canada"):
+        if name in params:
+            return float(params[name])
+    raise ValueError(f"No B0 parameter for animal_type '{animal}'")
+
+
 def _cover_reduction_fraction(
     cover_type: str, params: Mapping[str, Any], fork_settings: dict[str, str]
 ) -> float:
@@ -99,7 +119,13 @@ class HolosManureCH4:
 
     inputs = {
         "head": VarSpec("head", "dimensionless", "Number of animals", "scalar", True),
-        "animal_type": VarSpec("animal_type", "dimensionless", "Animal type (dairy/beef)", "scalar", True),
+        "animal_type": VarSpec(
+            "animal_type",
+            "dimensionless",
+            "Animal type (dairy/beef/market_swine/breeding_swine/broilers/layers/turkeys)",
+            "scalar",
+            True,
+        ),
         "climate_zone": VarSpec("climate_zone", "dimensionless", "Climate zone for MCF (cool/temperate/15C)", "scalar", True),
         "systems": VarSpec("systems", "dimensionless", "Dict of system -> fraction", "scalar", True),
         "VS_kg_day": VarSpec("VS_kg_day", "kg / day", "Volatile solids excretion override", "scalar", False),
@@ -118,6 +144,16 @@ class HolosManureCH4:
         "VS_beef_canada": ParamRef("HOLOS.VS.beef|canada", "Fallback VS for Canadian beef"),
         "B0_dairy_canada": ParamRef("HOLOS.B0.dairy|canada", "B0 for Canadian dairy"),
         "B0_beef_canada": ParamRef("HOLOS.B0.beef|canada", "B0 for Canadian beef"),
+        "VS_market_swine": ParamRef("IPCC2006.VS.market_swine|north_america", "VS market swine NA"),
+        "VS_breeding_swine": ParamRef("IPCC2006.VS.breeding_swine|north_america", "VS breeding swine NA"),
+        "VS_broilers": ParamRef("IPCC2006.VS.broilers|north_america", "VS broilers"),
+        "VS_layers": ParamRef("IPCC2006.VS.layers|north_america", "VS layers"),
+        "VS_turkeys": ParamRef("IPCC2006.VS.turkeys|north_america", "VS turkeys"),
+        "B0_market_swine": ParamRef("IPCC2006.B0.market_swine|north_america", "B0 market swine NA"),
+        "B0_breeding_swine": ParamRef("IPCC2006.B0.breeding_swine|north_america", "B0 breeding swine NA"),
+        "B0_broilers": ParamRef("IPCC2006.B0.broilers|north_america", "B0 broilers"),
+        "B0_layers": ParamRef("IPCC2006.B0.layers|north_america", "B0 layers"),
+        "B0_turkeys": ParamRef("IPCC2006.B0.turkeys|north_america", "B0 turkeys"),
         "MCF_liquid_nocrust_cool": ParamRef("HOLOS.MCF.liquid_nocrust|cool", "MCF liquid no crust, cool"),
         "MCF_liquid_nocrust_temperate": ParamRef("HOLOS.MCF.liquid_nocrust|temperate", "MCF liquid no crust, temperate"),
         "MCF_liquid_crust_cool": ParamRef("IPCC2006.MCF.liquid_crust|le10C", "MCF liquid with crust, cool"),
@@ -126,6 +162,20 @@ class HolosManureCH4:
         "MCF_solid_storage_temperate": ParamRef("HOLOS.MCF.solid_storage|temperate", "MCF solid storage, temperate"),
         "MCF_pasture_cool": ParamRef("HOLOS.MCF.pasture|cool", "MCF pasture, cool"),
         "MCF_daily_spread_cool": ParamRef("HOLOS.MCF.daily_spread|cool", "MCF daily spread, cool"),
+        "MCF_poultry_with_litter_15C": ParamRef(
+            "IPCC2006.MCF.poultry_with_litter|15C", "MCF poultry with litter 15C"
+        ),
+        "MCF_poultry_with_litter_le10C": ParamRef(
+            "IPCC2006.MCF.poultry_with_litter|le10C", "MCF poultry with litter cool"
+        ),
+        "MCF_poultry_without_litter_15C": ParamRef(
+            "IPCC2006.MCF.poultry_without_litter|15C", "MCF poultry without litter 15C"
+        ),
+        "MCF_poultry_without_litter_le10C": ParamRef(
+            "IPCC2006.MCF.poultry_without_litter|le10C", "MCF poultry without litter cool"
+        ),
+        "MCF_pit_gt1mo_15C": ParamRef("IPCC2006.MCF.pit_gt1mo|15C", "MCF pit >1 month 15C"),
+        "MCF_pit_gt1mo_le10C": ParamRef("IPCC2006.MCF.pit_gt1mo|le10C", "MCF pit >1 month cool"),
         "CH4_M3_TO_KG": ParamRef("BOTH.CH4_M3_TO_KG.all", "CH4 density kg/m3"),
         "cover_crust_reduction": ParamRef(
             "HOLOS.COVER.natural_crust_reduction",
@@ -180,11 +230,19 @@ class HolosManureCH4:
         systems = inputs["systems"]
         cover_type = str(inputs.get("cover_type", "none"))
 
-        if inputs.get("VS_kg_day") not in (None, ""):
-            vs = float(inputs["VS_kg_day"])
-        else:
-            vs = float(params[f"VS_{animal}_canada"])
-        b0 = float(params[f"B0_{animal}_canada"])
+        if animal == "turkeys" and option_is("HOLOS.CH4.turkey_zero", "holos_as_coded", fork_settings):
+            _TURKEY_HOLOS.compute_rate(
+                {"VS": 0.0, "B0": 0.0, "MCF": 0.0, "CH4_M3_TO_KG": 0.0},
+                fork="holos_as_coded",
+            )
+            return {
+                "CH4": 0.0,
+                "MCF_weighted": 0.0,
+                "cover_reduction_fraction": 0.0,
+                "cover_remaining_used": 1.0,
+            }
+        vs = _vs_for(animal, inputs, params)
+        b0 = _b0_for(animal, params)
         density = float(params["CH4_M3_TO_KG"])
         reduction = _cover_reduction_fraction(cover_type, params, fork_settings)
         remaining = 1.0 - reduction

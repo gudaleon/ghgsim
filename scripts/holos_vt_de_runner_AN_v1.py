@@ -34,6 +34,10 @@ MCF_STEMS = (
     "dry_lot",
     "daily_spread",
     "pasture",
+    "poultry_with_litter",
+    "poultry_without_litter",
+    "pit_gt1mo",
+    "pit_lt1mo",
 )
 
 
@@ -52,12 +56,15 @@ def load_vt_de_counties() -> pd.DataFrame:
 
 
 def load_registries() -> dict[str, ParameterRegistry]:
+    from ghgsim.report.fork_diagram import latest_versioned
+
+    data = ROOT / "data"
     return {
-        "ipcc": load_parameter_csv(ROOT / "data" / "ipcc_params_AN_v4.csv", allow_unverified=False),
+        "ipcc": load_parameter_csv(latest_versioned(data, "ipcc_params", ".csv"), allow_unverified=False),
         "canada": load_parameter_csv(
-            ROOT / "data" / "holos_params_canada_AN_v5.csv", allow_unverified=True
+            latest_versioned(data, "holos_params_canada", ".csv"), allow_unverified=True
         ),
-        "us": load_parameter_csv(ROOT / "data" / "holos_params_us_AN_v2.csv", allow_unverified=True),
+        "us": load_parameter_csv(latest_versioned(data, "holos_params_us", ".csv"), allow_unverified=True),
     }
 
 
@@ -115,6 +122,8 @@ def holos_compute_params(
         "calf_vs_coeff": _reg_get(canada, "HOLOS.VS.dairy_calves_coeff|canada"),
         "cover_crust_reduction": _reg_get(canada, "HOLOS.COVER.natural_crust_reduction"),
         "cover_solid_reduction": _reg_get(canada, "HOLOS.COVER.solid_cover_reduction"),
+        "EF_enteric_swine": _reg_get(ipcc, "IPCC2006.EF_enteric.swine|developed"),
+        "EF_enteric_poultry": _reg_get(ipcc, "IPCC2006.EF_enteric.poultry"),
         "EF1": _reg_get(ipcc, "IPCC2006.EF1.all"),
         "EF3PRP_CPP": _reg_get(ipcc, "IPCC2006.EF3PRP_CPP.all"),
         "EF4": _reg_get(ipcc, "IPCC2006.EF4.all"),
@@ -124,8 +133,35 @@ def holos_compute_params(
         "FracLEACH_wet": _reg_get(ipcc, "IPCC2006.FracLEACH.wet"),
         # IPCC 2006 CSV has no dry FracLEACH row. VT/DE climate is wet, so unused.
     }
-    for system in ("liquid_nocrust", "liquid_crust", "lagoon", "solid_storage", "dry_lot", "daily_spread"):
+    for system in (
+        "liquid_nocrust",
+        "liquid_crust",
+        "lagoon",
+        "solid_storage",
+        "dry_lot",
+        "daily_spread",
+        "poultry_with_litter",
+        "poultry_without_litter",
+        "pit",
+    ):
         params[f"EF3_{system}"] = _reg_get(ipcc, f"IPCC2006.EF3.{system}")
+    for animal in ("market_swine", "breeding_swine", "broilers", "layers", "turkeys"):
+        params[f"VS_{animal}"] = _reg_get(ipcc, f"IPCC2006.VS.{animal}|north_america")
+        params[f"B0_{animal}"] = _reg_get(ipcc, f"IPCC2006.B0.{animal}|north_america")
+        params[f"Nrate_{animal}"] = _reg_get(ipcc, f"IPCC2006.Nrate.{animal}|north_america")
+        params[f"TAM_{animal}"] = _reg_get(ipcc, f"IPCC2006.TAM.{animal}|north_america")
+    for system in ("liquid_slurry", "pit", "lagoon", "solid_storage", "deep_bedding"):
+        params[f"FracGasMS_swine_{system}"] = _reg_get(ipcc, f"IPCC2006.FracGasMS.swine|{system}")
+    for system in ("poultry_with_litter", "poultry_without_litter", "lagoon"):
+        params[f"FracGasMS_poultry_{system}"] = _reg_get(ipcc, f"IPCC2006.FracGasMS.poultry|{system}")
+    params["FracLeachMS_swine_liquid_nocrust"] = _reg_get(ipcc, "IPCC2019.FracLeachMS.swine|liquid_nocrust")
+    params["FracLeachMS_swine_pit"] = _reg_get(ipcc, "IPCC2019.FracLeachMS.swine|pit")
+    params["FracLeachMS_poultry_poultry_with_litter"] = _reg_get(
+        ipcc, "IPCC2019.FracLeachMS.poultry|poultry_with_litter"
+    )
+    params["FracLeachMS_poultry_poultry_without_litter"] = _reg_get(
+        ipcc, "IPCC2019.FracLeachMS.poultry|poultry_without_litter"
+    )
     for animal, frac_animal in (("dairy", "dairy"), ("other_cattle", "other_cattle"), ("beef", "other_cattle")):
         for system in ("liquid_slurry", "solid_storage", "dry_lot", "daily_spread", "lagoon"):
             key = f"IPCC2006.FracGasMS.{frac_animal}|{system}"

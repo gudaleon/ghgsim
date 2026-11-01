@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>ghgsim Sankey turkey_litter AN_v1</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; color: #263238; }
+    #view { margin: 0 0 12px 0; }
+    #chart { width: 100%; height: 720px; }
+  </style>
+</head>
+<body>
+  <h1>Emissions Sankey — <span id="farm"></span> <span id="ver"></span></h1>
+  <label>View
+    <select id="view">
+      <option value="source_correct">source_correct</option>
+      <option value="holos_as_coded">holos_as_coded</option>
+      <option value="fork_delta">fork delta</option>
+    </select>
+  </label>
+  <div id="chart"></div>
+  <script>
+    const FARM = "turkey_litter";
+    const VERSION = "AN_v1";
+    const VIEWS = {"fork_delta":{"fork_deltas_kg_co2e":{"HOLOS.CH4.cover_reduction":0.0,"HOLOS.CH4.turkey_zero":-12941.586,"HOLOS.ENTERIC.calf_zero":0.0,"HOLOS.GE.digestibility":0.0,"HOLOS.NEX.calf_nrate":0.0,"HOLOS.VS.calf_coeff":0.0,"HOLOS.VS.digestibility":0.0,"HOLOS.VS.urinary_energy":0.0,"HOLOS.YM.dairy":0.0},"gwp":{"CH4":28.0,"N2O":265.0},"links":[{"delta_kg_co2e":-12941.586,"fork_id":"HOLOS.CH4.turkey_zero","sign":"removed","source":"source.source_correct","target":"fork.HOLOS.CH4.turkey_zero.removed","units":"kg CO2e","value":12941.586},{"sign":"retained","source":"source.source_correct","target":"sink.holos_as_coded","units":"kg CO2e","value":19121.150714286}],"nodes":[{"color":"#455A64","id":"source.source_correct","inflow":0.0,"kind":"source_total","label":"source_correct (32.062736714 t CO2e)","layer":0,"outflow":32062.736714286,"value":32062.736714286},{"color":"#2E7D32","id":"fork.HOLOS.CH4.turkey_zero.removed","inflow":12941.586,"kind":"fork_removed","label":"HOLOS.CH4.turkey_zero removed","layer":1,"outflow":0.0,"value":12941.586},{"color":"#37474F","id":"sink.holos_as_coded","inflow":19121.150714286,"kind":"sink","label":"holos_as_coded (19.121150714 t CO2e)","layer":2,"outflow":0.0,"value":19121.150714286}],"totals":{"CO2e_kg":19121.150714286,"CO2e_t":19.121150714,"holos_as_coded_CO2e_kg":19121.150714286,"interaction_kg":0.0,"source_correct_CO2e_kg":32062.736714286,"sum_single_fork_delta_kg":-12941.586},"units":"kg CO2e","view":"fork_delta"},"holos_as_coded":{"gwp":{"CH4":28.0,"N2O":265.0},"links":[{"gas":"N2O","native_kg":14.431057143,"source":"animal.turkeys","target":"process.manure_n2o_direct","units":"kg CO2e","value":3824.230142857},{"gas":"N2O","native_kg":57.724228571,"source":"animal.turkeys","target":"process.manure_n2o_indirect","units":"kg CO2e","value":15296.920571429},{"gas":"N2O","source":"gas.N2O","target":"sink.CO2e","units":"kg CO2e","value":19121.150714286},{"gas":"N2O","source":"process.manure_n2o_direct","target":"gas.N2O","units":"kg CO2e","value":3824.230142857},{"gas":"N2O","source":"process.manure_n2o_indirect","target":"gas.N2O","units":"kg CO2e","value":15296.920571429}],"nodes":[{"color":"#1565C0","id":"animal.turkeys","inflow":0.0,"kind":"animal","label":"turkeys","layer":0,"outflow":19121.150714286,"value":19121.150714286},{"color":"#00838F","id":"process.manure_n2o_direct","inflow":3824.230142857,"kind":"process","label":"direct manure N2O","layer":1,"outflow":3824.230142857,"value":3824.230142857},{"color":"#00838F","id":"process.manure_n2o_indirect","inflow":15296.920571429,"kind":"process","label":"indirect N2O","layer":1,"outflow":15296.920571429,"value":15296.920571429},{"color":"#6A1B9A","id":"gas.N2O","inflow":19121.150714286,"kind":"gas","label":"N2O (GWP 265)","layer":2,"outflow":19121.150714286,"value":19121.150714286},{"color":"#37474F","id":"sink.CO2e","inflow":19121.150714286,"kind":"sink","label":"total CO2e","layer":3,"outflow":0.0,"value":19121.150714286}],"totals":{"CH4_enteric_kg":0.0,"CH4_kg":0.0,"CH4_manure_kg":0.0,"CO2e_kg":19121.150714286,"CO2e_t":19.121150714,"N2O_direct_kg":14.431057143,"N2O_indirect_kg":57.724228571,"N2O_kg":72.155285714,"N2O_soil_kg":0.0},"units":"kg CO2e","view":"holos_as_coded"},"source_correct":{"gwp":{"CH4":28.0,"N2O":265.0},"links":[{"gas":"CH4","native_kg":462.1995,"source":"animal.turkeys","system":"poultry_with_litter","target":"process.manure_ch4.poultry_with_litter","units":"kg CO2e","value":12941.586},{"gas":"N2O","native_kg":14.431057143,"source":"animal.turkeys","target":"process.manure_n2o_direct","units":"kg CO2e","value":3824.230142857},{"gas":"N2O","native_kg":57.724228571,"source":"animal.turkeys","target":"process.manure_n2o_indirect","units":"kg CO2e","value":15296.920571429},{"gas":"CH4","source":"gas.CH4","target":"sink.CO2e","units":"kg CO2e","value":12941.586},{"gas":"N2O","source":"gas.N2O","target":"sink.CO2e","units":"kg CO2e","value":19121.150714286},{"gas":"CH4","source":"process.manure_ch4.poultry_with_litter","target":"gas.CH4","units":"kg CO2e","value":12941.586},{"gas":"N2O","source":"process.manure_n2o_direct","target":"gas.N2O","units":"kg CO2e","value":3824.230142857},{"gas":"N2O","source":"process.manure_n2o_indirect","target":"gas.N2O","units":"kg CO2e","value":15296.920571429}],"nodes":[{"color":"#1565C0","id":"animal.turkeys","inflow":0.0,"kind":"animal","label":"turkeys","layer":0,"outflow":32062.736714286,"value":32062.736714286},{"color":"#00838F","id":"process.manure_ch4.poultry_with_litter","inflow":12941.586,"kind":"process","label":"manure CH4 (poultry with litter)","layer":1,"outflow":12941.586,"value":12941.586},{"color":"#00838F","id":"process.manure_n2o_direct","inflow":3824.230142857,"kind":"process","label":"direct manure N2O","layer":1,"outflow":3824.230142857,"value":3824.230142857},{"color":"#00838F","id":"process.manure_n2o_indirect","inflow":15296.920571429,"kind":"process","label":"indirect N2O","layer":1,"outflow":15296.920571429,"value":15296.920571429},{"color":"#EF6C00","id":"gas.CH4","inflow":12941.586,"kind":"gas","label":"CH4 (GWP 28)","layer":2,"outflow":12941.586,"value":12941.586},{"color":"#6A1B9A","id":"gas.N2O","inflow":19121.150714286,"kind":"gas","label":"N2O (GWP 265)","layer":2,"outflow":19121.150714286,"value":19121.150714286},{"color":"#37474F","id":"sink.CO2e","inflow":32062.736714286,"kind":"sink","label":"total CO2e","layer":3,"outflow":0.0,"value":32062.736714286}],"totals":{"CH4_enteric_kg":0.0,"CH4_kg":462.1995,"CH4_manure_kg":462.1995,"CO2e_kg":32062.736714286,"CO2e_t":32.062736714,"N2O_direct_kg":14.431057143,"N2O_indirect_kg":57.724228571,"N2O_kg":72.155285714,"N2O_soil_kg":0.0},"units":"kg CO2e","view":"source_correct"}};
+    document.getElementById("farm").textContent = FARM;
+    document.getElementById("ver").textContent = VERSION;
+    function draw(name) {
+      const view = VIEWS[name];
+      const nodes = view.nodes;
+      const index = Object.fromEntries(nodes.map((n, i) => [n.id, i]));
+      const trace = {
+        type: "sankey",
+        arrangement: "snap",
+        node: {
+          pad: 16,
+          thickness: 16,
+          label: nodes.map(n => n.label + "\n" + n.value.toFixed(3) + " kg CO2e"),
+          color: nodes.map(n => n.color),
+        },
+        link: {
+          source: view.links.map(l => index[l.source]),
+          target: view.links.map(l => index[l.target]),
+          value: view.links.map(l => l.value),
+          color: view.links.map(l => "rgba(120,144,156,0.35)"),
+        },
+      };
+      Plotly.react("chart", [trace], {
+        title: FARM + " — " + name + " (" + view.units + ")",
+        font: { size: 12 },
+        margin: { l: 20, r: 20, t: 40, b: 20 },
+      }, {responsive: true, displaylogo: false});
+    }
+    const sel = document.getElementById("view");
+    sel.addEventListener("change", () => draw(sel.value));
+    draw("source_correct");
+  </script>
+</body>
+</html>

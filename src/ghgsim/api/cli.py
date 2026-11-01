@@ -289,6 +289,9 @@ def modules_list():
     click.echo("  ipcc2006.manure - IPCC 2006 Manure management")
     click.echo("  ipcc2019.soil_n2o - IPCC 2019 Soil N2O (climate-disaggregated)")
     click.echo("  ipcc2019.enteric - IPCC 2019 Enteric CH4 (diet-specific)")
+    click.echo("  ipcc2019.manure - IPCC 2019 Manure CH4/N2O (FracLeachMS)")
+    click.echo("  holos.enteric - Holos enteric (cattle Tier 2; swine Tier 1; poultry 0)")
+    click.echo("  holos.manure - Holos manure CH4/N2O (cattle/swine/poultry)")
     
     # TODO: Discover modules dynamically
 

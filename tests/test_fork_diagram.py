@@ -59,7 +59,8 @@ def test_discover_inputs_picks_repo_newest_trace():
     paths = discover_inputs(DATA)
     newest = latest_versioned(DATA, "coefficient_trace", ".csv")
     assert paths["coefficient_trace"] == newest
-    assert newest.name == "coefficient_trace_AN_v4.csv"
+    assert newest == latest_versioned(DATA, "coefficient_trace", ".csv")
+    assert an_version(newest.name) >= 5
 
 
 def test_every_registry_fork_appears_exactly_once():
@@ -187,7 +188,7 @@ def test_newest_status_column_and_weakest_mapped_status(tmp_path):
 
 def test_v4_trace_fork_statuses():
     payload = build_from_data_dir(DATA, output_version="AN_v2")
-    assert payload["generated_from"]["coefficient_trace"] == "data/coefficient_trace_AN_v4.csv"
+    assert payload["generated_from"]["coefficient_trace"].endswith("coefficient_trace_AN_v5.csv")
     assert payload["status"]["HOLOS.GE.digestibility"] == "HOLOS-ONLY"
     assert payload["status"]["HOLOS.ENTERIC.calf_zero"] == "VERIFIED"
     assert payload["status"]["HOLOS.YM.dairy"] == "HOLOS-ONLY"
@@ -196,3 +197,4 @@ def test_v4_trace_fork_statuses():
     assert payload["status"]["HOLOS.VS.calf_coeff"] == "HOLOS-ONLY"
     assert payload["status"]["HOLOS.CH4.cover_reduction"] == "SOURCE-TRACED"
     assert payload["status"]["HOLOS.NEX.calf_nrate"] == "SOURCE-TRACED"
+    assert payload["status"]["HOLOS.CH4.turkey_zero"] == "SOURCE-TRACED"

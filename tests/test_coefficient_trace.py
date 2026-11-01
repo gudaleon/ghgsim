@@ -5,11 +5,13 @@ from pathlib import Path
 
 from ghgsim.core.registry import VerificationStatus
 from ghgsim.modules.holos.forks import get_holos_fork_registry
+from ghgsim.report.fork_diagram import latest_versioned
 
 ROOT = Path(__file__).resolve().parents[1]
-TRACE = ROOT / "data" / "coefficient_trace_AN_v1.csv"
+TRACE_V1 = ROOT / "data" / "coefficient_trace_AN_v1.csv"
+TRACE = latest_versioned(ROOT / "data", "coefficient_trace", ".csv")
 DOC = ROOT / "docs" / "COEFFICIENT_TRACE_AN_v1.md"
-CANADA = ROOT / "data" / "holos_params_canada_AN_v4.csv"
+CANADA = latest_versioned(ROOT / "data", "holos_params_canada", ".csv")
 US = ROOT / "data" / "holos_params_us_AN_v2.csv"
 
 REQUIRED = {
@@ -34,9 +36,12 @@ def _rows(path: Path):
 
 
 def test_trace_csv_has_required_columns():
-    rows = _rows(TRACE)
+    rows = _rows(TRACE_V1)
     assert rows
     assert REQUIRED <= set(rows[0].keys())
+    newest = _rows(TRACE)
+    assert newest
+    assert REQUIRED <= set(newest[0].keys())
 
 
 def test_every_unverified_or_source_traced_param_is_traced():
@@ -46,7 +51,7 @@ def test_every_unverified_or_source_traced_param_is_traced():
         for row in _rows(path):
             if row["status"] in OPENED_PENDING and row["key"] not in traced:
                 missing.append(row["key"])
-    assert missing == [], f"params not in coefficient_trace_AN_v1.csv: {missing}"
+    assert missing == [], f"params not in {TRACE.name}: {missing}"
 
 
 def test_every_holos_fork_is_traced():
@@ -56,11 +61,11 @@ def test_every_holos_fork_is_traced():
         for fork in get_holos_fork_registry().list_forks(sort_by="id")
         if fork.id not in traced
     ]
-    assert missing == [], f"forks not in coefficient_trace_AN_v1.csv: {missing}"
+    assert missing == [], f"forks not in {TRACE.name}: {missing}"
 
 
 def test_trace_status_and_opened_sources():
-    for row in _rows(TRACE):
+    for row in _rows(TRACE_V1):
         assert row["status"] in TRACE_STATUSES, f"{row['param']} status {row['status']}"
         assert row["source checked Y/N"] in {"Y", "N"}
         assert row["found value"].strip()

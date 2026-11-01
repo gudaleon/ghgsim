@@ -212,3 +212,87 @@ def manure_n2o_indirect_vol_process() -> ProcessDef:
         notes="IPCC 2006 Vol 4 Ch 10; convert N2O-N to N2O with 44/28",
     )
     return process
+
+
+def swine_enteric_tier1_process() -> ProcessDef:
+    """Daily swine enteric CH4 from the IPCC Tier 1 emission factor."""
+    process = ProcessDef(
+        name="swine_enteric_tier1",
+        description="Swine enteric CH4, IPCC 2006/2019 Table 10.10 Tier 1 (daily)",
+        rate_equation="EF_enteric_kg_head_yr / 365.0",
+        stoichiometry={"CH4_kg_day": 1.0},
+        unit="kg CH4 / head / day",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_10_Ch10_Livestock.pdf",
+        equation="Equation 10.19",
+        page="10.28",
+        notes="Table 10.10 developed-country / high-productivity swine EF = 1.5 kg CH4 head-1 yr-1",
+    )
+    return process
+
+
+def poultry_enteric_process() -> ProcessDef:
+    """Poultry enteric CH4 is not developed (IPCC Table 10.9 / 10.10)."""
+    process = ProcessDef(
+        name="poultry_enteric",
+        description="Poultry enteric CH4 = 0 (IPCC 2006/2019 Table 10.10: insufficient data)",
+        rate_equation="0.0",
+        stoichiometry={"CH4_kg_day": 1.0},
+        unit="kg CH4 / head / day",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_10_Ch10_Livestock.pdf",
+        equation="Table 10.9 / Table 10.10",
+        page="10.27 / 10.28",
+        notes="Method 'Not developed'; EF cell 'Insufficient data for calculation'",
+    )
+    return process
+
+
+def manure_n2o_indirect_leach_process() -> ProcessDef:
+    """Indirect manure N2O-N from leaching, IPCC 2006 Eq 10.28-10.29 / 2019 Table 10.22."""
+    process = ProcessDef(
+        name="manure_n2o_indirect_leach",
+        description="Indirect manure N2O-N via leaching (IPCC 2006 Eq 10.28-10.29)",
+        rate_equation="Nex_kg * FracLeachMS * EF5",
+        stoichiometry={"N2O_N_kg": 1.0},
+        unit="kg N2O-N",
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2019rf/pdf/4_Volume4/19R_V4_Ch10_Livestock.pdf",
+        equation="Equations 10.28 and 10.29",
+        page="10.97 (2019 Table 10.22 FracLeachMS)",
+        notes=(
+            "IPCC 2006 provides no default FracLeachMS (country-specific). "
+            "2019 Table 10.22 (Updated) publishes defaults; 0 for liquid/litter systems."
+        ),
+    )
+    return process
+
+
+def turkey_manure_ch4_holos_process() -> ProcessDef:
+    """Turkey manure CH4: IPCC Eq 10.23 default; holos_as_coded CE-10 is zero."""
+    process = ProcessDef(
+        name="turkey_manure_methane_holos",
+        description="Turkey manure CH4 (IPCC 2006 Eq 10.23); holos_as_coded CE-10 is zero",
+        rate_equation="VS * B0 * MCF * CH4_M3_TO_KG",
+        stoichiometry={"CH4_kg_day": 1.0},
+        unit="kg CH4 / head / day",
+        forks={
+            "holos_as_coded": ForkOption(
+                name="holos_as_coded",
+                description="CE-10: Holos CLI turkey manure CH4 forced to zero",
+                modified_equation="0.0",
+                issue_ref="CE-10",
+                label="holos_as_coded",
+            ),
+        },
+    )
+    process.add_source(
+        doi_or_url="https://www.ipcc-nggip.iges.or.jp/public/2006gl/",
+        equation="Equation 10.23 (source_correct); Holos CLI CE-10 (holos_as_coded)",
+        page="10.53",
+        notes="Holos file:line citations are traceability only; no GPL code copied",
+    )
+    return process

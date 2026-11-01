@@ -47,7 +47,7 @@ STAGE_PREFERRED_IDS: dict[str, tuple[str, ...]] = {
     "GE": ("HOLOS.GE.digestibility",),
     "enteric_Ym": ("HOLOS.ENTERIC.calf_zero", "HOLOS.YM.dairy"),
     "VS": ("HOLOS.VS.digestibility", "HOLOS.VS.urinary_energy", "HOLOS.VS.calf_coeff"),
-    "manure_CH4": ("HOLOS.CH4.cover_reduction",),
+    "manure_CH4": ("HOLOS.CH4.cover_reduction", "HOLOS.CH4.turkey_zero"),
     "N_excretion": ("HOLOS.NEX.calf_nrate",),
 }
 

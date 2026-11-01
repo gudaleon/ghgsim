@@ -17,9 +17,14 @@ from ghgsim.modules.holos.process_defs import (
     enteric_ch4_process,
     ge_intake_variable,
     ge_intake_variable_holos_tdn,
+    poultry_enteric_process,
+    swine_enteric_tier1_process,
 )
+from ghgsim.modules.livestock_types import is_poultry, is_swine
 
 _ENTERIC = enteric_ch4_process()
+_SWINE_ENTERIC = swine_enteric_tier1_process()
+_POULTRY_ENTERIC = poultry_enteric_process()
 _GE_IPCC = ge_intake_variable()
 _GE_HOLOS = ge_intake_variable_holos_tdn()
 
@@ -79,7 +84,13 @@ class HolosEnteric:
 
     inputs = {
         "head": VarSpec("head", "dimensionless", "Number of animals", "scalar", True),
-        "animal_type": VarSpec("animal_type", "dimensionless", "Animal type (dairy/beef)", "scalar", True),
+        "animal_type": VarSpec(
+            "animal_type",
+            "dimensionless",
+            "Animal type (dairy/beef/market_swine/breeding_swine/broilers/layers/turkeys)",
+            "scalar",
+            True,
+        ),
         "animal_class": VarSpec("animal_class", "dimensionless", "adult or calf (CE-06 fork)", "scalar", False),
         "diet_type": VarSpec("diet_type", "dimensionless", "Diet category (high_grain/medium/low)", "scalar", False),
         "GE_MJ_day": VarSpec("GE_MJ_day", "MJ / day", "Gross energy intake override", "scalar", False),
@@ -107,6 +118,14 @@ class HolosEnteric:
         "Ym_beef_medium": ParamRef("HOLOS.Ym.beef_backgrounder|canada", "Ym for beef medium (% GE)"),
         "Ym_beef_low_grain": ParamRef("HOLOS.Ym.beef_cowcalf_low|canada", "Ym for beef low grain (% GE)"),
         "CH4_ENERGY": ParamRef("BOTH.CH4_ENERGY.all", "CH4 energy content (MJ/kg)"),
+        "EF_enteric_swine": ParamRef(
+            "IPCC2006.EF_enteric.swine|developed",
+            "Swine enteric Tier 1 EF (developed / high-productivity), kg CH4/head/yr",
+        ),
+        "EF_enteric_poultry": ParamRef(
+            "IPCC2006.EF_enteric.poultry",
+            "Poultry enteric EF (0; IPCC Table 10.10 insufficient data)",
+        ),
     }
 
     outputs = {
@@ -148,6 +167,24 @@ class HolosEnteric:
         """
         fork_settings = forks_from_inputs(inputs)
         head = float(inputs["head"])
+        animal_type = str(inputs["animal_type"])
+        if is_poultry(animal_type):
+            ch4_kg_day = _POULTRY_ENTERIC.compute_rate({})
+            return {
+                "CH4_total": head * ch4_kg_day * 365.0,
+                "CH4_kg_head": float(params.get("EF_enteric_poultry", 0.0)),
+                "GE_used": 0.0,
+                "Ym_used": 0.0,
+            }
+        if is_swine(animal_type):
+            ef = float(params["EF_enteric_swine"])
+            ch4_kg_day = _SWINE_ENTERIC.compute_rate({"EF_enteric_kg_head_yr": ef})
+            return {
+                "CH4_total": head * ch4_kg_day * 365.0,
+                "CH4_kg_head": ef,
+                "GE_used": 0.0,
+                "Ym_used": 0.0,
+            }
         animal_class = str(inputs.get("animal_class", "adult"))
         ge_mj_day = _compute_ge(inputs, params, fork_settings)
         ym_pct = _select_ym(inputs, params, fork_settings)
