@@ -168,6 +168,40 @@ def serve(host, port):
         click.echo("\n\n✓ Dashboard stopped")
 
 
+@cli.command("fork-diagram")
+@click.option("--repo", type=click.Path(exists=True, file_okay=False), help="Repository root")
+@click.option(
+    "--figures-dir",
+    type=click.Path(file_okay=False),
+    help="Output directory (default: docs/figures)",
+)
+@click.option("--no-svg", is_flag=True, help="Skip mermaid-cli SVG even if mmdc is installed")
+def fork_diagram(repo, figures_dir, no_svg):
+    """
+    Write a versioned Mermaid fork decision diagram from the newest inputs.
+
+    Reads the highest AN_vN fork registry, stylized and VT/DE delta CSVs,
+    and coefficient-trace table. Writes docs/figures/fork_diagram_AN_vN.mmd
+    and .json without overwriting an existing version.
+
+    Example:
+        ghgsim fork-diagram
+    """
+    from ghgsim.report.fork_diagram import generate
+
+    result = generate(
+        repo=Path(repo) if repo else None,
+        figures_dir=Path(figures_dir) if figures_dir else None,
+        render_svg=not no_svg,
+    )
+    click.echo(f"fork_diagram_AN_v{result['version']}")
+    for kind, path in result["paths"].items():
+        if path is not None:
+            click.echo(f"  {kind}: {path}")
+    if result["paths"].get("svg") is None and not no_svg:
+        click.echo("  svg: not rendered (mmdc/npx mermaid-cli unavailable; see docs/FORK_DIAGRAM_AN_v1.md)")
+
+
 @cli.command("modules-list")
 def modules_list():
     """
