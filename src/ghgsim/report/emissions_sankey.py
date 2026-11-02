@@ -25,6 +25,7 @@ from typing import Any
 import yaml
 
 from ghgsim import __version__ as ENGINE_VERSION
+from ghgsim.core.provenance import run_identity
 from ghgsim.modules.holos import (
     HolosEnteric,
     HolosFieldN,
@@ -434,12 +435,18 @@ def _apply_field_modules(
         "climate": str(field.get("climate") or "wet"),
         "forks": dict(forks or {}),
     }
-    if field.get("P_PE") not in (None, ""):
-        soil_in["P_PE"] = _yaml_number(field.get("P_PE"))
-    if field.get("RFtext") not in (None, ""):
-        soil_in["RFtext"] = _yaml_number(field.get("RFtext"))
-    if field.get("RFtopo") not in (None, ""):
-        soil_in["RFtopo"] = _yaml_number(field.get("RFtopo"))
+    for key in (
+        "P_PE",
+        "growing_season_precip_mm",
+        "growing_season_pe_mm",
+        "FR_Topo",
+        "irrigation_mm",
+        "RF_TX",
+        "RFtext",
+        "RFtopo",
+    ):
+        if field.get(key) not in (None, ""):
+            soil_in[key] = _yaml_number(field.get(key))
     soil_out = soil.compute(soil_in, params)
     lime_out = lime.compute(
         {
@@ -464,7 +471,10 @@ def _apply_field_modules(
             "F_PRP_CPP": field_n["F_PRP_CPP"],
             "F_AM_kg": field_n["F_AM_kg"],
             "EF1_used": float(soil_out["EF1_used"]),
+            "EF1_status": soil_out.get("EF1_status", "ipcc2006_ef1"),
             "P_PE": soil_in.get("P_PE"),
+            "growing_season_precip_mm": soil_in.get("growing_season_precip_mm"),
+            "growing_season_pe_mm": soil_in.get("growing_season_pe_mm"),
             "residue_crops": field_n.get("residue_crops") or [],
             "soil_n2o_by_source": dict(soil_out.get("soil_n2o_by_source") or {}),
             "N2O_soil_direct_kg": float(soil_out["N2O_direct"]),
@@ -1263,6 +1273,7 @@ def build_farm_payload(
         "version": output_version,
         "farm_id": farm_id,
         "engine_version": engine_version,
+        "run_identity": run_identity(),
         "inputs_file": inputs_file,
         "fork_set": {
             "source_correct": dict(source_correct.forks),

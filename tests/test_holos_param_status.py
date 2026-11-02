@@ -14,6 +14,7 @@ CANADA_V5 = ROOT / "data" / "holos_params_canada_AN_v5.csv"
 CANADA_V6 = ROOT / "data" / "holos_params_canada_AN_v6.csv"
 CANADA_V7 = ROOT / "data" / "holos_params_canada_AN_v7.csv"
 CANADA_V8 = ROOT / "data" / "holos_params_canada_AN_v8.csv"
+CANADA_V9 = ROOT / "data" / "holos_params_canada_AN_v9.csv"
 US = ROOT / "data" / "holos_params_us_AN_v2.csv"
 ALLOWED = {item.value for item in VerificationStatus}
 
@@ -26,7 +27,7 @@ def _rows(path: Path):
         return list(csv.DictReader(handle))
 
 
-@pytest.mark.parametrize("path", [CANADA, CANADA_V5, CANADA_V6, CANADA_V7, CANADA_V8, US])
+@pytest.mark.parametrize("path", [CANADA, CANADA_V5, CANADA_V6, CANADA_V7, CANADA_V8, CANADA_V9, US])
 def test_status_values_are_known(path):
     rows = _rows(path)
     assert rows
@@ -91,6 +92,15 @@ def test_canada_v8_rochette_efeco_is_verified():
     assert registry.get("HOLOS.N2O.EFeco.max").value == pytest.approx(0.017)
 
 
+def test_canada_v9_liang2020_ef_ct_is_verified():
+    registry = load_parameter_csv(CANADA_V9, allow_unverified=True)
+    slope = registry.get("HOLOS.N2O.EF_CT.slope")
+    assert slope.value == pytest.approx(0.00558)
+    assert slope.status == VerificationStatus.VERIFIED
+    assert registry.get("HOLOS.N2O.EF_CT.intercept").value == pytest.approx(-7.7)
+    assert registry.get("HOLOS.N2O.winter_correction").value == pytest.approx(1.0 / 0.645)
+
+
 def test_holos_as_coded_forks_are_registered():
     forks = list_holos_as_coded_forks()
     ids = {fork.id for fork in forks}
@@ -103,13 +113,18 @@ def test_holos_as_coded_forks_are_registered():
         "HOLOS.CH4.cover_reduction",
         "HOLOS.CH4.turkey_zero",
         "HOLOS.NEX.calf_nrate",
-        "HOLOS.N2O.ef1",
     }
     assert expected <= ids
+    assert "HOLOS.N2O.ef1" not in ids
     registry = get_holos_fork_registry()
     ym = registry.get("HOLOS.YM.dairy")
     assert ym.label == "parameter_refinement"
     assert ym.default == "eccc_2022_canada"
+    ef1 = registry.get("HOLOS.N2O.ef1")
+    assert ef1.label == "model_version"
+    assert ef1.default == "ipcc2006_ef1"
+    assert set(ef1.options) == {"ipcc2006_ef1", "holos_liang2020"}
+    assert "holos_as_coded" not in ef1.options
     for fork in forks:
         assert fork.default == "source_correct"
         assert "holos_as_coded" in fork.options

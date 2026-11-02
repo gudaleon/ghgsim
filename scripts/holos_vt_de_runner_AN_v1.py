@@ -147,6 +147,9 @@ def holos_compute_params(
         "EFeco_intercept": _reg_get(canada, "HOLOS.N2O.EFeco.intercept"),
         "EFeco_min": _reg_get(canada, "HOLOS.N2O.EFeco.min"),
         "EFeco_max": _reg_get(canada, "HOLOS.N2O.EFeco.max"),
+        "EF_CT_slope": _reg_get(canada, "HOLOS.N2O.EF_CT.slope"),
+        "EF_CT_intercept": _reg_get(canada, "HOLOS.N2O.EF_CT.intercept"),
+        "winter_correction": _reg_get(canada, "HOLOS.N2O.winter_correction"),
     }
     # Bushel masses: 56-lb corn / 60-lb soy and wheat are customary USDA
     # weights. AH-697 was not re-opened; NIST lb is VERIFIED.

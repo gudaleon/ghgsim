@@ -200,4 +200,10 @@ def test_v4_trace_fork_statuses():
     assert payload["status"]["HOLOS.CH4.cover_reduction"] == "SOURCE-TRACED"
     assert payload["status"]["HOLOS.NEX.calf_nrate"] == "SOURCE-TRACED"
     assert payload["status"]["HOLOS.CH4.turkey_zero"] == "SOURCE-TRACED"
-    assert payload["status"]["HOLOS.N2O.ef1"] == "SOURCE-TRACED"
+    assert payload["status"]["HOLOS.N2O.ef1"] == "VERIFIED"
+    identity = payload["run_identity"]
+    assert identity["release_number"]
+    assert identity["commit_hash"]
+    assert "Holzworth" in identity["apsim_requirement"]
+    assert "103" in identity["apsim_requirement"]
+    assert "43" in identity["apsim_requirement"]

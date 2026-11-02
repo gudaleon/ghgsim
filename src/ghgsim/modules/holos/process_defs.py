@@ -406,25 +406,13 @@ def crop_residue_n_process() -> ProcessDef:
 
 
 def rochette_efeco_process() -> ProcessDef:
-    """Canadian ecodistrict EF1 from Rochette et al. 2008 (CJSS 88:641-654) Eq 3."""
+    """Rochette et al. 2008 CJSS Eq 3. Not the Holos V4 coded EF (Liang 2020)."""
     process = ProcessDef(
         name="rochette_efeco",
         description="EFeco = 0.022*(P/PE)-0.0048 clamped to [0.0016, 0.017] (Rochette 2008 Eq 3)",
         rate_equation="min(EFeco_max, max(EFeco_min, EFeco_slope * P_PE + EFeco_intercept))",
         stoichiometry={"EF1": 1.0},
         unit="kg N2O-N / kg N",
-        forks={
-            "holos_as_coded": ForkOption(
-                name="holos_as_coded",
-                description=(
-                    "ghgsim HolosSoilN2O as coded uses IPCC 2006 Table 11.1 EF1=0.01 "
-                    "with no P/PE or topography modifier. Holos C# soil N2O was not opened."
-                ),
-                modified_equation="EF1_ipcc",
-                issue_ref="HOLOS-EF1-ROCHETTE",
-                label="holos_as_coded",
-            ),
-        },
     )
     process.add_source(
         doi_or_url="https://doi.org/10.4141/cjss07025",
@@ -432,8 +420,31 @@ def rochette_efeco_process() -> ProcessDef:
         page="641-654 (CJSS 88)",
         notes=(
             "Rochette et al. 2008 Can. J. Soil Sci. 88:641-654. "
-            "Holos docs cite SSSAJ DOI 10.2136/sssaj2007.0351 (that URL 404s). "
-            "This is the opened CJSS paper. Holos C# / V4 soil N2O section UNVERIFIED."
+            "Holos V4 Sec 2.5 cites this paper for FR_Topo only. Holos coded EF is "
+            "Liang et al. 2020 Eq 2.5.1, not this linear EFeco."
+        ),
+    )
+    return process
+
+
+def holos_ecodistrict_ef_ct_process() -> ProcessDef:
+    """Holos V4 Eq 2.5.1-1 / 2.5.1-2: EF_CT = exp(0.00558 * moisture_mm - 7.7)."""
+    process = ProcessDef(
+        name="holos_ecodistrict_ef_ct",
+        description="Holos V4 Sec 2.5 / Liang 2020: EF_CT = exp(0.00558 * P_or_PE_mm - 7.7)",
+        rate_equation="math.exp(EF_CT_slope * moisture_mm + EF_CT_intercept)",
+        stoichiometry={"EF_CT": 1.0},
+        unit="kg N2O-N / kg N",
+    )
+    process.add_source(
+        doi_or_url="https://doi.org/10.1007/s10705-020-10058-w",
+        equation="Holos V4 Algorithm Document Eq 2.5.1-1 and 2.5.1-2; Liang 2020 N2OEF=exp(0.00558P-7.7)",
+        page="Sec 2.5 (Nitrous oxide emission factor calculation, IPCC Canada Tier 2); Nutr. Cycl. Agroecosyst. 117:145-167",
+        notes=(
+            "Opened Pogue et al. 2025 Holos V4 algorithm document (repo-root docx @036f862). "
+            "C# N2OEmissionFactorCalculator.cs:478-656,777-788 matches. "
+            "P and PE are growing-season (May-October) mm from CanSIS 1980-2010. "
+            "No GPL code copied."
         ),
     )
     return process

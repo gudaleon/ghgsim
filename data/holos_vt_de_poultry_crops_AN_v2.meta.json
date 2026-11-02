@@ -1,0 +1,43 @@
+{
+  "command": "python3 scripts/holos_vt_de_poultry_crops_AN_v2.py",
+  "date": "2026-11-02",
+  "run_identity": {
+    "release_number": "0.4.0",
+    "commit_hash": "570c7003b6ec26411266f8f44e754a342082c48c",
+    "git_branch": "cursor/goal4-phase-b-crops-soils-e537",
+    "git_dirty": true,
+    "remote_url": "https://github.com/gudaleon/ghgsim",
+    "apsim_requirement": "Holzworth, D. P., Huth, N. I., Fainges, J., Brown, H., Zurcher, E., Cichota, R., Verrall, S., Herrmann, N. I., Zheng, B., & Snow, V. O. (2018). APSIM Next Generation: Overcoming challenges in modernising a farming systems model. Environmental Modelling & Software, 103, 43\u201351. https://doi.org/10.1016/j.envsoft.2018.02.002"
+  },
+  "census_gap": {
+    "nass_cattle_file": "nass_census2022_county_AN_v1.csv.gz",
+    "short_desc": [
+      "CATTLE, COWS, BEEF - INVENTORY",
+      "CATTLE, COWS, MILK - INVENTORY",
+      "CATTLE, INCL CALVES - INVENTORY",
+      "CORN, GRAIN - ACRES HARVESTED",
+      "CORN, SILAGE - ACRES HARVESTED",
+      "HAY & HAYLAGE - ACRES HARVESTED",
+      "SOYBEANS - ACRES HARVESTED",
+      "WHEAT - ACRES HARVESTED"
+    ],
+    "poultry_or_swine_inventory_rows": [],
+    "census_head_invented": false,
+    "note": "nass_census2022_county_AN_v1.csv.gz is cattle inventory only. Poultry and swine enter as Falcone 2017 excreted N, not Census heads."
+  },
+  "HOLOS.N2O.ef1": {
+    "applied": "ipcc2006_ef1",
+    "holos_liang2020": "UNVERIFIED-input",
+    "note": "Growing-season P and PE (May-October mm; Holos V4 CanSIS 1980-2010) are not in this run. A P/PE ratio or P/PE=1 clamp is not Holos climate. Do not report county deltas from holos_liang2020. The AN_v1 +217,229 t Rochette P/PE=1 finding is withdrawn."
+  },
+  "withdrawn": {
+    "file": "docs/PHASE_B_FOLLOWUP_AN_v1.md",
+    "finding": "dCO2e_t_rochette_minus_ipcc_EF1 = +217229 t from assumed P/PE=1"
+  },
+  "sources": {
+    "nass_crops": "nass_census2022_crops_county_AN_v3.csv.gz",
+    "nass_cattle": "nass_census2022_county_AN_v1.csv.gz",
+    "falcone": "usgs_falcone2021_county_N_2017_AN_v3.csv.gz",
+    "ipcc_params": "ipcc_params_AN_v7.csv"
+  }
+}

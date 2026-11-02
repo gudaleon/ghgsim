@@ -617,13 +617,17 @@ def build_from_data_dir(data_dir: Path, *, output_version: str) -> dict[str, Any
 
     rows = load_trace_table(paths["coefficient_trace"])
     trace_status = map_fork_statuses([str(fork["id"]) for fork in forks], rows)
-    return build_fork_diagram(
+    payload = build_fork_diagram(
         forks,
         observations=observations,
         trace_status=trace_status,
         sources={key: _rel(path) for key, path in paths.items()},
         output_version=output_version,
     )
+    from ghgsim.core.provenance import run_identity
+
+    payload["run_identity"] = run_identity(root)
+    return payload
 
 
 def write_fork_diagram(

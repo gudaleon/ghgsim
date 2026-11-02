@@ -7,13 +7,20 @@ solely on published equations.
 Sources:
 - Little et al. (2008). Holos v1.1.x Methodology. AAFC.
 - IPCC 2006 Guidelines Volume 4 Chapter 11 (Equations 11.1, 11.9, 11.10)
+- Liang et al. (2020). Nutr. Cycl. Agroecosyst. 117:145-167.
+  DOI: 10.1007/s10705-020-10058-w
+- Pogue et al. (2025). Holos V4.0 Algorithm Document Sec 2.5 (opened docx
+  @036f862). Holos C# N2OEmissionFactorCalculator.cs:478-656,777-788 matches.
 - Rochette et al. (2008). Can. J. Soil Sci. 88:641-654. DOI: 10.4141/cjss07025
-  (opened). Holos docs also cite SSSAJ DOI 10.2136/sssaj2007.0351; that URL 404s.
+  (opened). Supplies FR_Topo only, not the coded EF.
 
-HOLOS.N2O.ef1: source_correct uses Rochette EFeco when P_PE is supplied;
-holos_as_coded (and any run without P_PE) uses IPCC 2006 EF1 = 0.01.
-Holos C# / V4 algorithm soil N2O section was not opened (UNVERIFIED).
-RFtext / RFtopo are applied only when the caller supplies them.
+HOLOS.N2O.ef1 is a model-version option (not a bug fork):
+ipcc2006_ef1 (default) = IPCC 2006 Table 11.1 EF1 = 0.01.
+holos_liang2020 = Holos V4 Sec 2.5 / Liang et al. 2020
+EF_CT = exp(0.00558 * P_or_PE_mm - 7.7), times topography / RF_TX /
+winter 1/0.645. Requires growing-season P and PE in mm. Rochette 2008
+supplies FR_Topo only. Holos C# @036f862 matches the opened manual
+(no holos_as_coded EF1 bug). Missing climate is UNVERIFIED-input.
 """
 
 from collections.abc import Mapping
@@ -23,7 +30,7 @@ from ghgsim.core.module import Citation, ParamRef, VarSpec, validate_module
 from ghgsim.modules.holos.common import forks_from_inputs
 from ghgsim.modules.holos.forks import resolve_option
 from ghgsim.modules.holos.process_defs import (
-    rochette_efeco_process,
+    holos_ecodistrict_ef_ct_process,
     soil_n2o_direct_process,
     soil_n2o_indirect_leach_process,
     soil_n2o_indirect_vol_process,
@@ -34,7 +41,49 @@ N2ON_TO_N2O = 44.0 / 28.0
 _DIRECT = soil_n2o_direct_process()
 _VOL = soil_n2o_indirect_vol_process()
 _LEACH = soil_n2o_indirect_leach_process()
-_EFECO = rochette_efeco_process()
+_EF_CT = holos_ecodistrict_ef_ct_process()
+WINTER_CORRECTION = 1.0 / 0.645
+
+
+def holos_ecodistrict_ef1(
+    *,
+    precip_mm: float,
+    pe_mm: float,
+    fr_topo: float | None = None,
+    irrigation_mm: float = 0.0,
+    rf_tx: float = 1.0,
+    rf_ns: float = 1.0,
+    rf_till: float = 1.0,
+    rf_cs: float = 1.0,
+    rf_am: float = 1.0,
+    slope: float = 0.00558,
+    intercept: float = -7.7,
+    winter: float = WINTER_CORRECTION,
+) -> tuple[float, str]:
+    """Holos V4 Eq 2.5.1-2.5.4. Returns (EF1, status).
+
+    status is holos_liang2020 when all required climate inputs are present,
+    else UNVERIFIED-input (caller should fall back to IPCC EF1).
+    Dry (P/PE < 1) without irrigation needs FR_Topo (Rochette 2008 / CanSIS).
+    P == PE does not need FR_Topo because Eq 2.5.2-2 then equals EF_CT(PE).
+    """
+    if pe_mm == 0.0:
+        return 0.0, "UNVERIFIED-input"
+    ratio = precip_mm / pe_mm
+    ef_p = _EF_CT.compute_rate({"moisture_mm": precip_mm, "EF_CT_slope": slope, "EF_CT_intercept": intercept})
+    ef_pe = _EF_CT.compute_rate({"moisture_mm": pe_mm, "EF_CT_slope": slope, "EF_CT_intercept": intercept})
+    if irrigation_mm > 0.0:
+        ef_topo = ef_pe
+    elif ratio > 1.0:
+        ef_topo = ef_p
+    elif abs(ratio - 1.0) < 1e-12:
+        ef_topo = ef_pe
+    elif fr_topo is None:
+        return 0.0, "UNVERIFIED-input"
+    else:
+        ef_topo = ef_pe * fr_topo + ef_p * (1.0 - fr_topo)
+    ef = ef_topo * rf_tx * winter * rf_ns * rf_till * rf_cs * rf_am
+    return ef, "holos_liang2020"
 
 
 def allocate_soil_n2o_by_source(
@@ -69,10 +118,10 @@ def allocate_soil_n2o_by_source(
 class HolosSoilN2O:
     """
     Holos soil N2O emissions.
-    
-    Uses IPCC 2006 methodology (Equations 11.1, 11.9, 11.10) with Canadian
-    climate considerations. Holos technical documentation indicates following
-    IPCC 2006 approach for soil N2O.
+
+    Direct/indirect N2O follow IPCC 2006 Equations 11.1, 11.9, 11.10.
+    HOLOS.N2O.ef1 chooses the direct EF: IPCC 2006 Table 11.1 (default) or
+    Holos V4 Sec 2.5 / Liang et al. 2020 when growing-season P and PE exist.
     """
 
     id = "holos.soil_n2o"
@@ -88,21 +137,56 @@ class HolosSoilN2O:
         "P_PE": VarSpec(
             "P_PE",
             "dimensionless",
-            "Precipitation / potential evapotranspiration (Rochette EFeco). Omit to keep IPCC EF1.",
+            "Unused for Holos EF. Holos Eq 2.5.1 needs growing-season P and PE in mm, not a ratio.",
+            "scalar",
+            False,
+        ),
+        "growing_season_precip_mm": VarSpec(
+            "growing_season_precip_mm",
+            "mm",
+            "May-October precipitation (Holos V4: CanSIS 1980-2010). Required for holos_liang2020.",
+            "scalar",
+            False,
+        ),
+        "growing_season_pe_mm": VarSpec(
+            "growing_season_pe_mm",
+            "mm",
+            "May-October potential evapotranspiration (Holos V4: CanSIS 1980-2010).",
+            "scalar",
+            False,
+        ),
+        "FR_Topo": VarSpec(
+            "FR_Topo",
+            "fraction",
+            "Fraction of low-lying land (Rochette 2008 / Holos ecodistrict table). Required when P/PE <= 1.",
+            "scalar",
+            False,
+        ),
+        "irrigation_mm": VarSpec(
+            "irrigation_mm",
+            "mm",
+            "Growing-season irrigation. Holos treats irrigated sites as P = PE.",
+            "scalar",
+            False,
+        ),
+        "RF_TX": VarSpec(
+            "RF_TX",
+            "dimensionless",
+            "Holos Table 13 texture modifier. Default 1 when texture is not specified (manual Sec 2.5).",
             "scalar",
             False,
         ),
         "RFtext": VarSpec(
             "RFtext",
             "dimensionless",
-            "Rochette texture modifier (east fine 1.2 / medium 0.8 / coarse 0.8). Default 1 if omitted.",
+            "Unused alias kept for older callers. Holos Table 13 RF_TX is RF_TX.",
             "scalar",
             False,
         ),
         "RFtopo": VarSpec(
             "RFtopo",
             "dimensionless",
-            "Rochette topography modifier. Lower landscape uses EFeco at P/PE=1. Default 1 if omitted.",
+            "Unused alias kept for older callers. Holos FR_Topo is FR_Topo.",
             "scalar",
             False,
         ),
@@ -124,10 +208,13 @@ class HolosSoilN2O:
         "FracGASM": ParamRef("IPCC2006.FracGASM.all", "Fraction of organic N volatilized"),
         "FracLEACH_wet": ParamRef("IPCC2006.FracLEACH.wet", "Fraction leached in wet climate"),
         "FracLEACH_dry": ParamRef("IPCC2006.FracLEACH.dry", "Fraction leached in dry climate"),
-        "EFeco_slope": ParamRef("HOLOS.N2O.EFeco.slope", "Rochette 2008 Eq 3 slope (0.022)"),
-        "EFeco_intercept": ParamRef("HOLOS.N2O.EFeco.intercept", "Rochette 2008 Eq 3 intercept (−0.0048)"),
-        "EFeco_min": ParamRef("HOLOS.N2O.EFeco.min", "Rochette 2008 Eq 3 clamp minimum (0.0016)"),
-        "EFeco_max": ParamRef("HOLOS.N2O.EFeco.max", "Rochette 2008 Eq 3 clamp maximum (0.017)"),
+        "EFeco_slope": ParamRef("HOLOS.N2O.EFeco.slope", "Rochette 2008 Eq 3 slope (not Holos-coded EF)"),
+        "EFeco_intercept": ParamRef("HOLOS.N2O.EFeco.intercept", "Rochette 2008 Eq 3 intercept"),
+        "EFeco_min": ParamRef("HOLOS.N2O.EFeco.min", "Rochette 2008 Eq 3 clamp minimum"),
+        "EFeco_max": ParamRef("HOLOS.N2O.EFeco.max", "Rochette 2008 Eq 3 clamp maximum"),
+        "EF_CT_slope": ParamRef("HOLOS.N2O.EF_CT.slope", "Holos V4 Eq 2.5.1 slope 0.00558"),
+        "EF_CT_intercept": ParamRef("HOLOS.N2O.EF_CT.intercept", "Holos V4 Eq 2.5.1 intercept −7.7"),
+        "winter_correction": ParamRef("HOLOS.N2O.winter_correction", "Holos V4 Eq 2.5.3-2; 1/0.645 (Pelster 2023)"),
     }
 
     outputs = {
@@ -135,7 +222,8 @@ class HolosSoilN2O:
         "N2O_direct": VarSpec("N2O_direct", "kg N2O / year", "Direct N2O emissions", "scalar", True),
         "N2O_indirect_vol": VarSpec("N2O_indirect_vol", "kg N2O / year", "Indirect N2O from volatilization", "scalar", True),
         "N2O_indirect_leach": VarSpec("N2O_indirect_leach", "kg N2O / year", "Indirect N2O from leaching", "scalar", True),
-        "EF1_used": VarSpec("EF1_used", "kg N2O-N / kg N", "Direct EF1 after HOLOS.N2O.ef1 and optional modifiers", "scalar", True),
+        "EF1_used": VarSpec("EF1_used", "kg N2O-N / kg N", "Direct EF1 after HOLOS.N2O.ef1 model-version option", "scalar", True),
+        "EF1_status": VarSpec("EF1_status", "dimensionless", "ipcc2006_ef1, holos_liang2020, or UNVERIFIED-input", "scalar", True),
     }
 
     sources = [
@@ -152,14 +240,29 @@ class HolosSoilN2O:
             page="11.11, 11.24",
         ),
         Citation(
+            source="Liang et al. (2020). Nutr. Cycl. Agroecosyst. 117:145-167. DOI 10.1007/s10705-020-10058-w",
+            table="",
+            equation="N2OEF = exp(0.00558*P - 7.7)",
+            page="145-167",
+            notes="Opened via Holos V4 Sec 2.5 citation. Country-specific Canadian soil N2O EF.",
+        ),
+        Citation(
+            source="Pogue et al. (2025). Holos V4.0 Algorithm Document. holos-aafc/Holos repo root @036f862",
+            table="Table 13 (link; values not printed in the docx)",
+            equation="Eq 2.5.1-1, 2.5.1-2, 2.5.2-1..3, 2.5.3-2, 2.5.4-1",
+            page="Sec 2.5 Nitrous oxide emission factor calculation (IPCC Canada Tier 2)",
+            notes=(
+                "Opened this run. EF_CT=exp(0.00558*P_or_PE-7.7). P, PE = May-October CanSIS 1980-2010. "
+                "Rochette 2008 is cited for FR_Topo only. Liang et al. 2020 is the EF source. "
+                "C# N2OEmissionFactorCalculator.cs:478-656,777-788 matches the manual (no holos_as_coded EF1 bug)."
+            ),
+        ),
+        Citation(
             source="Rochette et al. (2008). Can. J. Soil Sci. 88:641-654. DOI: 10.4141/cjss07025",
             table="",
-            equation="Equation 3 (EFeco); RFtext / lower-landscape P/PE=1 on p. 651",
+            equation="FR_Topo (low-lying land fraction); not Holos Eq 2.5.1",
             page="641-654",
-            notes=(
-                "Opened this run. Holos docs cite SSSAJ DOI 10.2136/sssaj2007.0351; that URL 404s. "
-                "Holos C# soil N2O / V4 algorithm soil section was not opened (UNVERIFIED)."
-            ),
+            notes="Opened. Holos uses this paper for FR_Topo, not Rochette Eq 3 EFeco=0.022*(P/PE)-0.0048.",
         ),
     ]
 
@@ -187,33 +290,31 @@ class HolosSoilN2O:
         fork_settings = forks_from_inputs(inputs)
 
         ef1_ipcc = float(params["EF1"])
-        p_pe = inputs.get("P_PE")
         ef1_option = resolve_option("HOLOS.N2O.ef1", fork_settings)
-        if p_pe not in (None, "") and ef1_option == "source_correct":
-            efeco = _EFECO.compute_rate(
-                {
-                    "P_PE": float(p_pe),
-                    "EFeco_slope": float(params.get("EFeco_slope", 0.022)),
-                    "EFeco_intercept": float(params.get("EFeco_intercept", -0.0048)),
-                    "EFeco_min": float(params.get("EFeco_min", 0.0016)),
-                    "EFeco_max": float(params.get("EFeco_max", 0.017)),
-                }
-            )
-            rf_text = float(inputs["RFtext"]) if inputs.get("RFtext") not in (None, "") else 1.0
-            rf_topo = float(inputs["RFtopo"]) if inputs.get("RFtopo") not in (None, "") else 1.0
-            ef1 = efeco * rf_text * rf_topo
-        else:
-            ef1 = _EFECO.compute_rate(
-                {
-                    "P_PE": 0.0,
-                    "EFeco_slope": 0.0,
-                    "EFeco_intercept": 0.0,
-                    "EFeco_min": 0.0,
-                    "EFeco_max": 1.0,
-                    "EF1_ipcc": ef1_ipcc,
-                },
-                fork="holos_as_coded",
-            )
+        ef1 = ef1_ipcc
+        ef1_status = "ipcc2006_ef1"
+        precip = inputs.get("growing_season_precip_mm")
+        pe = inputs.get("growing_season_pe_mm")
+        fr_topo = inputs.get("FR_Topo")
+        if ef1_option == "holos_liang2020":
+            if precip not in (None, "") and pe not in (None, ""):
+                holos_ef, holos_status = holos_ecodistrict_ef1(
+                    precip_mm=float(precip),
+                    pe_mm=float(pe),
+                    fr_topo=None if fr_topo in (None, "") else float(fr_topo),
+                    irrigation_mm=float(inputs["irrigation_mm"]) if inputs.get("irrigation_mm") not in (None, "") else 0.0,
+                    rf_tx=float(inputs["RF_TX"]) if inputs.get("RF_TX") not in (None, "") else 1.0,
+                    slope=float(params.get("EF_CT_slope", 0.00558)),
+                    intercept=float(params.get("EF_CT_intercept", -7.7)),
+                    winter=float(params.get("winter_correction", WINTER_CORRECTION)),
+                )
+                if holos_status == "holos_liang2020":
+                    ef1 = holos_ef
+                    ef1_status = holos_status
+                else:
+                    ef1_status = "UNVERIFIED-input"
+            else:
+                ef1_status = "UNVERIFIED-input"
         ef3prp = params["EF3PRP_CPP"]
         ef4 = params["EF4"]
         ef5 = params["EF5"]
@@ -285,6 +386,7 @@ class HolosSoilN2O:
             "N2O_indirect_vol": n2o_vol,
             "N2O_indirect_leach": n2o_leach,
             "EF1_used": ef1,
+            "EF1_status": ef1_status,
             "soil_n2o_by_source": by_source,
         }
 

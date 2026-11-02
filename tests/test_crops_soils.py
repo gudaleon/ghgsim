@@ -1,5 +1,6 @@
 """Phase B: IPCC 2006 Ch 11 soil N2O, lime/urea CO2, once-only manure N link."""
 
+import math
 from pathlib import Path
 
 import pytest
@@ -12,12 +13,13 @@ from ghgsim.modules.holos.manure import HolosManure
 from ghgsim.modules.holos.process_defs import (
     crop_residue_n_process,
     field_fam_process,
+    holos_ecodistrict_ef_ct_process,
     lime_co2_process,
     rochette_efeco_process,
     soil_n2o_direct_process,
     urea_co2_process,
 )
-from ghgsim.modules.holos.soil_n2o import HolosSoilN2O
+from ghgsim.modules.holos.soil_n2o import HolosSoilN2O, holos_ecodistrict_ef1
 from ghgsim.modules.ipcc2006 import IPCC2006LimeUreaCO2, IPCC2006SoilN2O
 from ghgsim.modules.ipcc2019.crop_residue import IPCC2019CropResidue
 from ghgsim.report.emissions_sankey import compute_stylized_farm_flows, stylized_params
@@ -66,6 +68,9 @@ def soil_params(ipcc_params):
         "EFeco_intercept": -0.0048,
         "EFeco_min": 0.0016,
         "EFeco_max": 0.017,
+        "EF_CT_slope": 0.00558,
+        "EF_CT_intercept": -7.7,
+        "winter_correction": 1.0 / 0.645,
     }
 
 
@@ -223,11 +228,12 @@ def test_broiler_litter_field_links_manure_n_once(stylized, ipcc_params):
     assert flows.extras["N_MMS_Avb_kg"] == pytest.approx(n_mms)
     assert flows.extras["F_ON"] == pytest.approx(n_mms)
     assert flows.extras["F_ON"] != pytest.approx(nex_total)
-    # 3 ha maize x 8000 kg/ha: F_CR = 189.5904; P_PE=1 -> EF1=0.017
+    # 3 ha maize x 8000 kg/ha: F_CR = 189.5904; default IPCC EF1=0.01
     f_cr = 189.5904
     assert flows.extras["F_CR"] == pytest.approx(f_cr)
-    assert flows.extras["EF1_used"] == pytest.approx(0.017)
-    direct_n = (n_mms + f_cr) * 0.017
+    assert flows.extras["EF1_used"] == pytest.approx(0.01)
+    assert flows.extras["EF1_status"] == "ipcc2006_ef1"
+    direct_n = (n_mms + f_cr) * 0.01
     vol_n = n_mms * 0.20 * 0.01
     leach_n = (n_mms + f_cr) * 0.30 * 0.0075
     expected_soil = (direct_n + vol_n + leach_n) * N2ON_TO_N2O
@@ -248,9 +254,10 @@ def test_market_swine_field_synthetic_plus_linked_manure(stylized, ipcc_params):
     assert flows.extras["F_SN"] == pytest.approx(500.0)
     f_cr = 117.45552
     assert flows.extras["F_CR"] == pytest.approx(f_cr)
-    assert flows.extras["EF1_used"] == pytest.approx(0.017)
+    assert flows.extras["EF1_used"] == pytest.approx(0.01)
+    assert flows.extras["EF1_status"] == "ipcc2006_ef1"
     f_sn, f_on = 500.0, n_mms
-    direct_n = (f_sn + f_on + f_cr) * 0.017
+    direct_n = (f_sn + f_on + f_cr) * 0.01
     vol_n = (f_sn * 0.10 + f_on * 0.20) * 0.01
     leach_n = (f_sn + f_on + f_cr) * 0.30 * 0.0075
     assert flows.soil_n2o_kg == pytest.approx((direct_n + vol_n + leach_n) * N2ON_TO_N2O)
@@ -264,10 +271,11 @@ def test_crop_urea_lime_empty_herd_hand_calc(stylized):
     assert flows.groups == []
     f_cr = 631.968
     assert flows.extras["F_CR"] == pytest.approx(f_cr)
-    assert flows.extras["EF1_used"] == pytest.approx(0.017)
-    # Eq 11.1: (1000+0+631.968+100)*0.017; vol 1000*0.10*0.01; leach *0.30*0.0075
+    assert flows.extras["EF1_used"] == pytest.approx(0.01)
+    assert flows.extras["EF1_status"] == "ipcc2006_ef1"
+    # Eq 11.1: (1000+0+631.968+100)*0.01; vol 1000*0.10*0.01; leach *0.30*0.0075
     n_managed = 1000.0 + f_cr + 100.0
-    expected_soil = (n_managed * 0.017 + 1.0 + n_managed * 0.30 * 0.0075) * N2ON_TO_N2O
+    expected_soil = (n_managed * 0.01 + 1.0 + n_managed * 0.30 * 0.0075) * N2ON_TO_N2O
     lime = (2.0 * 0.12 + 1.0 * 0.13) * 1000.0 * C_TO_CO2
     urea = 1.0 * 0.20 * 1000.0 * C_TO_CO2
     assert flows.soil_n2o_kg == pytest.approx(expected_soil)
@@ -310,9 +318,12 @@ def test_turkey_litter_has_no_field(stylized):
     } <= farm_ids
 
 
-def test_latest_stylized_yaml_is_v5():
+def test_latest_stylized_yaml_is_v6():
     path = latest_versioned(ROOT / "data", "stylized_farms", ".yaml")
-    assert path.name == "stylized_farms_AN_v5.yaml"
+    assert path.name == "stylized_farms_AN_v6.yaml"
+    text = path.read_text()
+    assert "P_PE" not in text
+    assert "growing_season_precip_mm" not in text
 
 
 def test_eq_11_6_maize_hand_calc(soil_params):
@@ -367,7 +378,7 @@ def test_field_n_uses_eq_11_6_when_crops_supplied(soil_params):
     assert linked["F_CR"] != pytest.approx(200.0)
 
 
-def test_rochette_efeco_clamp_and_holos_as_coded_fork(soil_params):
+def test_rochette_eq3_is_not_the_holos_coded_ef():
     assert rochette_efeco_process().compute_rate(
         {
             "P_PE": 1.0,
@@ -377,6 +388,24 @@ def test_rochette_efeco_clamp_and_holos_as_coded_fork(soil_params):
             "EFeco_max": 0.017,
         }
     ) == pytest.approx(0.017)
+
+
+def test_holos_liang2020_ef1_matches_opened_equation(soil_params):
+    expected_ct = math.exp(0.00558 * 700.0 - 7.7)
+    assert holos_ecodistrict_ef_ct_process().compute_rate(
+        {"moisture_mm": 700.0, "EF_CT_slope": 0.00558, "EF_CT_intercept": -7.7}
+    ) == pytest.approx(expected_ct)
+    humid, status = holos_ecodistrict_ef1(precip_mm=700.0, pe_mm=500.0)
+    assert status == "holos_liang2020"
+    assert humid == pytest.approx(expected_ct / 0.645)
+    dry_no_topo, dry_status = holos_ecodistrict_ef1(precip_mm=400.0, pe_mm=500.0)
+    assert dry_status == "UNVERIFIED-input"
+    assert dry_no_topo == pytest.approx(0.0)
+    ef_p = math.exp(0.00558 * 400.0 - 7.7)
+    ef_pe = math.exp(0.00558 * 500.0 - 7.7)
+    dry, dry_ok = holos_ecodistrict_ef1(precip_mm=400.0, pe_mm=500.0, fr_topo=0.3)
+    assert dry_ok == "holos_liang2020"
+    assert dry == pytest.approx((ef_pe * 0.3 + ef_p * 0.7) / 0.645)
     inputs = {
         "F_SN": 1000.0,
         "F_ON": 0.0,
@@ -384,26 +413,50 @@ def test_rochette_efeco_clamp_and_holos_as_coded_fork(soil_params):
         "F_SOM": 0.0,
         "F_PRP_CPP": 0.0,
         "climate": "wet",
-        "P_PE": 1.0,
+        "growing_season_precip_mm": 700.0,
+        "growing_season_pe_mm": 500.0,
+        "forks": {"HOLOS.N2O.ef1": "holos_liang2020"},
     }
-    source = HolosSoilN2O().compute(inputs, soil_params)
-    holos = HolosSoilN2O().compute({**inputs, "forks": {"HOLOS.N2O.ef1": "holos_as_coded"}}, soil_params)
-    no_ppe = HolosSoilN2O().compute({k: v for k, v in inputs.items() if k != "P_PE"}, soil_params)
-    assert source["EF1_used"] == pytest.approx(0.017)
-    assert holos["EF1_used"] == pytest.approx(0.01)
-    assert no_ppe["EF1_used"] == pytest.approx(0.01)
-    assert source["N2O_direct"] == pytest.approx(1000.0 * 0.017 * N2ON_TO_N2O)
-    assert holos["N2O_direct"] == pytest.approx(1000.0 * 0.01 * N2ON_TO_N2O)
+    liang = HolosSoilN2O().compute(inputs, soil_params)
+    ipcc = HolosSoilN2O().compute({**inputs, "forks": {"HOLOS.N2O.ef1": "ipcc2006_ef1"}}, soil_params)
+    missing = HolosSoilN2O().compute(
+        {k: v for k, v in inputs.items() if k not in {"growing_season_precip_mm", "growing_season_pe_mm"}},
+        soil_params,
+    )
+    assumed_ratio = HolosSoilN2O().compute(
+        {
+            "F_SN": 1000.0,
+            "F_ON": 0.0,
+            "F_CR": 0.0,
+            "F_SOM": 0.0,
+            "F_PRP_CPP": 0.0,
+            "climate": "wet",
+            "P_PE": 1.0,
+            "forks": {"HOLOS.N2O.ef1": "holos_liang2020"},
+        },
+        soil_params,
+    )
+    assert liang["EF1_used"] == pytest.approx(expected_ct / 0.645)
+    assert liang["EF1_status"] == "holos_liang2020"
+    assert ipcc["EF1_used"] == pytest.approx(0.01)
+    assert ipcc["EF1_status"] == "ipcc2006_ef1"
+    assert missing["EF1_used"] == pytest.approx(0.01)
+    assert missing["EF1_status"] == "UNVERIFIED-input"
+    assert assumed_ratio["EF1_used"] == pytest.approx(0.01)
+    assert assumed_ratio["EF1_status"] == "UNVERIFIED-input"
+    assert liang["N2O_direct"] == pytest.approx(1000.0 * (expected_ct / 0.645) * N2ON_TO_N2O)
+    assert ipcc["N2O_direct"] == pytest.approx(1000.0 * 0.01 * N2ON_TO_N2O)
 
 
-def test_crop_urea_lime_ef1_fork_delta(stylized):
+def test_crop_urea_lime_liang2020_needs_climate(stylized):
     spec, params = stylized
     farm = _farm(spec, "crop_urea_lime")
-    source = compute_stylized_farm_flows(spec, farm, params, {}, run="source_correct")
-    holos = compute_stylized_farm_flows(
-        spec, farm, params, {"HOLOS.N2O.ef1": "holos_as_coded"}, run="holos_as_coded"
+    ipcc = compute_stylized_farm_flows(spec, farm, params, {}, run="source_correct")
+    missing = compute_stylized_farm_flows(
+        spec, farm, params, {"HOLOS.N2O.ef1": "holos_liang2020"}, run="holos_liang2020"
     )
-    assert source.extras["EF1_used"] == pytest.approx(0.017)
-    assert holos.extras["EF1_used"] == pytest.approx(0.01)
-    assert source.n2o_kg != pytest.approx(holos.n2o_kg)
-    assert "F_CR" not in spec["fields"]["crop_urea_lime"] or spec["fields"]["crop_urea_lime"].get("crops")
+    assert ipcc.extras["EF1_used"] == pytest.approx(0.01)
+    assert missing.extras["EF1_used"] == pytest.approx(0.01)
+    assert missing.extras["EF1_status"] == "UNVERIFIED-input"
+    assert ipcc.n2o_kg == pytest.approx(missing.n2o_kg)
+    assert spec["fields"]["crop_urea_lime"].get("crops")

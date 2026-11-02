@@ -1,0 +1,26 @@
+{
+  "command": "python3 scripts/measure_holos_forks_stylized_AN_v5.py",
+  "farms_yaml": "stylized_farms_AN_v6.yaml",
+  "gwp_ar5": {
+    "CH4": 28.0,
+    "N2O": 265.0,
+    "CO2": 1.0
+  },
+  "date": "2026-11-02",
+  "run_identity": {
+    "release_number": "0.4.0",
+    "commit_hash": "570c7003b6ec26411266f8f44e754a342082c48c",
+    "git_branch": "cursor/goal4-phase-b-crops-soils-e537",
+    "git_dirty": true,
+    "remote_url": "https://github.com/gudaleon/ghgsim",
+    "apsim_requirement": "Holzworth, D. P., Huth, N. I., Fainges, J., Brown, H., Zurcher, E., Cichota, R., Verrall, S., Herrmann, N. I., Zheng, B., & Snow, V. O. (2018). APSIM Next Generation: Overcoming challenges in modernising a farming systems model. Environmental Modelling & Software, 103, 43\u201351. https://doi.org/10.1016/j.envsoft.2018.02.002"
+  },
+  "n_farms": 19,
+  "n_forks": 10,
+  "HOLOS.N2O.ef1": {
+    "label": "model_version",
+    "default": "ipcc2006_ef1",
+    "alt": "holos_liang2020",
+    "note": "Stylized farms have no growing-season P/PE, so holos_liang2020 is UNVERIFIED-input and the measured delta is zero."
+  }
+}

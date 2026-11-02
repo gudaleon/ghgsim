@@ -1,0 +1,871 @@
+# Stylized farms that fire every Holos fork that measured zero on the
+# 17-county VT/DE mature-cow EPA dataset (HOLOS_CODE_AUDIT_AN_v2.md).
+#
+# Version: AN_v6
+# Date: 2026-11-01
+# Does not overwrite: data/stylized_farms_AN_v1.yaml through AN_v5.yaml
+# Phase A adds poultry and swine (USDA Census / EPA Annex 3.11 categories).
+# Phase B adds crop/soil fields: EF1, EF3PRP, indirect N2O, lime/urea CO2,
+# and manure N linked once via N_MMS_Avb (Eq 10.34 / 11.4). turkey_litter
+# stays field-free so the CE-10 turkey manure CH4 delta is unchanged.
+# Follow-up: Eq 11.6 F_CR from Table 11.1a (no longer ILLUSTRATIVE user N);
+# area/yield remain ILLUSTRATIVE; coefficients VERIFIED so F_CR is DERIVED.
+# HOLOS.N2O.ef1 is a model_version option (ipcc2006_ef1 vs holos_liang2020).
+# No invented P/PE; Liang 2020 needs growing-season P and PE in mm.
+# Cover types: natural_crust (reduction 0.40, remaining 0.60) and
+# solid_cover (reduction 0.25, remaining 0.75). 0.25 is solid cover only.
+# Rule: every numeric input cites IPCC 2006/2019, NRC/NASEM, or EPA Annex 3
+# with a table/equation number. Values that are not a published cell, or
+# pairings of independently published numbers into one diet/farm, are
+# labelled ILLUSTRATIVE.
+#
+# Does not invent emissions. Does not copy Holos source.
+
+meta:
+  version: AN_v6
+  purpose: Cattle, poultry, and swine farms from AN_v4 plus Eq 11.6 residues
+    and Eq 11.6 residues. No assumed P/PE=1 climate. Holos EF1 is a model-version option requiring growing-season P and PE in mm.
+  climate_zone: "15C"
+  climate_zone_source:
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.17 p. 10.44 (15C column)"
+    note: "Same MCF zone as the committed VT/DE county assembly; not a VT weather observation."
+  lb_to_kg: 0.45359237
+  lb_to_kg_source:
+    source: "NIST Handbook 44 Appendix C, avoirdupois pound"
+    note: "Conversion factor only. Applied to EPA Table A-128 masses and Table A-132 milk."
+  gwp_ar5:
+    CH4: 28.0
+    N2O: 265.0
+    CO2: 1.0
+    source: "IPCC Fifth Assessment Report, 100-year GWP without climate-carbon feedbacks (same constants as scripts/holos_vt_de_runner_AN_v1.py). CO2 GWP = 1 by definition."
+
+# ---------------------------------------------------------------------------
+# Bibliography (primary sources actually opened this run)
+# ---------------------------------------------------------------------------
+sources:
+  ipcc_2006_ch10:
+    title: "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Volume 4, Chapter 10"
+    url: "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_10_Ch10_Livestock.pdf"
+  ipcc_2019_ch10:
+    title: "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 10"
+    url: "https://www.ipcc-nggip.iges.or.jp/public/2019rf/vol4.html"
+  epa_2025_annex_3_11:
+    title: "EPA (2025) Inventory of U.S. GHG Emissions and Sinks 1990-2023, EPA 430-R-25-003, Annex 3.11"
+    url: "https://ghgi.cgs.umd.edu/Web%20Content/FAQ%20Files/US-GHG-Inventory-2025-Annexes.pdf"
+    note: "FOIA-release annex PDF. Table numbers below were read from this file this run."
+  nrc_2001:
+    title: "NRC (2001) Nutrient Requirements of Dairy Cattle, 7th revised edition, National Academy Press"
+    note: "Chapter 2 Eq 2-1; Chapter 14 Tables 14-3 and 14-4 (requirement-table diet TDN and ingredient footnotes)."
+  ipcc_2006_ch11:
+    title: "2006 IPCC Guidelines for National Greenhouse Gas Inventories, Volume 4, Chapter 11"
+    url: "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O&CO2.pdf"
+    note: "Opened previously. Eq 11.1/11.9/11.10 soil N2O; Eq 11.3-11.5 F_ON/FAM/F_PRP; Eq 11.12 lime; Eq 11.13 urea."
+  ipcc_2019_ch11:
+    title: "2019 Refinement to the 2006 IPCC Guidelines, Volume 4, Chapter 11"
+    url: "https://www.ipcc-nggip.iges.or.jp/public/2019rf/pdf/4_Volume4/19R_V4_Ch11_Soils_N2O_CO2.pdf"
+    note: "Opened this run. Eq 11.6 (Updated) / Eq 11.7 and Table 11.1a (New) p.11.18."
+  rochette_2008:
+    title: "Rochette et al. (2008) Estimation of N2O emissions from agricultural soils in Canada. Can. J. Soil Sci. 88:641-654"
+    url: "https://doi.org/10.4141/cjss07025"
+    note: "Opened this run. EFeco Eq 3; RFtext / lower-landscape P/PE=1. Holos SSSAJ DOI 10.2136/sssaj2007.0351 404s. Holos C# soil N2O UNVERIFIED."
+
+# ---------------------------------------------------------------------------
+# Constants used by the runner (all cited)
+# ---------------------------------------------------------------------------
+constants:
+  Cfi_lactating:
+    value: 0.386
+    units: "MJ / day / kg^0.75"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.4 p. 10.16, Cattle/Buffalo (lactating cows)"
+    status: VERIFIED
+  Cfi_non_lactating:
+    value: 0.322
+    units: "MJ / day / kg^0.75"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.4 p. 10.16, Cattle/Buffalo (non-lactating cows, steers and juveniles)"
+    status: VERIFIED
+  Ca_stall:
+    value: 0.00
+    units: "dimensionless"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.5 p. 10.17, Stall"
+    status: VERIFIED
+  Ca_pasture:
+    value: 0.17
+    units: "dimensionless"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.5 p. 10.17, Pasture"
+    status: VERIFIED
+  Cpregnancy_cattle:
+    value: 0.10
+    units: "dimensionless"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.7 p. 10.19, Cattle and Buffalo"
+    status: VERIFIED
+  pregnant_fraction_na_dairy:
+    value: 0.90
+    units: "fraction of mature females"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10A-1 p. 10.72-10.77 region row North America, column %Pregnant = 90%"
+    status: VERIFIED
+  milk_fat_pct:
+    value: 4.0
+    units: "% by weight"
+    source: "IPCC 2006 Vol 4 Ch 10 Equation 10.8 p. 10.17 example ('e.g., 4%'); Equation 10.33 p. 10.58 assumption '%Fat is an input, assumed to be 4%'"
+    status: VERIFIED
+    note: "EPA Annex 3.11 footnote 100 says US milk fat varies by year from USDA ERS Dairy Data. That 2022 cell was not read this run. 4.0% is the IPCC example/assumption, not a USDA 2022 observation."
+  ASH_percent:
+    value: 8.0
+    units: "% DM"
+    source: "IPCC 2006 Vol 4 Ch 10 Equation 10.24 text p. 10.54, example 'e.g., 0.08 for cattle'"
+    status: SOURCE-TRACED
+  Nrate_dairy_na:
+    value: 0.44
+    units: "kg N / (1000 kg mass) / day"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.19 p. 10.59, Dairy Cattle, North America"
+    status: VERIFIED
+  Nrate_other_cattle_na:
+    value: 0.31
+    units: "kg N / (1000 kg mass) / day"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.19 p. 10.59, Other Cattle, North America"
+    status: VERIFIED
+  ue_ipcc_de_threshold:
+    value: 80.0
+    units: "% GE"
+    source: "Implemented source_correct switch in process_defs.urinary_energy_ipcc (DE_percent >= 80). Phase 2 citation: IPCC 2006 Eq 10.24 text as quoted in docs/HOLOS_PHASE2_FORKS_AN_v1.md (DE% greater than approximately 80%)."
+    note: "The IPCC 2006 PDF opened this run (Eq 10.24 notes, extract p. 10.43 in the PDF text layer) also says reduce UE to 0.02 for ruminants fed with 85% or more grain. The registered default follows the Phase 2 DE% implementation, not a new rewrite."
+  ue_holos_grain_threshold:
+    value: 85.0
+    units: "% diet grain"
+    source: "data/holos_forks_AN_v2.json HOLOS.VS.urinary_energy holos_as_coded; HOLOS.UE.holos_grain_threshold in holos_params_canada_AN_v4.csv"
+    status: SOURCE-TRACED
+  Nrate_market_swine_na:
+    value: 0.42
+    units: "kg N / (1000 kg mass) / day"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.19 p. 10.59, Swine Market, North America"
+    status: VERIFIED
+  Nrate_breeding_swine_na:
+    value: 0.24
+    units: "kg N / (1000 kg mass) / day"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.19 p. 10.59, Swine Breeding, North America"
+    status: VERIFIED
+  Nrate_broilers_na:
+    value: 1.10
+    units: "kg N / (1000 kg mass) / day"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.19 p. 10.59, Broilers (all regions)"
+    status: VERIFIED
+  Nrate_layers_na:
+    value: 0.83
+    units: "kg N / (1000 kg mass) / day"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.19 p. 10.59, Hens >= 1 yr, North America"
+    status: VERIFIED
+  Nrate_turkeys_na:
+    value: 0.74
+    units: "kg N / (1000 kg mass) / day"
+    source: "IPCC 2006 Vol 4 Ch 10 Table 10.19 p. 10.59, Turkeys (all regions)"
+    status: VERIFIED
+
+# ---------------------------------------------------------------------------
+# Diets. TDN and DE are both given. Pairings of TDN from NRC with DE from
+# EPA are constructed (two independently published numbers) and labelled.
+# ---------------------------------------------------------------------------
+diets:
+  dairy_forage:
+    label: "Northeast dairy forage-based diet (EPA DE + NRC 68% TDN table diet)"
+    pairing: ILLUSTRATIVE
+    pairing_note: "DE% is EPA Annex 3.11 Table A-139 dairy cows 2022. TDN% is NRC 2001 Table 14-3 diet TDN. They are not from the same feeding trial. Used together so TDN != DE and the GE/VS digestibility forks can fire."
+    DE_percent:
+      value: 66.7
+      units: "% GE"
+      source: "EPA 2025 Annex 3.11 Table A-139, Dairy Cows DE, all listed regions including Northeast, 2022"
+      status: VERIFIED
+    TDN_percent:
+      value: 68.0
+      units: "% DM"
+      source: "NRC 2001 Nutrient Requirements of Dairy Cattle, Table 14-3 title: 'Values are Appropriate for the Diet Below with 68% TDN'"
+      status: VERIFIED
+    forage_percent:
+      value: 67.0
+      units: "% of diet DM"
+      source: "NRC 2001 Table 14-3 footnote a: 40% mid-maturity legume hay + 27% normal corn silage + 23% cracked dry shelled corn + 8% soybean meal (48% CP) + 2% mineral and vitamin mix. Forage ingredients = 40 + 27 = 67."
+      status: VERIFIED
+    grain_percent:
+      value: 33.0
+      units: "% of diet DM"
+      source: "Complement of forage_percent from the same NRC 2001 Table 14-3 footnote a (23 + 8 + 2 = 33)."
+      status: VERIFIED
+      note: "Grain 33% < Holos 85% switch. DE 66.7 < implemented IPCC 80% switch. Both UE paths = 0.04 (same as the 17-county run)."
+    nrc_eq_2_1_note: "NRC 2001 Chapter 2 Equation 2-1: DE (Mcal/kg) = 0.04409 x TDN(%). With IPCC GE density 18.45 MJ/kg = 4.409 Mcal/kg that conversion makes TDN% equal DE% of GE. The TDN and DE values above are therefore not linked by Eq 2-1; they are two published numbers used as an ILLUSTRATIVE pairing."
+
+  dairy_high_grain:
+    label: "High-grain diet that crosses the implemented UE switches in opposite directions"
+    pairing: ILLUSTRATIVE
+    pairing_note: "DE% is EPA Annex 3.11 Table A-139 steer/heifer feedlot 2022 (82.5). TDN% and forage/grain split are NRC 2001 Table 14-4 (78% TDN; 48% forage ingredients). Not one published ration. Constructed so DE >= 80 (implemented IPCC UE -> 0.02) while grain < 85 (Holos UE -> 0.04)."
+    DE_percent:
+      value: 82.5
+      units: "% GE"
+      source: "EPA 2025 Annex 3.11 Table A-139, Steer Feedlot and Heifer Feedlot DE, all listed regions, 2022"
+      status: VERIFIED
+    TDN_percent:
+      value: 78.0
+      units: "% DM"
+      source: "NRC 2001 Table 14-4 title: 'Values Are Appropriate For The Diet Below With 78% TDN' (large-breed cows, live weight 680 kg)"
+      status: VERIFIED
+    forage_percent:
+      value: 48.0
+      units: "% of diet DM"
+      source: "NRC 2001 Table 14-4 footnote a: 15% immature legume silage + 33% normal corn silage + 34% ground high moisture shelled corn + 12% soybean meal (48% CP) + 2.5% tallow + 1.5% menhaden fish meal + 2% mineral and vitamin mix. Forage ingredients = 15 + 33 = 48."
+      status: VERIFIED
+    grain_percent:
+      value: 52.0
+      units: "% of diet DM"
+      source: "Complement of forage_percent from the same NRC 2001 Table 14-4 footnote a (34 + 12 + 2.5 + 1.5 + 2 = 52)."
+      status: VERIFIED
+    ue_switch:
+      ipcc_as_implemented: "DE 82.5 >= 80 -> UE = 0.02"
+      holos_as_coded: "grain 52 < 85 -> UE = 0.04"
+      ipcc_2006_table_10_2: "Table 10.2 p. 10.14 lists feedlot animals fed with >90% concentrate at DE 75-85%. That >90% grain cell is NOT used here, because both switches would then yield UE = 0.02 and the fork would measure zero again."
+      ipcc_2006_eq_10_24_grain_text: "Eq 10.24 notes in the 2006 PDF opened this run also mention 85% or more grain. The registered default remains the Phase 2 DE% implementation."
+
+  beef_forage:
+    label: "Northeast beef cow-calf forage diet (EPA DE + NRC 68% TDN table diet)"
+    pairing: ILLUSTRATIVE
+    pairing_note: "DE% is EPA Annex 3.11 Table A-138 Northeast beef cows 2007-2022. TDN% is NRC 2001 Table 14-3 68% TDN forage-heavy diet. Not one published beef ration."
+    DE_percent:
+      value: 62.5
+      units: "% GE"
+      source: "EPA 2025 Annex 3.11 Table A-138, Beef Cows DE, Northeast, 2007-2022"
+      status: VERIFIED
+    TDN_percent:
+      value: 68.0
+      units: "% DM"
+      source: "NRC 2001 Table 14-3, diet with 68% TDN (same table diet as dairy_forage TDN)"
+      status: VERIFIED
+    forage_percent:
+      value: 67.0
+      units: "% of diet DM"
+      source: "NRC 2001 Table 14-3 footnote a forage ingredients 40% + 27% = 67% (same as dairy_forage)"
+      status: VERIFIED
+    grain_percent:
+      value: 33.0
+      units: "% of diet DM"
+      source: "Complement of forage_percent from NRC 2001 Table 14-3 footnote a"
+      status: VERIFIED
+      note: "DE 62.5 < 80 and grain 33 < 85: both UE paths = 0.04. UE disagreement is isolated to dairy_high_grain."
+
+# ---------------------------------------------------------------------------
+# Animal classes. Masses from EPA Table A-128 2022. Class-specific DE/Ym
+# from A-138 / A-139. Head counts are ILLUSTRATIVE.
+# ---------------------------------------------------------------------------
+animal_classes:
+  dairy_cow:
+    animal_type: dairy
+    animal_class: adult
+    Cfi_key: Cfi_lactating
+    Ca_key: Ca_stall
+    apply_pregnancy: true
+    apply_lactation: true
+    mass_lb:
+      value: 1499
+      source: "EPA 2025 Annex 3.11 Table A-128 Typical Animal Mass (lbs), Dairy Cows, year 2022"
+      status: VERIFIED
+    DE_percent_forage_source: "EPA 2025 Annex 3.11 Table A-139 Dairy Cows DE 66.7 (2022)"
+    Ym_pct:
+      value: 5.7
+      source: "EPA 2025 Annex 3.11 Table A-139 Dairy Cows Ym, Northeast, 2022"
+      status: VERIFIED
+      note: "Held for documentation only. HolosEnteric dairy Ym uses the HOLOS.YM.dairy fork (5.6 Canada default vs 6.5 IPCC 2006 Table 10.12), not this EPA cell, so the Ym fork remains isolated."
+    milk_lb_cow_yr:
+      value: 21644.0
+      source: "EPA 2025 Annex 3.11 Table A-132 Dairy Lactation Rates by State, Vermont, 2022; also county_assumptions_AN_v3.json states.VT.dairy.milk_lb_cow_yr"
+      status: VERIFIED
+    Nex_kg_yr_override:
+      value: 153.0
+      source: "EPA 2025 Annex 3.11 Table A-156, Vermont dairy Nex 2022; county_assumptions_AN_v3.json states.VT.dairy.manure.Nex_kg_yr and epa_cattle_state_AN_v3.csv VT dairy_Nex_kg_yr"
+      status: VERIFIED
+    head:
+      value: 100
+      status: ILLUSTRATIVE
+      note: "Stylized herd size. Not a USDA or EPA count."
+
+  dairy_heifer:
+    animal_type: dairy
+    animal_class: adult
+    Cfi_key: Cfi_non_lactating
+    Ca_key: Ca_stall
+    apply_pregnancy: false
+    apply_lactation: false
+    mass_lb:
+      value: 899
+      source: "EPA 2025 Annex 3.11 Table A-128, Dairy Replacements, year 2022"
+      status: VERIFIED
+    DE_percent:
+      value: 63.7
+      source: "EPA 2025 Annex 3.11 Table A-139, Dairy Repl. Heifers DE, all listed regions, 2022"
+      status: VERIFIED
+      note: "Used when the farm diet is dairy_forage. On dairy_high_grain the farm diet DE 82.5 overrides this class DE so the UE switch can fire for the whole farm."
+    Ym_pct:
+      value: 5.8
+      source: "EPA 2025 Annex 3.11 Table A-139, Dairy Repl. Heifers Ym, Northeast, 2022"
+      status: VERIFIED
+      note: "Documentation only. Module dairy Ym follows HOLOS.YM.dairy."
+    Nex_kg_yr:
+      method: "IPCC 2006 Eq 10.30: Nrate_dairy_na * (mass_lb * lb_to_kg) / 1000 * 365"
+      status: DERIVED
+    head:
+      value: 40
+      status: ILLUSTRATIVE
+      note: "Stylized replacement-heifer count. Not a USDA or EPA count."
+
+  dairy_calf:
+    animal_type: dairy
+    animal_class: calf
+    Cfi_key: Cfi_non_lactating
+    Ca_key: Ca_stall
+    apply_pregnancy: false
+    apply_lactation: false
+    mass_lb:
+      value: 271
+      source: "EPA 2025 Annex 3.11 Table A-128, Calves, year 2022"
+      status: VERIFIED
+    DE_percent:
+      value: 63.7
+      source: "EPA 2025 Annex 3.11 Table A-139, Dairy Calves (4-6 mo) DE, all listed regions, 2022"
+      status: VERIFIED
+    Ym_pct:
+      value: 8.0
+      source: "EPA 2025 Annex 3.11 Table A-139, Dairy Calves (4-6 mo) Ym, all listed regions, 2022"
+      status: VERIFIED
+      note: "Documentation only. HolosEnteric applies the dairy Ym fork to animal_type=dairy; it does not read this Ym cell."
+    Nex_kg_yr:
+      method: "IPCC 2006 Eq 10.30: Nrate_dairy_na * (mass_lb * lb_to_kg) / 1000 * 365"
+      status: DERIVED
+      note: "Passed as Nex_kg_yr so the default does not silently use lactating-cow TAM. HOLOS.NEX.calf_nrate=holos_as_coded ignores this override and uses 0.078 kg N/head/day (UNVERIFIED)."
+    head:
+      value: 20
+      status: ILLUSTRATIVE
+      note: "Stylized calf count. Not a USDA or EPA count. animal_class=calf fires CE-06 / CE-07 / NEX.calf_nrate."
+
+  beef_cow:
+    animal_type: beef
+    animal_class: adult
+    Cfi_key: Cfi_non_lactating
+    Ca_key: Ca_stall
+    apply_pregnancy: true
+    apply_lactation: false
+    mass_lb:
+      value: 1347
+      source: "EPA 2025 Annex 3.11 Table A-128, Beef Cows, year 2022 (column 'Beef Cows'; 2022 row 1,347 lb)"
+      status: VERIFIED
+    DE_percent:
+      value: 62.5
+      source: "EPA 2025 Annex 3.11 Table A-138, Beef Cows DE, Northeast, 2007-2022"
+      status: VERIFIED
+    Ym_pct:
+      value: 6.5
+      source: "EPA 2025 Annex 3.11 Table A-138, Beef Cows Ym, Northeast, 2007-2022"
+      status: VERIFIED
+    Nex_kg_yr_override:
+      value: 74.0
+      source: "EPA 2025 Annex 3.11 Table A-156, Vermont beef-cow Nex 2022; county_assumptions_AN_v3.json states.VT.beef.manure.Nex_kg_yr"
+      status: VERIFIED
+    head:
+      value: 100
+      status: ILLUSTRATIVE
+      note: "Stylized herd size. Not a USDA or EPA count."
+    Ca_note: "Ca_stall (0.00) is used because this stylized farm puts 100% of manure in liquid storage (confinement). A grazing cow-calf Ca would be Table 10.5 Pasture 0.17; that would not change fork identity."
+
+  beef_calf:
+    animal_type: beef
+    animal_class: calf
+    Cfi_key: Cfi_non_lactating
+    Ca_key: Ca_stall
+    apply_pregnancy: false
+    apply_lactation: false
+    mass_lb:
+      value: 271
+      source: "EPA 2025 Annex 3.11 Table A-128, Calves, year 2022 (same calves column as dairy calves)"
+      status: VERIFIED
+    DE_percent:
+      value: 64.5
+      source: "EPA 2025 Annex 3.11 Table A-138, Beef Calves (4-6 mo) DE, Northeast, 2007-2022"
+      status: VERIFIED
+    Ym_pct:
+      value: 6.5
+      source: "EPA 2025 Annex 3.11 Table A-138, Beef Calves (4-6 mo) Ym, Northeast, 2007-2022"
+      status: VERIFIED
+    Nex_kg_yr:
+      method: "IPCC 2006 Eq 10.30: Nrate_other_cattle_na * (mass_lb * lb_to_kg) / 1000 * 365"
+      status: DERIVED
+    head:
+      value: 90
+      status: ILLUSTRATIVE
+      note: "Stylized cow-calf calf count. Not a USDA or EPA count."
+
+  broilers:
+    animal_type: broilers
+    usda_census: "Broilers and other meat-type chickens"
+    epa_annex_3_11: "Broilers"
+    mass_kg:
+      value: 0.9
+      units: "kg"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-9 p. 10.82 developed-country broilers"
+      status: VERIFIED
+    VS_kg_day:
+      value: 0.02
+      units: "kg VS / head / day"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-9 p. 10.82 developed-country broilers"
+      status: VERIFIED
+    head:
+      value: 20000
+      status: ILLUSTRATIVE
+      note: "Stylized house. Not a USDA Census or EPA Annex inventory."
+
+  layers:
+    animal_type: layers
+    usda_census: "Layers 20 weeks old and older"
+    epa_annex_3_11: "Layers"
+    mass_kg:
+      value: 1.8
+      units: "kg"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-9 p. 10.82 developed-country layers"
+      status: VERIFIED
+    VS_kg_day:
+      value: 0.02
+      units: "kg VS / head / day"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-9 p. 10.82 developed-country layers (dry)"
+      status: VERIFIED
+    head:
+      value: 10000
+      status: ILLUSTRATIVE
+      note: "Stylized house. Not a USDA Census or EPA Annex inventory."
+
+  turkeys:
+    animal_type: turkeys
+    usda_census: "Turkeys"
+    epa_annex_3_11: "Turkeys"
+    mass_kg:
+      value: 6.8
+      units: "kg"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-9 p. 10.82 developed-country turkeys"
+      status: VERIFIED
+    VS_kg_day:
+      value: 0.07
+      units: "kg VS / head / day"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-9 p. 10.82 developed-country turkeys"
+      status: VERIFIED
+    head:
+      value: 5000
+      status: ILLUSTRATIVE
+      note: "Stylized flock. Not a USDA Census or EPA Annex inventory."
+
+  market_swine:
+    animal_type: market_swine
+    usda_census: "Hogs and pigs, other (market)"
+    epa_annex_3_11: "Market swine"
+    mass_kg:
+      value: 46
+      units: "kg"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-7 p. 10.80 North America market swine"
+      status: VERIFIED
+    VS_kg_day:
+      value: 0.27
+      units: "kg VS / head / day"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-7 p. 10.80 North America market swine"
+      status: VERIFIED
+    head:
+      value: 1000
+      status: ILLUSTRATIVE
+      note: "Stylized finishing barn. Not a USDA Census or EPA Annex inventory."
+
+  breeding_swine:
+    animal_type: breeding_swine
+    usda_census: "Hogs and pigs, breeding"
+    epa_annex_3_11: "Breeding swine"
+    mass_kg:
+      value: 198
+      units: "kg"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-8 p. 10.81 North America breeding swine"
+      status: VERIFIED
+    VS_kg_day:
+      value: 0.5
+      units: "kg VS / head / day"
+      source: "IPCC 2006 Vol 4 Ch 10 Table 10A-8 p. 10.81 North America breeding swine"
+      status: VERIFIED
+    head:
+      value: 200
+      status: ILLUSTRATIVE
+      note: "Stylized sow herd. Not a USDA Census or EPA Annex inventory."
+
+# ---------------------------------------------------------------------------
+# Manure storage variants. 100% liquid is ILLUSTRATIVE (isolates CE-14).
+# Covered farms keep system=liquid_nocrust so default MCF is unchanged and
+# only the holos_as_coded remaining factor (0.60 crust / 0.75 solid) differs.
+# When the cover fork applies, IPCC with-crust MCF is not also used.
+# ---------------------------------------------------------------------------
+manure_variants:
+  liquid_uncovered:
+    systems:
+      liquid_nocrust: 1.0
+    cover_type: none
+    systems_status: ILLUSTRATIVE
+    systems_note: "100% liquid/slurry without crust. Not an EPA Table A-157 state mix. Chosen so cover_type is the only manure-storage difference across variants."
+    cover_source: "Module default cover_type=none; IPCC 2006 Table 10.17 liquid/slurry without natural crust MCF is used (15C = 0.27)."
+
+  liquid_covered_crust:
+    systems:
+      liquid_nocrust: 1.0
+    cover_type: natural_crust
+    systems_status: ILLUSTRATIVE
+    cover_source: "HOLOS.CH4.cover_reduction holos_as_coded multiplies CH4 by (1 - HOLOS.COVER.natural_crust_reduction) = 0.60. Default (source_correct) does not apply that factor; MCF stays Table 10.17 liquid_nocrust. IPCC with-crust MCF is not stacked."
+
+  liquid_covered_solid:
+    systems:
+      liquid_nocrust: 1.0
+    cover_type: solid_cover
+    systems_status: ILLUSTRATIVE
+    cover_source: "HOLOS.CH4.cover_reduction holos_as_coded multiplies CH4 by (1 - HOLOS.COVER.solid_cover_reduction) = 0.75. 0.25 reduction applies to solid cover only."
+
+  poultry_with_litter:
+    systems:
+      poultry_with_litter: 1.0
+    cover_type: none
+    systems_status: ILLUSTRATIVE
+    systems_note: "100% poultry manure with litter. IPCC 2006 Table 10.17 MCF 1.5% all climates; typical for broilers, turkeys, and litter-based layers."
+    cover_source: "No liquid cover. MCF is Table 10.17 poultry with litter."
+
+  poultry_without_litter:
+    systems:
+      poultry_without_litter: 1.0
+    cover_type: none
+    systems_status: ILLUSTRATIVE
+    systems_note: "100% poultry manure without litter (high-rise / belt). IPCC 2006 Table 10.17 MCF 1.5%."
+    cover_source: "No liquid cover. MCF is Table 10.17 poultry without litter."
+
+  swine_liquid_uncovered:
+    systems:
+      liquid_nocrust: 1.0
+    cover_type: none
+    systems_status: ILLUSTRATIVE
+    systems_note: "100% liquid/slurry without crust. Isolates swine VS/B0/FracGasMS."
+    cover_source: "IPCC 2006 Table 10.17 liquid/slurry without crust MCF (15C = 0.27)."
+
+  swine_pit:
+    systems:
+      pit: 1.0
+    cover_type: none
+    systems_status: ILLUSTRATIVE
+    systems_note: "100% pit storage >1 month (Table 10A-7 Pit >1 month MCF = liquid/slurry)."
+    cover_source: "No cover. MCF_pit_gt1mo 15C = 0.27."
+
+  cattle_pasture:
+    systems:
+      pasture: 1.0
+    cover_type: none
+    systems_status: ILLUSTRATIVE
+    systems_note: "100% pasture/range/paddock so excreted N is F_PRP (Eq 11.5), not managed manure. Isolates EF3PRP."
+    cover_source: "No liquid cover. MCF is Table 10.17 pasture."
+
+# ---------------------------------------------------------------------------
+# Farms. Each of dairy (forage and high-grain) and beef cow-calf is run
+# with uncovered and covered liquid storage.
+# ---------------------------------------------------------------------------
+farms:
+  - id: dairy_forage_uncovered
+    farm_type: dairy
+    diet_id: dairy_forage
+    manure_id: liquid_uncovered
+    herds: [dairy_cow, dairy_heifer, dairy_calf]
+    triggers: [HOLOS.GE.digestibility, HOLOS.ENTERIC.calf_zero, HOLOS.VS.digestibility, HOLOS.VS.calf_coeff, HOLOS.NEX.calf_nrate, HOLOS.YM.dairy]
+
+  - id: dairy_forage_covered_crust
+    farm_type: dairy
+    diet_id: dairy_forage
+    manure_id: liquid_covered_crust
+    herds: [dairy_cow, dairy_heifer, dairy_calf]
+    triggers: [HOLOS.CH4.cover_reduction]
+
+  - id: dairy_forage_covered_solid
+    farm_type: dairy
+    diet_id: dairy_forage
+    manure_id: liquid_covered_solid
+    herds: [dairy_cow, dairy_heifer, dairy_calf]
+    triggers: [HOLOS.CH4.cover_reduction]
+
+  - id: dairy_high_grain_uncovered
+    farm_type: dairy
+    diet_id: dairy_high_grain
+    manure_id: liquid_uncovered
+    herds: [dairy_cow, dairy_heifer, dairy_calf]
+    diet_overrides_class_DE: true
+    triggers: [HOLOS.VS.urinary_energy, HOLOS.GE.digestibility, HOLOS.VS.digestibility]
+    note: "Farm-level DE 82.5 and grain 52% make the implemented IPCC and Holos UE switches disagree."
+
+  - id: dairy_high_grain_covered_crust
+    farm_type: dairy
+    diet_id: dairy_high_grain
+    manure_id: liquid_covered_crust
+    herds: [dairy_cow, dairy_heifer, dairy_calf]
+    diet_overrides_class_DE: true
+    triggers: [HOLOS.VS.urinary_energy, HOLOS.CH4.cover_reduction]
+
+  - id: beef_cowcalf_uncovered
+    farm_type: beef_cowcalf
+    diet_id: beef_forage
+    manure_id: liquid_uncovered
+    herds: [beef_cow, beef_calf]
+    triggers: [HOLOS.GE.digestibility, HOLOS.ENTERIC.calf_zero, HOLOS.VS.digestibility, HOLOS.VS.calf_coeff, HOLOS.NEX.calf_nrate]
+
+  - id: beef_cowcalf_covered_crust
+    farm_type: beef_cowcalf
+    diet_id: beef_forage
+    manure_id: liquid_covered_crust
+    herds: [beef_cow, beef_calf]
+    triggers: [HOLOS.CH4.cover_reduction]
+
+  - id: beef_cowcalf_covered_solid
+    farm_type: beef_cowcalf
+    diet_id: beef_forage
+    manure_id: liquid_covered_solid
+    herds: [beef_cow, beef_calf]
+    triggers: [HOLOS.CH4.cover_reduction]
+
+  - id: broiler_litter
+    farm_type: poultry
+    manure_id: poultry_with_litter
+    herds: [broilers]
+    triggers: []
+    note: "USDA Census broilers; EPA Annex 3.11 Broilers. Enteric CH4 = 0."
+
+  - id: layer_litter
+    farm_type: poultry
+    manure_id: poultry_with_litter
+    herds: [layers]
+    triggers: []
+    note: "USDA Census layers; EPA Annex 3.11 Layers."
+
+  - id: layer_highrise
+    farm_type: poultry
+    manure_id: poultry_without_litter
+    herds: [layers]
+    triggers: []
+    note: "Layers without litter (IPCC layers-dry / high-rise)."
+
+  - id: turkey_litter
+    farm_type: poultry
+    manure_id: poultry_with_litter
+    herds: [turkeys]
+    triggers: [HOLOS.CH4.turkey_zero]
+    note: "USDA/EPA turkeys. holos_as_coded CE-10 zeros manure CH4."
+
+  - id: market_swine_liquid
+    farm_type: swine
+    manure_id: swine_liquid_uncovered
+    herds: [market_swine]
+    triggers: []
+    note: "USDA other hogs / EPA market swine. Enteric Tier 1 1.5 kg/head/yr."
+
+  - id: breeding_swine_liquid
+    farm_type: swine
+    manure_id: swine_liquid_uncovered
+    herds: [breeding_swine]
+    triggers: []
+    note: "USDA breeding hogs / EPA breeding swine."
+
+  - id: farrow_to_finish
+    farm_type: swine
+    manure_id: swine_pit
+    herds: [breeding_swine, market_swine]
+    triggers: []
+    note: "ILLUSTRATIVE farrow-to-finish mix on pit storage."
+
+  - id: broiler_litter_field
+    farm_type: poultry
+    manure_id: poultry_with_litter
+    herds: [broilers]
+    field_id: broiler_linked
+    triggers: [HOLOS.N2O.ef1]
+    note: "Same 20,000 broilers as broiler_litter. FAM = N_MMS_Avb (Eq 11.4; fractions 0). F_CR from Eq 11.6 maize."
+
+  - id: market_swine_field
+    farm_type: swine
+    manure_id: swine_liquid_uncovered
+    herds: [market_swine]
+    field_id: swine_linked
+    triggers: [HOLOS.N2O.ef1]
+    note: "Same 1,000 market swine as market_swine_liquid plus linked FAM, ILLUSTRATIVE F_SN, and Eq 11.6 soybeans."
+
+  - id: beef_pasture_field
+    farm_type: beef_cowcalf
+    diet_id: beef_forage
+    manure_id: cattle_pasture
+    herds: [beef_cow, beef_calf]
+    field_id: prp_only
+    triggers: [HOLOS.GE.digestibility, HOLOS.ENTERIC.calf_zero, HOLOS.VS.digestibility, HOLOS.VS.calf_coeff, HOLOS.NEX.calf_nrate]
+    note: "100% pasture so F_PRP = Nex (Eq 11.5) and storage N2O = 0. Isolates EF3PRP."
+
+  - id: crop_urea_lime
+    farm_type: crop
+    herds: []
+    field_id: crop_urea_lime
+    triggers: [HOLOS.N2O.ef1]
+    note: "No animals. ILLUSTRATIVE F_SN/SOM/lime/urea; F_CR from Eq 11.6 maize 10 ha x 8000 kg/ha. Isolates IPCC EF1 and Eq 11.12/11.13. No invented P/PE."
+
+# ---------------------------------------------------------------------------
+# Fields. Synthetic N mass, SOM N, and lime/urea tonnes that are not a
+# published table cell are ILLUSTRATIVE. Residue coefficients are VERIFIED
+# Table 11.1a cells; area/yield are ILLUSTRATIVE so F_CR is DERIVED.
+# Linked FAM uses N_MMS_Avb from the animal modules (Eq 10.34 / 11.4).
+# ---------------------------------------------------------------------------
+fields:
+  broiler_linked:
+    climate: wet
+    climate_source: "IPCC 2006 Vol 4 Ch 11 Table 11.3 p. 11.24 FracLEACH = 0.30 where leaching/runoff occurs. Stylized wet."
+    link_manure_n: true
+    crops:
+      - crop: maize
+        area_ha:
+          value: 3.0
+          units: "ha"
+          status: ILLUSTRATIVE
+          note: "Stylized stand so Eq 11.6 can be hand-checked. Not a Census field."
+        yield_fresh_kg_ha:
+          value: 8000.0
+          units: "kg fresh / ha"
+          status: ILLUSTRATIVE
+          note: "Stylized fresh yield. Coefficients from Table 11.1a maize."
+    F_SN:
+      value: 0.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+      note: "No synthetic N. Isolates linked manure N (FAM = N_MMS_Avb)."
+    F_SOM:
+      value: 0.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+    F_ON_other_kg:
+      value: 0.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+    M_limestone_t:
+      value: 0.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+    M_dolomite_t:
+      value: 0.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+    M_urea_t:
+      value: 0.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+
+  swine_linked:
+    climate: wet
+    climate_source: "IPCC 2006 Vol 4 Ch 11 Table 11.3 p. 11.24 FracLEACH = 0.30 where leaching/runoff occurs. Stylized wet."
+    link_manure_n: true
+    crops:
+      - crop: soybeans
+        area_ha:
+          value: 2.0
+          units: "ha"
+          status: ILLUSTRATIVE
+        yield_fresh_kg_ha:
+          value: 3000.0
+          units: "kg fresh / ha"
+          status: ILLUSTRATIVE
+          note: "Stylized soybean stand. Table 11.1a soybeans."
+    F_SN:
+      value: 500.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+      note: "Independent of urea mass. Urea N fraction was not taken from a published cell this run."
+    F_SOM:
+      value: 0.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+    F_ON_other_kg:
+      value: 0.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+    M_limestone_t:
+      value: 0.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+    M_dolomite_t:
+      value: 0.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+    M_urea_t:
+      value: 0.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+
+  prp_only:
+    climate: wet
+    climate_source: "IPCC 2006 Vol 4 Ch 11 Table 11.3 p. 11.24. Stylized wet."
+    link_manure_n: true
+    F_SN:
+      value: 0.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+    F_SOM:
+      value: 0.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+    F_ON_other_kg:
+      value: 0.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+    M_limestone_t:
+      value: 0.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+    M_dolomite_t:
+      value: 0.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+    M_urea_t:
+      value: 0.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+
+  crop_urea_lime:
+    climate: wet
+    climate_source: "IPCC 2006 Vol 4 Ch 11 Table 11.3 p. 11.24. Stylized wet."
+    link_manure_n: true
+    crops:
+      - crop: maize
+        area_ha:
+          value: 10.0
+          units: "ha"
+          status: ILLUSTRATIVE
+          note: "Stylized stand. Hand-check: Crop=6960; AGDM=6960; AGR=69600; BGR=30624; F_CR=631.968 kg N."
+        yield_fresh_kg_ha:
+          value: 8000.0
+          units: "kg fresh / ha"
+          status: ILLUSTRATIVE
+    F_SN:
+      value: 1000.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+      note: "Synthetic N mass is independent of M_urea_t. A published urea %N cell was not used."
+    F_SOM:
+      value: 100.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+      note: "User-supplied SOM mineralisation N. Not a published soil inventory."
+    F_ON_other_kg:
+      value: 0.0
+      units: "kg N / year"
+      status: ILLUSTRATIVE
+    M_limestone_t:
+      value: 2.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+      note: "Stylized lime mass so Eq 11.12 can be hand-checked. Not a farm lime invoice."
+    M_dolomite_t:
+      value: 1.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+      note: "Stylized dolomite mass so Eq 11.12 can be hand-checked."
+    M_urea_t:
+      value: 1.0
+      units: "tonne / year"
+      status: ILLUSTRATIVE
+      note: "Stylized urea mass so Eq 11.13 can be hand-checked. Independent of F_SN."

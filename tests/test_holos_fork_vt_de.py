@@ -1,5 +1,6 @@
 """Sanity checks for the Phase 3 VT/DE fork measurement runner."""
 
+import json
 from pathlib import Path
 
 import pandas as pd
@@ -86,3 +87,37 @@ def test_fourway_csv_matches_committed_ipcc_and_command():
     # Holos N2O uses EPA Nex + IPCC 2006 EF3; must match IPCC 2006 N2O on this dataset.
     assert (df["HolosCanada_N2O_kg"] - df["IPCC2006_N2O_kg"]).abs().max() < 1e-6
     assert (df["HolosUS_N2O_kg"] - df["IPCC2006_N2O_kg"]).abs().max() < 1e-6
+
+
+def test_poultry_crops_an_v2_drops_ppe_clamp():
+    path = ROOT / "data" / "holos_vt_de_poultry_crops_AN_v2.csv"
+    meta_path = ROOT / "data" / "holos_vt_de_poultry_crops_AN_v2.meta.json"
+    summary_path = ROOT / "data" / "holos_vt_de_poultry_crops_summary_AN_v2.csv"
+    if not path.exists():
+        pytest.skip("AN_v2 county CSV not generated yet")
+    df = pd.read_csv(path)
+    assert "expanded_rochette_CO2e_t" not in df.columns
+    assert "dCO2e_t_rochette_minus_ipcc_EF1" not in df.columns
+    assert (df["EF1_status_liang_without_climate"] == "UNVERIFIED-input").all()
+    assert (df["EF1_ipcc"] - 0.01).abs().max() < 1e-12
+    meta = json.loads(meta_path.read_text())
+    assert meta["HOLOS.N2O.ef1"]["holos_liang2020"] == "UNVERIFIED-input"
+    assert "P_PE" not in meta
+    assert meta["run_identity"]["commit_hash"]
+    assert "Holzworth" in meta["run_identity"]["apsim_requirement"]
+    summary = pd.read_csv(summary_path)
+    assert "dCO2e_t_rochette_minus_ipcc_EF1" not in summary.columns
+    assert abs(float(summary["dCO2e_t_ipcc_EF1_minus_baseline"].iloc[0]) - 53677.7) < 1.0
+
+
+def test_phase_b_followup_v2_withdraws_ppe_finding():
+    text = (ROOT / "docs" / "PHASE_B_FOLLOWUP_AN_v2.md").read_text()
+    assert "holos_liang2020" in text
+    assert "ipcc2006_ef1" in text
+    assert "N2OEmissionFactorCalculator.cs:478-656,777-788" in text
+    assert "Section 2.5" in text
+    assert "Do not cite it" in text or "withdrawn" in text.lower()
+    assert "Holzworth" in text
+    assert "103" in text
+    assert "217,229" in text or "217229" in text
+    assert "53,678" in text or "53678" in text
