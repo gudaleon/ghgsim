@@ -1,0 +1,16 @@
+[
+  {
+    "country": "Canada",
+    "doc": "https://unfccc.int/documents/656423",
+    "zip": "https://unfccc.int/sites/default/files/resource/CAN-CRT-2026-V2.0.zip",
+    "iso": "CAN",
+    "zip_sha256": "0023e7443bb4bbcee17341733988bcb5a1ae5eb54eb8b37c7bc7804c5158133c",
+    "zip_bytes": 14969618,
+    "extract_sha256": {
+      "CAN_recalc_AN_v1.csv": "b7ab0d07738b724e7bc0fbeae10d0b21d3169d6945cf6630e32a0ab14d6aaa7c",
+      "CAN_summary3_AN_v1.csv": "ef92f58f74311ea818738b8f4d2618f0aba3312a30ed14ba50b0225f3d4e8f7d",
+      "CAN_table3_AN_v1.csv": "a6c6f5ec32c27ff601930baefe2a4b9b16285a616c95efd4357a06d1ef5c5b2a",
+      "CAN_table8_AN_v1.csv": "432d42e26679b10318cef6130028267b8f073b91c0c5e673f155ccc1bed5c9d1"
+    }
+  }
+]
