@@ -31,7 +31,7 @@ def load_model_yaml(yaml_path: Path) -> dict[str, Any]:
     if not yaml_path.exists():
         raise FileNotFoundError(f"Model file not found: {yaml_path}")
 
-    with open(yaml_path) as f:
+    with open(yaml_path, encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 

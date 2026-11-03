@@ -104,7 +104,7 @@ def test_poultry_crops_an_v2_drops_ppe_clamp():
     assert "dCO2e_t_rochette_minus_ipcc_EF1" not in df.columns
     assert (df["EF1_status_liang_without_climate"] == "UNVERIFIED-input").all()
     assert (df["EF1_ipcc"] - 0.01).abs().max() < 1e-12
-    meta = json.loads(meta_path.read_text())
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
     assert meta["HOLOS.N2O.ef1"]["holos_liang2020"] == "UNVERIFIED-input"
     assert "P_PE" not in meta
     assert meta["run_identity"]["commit_hash"]
@@ -115,7 +115,7 @@ def test_poultry_crops_an_v2_drops_ppe_clamp():
 
 
 def test_phase_b_followup_v2_withdraws_ppe_finding():
-    text = (ROOT / "docs" / "PHASE_B_FOLLOWUP_AN_v2.md").read_text()
+    text = (ROOT / "docs" / "PHASE_B_FOLLOWUP_AN_v2.md").read_text(encoding="utf-8")
     assert "holos_liang2020" in text
     assert "ipcc2006_ef1" in text
     assert "N2OEmissionFactorCalculator.cs:478-656,777-788" in text

@@ -186,7 +186,7 @@ def test_committed_sankeys_cover_every_farm():
     if missing:
         pytest.skip(f"committed Sankeys not written yet: {missing}")
     for path in discover_sankey_payloads(FIGURES):
-        payload = json.loads(path.read_text())
+        payload = json.loads(path.read_text(encoding="utf-8"))
         assert_mass_conserved(payload["views"]["source_correct"])
 
 

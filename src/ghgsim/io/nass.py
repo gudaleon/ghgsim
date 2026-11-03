@@ -155,7 +155,7 @@ class NASSLoader:
         # Load manifest
         try:
             import yaml
-            with open(self._manifest_path) as f:
+            with open(self._manifest_path, encoding="utf-8") as f:
                 manifest = yaml.safe_load(f)
         except ImportError:
             # PyYAML not installed, skip verification

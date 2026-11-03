@@ -24,7 +24,7 @@ ZERO_ON_COUNTY = {
 
 @pytest.fixture(scope="module")
 def spec():
-    with YAML_PATH.open() as handle:
+    with YAML_PATH.open(encoding="utf-8") as handle:
         return yaml.safe_load(handle)
 
 

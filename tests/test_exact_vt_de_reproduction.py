@@ -51,7 +51,7 @@ def epa_assumptions():
     """Load EPA per-state assumptions."""
     import json
     path = legacy_root / "scripts" / "county_assumptions_AN_v3.json"
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 

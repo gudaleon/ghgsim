@@ -187,7 +187,7 @@ def load_parameter_csv(csv_path: Path, allow_unverified: bool = False) -> Parame
     """
     registry = ParameterRegistry(allow_unverified=allow_unverified)
 
-    with open(csv_path) as f:
+    with open(csv_path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             # Detect format: v4 has 'key' column, v3 has 'guideline'

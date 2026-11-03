@@ -43,7 +43,7 @@ MCF_STEMS = (
 
 def load_epa_assumptions() -> dict[str, Any]:
     path = LEGACY / "scripts" / "county_assumptions_AN_v3.json"
-    with path.open() as f:
+    with path.open(encoding="utf-8") as f:
         return json.load(f)
 
 

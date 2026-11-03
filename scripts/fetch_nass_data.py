@@ -69,7 +69,7 @@ def update_manifest(data_dir: Path) -> None:
             "size_bytes": csv_file.stat().st_size,
         }
     
-    with open(manifest_path, "w") as f:
+    with open(manifest_path, "w", encoding="utf-8") as f:
         yaml.dump(manifest, f, default_flow_style=False, sort_keys=True)
     
     print(f"✓ Updated manifest: {manifest_path}")

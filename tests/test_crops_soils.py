@@ -76,7 +76,7 @@ def soil_params(ipcc_params):
 
 @pytest.fixture
 def stylized():
-    spec = yaml.safe_load(latest_versioned(ROOT / "data", "stylized_farms", ".yaml").read_text())
+    spec = yaml.safe_load(latest_versioned(ROOT / "data", "stylized_farms", ".yaml").read_text(encoding="utf-8"))
     params = stylized_params(ROOT, spec)
     return spec, params
 
@@ -321,7 +321,7 @@ def test_turkey_litter_has_no_field(stylized):
 def test_latest_stylized_yaml_is_v6():
     path = latest_versioned(ROOT / "data", "stylized_farms", ".yaml")
     assert path.name == "stylized_farms_AN_v6.yaml"
-    text = path.read_text()
+    text = path.read_text(encoding="utf-8")
     assert "P_PE" not in text
     assert "growing_season_precip_mm" not in text
 

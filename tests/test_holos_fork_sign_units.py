@@ -66,7 +66,7 @@ def test_calf_vs_coeff_is_kg_per_kg_weight_not_a_reduction():
 
 
 def test_canada_v5_cover_params_are_labelled_reductions():
-    text = (ROOT / "data" / "holos_params_canada_AN_v5.csv").read_text()
+    text = (ROOT / "data" / "holos_params_canada_AN_v5.csv").read_text(encoding="utf-8")
     assert "HOLOS.COVER.natural_crust_reduction,0.40,reduction fraction" in text
     assert "HOLOS.COVER.solid_cover_reduction,0.25,reduction fraction" in text
     assert "remaining=0.60" in text or "remaining = 0.60" in text

@@ -264,7 +264,7 @@ def save_manifest(manifest: RunManifest, output_path: Path) -> None:
         output_path: Output file path
     """
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(manifest.to_json())
 
 
@@ -278,7 +278,7 @@ def load_manifest(manifest_path: Path) -> RunManifest:
     Returns:
         RunManifest
     """
-    with open(manifest_path) as f:
+    with open(manifest_path, encoding="utf-8") as f:
         data = json.load(f)
 
     # Convert nested dicts back to dataclasses

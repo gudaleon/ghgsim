@@ -66,7 +66,7 @@ def test_discover_inputs_picks_repo_newest_trace():
 def test_every_registry_fork_appears_exactly_once():
     payload = build_from_data_dir(DATA, output_version="AN_v1")
     mermaid = render_mermaid(payload)
-    forks = json.loads(latest_versioned(DATA, "holos_forks", ".json").read_text())
+    forks = json.loads(latest_versioned(DATA, "holos_forks", ".json").read_text(encoding="utf-8"))
     registry_ids = [row["id"] for row in forks]
     mermaid_ids = _fork_ids_from_mermaid(mermaid)
     json_ids = [node["id"] for node in payload["nodes"] if node["type"] == "fork"]
@@ -96,7 +96,7 @@ def test_dummy_fork_adds_a_node():
         "label": "holos_as_coded",
         "issue_ref": "TEST",
     }
-    forks = json.loads(latest_versioned(DATA, "holos_forks", ".json").read_text()) + [dummy]
+    forks = json.loads(latest_versioned(DATA, "holos_forks", ".json").read_text(encoding="utf-8")) + [dummy]
     observations = {key: value.get("observations", []) for key, value in payload["deltas"].items()}
     with_dummy = build_fork_diagram(
         forks,

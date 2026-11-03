@@ -58,7 +58,7 @@ def test_dry_fracleach_zero_2019():
 def test_registry_and_screen():
     reg = load_registry()
     legacy_root = pathlib.Path(__file__).parents[2] / "legacy" / "livingghg_AN_v3"
-    farm = json.loads((legacy_root / "examples" / "example_farm_AN_v2.json").read_text())
+    farm = json.loads((legacy_root / "examples" / "example_farm_AN_v2.json").read_text(encoding="utf-8"))
     base, rows = oat_screen(farm, "IPCC2019", P, reg)
     deltas = [abs(r["delta_t"]) for r in rows if r["delta_t"] is not None]
     assert deltas == sorted(deltas, reverse=True) and base > 0

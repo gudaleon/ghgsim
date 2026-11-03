@@ -63,7 +63,7 @@ def test_assumptions_file_complete():
     import json
     import pathlib
     legacy_root = pathlib.Path(__file__).parents[2] / "legacy" / "livingghg_AN_v3"
-    a = json.loads((legacy_root / "scripts" / "county_assumptions_AN_v3.json").read_text())
+    a = json.loads((legacy_root / "scripts" / "county_assumptions_AN_v3.json").read_text(encoding="utf-8"))
     assert len(a["states"]) == 50
     for s in a["states"].values():
         assert sum(s["dairy"]["manure"]["systems"].values()) == pytest.approx(1.0)
