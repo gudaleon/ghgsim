@@ -99,6 +99,7 @@ def build_v3_farm_from_row(row, state_code, epa_assumptions):
             "ym_category": "dairy",  # For 2006
             "ym_category_2019": dairy_cfg["ym_category"]["IPCC2019"],
             "VS_kg_day": dairy_cfg["manure"]["VS_kg_day"],  # EPA VS
+            "Nex_kg_yr": dairy_cfg["manure"]["Nex_kg_yr"],  # EPA Nex (overrides IPCC default)
             "manure": {
                 "animal": "dairy",
                 "region": "north_america",
@@ -117,6 +118,7 @@ def build_v3_farm_from_row(row, state_code, epa_assumptions):
             "ym_category": "other_cattle",
             "ym_category_2019": beef_cfg["ym_category"]["IPCC2019"],
             "VS_kg_day": beef_cfg["manure"]["VS_kg_day"],
+            "Nex_kg_yr": beef_cfg["manure"]["Nex_kg_yr"],  # EPA Nex (overrides IPCC default)
             "manure": {
                 "animal": "other_cattle",
                 "region": "north_america",
@@ -181,20 +183,21 @@ def run_v4_farm_ipcc2006(farm, params_v4):
             "systems": herd["manure"]["systems"],
         }
         
+        # Use EPA values if available, otherwise let module use IPCC defaults
+        if "VS_kg_day" in herd:
+            inputs["VS_kg_day"] = herd["VS_kg_day"]
+        if "Nex_kg_yr" in herd:
+            inputs["Nex_kg_yr"] = herd["Nex_kg_yr"]
+        
         # Build manure params
         params = {
             "CH4_M3_TO_KG": params_v4.get_value("BOTH.CH4_M3_TO_KG.all"),
             "EF4": params_v4.get_value("IPCC2006.EF4.all"),
         }
         
-        # Animal characteristics - use EPA VS if available, otherwise IPCC defaults
+        # Animal characteristics - IPCC defaults (EPA overrides passed as inputs)
         for a in ["dairy", "other_cattle"]:
-            # For VS, use EPA value from herd if present
-            if f"VS_kg_day" in herd:
-                params[f"VS_{a}"] = herd["VS_kg_day"]
-            else:
-                params[f"VS_{a}"] = params_v4.get_value(f"IPCC2006.VS.{a}|{region}")
-            
+            params[f"VS_{a}"] = params_v4.get_value(f"IPCC2006.VS.{a}|{region}")
             params[f"Nrate_{a}"] = params_v4.get_value(f"IPCC2006.Nrate.{a}|{region}")
             params[f"TAM_{a}"] = params_v4.get_value(f"IPCC2006.TAM.{a}|{region}")
             params[f"B0_{a}"] = params_v4.get_value(f"IPCC2006.B0.{a}|{region}")
