@@ -165,6 +165,9 @@ def load_parameter_csv(csv_path: Path, allow_unverified: bool = False) -> Parame
     """
     Load parameters from an enhanced CSV file.
     
+    Supports both v3 format (guideline, factor, disaggregation columns)
+    and v4 format (key column with pre-formatted key).
+    
     Args:
         csv_path: Path to CSV file
         allow_unverified: If True, allow UNVERIFIED/ASSUMPTION parameters
@@ -177,8 +180,19 @@ def load_parameter_csv(csv_path: Path, allow_unverified: bool = False) -> Parame
     with open(csv_path) as f:
         reader = csv.DictReader(f)
         for row in reader:
-            # Build parameter key from guideline.factor.disaggregation
-            key = f"{row['guideline']}.{row['factor']}.{row['disaggregation']}"
+            # Detect format: v4 has 'key' column, v3 has 'guideline'
+            if "key" in row:
+                # v4 format
+                key = row["key"]
+                value = float(row["value"])
+                dist_lower_col = "dist_lower"
+                dist_upper_col = "dist_upper"
+            else:
+                # v3 format (legacy)
+                key = f"{row['guideline']}.{row['factor']}.{row['disaggregation']}"
+                value = float(row["default"])
+                dist_lower_col = "lower"
+                dist_upper_col = "upper"
 
             # Parse distribution
             dist_str = row.get("dist", "fixed").lower()
@@ -189,10 +203,10 @@ def load_parameter_csv(csv_path: Path, allow_unverified: bool = False) -> Parame
 
             # Parse distribution parameters
             dist_params = {}
-            if "lower" in row and row["lower"]:
-                dist_params["lower"] = float(row["lower"])
-            if "upper" in row and row["upper"]:
-                dist_params["upper"] = float(row["upper"])
+            if dist_lower_col in row and row[dist_lower_col]:
+                dist_params["lower"] = float(row[dist_lower_col])
+            if dist_upper_col in row and row[dist_upper_col]:
+                dist_params["upper"] = float(row[dist_upper_col])
 
             # Parse verification status
             status_str = row.get("status", "UNVERIFIED").upper()
@@ -211,11 +225,11 @@ def load_parameter_csv(csv_path: Path, allow_unverified: bool = False) -> Parame
 
             param = ParameterValue(
                 key=key,
-                value=float(row["default"]),
+                value=value,
                 units=row["units"],
                 dist=dist,
                 dist_params=dist_params if dist_params else None,
-                source_doi_or_url=row.get("source", ""),
+                source_doi_or_url=row.get("source", row.get("source_doi_or_url", "")),
                 table=row.get("table", ""),
                 equation=row.get("equation", ""),
                 page=row.get("page", ""),
