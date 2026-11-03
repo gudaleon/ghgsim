@@ -16,6 +16,7 @@ from collections.abc import Mapping
 from typing import Any
 
 from ghgsim.core.module import Citation, Module, ParamRef, VarSpec
+from ghgsim.modules.livestock_types import is_poultry, is_swine
 
 
 class IPCC2019Enteric:
@@ -29,13 +30,13 @@ class IPCC2019Enteric:
     version = "1.0.0"
 
     inputs = {
-        "GE_MJ_day": VarSpec("GE_MJ_day", "MJ / day", "Gross energy intake per animal", "scalar", True),
+        "GE_MJ_day": VarSpec("GE_MJ_day", "MJ / day", "Gross energy intake per animal (cattle Tier 2)", "scalar", False),
         "head": VarSpec("head", "dimensionless", "Number of animals", "scalar", True),
+        "animal_type": VarSpec("animal_type", "dimensionless", "Alias of ym_category for monogastrics", "scalar", False),
         "ym_category": VarSpec(
             "ym_category",
             "dimensionless",
-            "Ym category (dairy_high_ndf_le35, dairy_high_ndf_ge35, dairy_medium, dairy_low, "
-            "nondairy_forage_gt75, nondairy_mixed, feedlot_grain, feedlot_sfc)",
+            "Ym category (cattle diet keys) or swine/poultry animal_type",
             "scalar",
             True,
         ),
@@ -57,6 +58,11 @@ class IPCC2019Enteric:
         "Ym_feedlot_grain": ParamRef("IPCC2019.Ym.feedlot_grain", "Ym for feedlot grain-based diet"),
         "Ym_feedlot_sfc": ParamRef("IPCC2019.Ym.feedlot_sfc", "Ym for feedlot silage/concentrate diet"),
         "CH4_ENERGY": ParamRef("BOTH.CH4_ENERGY.all", "Energy content of methane (MJ/kg CH4)"),
+        "EF_enteric_swine": ParamRef(
+            "IPCC2019.EF_enteric.swine|high_productivity",
+            "Swine Tier 1 EF high-productivity systems",
+        ),
+        "EF_enteric_poultry": ParamRef("IPCC2019.EF_enteric.poultry", "Poultry enteric EF (0)"),
     }
 
     outputs = {
@@ -84,9 +90,16 @@ class IPCC2019Enteric:
         Returns:
             Dictionary with CH4_kg_head, CH4_total
         """
-        ge = inputs["GE_MJ_day"]
         head = inputs["head"]
-        category = inputs["ym_category"]
+        category = str(inputs.get("ym_category") or inputs.get("animal_type") or "")
+        if is_poultry(category):
+            ef = float(params.get("EF_enteric_poultry", 0.0))
+            return {"CH4_kg_head": ef, "CH4_total": ef * head}
+        if is_swine(category):
+            ef = float(params["EF_enteric_swine"])
+            return {"CH4_kg_head": ef, "CH4_total": ef * head}
+
+        ge = inputs["GE_MJ_day"]
 
         # Select Ym parameter based on diet category
         ym_key = f"Ym_{category}"

@@ -1,0 +1,475 @@
+{
+  "engine_version": "0.4.0",
+  "farm_id": "breeding_swine_liquid",
+  "fork_set": {
+    "catalog": [
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.CH4.cover_reduction",
+        "issue_ref": "CE-14",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.CH4.turkey_zero",
+        "issue_ref": "CE-10",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.ENTERIC.calf_zero",
+        "issue_ref": "CE-06",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.GE.digestibility",
+        "issue_ref": "AUDIT-GE-TDN",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.NEX.calf_nrate",
+        "issue_ref": "AUDIT-CALF-NRATE",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.VS.calf_coeff",
+        "issue_ref": "CE-07",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.VS.digestibility",
+        "issue_ref": "AUDIT-VS-TDN",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "holos_as_coded",
+        "default": "source_correct",
+        "fork_id": "HOLOS.VS.urinary_energy",
+        "issue_ref": "AUDIT-VS-UE",
+        "label": "holos_as_coded"
+      },
+      {
+        "alt": "ipcc2006_table_10_12",
+        "default": "eccc_2022_canada",
+        "fork_id": "HOLOS.YM.dairy",
+        "issue_ref": "AUDIT-YM-DAIRY",
+        "label": "parameter_refinement"
+      }
+    ],
+    "holos_as_coded": {
+      "HOLOS.CH4.cover_reduction": "holos_as_coded",
+      "HOLOS.CH4.turkey_zero": "holos_as_coded",
+      "HOLOS.ENTERIC.calf_zero": "holos_as_coded",
+      "HOLOS.GE.digestibility": "holos_as_coded",
+      "HOLOS.NEX.calf_nrate": "holos_as_coded",
+      "HOLOS.VS.calf_coeff": "holos_as_coded",
+      "HOLOS.VS.digestibility": "holos_as_coded",
+      "HOLOS.VS.urinary_energy": "holos_as_coded",
+      "HOLOS.YM.dairy": "ipcc2006_table_10_12"
+    },
+    "source_correct": {}
+  },
+  "gwp": {
+    "CH4": 28.0,
+    "N2O": 265.0,
+    "source": "IPCC Fifth Assessment Report, 100-year GWP without climate-carbon feedbacks"
+  },
+  "inputs_file": "data/stylized_farms_AN_v3.yaml",
+  "run_metadata": {
+    "holos_as_coded": {
+      "farm_type": "swine",
+      "manure_id": "swine_liquid_uncovered",
+      "run": "holos_as_coded"
+    },
+    "source_correct": {
+      "farm_type": "swine",
+      "manure_id": "swine_liquid_uncovered",
+      "run": "source_correct"
+    }
+  },
+  "schema": "ghgsim.emissions_sankey.v1",
+  "units": {
+    "native_ch4": "kg CH4 / year",
+    "native_n2o": "kg N2O / year",
+    "total_displayed": "t CO2e = kg CO2e / 1000",
+    "value": "kg CO2e"
+  },
+  "version": "AN_v1",
+  "views": {
+    "fork_delta": {
+      "fork_deltas_kg_co2e": {
+        "HOLOS.CH4.cover_reduction": 0.0,
+        "HOLOS.CH4.turkey_zero": 0.0,
+        "HOLOS.ENTERIC.calf_zero": 0.0,
+        "HOLOS.GE.digestibility": 0.0,
+        "HOLOS.NEX.calf_nrate": 0.0,
+        "HOLOS.VS.calf_coeff": 0.0,
+        "HOLOS.VS.digestibility": 0.0,
+        "HOLOS.VS.urinary_energy": 0.0,
+        "HOLOS.YM.dairy": 0.0
+      },
+      "gwp": {
+        "CH4": 28.0,
+        "N2O": 265.0
+      },
+      "links": [
+        {
+          "sign": "retained",
+          "source": "source.source_correct",
+          "target": "sink.holos_as_coded",
+          "units": "kg CO2e",
+          "value": 104076.259474286
+        }
+      ],
+      "nodes": [
+        {
+          "color": "#455A64",
+          "id": "source.source_correct",
+          "inflow": 0.0,
+          "kind": "source_total",
+          "label": "source_correct (104.076259474 t CO2e)",
+          "layer": 0,
+          "outflow": 104076.259474286,
+          "value": 104076.259474286
+        },
+        {
+          "color": "#37474F",
+          "id": "sink.holos_as_coded",
+          "inflow": 104076.259474286,
+          "kind": "sink",
+          "label": "holos_as_coded (104.076259474 t CO2e)",
+          "layer": 2,
+          "outflow": 0.0,
+          "value": 104076.259474286
+        }
+      ],
+      "totals": {
+        "CO2e_kg": 104076.259474286,
+        "CO2e_t": 104.076259474,
+        "holos_as_coded_CO2e_kg": 104076.259474286,
+        "interaction_kg": 0.0,
+        "source_correct_CO2e_kg": 104076.259474286,
+        "sum_single_fork_delta_kg": 0.0
+      },
+      "units": "kg CO2e",
+      "view": "fork_delta"
+    },
+    "holos_as_coded": {
+      "gwp": {
+        "CH4": 28.0,
+        "N2O": 265.0
+      },
+      "links": [
+        {
+          "gas": "CH4",
+          "native_kg": 300.0,
+          "source": "animal.breeding_swine",
+          "target": "process.enteric_ch4",
+          "units": "kg CO2e",
+          "value": 8400.0
+        },
+        {
+          "gas": "CH4",
+          "native_kg": 3169.368,
+          "source": "animal.breeding_swine",
+          "system": "liquid_nocrust",
+          "target": "process.manure_ch4.liquid_nocrust",
+          "units": "kg CO2e",
+          "value": 88742.304
+        },
+        {
+          "gas": "N2O",
+          "native_kg": 26.165869714,
+          "source": "animal.breeding_swine",
+          "target": "process.manure_n2o_indirect",
+          "units": "kg CO2e",
+          "value": 6933.955474286
+        },
+        {
+          "gas": "CH4",
+          "source": "gas.CH4",
+          "target": "sink.CO2e",
+          "units": "kg CO2e",
+          "value": 97142.304
+        },
+        {
+          "gas": "N2O",
+          "source": "gas.N2O",
+          "target": "sink.CO2e",
+          "units": "kg CO2e",
+          "value": 6933.955474286
+        },
+        {
+          "gas": "CH4",
+          "source": "process.enteric_ch4",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 8400.0
+        },
+        {
+          "gas": "CH4",
+          "source": "process.manure_ch4.liquid_nocrust",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 88742.304
+        },
+        {
+          "gas": "N2O",
+          "source": "process.manure_n2o_indirect",
+          "target": "gas.N2O",
+          "units": "kg CO2e",
+          "value": 6933.955474286
+        }
+      ],
+      "nodes": [
+        {
+          "color": "#1565C0",
+          "id": "animal.breeding_swine",
+          "inflow": 0.0,
+          "kind": "animal",
+          "label": "breeding swine",
+          "layer": 0,
+          "outflow": 104076.259474286,
+          "value": 104076.259474286
+        },
+        {
+          "color": "#00838F",
+          "id": "process.enteric_ch4",
+          "inflow": 8400.0,
+          "kind": "process",
+          "label": "enteric CH4",
+          "layer": 1,
+          "outflow": 8400.0,
+          "value": 8400.0
+        },
+        {
+          "color": "#00838F",
+          "id": "process.manure_ch4.liquid_nocrust",
+          "inflow": 88742.304,
+          "kind": "process",
+          "label": "manure CH4 (liquid, no crust)",
+          "layer": 1,
+          "outflow": 88742.304,
+          "value": 88742.304
+        },
+        {
+          "color": "#00838F",
+          "id": "process.manure_n2o_indirect",
+          "inflow": 6933.955474286,
+          "kind": "process",
+          "label": "indirect N2O",
+          "layer": 1,
+          "outflow": 6933.955474286,
+          "value": 6933.955474286
+        },
+        {
+          "color": "#EF6C00",
+          "id": "gas.CH4",
+          "inflow": 97142.304,
+          "kind": "gas",
+          "label": "CH4 (GWP 28)",
+          "layer": 2,
+          "outflow": 97142.304,
+          "value": 97142.304
+        },
+        {
+          "color": "#6A1B9A",
+          "id": "gas.N2O",
+          "inflow": 6933.955474286,
+          "kind": "gas",
+          "label": "N2O (GWP 265)",
+          "layer": 2,
+          "outflow": 6933.955474286,
+          "value": 6933.955474286
+        },
+        {
+          "color": "#37474F",
+          "id": "sink.CO2e",
+          "inflow": 104076.259474286,
+          "kind": "sink",
+          "label": "total CO2e",
+          "layer": 3,
+          "outflow": 0.0,
+          "value": 104076.259474286
+        }
+      ],
+      "totals": {
+        "CH4_enteric_kg": 300.0,
+        "CH4_kg": 3469.368,
+        "CH4_manure_kg": 3169.368,
+        "CO2e_kg": 104076.259474286,
+        "CO2e_t": 104.076259474,
+        "N2O_direct_kg": 0.0,
+        "N2O_indirect_kg": 26.165869714,
+        "N2O_kg": 26.165869714,
+        "N2O_soil_kg": 0.0
+      },
+      "units": "kg CO2e",
+      "view": "holos_as_coded"
+    },
+    "source_correct": {
+      "gwp": {
+        "CH4": 28.0,
+        "N2O": 265.0
+      },
+      "links": [
+        {
+          "gas": "CH4",
+          "native_kg": 300.0,
+          "source": "animal.breeding_swine",
+          "target": "process.enteric_ch4",
+          "units": "kg CO2e",
+          "value": 8400.0
+        },
+        {
+          "gas": "CH4",
+          "native_kg": 3169.368,
+          "source": "animal.breeding_swine",
+          "system": "liquid_nocrust",
+          "target": "process.manure_ch4.liquid_nocrust",
+          "units": "kg CO2e",
+          "value": 88742.304
+        },
+        {
+          "gas": "N2O",
+          "native_kg": 26.165869714,
+          "source": "animal.breeding_swine",
+          "target": "process.manure_n2o_indirect",
+          "units": "kg CO2e",
+          "value": 6933.955474286
+        },
+        {
+          "gas": "CH4",
+          "source": "gas.CH4",
+          "target": "sink.CO2e",
+          "units": "kg CO2e",
+          "value": 97142.304
+        },
+        {
+          "gas": "N2O",
+          "source": "gas.N2O",
+          "target": "sink.CO2e",
+          "units": "kg CO2e",
+          "value": 6933.955474286
+        },
+        {
+          "gas": "CH4",
+          "source": "process.enteric_ch4",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 8400.0
+        },
+        {
+          "gas": "CH4",
+          "source": "process.manure_ch4.liquid_nocrust",
+          "target": "gas.CH4",
+          "units": "kg CO2e",
+          "value": 88742.304
+        },
+        {
+          "gas": "N2O",
+          "source": "process.manure_n2o_indirect",
+          "target": "gas.N2O",
+          "units": "kg CO2e",
+          "value": 6933.955474286
+        }
+      ],
+      "nodes": [
+        {
+          "color": "#1565C0",
+          "id": "animal.breeding_swine",
+          "inflow": 0.0,
+          "kind": "animal",
+          "label": "breeding swine",
+          "layer": 0,
+          "outflow": 104076.259474286,
+          "value": 104076.259474286
+        },
+        {
+          "color": "#00838F",
+          "id": "process.enteric_ch4",
+          "inflow": 8400.0,
+          "kind": "process",
+          "label": "enteric CH4",
+          "layer": 1,
+          "outflow": 8400.0,
+          "value": 8400.0
+        },
+        {
+          "color": "#00838F",
+          "id": "process.manure_ch4.liquid_nocrust",
+          "inflow": 88742.304,
+          "kind": "process",
+          "label": "manure CH4 (liquid, no crust)",
+          "layer": 1,
+          "outflow": 88742.304,
+          "value": 88742.304
+        },
+        {
+          "color": "#00838F",
+          "id": "process.manure_n2o_indirect",
+          "inflow": 6933.955474286,
+          "kind": "process",
+          "label": "indirect N2O",
+          "layer": 1,
+          "outflow": 6933.955474286,
+          "value": 6933.955474286
+        },
+        {
+          "color": "#EF6C00",
+          "id": "gas.CH4",
+          "inflow": 97142.304,
+          "kind": "gas",
+          "label": "CH4 (GWP 28)",
+          "layer": 2,
+          "outflow": 97142.304,
+          "value": 97142.304
+        },
+        {
+          "color": "#6A1B9A",
+          "id": "gas.N2O",
+          "inflow": 6933.955474286,
+          "kind": "gas",
+          "label": "N2O (GWP 265)",
+          "layer": 2,
+          "outflow": 6933.955474286,
+          "value": 6933.955474286
+        },
+        {
+          "color": "#37474F",
+          "id": "sink.CO2e",
+          "inflow": 104076.259474286,
+          "kind": "sink",
+          "label": "total CO2e",
+          "layer": 3,
+          "outflow": 0.0,
+          "value": 104076.259474286
+        }
+      ],
+      "totals": {
+        "CH4_enteric_kg": 300.0,
+        "CH4_kg": 3469.368,
+        "CH4_manure_kg": 3169.368,
+        "CO2e_kg": 104076.259474286,
+        "CO2e_t": 104.076259474,
+        "N2O_direct_kg": 0.0,
+        "N2O_indirect_kg": 26.165869714,
+        "N2O_kg": 26.165869714,
+        "N2O_soil_kg": 0.0
+      },
+      "units": "kg CO2e",
+      "view": "source_correct"
+    }
+  }
+}

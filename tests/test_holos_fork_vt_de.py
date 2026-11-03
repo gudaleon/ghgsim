@@ -34,7 +34,7 @@ def test_ym_fork_dairy_enteric_ratio_is_6p5_over_5p6():
     assert ipcc["Ym_used"] == 6.5
 
 
-def test_eight_forks_registered():
+def test_registered_forks_include_turkey_zero():
     forks = get_holos_fork_registry().list_forks(sort_by="id")
     ids = {f.id for f in forks}
     assert ids == {
@@ -45,6 +45,7 @@ def test_eight_forks_registered():
         "HOLOS.VS.urinary_energy",
         "HOLOS.VS.calf_coeff",
         "HOLOS.CH4.cover_reduction",
+        "HOLOS.CH4.turkey_zero",
         "HOLOS.NEX.calf_nrate",
     }
 

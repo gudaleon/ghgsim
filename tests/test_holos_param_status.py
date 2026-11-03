@@ -11,6 +11,7 @@ from ghgsim.modules.holos.forks import get_holos_fork_registry, list_holos_as_co
 ROOT = Path(__file__).resolve().parents[1]
 CANADA = ROOT / "data" / "holos_params_canada_AN_v4.csv"
 CANADA_V5 = ROOT / "data" / "holos_params_canada_AN_v5.csv"
+CANADA_V6 = ROOT / "data" / "holos_params_canada_AN_v6.csv"
 US = ROOT / "data" / "holos_params_us_AN_v2.csv"
 ALLOWED = {item.value for item in VerificationStatus}
 
@@ -23,7 +24,7 @@ def _rows(path: Path):
         return list(csv.DictReader(handle))
 
 
-@pytest.mark.parametrize("path", [CANADA, CANADA_V5, US])
+@pytest.mark.parametrize("path", [CANADA, CANADA_V5, CANADA_V6, US])
 def test_status_values_are_known(path):
     rows = _rows(path)
     assert rows
@@ -90,6 +91,7 @@ def test_holos_as_coded_forks_are_registered():
         "HOLOS.VS.urinary_energy",
         "HOLOS.VS.calf_coeff",
         "HOLOS.CH4.cover_reduction",
+        "HOLOS.CH4.turkey_zero",
         "HOLOS.NEX.calf_nrate",
     }
     assert expected <= ids

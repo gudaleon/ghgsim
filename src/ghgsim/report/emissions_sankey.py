@@ -33,6 +33,7 @@ from ghgsim.modules.holos import (
     HolosVolatileSolids,
 )
 from ghgsim.modules.holos.forks import get_holos_fork_registry
+from ghgsim.modules.livestock_types import is_monogastric
 from ghgsim.report.fork_diagram import latest_versioned, next_an_version, repo_root
 
 SCHEMA = "ghgsim.emissions_sankey.v1"
@@ -48,6 +49,11 @@ ANIMAL_LABELS = {
     "beef_calf": "beef calves",
     "dairy": "dairy cows",
     "beef": "beef cows",
+    "broilers": "broilers",
+    "layers": "layers",
+    "turkeys": "turkeys",
+    "market_swine": "market swine",
+    "breeding_swine": "breeding swine",
 }
 
 SYSTEM_LABELS = {
@@ -58,6 +64,9 @@ SYSTEM_LABELS = {
     "dry_lot": "dry lot",
     "daily_spread": "daily spread",
     "pasture": "pasture",
+    "poultry_with_litter": "poultry with litter",
+    "poultry_without_litter": "poultry without litter",
+    "pit": "pit storage",
 }
 
 NODE_COLORS = {
@@ -128,8 +137,26 @@ def weight_kg(spec: Mapping[str, Any], animal: Mapping[str, Any]) -> float:
 def nex_kg_yr(spec: Mapping[str, Any], animal: Mapping[str, Any], constants: Mapping[str, float]) -> float:
     if "Nex_kg_yr_override" in animal:
         return float(animal["Nex_kg_yr_override"]["value"])
-    nrate_key = "Nrate_dairy_na" if animal["animal_type"] == "dairy" else "Nrate_other_cattle_na"
-    return constants[nrate_key] * weight_kg(spec, animal) / 1000.0 * 365.0
+    animal_type = str(animal["animal_type"])
+    nrate_key = {
+        "dairy": "Nrate_dairy_na",
+        "beef": "Nrate_other_cattle_na",
+        "market_swine": "Nrate_market_swine_na",
+        "breeding_swine": "Nrate_breeding_swine_na",
+        "broilers": "Nrate_broilers_na",
+        "layers": "Nrate_layers_na",
+        "turkeys": "Nrate_turkeys_na",
+    }.get(animal_type)
+    if nrate_key is None:
+        nrate_key = "Nrate_dairy_na" if animal_type == "dairy" else "Nrate_other_cattle_na"
+    mass = animal_mass_kg(spec, animal)
+    return constants[nrate_key] * mass / 1000.0 * 365.0
+
+
+def animal_mass_kg(spec: Mapping[str, Any], animal: Mapping[str, Any]) -> float:
+    if "mass_kg" in animal:
+        return float(animal["mass_kg"]["value"])
+    return weight_kg(spec, animal)
 
 
 def milk_kg_day(spec: Mapping[str, Any], animal: Mapping[str, Any]) -> float:
@@ -316,8 +343,6 @@ def compute_stylized_farm_flows(
 ) -> FarmFlows:
     """Run Holos modules per animal class and keep process-level outputs."""
     constants = _const(spec)
-    diet = spec["diets"][farm["diet_id"]]
-    manure_cfg = spec["manure_variants"][farm["manure_id"]]
     gwp = gwp_from_spec(spec)
     enteric = HolosEnteric()
     vs_module = HolosVolatileSolids()
@@ -325,6 +350,54 @@ def compute_stylized_farm_flows(
     manure_ch4 = HolosManureCH4()
     groups: list[GroupFlows] = []
     fork_settings = dict(forks)
+    manure_cfg = spec["manure_variants"][farm["manure_id"]]
+
+    first_animal = spec["animal_classes"][farm["herds"][0]]
+    if is_monogastric(str(first_animal["animal_type"])):
+        for class_id in farm["herds"]:
+            animal = spec["animal_classes"][class_id]
+            head = float(animal["head"]["value"])
+            manure_in = {
+                "head": head,
+                "animal_type": animal["animal_type"],
+                "climate_zone": spec["meta"]["climate_zone"],
+                "systems": dict(manure_cfg["systems"]),
+                "cover_type": str(manure_cfg.get("cover_type", "none")),
+                "forks": fork_settings,
+            }
+            if "VS_kg_day" in animal:
+                manure_in["VS_kg_day"] = float(animal["VS_kg_day"]["value"])
+            manure_in["Nex_kg_yr"] = nex_kg_yr(spec, animal, constants)
+            ent = enteric.compute(
+                {"head": head, "animal_type": animal["animal_type"], "forks": fork_settings},
+                params,
+            )
+            man = manure.compute(manure_in, params)
+            by_system = _manure_ch4_by_system(manure_ch4, manure_in, params)
+            groups.append(
+                GroupFlows(
+                    group_id=str(class_id),
+                    label=ANIMAL_LABELS.get(str(class_id), str(class_id).replace("_", " ")),
+                    head=head,
+                    enteric_ch4_kg=float(ent["CH4_total"]),
+                    manure_ch4_by_system_kg=by_system,
+                    n2o_direct_kg=float(man["N2O_direct"]),
+                    n2o_indirect_kg=float(man["N2O_indirect_vol"]),
+                )
+            )
+        return FarmFlows(
+            farm_id=str(farm["id"]),
+            run=run,
+            forks=fork_settings,
+            groups=groups,
+            gwp=gwp,
+            extras={
+                "farm_type": farm.get("farm_type"),
+                "manure_id": farm.get("manure_id"),
+            },
+        )
+
+    diet = spec["diets"][farm["diet_id"]]
 
     for class_id in farm["herds"]:
         animal = spec["animal_classes"][class_id]

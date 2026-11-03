@@ -22,6 +22,7 @@ from collections.abc import Mapping
 from typing import Any
 
 from ghgsim.core.module import Citation, Module, ParamRef, VarSpec
+from ghgsim.modules.livestock_types import is_poultry, is_swine
 
 # Molecular weight conversion: N2O-N to N2O
 N2ON_TO_N2O = 44.0 / 28.0
@@ -36,7 +37,22 @@ SYSTEM_MAP_2006 = {
     "dry_lot": ("dry_lot", "dry_lot", "dry_lot"),
     "daily_spread": ("daily_spread", "daily_spread", "daily_spread"),
     "pasture": ("pasture", None, None),  # PRP goes to Ch11
+    "poultry_with_litter": ("poultry_with_litter", "poultry_with_litter", "poultry_with_litter"),
+    "poultry_without_litter": ("poultry_without_litter", "poultry_without_litter", "poultry_without_litter"),
+    "pit": ("pit_gt1mo", "pit", "pit"),
 }
+
+
+def _fracgas_ms(params: Mapping[str, Any], animal: str, fracgas_key: str) -> float:
+    candidates = [f"FracGasMS_{animal}_{fracgas_key}"]
+    if is_swine(animal):
+        candidates.append(f"FracGasMS_swine_{fracgas_key}")
+    if is_poultry(animal):
+        candidates.append(f"FracGasMS_poultry_{fracgas_key}")
+    for name in candidates:
+        if name in params:
+            return float(params[name])
+    raise KeyError(f"Missing FracGasMS for animal '{animal}' system '{fracgas_key}'")
 
 
 class IPCC2006Manure:
@@ -52,7 +68,13 @@ class IPCC2006Manure:
 
     inputs = {
         "head": VarSpec("head", "dimensionless", "Number of animals", "scalar", True),
-        "animal_type": VarSpec("animal_type", "dimensionless", "Animal type (dairy/other_cattle)", "scalar", True),
+        "animal_type": VarSpec(
+            "animal_type",
+            "dimensionless",
+            "Animal type (dairy/other_cattle/market_swine/breeding_swine/broilers/layers/turkeys)",
+            "scalar",
+            True,
+        ),
         "region": VarSpec("region", "dimensionless", "Region (north_america)", "scalar", True),
         "VS_kg_day": VarSpec("VS_kg_day", "kg / day", "Volatile solids excretion per animal", "scalar", False),
         "Nex_kg_yr": VarSpec("Nex_kg_yr", "kg N / year", "Nitrogen excretion per animal", "scalar", False),
@@ -72,6 +94,26 @@ class IPCC2006Manure:
         # CH4 parameters
         "B0_dairy": ParamRef("IPCC2006.B0.dairy|north_america", "Maximum methane producing capacity for dairy"),
         "B0_other_cattle": ParamRef("IPCC2006.B0.other_cattle|north_america", "Maximum methane producing capacity for other cattle"),
+        "VS_market_swine": ParamRef("IPCC2006.VS.market_swine|north_america", "VS market swine"),
+        "VS_breeding_swine": ParamRef("IPCC2006.VS.breeding_swine|north_america", "VS breeding swine"),
+        "VS_broilers": ParamRef("IPCC2006.VS.broilers|north_america", "VS broilers"),
+        "VS_layers": ParamRef("IPCC2006.VS.layers|north_america", "VS layers"),
+        "VS_turkeys": ParamRef("IPCC2006.VS.turkeys|north_america", "VS turkeys"),
+        "Nrate_market_swine": ParamRef("IPCC2006.Nrate.market_swine|north_america", "Nrate market swine"),
+        "Nrate_breeding_swine": ParamRef("IPCC2006.Nrate.breeding_swine|north_america", "Nrate breeding swine"),
+        "Nrate_broilers": ParamRef("IPCC2006.Nrate.broilers|north_america", "Nrate broilers"),
+        "Nrate_layers": ParamRef("IPCC2006.Nrate.layers|north_america", "Nrate layers"),
+        "Nrate_turkeys": ParamRef("IPCC2006.Nrate.turkeys|north_america", "Nrate turkeys"),
+        "TAM_market_swine": ParamRef("IPCC2006.TAM.market_swine|north_america", "TAM market swine"),
+        "TAM_breeding_swine": ParamRef("IPCC2006.TAM.breeding_swine|north_america", "TAM breeding swine"),
+        "TAM_broilers": ParamRef("IPCC2006.TAM.broilers|north_america", "TAM broilers"),
+        "TAM_layers": ParamRef("IPCC2006.TAM.layers|north_america", "TAM layers"),
+        "TAM_turkeys": ParamRef("IPCC2006.TAM.turkeys|north_america", "TAM turkeys"),
+        "B0_market_swine": ParamRef("IPCC2006.B0.market_swine|north_america", "B0 market swine"),
+        "B0_breeding_swine": ParamRef("IPCC2006.B0.breeding_swine|north_america", "B0 breeding swine"),
+        "B0_broilers": ParamRef("IPCC2006.B0.broilers|north_america", "B0 broilers"),
+        "B0_layers": ParamRef("IPCC2006.B0.layers|north_america", "B0 layers"),
+        "B0_turkeys": ParamRef("IPCC2006.B0.turkeys|north_america", "B0 turkeys"),
         "CH4_M3_TO_KG": ParamRef("BOTH.CH4_M3_TO_KG.all", "Methane density conversion"),
         # MCF values for each system and zone
         "MCF_liquid_nocrust_15C": ParamRef("IPCC2006.MCF.liquid_nocrust|15C", "MCF for liquid without crust"),
@@ -82,6 +124,16 @@ class IPCC2006Manure:
         "MCF_daily_spread_15C": ParamRef("IPCC2006.MCF.daily_spread|15C", "MCF for daily spread"),
         "MCF_pasture_15C": ParamRef("IPCC2006.MCF.pasture|15C", "MCF for pasture (15C)"),
         "MCF_pasture_le10C": ParamRef("IPCC2006.MCF.pasture|le10C", "MCF for pasture (≤10C)"),
+        "MCF_poultry_with_litter_15C": ParamRef("IPCC2006.MCF.poultry_with_litter|15C", "MCF poultry with litter 15C"),
+        "MCF_poultry_with_litter_le10C": ParamRef("IPCC2006.MCF.poultry_with_litter|le10C", "MCF poultry with litter cool"),
+        "MCF_poultry_without_litter_15C": ParamRef(
+            "IPCC2006.MCF.poultry_without_litter|15C", "MCF poultry without litter 15C"
+        ),
+        "MCF_poultry_without_litter_le10C": ParamRef(
+            "IPCC2006.MCF.poultry_without_litter|le10C", "MCF poultry without litter cool"
+        ),
+        "MCF_pit_gt1mo_15C": ParamRef("IPCC2006.MCF.pit_gt1mo|15C", "MCF pit >1 month 15C"),
+        "MCF_pit_gt1mo_le10C": ParamRef("IPCC2006.MCF.pit_gt1mo|le10C", "MCF pit >1 month cool"),
         # N2O emission factors
         "EF3_liquid_nocrust": ParamRef("IPCC2006.EF3.liquid_nocrust", "Direct N2O EF for liquid no crust"),
         "EF3_liquid_crust": ParamRef("IPCC2006.EF3.liquid_crust", "Direct N2O EF for liquid with crust"),
@@ -89,6 +141,9 @@ class IPCC2006Manure:
         "EF3_solid_storage": ParamRef("IPCC2006.EF3.solid_storage", "Direct N2O EF for solid storage"),
         "EF3_dry_lot": ParamRef("IPCC2006.EF3.dry_lot", "Direct N2O EF for dry lot"),
         "EF3_daily_spread": ParamRef("IPCC2006.EF3.daily_spread", "Direct N2O EF for daily spread"),
+        "EF3_poultry_with_litter": ParamRef("IPCC2006.EF3.poultry_with_litter", "EF3 poultry with litter"),
+        "EF3_poultry_without_litter": ParamRef("IPCC2006.EF3.poultry_without_litter", "EF3 poultry without litter"),
+        "EF3_pit": ParamRef("IPCC2006.EF3.pit", "EF3 pit storage"),
         "EF4": ParamRef("IPCC2006.EF4.all", "Indirect N2O EF for volatilization"),
         # Volatilization fractions
         "FracGasMS_dairy_liquid_slurry": ParamRef("IPCC2006.FracGasMS.dairy|liquid_slurry", "Volatilization fraction for dairy liquid"),
@@ -101,6 +156,17 @@ class IPCC2006Manure:
         "FracGasMS_other_cattle_dry_lot": ParamRef("IPCC2006.FracGasMS.other_cattle|dry_lot", "Volatilization fraction for other cattle dry lot"),
         "FracGasMS_other_cattle_daily_spread": ParamRef("IPCC2006.FracGasMS.other_cattle|daily_spread", "Volatilization fraction for other cattle daily spread"),
         "FracGasMS_other_cattle_lagoon": ParamRef("IPCC2006.FracGasMS.other_cattle|lagoon", "Volatilization fraction for other cattle lagoon"),
+        "FracGasMS_swine_liquid_slurry": ParamRef("IPCC2006.FracGasMS.swine|liquid_slurry", "FracGasMS swine liquid"),
+        "FracGasMS_swine_pit": ParamRef("IPCC2006.FracGasMS.swine|pit", "FracGasMS swine pit"),
+        "FracGasMS_swine_lagoon": ParamRef("IPCC2006.FracGasMS.swine|lagoon", "FracGasMS swine lagoon"),
+        "FracGasMS_swine_solid_storage": ParamRef("IPCC2006.FracGasMS.swine|solid_storage", "FracGasMS swine solid"),
+        "FracGasMS_poultry_poultry_with_litter": ParamRef(
+            "IPCC2006.FracGasMS.poultry|poultry_with_litter", "FracGasMS poultry with litter"
+        ),
+        "FracGasMS_poultry_poultry_without_litter": ParamRef(
+            "IPCC2006.FracGasMS.poultry|poultry_without_litter", "FracGasMS poultry without litter"
+        ),
+        "FracGasMS_poultry_lagoon": ParamRef("IPCC2006.FracGasMS.poultry|lagoon", "FracGasMS poultry lagoon"),
     }
 
     outputs = {
@@ -110,6 +176,7 @@ class IPCC2006Manure:
         "N2O_total": VarSpec("N2O_total", "kg N2O / year", "Total N2O emissions", "scalar", True),
         "N_PRP_kg": VarSpec("N_PRP_kg", "kg N / year", "Nitrogen from pasture/range/paddock (to Ch11)", "scalar", True),
         "Nex_kg_head": VarSpec("Nex_kg_head", "kg N / year", "Nitrogen excretion per head", "scalar", True),
+        "N_managed_kg": VarSpec("N_managed_kg", "kg N / year", "Managed manure N (non-PRP)", "scalar", True),
     }
 
     sources = [
@@ -163,6 +230,7 @@ class IPCC2006Manure:
         n_direct = 0.0
         n_vol = 0.0
         n_prp = 0.0  # Pasture nitrogen (goes to Ch11 EF3PRP)
+        n_managed = 0.0
 
         for system, fraction in systems.items():
             mcf_key, ef3_key, fracgas_key = SYSTEM_MAP_2006[system]
@@ -176,13 +244,14 @@ class IPCC2006Manure:
             else:
                 # All other systems use the specified zone (typically 15C for US)
                 mcf = params[f"MCF_{mcf_key}_{mcf_zone}"]
+                n_managed += head * nex * fraction
                 
                 # N2O direct emissions
                 ef3 = params[f"EF3_{ef3_key}"]
                 n_direct += head * nex * fraction * ef3
 
                 # Volatilization
-                fracgas = params[f"FracGasMS_{animal}_{fracgas_key}"]
+                fracgas = _fracgas_ms(params, animal, fracgas_key)
                 n_vol += head * nex * fraction * fracgas
 
             ch4_sum_mcf += mcf * fraction
@@ -207,6 +276,7 @@ class IPCC2006Manure:
             "N2O_total": n2o_direct + n2o_vol,
             "N_PRP_kg": n_prp,
             "Nex_kg_head": nex,
+            "N_managed_kg": n_managed,
         }
 
 

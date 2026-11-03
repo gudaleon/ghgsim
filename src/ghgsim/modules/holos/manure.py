@@ -30,7 +30,13 @@ class HolosManure:
 
     inputs = {
         "head": VarSpec("head", "dimensionless", "Number of animals", "scalar", True),
-        "animal_type": VarSpec("animal_type", "dimensionless", "Animal type (dairy/beef)", "scalar", True),
+        "animal_type": VarSpec(
+            "animal_type",
+            "dimensionless",
+            "Animal type (dairy/beef/market_swine/breeding_swine/broilers/layers/turkeys)",
+            "scalar",
+            True,
+        ),
         "region": VarSpec("region", "dimensionless", "Region (canada/north_america)", "scalar", False),
         "climate_zone": VarSpec("climate_zone", "dimensionless", "Climate zone (cool/temperate)", "scalar", True),
         "systems": VarSpec("systems", "dimensionless", "Dict of system -> fraction", "scalar", True),
@@ -44,6 +50,13 @@ class HolosManure:
             "scalar",
             False,
         ),
+        "include_leach": VarSpec(
+            "include_leach",
+            "dimensionless",
+            "If true, apply IPCC 2019 FracLeachMS (2006 default is omit)",
+            "scalar",
+            False,
+        ),
         "forks": VarSpec("forks", "dimensionless", "Dict of fork_id -> option", "scalar", False),
     }
 
@@ -53,9 +66,14 @@ class HolosManure:
         "CH4": VarSpec("CH4", "kg CH4 / year", "Total CH4 emissions", "scalar", True),
         "N2O_direct": VarSpec("N2O_direct", "kg N2O / year", "Direct N2O emissions", "scalar", True),
         "N2O_indirect_vol": VarSpec("N2O_indirect_vol", "kg N2O / year", "Indirect N2O from volatilisation", "scalar", True),
+        "N2O_indirect_leach": VarSpec(
+            "N2O_indirect_leach", "kg N2O / year", "Indirect N2O from leaching", "scalar", True
+        ),
         "N2O_total": VarSpec("N2O_total", "kg N2O / year", "Total N2O emissions", "scalar", True),
         "N_PRP_kg": VarSpec("N_PRP_kg", "kg N / year", "Nitrogen to pasture", "scalar", True),
         "Nex_kg_head": VarSpec("Nex_kg_head", "kg N / year", "Nitrogen excretion per head", "scalar", True),
+        "N_managed_kg": VarSpec("N_managed_kg", "kg N / year", "Managed manure N (non-PRP)", "scalar", True),
+        "N_MMS_Avb_kg": VarSpec("N_MMS_Avb_kg", "kg N / year", "Manure N remaining for soils (Eq 10.34)", "scalar", True),
     }
 
     sources = [
@@ -81,9 +99,12 @@ class HolosManure:
             "CH4": ch4["CH4"],
             "N2O_direct": n2o["N2O_direct"],
             "N2O_indirect_vol": n2o["N2O_indirect_vol"],
+            "N2O_indirect_leach": n2o["N2O_indirect_leach"],
             "N2O_total": n2o["N2O_total"],
             "N_PRP_kg": n2o["N_PRP_kg"],
             "Nex_kg_head": n2o["Nex_kg_head"],
+            "N_managed_kg": n2o["N_managed_kg"],
+            "N_MMS_Avb_kg": n2o["N_MMS_Avb_kg"],
         }
 
 
