@@ -9,6 +9,9 @@ from collections.abc import Mapping
 from typing import Any
 
 from ghgsim.core.registry import ParameterRegistry
+# Load holos before ipcc2006: ipcc2006.lime_urea -> holos.process_defs -> holos/__init__
+# -> holos.lime_urea -> ipcc2006.lime_urea is circular when ipcc2006 loads first.
+import ghgsim.modules.holos  # noqa: F401  isort: skip
 from ghgsim.modules.ipcc2006 import IPCC2006Enteric, IPCC2006Manure, IPCC2006SoilN2O
 from ghgsim.modules.ipcc2019 import IPCC2019Enteric, IPCC2019SoilN2O
 
@@ -75,7 +78,7 @@ class FarmModel:
             enteric_inputs = {
                 "GE_MJ_day": herd["GE_MJ_day"],
                 "head": herd["head"],
-                "ym_category": herd["ym_category"],
+                "ym_category": self._by_guideline(herd["ym_category"]),
             }
             
             enteric_params = self._get_enteric_params(herd, param_registry)
@@ -88,7 +91,7 @@ class FarmModel:
                     "head": herd["head"],
                     "animal_type": herd["manure"]["animal"],
                     "region": herd["manure"]["region"],
-                    "mcf_zone": herd["manure"]["mcf_zone"][self.guideline],
+                    "mcf_zone": self._by_guideline(herd["manure"]["mcf_zone"]),
                     "systems": herd["manure"]["systems"],
                 }
                 
@@ -126,6 +129,12 @@ class FarmModel:
             "N2O_manure_kg": n2o_manure_total,
             "CO2e_t": co2e_t,
         }
+
+    def _by_guideline(self, value: Any) -> Any:
+        """Return value[guideline] for per-guideline dicts (v3 example farms), else value."""
+        if isinstance(value, Mapping):
+            return value[self.guideline]
+        return value
 
     def _get_soil_params(self, registry: ParameterRegistry) -> dict[str, float]:
         """Get soil N2O parameters from registry."""
@@ -176,7 +185,7 @@ class FarmModel:
         """Get manure management parameters from registry."""
         animal = herd["manure"]["animal"]
         region = herd["manure"]["region"]
-        zone = herd["manure"]["mcf_zone"][self.guideline]
+        zone = self._by_guideline(herd["manure"]["mcf_zone"])
         
         params = {
             "CH4_M3_TO_KG": registry.get_value("BOTH.CH4_M3_TO_KG.all"),
