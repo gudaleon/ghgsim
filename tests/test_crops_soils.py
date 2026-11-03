@@ -460,3 +460,50 @@ def test_crop_urea_lime_liang2020_needs_climate(stylized):
     assert missing.extras["EF1_status"] == "UNVERIFIED-input"
     assert ipcc.n2o_kg == pytest.approx(missing.n2o_kg)
     assert spec["fields"]["crop_urea_lime"].get("crops")
+
+
+def _county_inputs(**extra):
+    base = {"F_SN": 1000.0, "F_ON": 0.0, "F_CR": 0.0, "F_SOM": 0.0, "F_PRP_CPP": 0.0,
+            "climate": "wet", "forks": {"HOLOS.N2O.ef1": "holos_liang2020"}}
+    base.update(extra)
+    return base
+
+
+def test_county_fips_lookup_fills_p_pe(soil_params):
+    from ghgsim.modules.holos.county_climate import county_p_pe
+    cc = county_p_pe("15001")  # Hawaii County HI, P > PE (no FR_Topo needed)
+    assert cc["pe_method"] == "hargreaves_samani_1985" and cc["period"] == "1991-2020"
+    out = HolosSoilN2O().compute(_county_inputs(county_fips="15001"), soil_params)
+    ef, st = holos_ecodistrict_ef1(precip_mm=cc["growing_season_precip_mm"], pe_mm=cc["growing_season_pe_mm"])
+    assert st == "holos_liang2020" and out["EF1_status"] == "holos_liang2020"
+    assert out["EF1_used"] == pytest.approx(ef)
+
+
+def test_county_fips_explicit_inputs_win(soil_params):
+    explicit = HolosSoilN2O().compute(
+        _county_inputs(county_fips="15001", growing_season_precip_mm=700.0, growing_season_pe_mm=500.0), soil_params)
+    plain = HolosSoilN2O().compute(
+        _county_inputs(growing_season_precip_mm=700.0, growing_season_pe_mm=500.0), soil_params)
+    assert explicit["EF1_used"] == pytest.approx(plain["EF1_used"])
+
+
+def test_county_fips_unknown_or_ipcc_unchanged(soil_params):
+    unknown = HolosSoilN2O().compute(_county_inputs(county_fips="99999"), soil_params)
+    assert unknown["EF1_status"] == "UNVERIFIED-input" and unknown["EF1_used"] == pytest.approx(0.01)
+    ipcc = HolosSoilN2O().compute(_county_inputs(county_fips="15001", forks={"HOLOS.N2O.ef1": "ipcc2006_ef1"}), soil_params)
+    assert ipcc["EF1_status"] == "ipcc2006_ef1"
+
+
+def test_county_fips_dry_needs_fr_topo(soil_params):
+    from ghgsim.modules.holos.county_climate import county_p_pe
+    cc = county_p_pe(50007)  # Chittenden VT, int FIPS accepted; P < PE
+    assert cc["growing_season_precip_mm"] < cc["growing_season_pe_mm"]
+    out = HolosSoilN2O().compute(_county_inputs(county_fips="50007"), soil_params)
+    assert out["EF1_status"] == "UNVERIFIED-input"
+    ok = HolosSoilN2O().compute(_county_inputs(county_fips="50007", FR_Topo=0.1), soil_params)
+    assert ok["EF1_status"] == "holos_liang2020"
+
+
+def test_county_fips_dc_remapped():
+    from ghgsim.modules.holos.county_climate import county_p_pe
+    assert county_p_pe("11001") is not None and county_p_pe("24511") is None

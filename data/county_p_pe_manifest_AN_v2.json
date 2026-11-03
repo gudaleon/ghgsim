@@ -1,0 +1,75 @@
+{
+  "manifest": "county_p_pe_manifest_AN_v2",
+  "created": "2026-11-03T18:02:49-05:00",
+  "script": "scripts/build_county_p_pe_AN_v2.py",
+  "output": {
+    "path": "data/county_p_pe_may_oct_AN_v2.csv",
+    "rows": 3142,
+    "sha256": "3bdfd4db384af25269a8866ac1aa7b0f94543bd5d8a6f4dc7efd527c827252d1"
+  },
+  "period": [
+    1991,
+    2020
+  ],
+  "months": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "sources": {
+    "nclimdiv": {
+      "name": "NOAA Monthly U.S. Climate Divisional Database (NClimDiv), county files",
+      "citation": "Vose, R.S., Applequist, S., Squires, M., Durre, I., Menne, M.J., Williams, C.N. Jr., Fenimore, C., Gleason, K., Arndt, D. (2014). NOAA Monthly U.S. Climate Divisional Database (NClimDiv). NOAA National Climatic Data Center.",
+      "doi": "10.7289/V5M32STR",
+      "base_url": "https://www.ncei.noaa.gov/monitoring-content/data/us/climdiv/monthly/current/",
+      "files": {
+        "climdiv-pcpncy": {
+          "name": "climdiv-pcpncy-v1.0.0-20261006",
+          "sha256": "739fc3e9b529e04d406e914be1add2736ca3129c1103246ccebc2e5c76fd9d3a",
+          "size_bytes": 40923036
+        },
+        "climdiv-tmaxcy": {
+          "name": "climdiv-tmaxcy-v1.0.0-20261006",
+          "sha256": "a226e4ca307a39762401993fa3cb84e68425fe39afa89cab8639d17346750260",
+          "size_bytes": 40923036
+        },
+        "climdiv-tmincy": {
+          "name": "climdiv-tmincy-v1.0.0-20261006",
+          "sha256": "6251c07aedaffda0ba70d9456462beba0cc7701ab08a4246413986b106f4dec4",
+          "size_bytes": 40923036
+        }
+      }
+    },
+    "county_map": {
+      "name": "NOAA nClimDiv county-to-climdivs.txt",
+      "url": "https://www.ncei.noaa.gov/monitoring-content/data/us/climdiv/monthly/current/county-to-climdivs.txt",
+      "sha256": "2343d4b245f7b37c092e20863ecaeb47904f99f497132610e7beafd4dcda9270"
+    },
+    "gazetteer": {
+      "name": "US Census Bureau 2020 Gazetteer Files, counties",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_counties_national.zip",
+      "sha256": "02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef",
+      "field": "INTPTLAT"
+    }
+  },
+  "methods": {
+    "growing_season_pe_mm": "= pe_hargreaves_mm (default chosen by Alex 2026-11-03)",
+    "pe_hargreaves_mm": "Hargreaves & Samani (1985), FAO-56 Eq 52; Ra FAO-56 Eqs 21-25 at mid-month DOY; uncalibrated",
+    "pe_thornthwaite_mm": "Thornthwaite (1948); heat index from same-year 12 monthly means; no T>26.5C correction"
+  },
+  "issues": {
+    "no_gazetteer_latitude": [],
+    "incomplete_years": [],
+    "remapped_nclimdiv_codes": [
+      "18511->11001"
+    ]
+  },
+  "issue_counts": {
+    "no_gazetteer_latitude": 0,
+    "incomplete_years": 0,
+    "remapped_nclimdiv_codes": 1
+  }
+}
