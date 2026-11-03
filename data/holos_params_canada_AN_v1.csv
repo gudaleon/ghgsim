@@ -1,0 +1,23 @@
+key,value,units,dist,dist_lower,dist_upper,source_doi_or_url,table,equation,page,region,status,verified_by,verified_date,notes
+HOLOS.GE.dairy|canada,UNVERIFIED,MJ/day,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Enteric section,Based on IPCC Eq 10.21,,canada,UNVERIFIED,,,Canadian dairy GE not in public docs
+HOLOS.Ym.dairy|canada,6.5,% GE,uniform,5.5,7.5,IPCC 2006 Vol4 Ch10,Table 10.12,,10.30,canada,VERIFIED,,,IPCC 2006 dairy default
+HOLOS.GE.beef|high_grain,UNVERIFIED,MJ/day,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Enteric section,,,canada,UNVERIFIED,,,Beef GE by diet not in public docs
+HOLOS.GE.beef|medium,UNVERIFIED,MJ/day,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Enteric section,,,canada,UNVERIFIED,,,Beef GE by diet not in public docs
+HOLOS.GE.beef|low_grain,UNVERIFIED,MJ/day,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Enteric section,,,canada,UNVERIFIED,,,Beef GE by diet not in public docs
+HOLOS.Ym.beef|high_grain,3.0,% GE,uniform,2.0,4.0,IPCC 2006 Vol4 Ch10; Benchaar 2001 DOI:10.4141/A00-079,Table 10.12,,10.30,canada,VERIFIED,,,High grain diet reduces Ym
+HOLOS.Ym.beef|medium,6.5,% GE,uniform,5.5,7.5,IPCC 2006 Vol4 Ch10,Table 10.12,,10.30,canada,VERIFIED,,,IPCC other cattle default
+HOLOS.Ym.beef|low_grain,UNVERIFIED,% GE,uniform,6.0,8.0,Benchaar 2001 DOI:10.4141/A00-079,,,,canada,UNVERIFIED,,,Low grain Ym not explicit
+HOLOS.VS.dairy|canada,UNVERIFIED,kg/day,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Manure section,,,canada,UNVERIFIED,,,VS not in public docs
+HOLOS.VS.beef|canada,UNVERIFIED,kg/day,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Manure section,,,canada,UNVERIFIED,,,VS not in public docs
+HOLOS.Nrate.dairy|canada,UNVERIFIED,kg N/kg TAM,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Manure section,,,canada,UNVERIFIED,,,Nrate not in public docs
+HOLOS.Nrate.beef|canada,UNVERIFIED,kg N/kg TAM,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Manure section,,,canada,UNVERIFIED,,,Nrate not in public docs
+HOLOS.TAM.dairy|canada,UNVERIFIED,kg,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Manure section,,,canada,UNVERIFIED,,,TAM not in public docs
+HOLOS.TAM.beef|canada,UNVERIFIED,kg,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Manure section,,,canada,UNVERIFIED,,,TAM not in public docs
+HOLOS.B0.dairy|canada,UNVERIFIED,m3 CH4/kg VS,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Manure section,,,canada,UNVERIFIED,,,B0 not in public docs
+HOLOS.B0.beef|canada,UNVERIFIED,m3 CH4/kg VS,uniform,,,Little et al. 2008 Holos v1.1.x AAFC,Manure section,,,canada,UNVERIFIED,,,B0 not in public docs
+HOLOS.MCF.liquid_nocrust|cool,0.17,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Cool climate <10C
+HOLOS.MCF.liquid_nocrust|temperate,0.27,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Temperate 10-15C
+HOLOS.MCF.solid_storage|cool,0.02,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Cool climate solid
+HOLOS.MCF.solid_storage|temperate,0.04,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Temperate solid
+HOLOS.MCF.pasture|cool,0.015,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Pasture <10C
+HOLOS.MCF.daily_spread|cool,0.001,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Daily spread <10C

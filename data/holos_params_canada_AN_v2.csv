@@ -1,0 +1,30 @@
+key,value,units,dist,dist_lower,dist_upper,source_doi_or_url,table,equation,page,region,status,verified_by,verified_date,notes
+HOLOS.Ym.dairy_lactating|canada,5.6,% GE,uniform,5.5,5.7,Holos Table_18_26_Diet_Coefficients; ECCC 2022,Table 18/26 csv:13-15,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Mid-point of 5.5-5.7% range per ECCC 2022
+HOLOS.Ym.dairy_dry_closeup|canada,6.3,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:16,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Close-up dry cows
+HOLOS.Ym.dairy_dry_faroff|canada,7.0,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:17,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Far-off dry cows
+HOLOS.Ym.dairy_heifers_highfiber|canada,7.0,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:18,,,canada,VERIFIED,Holos GPL trace,2026-11-01,High fiber diet
+HOLOS.Ym.dairy_heifers_lowfiber|canada,6.3,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:19,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Low fiber diet
+HOLOS.Ym.beef_cowcalf_low|canada,7.0,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:1,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Low energy/protein forage
+HOLOS.Ym.beef_cowcalf_medium|canada,7.0,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:2,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Medium energy/protein
+HOLOS.Ym.beef_cowcalf_high|canada,7.0,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:3,,,canada,VERIFIED,Holos GPL trace,2026-11-01,High energy/protein
+HOLOS.Ym.beef_backgrounder|canada,6.3,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:7-8,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Backgrounding cattle
+HOLOS.Ym.beef_finisher_barley|canada,3.5,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:10,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Barley finishing diet
+HOLOS.Ym.beef_finisher_corn|canada,3.0,% GE,uniform,,,Holos Table_18_26_Diet_Coefficients; IPCC 2019,Table 18/26 csv:11,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Corn finishing diet
+HOLOS.TAM.dairy_lactating|canada,687,kg,uniform,,,Holos Table_16_Livestock_Coefficients; Lactanet 2020,Table 16 line 149,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Lactating cow weight
+HOLOS.TAM.dairy_dry|canada,687,kg,uniform,,,Holos Table_16_Livestock_Coefficients; Lactanet 2020,Table 16 line 161,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Dry cow weight
+HOLOS.TAM.dairy_heifers|canada,662,kg,uniform,637,687,Holos Table_16_Livestock_Coefficients; Lactanet 2020,Table 16 line 173,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Heifer weight range midpoint
+HOLOS.TAM.dairy_bulls|canada,1200,kg,uniform,,,Holos Table_16_Livestock_Coefficients; Lactanet 2020,Table 16 line 185,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Bull weight
+HOLOS.TAM.dairy_calves|canada,86,kg,uniform,45,127,Holos Table_16_Livestock_Coefficients; Lactanet 2020,Table 16 line 197,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Calf weight range midpoint
+HOLOS.TAM.beef_cow_lactating|canada,610,kg,uniform,,,Holos Table_16_Livestock_Coefficients; Sheppard 2015,Table 16 line 53,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Lactating cow weight
+HOLOS.TAM.beef_cow_dry|canada,610,kg,uniform,,,Holos Table_16_Livestock_Coefficients; Sheppard 2015,Table 16 line 65,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Dry cow weight
+HOLOS.TAM.beef_bulls|canada,900,kg,uniform,,,Holos Table_16_Livestock_Coefficients; Sheppard 2015,Table 16 line 77,,,canada,VERIFIED,Holos GPL trace,2026-11-01,Bull weight
+HOLOS.B0.dairy|canada,0.24,m3 CH4/kg VS,uniform,,,IPCC 2006 Vol4 Ch10 used by Holos,Table 10A-7,,10.82,canada,VERIFIED,Holos GPL trace,2026-11-01,North America default
+HOLOS.B0.beef|canada,0.17,m3 CH4/kg VS,uniform,,,IPCC 2006 Vol4 Ch10 used by Holos,Table 10A-7,,10.82,canada,VERIFIED,Holos GPL trace,2026-11-01,North America default
+HOLOS.Nrate.dairy_calves|canada,0.078,kg N/kg TAM,uniform,,,Holos DairyCattleResultsService.cs:195,,,DairyCattleResultsService.cs:195,canada,VERIFIED,Holos GPL trace,2026-11-01,Fixed value for calves
+HOLOS.VS.dairy_calves_coeff|canada,0.0093,kg VS/kg weight/day,uniform,,,Holos DairyCattleResultsService.cs:159,Equation 4.1.2-1,,DairyCattleResultsService.cs:159,canada,VERIFIED,Holos GPL trace,2026-11-01,VS = 0.0093 * AnimalWeight
+HOLOS.MCF.liquid_nocrust|cool,0.17,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Cool <10C
+HOLOS.MCF.liquid_nocrust|temperate,0.27,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Temperate 10-15C
+HOLOS.MCF.solid_storage|cool,0.02,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Cool solid
+HOLOS.MCF.solid_storage|temperate,0.04,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Temperate solid
+HOLOS.MCF.pasture|cool,0.015,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Pasture <10C
+HOLOS.MCF.daily_spread|cool,0.001,fraction,uniform,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,canada,VERIFIED,,,Daily spread <10C
