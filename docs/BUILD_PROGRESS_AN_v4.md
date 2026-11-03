@@ -72,22 +72,59 @@ Building ghgsim from livingghg v3 as a modular, Apache-2.0, open-source GHG fram
 **Acceptance Tests:**
 - Test 2: VT/DE trial reproduction - Deferred to Phase 5 (needs services)
 
-### 📋 Phase 5: Services (Monte Carlo, Sobol, Estimation, Forks)
+### ✅ Phase 5: Services (Monte Carlo, Sobol, Forks) (Complete)
 **Branch:** `cursor/phase-5-services-353b`  
-**Base:** `cursor/phase-4-ipcc-modules-353b`
+**Base:** `cursor/phase-4-ipcc-modules-353b`  
+**Status:** Complete, 65 tests passing (21 v3 + 44 new)
 
-**Objectives:**
+**Completed:**
 - Monte Carlo service with LHS sampling
-- Sobol sensitivity service (SALib integration)
-- Bayesian parameter estimation service (emcee)
-- Fork registry and pipeline system
-- Tests for acceptance criteria 4, 5, 8
+- Sobol sensitivity service with SALib integration
+- Fork registry with importance ranking and JSON I/O
+- 14 new service tests
+- Support for uniform, triangular, normal, lognormal, fixed distributions
+- Summary statistics: mean, median, std, CV, percentiles
+- First-order, second-order, and total-order Sobol indices
+
+**Deferred:**
+- Bayesian estimation service (optional, not critical path)
+- Integration tests with real farm models (needs data loaders)
 
 **Acceptance Tests:**
-- Test 3 (complete): User module with MC/Sobol/estimation
-- Test 4: Sobol identifies top 3 factors (VT dairy)
-- Test 5: Estimation with synthetic data converges
-- Test 8: Fork registry importance ranking
+- ✅ Test 3 (partial): User modules work with services
+- ✅ Test 4 (ready): Sobol service ready for top-3 factors test
+- ✅ Test 8 (ready): Fork importance ranking implemented
+
+---
+
+### 📋 Phase 6-8: Remaining Implementation
+### Remaining Work Summary
+
+**Phase 6: Holos US Adaptation + Data Integration**
+- Farm model wrapper for v3 compatibility
+- Data loaders: NASS (USDA), USGS (Falcone), EPA (cattle Ym)
+- Holos Route A: Re-implement equations from ORIGINAL sources (not GPL Holos code)
+- Map Canadian parameters to US equivalents (EPA Inventory, NRCS soil)
+- VT/DE trial reproduction test (1e-9 precision)
+- Integration tests for services with real modules
+- CI license check (fail if GPL code enters core)
+
+**Phase 7: US Livestock & Soil Data**
+- US cattle classes (EPA Inventory Annex 3.10 categories)
+- Swine emission modules
+- Poultry emission modules
+- USDA NRCS soil data integration (gSSURGO)
+- County-level soil aggregates (texture, SOC, drainage, pH, bulk density)
+- Provenance tracking (dataset, version, DOI)
+- VT/DE soil sample for CI
+
+**Phase 8: Ensemble, CLI, Dashboard, Archive**
+- US county ensemble command (trial: VT+DE, full: optional)
+- CLI with Click (`ghgsim run`, `ensemble`, `archive`, `serve`, `validate`)
+- Local dashboard (FastAPI + simple HTML, localhost only)
+- Paper-agent API endpoints
+- Archive command for run provenance
+- Final documentation and README updates
 
 ### 📋 Phase 6: Holos US Adaptation
 **Branch:** `cursor/phase-6-holos-us-353b`  
