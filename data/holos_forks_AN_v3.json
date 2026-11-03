@@ -1,0 +1,98 @@
+[
+  {
+    "id": "HOLOS.GE.digestibility",
+    "description": "Gross energy intake denominator: IPCC DE% versus Holos TDN%. Default is IPCC 2006 Eq 10.3 (DE%). holos_as_coded uses TDN% in the same algebraic position.",
+    "affects": ["holos.enteric"],
+    "default": "source_correct",
+    "options": {
+      "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.3 p. 10.16: GE denominator is DE%/100",
+      "holos_as_coded": "Holos uses percent TDN of feed as the Eq 10.3 denominator"
+    },
+    "label": "holos_as_coded",
+    "issue_ref": "AUDIT-GE-TDN"
+  },
+  {
+    "id": "HOLOS.ENTERIC.calf_zero",
+    "description": "Dairy calf enteric CH4. Default applies IPCC 2006 Eq 10.21. holos_as_coded returns zero for calves (CE-06).",
+    "affects": ["holos.enteric"],
+    "default": "source_correct",
+    "options": {
+      "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.21 p. 10.30 applies to ruminants with GE and Ym",
+      "holos_as_coded": "Holos hard-codes dairy calf enteric CH4 to 0 (CE-06)"
+    },
+    "label": "holos_as_coded",
+    "issue_ref": "CE-06"
+  },
+  {
+    "id": "HOLOS.YM.dairy",
+    "description": "Lactating dairy Ym. Holos Canada default is 5.6% GE (UNVERIFIED as a table value; Holos midpoint of ECCC 5.5-5.7% range independently read in ECCC 2024 NIR Part 2 Annex 3.4 section A3.4.2.1). IPCC 2006 Table 10.12 dairy Ym is 6.5% (VERIFIED).",
+    "affects": ["holos.enteric"],
+    "default": "eccc_2022_canada",
+    "options": {
+      "eccc_2022_canada": "Holos Canada lactating dairy Ym = 5.6% GE (UNVERIFIED point value; ECCC 2024 NIR Part 2 Annex 3.4 A3.4.2.1 text: provincial dairy-cow Ym 5.5-5.7%; no table cell lists 5.6%)",
+      "ipcc2006_table_10_12": "IPCC 2006 Vol 4 Ch 10 Table 10.12 p. 10.30 dairy Ym = 6.5% GE (VERIFIED)"
+    },
+    "label": "parameter_refinement",
+    "issue_ref": "AUDIT-YM-DAIRY"
+  },
+  {
+    "id": "HOLOS.VS.digestibility",
+    "description": "Volatile solids indigestible-energy term: IPCC DE% versus Holos TDN%. Default is IPCC 2006 Eq 10.24 (DE%). holos_as_coded substitutes TDN%.",
+    "affects": ["holos.vs", "holos.manure"],
+    "default": "source_correct",
+    "options": {
+      "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.24 p. 10.54: (1 - DE%/100)",
+      "holos_as_coded": "Holos uses (1 - TDN%/100) in the Eq 10.24 indigestible-energy term"
+    },
+    "label": "holos_as_coded",
+    "issue_ref": "AUDIT-VS-TDN"
+  },
+  {
+    "id": "HOLOS.VS.urinary_energy",
+    "description": "Urinary energy (UE) as a fraction of GE. Default follows IPCC 2006 p. 10.54: UE=0.04 typical; UE=0.02 when DE% is greater than approximately 80%. holos_as_coded switches on grain fraction (>=85% grain -> 0.02, else 0.04). The 0.02/0.04 pairing is the same direction as IPCC; the discrepancy is the switch criterion (grain% vs DE%), not a reversal of the two values.",
+    "affects": ["holos.vs", "holos.manure"],
+    "default": "source_correct",
+    "options": {
+      "source_correct": "IPCC 2006 Vol 4 Ch 10 p. 10.54: UE=0.04 GE typical; UE=0.02 when DE% > ~80%",
+      "holos_as_coded": "Holos: UE=0.02 when grain% >= 85, else UE=0.04"
+    },
+    "label": "holos_as_coded",
+    "issue_ref": "AUDIT-VS-UE"
+  },
+  {
+    "id": "HOLOS.VS.calf_coeff",
+    "description": "Dairy calf volatile solids. Default uses IPCC 2006 Eq 10.24. holos_as_coded uses VS = 0.0093 * live weight (CE-07; coefficient UNVERIFIED).",
+    "affects": ["holos.vs", "holos.manure"],
+    "default": "source_correct",
+    "options": {
+      "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.24 p. 10.54 from GE, DE%, UE, ASH",
+      "holos_as_coded": "Holos dairy calves: VS = 0.0093 * animal weight (CE-07; UNVERIFIED coefficient)"
+    },
+    "label": "holos_as_coded",
+    "issue_ref": "CE-07"
+  },
+  {
+    "id": "HOLOS.CH4.cover_reduction",
+    "description": "Covered/crusted liquid manure CH4. Holos code is consistent with its manual and with IPCC 2006/2019 Table 10.17: cover factors are REDUCTION fractions (crust 0.40, solid cover 0.25 only), applied as remaining = 1 - reduction. The fork difference versus source_correct is only that Holos's covered path is an MCF-free daily VS-consumed tank model (approximated here as uncovered IPCC MCF times remaining). It is not a reduction/retention mix-up. source_correct uses Table 10.17 MCF including liquid-with-crust (the ~40% crust reduction is already in that MCF). holos_as_coded never stacks the IPCC with-crust MCF on the Holos remaining factor.",
+    "affects": ["holos.manure"],
+    "default": "source_correct",
+    "options": {
+      "source_correct": "IPCC 2006 Vol 4 Ch 10 Table 10.17 p. 10.44/10.52 and IPCC 2019 Table 10.17 (Updated): distinct MCF by system; with-crust MCF already embeds ~40% CH4 reduction vs uncovered",
+      "holos_as_coded": "Holos AnimalResultsServiceBase.cs:967-972 reductionFactor=0.4 (LiquidWithNaturalCrust) else 0.25 (LiquidWithSolidCover only; ManureStateTypeExtensions.cs:53-56). Lines 1279-1283 return manureMethane * (1 - emissionReductionFactor). Remaining 0.60 crust / 0.75 solid cover. Covered path is MCF-free; this fork uses uncovered MCF * remaining and does not apply 0.25 to non-solid covers."
+    },
+    "label": "holos_as_coded",
+    "issue_ref": "CE-14"
+  },
+  {
+    "id": "HOLOS.NEX.calf_nrate",
+    "description": "Dairy calf nitrogen excretion. Default is IPCC 2006 Eq 10.30 (Nrate * TAM / 1000 * 365). holos_as_coded uses 0.078 kg N/head/day (audit unit clarification; value UNVERIFIED).",
+    "affects": ["holos.manure"],
+    "default": "source_correct",
+    "options": {
+      "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.30: Nex = Nrate * TAM / 1000 * 365, with Table 10.19 Nrate",
+      "holos_as_coded": "Holos dairy calves: 0.078 kg N/head/day (UNVERIFIED value; units per audit)"
+    },
+    "label": "holos_as_coded",
+    "issue_ref": "AUDIT-CALF-NRATE"
+  }
+]

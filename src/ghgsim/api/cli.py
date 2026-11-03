@@ -168,6 +168,113 @@ def serve(host, port):
         click.echo("\n\n✓ Dashboard stopped")
 
 
+@cli.command("fork-diagram")
+@click.option("--repo", type=click.Path(exists=True, file_okay=False), help="Repository root")
+@click.option(
+    "--figures-dir",
+    type=click.Path(file_okay=False),
+    help="Output directory (default: docs/figures)",
+)
+@click.option("--no-svg", is_flag=True, help="Skip mermaid-cli SVG even if mmdc is installed")
+@click.option(
+    "--render-existing",
+    is_flag=True,
+    help="Render missing SVG/PNG for existing fork_diagram_AN_v*.mmd (never overwrites)",
+)
+def fork_diagram(repo, figures_dir, no_svg, render_existing):
+    """
+    Write a versioned Mermaid fork decision diagram from the newest inputs.
+
+    Reads the highest AN_vN fork registry, stylized and VT/DE delta CSVs,
+    and coefficient-trace table. Writes docs/figures/fork_diagram_AN_vN.mmd
+    and .json without overwriting an existing version.
+
+    Example:
+        ghgsim fork-diagram
+    """
+    from ghgsim.report.fork_diagram import generate, render_existing_fork_diagrams, repo_root
+
+    if render_existing:
+        root = repo_root(Path(repo) if repo else None)
+        out = Path(figures_dir) if figures_dir else root / "docs" / "figures"
+        for item in render_existing_fork_diagrams(out):
+            state = "wrote" if item["wrote"] else item["reason"]
+            click.echo(f"  {item['path']}: {state}")
+        return
+
+    result = generate(
+        repo=Path(repo) if repo else None,
+        figures_dir=Path(figures_dir) if figures_dir else None,
+        render_svg=not no_svg,
+    )
+    click.echo(f"fork_diagram_AN_v{result['version']}")
+    for kind, path in result["paths"].items():
+        if path is not None:
+            click.echo(f"  {kind}: {path}")
+    if result["paths"].get("svg") is None and not no_svg:
+        click.echo("  svg: not rendered (mmdc/npx mermaid-cli unavailable; see docs/FORK_DIAGRAM_AN_v1.md)")
+
+
+@cli.command("sankey")
+@click.option("--repo", type=click.Path(exists=True, file_okay=False), help="Repository root")
+@click.option(
+    "--figures-dir",
+    type=click.Path(file_okay=False),
+    help="Output directory (default: docs/figures)",
+)
+@click.option("--farm", "farm_ids", multiple=True, help="Stylized farm id (repeatable; default: all)")
+@click.option("--county", "counties", multiple=True, help="Optional VT/DE county name (repeatable)")
+@click.option("--no-static", is_flag=True, help="Skip kaleido SVG/PNG even if plotly+kaleido are installed")
+@click.option(
+    "--export-static-views",
+    is_flag=True,
+    help="Write per-view SVG/PNG from existing JSON (does not bump html/json)",
+)
+@click.option("--scale", default=2, type=int, show_default=True, help="PNG scale for kaleido export")
+def sankey(repo, figures_dir, farm_ids, counties, no_static, export_static_views, scale):
+    """
+    Write per-farm Plotly Sankey diagrams from computed Holos module outputs.
+
+    Default: every farm in the newest stylized_farms_AN_vN.yaml. Views are
+    source_correct, holos_as_coded, and fork-delta. Writes
+    docs/figures/sankey_<farm>_AN_vN.html and .json without overwriting.
+
+    Example:
+        ghgsim sankey
+        ghgsim sankey --farm dairy_forage_uncovered --county ADDISON
+    """
+    from ghgsim.report.emissions_sankey import export_static_views as export_views
+    from ghgsim.report.emissions_sankey import generate
+
+    if export_static_views:
+        result = export_views(
+            repo=Path(repo) if repo else None,
+            figures_dir=Path(figures_dir) if figures_dir else None,
+            scale=scale,
+            farm_ids=list(farm_ids) or None,
+        )
+        click.echo(f"sankey static views: {result['n']} farm(s), scale={result['scale']}")
+        for item in result["items"]:
+            click.echo(f"  {item['farm_id']} from {item['source']}")
+            for view, paths in item["views"].items():
+                click.echo(f"    {view}: svg={paths['svg']} png={paths['png']}")
+        return
+
+    result = generate(
+        repo=Path(repo) if repo else None,
+        figures_dir=Path(figures_dir) if figures_dir else None,
+        farm_ids=list(farm_ids) or None,
+        counties=list(counties) or None,
+        render_static=not no_static,
+    )
+    click.echo(f"sankey: {result['n']} diagram(s) from {result['inputs_file']}")
+    for item in result["items"]:
+        click.echo(f"  {item['farm_id']} AN_v{item['version']}")
+        for kind, path in item["paths"].items():
+            if path is not None:
+                click.echo(f"    {kind}: {path}")
+
+
 @cli.command("modules-list")
 def modules_list():
     """

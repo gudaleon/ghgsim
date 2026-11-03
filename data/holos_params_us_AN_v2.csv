@@ -1,0 +1,34 @@
+key,value,units,dist,dist_lower,dist_upper,source_doi_or_url,table,equation,page,region,status,verified_by,verified_date,notes
+HOLOS.GE.dairy|VT,401.2,MJ/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA-derived GE VT dairy
+HOLOS.Ym.dairy|VT,5.7,% GE,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA per-state Ym VT
+HOLOS.GE.beef|VT,220.5,MJ/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA-derived GE VT beef
+HOLOS.Ym.beef|VT,6.5,% GE,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA per-state Ym VT beef
+HOLOS.GE.dairy|DE,382.9,MJ/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA-derived GE DE dairy
+HOLOS.Ym.dairy|DE,5.8,% GE,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA per-state Ym DE
+HOLOS.GE.beef|DE,197.1,MJ/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA-derived GE DE beef
+HOLOS.Ym.beef|DE,6.5,% GE,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA per-state Ym DE beef
+HOLOS.VS.dairy|VT,7.4466,kg/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA VS VT dairy
+HOLOS.Nrate.dairy|VT,0.47,kg N/(1000 kg mass)/day,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-5,,10.78,VT,SOURCE-TRACED,,,v1 cited Table 10A-5 as 0.47 kg N/kg TAM. IPCC 2006 Table 10.19 NA dairy in ipcc_params_AN_v4.csv is 0.44. Not VERIFIED.
+HOLOS.TAM.dairy|VT,679.9,kg,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA TAM VT dairy
+HOLOS.B0.dairy|VT,0.24,m3 CH4/kg VS,fixed,,,https://www.ipcc-nggip.iges.or.jp/public/2006gl/,Table 10A-4,,10.77,VT,VERIFIED,Phase 2 vs IPCC2006.B0.dairy|north_america,2026-11-01,v1 cited Table 10A-7; cattle dairy B0 is Table 10A-4
+HOLOS.Nex.dairy|VT,153.0,kg N/year,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA Nex VT dairy overrides Nrate*TAM
+HOLOS.VS.beef|VT,4.0,kg/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA VS VT beef
+HOLOS.Nrate.beef|VT,0.31,kg N/(1000 kg mass)/day,uniform,0.155,0.465,https://www.ipcc-nggip.iges.or.jp/public/2006gl/,Table 10.19,,10.59,VT,VERIFIED,Phase 2 vs IPCC2006.Nrate.other_cattle|north_america,2026-11-01,v1 cited Table 10A-5; Nrate table is 10.19
+HOLOS.TAM.beef|VT,488.7,kg,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA TAM VT beef
+HOLOS.B0.beef|VT,0.17,m3 CH4/kg VS,fixed,,,IPCC 2006 Vol4 Ch10,Table 10A-7,,10.82,VT,SOURCE-TRACED,,,v1 cited Table 10A-7. ipcc_params_AN_v4.csv other cattle B0 is 0.19 (Table 10A-5 p. 10.78). Value 0.17 not independently confirmed.
+HOLOS.Nex.beef|VT,44.0,kg N/year,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 VT WMS 2022,,A-177,VT,VERIFIED,,,EPA Nex VT beef
+HOLOS.VS.dairy|DE,7.1,kg/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA VS DE dairy
+HOLOS.Nrate.dairy|DE,0.47,kg N/(1000 kg mass)/day,uniform,,,IPCC 2006 Vol4 Ch10,Table 10A-5,,10.78,DE,SOURCE-TRACED,,,Same as VT dairy Nrate: 0.47 not matched to Table 10.19 NA 0.44
+HOLOS.TAM.dairy|DE,679.9,kg,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA TAM DE dairy
+HOLOS.B0.dairy|DE,0.24,m3 CH4/kg VS,fixed,,,https://www.ipcc-nggip.iges.or.jp/public/2006gl/,Table 10A-4,,10.77,DE,VERIFIED,Phase 2 vs IPCC2006.B0.dairy|north_america,2026-11-01,v1 cited Table 10A-7; cattle dairy B0 is Table 10A-4
+HOLOS.Nex.dairy|DE,145.8,kg N/year,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA Nex DE dairy
+HOLOS.VS.beef|DE,3.6,kg/day,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA VS DE beef
+HOLOS.Nrate.beef|DE,0.31,kg N/(1000 kg mass)/day,uniform,0.155,0.465,https://www.ipcc-nggip.iges.or.jp/public/2006gl/,Table 10.19,,10.59,DE,VERIFIED,Phase 2 vs IPCC2006.Nrate.other_cattle|north_america,2026-11-01,v1 cited Table 10A-5; Nrate table is 10.19
+HOLOS.TAM.beef|DE,488.7,kg,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA TAM DE beef
+HOLOS.B0.beef|DE,0.17,m3 CH4/kg VS,fixed,,,IPCC 2006 Vol4 Ch10,Table 10A-7,,10.82,DE,SOURCE-TRACED,,,Same as VT beef B0: 0.17 not matched to Table 10A-5 0.19
+HOLOS.Nex.beef|DE,39.5,kg N/year,uniform,,,EPA 2025 Inventory Annex 3.11,Table A-177 DE WMS 2022,,A-177,DE,VERIFIED,,,EPA Nex DE beef
+HOLOS.MCF.liquid_nocrust|US,0.27,fraction,fixed,,,https://www.ipcc-nggip.iges.or.jp/public/2006gl/,Table 10.17,,10.44,US,VERIFIED,Phase 2 vs IPCC2006.MCF.liquid_nocrust|15C,2026-11-01,15C zone
+HOLOS.MCF.solid_storage|US,0.04,fraction,fixed,,,https://www.ipcc-nggip.iges.or.jp/public/2006gl/,Table 10.17,,10.44,US,VERIFIED,Phase 2 vs IPCC2006.MCF.solid_storage|15C,2026-11-01,15C zone
+HOLOS.MCF.pasture|US,0.02,fraction,fixed,,,IPCC 2006 Vol4 Ch10,Table 10.17,,10.52,US,SOURCE-TRACED,,,v1 cited Table 10.17 15C as 0.02; ipcc_params_AN_v4.csv pasture 15C is 0.015
+HOLOS.MCF.daily_spread|US,0.005,fraction,fixed,,,https://www.ipcc-nggip.iges.or.jp/public/2006gl/,Table 10.17,,10.44,US,VERIFIED,Phase 2 vs IPCC2006.MCF.daily_spread|15C,2026-11-01,15C zone
+HOLOS.MCF.lagoon|US,0.74,fraction,fixed,,,https://www.ipcc-nggip.iges.or.jp/public/2006gl/,Table 10A-4,,10.77,US,VERIFIED,Phase 2 vs IPCC2006.MCF.lagoon|15C,2026-11-01,15C lagoon MCF reproduced from Table 10.17 in Table 10A-4 header

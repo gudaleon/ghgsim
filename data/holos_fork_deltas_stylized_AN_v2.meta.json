@@ -1,0 +1,23 @@
+{
+  "command": "python3 scripts/measure_holos_forks_stylized_AN_v2.py",
+  "date": "2026-11-01",
+  "farms_yaml": "data/stylized_farms_AN_v2.yaml",
+  "n_farms": 8,
+  "gwp": {
+    "CH4": 28.0,
+    "N2O": 265.0
+  },
+  "baseline": "Holos modules, registered fork defaults, IPCC 2006 Eq 10.3/10.4/10.8/10.13/10.14/10.16 NE+GE, Eq 10.24 VS, Eq 10.23/10.25-10.27 manure, MCF=IPCC 2006 Table 10.17 15C, dairy Ym_canada=5.6, beef Ym=6.5 EPA A-138",
+  "forks_that_fired_on_any_farm": {
+    "HOLOS.CH4.cover_reduction": true,
+    "HOLOS.ENTERIC.calf_zero": true,
+    "HOLOS.GE.digestibility": true,
+    "HOLOS.NEX.calf_nrate": true,
+    "HOLOS.VS.calf_coeff": true,
+    "HOLOS.VS.digestibility": true,
+    "HOLOS.VS.urinary_energy": true,
+    "HOLOS.YM.dairy": true
+  },
+  "detail_csv": "data/holos_fork_deltas_stylized_AN_v2.csv",
+  "summary_csv": "data/holos_fork_deltas_stylized_summary_AN_v2.csv"
+}

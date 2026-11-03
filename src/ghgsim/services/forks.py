@@ -32,6 +32,8 @@ class Fork:
     default: str
     options: dict[str, str]
     importance: float = 0.0
+    label: str = ""
+    issue_ref: str = ""
 
 
 class ForkRegistry:
@@ -163,6 +165,8 @@ class ForkRegistry:
                 default=item["default"],
                 options=item["options"],
                 importance=item.get("importance", 0.0),
+                label=item.get("label", ""),
+                issue_ref=item.get("issue_ref", ""),
             )
             self.register(fork)
 
@@ -182,6 +186,8 @@ class ForkRegistry:
                 "default": fork.default,
                 "options": fork.options,
                 "importance": fork.importance,
+                "label": fork.label,
+                "issue_ref": fork.issue_ref,
             })
         
         with open(json_path, "w") as f:

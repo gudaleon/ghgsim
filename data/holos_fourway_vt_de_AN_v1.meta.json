@@ -1,0 +1,19 @@
+{
+  "command": "python3 scripts/compare_holos_fourway_vt_de_AN_v1.py",
+  "date": "2026-11-01",
+  "n_counties": 17,
+  "gwp": {
+    "CH4": 28.0,
+    "N2O": 265.0
+  },
+  "methods": {
+    "IPCC2006": "ghgsim v4 IPCC 2006 modules; EPA GE/Ym/VS/Nex (exact-reproduction farm)",
+    "IPCC2019": "livingghg v3 engine IPCC2019 (v4 has no manure 2019 module)",
+    "HolosCanada": "Holos modules; EPA GE/VS/Nex/systems; Canada Ym dairy 5.6 and beef medium 6.3; Canada B0 and MCF (temperate with cool fallback). Hybrid: Canada file has no adult GE/VS.",
+    "HolosUS": "Holos modules; EPA JSON GE/Ym/VS/Nex/systems; Holos US MCF/B0 overlay. Uses county_assumptions_AN_v3.json, not holos_params_us_AN_v2.csv DE GE/Ym where those two files disagree."
+  },
+  "max_IPCC2006_vs_csv_CO2e_rel": 1.4539813821734752e-14,
+  "max_IPCC2019_vs_csv_CO2e_rel": 0.0,
+  "county_csv": "data/holos_fourway_vt_de_AN_v1.csv",
+  "summary_csv": "data/holos_fourway_vt_de_summary_AN_v1.csv"
+}
