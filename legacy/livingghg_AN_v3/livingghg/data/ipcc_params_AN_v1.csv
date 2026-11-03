@@ -1,0 +1,42 @@
+guideline,factor,disaggregation,units,default,lower,upper,range_basis,source,table,page,status
+IPCC2006,EF1,all,kg N2O-N/kg N,0.01,0.003,0.03,as published,2006 IPCC GL Vol4 Ch11,Table 11.1,not recorded,VERIFIED
+IPCC2006,EF3PRP_CPP,all,kg N2O-N/kg N,0.02,0.007,0.06,as published,2006 IPCC GL Vol4 Ch11,Table 11.1,not recorded,VERIFIED
+IPCC2006,EF3PRP_SO,all,kg N2O-N/kg N,0.01,0.003,0.03,as published,2006 IPCC GL Vol4 Ch11,Table 11.1,not recorded,VERIFIED
+IPCC2006,EF4,all,kg N2O-N/kg N volatilised,0.010,0.002,0.05,as published,2006 IPCC GL Vol4 Ch11,Table 11.3,not recorded,VERIFIED
+IPCC2006,EF5,all,kg N2O-N/kg N leached,0.0075,0.0005,0.025,as published,2006 IPCC GL Vol4 Ch11,Table 11.3,not recorded,VERIFIED
+IPCC2006,FracGASF,all,kg N/kg N,0.10,0.03,0.3,as published,2006 IPCC GL Vol4 Ch11,Table 11.3,not recorded,VERIFIED
+IPCC2006,FracGASM,all,kg N/kg N,0.20,0.05,0.5,as published,2006 IPCC GL Vol4 Ch11,Table 11.3,not recorded,VERIFIED
+IPCC2006,FracLEACH,wet,kg N/kg N,0.30,0.1,0.8,as published,2006 IPCC GL Vol4 Ch11,Table 11.3,not recorded,VERIFIED
+IPCC2006,Ym,dairy,% GE,6.5,5.5,7.5,+/- is range (fn b),2006 IPCC GL Vol4 Ch10,Table 10.12,not recorded,VERIFIED
+IPCC2006,Ym,feedlot,% GE,3.0,2.0,4.0,+/- is range (fn b),2006 IPCC GL Vol4 Ch10,Table 10.12,not recorded,VERIFIED
+IPCC2006,Ym,other_cattle,% GE,6.5,5.5,7.5,+/- is range (fn b),2006 IPCC GL Vol4 Ch10,Table 10.12,not recorded,VERIFIED
+IPCC2019,EF1,all,kg N2O-N/kg N,0.010,0.002,0.018,2.5-97.5 pct,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),not recorded,VERIFIED
+IPCC2019,EF1,wet_synthetic,kg N2O-N/kg N,0.016,0.013,0.019,95% CI fitted,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),not recorded,VERIFIED
+IPCC2019,EF1,wet_other,kg N2O-N/kg N,0.006,0.001,0.011,95% CI fitted,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),not recorded,VERIFIED
+IPCC2019,EF1,dry,kg N2O-N/kg N,0.005,0.000,0.011,95% CI fitted,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),not recorded,VERIFIED
+IPCC2019,EF3PRP_CPP,all,kg N2O-N/kg N,0.004,0.000,0.014,2.5-97.5 pct,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),not recorded,VERIFIED
+IPCC2019,EF3PRP_CPP,wet,kg N2O-N/kg N,0.006,0.000,0.027,2.5-97.5 pct,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),not recorded,VERIFIED
+IPCC2019,EF3PRP_CPP,dry,kg N2O-N/kg N,0.002,0.000,0.007,2.5-97.5 pct,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),not recorded,VERIFIED
+IPCC2019,EF3PRP_SO,all,kg N2O-N/kg N,0.003,0.000,0.010,2.5-97.5 pct,2019 Refinement Vol4 Ch11,Table 11.1 (Updated),not recorded,VERIFIED
+IPCC2019,EF4,all,kg N2O-N/kg N volatilised,0.010,0.002,0.018,2.5-97.5 pct,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,EF4,wet,kg N2O-N/kg N volatilised,0.014,0.011,0.017,95% CI fitted,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,EF4,dry,kg N2O-N/kg N volatilised,0.005,0.000,0.011,95% CI fitted,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,EF5,all,kg N2O-N/kg N leached,0.011,0.000,0.020,as published,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,FracGASF,all,kg N/kg N,0.11,0.02,0.33,as published,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,FracGASF,urea,kg N/kg N,0.15,0.03,0.43,as published,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,FracGASF,ammonium,kg N/kg N,0.08,0.02,0.30,as published,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,FracGASF,nitrate,kg N/kg N,0.01,0.00,0.02,as published,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,FracGASF,ammonium_nitrate,kg N/kg N,0.05,0.00,0.20,as published,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,FracGASM,all,kg N/kg N,0.21,0.00,0.31,as published,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,FracLEACH,wet,kg N/kg N,0.24,0.01,0.73,as published,2019 Refinement Vol4 Ch11,Table 11.3 (Updated),not recorded,VERIFIED
+IPCC2019,Ym,dairy_high_ndf_le35,% GE,5.7,4.56,6.84,+/-20% (fn 3) bounds derived,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),not recorded,VERIFIED
+IPCC2019,Ym,dairy_high_ndf_ge35,% GE,6.0,4.8,7.2,+/-20% (fn 3) bounds derived,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),not recorded,VERIFIED
+IPCC2019,Ym,dairy_medium,% GE,6.3,5.04,7.56,+/-20% (fn 3) bounds derived,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),not recorded,VERIFIED
+IPCC2019,Ym,dairy_low,% GE,6.5,5.2,7.8,+/-20% (fn 3) bounds derived,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),not recorded,VERIFIED
+IPCC2019,Ym,nondairy_forage_gt75,% GE,7.0,5.6,8.4,+/-20% (fn 3) bounds derived,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),not recorded,VERIFIED
+IPCC2019,Ym,nondairy_mixed,% GE,6.3,5.04,7.56,+/-20% (fn 3) bounds derived,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),not recorded,VERIFIED
+IPCC2019,Ym,feedlot_grain,% GE,4.0,3.2,4.8,+/-20% (fn 3) bounds derived,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),not recorded,VERIFIED
+IPCC2019,Ym,feedlot_sfc,% GE,3.0,2.4,3.6,+/-20% (fn 3) bounds derived,2019 Refinement Vol4 Ch10,Table 10.12 (Updated),not recorded,VERIFIED
+BOTH,CH4_ENERGY,all,MJ/kg CH4,55.65,,,constant,2019 Refinement Vol4 Ch10 (same in 2006),Eq 10.21,not recorded,VERIFIED
+BOTH,GE_PER_KG_DM,all,MJ/kg DM,18.45,,,constant,2019 Refinement Vol4 Ch10 (default energy density text near Eq 10.16),text,not recorded,VERIFIED
+IPCC2019,FracLEACH,dry,kg N/kg N,0.0,,,assumed zero for dry non-irrigated,NOT TRACED,-,-,UNVERIFIED

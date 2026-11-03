@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "livingghg"
+version = "0.2.0"
+description = "Living-paper engine: IPCC 2006 vs 2019 agricultural GHG with fork registry (Phase 1)"
+authors = [{name = "Alex Neumann"}]
+requires-python = ">=3.9"
+license = {text = "Apache-2.0"}
+dependencies = ["numpy", "pandas", "scipy"]
+[project.optional-dependencies]
+test = ["pytest"]
+sobol = ["SALib"]
+[tool.setuptools.package-data]
+livingghg = ["data/*.csv", "data/*.json"]

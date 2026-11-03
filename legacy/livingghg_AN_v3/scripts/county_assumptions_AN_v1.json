@@ -1,0 +1,10 @@
+{"_label": "ASSUMED per-head inputs for county runs - stylized placeholders, NOT county data. Replace with USDA/EPA inventory values in Phase 3.",
+ "dairy": {"GE_MJ_day": 330, "ym_category": {"IPCC2006": "dairy", "IPCC2019": "dairy_medium"},
+           "manure": {"animal": "dairy", "region": "north_america", "TAM_kg": 604, "VS_kg_day": 5.4,
+                      "systems": {"liquid_nocrust": 0.6, "solid_storage": 0.2, "daily_spread": 0.2},
+                      "mcf_zone": {"IPCC2006": "15C", "IPCC2019": "cool_temperate_moist"}}},
+ "beef": {"GE_MJ_day": 180, "ym_category": {"IPCC2006": "other_cattle", "IPCC2019": "nondairy_forage_gt75"},
+          "manure": {"animal": "other_cattle", "region": "north_america", "TAM_kg": 389, "VS_kg_day": 2.4,
+                     "systems": {"pasture": 0.8, "dry_lot": 0.2},
+                     "mcf_zone": {"IPCC2006": "15C", "IPCC2019": "cool_temperate_moist"}}},
+ "climate": "wet"}
