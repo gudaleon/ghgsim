@@ -34,7 +34,7 @@ The sector total also includes liming, urea and other small items, so the column
 
 | Country | 3.A Enteric CH4 | 3.B Manure CH4 / N2O | 3.D Soils N2O | Guidelines (NID) |
 |---|---|---|---|---|
-| Canada | T1,T2 / D,CS | T1,T2 / T1,T2 | T1,T2 / D,CS | 2006 GL required; uses 2019 Refinement values in places (e.g. MCFs) |
+| Canada | T1,T2 / D,CS | CH4 T1,T2 (D,CS); N2O T1,T2 (D) | T1,T2 / D,CS | 2006 GL required; uses 2019 Refinement values in places (e.g. MCFs) |
 | United Kingdom | T1,T3 / D,CS | T1,T2 / T2 | T1,T2 / D,CS | 2006 GL; 2019 Refinement used selectively (e.g. deer). NID p.58: Refinement "yet to be adopted ... but can be used ... if specifically justified" |
 | New Zealand | T1,T2 / D,CS | T1,T2 / T1 | T1,T2 / D,CS | 2006 GL; 2026 submission aligned parts of agriculture with the 2019 Refinement |
 | Ireland | D,T1,T2,CS | T1,T2 / T2 | T1,T2 / D,CS | 2006 GL; cattle Ym = 6.3% per 2019 Refinement since the 2023 submission (6.5% before) |
