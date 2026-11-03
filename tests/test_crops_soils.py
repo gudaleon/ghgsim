@@ -499,7 +499,8 @@ def test_county_fips_dry_needs_fr_topo(soil_params):
     cc = county_p_pe(50007)  # Chittenden VT, int FIPS accepted; P < PE
     assert cc["growing_season_precip_mm"] < cc["growing_season_pe_mm"]
     out = HolosSoilN2O().compute(_county_inputs(county_fips="50007"), soil_params)
-    assert out["EF1_status"] == "UNVERIFIED-input"
+    assert out["EF1_status"] == "fallback-IPCC-default"
+    assert out["EF1_used"] == pytest.approx(soil_params["EF1"])
     ok = HolosSoilN2O().compute(_county_inputs(county_fips="50007", FR_Topo=0.1), soil_params)
     assert ok["EF1_status"] == "holos_liang2020"
 
@@ -507,3 +508,21 @@ def test_county_fips_dry_needs_fr_topo(soil_params):
 def test_county_fips_dc_remapped():
     from ghgsim.modules.holos.county_climate import county_p_pe
     assert county_p_pe("11001") is not None and county_p_pe("24511") is None
+
+
+def test_liang_dry_no_topo_falls_back_to_ipcc_default(soil_params):
+    dry = _county_inputs(growing_season_precip_mm=400.0, growing_season_pe_mm=500.0)
+    out = HolosSoilN2O().compute(dry, soil_params)
+    assert out["EF1_status"] == "fallback-IPCC-default"
+    assert out["EF1_used"] == pytest.approx(0.01)  # IPCC 2006 Table 11.1 EF1
+    assert out["N2O_direct"] == pytest.approx(1000.0 * 0.01 * 44.0 / 28.0)
+
+
+def test_liang_fallback_not_used_when_topo_irrigated_or_missing(soil_params):
+    dry = _county_inputs(growing_season_precip_mm=400.0, growing_season_pe_mm=500.0)
+    assert HolosSoilN2O().compute({**dry, "FR_Topo": 0.3}, soil_params)["EF1_status"] == "holos_liang2020"
+    assert HolosSoilN2O().compute({**dry, "irrigation_mm": 100.0}, soil_params)["EF1_status"] == "holos_liang2020"
+    missing = HolosSoilN2O().compute(_county_inputs(), soil_params)
+    assert missing["EF1_status"] == "UNVERIFIED-input"
+    zero_pe = HolosSoilN2O().compute(_county_inputs(growing_season_precip_mm=400.0, growing_season_pe_mm=0.0), soil_params)
+    assert zero_pe["EF1_status"] == "UNVERIFIED-input"
