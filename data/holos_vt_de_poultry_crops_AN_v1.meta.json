@@ -1,0 +1,30 @@
+{
+  "command": "python3 scripts/holos_vt_de_poultry_crops_AN_v1.py",
+  "date": "2026-11-01",
+  "census_gap": {
+    "nass_cattle_file": "nass_census2022_county_AN_v1.csv.gz",
+    "short_desc": [
+      "CATTLE, COWS, BEEF - INVENTORY",
+      "CATTLE, COWS, MILK - INVENTORY",
+      "CATTLE, INCL CALVES - INVENTORY",
+      "CORN, GRAIN - ACRES HARVESTED",
+      "CORN, SILAGE - ACRES HARVESTED",
+      "HAY & HAYLAGE - ACRES HARVESTED",
+      "SOYBEANS - ACRES HARVESTED",
+      "WHEAT - ACRES HARVESTED"
+    ],
+    "poultry_or_swine_inventory_rows": [],
+    "census_head_invented": false,
+    "note": "nass_census2022_county_AN_v1.csv.gz is cattle inventory only. Poultry and swine enter as Falcone 2017 excreted N, not Census heads."
+  },
+  "P_PE": {
+    "value": 1.0,
+    "note": "Rochette 2008 humid clamp (EFeco=0.017). Not a VT/DE weather observation."
+  },
+  "sources": {
+    "nass_crops": "nass_census2022_crops_county_AN_v3.csv.gz",
+    "nass_cattle": "nass_census2022_county_AN_v1.csv.gz",
+    "falcone": "usgs_falcone2021_county_N_2017_AN_v3.csv.gz",
+    "ipcc_params": "ipcc_params_AN_v7.csv"
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>ghgsim Sankey crop_urea_lime AN_v2</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; color: #263238; }
+    #view { margin: 0 0 12px 0; }
+    #chart { width: 100%; height: 720px; }
+  </style>
+</head>
+<body>
+  <h1>Emissions Sankey — <span id="farm"></span> <span id="ver"></span></h1>
+  <label>View
+    <select id="view">
+      <option value="source_correct">source_correct</option>
+      <option value="holos_as_coded">holos_as_coded</option>
+      <option value="fork_delta">fork delta</option>
+    </select>
+  </label>
+  <div id="chart"></div>
+  <script>
+    const FARM = "crop_urea_lime";
+    const VERSION = "AN_v2";
+    const VIEWS = {"fork_delta":{"fork_deltas_kg_co2e":{"HOLOS.CH4.cover_reduction":0.0,"HOLOS.CH4.turkey_zero":0.0,"HOLOS.ENTERIC.calf_zero":0.0,"HOLOS.GE.digestibility":0.0,"HOLOS.N2O.ef1":-5048.68672,"HOLOS.NEX.calf_nrate":0.0,"HOLOS.VS.calf_coeff":0.0,"HOLOS.VS.digestibility":0.0,"HOLOS.VS.urinary_energy":0.0,"HOLOS.YM.dairy":0.0},"gwp":{"CH4":28.0,"CO2":1.0,"N2O":265.0},"links":[{"delta_kg_co2e":-5048.68672,"fork_id":"HOLOS.N2O.ef1","sign":"removed","source":"source.source_correct","target":"fork.HOLOS.N2O.ef1.removed","units":"kg CO2e","value":5048.68672},{"sign":"retained","source":"source.source_correct","target":"sink.holos_as_coded","units":"kg CO2e","value":11341.630331448}],"nodes":[{"color":"#455A64","id":"source.source_correct","inflow":0.0,"kind":"source_total","label":"source_correct (16.390317051 t CO2e)","layer":0,"outflow":16390.317051448,"value":16390.317051448},{"color":"#2E7D32","id":"fork.HOLOS.N2O.ef1.removed","inflow":5048.68672,"kind":"fork_removed","label":"HOLOS.N2O.ef1 removed","layer":1,"outflow":0.0,"value":5048.68672},{"color":"#37474F","id":"sink.holos_as_coded","inflow":11341.630331448,"kind":"sink","label":"holos_as_coded (11.341630331 t CO2e)","layer":2,"outflow":0.0,"value":11341.630331448}],"totals":{"CO2e_kg":11341.630331448,"CO2e_t":11.341630331,"holos_as_coded_CO2e_kg":11341.630331448,"interaction_kg":0.0,"source_correct_CO2e_kg":16390.317051448,"sum_single_fork_delta_kg":-5048.68672},"units":"kg CO2e","view":"fork_delta"},"holos_as_coded":{"gwp":{"CH4":28.0,"CO2":1.0,"N2O":265.0},"links":[{"gas":"N2O","n_source":"F_CR","native_kg":12.165384,"source":"crop.residues","target":"process.soil_n2o","units":"kg CO2e","value":3223.82676},{"gas":"CO2","source":"gas.CO2","target":"sink.CO2e","units":"kg CO2e","value":2090.000000019},{"gas":"N2O","source":"gas.N2O","target":"sink.CO2e","units":"kg CO2e","value":9251.630331429},{"gas":"CO2","source":"process.lime_co2","target":"gas.CO2","units":"kg CO2e","value":1356.666666679},{"gas":"N2O","source":"process.soil_n2o","target":"gas.N2O","units":"kg CO2e","value":510.125},{"gas":"N2O","source":"process.soil_n2o","target":"gas.N2O","units":"kg CO2e","value":3223.82676},{"gas":"N2O","source":"process.soil_n2o","target":"gas.N2O","units":"kg CO2e","value":5517.678571429},{"gas":"CO2","source":"process.urea_co2","target":"gas.CO2","units":"kg CO2e","value":733.33333334},{"gas":"CO2","native_kg":1356.666666679,"source":"soil.amendments","target":"process.lime_co2","units":"kg CO2e","value":1356.666666679},{"gas":"CO2","native_kg":733.33333334,"source":"soil.amendments","target":"process.urea_co2","units":"kg CO2e","value":733.33333334},{"gas":"N2O","n_source":"F_SOM","native_kg":1.925,"source":"soil.som","target":"process.soil_n2o","units":"kg CO2e","value":510.125},{"gas":"N2O","n_source":"F_SN","native_kg":20.821428571,"source":"soil.synthetic","target":"process.soil_n2o","units":"kg CO2e","value":5517.678571429}],"nodes":[{"color":"#827717","id":"crop.residues","inflow":0.0,"kind":"crop","label":"crop residues","layer":0,"outflow":3223.82676,"value":3223.82676},{"color":"#5D4037","id":"soil.amendments","inflow":0.0,"kind":"amendment","label":"lime / urea","layer":0,"outflow":2090.000000019,"value":2090.000000019},{"color":"#6D4C41","id":"soil.som","inflow":0.0,"kind":"soil","label":"mineralised SOM N","layer":0,"outflow":510.125,"value":510.125},{"color":"#6D4C41","id":"soil.synthetic","inflow":0.0,"kind":"soil","label":"synthetic N","layer":0,"outflow":5517.678571429,"value":5517.678571429},{"color":"#00838F","id":"process.lime_co2","inflow":1356.666666679,"kind":"process","label":"lime CO2","layer":1,"outflow":1356.666666679,"value":1356.666666679},{"color":"#00838F","id":"process.soil_n2o","inflow":9251.630331429,"kind":"process","label":"soil N2O","layer":1,"outflow":9251.630331429,"value":9251.630331429},{"color":"#00838F","id":"process.urea_co2","inflow":733.33333334,"kind":"process","label":"urea CO2","layer":1,"outflow":733.33333334,"value":733.33333334},{"color":"#546E7A","id":"gas.CO2","inflow":2090.000000019,"kind":"gas","label":"CO2 (GWP 1)","layer":2,"outflow":2090.000000019,"value":2090.000000019},{"color":"#6A1B9A","id":"gas.N2O","inflow":9251.630331429,"kind":"gas","label":"N2O (GWP 265)","layer":2,"outflow":9251.630331429,"value":9251.630331429},{"color":"#37474F","id":"sink.CO2e","inflow":11341.630331448,"kind":"sink","label":"total CO2e","layer":3,"outflow":0.0,"value":11341.630331448}],"totals":{"CH4_enteric_kg":0.0,"CH4_kg":0.0,"CH4_manure_kg":0.0,"CO2_kg":2090.000000019,"CO2_lime_kg":1356.666666679,"CO2_urea_kg":733.33333334,"CO2e_kg":11341.630331448,"CO2e_t":11.341630331,"N2O_direct_kg":0.0,"N2O_indirect_kg":0.0,"N2O_kg":34.911812571,"N2O_soil_kg":34.911812571},"units":"kg CO2e","view":"holos_as_coded"},"source_correct":{"gwp":{"CH4":28.0,"CO2":1.0,"N2O":265.0},"links":[{"gas":"N2O","n_source":"F_CR","native_kg":19.117032,"source":"crop.residues","target":"process.soil_n2o","units":"kg CO2e","value":5066.01348},{"gas":"CO2","source":"gas.CO2","target":"sink.CO2e","units":"kg CO2e","value":2090.000000019},{"gas":"N2O","source":"gas.N2O","target":"sink.CO2e","units":"kg CO2e","value":14300.317051429},{"gas":"CO2","source":"process.lime_co2","target":"gas.CO2","units":"kg CO2e","value":1356.666666679},{"gas":"N2O","source":"process.soil_n2o","target":"gas.N2O","units":"kg CO2e","value":801.625},{"gas":"N2O","source":"process.soil_n2o","target":"gas.N2O","units":"kg CO2e","value":5066.01348},{"gas":"N2O","source":"process.soil_n2o","target":"gas.N2O","units":"kg CO2e","value":8432.678571429},{"gas":"CO2","source":"process.urea_co2","target":"gas.CO2","units":"kg CO2e","value":733.33333334},{"gas":"CO2","native_kg":1356.666666679,"source":"soil.amendments","target":"process.lime_co2","units":"kg CO2e","value":1356.666666679},{"gas":"CO2","native_kg":733.33333334,"source":"soil.amendments","target":"process.urea_co2","units":"kg CO2e","value":733.33333334},{"gas":"N2O","n_source":"F_SOM","native_kg":3.025,"source":"soil.som","target":"process.soil_n2o","units":"kg CO2e","value":801.625},{"gas":"N2O","n_source":"F_SN","native_kg":31.821428571,"source":"soil.synthetic","target":"process.soil_n2o","units":"kg CO2e","value":8432.678571429}],"nodes":[{"color":"#827717","id":"crop.residues","inflow":0.0,"kind":"crop","label":"crop residues","layer":0,"outflow":5066.01348,"value":5066.01348},{"color":"#5D4037","id":"soil.amendments","inflow":0.0,"kind":"amendment","label":"lime / urea","layer":0,"outflow":2090.000000019,"value":2090.000000019},{"color":"#6D4C41","id":"soil.som","inflow":0.0,"kind":"soil","label":"mineralised SOM N","layer":0,"outflow":801.625,"value":801.625},{"color":"#6D4C41","id":"soil.synthetic","inflow":0.0,"kind":"soil","label":"synthetic N","layer":0,"outflow":8432.678571429,"value":8432.678571429},{"color":"#00838F","id":"process.lime_co2","inflow":1356.666666679,"kind":"process","label":"lime CO2","layer":1,"outflow":1356.666666679,"value":1356.666666679},{"color":"#00838F","id":"process.soil_n2o","inflow":14300.317051429,"kind":"process","label":"soil N2O","layer":1,"outflow":14300.317051429,"value":14300.317051429},{"color":"#00838F","id":"process.urea_co2","inflow":733.33333334,"kind":"process","label":"urea CO2","layer":1,"outflow":733.33333334,"value":733.33333334},{"color":"#546E7A","id":"gas.CO2","inflow":2090.000000019,"kind":"gas","label":"CO2 (GWP 1)","layer":2,"outflow":2090.000000019,"value":2090.000000019},{"color":"#6A1B9A","id":"gas.N2O","inflow":14300.317051429,"kind":"gas","label":"N2O (GWP 265)","layer":2,"outflow":14300.317051429,"value":14300.317051429},{"color":"#37474F","id":"sink.CO2e","inflow":16390.317051448,"kind":"sink","label":"total CO2e","layer":3,"outflow":0.0,"value":16390.317051448}],"totals":{"CH4_enteric_kg":0.0,"CH4_kg":0.0,"CH4_manure_kg":0.0,"CO2_kg":2090.000000019,"CO2_lime_kg":1356.666666679,"CO2_urea_kg":733.33333334,"CO2e_kg":16390.317051448,"CO2e_t":16.390317051,"N2O_direct_kg":0.0,"N2O_indirect_kg":0.0,"N2O_kg":53.963460571,"N2O_soil_kg":53.963460571},"units":"kg CO2e","view":"source_correct"}};
+    document.getElementById("farm").textContent = FARM;
+    document.getElementById("ver").textContent = VERSION;
+    function draw(name) {
+      const view = VIEWS[name];
+      const nodes = view.nodes;
+      const index = Object.fromEntries(nodes.map((n, i) => [n.id, i]));
+      const trace = {
+        type: "sankey",
+        arrangement: "snap",
+        node: {
+          pad: 16,
+          thickness: 16,
+          label: nodes.map(n => n.label + "\n" + n.value.toFixed(3) + " kg CO2e"),
+          color: nodes.map(n => n.color),
+        },
+        link: {
+          source: view.links.map(l => index[l.source]),
+          target: view.links.map(l => index[l.target]),
+          value: view.links.map(l => l.value),
+          color: view.links.map(l => "rgba(120,144,156,0.35)"),
+        },
+      };
+      Plotly.react("chart", [trace], {
+        title: FARM + " — " + name + " (" + view.units + ")",
+        font: { size: 12 },
+        margin: { l: 20, r: 20, t: 40, b: 20 },
+      }, {responsive: true, displaylogo: false});
+    }
+    const sel = document.getElementById("view");
+    sel.addEventListener("change", () => draw(sel.value));
+    draw("source_correct");
+  </script>
+</body>
+</html>

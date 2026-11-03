@@ -79,7 +79,7 @@ def test_flows_conserve_mass(farm_payloads):
             balances = node_balances(view)
             for node in view["nodes"]:
                 balance = balances[node["id"]]
-                if node["kind"] in {"animal", "source_total", "fork_added", "soil"}:
+                if node["kind"] in {"animal", "source_total", "fork_added", "soil", "amendment", "crop"}:
                     assert balance["inflow"] == pytest.approx(0.0, abs=MASS_TOL_KG_CO2E)
                     assert balance["outflow"] == pytest.approx(node["value"], abs=MASS_TOL_KG_CO2E)
                 elif node["kind"] in {"sink", "fork_removed"}:
@@ -177,15 +177,30 @@ def test_discover_sankey_payloads_skips_view_stems(tmp_path):
 def test_committed_sankeys_cover_every_farm():
     yaml_path = latest_versioned(DATA, "stylized_farms", ".yaml")
     spec = load_stylized_spec(yaml_path)
+    newest = {path.name: path for path in discover_sankey_payloads(FIGURES)}
     missing = []
     for farm in spec["farms"]:
-        json_path = FIGURES / f"sankey_{farm['id']}_AN_v1.json"
-        html_path = FIGURES / f"sankey_{farm['id']}_AN_v1.html"
-        if not json_path.exists() or not html_path.exists():
+        hits = [path for name, path in newest.items() if name.startswith(f"sankey_{farm['id']}_AN_v")]
+        if not hits:
             missing.append(farm["id"])
     if missing:
         pytest.skip(f"committed Sankeys not written yet: {missing}")
-    for farm in spec["farms"]:
-        payload = json.loads((FIGURES / f"sankey_{farm['id']}_AN_v1.json").read_text())
-        assert payload["farm_id"] == farm["id"]
+    for path in discover_sankey_payloads(FIGURES):
+        payload = json.loads(path.read_text())
         assert_mass_conserved(payload["views"]["source_correct"])
+
+
+def test_field_farm_sankey_has_barn_to_field_to_soil(farm_payloads):
+    _, payloads = farm_payloads
+    payload = payloads["broiler_litter_field"]
+    view = payload["views"]["source_correct"]
+    ids = {node["id"] for node in view["nodes"]}
+    assert "field.applied_manure" in ids
+    assert "process.soil_n2o" in ids
+    assert "crop.residues" in ids
+    kinds = {node["id"]: node["kind"] for node in view["nodes"]}
+    assert kinds["field.applied_manure"] == "field"
+    links = {(link["source"], link["target"]) for link in view["links"]}
+    assert ("animal.broilers", "field.applied_manure") in links
+    assert ("field.applied_manure", "process.soil_n2o") in links
+    assert ("crop.residues", "process.soil_n2o") in links

@@ -1,0 +1,12 @@
+{
+  "command": "python3 scripts/measure_holos_forks_stylized_AN_v4.py",
+  "farms_yaml": "stylized_farms_AN_v5.yaml",
+  "gwp_ar5": {
+    "CH4": 28.0,
+    "N2O": 265.0,
+    "CO2": 1.0
+  },
+  "date": "2026-11-01",
+  "n_farms": 19,
+  "n_forks": 10
+}

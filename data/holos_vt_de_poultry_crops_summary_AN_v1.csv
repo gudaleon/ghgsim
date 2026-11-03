@@ -1,0 +1,2 @@
+scope,n_counties,baseline_CO2e_t,expanded_ipcc_EF1_CO2e_t,expanded_rochette_CO2e_t,dCO2e_t_ipcc_EF1_minus_baseline,dCO2e_t_rochette_minus_baseline,dCO2e_t_rochette_minus_ipcc_EF1,F_AM_cattle_kg,F_CR_eq116_kg,F_CR_trial_kg,Falcone_Hogs_N_kg,Falcone_Poultry_N_kg
+VT+DE,17,1346733.1927782104,1400410.892971726,1617640.263502898,53677.7001935154,270907.0707246873,217229.3705311719,9045346.195130095,12154124.073149424,12153801.264547968,150228.2696482,26575419.602787

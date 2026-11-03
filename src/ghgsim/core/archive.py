@@ -6,7 +6,6 @@ reproducible archive packages.
 """
 
 import hashlib
-import json
 import shutil
 import tarfile
 from datetime import datetime, timezone
@@ -78,9 +77,12 @@ class RunArchiver:
                 yaml.dump(manifest, f, default_flow_style=False, sort_keys=True)
             
             # Compute file hashes
+            from ghgsim.core.provenance import run_identity
+
             provenance = {
                 "run_id": self.run_id,
                 "created_at": datetime.now(timezone.utc).isoformat(),
+                "run_identity": run_identity(),
                 "files": {},
             }
             

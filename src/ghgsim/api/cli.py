@@ -285,6 +285,7 @@ def modules_list():
     """
     click.echo("Registered modules:")
     click.echo("  ipcc2006.soil_n2o - IPCC 2006 Soil N2O emissions")
+    click.echo("  ipcc2006.lime_urea_co2 - IPCC 2006 lime (Eq 11.12) and urea (Eq 11.13) CO2")
     click.echo("  ipcc2006.enteric - IPCC 2006 Enteric CH4")
     click.echo("  ipcc2006.manure - IPCC 2006 Manure management")
     click.echo("  ipcc2019.soil_n2o - IPCC 2019 Soil N2O (climate-disaggregated)")
@@ -292,6 +293,9 @@ def modules_list():
     click.echo("  ipcc2019.manure - IPCC 2019 Manure CH4/N2O (FracLeachMS)")
     click.echo("  holos.enteric - Holos enteric (cattle Tier 2; swine Tier 1; poultry 0)")
     click.echo("  holos.manure - Holos manure CH4/N2O (cattle/swine/poultry)")
+    click.echo("  holos.field_n - Link N_MMS_Avb / N_PRP to soils (Eq 11.3-11.5; counted once)")
+    click.echo("  holos.soil_n2o - Holos/IPCC 2006 soil N2O (EF1, EF3PRP, indirect)")
+    click.echo("  holos.lime_urea_co2 - Holos lime/urea CO2 (same IPCC 2006 equations)")
     
     # TODO: Discover modules dynamically
 

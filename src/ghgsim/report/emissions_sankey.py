@@ -25,8 +25,11 @@ from typing import Any
 import yaml
 
 from ghgsim import __version__ as ENGINE_VERSION
+from ghgsim.core.provenance import run_identity
 from ghgsim.modules.holos import (
     HolosEnteric,
+    HolosFieldN,
+    HolosLimeUreaCO2,
     HolosManure,
     HolosManureCH4,
     HolosSoilN2O,
@@ -79,6 +82,10 @@ NODE_COLORS = {
     "fork_added": "#C62828",
     "fork_removed": "#2E7D32",
     "soil": "#6D4C41",
+    "amendment": "#5D4037",
+    "gas_CO2": "#546E7A",
+    "field": "#558B2F",
+    "crop": "#827717",
 }
 
 PLOTLY_CDN = "https://cdn.plot.ly/plotly-2.35.2.min.js"
@@ -117,7 +124,7 @@ def gwp_from_spec(spec: Mapping[str, Any]) -> dict[str, float]:
     raw = spec.get("meta", {}).get("gwp_ar5") or {}
     ch4 = float(raw.get("CH4", 28.0))
     n2o = float(raw.get("N2O", 265.0))
-    return {"CH4": ch4, "N2O": n2o}
+    return {"CH4": ch4, "N2O": n2o, "CO2": float(raw.get("CO2", 1.0))}
 
 
 def _const(spec: Mapping[str, Any]) -> dict[str, float]:
@@ -234,8 +241,17 @@ def combined_forks() -> dict[str, str]:
     return {row["fork_id"]: row["alt"] for row in fork_catalog()}
 
 
-def co2e_kg(ch4_kg: float, n2o_kg: float, gwp: Mapping[str, float]) -> float:
-    return float(ch4_kg) * float(gwp["CH4"]) + float(n2o_kg) * float(gwp["N2O"])
+def co2e_kg(
+    ch4_kg: float,
+    n2o_kg: float,
+    gwp: Mapping[str, float],
+    co2_kg: float = 0.0,
+) -> float:
+    return (
+        float(ch4_kg) * float(gwp["CH4"])
+        + float(n2o_kg) * float(gwp["N2O"])
+        + float(co2_kg) * float(gwp.get("CO2", 1.0))
+    )
 
 
 @dataclass
@@ -247,6 +263,8 @@ class GroupFlows:
     manure_ch4_by_system_kg: dict[str, float]
     n2o_direct_kg: float
     n2o_indirect_kg: float
+    n_mms_avb_kg: float = 0.0
+    n_prp_kg: float = 0.0
 
     @property
     def manure_ch4_kg(self) -> float:
@@ -268,8 +286,14 @@ class FarmFlows:
     forks: dict[str, str]
     groups: list[GroupFlows]
     soil_n2o_kg: float = 0.0
-    gwp: dict[str, float] = field(default_factory=lambda: {"CH4": 28.0, "N2O": 265.0})
+    lime_co2_kg: float = 0.0
+    urea_co2_kg: float = 0.0
+    gwp: dict[str, float] = field(default_factory=lambda: {"CH4": 28.0, "N2O": 265.0, "CO2": 1.0})
     extras: dict[str, Any] = field(default_factory=dict)
+
+    @property
+    def co2_kg(self) -> float:
+        return self.lime_co2_kg + self.urea_co2_kg
 
     @property
     def ch4_enteric_kg(self) -> float:
@@ -297,7 +321,7 @@ class FarmFlows:
 
     @property
     def co2e_kg(self) -> float:
-        return co2e_kg(self.ch4_kg, self.n2o_kg, self.gwp)
+        return co2e_kg(self.ch4_kg, self.n2o_kg, self.gwp, self.co2_kg)
 
     @property
     def co2e_t(self) -> float:
@@ -312,6 +336,9 @@ class FarmFlows:
             "N2O_indirect_kg": _round(self.n2o_indirect_kg),
             "N2O_soil_kg": _round(self.soil_n2o_kg),
             "N2O_kg": _round(self.n2o_kg),
+            "CO2_lime_kg": _round(self.lime_co2_kg),
+            "CO2_urea_kg": _round(self.urea_co2_kg),
+            "CO2_kg": _round(self.co2_kg),
             "CO2e_kg": _round(self.co2e_kg),
             "CO2e_t": _round(self.co2e_t),
         }
@@ -333,6 +360,130 @@ def _manure_ch4_by_system(
     return by_system
 
 
+def _yaml_number(node: Any, default: float = 0.0) -> float:
+    if node in (None, ""):
+        return default
+    if isinstance(node, Mapping) and "value" in node:
+        return float(node["value"])
+    return float(node)
+
+
+def _field_crops(field: Mapping[str, Any]) -> list[dict[str, Any]]:
+    """Collect Eq 11.6 crop specs from a stylized field (area/yield may be ILLUSTRATIVE)."""
+    crops: list[dict[str, Any]] = []
+    for row in field.get("crops") or []:
+        crops.append(
+            {
+                "crop": row["crop"],
+                "area_ha": _yaml_number(row.get("area_ha")),
+                "yield_fresh_kg_ha": _yaml_number(row.get("yield_fresh_kg_ha")),
+                "FracRenew": row.get("FracRenew"),
+                "FracRemove": row.get("FracRemove"),
+                "FracBurnt": row.get("FracBurnt"),
+                "CF": row.get("CF"),
+            }
+        )
+    return crops
+
+
+def _apply_field_modules(
+    spec: Mapping[str, Any],
+    farm: Mapping[str, Any],
+    params: Mapping[str, float],
+    *,
+    n_mms_avb_kg: float,
+    n_prp_kg: float,
+    forks: Mapping[str, str] | None = None,
+) -> dict[str, Any]:
+    """Link leftover manure N once, then run soil N2O and lime/urea CO2."""
+    field_id = farm.get("field_id")
+    if not field_id:
+        return {
+            "soil_n2o_kg": 0.0,
+            "lime_co2_kg": 0.0,
+            "urea_co2_kg": 0.0,
+            "extras": {},
+        }
+    field = spec["fields"][field_id]
+    linker = HolosFieldN()
+    soil = HolosSoilN2O()
+    lime = HolosLimeUreaCO2()
+    crops = _field_crops(field)
+    field_n = linker.compute(
+        {
+            "N_MMS_Avb_kg": n_mms_avb_kg,
+            "N_PRP_kg": n_prp_kg + _yaml_number(field.get("F_PRP_extra_kg")),
+            "F_SN": _yaml_number(field.get("F_SN")),
+            "F_ON_other_kg": _yaml_number(field.get("F_ON_other_kg")),
+            "F_CR": _yaml_number(field.get("F_CR")),
+            "F_SOM": _yaml_number(field.get("F_SOM")),
+            "FracFEED": _yaml_number(field.get("FracFEED")),
+            "FracFUEL": _yaml_number(field.get("FracFUEL")),
+            "FracCNST": _yaml_number(field.get("FracCNST")),
+            "link_manure_n": bool(field.get("link_manure_n", True)),
+            "F_ON_override": field.get("F_ON_override"),
+            "crops": crops,
+        },
+        params,
+    )
+    soil_in: dict[str, Any] = {
+        "F_SN": field_n["F_SN"],
+        "F_ON": field_n["F_ON"],
+        "F_CR": field_n["F_CR"],
+        "F_SOM": field_n["F_SOM"],
+        "F_PRP_CPP": field_n["F_PRP_CPP"],
+        "climate": str(field.get("climate") or "wet"),
+        "forks": dict(forks or {}),
+    }
+    for key in (
+        "P_PE",
+        "growing_season_precip_mm",
+        "growing_season_pe_mm",
+        "FR_Topo",
+        "irrigation_mm",
+        "RF_TX",
+        "RFtext",
+        "RFtopo",
+    ):
+        if field.get(key) not in (None, ""):
+            soil_in[key] = _yaml_number(field.get(key))
+    soil_out = soil.compute(soil_in, params)
+    lime_out = lime.compute(
+        {
+            "M_limestone_t": _yaml_number(field.get("M_limestone_t")),
+            "M_dolomite_t": _yaml_number(field.get("M_dolomite_t")),
+            "M_urea_t": _yaml_number(field.get("M_urea_t")),
+        },
+        params,
+    )
+    return {
+        "soil_n2o_kg": float(soil_out["N2O_total"]),
+        "lime_co2_kg": float(lime_out["CO2_lime_kg"]),
+        "urea_co2_kg": float(lime_out["CO2_urea_kg"]),
+        "extras": {
+            "field_id": field_id,
+            "N_MMS_Avb_kg": n_mms_avb_kg,
+            "N_PRP_kg": n_prp_kg,
+            "F_SN": field_n["F_SN"],
+            "F_ON": field_n["F_ON"],
+            "F_CR": field_n["F_CR"],
+            "F_SOM": field_n["F_SOM"],
+            "F_PRP_CPP": field_n["F_PRP_CPP"],
+            "F_AM_kg": field_n["F_AM_kg"],
+            "EF1_used": float(soil_out["EF1_used"]),
+            "EF1_status": soil_out.get("EF1_status", "ipcc2006_ef1"),
+            "P_PE": soil_in.get("P_PE"),
+            "growing_season_precip_mm": soil_in.get("growing_season_precip_mm"),
+            "growing_season_pe_mm": soil_in.get("growing_season_pe_mm"),
+            "residue_crops": field_n.get("residue_crops") or [],
+            "soil_n2o_by_source": dict(soil_out.get("soil_n2o_by_source") or {}),
+            "N2O_soil_direct_kg": float(soil_out["N2O_direct"]),
+            "N2O_soil_indirect_vol_kg": float(soil_out["N2O_indirect_vol"]),
+            "N2O_soil_indirect_leach_kg": float(soil_out["N2O_indirect_leach"]),
+        },
+    }
+
+
 def compute_stylized_farm_flows(
     spec: Mapping[str, Any],
     farm: Mapping[str, Any],
@@ -341,7 +492,7 @@ def compute_stylized_farm_flows(
     *,
     run: str,
 ) -> FarmFlows:
-    """Run Holos modules per animal class and keep process-level outputs."""
+    """Run Holos modules per animal class and optional field modules."""
     constants = _const(spec)
     gwp = gwp_from_spec(spec)
     enteric = HolosEnteric()
@@ -350,11 +501,14 @@ def compute_stylized_farm_flows(
     manure_ch4 = HolosManureCH4()
     groups: list[GroupFlows] = []
     fork_settings = dict(forks)
-    manure_cfg = spec["manure_variants"][farm["manure_id"]]
+    herds = list(farm.get("herds") or [])
+    manure_id = farm.get("manure_id")
+    manure_cfg = spec["manure_variants"][manure_id] if manure_id else {"systems": {}, "cover_type": "none"}
+    n_mms_avb = 0.0
+    n_prp = 0.0
 
-    first_animal = spec["animal_classes"][farm["herds"][0]]
-    if is_monogastric(str(first_animal["animal_type"])):
-        for class_id in farm["herds"]:
+    if herds and is_monogastric(str(spec["animal_classes"][herds[0]]["animal_type"])):
+        for class_id in herds:
             animal = spec["animal_classes"][class_id]
             head = float(animal["head"]["value"])
             manure_in = {
@@ -374,6 +528,8 @@ def compute_stylized_farm_flows(
             )
             man = manure.compute(manure_in, params)
             by_system = _manure_ch4_by_system(manure_ch4, manure_in, params)
+            n_mms_avb += float(man["N_MMS_Avb_kg"])
+            n_prp += float(man["N_PRP_kg"])
             groups.append(
                 GroupFlows(
                     group_id=str(class_id),
@@ -383,94 +539,97 @@ def compute_stylized_farm_flows(
                     manure_ch4_by_system_kg=by_system,
                     n2o_direct_kg=float(man["N2O_direct"]),
                     n2o_indirect_kg=float(man["N2O_indirect_vol"]),
+                    n_mms_avb_kg=float(man["N_MMS_Avb_kg"]),
+                    n_prp_kg=float(man["N_PRP_kg"]),
                 )
             )
-        return FarmFlows(
-            farm_id=str(farm["id"]),
-            run=run,
-            forks=fork_settings,
-            groups=groups,
-            gwp=gwp,
-            extras={
-                "farm_type": farm.get("farm_type"),
-                "manure_id": farm.get("manure_id"),
-            },
-        )
-
-    diet = spec["diets"][farm["diet_id"]]
-
-    for class_id in farm["herds"]:
-        animal = spec["animal_classes"][class_id]
-        de, tdn, forage = herd_de_tdn(spec, farm, animal, diet)
-        energy = net_energy(spec, animal, constants, de)
-        head = float(animal["head"]["value"])
-        enteric_in = {
-            "head": head,
-            "animal_type": animal["animal_type"],
-            "animal_class": animal["animal_class"],
-            "NE_m": energy["NE_m"],
-            "NE_a": energy["NE_a"],
-            "NE_l": energy["NE_l"],
-            "NE_work": energy["NE_work"],
-            "NE_p": energy["NE_p"],
-            "NE_g": energy["NE_g"],
-            "RE_m": energy["RE_m"],
-            "RE_g": energy["RE_g"],
-            "DE_percent": de,
-            "TDN_percent": tdn,
-            "forks": fork_settings,
-        }
-        ent = enteric.compute(enteric_in, params)
-        vs_in = {
-            "GE_MJ_day": float(ent["GE_used"]),
-            "DE_percent": de,
-            "TDN_percent": tdn,
-            "ASH_percent": constants["ASH_percent"],
-            "forage_percent": forage,
-            "animal_class": animal["animal_class"],
-            "weight_kg": energy["weight_kg"],
-            "forks": fork_settings,
-        }
-        vs_out = vs_module.compute(vs_in, params)
-        manure_in = {
-            "head": head,
-            "animal_type": animal["animal_type"],
-            "climate_zone": spec["meta"]["climate_zone"],
-            "systems": dict(manure_cfg["systems"]),
-            "VS_kg_day": float(vs_out["VS_kg_day"]),
-            "Nex_kg_yr": nex_kg_yr(spec, animal, constants),
-            "animal_class": animal["animal_class"],
-            "cover_type": str(manure_cfg["cover_type"]),
-            "forks": fork_settings,
-        }
-        man = manure.compute(manure_in, params)
-        by_system = _manure_ch4_by_system(manure_ch4, manure_in, params)
-        if abs(sum(by_system.values()) - float(man["CH4"])) > MASS_TOL_KG_CO2E:
-            raise ValueError(
-                f"Per-system manure CH4 {sum(by_system.values())} != engine CH4 {man['CH4']}"
+    elif herds:
+        diet = spec["diets"][farm["diet_id"]]
+        for class_id in herds:
+            animal = spec["animal_classes"][class_id]
+            de, tdn, forage = herd_de_tdn(spec, farm, animal, diet)
+            energy = net_energy(spec, animal, constants, de)
+            head = float(animal["head"]["value"])
+            enteric_in = {
+                "head": head,
+                "animal_type": animal["animal_type"],
+                "animal_class": animal["animal_class"],
+                "NE_m": energy["NE_m"],
+                "NE_a": energy["NE_a"],
+                "NE_l": energy["NE_l"],
+                "NE_work": energy["NE_work"],
+                "NE_p": energy["NE_p"],
+                "NE_g": energy["NE_g"],
+                "RE_m": energy["RE_m"],
+                "RE_g": energy["RE_g"],
+                "DE_percent": de,
+                "TDN_percent": tdn,
+                "forks": fork_settings,
+            }
+            ent = enteric.compute(enteric_in, params)
+            vs_in = {
+                "GE_MJ_day": float(ent["GE_used"]),
+                "DE_percent": de,
+                "TDN_percent": tdn,
+                "ASH_percent": constants["ASH_percent"],
+                "forage_percent": forage,
+                "animal_class": animal["animal_class"],
+                "weight_kg": energy["weight_kg"],
+                "forks": fork_settings,
+            }
+            vs_out = vs_module.compute(vs_in, params)
+            manure_in = {
+                "head": head,
+                "animal_type": animal["animal_type"],
+                "climate_zone": spec["meta"]["climate_zone"],
+                "systems": dict(manure_cfg["systems"]),
+                "VS_kg_day": float(vs_out["VS_kg_day"]),
+                "Nex_kg_yr": nex_kg_yr(spec, animal, constants),
+                "animal_class": animal["animal_class"],
+                "cover_type": str(manure_cfg.get("cover_type", "none")),
+                "forks": fork_settings,
+            }
+            man = manure.compute(manure_in, params)
+            by_system = _manure_ch4_by_system(manure_ch4, manure_in, params)
+            if abs(sum(by_system.values()) - float(man["CH4"])) > MASS_TOL_KG_CO2E:
+                raise ValueError(
+                    f"Per-system manure CH4 {sum(by_system.values())} != engine CH4 {man['CH4']}"
+                )
+            n_mms_avb += float(man["N_MMS_Avb_kg"])
+            n_prp += float(man["N_PRP_kg"])
+            groups.append(
+                GroupFlows(
+                    group_id=str(class_id),
+                    label=ANIMAL_LABELS.get(str(class_id), str(class_id).replace("_", " ")),
+                    head=head,
+                    enteric_ch4_kg=float(ent["CH4_total"]),
+                    manure_ch4_by_system_kg=by_system,
+                    n2o_direct_kg=float(man["N2O_direct"]),
+                    n2o_indirect_kg=float(man["N2O_indirect_vol"]),
+                    n_mms_avb_kg=float(man["N_MMS_Avb_kg"]),
+                    n_prp_kg=float(man["N_PRP_kg"]),
+                )
             )
-        groups.append(
-            GroupFlows(
-                group_id=str(class_id),
-                label=ANIMAL_LABELS.get(str(class_id), str(class_id).replace("_", " ")),
-                head=head,
-                enteric_ch4_kg=float(ent["CH4_total"]),
-                manure_ch4_by_system_kg=by_system,
-                n2o_direct_kg=float(man["N2O_direct"]),
-                n2o_indirect_kg=float(man["N2O_indirect_vol"]),
-            )
-        )
+
+    field_out = _apply_field_modules(
+        spec, farm, params, n_mms_avb_kg=n_mms_avb, n_prp_kg=n_prp, forks=fork_settings
+    )
+    extras: dict[str, Any] = {
+        "farm_type": farm.get("farm_type"),
+        "diet_id": farm.get("diet_id"),
+        "manure_id": farm.get("manure_id"),
+    }
+    extras.update(field_out["extras"])
     return FarmFlows(
         farm_id=str(farm["id"]),
         run=run,
         forks=fork_settings,
         groups=groups,
+        soil_n2o_kg=field_out["soil_n2o_kg"],
+        lime_co2_kg=field_out["lime_co2_kg"],
+        urea_co2_kg=field_out["urea_co2_kg"],
         gwp=gwp,
-        extras={
-            "farm_type": farm.get("farm_type"),
-            "diet_id": farm.get("diet_id"),
-            "manure_id": farm.get("manure_id"),
-        },
+        extras=extras,
     )
 
 
@@ -546,6 +705,8 @@ def compute_county_flows(
                 manure_ch4_by_system_kg=by_system,
                 n2o_direct_kg=float(man["N2O_direct"]),
                 n2o_indirect_kg=float(man["N2O_indirect_vol"]),
+                n_mms_avb_kg=float(man["N_MMS_Avb_kg"]),
+                n_prp_kg=float(man["N_PRP_kg"]),
             )
         )
     soil_in = {
@@ -555,6 +716,7 @@ def compute_county_flows(
         "F_SOM": float(farm["soil"].get("F_SOM", 0.0)),
         "F_PRP_CPP": float(farm["soil"].get("F_PRP_CPP", 0.0)) + n_prp,
         "climate": farm["soil"]["climate"],
+        "forks": fork_settings,
     }
     soil_out = soil.compute(soil_in, params)
     return FarmFlows(
@@ -627,6 +789,7 @@ def build_process_sankey(flows: FarmFlows) -> dict[str, Any]:
 
     _add_node(nodes, "gas.CH4", label=f"CH4 (GWP {gwp['CH4']:g})", kind="gas", layer=2, color=NODE_COLORS["gas_CH4"])
     _add_node(nodes, "gas.N2O", label=f"N2O (GWP {gwp['N2O']:g})", kind="gas", layer=2, color=NODE_COLORS["gas_N2O"])
+    _add_node(nodes, "gas.CO2", label=f"CO2 (GWP {gwp.get('CO2', 1.0):g})", kind="gas", layer=2, color=NODE_COLORS["gas_CO2"])
     _add_node(nodes, "sink.CO2e", label="total CO2e", kind="sink", layer=3, color=NODE_COLORS["sink"])
 
     def process_node(process_id: str, label: str) -> str:
@@ -685,23 +848,163 @@ def build_process_sankey(flows: FarmFlows) -> dict[str, Any]:
         )
 
     if flows.soil_n2o_kg > ZERO_KG:
-        _add_node(nodes, "animal.soil", label="soil N inputs", kind="soil", layer=0, color=NODE_COLORS["soil"])
         soil_id = process_node("process.soil_n2o", "soil N2O")
-        _add_link(
-            links,
-            nodes,
-            "animal.soil",
-            soil_id,
-            flows.soil_n2o_kg * gwp["N2O"],
-            extra={"native_kg": _round(flows.soil_n2o_kg), "gas": "N2O"},
+        by_src = {
+            key: float(value)
+            for key, value in dict(flows.extras.get("soil_n2o_by_source") or {}).items()
+        }
+        if not by_src:
+            by_src = {"F_ON": flows.soil_n2o_kg}
+        gwp_n2o = gwp["N2O"]
+
+        def _src_co2e(name: str) -> float:
+            return by_src.get(name, 0.0) * gwp_n2o
+
+        f_on_co2e = _src_co2e("F_ON")
+        f_prp_co2e = _src_co2e("F_PRP_CPP")
+        total_mms = sum(group.n_mms_avb_kg for group in flows.groups)
+        total_prp = sum(group.n_prp_kg for group in flows.groups)
+        if f_on_co2e > ZERO_KG:
+            _add_node(
+                nodes,
+                "field.applied_manure",
+                label="applied manure N",
+                kind="field",
+                layer=1,
+                color=NODE_COLORS["field"],
+            )
+            allocated = 0.0
+            if total_mms > ZERO_KG:
+                for group in flows.groups:
+                    share = f_on_co2e * (group.n_mms_avb_kg / total_mms)
+                    allocated += share
+                    _add_link(
+                        links,
+                        nodes,
+                        f"animal.{group.group_id}",
+                        "field.applied_manure",
+                        share,
+                        extra={"native_kg": _round(by_src.get("F_ON", 0.0) * (group.n_mms_avb_kg / total_mms)), "gas": "N2O", "n_source": "F_ON"},
+                    )
+            leftover = f_on_co2e - allocated
+            if leftover > ZERO_KG:
+                _add_node(
+                    nodes,
+                    "field.other_organic",
+                    label="other organic N",
+                    kind="soil",
+                    layer=0,
+                    color=NODE_COLORS["soil"],
+                )
+                _add_link(
+                    links,
+                    nodes,
+                    "field.other_organic",
+                    "field.applied_manure",
+                    leftover,
+                    extra={"native_kg": _round(leftover / gwp_n2o), "gas": "N2O", "n_source": "F_ON_other"},
+                )
+            _add_link(
+                links,
+                nodes,
+                "field.applied_manure",
+                soil_id,
+                f_on_co2e,
+                extra={"native_kg": _round(by_src.get("F_ON", 0.0)), "gas": "N2O", "n_source": "F_ON"},
+            )
+        if f_prp_co2e > ZERO_KG:
+            _add_node(
+                nodes,
+                "field.prp",
+                label="pasture urine/dung N",
+                kind="field",
+                layer=1,
+                color=NODE_COLORS["field"],
+            )
+            if total_prp > ZERO_KG:
+                for group in flows.groups:
+                    share = f_prp_co2e * (group.n_prp_kg / total_prp)
+                    _add_link(
+                        links,
+                        nodes,
+                        f"animal.{group.group_id}",
+                        "field.prp",
+                        share,
+                        extra={"native_kg": _round(by_src.get("F_PRP_CPP", 0.0) * (group.n_prp_kg / total_prp)), "gas": "N2O", "n_source": "F_PRP"},
+                    )
+            else:
+                _add_node(nodes, "animal.soil", label="soil N inputs", kind="soil", layer=0, color=NODE_COLORS["soil"])
+                _add_link(
+                    links,
+                    nodes,
+                    "animal.soil",
+                    "field.prp",
+                    f_prp_co2e,
+                    extra={"native_kg": _round(by_src.get("F_PRP_CPP", 0.0)), "gas": "N2O", "n_source": "F_PRP"},
+                )
+            _add_link(
+                links,
+                nodes,
+                "field.prp",
+                soil_id,
+                f_prp_co2e,
+                extra={"native_kg": _round(by_src.get("F_PRP_CPP", 0.0)), "gas": "N2O", "n_source": "F_PRP"},
+            )
+        source_nodes = (
+            ("F_SN", "soil.synthetic", "synthetic N", "soil", NODE_COLORS["soil"]),
+            ("F_CR", "crop.residues", "crop residues", "crop", NODE_COLORS["crop"]),
+            ("F_SOM", "soil.som", "mineralised SOM N", "soil", NODE_COLORS["soil"]),
         )
+        for src_name, node_id, label, kind, color in source_nodes:
+            amount = _src_co2e(src_name)
+            if amount <= ZERO_KG:
+                continue
+            _add_node(nodes, node_id, label=label, kind=kind, layer=0, color=color)
+            _add_link(
+                links,
+                nodes,
+                node_id,
+                soil_id,
+                amount,
+                extra={"native_kg": _round(by_src.get(src_name, 0.0)), "gas": "N2O", "n_source": src_name},
+            )
+    if flows.lime_co2_kg > ZERO_KG or flows.urea_co2_kg > ZERO_KG:
+        _add_node(
+            nodes,
+            "soil.amendments",
+            label="lime / urea",
+            kind="amendment",
+            layer=0,
+            color=NODE_COLORS["amendment"],
+        )
+        if flows.lime_co2_kg > ZERO_KG:
+            lime_id = process_node("process.lime_co2", "lime CO2")
+            _add_link(
+                links,
+                nodes,
+                "soil.amendments",
+                lime_id,
+                flows.lime_co2_kg * gwp.get("CO2", 1.0),
+                extra={"native_kg": _round(flows.lime_co2_kg), "gas": "CO2"},
+            )
+        if flows.urea_co2_kg > ZERO_KG:
+            urea_id = process_node("process.urea_co2", "urea CO2")
+            _add_link(
+                links,
+                nodes,
+                "soil.amendments",
+                urea_id,
+                flows.urea_co2_kg * gwp.get("CO2", 1.0),
+                extra={"native_kg": _round(flows.urea_co2_kg), "gas": "CO2"},
+            )
 
     ch4_from_process = 0.0
     n2o_from_process = 0.0
+    co2_from_process = 0.0
     for link in list(links):
-        if not str(link["source"]).startswith("animal."):
+        target = str(link["target"])
+        if not target.startswith("process."):
             continue
-        target = link["target"]
         gas = str(link.get("gas", ""))
         if gas == "CH4":
             _add_link(links, nodes, target, "gas.CH4", float(link["value"]), extra={"gas": "CH4"})
@@ -709,9 +1012,13 @@ def build_process_sankey(flows: FarmFlows) -> dict[str, Any]:
         elif gas == "N2O":
             _add_link(links, nodes, target, "gas.N2O", float(link["value"]), extra={"gas": "N2O"})
             n2o_from_process += float(link["value"])
+        elif gas == "CO2":
+            _add_link(links, nodes, target, "gas.CO2", float(link["value"]), extra={"gas": "CO2"})
+            co2_from_process += float(link["value"])
 
     _add_link(links, nodes, "gas.CH4", "sink.CO2e", ch4_from_process, extra={"gas": "CH4"})
     _add_link(links, nodes, "gas.N2O", "sink.CO2e", n2o_from_process, extra={"gas": "N2O"})
+    _add_link(links, nodes, "gas.CO2", "sink.CO2e", co2_from_process, extra={"gas": "CO2"})
 
     nodes = _prune_unused_nodes(nodes, links)
     _finalize_node_values(nodes, links)
@@ -895,7 +1202,7 @@ def _finalize_node_values(nodes: dict[str, dict[str, Any]], links: Sequence[Mapp
     for node_id, node in nodes.items():
         node["inflow"] = _round(inflow[node_id])
         node["outflow"] = _round(outflow[node_id])
-        if node["kind"] in {"animal", "source_total", "fork_added", "soil"}:
+        if node["kind"] in {"animal", "source_total", "fork_added", "soil", "amendment", "crop"}:
             node["value"] = node["outflow"]
         elif node["kind"] in {"sink", "fork_removed"}:
             node["value"] = node["inflow"]
@@ -928,7 +1235,7 @@ def assert_mass_conserved(view: Mapping[str, Any], *, tol: float = MASS_TOL_KG_C
     kinds = {node["id"]: node["kind"] for node in view["nodes"]}
     for node_id, balance in balances.items():
         kind = kinds[node_id]
-        if kind in {"animal", "source_total", "fork_added", "soil"}:
+        if kind in {"animal", "source_total", "fork_added", "soil", "amendment", "crop"}:
             if abs(balance["inflow"]) > tol:
                 raise AssertionError(f"{node_id} source has inflow {balance['inflow']}")
             if abs(balance["outflow"] - balance["value"]) > tol:
@@ -966,6 +1273,7 @@ def build_farm_payload(
         "version": output_version,
         "farm_id": farm_id,
         "engine_version": engine_version,
+        "run_identity": run_identity(),
         "inputs_file": inputs_file,
         "fork_set": {
             "source_correct": dict(source_correct.forks),

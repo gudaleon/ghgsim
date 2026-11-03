@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>ghgsim Sankey layer_highrise AN_v2</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; color: #263238; }
+    #view { margin: 0 0 12px 0; }
+    #chart { width: 100%; height: 720px; }
+  </style>
+</head>
+<body>
+  <h1>Emissions Sankey — <span id="farm"></span> <span id="ver"></span></h1>
+  <label>View
+    <select id="view">
+      <option value="source_correct">source_correct</option>
+      <option value="holos_as_coded">holos_as_coded</option>
+      <option value="fork_delta">fork delta</option>
+    </select>
+  </label>
+  <div id="chart"></div>
+  <script>
+    const FARM = "layer_highrise";
+    const VERSION = "AN_v2";
+    const VIEWS = {"fork_delta":{"fork_deltas_kg_co2e":{"HOLOS.CH4.cover_reduction":0.0,"HOLOS.CH4.turkey_zero":0.0,"HOLOS.ENTERIC.calf_zero":0.0,"HOLOS.GE.digestibility":0.0,"HOLOS.N2O.ef1":0.0,"HOLOS.NEX.calf_nrate":0.0,"HOLOS.VS.calf_coeff":0.0,"HOLOS.VS.digestibility":0.0,"HOLOS.VS.urinary_energy":0.0,"HOLOS.YM.dairy":0.0},"gwp":{"CH4":28.0,"CO2":1.0,"N2O":265.0},"links":[{"sign":"retained","source":"source.source_correct","target":"sink.holos_as_coded","units":"kg CO2e","value":22771.831178571}],"nodes":[{"color":"#455A64","id":"source.source_correct","inflow":0.0,"kind":"source_total","label":"source_correct (22.771831179 t CO2e)","layer":0,"outflow":22771.831178571,"value":22771.831178571},{"color":"#37474F","id":"sink.holos_as_coded","inflow":22771.831178571,"kind":"sink","label":"holos_as_coded (22.771831179 t CO2e)","layer":2,"outflow":0.0,"value":22771.831178571}],"totals":{"CO2e_kg":22771.831178571,"CO2e_t":22.771831179,"holos_as_coded_CO2e_kg":22771.831178571,"interaction_kg":0.0,"source_correct_CO2e_kg":22771.831178571,"sum_single_fork_delta_kg":0.0},"units":"kg CO2e","view":"fork_delta"},"holos_as_coded":{"gwp":{"CH4":28.0,"CO2":1.0,"N2O":265.0},"links":[{"gas":"CH4","native_kg":286.1235,"source":"animal.layers","system":"poultry_without_litter","target":"process.manure_ch4.poultry_without_litter","units":"kg CO2e","value":8011.458},{"gas":"N2O","native_kg":8.569157143,"source":"animal.layers","target":"process.manure_n2o_direct","units":"kg CO2e","value":2270.826642857},{"gas":"N2O","native_kg":47.130364286,"source":"animal.layers","target":"process.manure_n2o_indirect","units":"kg CO2e","value":12489.546535714},{"gas":"CH4","source":"gas.CH4","target":"sink.CO2e","units":"kg CO2e","value":8011.458},{"gas":"N2O","source":"gas.N2O","target":"sink.CO2e","units":"kg CO2e","value":14760.373178571},{"gas":"CH4","source":"process.manure_ch4.poultry_without_litter","target":"gas.CH4","units":"kg CO2e","value":8011.458},{"gas":"N2O","source":"process.manure_n2o_direct","target":"gas.N2O","units":"kg CO2e","value":2270.826642857},{"gas":"N2O","source":"process.manure_n2o_indirect","target":"gas.N2O","units":"kg CO2e","value":12489.546535714}],"nodes":[{"color":"#1565C0","id":"animal.layers","inflow":0.0,"kind":"animal","label":"layers","layer":0,"outflow":22771.831178571,"value":22771.831178571},{"color":"#00838F","id":"process.manure_ch4.poultry_without_litter","inflow":8011.458,"kind":"process","label":"manure CH4 (poultry without litter)","layer":1,"outflow":8011.458,"value":8011.458},{"color":"#00838F","id":"process.manure_n2o_direct","inflow":2270.826642857,"kind":"process","label":"direct manure N2O","layer":1,"outflow":2270.826642857,"value":2270.826642857},{"color":"#00838F","id":"process.manure_n2o_indirect","inflow":12489.546535714,"kind":"process","label":"indirect N2O","layer":1,"outflow":12489.546535714,"value":12489.546535714},{"color":"#EF6C00","id":"gas.CH4","inflow":8011.458,"kind":"gas","label":"CH4 (GWP 28)","layer":2,"outflow":8011.458,"value":8011.458},{"color":"#6A1B9A","id":"gas.N2O","inflow":14760.373178571,"kind":"gas","label":"N2O (GWP 265)","layer":2,"outflow":14760.373178571,"value":14760.373178571},{"color":"#37474F","id":"sink.CO2e","inflow":22771.831178571,"kind":"sink","label":"total CO2e","layer":3,"outflow":0.0,"value":22771.831178571}],"totals":{"CH4_enteric_kg":0.0,"CH4_kg":286.1235,"CH4_manure_kg":286.1235,"CO2_kg":0.0,"CO2_lime_kg":0.0,"CO2_urea_kg":0.0,"CO2e_kg":22771.831178571,"CO2e_t":22.771831179,"N2O_direct_kg":8.569157143,"N2O_indirect_kg":47.130364286,"N2O_kg":55.699521429,"N2O_soil_kg":0.0},"units":"kg CO2e","view":"holos_as_coded"},"source_correct":{"gwp":{"CH4":28.0,"CO2":1.0,"N2O":265.0},"links":[{"gas":"CH4","native_kg":286.1235,"source":"animal.layers","system":"poultry_without_litter","target":"process.manure_ch4.poultry_without_litter","units":"kg CO2e","value":8011.458},{"gas":"N2O","native_kg":8.569157143,"source":"animal.layers","target":"process.manure_n2o_direct","units":"kg CO2e","value":2270.826642857},{"gas":"N2O","native_kg":47.130364286,"source":"animal.layers","target":"process.manure_n2o_indirect","units":"kg CO2e","value":12489.546535714},{"gas":"CH4","source":"gas.CH4","target":"sink.CO2e","units":"kg CO2e","value":8011.458},{"gas":"N2O","source":"gas.N2O","target":"sink.CO2e","units":"kg CO2e","value":14760.373178571},{"gas":"CH4","source":"process.manure_ch4.poultry_without_litter","target":"gas.CH4","units":"kg CO2e","value":8011.458},{"gas":"N2O","source":"process.manure_n2o_direct","target":"gas.N2O","units":"kg CO2e","value":2270.826642857},{"gas":"N2O","source":"process.manure_n2o_indirect","target":"gas.N2O","units":"kg CO2e","value":12489.546535714}],"nodes":[{"color":"#1565C0","id":"animal.layers","inflow":0.0,"kind":"animal","label":"layers","layer":0,"outflow":22771.831178571,"value":22771.831178571},{"color":"#00838F","id":"process.manure_ch4.poultry_without_litter","inflow":8011.458,"kind":"process","label":"manure CH4 (poultry without litter)","layer":1,"outflow":8011.458,"value":8011.458},{"color":"#00838F","id":"process.manure_n2o_direct","inflow":2270.826642857,"kind":"process","label":"direct manure N2O","layer":1,"outflow":2270.826642857,"value":2270.826642857},{"color":"#00838F","id":"process.manure_n2o_indirect","inflow":12489.546535714,"kind":"process","label":"indirect N2O","layer":1,"outflow":12489.546535714,"value":12489.546535714},{"color":"#EF6C00","id":"gas.CH4","inflow":8011.458,"kind":"gas","label":"CH4 (GWP 28)","layer":2,"outflow":8011.458,"value":8011.458},{"color":"#6A1B9A","id":"gas.N2O","inflow":14760.373178571,"kind":"gas","label":"N2O (GWP 265)","layer":2,"outflow":14760.373178571,"value":14760.373178571},{"color":"#37474F","id":"sink.CO2e","inflow":22771.831178571,"kind":"sink","label":"total CO2e","layer":3,"outflow":0.0,"value":22771.831178571}],"totals":{"CH4_enteric_kg":0.0,"CH4_kg":286.1235,"CH4_manure_kg":286.1235,"CO2_kg":0.0,"CO2_lime_kg":0.0,"CO2_urea_kg":0.0,"CO2e_kg":22771.831178571,"CO2e_t":22.771831179,"N2O_direct_kg":8.569157143,"N2O_indirect_kg":47.130364286,"N2O_kg":55.699521429,"N2O_soil_kg":0.0},"units":"kg CO2e","view":"source_correct"}};
+    document.getElementById("farm").textContent = FARM;
+    document.getElementById("ver").textContent = VERSION;
+    function draw(name) {
+      const view = VIEWS[name];
+      const nodes = view.nodes;
+      const index = Object.fromEntries(nodes.map((n, i) => [n.id, i]));
+      const trace = {
+        type: "sankey",
+        arrangement: "snap",
+        node: {
+          pad: 16,
+          thickness: 16,
+          label: nodes.map(n => n.label + "\n" + n.value.toFixed(3) + " kg CO2e"),
+          color: nodes.map(n => n.color),
+        },
+        link: {
+          source: view.links.map(l => index[l.source]),
+          target: view.links.map(l => index[l.target]),
+          value: view.links.map(l => l.value),
+          color: view.links.map(l => "rgba(120,144,156,0.35)"),
+        },
+      };
+      Plotly.react("chart", [trace], {
+        title: FARM + " — " + name + " (" + view.units + ")",
+        font: { size: 12 },
+        margin: { l: 20, r: 20, t: 40, b: 20 },
+      }, {responsive: true, displaylogo: false});
+    }
+    const sel = document.getElementById("view");
+    sel.addEventListener("change", () => draw(sel.value));
+    draw("source_correct");
+  </script>
+</body>
+</html>

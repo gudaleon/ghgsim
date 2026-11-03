@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>ghgsim Sankey market_swine_field AN_v1</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; color: #263238; }
+    #view { margin: 0 0 12px 0; }
+    #chart { width: 100%; height: 720px; }
+  </style>
+</head>
+<body>
+  <h1>Emissions Sankey — <span id="farm"></span> <span id="ver"></span></h1>
+  <label>View
+    <select id="view">
+      <option value="source_correct">source_correct</option>
+      <option value="holos_as_coded">holos_as_coded</option>
+      <option value="fork_delta">fork delta</option>
+    </select>
+  </label>
+  <div id="chart"></div>
+  <script>
+    const FARM = "market_swine_field";
+    const VERSION = "AN_v1";
+    const VIEWS = {"fork_delta":{"fork_deltas_kg_co2e":{"HOLOS.CH4.cover_reduction":0.0,"HOLOS.CH4.turkey_zero":0.0,"HOLOS.ENTERIC.calf_zero":0.0,"HOLOS.GE.digestibility":0.0,"HOLOS.NEX.calf_nrate":0.0,"HOLOS.VS.calf_coeff":0.0,"HOLOS.VS.digestibility":0.0,"HOLOS.VS.urinary_energy":0.0,"HOLOS.YM.dairy":0.0},"gwp":{"CH4":28.0,"CO2":1.0,"N2O":265.0},"links":[{"sign":"retained","source":"source.source_correct","target":"sink.holos_as_coded","units":"kg CO2e","value":320983.779495714}],"nodes":[{"color":"#455A64","id":"source.source_correct","inflow":0.0,"kind":"source_total","label":"source_correct (320.983779496 t CO2e)","layer":0,"outflow":320983.779495714,"value":320983.779495714},{"color":"#37474F","id":"sink.holos_as_coded","inflow":320983.779495714,"kind":"sink","label":"holos_as_coded (320.983779496 t CO2e)","layer":2,"outflow":0.0,"value":320983.779495714}],"totals":{"CO2e_kg":320983.779495714,"CO2e_t":320.983779496,"holos_as_coded_CO2e_kg":320983.779495714,"interaction_kg":0.0,"source_correct_CO2e_kg":320983.779495714,"sum_single_fork_delta_kg":0.0},"units":"kg CO2e","view":"fork_delta"},"holos_as_coded":{"gwp":{"CH4":28.0,"CO2":1.0,"N2O":265.0},"links":[{"gas":"CH4","native_kg":1500.0,"source":"animal.market_swine","target":"process.enteric_ch4","units":"kg CO2e","value":42000.0},{"gas":"CH4","native_kg":8557.2936,"source":"animal.market_swine","system":"liquid_nocrust","target":"process.manure_ch4.liquid_nocrust","units":"kg CO2e","value":239604.2208},{"gas":"N2O","native_kg":53.19072,"source":"animal.market_swine","target":"process.manure_n2o_indirect","units":"kg CO2e","value":14095.5408},{"gas":"N2O","native_kg":95.411388286,"source":"animal.soil","target":"process.soil_n2o","units":"kg CO2e","value":25284.017895714},{"gas":"CH4","source":"gas.CH4","target":"sink.CO2e","units":"kg CO2e","value":281604.2208},{"gas":"N2O","source":"gas.N2O","target":"sink.CO2e","units":"kg CO2e","value":39379.558695714},{"gas":"CH4","source":"process.enteric_ch4","target":"gas.CH4","units":"kg CO2e","value":42000.0},{"gas":"CH4","source":"process.manure_ch4.liquid_nocrust","target":"gas.CH4","units":"kg CO2e","value":239604.2208},{"gas":"N2O","source":"process.manure_n2o_indirect","target":"gas.N2O","units":"kg CO2e","value":14095.5408},{"gas":"N2O","source":"process.soil_n2o","target":"gas.N2O","units":"kg CO2e","value":25284.017895714}],"nodes":[{"color":"#1565C0","id":"animal.market_swine","inflow":0.0,"kind":"animal","label":"market swine","layer":0,"outflow":295699.7616,"value":295699.7616},{"color":"#6D4C41","id":"animal.soil","inflow":0.0,"kind":"soil","label":"soil N inputs","layer":0,"outflow":25284.017895714,"value":25284.017895714},{"color":"#00838F","id":"process.enteric_ch4","inflow":42000.0,"kind":"process","label":"enteric CH4","layer":1,"outflow":42000.0,"value":42000.0},{"color":"#00838F","id":"process.manure_ch4.liquid_nocrust","inflow":239604.2208,"kind":"process","label":"manure CH4 (liquid, no crust)","layer":1,"outflow":239604.2208,"value":239604.2208},{"color":"#00838F","id":"process.manure_n2o_indirect","inflow":14095.5408,"kind":"process","label":"indirect N2O","layer":1,"outflow":14095.5408,"value":14095.5408},{"color":"#00838F","id":"process.soil_n2o","inflow":25284.017895714,"kind":"process","label":"soil N2O","layer":1,"outflow":25284.017895714,"value":25284.017895714},{"color":"#EF6C00","id":"gas.CH4","inflow":281604.2208,"kind":"gas","label":"CH4 (GWP 28)","layer":2,"outflow":281604.2208,"value":281604.2208},{"color":"#6A1B9A","id":"gas.N2O","inflow":39379.558695714,"kind":"gas","label":"N2O (GWP 265)","layer":2,"outflow":39379.558695714,"value":39379.558695714},{"color":"#37474F","id":"sink.CO2e","inflow":320983.779495714,"kind":"sink","label":"total CO2e","layer":3,"outflow":0.0,"value":320983.779495714}],"totals":{"CH4_enteric_kg":1500.0,"CH4_kg":10057.2936,"CH4_manure_kg":8557.2936,"CO2_kg":0.0,"CO2_lime_kg":0.0,"CO2_urea_kg":0.0,"CO2e_kg":320983.779495714,"CO2e_t":320.983779496,"N2O_direct_kg":0.0,"N2O_indirect_kg":53.19072,"N2O_kg":148.602108286,"N2O_soil_kg":95.411388286},"units":"kg CO2e","view":"holos_as_coded"},"source_correct":{"gwp":{"CH4":28.0,"CO2":1.0,"N2O":265.0},"links":[{"gas":"CH4","native_kg":1500.0,"source":"animal.market_swine","target":"process.enteric_ch4","units":"kg CO2e","value":42000.0},{"gas":"CH4","native_kg":8557.2936,"source":"animal.market_swine","system":"liquid_nocrust","target":"process.manure_ch4.liquid_nocrust","units":"kg CO2e","value":239604.2208},{"gas":"N2O","native_kg":53.19072,"source":"animal.market_swine","target":"process.manure_n2o_indirect","units":"kg CO2e","value":14095.5408},{"gas":"N2O","native_kg":95.411388286,"source":"animal.soil","target":"process.soil_n2o","units":"kg CO2e","value":25284.017895714},{"gas":"CH4","source":"gas.CH4","target":"sink.CO2e","units":"kg CO2e","value":281604.2208},{"gas":"N2O","source":"gas.N2O","target":"sink.CO2e","units":"kg CO2e","value":39379.558695714},{"gas":"CH4","source":"process.enteric_ch4","target":"gas.CH4","units":"kg CO2e","value":42000.0},{"gas":"CH4","source":"process.manure_ch4.liquid_nocrust","target":"gas.CH4","units":"kg CO2e","value":239604.2208},{"gas":"N2O","source":"process.manure_n2o_indirect","target":"gas.N2O","units":"kg CO2e","value":14095.5408},{"gas":"N2O","source":"process.soil_n2o","target":"gas.N2O","units":"kg CO2e","value":25284.017895714}],"nodes":[{"color":"#1565C0","id":"animal.market_swine","inflow":0.0,"kind":"animal","label":"market swine","layer":0,"outflow":295699.7616,"value":295699.7616},{"color":"#6D4C41","id":"animal.soil","inflow":0.0,"kind":"soil","label":"soil N inputs","layer":0,"outflow":25284.017895714,"value":25284.017895714},{"color":"#00838F","id":"process.enteric_ch4","inflow":42000.0,"kind":"process","label":"enteric CH4","layer":1,"outflow":42000.0,"value":42000.0},{"color":"#00838F","id":"process.manure_ch4.liquid_nocrust","inflow":239604.2208,"kind":"process","label":"manure CH4 (liquid, no crust)","layer":1,"outflow":239604.2208,"value":239604.2208},{"color":"#00838F","id":"process.manure_n2o_indirect","inflow":14095.5408,"kind":"process","label":"indirect N2O","layer":1,"outflow":14095.5408,"value":14095.5408},{"color":"#00838F","id":"process.soil_n2o","inflow":25284.017895714,"kind":"process","label":"soil N2O","layer":1,"outflow":25284.017895714,"value":25284.017895714},{"color":"#EF6C00","id":"gas.CH4","inflow":281604.2208,"kind":"gas","label":"CH4 (GWP 28)","layer":2,"outflow":281604.2208,"value":281604.2208},{"color":"#6A1B9A","id":"gas.N2O","inflow":39379.558695714,"kind":"gas","label":"N2O (GWP 265)","layer":2,"outflow":39379.558695714,"value":39379.558695714},{"color":"#37474F","id":"sink.CO2e","inflow":320983.779495714,"kind":"sink","label":"total CO2e","layer":3,"outflow":0.0,"value":320983.779495714}],"totals":{"CH4_enteric_kg":1500.0,"CH4_kg":10057.2936,"CH4_manure_kg":8557.2936,"CO2_kg":0.0,"CO2_lime_kg":0.0,"CO2_urea_kg":0.0,"CO2e_kg":320983.779495714,"CO2e_t":320.983779496,"N2O_direct_kg":0.0,"N2O_indirect_kg":53.19072,"N2O_kg":148.602108286,"N2O_soil_kg":95.411388286},"units":"kg CO2e","view":"source_correct"}};
+    document.getElementById("farm").textContent = FARM;
+    document.getElementById("ver").textContent = VERSION;
+    function draw(name) {
+      const view = VIEWS[name];
+      const nodes = view.nodes;
+      const index = Object.fromEntries(nodes.map((n, i) => [n.id, i]));
+      const trace = {
+        type: "sankey",
+        arrangement: "snap",
+        node: {
+          pad: 16,
+          thickness: 16,
+          label: nodes.map(n => n.label + "\n" + n.value.toFixed(3) + " kg CO2e"),
+          color: nodes.map(n => n.color),
+        },
+        link: {
+          source: view.links.map(l => index[l.source]),
+          target: view.links.map(l => index[l.target]),
+          value: view.links.map(l => l.value),
+          color: view.links.map(l => "rgba(120,144,156,0.35)"),
+        },
+      };
+      Plotly.react("chart", [trace], {
+        title: FARM + " — " + name + " (" + view.units + ")",
+        font: { size: 12 },
+        margin: { l: 20, r: 20, t: 40, b: 20 },
+      }, {responsive: true, displaylogo: false});
+    }
+    const sel = document.getElementById("view");
+    sel.addEventListener("change", () => draw(sel.value));
+    draw("source_correct");
+  </script>
+</body>
+</html>

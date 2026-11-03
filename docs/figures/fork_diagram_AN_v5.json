@@ -1,0 +1,3319 @@
+{
+  "deltas": {
+    "HOLOS.CH4.cover_reduction": {
+      "co2e_pct_max": 0.0,
+      "co2e_pct_min": -17.248,
+      "n_obs": 53,
+      "observations": [
+        {
+          "delta_co2e_pct": -13.402,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -8.376,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -17.248,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -10.78,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -11.125,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        }
+      ],
+      "sources": [
+        "stylized",
+        "vt_de"
+      ]
+    },
+    "HOLOS.CH4.turkey_zero": {
+      "co2e_pct_max": 0.0,
+      "co2e_pct_min": -40.363,
+      "n_obs": 19,
+      "observations": [
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -40.363,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        }
+      ],
+      "sources": [
+        "stylized"
+      ]
+    },
+    "HOLOS.ENTERIC.calf_zero": {
+      "co2e_pct_max": 0.0,
+      "co2e_pct_min": -13.094,
+      "n_obs": 53,
+      "observations": [
+        {
+          "delta_co2e_pct": -11.888,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -11.888,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -11.888,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -13.094,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -0.881,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -0.881,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -0.881,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -1.032,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -1.032,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        }
+      ],
+      "sources": [
+        "stylized",
+        "vt_de"
+      ]
+    },
+    "HOLOS.GE.digestibility": {
+      "co2e_pct_max": 5.429,
+      "co2e_pct_min": -7.199,
+      "n_obs": 53,
+      "observations": [
+        {
+          "delta_co2e_pct": -7.199,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -7.199,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -7.199,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -5.299,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -2.273,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -2.273,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -2.273,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 5.429,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 5.429,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        }
+      ],
+      "sources": [
+        "stylized",
+        "vt_de"
+      ]
+    },
+    "HOLOS.N2O.ef1": {
+      "co2e_pct_max": 0.0,
+      "co2e_pct_min": 0.0,
+      "n_obs": 19,
+      "observations": [
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        }
+      ],
+      "sources": [
+        "stylized"
+      ]
+    },
+    "HOLOS.NEX.calf_nrate": {
+      "co2e_pct_max": 4.482,
+      "co2e_pct_min": 0.0,
+      "n_obs": 53,
+      "observations": [
+        {
+          "delta_co2e_pct": 0.671,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.671,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.671,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 4.482,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.034,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.034,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.034,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.056,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.056,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        }
+      ],
+      "sources": [
+        "stylized",
+        "vt_de"
+      ]
+    },
+    "HOLOS.VS.calf_coeff": {
+      "co2e_pct_max": 3.778,
+      "co2e_pct_min": 0.0,
+      "n_obs": 53,
+      "observations": [
+        {
+          "delta_co2e_pct": 3.778,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 3.778,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 3.778,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.231,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.422,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.422,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.422,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 1.525,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 1.525,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        }
+      ],
+      "sources": [
+        "stylized",
+        "vt_de"
+      ]
+    },
+    "HOLOS.VS.digestibility": {
+      "co2e_pct_max": 6.418,
+      "co2e_pct_min": -4.169,
+      "n_obs": 53,
+      "observations": [
+        {
+          "delta_co2e_pct": -4.169,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -4.169,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -4.169,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -0.255,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -1.828,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -1.828,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": -1.828,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 6.418,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 6.418,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        }
+      ],
+      "sources": [
+        "stylized",
+        "vt_de"
+      ]
+    },
+    "HOLOS.VS.urinary_energy": {
+      "co2e_pct_max": 2.853,
+      "co2e_pct_min": 0.0,
+      "n_obs": 53,
+      "observations": [
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 2.853,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 2.853,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "epa_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "eq1024_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        }
+      ],
+      "sources": [
+        "stylized",
+        "vt_de"
+      ]
+    },
+    "HOLOS.YM.dairy": {
+      "co2e_pct_max": 10.655,
+      "co2e_pct_min": 0.0,
+      "n_obs": 53,
+      "observations": [
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_crust",
+          "place": "beef_cowcalf_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_covered_solid",
+          "place": "beef_cowcalf_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "liquid_uncovered",
+          "place": "beef_cowcalf_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "cattle_pasture",
+          "place": "beef_pasture_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "breeding_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "broiler_litter_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "",
+          "place": "crop_urea_lime",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 8.568,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_forage_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 8.568,
+          "pathway": "liquid_covered_solid",
+          "place": "dairy_forage_covered_solid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 8.568,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_forage_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 10.655,
+          "pathway": "liquid_covered_crust",
+          "place": "dairy_high_grain_covered_crust",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 10.655,
+          "pathway": "liquid_uncovered",
+          "place": "dairy_high_grain_uncovered",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_pit",
+          "place": "farrow_to_finish",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_without_litter",
+          "place": "layer_highrise",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "layer_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_field",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "swine_liquid_uncovered",
+          "place": "market_swine_liquid",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 0.0,
+          "pathway": "poultry_with_litter",
+          "place": "turkey_litter",
+          "source": "stylized"
+        },
+        {
+          "delta_co2e_pct": 7.287,
+          "pathway": "epa_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 7.28,
+          "pathway": "eq1024_vs",
+          "place": "ADDISON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.058,
+          "pathway": "epa_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.053,
+          "pathway": "eq1024_vs",
+          "place": "BENNINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.721,
+          "pathway": "epa_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.715,
+          "pathway": "eq1024_vs",
+          "place": "CALEDONIA",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.191,
+          "pathway": "epa_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.186,
+          "pathway": "eq1024_vs",
+          "place": "CHITTENDEN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.423,
+          "pathway": "epa_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.418,
+          "pathway": "eq1024_vs",
+          "place": "ESSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 7.11,
+          "pathway": "epa_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 7.104,
+          "pathway": "eq1024_vs",
+          "place": "FRANKLIN",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.775,
+          "pathway": "epa_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.77,
+          "pathway": "eq1024_vs",
+          "place": "GRAND ISLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.5,
+          "pathway": "epa_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.5,
+          "pathway": "eq1024_vs",
+          "place": "KENT",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.181,
+          "pathway": "epa_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.176,
+          "pathway": "eq1024_vs",
+          "place": "LAMOILLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 1.159,
+          "pathway": "epa_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 1.159,
+          "pathway": "eq1024_vs",
+          "place": "NEW CASTLE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 7.038,
+          "pathway": "epa_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 7.031,
+          "pathway": "eq1024_vs",
+          "place": "ORANGE",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 7.01,
+          "pathway": "epa_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 7.004,
+          "pathway": "eq1024_vs",
+          "place": "ORLEANS",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 5.93,
+          "pathway": "epa_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 5.926,
+          "pathway": "eq1024_vs",
+          "place": "RUTLAND",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.31,
+          "pathway": "epa_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 0.31,
+          "pathway": "eq1024_vs",
+          "place": "SUSSEX",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.915,
+          "pathway": "epa_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.909,
+          "pathway": "eq1024_vs",
+          "place": "WASHINGTON",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.608,
+          "pathway": "epa_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 6.602,
+          "pathway": "eq1024_vs",
+          "place": "WINDHAM",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 5.174,
+          "pathway": "epa_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        },
+        {
+          "delta_co2e_pct": 5.171,
+          "pathway": "eq1024_vs",
+          "place": "WINDSOR",
+          "source": "vt_de"
+        }
+      ],
+      "sources": [
+        "stylized",
+        "vt_de"
+      ]
+    }
+  },
+  "edges": [
+    {
+      "from": "start",
+      "kind": "flow",
+      "option": null,
+      "to": "HOLOS.GE.digestibility"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.GE.digestibility",
+      "kind": "default",
+      "option": "source_correct",
+      "status": "HOLOS-ONLY",
+      "to": "HOLOS.ENTERIC.calf_zero"
+    },
+    {
+      "delta_co2e_pct_max": 5.429,
+      "delta_co2e_pct_min": -7.199,
+      "from": "HOLOS.GE.digestibility",
+      "kind": "alternate",
+      "n_obs": 53,
+      "option": "holos_as_coded",
+      "status": "HOLOS-ONLY",
+      "to": "HOLOS.ENTERIC.calf_zero"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.ENTERIC.calf_zero",
+      "kind": "default",
+      "option": "source_correct",
+      "status": "VERIFIED",
+      "to": "HOLOS.YM.dairy"
+    },
+    {
+      "delta_co2e_pct_max": 0.0,
+      "delta_co2e_pct_min": -13.094,
+      "from": "HOLOS.ENTERIC.calf_zero",
+      "kind": "alternate",
+      "n_obs": 53,
+      "option": "holos_as_coded",
+      "status": "VERIFIED",
+      "to": "HOLOS.YM.dairy"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.YM.dairy",
+      "kind": "default",
+      "option": "eccc_2022_canada",
+      "status": "HOLOS-ONLY",
+      "to": "HOLOS.VS.digestibility"
+    },
+    {
+      "delta_co2e_pct_max": 10.655,
+      "delta_co2e_pct_min": 0.0,
+      "from": "HOLOS.YM.dairy",
+      "kind": "alternate",
+      "n_obs": 53,
+      "option": "ipcc2006_table_10_12",
+      "status": "HOLOS-ONLY",
+      "to": "HOLOS.VS.digestibility"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.VS.digestibility",
+      "kind": "default",
+      "option": "source_correct",
+      "status": "HOLOS-ONLY",
+      "to": "HOLOS.VS.urinary_energy"
+    },
+    {
+      "delta_co2e_pct_max": 6.418,
+      "delta_co2e_pct_min": -4.169,
+      "from": "HOLOS.VS.digestibility",
+      "kind": "alternate",
+      "n_obs": 53,
+      "option": "holos_as_coded",
+      "status": "HOLOS-ONLY",
+      "to": "HOLOS.VS.urinary_energy"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.VS.urinary_energy",
+      "kind": "default",
+      "option": "source_correct",
+      "status": "VERIFIED",
+      "to": "HOLOS.VS.calf_coeff"
+    },
+    {
+      "delta_co2e_pct_max": 2.853,
+      "delta_co2e_pct_min": 0.0,
+      "from": "HOLOS.VS.urinary_energy",
+      "kind": "alternate",
+      "n_obs": 53,
+      "option": "holos_as_coded",
+      "status": "VERIFIED",
+      "to": "HOLOS.VS.calf_coeff"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.VS.calf_coeff",
+      "kind": "default",
+      "option": "source_correct",
+      "status": "HOLOS-ONLY",
+      "to": "HOLOS.CH4.cover_reduction"
+    },
+    {
+      "delta_co2e_pct_max": 3.778,
+      "delta_co2e_pct_min": 0.0,
+      "from": "HOLOS.VS.calf_coeff",
+      "kind": "alternate",
+      "n_obs": 53,
+      "option": "holos_as_coded",
+      "status": "HOLOS-ONLY",
+      "to": "HOLOS.CH4.cover_reduction"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.CH4.cover_reduction",
+      "kind": "default",
+      "option": "source_correct",
+      "status": "SOURCE-TRACED",
+      "to": "HOLOS.CH4.turkey_zero"
+    },
+    {
+      "delta_co2e_pct_max": 0.0,
+      "delta_co2e_pct_min": -17.248,
+      "from": "HOLOS.CH4.cover_reduction",
+      "kind": "alternate",
+      "n_obs": 53,
+      "option": "holos_as_coded",
+      "status": "SOURCE-TRACED",
+      "to": "HOLOS.CH4.turkey_zero"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.CH4.turkey_zero",
+      "kind": "default",
+      "option": "source_correct",
+      "status": "SOURCE-TRACED",
+      "to": "HOLOS.NEX.calf_nrate"
+    },
+    {
+      "delta_co2e_pct_max": 0.0,
+      "delta_co2e_pct_min": -40.363,
+      "from": "HOLOS.CH4.turkey_zero",
+      "kind": "alternate",
+      "n_obs": 19,
+      "option": "holos_as_coded",
+      "status": "SOURCE-TRACED",
+      "to": "HOLOS.NEX.calf_nrate"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.NEX.calf_nrate",
+      "kind": "default",
+      "option": "source_correct",
+      "status": "SOURCE-TRACED",
+      "to": "HOLOS.N2O.ef1"
+    },
+    {
+      "delta_co2e_pct_max": 4.482,
+      "delta_co2e_pct_min": 0.0,
+      "from": "HOLOS.NEX.calf_nrate",
+      "kind": "alternate",
+      "n_obs": 53,
+      "option": "holos_as_coded",
+      "status": "SOURCE-TRACED",
+      "to": "HOLOS.N2O.ef1"
+    },
+    {
+      "delta_co2e_pct_max": null,
+      "delta_co2e_pct_min": null,
+      "from": "HOLOS.N2O.ef1",
+      "kind": "default",
+      "option": "ipcc2006_ef1",
+      "status": "VERIFIED",
+      "to": "N2O"
+    },
+    {
+      "delta_co2e_pct_max": 0.0,
+      "delta_co2e_pct_min": 0.0,
+      "from": "HOLOS.N2O.ef1",
+      "kind": "alternate",
+      "n_obs": 19,
+      "option": "holos_liang2020",
+      "status": "VERIFIED",
+      "to": "N2O"
+    },
+    {
+      "from": "N2O",
+      "kind": "flow",
+      "option": null,
+      "to": "CO2e"
+    }
+  ],
+  "flow": [
+    "GE",
+    "enteric_Ym",
+    "VS",
+    "manure_CH4",
+    "N_excretion",
+    "other",
+    "N2O",
+    "CO2e"
+  ],
+  "generated_from": {
+    "coefficient_trace": "data/coefficient_trace_AN_v8.csv",
+    "forks": "data/holos_forks_AN_v6.json",
+    "stylized": "data/holos_fork_deltas_stylized_AN_v5.csv",
+    "vt_de": "data/holos_fork_deltas_vt_de_AN_v2.csv"
+  },
+  "nodes": [
+    {
+      "id": "start",
+      "label": "Inputs",
+      "mermaid_id": "start",
+      "stage": "GE",
+      "type": "start"
+    },
+    {
+      "alt": "holos_as_coded",
+      "default": "source_correct",
+      "description": "Gross energy intake denominator: IPCC DE% versus Holos TDN%. Default is IPCC 2006 Eq 10.3 (DE%). holos_as_coded uses TDN% in the same algebraic position.",
+      "id": "HOLOS.GE.digestibility",
+      "issue_ref": "AUDIT-GE-TDN",
+      "label": "HOLOS.GE.digestibility",
+      "label_kind": "holos_as_coded",
+      "mermaid_id": "F_HOLOS_GE_digestibility",
+      "options": {
+        "holos_as_coded": "Holos uses percent TDN of feed as the Eq 10.3 denominator",
+        "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.3 p. 10.16: GE denominator is DE%/100"
+      },
+      "stage": "GE",
+      "status": "HOLOS-ONLY",
+      "type": "fork"
+    },
+    {
+      "alt": "holos_as_coded",
+      "default": "source_correct",
+      "description": "Dairy calf enteric CH4. Default applies IPCC 2006 Eq 10.21. holos_as_coded returns zero for calves (CE-06).",
+      "id": "HOLOS.ENTERIC.calf_zero",
+      "issue_ref": "CE-06",
+      "label": "HOLOS.ENTERIC.calf_zero",
+      "label_kind": "holos_as_coded",
+      "mermaid_id": "F_HOLOS_ENTERIC_calf_zero",
+      "options": {
+        "holos_as_coded": "Holos hard-codes dairy calf enteric CH4 to 0 (CE-06)",
+        "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.21 p. 10.30 applies to ruminants with GE and Ym"
+      },
+      "stage": "enteric_Ym",
+      "status": "VERIFIED",
+      "type": "fork"
+    },
+    {
+      "alt": "ipcc2006_table_10_12",
+      "default": "eccc_2022_canada",
+      "description": "Lactating dairy Ym. Holos Canada default is 5.6% GE (UNVERIFIED as a table value; Holos midpoint of ECCC 5.5-5.7% range independently read in ECCC 2024 NIR Part 2 Annex 3.4 section A3.4.2.1). IPCC 2006 Table 10.12 dairy Ym is 6.5% (VERIFIED).",
+      "id": "HOLOS.YM.dairy",
+      "issue_ref": "AUDIT-YM-DAIRY",
+      "label": "HOLOS.YM.dairy",
+      "label_kind": "parameter_refinement",
+      "mermaid_id": "F_HOLOS_YM_dairy",
+      "options": {
+        "eccc_2022_canada": "Holos Canada lactating dairy Ym = 5.6% GE (UNVERIFIED point value; ECCC 2024 NIR Part 2 Annex 3.4 A3.4.2.1 text: provincial dairy-cow Ym 5.5-5.7%; no table cell lists 5.6%)",
+        "ipcc2006_table_10_12": "IPCC 2006 Vol 4 Ch 10 Table 10.12 p. 10.30 dairy Ym = 6.5% GE (VERIFIED)"
+      },
+      "stage": "enteric_Ym",
+      "status": "HOLOS-ONLY",
+      "type": "fork"
+    },
+    {
+      "alt": "holos_as_coded",
+      "default": "source_correct",
+      "description": "Volatile solids indigestible-energy term: IPCC DE% versus Holos TDN%. Default is IPCC 2006 Eq 10.24 (DE%). holos_as_coded substitutes TDN%.",
+      "id": "HOLOS.VS.digestibility",
+      "issue_ref": "AUDIT-VS-TDN",
+      "label": "HOLOS.VS.digestibility",
+      "label_kind": "holos_as_coded",
+      "mermaid_id": "F_HOLOS_VS_digestibility",
+      "options": {
+        "holos_as_coded": "Holos uses (1 - TDN%/100) in the Eq 10.24 indigestible-energy term",
+        "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.24 p. 10.54: (1 - DE%/100)"
+      },
+      "stage": "VS",
+      "status": "HOLOS-ONLY",
+      "type": "fork"
+    },
+    {
+      "alt": "holos_as_coded",
+      "default": "source_correct",
+      "description": "Urinary energy (UE) as a fraction of GE. Default follows IPCC 2006 p. 10.54: UE=0.04 typical; UE=0.02 when DE% is greater than approximately 80%. holos_as_coded switches on grain fraction (>=85% grain -> 0.02, else 0.04). The 0.02/0.04 pairing is the same direction as IPCC; the discrepancy is the switch criterion (grain% vs DE%), not a reversal of the two values.",
+      "id": "HOLOS.VS.urinary_energy",
+      "issue_ref": "AUDIT-VS-UE",
+      "label": "HOLOS.VS.urinary_energy",
+      "label_kind": "holos_as_coded",
+      "mermaid_id": "F_HOLOS_VS_urinary_energy",
+      "options": {
+        "holos_as_coded": "Holos: UE=0.02 when grain% >= 85, else UE=0.04",
+        "source_correct": "IPCC 2006 Vol 4 Ch 10 p. 10.54: UE=0.04 GE typical; UE=0.02 when DE% > ~80%"
+      },
+      "stage": "VS",
+      "status": "VERIFIED",
+      "type": "fork"
+    },
+    {
+      "alt": "holos_as_coded",
+      "default": "source_correct",
+      "description": "Dairy calf volatile solids. Default uses IPCC 2006 Eq 10.24. holos_as_coded uses VS = 0.0093 * live weight (CE-07; coefficient UNVERIFIED).",
+      "id": "HOLOS.VS.calf_coeff",
+      "issue_ref": "CE-07",
+      "label": "HOLOS.VS.calf_coeff",
+      "label_kind": "holos_as_coded",
+      "mermaid_id": "F_HOLOS_VS_calf_coeff",
+      "options": {
+        "holos_as_coded": "Holos dairy calves: VS = 0.0093 * animal weight (CE-07; UNVERIFIED coefficient)",
+        "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.24 p. 10.54 from GE, DE%, UE, ASH"
+      },
+      "stage": "VS",
+      "status": "HOLOS-ONLY",
+      "type": "fork"
+    },
+    {
+      "alt": "holos_as_coded",
+      "default": "source_correct",
+      "description": "Covered/crusted liquid manure CH4. Holos code is consistent with its manual and with IPCC 2006/2019 Table 10.17: cover factors are REDUCTION fractions (crust 0.40, solid cover 0.25 only), applied as remaining = 1 - reduction. The fork difference versus source_correct is only that Holos's covered path is an MCF-free daily VS-consumed tank model (approximated here as uncovered IPCC MCF times remaining). It is not a reduction/retention mix-up. source_correct uses Table 10.17 MCF including liquid-with-crust (the ~40% crust reduction is already in that MCF). holos_as_coded never stacks the IPCC with-crust MCF on the Holos remaining factor.",
+      "id": "HOLOS.CH4.cover_reduction",
+      "issue_ref": "CE-14",
+      "label": "HOLOS.CH4.cover_reduction",
+      "label_kind": "holos_as_coded",
+      "mermaid_id": "F_HOLOS_CH4_cover_reduction",
+      "options": {
+        "holos_as_coded": "Holos AnimalResultsServiceBase.cs:967-972 reductionFactor=0.4 (LiquidWithNaturalCrust) else 0.25 (LiquidWithSolidCover only; ManureStateTypeExtensions.cs:53-56). Lines 1279-1283 return manureMethane * (1 - emissionReductionFactor). Remaining 0.60 crust / 0.75 solid cover. Covered path is MCF-free; this fork uses uncovered MCF * remaining and does not apply 0.25 to non-solid covers.",
+        "source_correct": "IPCC 2006 Vol 4 Ch 10 Table 10.17 p. 10.44/10.52 and IPCC 2019 Table 10.17 (Updated): distinct MCF by system; with-crust MCF already embeds ~40% CH4 reduction vs uncovered"
+      },
+      "stage": "manure_CH4",
+      "status": "SOURCE-TRACED",
+      "type": "fork"
+    },
+    {
+      "alt": "holos_as_coded",
+      "default": "source_correct",
+      "description": "Turkey manure CH4. Default is IPCC 2006 Eq 10.23 (VS * 365 * B0 * 0.67 * MCF). holos_as_coded returns 0: Holos CLI CE-10 exposes only YearlyManureMethaneRate for turkeys while the engine reads DailyManureMethaneEmissionRate, which is never populated. Holos file:line citations are traceability only.",
+      "id": "HOLOS.CH4.turkey_zero",
+      "issue_ref": "CE-10",
+      "label": "HOLOS.CH4.turkey_zero",
+      "label_kind": "holos_as_coded",
+      "mermaid_id": "F_HOLOS_CH4_turkey_zero",
+      "options": {
+        "holos_as_coded": "Holos CLI CE-10: turkey manure CH4 = 0 because the daily rate is never populated (PoultryResultsService / PoultryKeys / AnimalConverterBase). No GPL code copied.",
+        "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.23 p. 10.53 applied to turkeys (Table 10A-9 VS/B0, Table 10.17 poultry-litter MCF)"
+      },
+      "stage": "manure_CH4",
+      "status": "SOURCE-TRACED",
+      "type": "fork"
+    },
+    {
+      "alt": "holos_as_coded",
+      "default": "source_correct",
+      "description": "Dairy calf nitrogen excretion. Default is IPCC 2006 Eq 10.30 (Nrate * TAM / 1000 * 365). holos_as_coded uses 0.078 kg N/head/day (audit unit clarification; value UNVERIFIED).",
+      "id": "HOLOS.NEX.calf_nrate",
+      "issue_ref": "AUDIT-CALF-NRATE",
+      "label": "HOLOS.NEX.calf_nrate",
+      "label_kind": "holos_as_coded",
+      "mermaid_id": "F_HOLOS_NEX_calf_nrate",
+      "options": {
+        "holos_as_coded": "Holos dairy calves: 0.078 kg N/head/day (UNVERIFIED value; units per audit)",
+        "source_correct": "IPCC 2006 Vol 4 Ch 10 Eq 10.30: Nex = Nrate * TAM / 1000 * 365, with Table 10.19 Nrate"
+      },
+      "stage": "N_excretion",
+      "status": "SOURCE-TRACED",
+      "type": "fork"
+    },
+    {
+      "alt": "holos_liang2020",
+      "default": "ipcc2006_ef1",
+      "description": "Direct soil N2O EF1 is a model-version option, not a bug fork. ipcc2006_ef1 is IPCC 2006 Table 11.1 EF1=0.01. holos_liang2020 is Holos V4 Sec 2.5 / Liang et al. 2020 Nutr. Cycl. Agroecosyst. 117:145-167 DOI 10.1007/s10705-020-10058-w: EF_CT=exp(0.00558*P_or_PE_mm-7.7), times topography (Eq 2.5.2), RF_TX (Table 13; default 1 if unspecified), and winter 1/0.645 (Pelster 2023). Growing-season P and PE (May-October, CanSIS 1980-2010) are required; a P/PE ratio or P/PE=1 clamp is not Holos climate. Rochette 2008 supplies FR_Topo only. Holos C# N2OEmissionFactorCalculator.cs:478-656,777-788 matches the opened Pogue et al. 2025 Sec 2.5 (no holos_as_coded EF1 bug). Missing climate is UNVERIFIED-input; do not report county deltas from an assumed P/PE.",
+      "id": "HOLOS.N2O.ef1",
+      "issue_ref": "HOLOS-EF1-MODEL",
+      "label": "HOLOS.N2O.ef1",
+      "label_kind": "model_version",
+      "mermaid_id": "F_HOLOS_N2O_ef1",
+      "options": {
+        "holos_liang2020": "Holos V4 Algorithm Document Sec 2.5 (opened Pogue et al. 2025 docx @036f862) and N2OEmissionFactorCalculator.cs:478-656,777-788: Liang 2020 EF_CT=exp(0.00558*moisture_mm-7.7). Humid P/PE>1 uses P; dry uses PE*FR_Topo+P*(1-FR_Topo); irrigated uses PE. Rochette 2008 is FR_Topo only, not Eq 3 EFeco. Requires growing-season P and PE in mm. UNVERIFIED-input without those values.",
+        "ipcc2006_ef1": "IPCC 2006 Vol 4 Ch 11 Table 11.1 EF1=0.01 (VERIFIED). Usable without growing-season P/PE."
+      },
+      "stage": "N2O",
+      "status": "VERIFIED",
+      "type": "fork"
+    },
+    {
+      "id": "N2O",
+      "label": "N2O",
+      "mermaid_id": "N2O",
+      "stage": "N2O",
+      "type": "stage"
+    },
+    {
+      "id": "CO2e",
+      "label": "CO2e",
+      "mermaid_id": "CO2e",
+      "stage": "CO2e",
+      "type": "sink"
+    }
+  ],
+  "run_identity": {
+    "apsim_requirement": "Holzworth, D. P., Huth, N. I., Fainges, J., Brown, H., Zurcher, E., Cichota, R., Verrall, S., Herrmann, N. I., Zheng, B., & Snow, V. O. (2018). APSIM Next Generation: Overcoming challenges in modernising a farming systems model. Environmental Modelling & Software, 103, 43\u201351. https://doi.org/10.1016/j.envsoft.2018.02.002",
+    "commit_hash": "570c7003b6ec26411266f8f44e754a342082c48c",
+    "git_branch": "cursor/goal4-phase-b-crops-soils-e537",
+    "git_dirty": true,
+    "release_number": "0.4.0",
+    "remote_url": "https://github.com/gudaleon/ghgsim"
+  },
+  "schema": "ghgsim.fork_diagram.v1",
+  "status": {
+    "HOLOS.CH4.cover_reduction": "SOURCE-TRACED",
+    "HOLOS.CH4.turkey_zero": "SOURCE-TRACED",
+    "HOLOS.ENTERIC.calf_zero": "VERIFIED",
+    "HOLOS.GE.digestibility": "HOLOS-ONLY",
+    "HOLOS.N2O.ef1": "VERIFIED",
+    "HOLOS.NEX.calf_nrate": "SOURCE-TRACED",
+    "HOLOS.VS.calf_coeff": "HOLOS-ONLY",
+    "HOLOS.VS.digestibility": "HOLOS-ONLY",
+    "HOLOS.VS.urinary_energy": "VERIFIED",
+    "HOLOS.YM.dairy": "HOLOS-ONLY"
+  },
+  "version": "AN_v5"
+}

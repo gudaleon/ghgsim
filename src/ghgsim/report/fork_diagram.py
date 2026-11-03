@@ -49,6 +49,7 @@ STAGE_PREFERRED_IDS: dict[str, tuple[str, ...]] = {
     "VS": ("HOLOS.VS.digestibility", "HOLOS.VS.urinary_energy", "HOLOS.VS.calf_coeff"),
     "manure_CH4": ("HOLOS.CH4.cover_reduction", "HOLOS.CH4.turkey_zero"),
     "N_excretion": ("HOLOS.NEX.calf_nrate",),
+    "N2O": ("HOLOS.N2O.ef1",),
 }
 
 STATUS_CLASS = {
@@ -616,13 +617,17 @@ def build_from_data_dir(data_dir: Path, *, output_version: str) -> dict[str, Any
 
     rows = load_trace_table(paths["coefficient_trace"])
     trace_status = map_fork_statuses([str(fork["id"]) for fork in forks], rows)
-    return build_fork_diagram(
+    payload = build_fork_diagram(
         forks,
         observations=observations,
         trace_status=trace_status,
         sources={key: _rel(path) for key, path in paths.items()},
         output_version=output_version,
     )
+    from ghgsim.core.provenance import run_identity
+
+    payload["run_identity"] = run_identity(root)
+    return payload
 
 
 def write_fork_diagram(
