@@ -1,0 +1,123 @@
+{
+  "manifest": "county_p_pe_manifest_AN_v1",
+  "created": "2026-11-03T17:57:46-05:00",
+  "script": "scripts/build_county_p_pe_AN_v1.py",
+  "output": {
+    "path": "data/county_p_pe_may_oct_AN_v1.csv",
+    "rows": 3141,
+    "sha256": "50123f923b30ef4fc214472cbb051cdce275176b4851e1bb005814c41a90ad67"
+  },
+  "period": [
+    1980,
+    2010
+  ],
+  "months": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "sources": {
+    "nclimdiv": {
+      "name": "NOAA Monthly U.S. Climate Divisional Database (NClimDiv), county files",
+      "citation": "Vose, R.S., Applequist, S., Squires, M., Durre, I., Menne, M.J., Williams, C.N. Jr., Fenimore, C., Gleason, K., Arndt, D. (2014). NOAA Monthly U.S. Climate Divisional Database (NClimDiv). NOAA National Climatic Data Center.",
+      "doi": "10.7289/V5M32STR",
+      "base_url": "https://www.ncei.noaa.gov/monitoring-content/data/us/climdiv/monthly/current/",
+      "files": {
+        "climdiv-pcpncy": {
+          "name": "climdiv-pcpncy-v1.0.0-20261006",
+          "sha256": "739fc3e9b529e04d406e914be1add2736ca3129c1103246ccebc2e5c76fd9d3a",
+          "size_bytes": 40923036
+        },
+        "climdiv-tmaxcy": {
+          "name": "climdiv-tmaxcy-v1.0.0-20261006",
+          "sha256": "a226e4ca307a39762401993fa3cb84e68425fe39afa89cab8639d17346750260",
+          "size_bytes": 40923036
+        },
+        "climdiv-tmincy": {
+          "name": "climdiv-tmincy-v1.0.0-20261006",
+          "sha256": "6251c07aedaffda0ba70d9456462beba0cc7701ab08a4246413986b106f4dec4",
+          "size_bytes": 40923036
+        }
+      }
+    },
+    "gazetteer": {
+      "name": "US Census Bureau 2020 Gazetteer Files, counties",
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_counties_national.zip",
+      "sha256": "02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef",
+      "field": "INTPTLAT"
+    }
+  },
+  "methods": {
+    "pe_hargreaves_mm": "Hargreaves & Samani (1985), FAO-56 Eq 52; Ra FAO-56 Eqs 21-25 at mid-month DOY; uncalibrated",
+    "pe_thornthwaite_mm": "Thornthwaite (1948); heat index from same-year 12 monthly means; no T>26.5C correction"
+  },
+  "issues": {
+    "no_gazetteer_latitude": [
+      "24511"
+    ],
+    "incomplete_years": [
+      "15001:1980",
+      "15001:1981",
+      "15001:1982",
+      "15001:1983",
+      "15001:1984",
+      "15001:1985",
+      "15001:1986",
+      "15001:1987",
+      "15001:1988",
+      "15001:1989",
+      "15001:1990",
+      "15003:1980",
+      "15003:1981",
+      "15003:1982",
+      "15003:1983",
+      "15003:1984",
+      "15003:1985",
+      "15003:1986",
+      "15003:1987",
+      "15003:1988",
+      "15003:1989",
+      "15003:1990",
+      "15005:1980",
+      "15005:1981",
+      "15005:1982",
+      "15005:1983",
+      "15005:1984",
+      "15005:1985",
+      "15005:1986",
+      "15005:1987",
+      "15005:1988",
+      "15005:1989",
+      "15005:1990",
+      "15007:1980",
+      "15007:1981",
+      "15007:1982",
+      "15007:1983",
+      "15007:1984",
+      "15007:1985",
+      "15007:1986",
+      "15007:1987",
+      "15007:1988",
+      "15007:1989",
+      "15007:1990",
+      "15009:1980",
+      "15009:1981",
+      "15009:1982",
+      "15009:1983",
+      "15009:1984",
+      "15009:1985",
+      "15009:1986",
+      "15009:1987",
+      "15009:1988",
+      "15009:1989",
+      "15009:1990"
+    ]
+  },
+  "issue_counts": {
+    "no_gazetteer_latitude": 1,
+    "incomplete_years": 55
+  }
+}
