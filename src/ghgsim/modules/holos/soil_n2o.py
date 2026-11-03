@@ -28,6 +28,7 @@ from typing import Any
 
 from ghgsim.core.module import Citation, ParamRef, VarSpec, validate_module
 from ghgsim.modules.holos.common import forks_from_inputs
+from ghgsim.modules.holos.county_climate import county_p_pe
 from ghgsim.modules.holos.forks import resolve_option
 from ghgsim.modules.holos.process_defs import (
     holos_ecodistrict_ef_ct_process,
@@ -152,6 +153,14 @@ class HolosSoilN2O:
             "growing_season_pe_mm",
             "mm",
             "May-October potential evapotranspiration (Holos V4: CanSIS 1980-2010).",
+            "scalar",
+            False,
+        ),
+        "county_fips": VarSpec(
+            "county_fips",
+            "dimensionless",
+            "US county FIPS. For holos_liang2020, fills missing growing-season P/PE from "
+            "data/county_p_pe_may_oct_AN_v2.csv (nClimDiv 1991-2020, Hargreaves PE). Explicit P/PE win.",
             "scalar",
             False,
         ),
@@ -297,6 +306,14 @@ class HolosSoilN2O:
         pe = inputs.get("growing_season_pe_mm")
         fr_topo = inputs.get("FR_Topo")
         if ef1_option == "holos_liang2020":
+            fips = inputs.get("county_fips")
+            if fips not in (None, "") and (precip in (None, "") or pe in (None, "")):
+                looked = county_p_pe(fips)
+                if looked is not None:
+                    if precip in (None, ""):
+                        precip = looked["growing_season_precip_mm"]
+                    if pe in (None, ""):
+                        pe = looked["growing_season_pe_mm"]
             if precip not in (None, "") and pe not in (None, ""):
                 holos_ef, holos_status = holos_ecodistrict_ef1(
                     precip_mm=float(precip),
