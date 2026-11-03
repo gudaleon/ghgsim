@@ -1,0 +1,27 @@
+{
+  "version": "AN_v1",
+  "checked": "2026-11-03",
+  "gwp": "AR5 100-yr (CH4 28, N2O 265), both editions",
+  "files": [
+    {
+      "edition": "2024",
+      "report": "EPA 430-R-24-004",
+      "coverage": "1990-2022",
+      "url": "https://www.epa.gov/system/files/documents/2024-04/us-ghg-inventory-2024-main-text_04-18-2024.pdf",
+      "file": "ghgi_2024_main.pdf",
+      "bytes": 16723135,
+      "sha256": "f3a3309d3f9308f58d5f467bd82445dfa887ce0393b359c50da6c5fdb00872a3",
+      "pdf_pages": 919
+    },
+    {
+      "edition": "2025",
+      "report": "EPA 430-R-25-003",
+      "coverage": "1990-2023",
+      "url": "https://nepis.epa.gov/Exe/ZyPDF.cgi?Dockey=P101EZHC.PDF",
+      "file": "ghgi_2025_nepis.pdf",
+      "bytes": 17446332,
+      "sha256": "fe9739931419e35125576acecda847a07264cec77e2edbc68492b23e1682bbd0",
+      "pdf_pages": 1024
+    }
+  ]
+}
