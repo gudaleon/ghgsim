@@ -16,6 +16,7 @@ from typing import Any
 
 from ghgsim.core.module import Citation, ParamRef, VarSpec, validate_module
 from ghgsim.modules.holos.common import forks_from_inputs, option_is
+from ghgsim.modules.holos.liquid_tank import LIQUID_SYSTEMS, TANK_ANIMALS, run_liquid_tank
 from ghgsim.modules.holos.process_defs import manure_ch4_process, turkey_manure_ch4_holos_process
 
 _CH4 = manure_ch4_process()
@@ -115,7 +116,7 @@ class HolosManureCH4:
     """
 
     id = "holos.manure_ch4"
-    version = "1.0.0"
+    version = "1.1.0"
 
     inputs = {
         "head": VarSpec("head", "dimensionless", "Number of animals", "scalar", True),
@@ -137,6 +138,27 @@ class HolosManureCH4:
             False,
         ),
         "forks": VarSpec("forks", "dimensionless", "Dict of fork_id -> option", "scalar", False),
+        "temperatures_c": VarSpec(
+            "temperatures_c",
+            "degC",
+            "Daily mean outdoor temperature for the Holos liquid tank (Eq 4.1.3-1). Required only for holos_v4_liquid_tank.",
+            "scalar",
+            False,
+        ),
+        "dates": VarSpec(
+            "dates",
+            "dimensionless",
+            "ISO dates aligned with temperatures_c. Required for the 1 January VS reset fork.",
+            "scalar",
+            False,
+        ),
+        "removal_fractions": VarSpec(
+            "removal_fractions",
+            "fraction",
+            "Fraction of stored manure removed on each day (Eq 4.1.3-6). Applied to the next day's carryover, capped at 0.95.",
+            "scalar",
+            False,
+        ),
     }
 
     parameters = {
@@ -185,6 +207,15 @@ class HolosManureCH4:
             "HOLOS.COVER.solid_cover_reduction",
             "Holos solid-cover CH4 reduction fraction 0.25 (CE-14); remaining = 0.75",
         ),
+        "TANK_T1_K": ParamRef("HOLOS.TANK.T1_K", "Eq 4.1.3-2 reference temperature 308.16 K"),
+        "TANK_E_CAL": ParamRef("HOLOS.TANK.activation_energy_cal_mol", "Eq 4.1.3-2 activation energy 19347 cal/mol"),
+        "TANK_R_CAL": ParamRef("HOLOS.TANK.ideal_gas_constant_cal", "Eq 4.1.3-2 gas constant 1.987 cal/K/mol"),
+        "TANK_TEMP_FLOOR_C": ParamRef("HOLOS.TANK.temp_floor_C", "Eq 4.1.3-1 floor: Temp <= 1 C uses 1 C"),
+        "TANK_KELVIN": ParamRef("HOLOS.TANK.kelvin_offset", "Eq 4.1.3-1 Celsius to Kelvin offset 273.15"),
+        "TANK_WINDOW_MANUAL": ParamRef("HOLOS.TANK.window_days_manual", "Manual last-30-day temperature window"),
+        "TANK_WINDOW_CODED": ParamRef("HOLOS.TANK.window_days_coded", "Coded inclusive date-30 window (31 days)"),
+        "TANK_MDP": ParamRef("HOLOS.TANK.MDP", "Eq 4.1.3-4 management and design practice factor, default 1"),
+        "TANK_MAX_REMOVAL": ParamRef("HOLOS.TANK.max_removal_fraction", "Eq 4.1.3-6 emptying cap 0.95"),
     }
 
     outputs = {
@@ -204,6 +235,27 @@ class HolosManureCH4:
             "scalar",
             True,
         ),
+        "tank_applied": VarSpec(
+            "tank_applied",
+            "dimensionless",
+            "True when CH4 came from the Holos V4 liquid tank",
+            "scalar",
+            True,
+        ),
+        "tank_status": VarSpec(
+            "tank_status",
+            "dimensionless",
+            "not_selected, not_applicable, UNVERIFIED-input, or computed",
+            "scalar",
+            True,
+        ),
+        "CH4_ipcc_eq10_23": VarSpec(
+            "CH4_ipcc_eq10_23",
+            "kg CH4 / year",
+            "IPCC Eq 10.23 value for the same inputs, including when the tank is used",
+            "scalar",
+            True,
+        ),
     }
 
     sources = [
@@ -212,6 +264,12 @@ class HolosManureCH4:
             table="Table 10.17",
             equation="Equation 10.23",
             page="10.53",
+        ),
+        Citation(
+            source="Pogue et al. 2026, Holos Version 4.0 Algorithm Documentation (print PDF)",
+            table="",
+            equation="Equations 4.1.3-1 to 4.1.3-10",
+            page="161-162",
         ),
     ]
 
@@ -222,11 +280,14 @@ class HolosManureCH4:
         Default: IPCC 2006 Eq 10.23 with Table 10.17 MCF (crust is in MCF).
         Fork HOLOS.CH4.cover_reduction=holos_as_coded multiplies by
         (1 - reduction) and skips the IPCC with-crust MCF for that stream.
+
+        HOLOS.CH4.liquid_tank=holos_v4_liquid_tank uses Holos V4 Eq 4.1.3-1..10
+        for liquid dairy and swine when daily temperatures are supplied.
+        Missing temperatures stay on Eq 10.23 with tank_status UNVERIFIED-input.
         """
         fork_settings = forks_from_inputs(inputs)
         head = float(inputs["head"])
         animal = inputs["animal_type"]
-        climate = inputs["climate_zone"]
         systems = inputs["systems"]
         cover_type = str(inputs.get("cover_type", "none"))
 
@@ -235,39 +296,112 @@ class HolosManureCH4:
                 {"VS": 0.0, "B0": 0.0, "MCF": 0.0, "CH4_M3_TO_KG": 0.0},
                 fork="holos_as_coded",
             )
-            return {
-                "CH4": 0.0,
-                "MCF_weighted": 0.0,
-                "cover_reduction_fraction": 0.0,
-                "cover_remaining_used": 1.0,
-            }
-        vs = _vs_for(animal, inputs, params)
-        b0 = _b0_for(animal, params)
-        density = float(params["CH4_M3_TO_KG"])
-        reduction = _cover_reduction_fraction(cover_type, params, fork_settings)
-        remaining = 1.0 - reduction
-        mcf = _weighted_mcf(_systems_for_mcf(systems, reduction > 0.0), climate, params)
-        process_fork = (
-            "holos_as_coded"
-            if option_is("HOLOS.CH4.cover_reduction", "holos_as_coded", fork_settings)
-            else None
-        )
-        ch4_kg_day = _CH4.compute_rate(
-            {
-                "VS": vs,
-                "B0": b0,
-                "MCF": mcf,
-                "CH4_M3_TO_KG": density,
-                "cover_reduction": reduction,
-            },
-            fork=process_fork,
+            return _annotate_tank(
+                {
+                    "CH4": 0.0,
+                    "MCF_weighted": 0.0,
+                    "cover_reduction_fraction": 0.0,
+                    "cover_remaining_used": 1.0,
+                },
+                applied=False,
+                status="not_selected",
+            )
+        ipcc = _ipcc_manure_ch4(inputs, params, fork_settings)
+        if not option_is("HOLOS.CH4.liquid_tank", "holos_v4_liquid_tank", fork_settings):
+            return _annotate_tank(ipcc, applied=False, status="not_selected")
+        if not _tank_eligible(animal, systems):
+            return _annotate_tank(ipcc, applied=False, status="not_applicable")
+        temperatures = inputs.get("temperatures_c")
+        if not temperatures:
+            return _annotate_tank(ipcc, applied=False, status="UNVERIFIED-input")
+        reduction = _tank_cover_reduction(cover_type, params)
+        tank = run_liquid_tank(
+            head=head,
+            vs_kg_day=_vs_for(animal, inputs, params),
+            b0=_b0_for(animal, params),
+            ch4_density=float(params["CH4_M3_TO_KG"]),
+            cover_reduction=reduction,
+            temperatures_c=temperatures,
+            params=params,
+            dates=inputs.get("dates"),
+            removal_fractions=inputs.get("removal_fractions"),
+            year_reset=option_is("HOLOS.STORAGE.year_reset", "holos_as_coded", fork_settings),
+            coded_temp_window=option_is("HOLOS.STORAGE.temp_window", "holos_as_coded", fork_settings),
+            ignore_removals=option_is("HOLOS.STORAGE.cli_no_drain", "holos_as_coded", fork_settings),
         )
         return {
-            "CH4": head * ch4_kg_day * 365.0,
-            "MCF_weighted": mcf,
+            "CH4": tank["CH4"],
+            "MCF_weighted": tank["MCF_implied"],
             "cover_reduction_fraction": reduction,
-            "cover_remaining_used": remaining,
+            "cover_remaining_used": 1.0 - reduction,
+            "tank_applied": True,
+            "tank_status": "computed",
+            "CH4_ipcc_eq10_23": ipcc["CH4"],
         }
+
+
+def _ipcc_manure_ch4(
+    inputs: Mapping[str, Any], params: Mapping[str, Any], fork_settings: dict[str, str]
+) -> dict[str, Any]:
+    """IPCC 2006 Eq 10.23, including the CE-14 cover fork."""
+    animal = inputs["animal_type"]
+    climate = inputs["climate_zone"]
+    systems = inputs["systems"]
+    cover_type = str(inputs.get("cover_type", "none"))
+    head = float(inputs["head"])
+    vs = _vs_for(animal, inputs, params)
+    b0 = _b0_for(animal, params)
+    density = float(params["CH4_M3_TO_KG"])
+    reduction = _cover_reduction_fraction(cover_type, params, fork_settings)
+    remaining = 1.0 - reduction
+    mcf = _weighted_mcf(_systems_for_mcf(systems, reduction > 0.0), climate, params)
+    process_fork = (
+        "holos_as_coded"
+        if option_is("HOLOS.CH4.cover_reduction", "holos_as_coded", fork_settings)
+        else None
+    )
+    ch4_kg_day = _CH4.compute_rate(
+        {
+            "VS": vs,
+            "B0": b0,
+            "MCF": mcf,
+            "CH4_M3_TO_KG": density,
+            "cover_reduction": reduction,
+        },
+        fork=process_fork,
+    )
+    return {
+        "CH4": head * ch4_kg_day * 365.0,
+        "MCF_weighted": mcf,
+        "cover_reduction_fraction": reduction,
+        "cover_remaining_used": remaining,
+    }
+
+
+def _annotate_tank(result: dict[str, Any], *, applied: bool, status: str) -> dict[str, Any]:
+    return {
+        **result,
+        "tank_applied": applied,
+        "tank_status": status,
+        "CH4_ipcc_eq10_23": result["CH4"],
+    }
+
+
+def _tank_eligible(animal: str, systems: Mapping[str, float]) -> bool:
+    """Manual Sec 4.1.3 limits the tank to liquid dairy and swine."""
+    if animal not in TANK_ANIMALS:
+        return False
+    if not systems:
+        return False
+    return all(str(system) in LIQUID_SYSTEMS for system in systems)
+
+
+def _tank_cover_reduction(cover_type: str, params: Mapping[str, Any]) -> float:
+    """Eq 4.1.3-9 reduction, applied by the tank itself (not the annual CE-14 fork)."""
+    key = _COVER_REDUCTION_PARAM.get(cover_type)
+    if key is None:
+        return 0.0
+    return float(params[key])
 
 
 errors = validate_module(HolosManureCH4())
