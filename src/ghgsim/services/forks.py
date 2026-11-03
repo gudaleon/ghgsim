@@ -154,7 +154,7 @@ class ForkRegistry:
         Args:
             json_path: Path to JSON file
         """
-        with open(json_path) as f:
+        with open(json_path, encoding="utf-8") as f:
             data = json.load(f)
         
         for item in data:
@@ -190,7 +190,7 @@ class ForkRegistry:
                 "issue_ref": fork.issue_ref,
             })
         
-        with open(json_path, "w") as f:
+        with open(json_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
     def apply_forks(

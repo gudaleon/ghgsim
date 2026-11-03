@@ -24,7 +24,7 @@ HOLOS_FILE_MARKERS = (".cs:", ".cs", "csv:")
 
 
 def _rows(path: Path):
-    with path.open() as handle:
+    with path.open(encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
 
 

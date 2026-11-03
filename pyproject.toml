@@ -35,6 +35,7 @@ dependencies = [
 test = [
     "pytest>=7.0",
     "pytest-cov",
+    "SALib>=1.4",
 ]
 sobol = [
     "SALib>=1.4",
@@ -49,6 +50,7 @@ bayes = [
 dev = [
     "ruff>=0.1",
     "mypy>=1.0",
+    "SALib>=1.4",
 ]
 figures = [
     "plotly>=6",

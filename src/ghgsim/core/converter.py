@@ -21,7 +21,7 @@ def convert_v3_csv(input_path: Path, output_path: Path) -> None:
     """
     params = []
 
-    with open(input_path) as f:
+    with open(input_path, encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             # Skip rows with no default value
@@ -86,7 +86,7 @@ def convert_v3_csv(input_path: Path, output_path: Path) -> None:
     ]
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w", newline="") as f:
+    with open(output_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
 

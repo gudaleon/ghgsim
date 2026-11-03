@@ -296,7 +296,7 @@ def test_measured_turkey_ce10_delta_matches_eq_10_23():
 def test_stylized_v3_has_us_poultry_and_swine_farms():
     import yaml
 
-    spec = yaml.safe_load((ROOT / "data" / "stylized_farms_AN_v3.yaml").read_text())
+    spec = yaml.safe_load((ROOT / "data" / "stylized_farms_AN_v3.yaml").read_text(encoding="utf-8"))
     farm_ids = {farm["id"] for farm in spec["farms"]}
     assert {
         "broiler_litter",

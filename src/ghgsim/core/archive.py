@@ -73,7 +73,7 @@ class RunArchiver:
             
             # Write manifest
             manifest_path = staging / "manifest.yaml"
-            with open(manifest_path, "w") as f:
+            with open(manifest_path, "w", encoding="utf-8") as f:
                 yaml.dump(manifest, f, default_flow_style=False, sort_keys=True)
             
             # Compute file hashes
@@ -96,7 +96,7 @@ class RunArchiver:
             
             # Write provenance
             provenance_path = staging / "provenance.yaml"
-            with open(provenance_path, "w") as f:
+            with open(provenance_path, "w", encoding="utf-8") as f:
                 yaml.dump(provenance, f, default_flow_style=False, sort_keys=True)
             
             # Create tarball
@@ -136,7 +136,7 @@ class RunArchiver:
         provenance_path = run_dir / "provenance.yaml"
         
         if provenance_path.exists():
-            with open(provenance_path) as f:
+            with open(provenance_path, encoding="utf-8") as f:
                 provenance = yaml.safe_load(f)
             
             for filename, file_info in provenance.get("files", {}).items():
@@ -156,7 +156,7 @@ class RunArchiver:
         
         # Load manifest
         manifest_path = run_dir / "manifest.yaml"
-        with open(manifest_path) as f:
+        with open(manifest_path, encoding="utf-8") as f:
             manifest = yaml.safe_load(f)
         
         return manifest

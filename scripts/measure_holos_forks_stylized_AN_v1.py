@@ -42,7 +42,7 @@ META_JSON = ROOT / "data" / "holos_fork_deltas_stylized_AN_v1.meta.json"
 
 
 def load_farms() -> dict[str, Any]:
-    with FARMS_YAML.open() as handle:
+    with FARMS_YAML.open(encoding="utf-8") as handle:
         return yaml.safe_load(handle)
 
 

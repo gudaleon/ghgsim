@@ -31,7 +31,7 @@ OPENED_PENDING = {"UNVERIFIED", "SOURCE-TRACED"}
 
 
 def _rows(path: Path):
-    with path.open() as handle:
+    with path.open(encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
 
 
@@ -76,7 +76,7 @@ def test_trace_status_and_opened_sources():
 
 
 def test_questions_address_aaron_holos_team_not_unverified_surname():
-    text = DOC.read_text()
+    text = DOC.read_text(encoding="utf-8")
     assert "Aaron (Holos team, AAFC)" in text
     assert "McPherson" not in text
     assert "HOLOS-ONLY" in text
