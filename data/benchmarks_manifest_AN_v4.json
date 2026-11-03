@@ -1,0 +1,133 @@
+{
+  "manifest": "benchmarks_manifest_AN_v4",
+  "supersedes": "benchmarks_manifest_AN_v3",
+  "datasets": [
+    {
+      "key": "global_n2o_edi877v1",
+      "dataset": "Global N2O Database",
+      "version": "1.0 (EDI package edi.877.1, revision 1)",
+      "doi": "10.6073/pasta/09a95cf44cd7835db002b0089ed5ffc3",
+      "licence": "CC BY 4.0",
+      "citation": "Dorich, C.D., R.T. Conant, and D. Wang. 2021. Global N2O Database version 1.0 ver 1. Environmental Data Initiative. https://doi.org/10.6073/pasta/09a95cf44cd7835db002b0089ed5ffc3",
+      "landing_page": "https://portal.edirepository.org/nis/mapbrowse?packageid=edi.877.1",
+      "metadata_url": "https://pasta.lternet.edu/package/metadata/eml/edi/877/1",
+      "status": "downloaded",
+      "download_date": "2026-11-03",
+      "files": [
+        {
+          "name": "CropYield_V1.csv",
+          "size_bytes": 132116,
+          "sha256": "16cf69dbfb368d6a1ce07442bfd1f98744ad6e4ddc245262c11d81491afb48cb"
+        },
+        {
+          "name": "cumulativeN2O_V1.csv",
+          "size_bytes": 129208,
+          "sha256": "e2d5a092d2a7754ca6eed5b14e6813369e8820d4f4efae94d088745e36a53030"
+        },
+        {
+          "name": "DailyGHG_V1.csv",
+          "size_bytes": 117524079,
+          "sha256": "57651b9f7261636de6c1bcd5d877fe012701a206f6ae869065585253663d7c68"
+        },
+        {
+          "name": "metadata/edi.877.1.report.xml",
+          "size_bytes": 127842,
+          "sha256": "39f978361210f652beeb28abc693f9a302a084a21379ef7e667440d387eba591"
+        },
+        {
+          "name": "metadata/edi.877.1.txt",
+          "size_bytes": 108203,
+          "sha256": "c4d661d2ee0f31808ff4bdaef1fd1f3135f8a5cefc53cbac354ca0161ea0554a"
+        },
+        {
+          "name": "metadata/edi.877.1.xml",
+          "size_bytes": 253104,
+          "sha256": "ee3ca944814c5921fa8a3444616b44e55d492c9ac04fd6491738e2c7f8ead8a6"
+        },
+        {
+          "name": "metadata/manifest.txt",
+          "size_bytes": 332,
+          "sha256": "4fc6c6e38d1ade093b71d79e9b6795c0db4eef304eb45f408b89da32dd7434fb"
+        },
+        {
+          "name": "Sitelibrary_V1.csv",
+          "size_bytes": 163080,
+          "sha256": "48df5b7209dcae086126dfd0c52fcb89f51917e97e33e7363e2552761778c0dd"
+        },
+        {
+          "name": "Summary_V1.csv",
+          "size_bytes": 269168,
+          "sha256": "d05608a81e11f44461ae0cafc0f94689bee6113072df72b59f599c06391a1938"
+        }
+      ],
+      "metadata_files": [
+        "metadata/edi.877.1.xml",
+        "metadata/edi.877.1.txt",
+        "metadata/edi.877.1.report.xml",
+        "metadata/manifest.txt"
+      ],
+      "source": "downloaded by Alex via LandEngine/EDI portal on 2026-11-03",
+      "source_path_g": "G:/My Drive/Papers_To_Publish/Ratna/DATA/GlobalN2O_edi877v1 (extracted EDI files; folder formerly named GRACE)",
+      "source_archive": {
+        "name": "GLOBALNO2edi.877.1.zip",
+        "sha256": "c90c8fcd442e6fc2eeefe60c1416e2c11865e724b59d306ff4cda002eae0d6fe",
+        "path_g": "G:/My Drive/Papers_To_Publish/Ratna/DATA/GlobalN2O_edi877v1/GLOBALNO2edi.877.1.zip (unzipped to .../GlobalN2O_edi877v1/GLOBALNO2edi.877.1_unzipped)"
+      }
+    },
+    {
+      "key": "gracenet_adc1235557",
+      "dataset": "GRACEnet (Greenhouse gas Reduction through Agricultural Carbon Enhancement network)",
+      "figshare_article_id": 24660216,
+      "doi": "10.15482/USDA.ADC/1235557",
+      "licence": "CC0",
+      "citation": "Del Grosso, S.J., et al. 2013. Introducing the GRACEnet/REAP Data Contribution, Discovery, and Retrieval System. J. Environ. Qual. 42:1274-1280. doi:10.2134/jeq2013.03.0097",
+      "landing_page": "https://agdatacommons.nal.usda.gov/articles/dataset/GRACEnet_Greenhouse_gas_Reduction_through_Agricultural_Carbon_Enhancement_network_/24660216",
+      "metadata_url": "https://api.figshare.com/v2/articles/24660216",
+      "figshare_version": 1,
+      "figshare_published_date": "2024-02-08T18:40:38Z",
+      "download_date": "2026-11-03",
+      "files": [
+        {
+          "name": "DET_GRACEnet_REAP_0.zip",
+          "size_bytes": 467568,
+          "sha256": "46e873b25fc460c2a8a75187015a459a4ed750eb95f6b9a80072f08163792913"
+        },
+        {
+          "name": "GRACENET brochure  REVISED July 2017 final.pdf",
+          "size_bytes": 840052,
+          "sha256": "b225d68febb7bfbf99636789ad74107561e933c8de00f1cfb488089b37442814"
+        },
+        {
+          "name": "GRACENET brochure  REVISED June 2017.pdf",
+          "size_bytes": 670831,
+          "sha256": "35e8c49c15f9d90d2a8543c8aca7fb8ab487f358cc8a2464a916346aef3b49a8"
+        },
+        {
+          "name": "GRACEnet-NUOnet_DD_0.csv",
+          "size_bytes": 143595,
+          "sha256": "d46660461b821180a266ac920647596ae370fe2eba6181e2a0c13d1baef1d530"
+        },
+        {
+          "name": "metadata/figshare_24660216.json",
+          "size_bytes": 27178,
+          "sha256": "c7a9c3e84f487f006d742b0152512bb1aa7c5304a3d65064f767428ba9469441"
+        },
+        {
+          "name": "natres.zip",
+          "size_bytes": 35051110,
+          "sha256": "afadae86178289af0c55ce38c1d6f545d5ea76c205d6d5f6d3af227bc777e881"
+        }
+      ],
+      "metadata_files": [
+        "metadata/figshare_24660216.json"
+      ],
+      "source": "downloaded by Alex via LandEngine/EDI portal on 2026-11-03 (byte-identical to the Figshare API download of article 24660216 v1)",
+      "source_path_g": "G:/My Drive/Papers_To_Publish/Ratna/DATA/GRACEnet_adc1235557 (GRACEnet Figshare files; folder formerly named GlobalNO2)",
+      "source_archive": {
+        "name": "GRACE.zip",
+        "sha256": "c95cb603ffd5933a3bae2395ff0d51b03619b6d1539dd75e66c124db7e0a6c1f",
+        "path_g": "G:/My Drive/Papers_To_Publish/Ratna/DATA/GRACEnet_adc1235557/GRACE.zip (unzipped to .../GRACEnet_adc1235557/GRACE_unzipped)"
+      }
+    }
+  ]
+}
