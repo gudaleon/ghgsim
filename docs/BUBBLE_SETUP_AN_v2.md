@@ -18,7 +18,7 @@ Date: 2026-11-03 (America/New_York). Machine: "Bubble", Windows 11, 20 cores, 31
 - Clone: `C:\ghgsim`, main at `5a4510642d99921ae9f7483c506009c3fe56da69`
 - Venv: `C:\ghgsim\.venv` (Python 3.12, about 418 MB)
 - Install: `.venv\Scripts\python -m pip install -e ".[dev]"` (SALib is now in the `dev` and `test` extras)
-- Tests: `$env:PYTHONUTF8='1'; .venv\Scripts\python -m pytest -q` gives **210 passed, 2 skipped**
+- Tests: `.venv\Scripts\python -X utf8=0 -m pytest -q` gives **210 passed, 2 skipped** (UTF-8 mode off)
 
 ### Windows encoding fix (commit 0541f69)
 
