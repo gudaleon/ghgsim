@@ -15,6 +15,7 @@ CANADA_V6 = ROOT / "data" / "holos_params_canada_AN_v6.csv"
 CANADA_V7 = ROOT / "data" / "holos_params_canada_AN_v7.csv"
 CANADA_V8 = ROOT / "data" / "holos_params_canada_AN_v8.csv"
 CANADA_V9 = ROOT / "data" / "holos_params_canada_AN_v9.csv"
+CANADA_V10 = ROOT / "data" / "holos_params_canada_AN_v10.csv"
 US = ROOT / "data" / "holos_params_us_AN_v2.csv"
 ALLOWED = {item.value for item in VerificationStatus}
 
@@ -27,7 +28,7 @@ def _rows(path: Path):
         return list(csv.DictReader(handle))
 
 
-@pytest.mark.parametrize("path", [CANADA, CANADA_V5, CANADA_V6, CANADA_V7, CANADA_V8, CANADA_V9, US])
+@pytest.mark.parametrize("path", [CANADA, CANADA_V5, CANADA_V6, CANADA_V7, CANADA_V8, CANADA_V9, CANADA_V10, US])
 def test_status_values_are_known(path):
     rows = _rows(path)
     assert rows
@@ -125,6 +126,11 @@ def test_holos_as_coded_forks_are_registered():
     assert ef1.default == "ipcc2006_ef1"
     assert set(ef1.options) == {"ipcc2006_ef1", "holos_liang2020"}
     assert "holos_as_coded" not in ef1.options
+    tank = registry.get("HOLOS.CH4.liquid_tank")
+    assert tank.label == "model_version"
+    assert tank.default == "ipcc2006_eq10_23"
+    assert "holos_as_coded" not in tank.options
+    assert "HOLOS.CH4.liquid_tank" not in ids
     for fork in forks:
         assert fork.default == "source_correct"
         assert "holos_as_coded" in fork.options

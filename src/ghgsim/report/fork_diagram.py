@@ -39,7 +39,7 @@ STAGE_PREFIXES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("GE", ("HOLOS.GE.",)),
     ("enteric_Ym", ("HOLOS.ENTERIC.", "HOLOS.YM.")),
     ("VS", ("HOLOS.VS.",)),
-    ("manure_CH4", ("HOLOS.CH4.",)),
+    ("manure_CH4", ("HOLOS.CH4.", "HOLOS.STORAGE.")),
     ("N_excretion", ("HOLOS.NEX.",)),
     ("N2O", ("HOLOS.N2O.",)),
 )
@@ -47,7 +47,14 @@ STAGE_PREFERRED_IDS: dict[str, tuple[str, ...]] = {
     "GE": ("HOLOS.GE.digestibility",),
     "enteric_Ym": ("HOLOS.ENTERIC.calf_zero", "HOLOS.YM.dairy"),
     "VS": ("HOLOS.VS.digestibility", "HOLOS.VS.urinary_energy", "HOLOS.VS.calf_coeff"),
-    "manure_CH4": ("HOLOS.CH4.cover_reduction", "HOLOS.CH4.turkey_zero"),
+    "manure_CH4": (
+        "HOLOS.CH4.cover_reduction",
+        "HOLOS.CH4.turkey_zero",
+        "HOLOS.CH4.liquid_tank",
+        "HOLOS.STORAGE.year_reset",
+        "HOLOS.STORAGE.temp_window",
+        "HOLOS.STORAGE.cli_no_drain",
+    ),
     "N_excretion": ("HOLOS.NEX.calf_nrate",),
     "N2O": ("HOLOS.N2O.ef1",),
 }

@@ -178,6 +178,87 @@ def manure_ch4_process() -> ProcessDef:
     return process
 
 
+def liquid_tank_climate_factor_process() -> ProcessDef:
+    """Holos V4 Eq 4.1.3-2 daily climate factor (Vergé/Mangino form as printed)."""
+    process = ProcessDef(
+        name="liquid_tank_climate_factor",
+        description=(
+            "Daily climate factor f for liquid dairy and swine manure "
+            "(Holos V4 Eq 4.1.3-2). T2 is the mean Kelvin temperature over the window."
+        ),
+        rate_equation=(
+            "1.0 - (1.0 - math.exp(E * (T2 - T1) / (R * T1 * T2))) ** (1.0 / 30.0)"
+        ),
+        stoichiometry={"f": 1.0},
+        unit="fraction / day",
+    )
+    process.add_source(
+        doi_or_url=(
+            "Pogue et al. 2026 Holos Version 4.0 Algorithm Documentation, "
+            "print PDF, holos-aafc/Holos"
+        ),
+        equation="Equation 4.1.3-2",
+        page="161",
+        notes=(
+            "f = 1 - (1 - exp(E*(T2-T1)/(R*T1*T2)))^(1/30). "
+            "T1=308.16 K, E=19347 cal/mol, R=1.987 cal/K/mol. "
+            "Adapted to a daily step from Mangino et al. 2001 as printed; "
+            "Mangino 2001 itself was not re-opened. Feb 2025 draft used "
+            "T1=303.16 and E=15175; the 2026 print and the matching C# use 308.16 and 19347."
+        ),
+    )
+    return process
+
+
+def liquid_tank_vs_consumed_process() -> ProcessDef:
+    """Holos V4 Eq 4.1.3-7."""
+    process = ProcessDef(
+        name="liquid_tank_vs_consumed",
+        description="Volatile solids consumed in the liquid tank (Holos V4 Eq 4.1.3-7)",
+        rate_equation="f * VS_available",
+        stoichiometry={"VS_consumed": 1.0},
+        unit="kg VS / day",
+    )
+    process.add_source(
+        doi_or_url=(
+            "Pogue et al. 2026 Holos Version 4.0 Algorithm Documentation, "
+            "print PDF, holos-aafc/Holos"
+        ),
+        equation="Equation 4.1.3-7",
+        page="162",
+        notes="VSconsumed = f * VSavailable",
+    )
+    return process
+
+
+def liquid_tank_ch4_process() -> ProcessDef:
+    """Holos V4 Eq 4.1.3-8 and covered Eq 4.1.3-9."""
+    process = ProcessDef(
+        name="liquid_tank_methane",
+        description=(
+            "Liquid-tank manure CH4 (Holos V4 Eq 4.1.3-8). "
+            "Covered systems multiply by (1 - reduction) (Eq 4.1.3-9)."
+        ),
+        rate_equation="VS_consumed * B0 * CH4_M3_TO_KG * (1.0 - cover_reduction)",
+        stoichiometry={"CH4_kg_day": 1.0},
+        unit="kg CH4 / day",
+    )
+    process.add_source(
+        doi_or_url=(
+            "Pogue et al. 2026 Holos Version 4.0 Algorithm Documentation, "
+            "print PDF, holos-aafc/Holos"
+        ),
+        equation="Equations 4.1.3-8 and 4.1.3-9",
+        page="162",
+        notes=(
+            "CH4 = VSconsumed * B0 * 0.67. Covered: times (1 - 0.40) for a natural "
+            "crust and (1 - 0.25) for a solid cover, as printed from IPCC 2019 "
+            "Table 10.17 footnotes."
+        ),
+    )
+    return process
+
+
 def manure_n2o_direct_process() -> ProcessDef:
     """Direct manure N2O-N, IPCC 2006 Eq 10.25 (before 44/28)."""
     process = ProcessDef(
