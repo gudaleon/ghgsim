@@ -1,0 +1,77 @@
+{
+  "manifest": "benchmarks_manifest_AN_v1",
+  "datasets": [
+    {
+      "key": "global_n2o_edi877v1",
+      "dataset": "Global N2O Database",
+      "version": "1.0 (EDI package edi.877.1, revision 1)",
+      "doi": "10.6073/pasta/09a95cf44cd7835db002b0089ed5ffc3",
+      "licence": "CC BY 4.0",
+      "citation": "Dorich, C.D., R.T. Conant, and D. Wang. 2021. Global N2O Database version 1.0 ver 1. Environmental Data Initiative. https://doi.org/10.6073/pasta/09a95cf44cd7835db002b0089ed5ffc3",
+      "landing_page": "https://portal.edirepository.org/nis/mapbrowse?packageid=edi.877.1",
+      "metadata_url": "https://pasta.lternet.edu/package/metadata/eml/edi/877/1",
+      "status": "api_http_403; manual download required",
+      "download_date": null,
+      "files": [],
+      "metadata_files": []
+    },
+    {
+      "key": "gracenet_adc1235557",
+      "dataset": "GRACEnet (Greenhouse gas Reduction through Agricultural Carbon Enhancement network)",
+      "figshare_article_id": 24660216,
+      "doi": "10.15482/USDA.ADC/1235557",
+      "licence": "CC0",
+      "citation": "Del Grosso, S.J., et al. 2013. Introducing the GRACEnet/REAP Data Contribution, Discovery, and Retrieval System. J. Environ. Qual. 42:1274-1280. doi:10.2134/jeq2013.03.0097",
+      "landing_page": "https://agdatacommons.nal.usda.gov/articles/dataset/GRACEnet_Greenhouse_gas_Reduction_through_Agricultural_Carbon_Enhancement_network_/24660216",
+      "metadata_url": "https://api.figshare.com/v2/articles/24660216",
+      "figshare_version": 1,
+      "figshare_published_date": "2024-02-08T18:40:38Z",
+      "download_date": "2026-11-03",
+      "files": [
+        {
+          "name": "GRACENET brochure  REVISED June 2017.pdf",
+          "size_bytes": 670831,
+          "sha256": "35e8c49c15f9d90d2a8543c8aca7fb8ab487f358cc8a2464a916346aef3b49a8",
+          "figshare_md5": "49ee4d973f928ad1692b04a37436ba63",
+          "md5_ok": true,
+          "url": "https://ndownloader.figshare.com/files/44334101"
+        },
+        {
+          "name": "DET_GRACEnet_REAP_0.zip",
+          "size_bytes": 467568,
+          "sha256": "46e873b25fc460c2a8a75187015a459a4ed750eb95f6b9a80072f08163792913",
+          "figshare_md5": "5e9e808cfdba369af94e8a0e41ea2323",
+          "md5_ok": true,
+          "url": "https://ndownloader.figshare.com/files/44334104"
+        },
+        {
+          "name": "GRACENET brochure  REVISED July 2017 final.pdf",
+          "size_bytes": 840052,
+          "sha256": "b225d68febb7bfbf99636789ad74107561e933c8de00f1cfb488089b37442814",
+          "figshare_md5": "6a8ce217c625eb85b77e2e0454bab022",
+          "md5_ok": true,
+          "url": "https://ndownloader.figshare.com/files/44334110"
+        },
+        {
+          "name": "natres.zip",
+          "size_bytes": 35051110,
+          "sha256": "afadae86178289af0c55ce38c1d6f545d5ea76c205d6d5f6d3af227bc777e881",
+          "figshare_md5": "eff26671d4868f594a3d7f6a1b99e8f2",
+          "md5_ok": true,
+          "url": "https://ndownloader.figshare.com/files/44334113"
+        },
+        {
+          "name": "GRACEnet-NUOnet_DD_0.csv",
+          "size_bytes": 143595,
+          "sha256": "d46660461b821180a266ac920647596ae370fe2eba6181e2a0c13d1baef1d530",
+          "figshare_md5": "6a3a71c190ace7c6b397295bc101938e",
+          "md5_ok": true,
+          "url": "https://ndownloader.figshare.com/files/44334116"
+        }
+      ],
+      "metadata_files": [
+        "metadata/figshare_24660216.json"
+      ]
+    }
+  ]
+}
