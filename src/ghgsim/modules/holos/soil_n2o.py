@@ -87,6 +87,19 @@ def holos_ecodistrict_ef1(
     return ef, "holos_liang2020"
 
 
+FALLBACK_IPCC_DEFAULT = "fallback-IPCC-default"
+
+
+def _is_dry_without_topo(precip, pe, fr_topo, irrigation_mm) -> bool:
+    """True when Holos Eq 2.5.2 needs FR_Topo (P/PE < 1, not irrigated) and none is given."""
+    try:
+        p, e = float(precip), float(pe)
+    except (TypeError, ValueError):
+        return False
+    irr = float(irrigation_mm) if irrigation_mm not in (None, "") else 0.0
+    return e > 0.0 and p / e < 1.0 and irr <= 0.0 and fr_topo in (None, "")
+
+
 def allocate_soil_n2o_by_source(
     *,
     f_sn: float,
@@ -232,7 +245,7 @@ class HolosSoilN2O:
         "N2O_indirect_vol": VarSpec("N2O_indirect_vol", "kg N2O / year", "Indirect N2O from volatilization", "scalar", True),
         "N2O_indirect_leach": VarSpec("N2O_indirect_leach", "kg N2O / year", "Indirect N2O from leaching", "scalar", True),
         "EF1_used": VarSpec("EF1_used", "kg N2O-N / kg N", "Direct EF1 after HOLOS.N2O.ef1 model-version option", "scalar", True),
-        "EF1_status": VarSpec("EF1_status", "dimensionless", "ipcc2006_ef1, holos_liang2020, or UNVERIFIED-input", "scalar", True),
+        "EF1_status": VarSpec("EF1_status", "dimensionless", "ipcc2006_ef1, holos_liang2020, fallback-IPCC-default (dry, no FR_Topo), or UNVERIFIED-input", "scalar", True),
     }
 
     sources = [
@@ -328,6 +341,11 @@ class HolosSoilN2O:
                 if holos_status == "holos_liang2020":
                     ef1 = holos_ef
                     ef1_status = holos_status
+                elif _is_dry_without_topo(precip, pe, fr_topo, inputs.get("irrigation_mm")):
+                    # Alex 2026-11-03: dry (P/PE < 1) with no FR_Topo -> IPCC default EF1
+                    # (2006 GL Vol4 Ch11 Table 11.1 = 0.01; 2019 Refinement Table 11.1
+                    # aggregated = 0.010). ef1 stays at params["EF1"].
+                    ef1_status = FALLBACK_IPCC_DEFAULT
                 else:
                     ef1_status = "UNVERIFIED-input"
             else:
