@@ -1,0 +1,319 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "retrieved_utc": "2026-11-04T15:19:10+00:00",
+ "point_wgs84": [
+  42.1631,
+  -82.7793
+ ],
+ "point_note": "Essex Brookston point (CanSIS run); soil properties are the SSURGO series proxy",
+ "queries": [
+  "SELECT mu.mukey, mu.muname, mu.muacres, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname,\nc.comppct_r, c.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM legend l JOIN mapunit mu ON mu.lkey = l.lkey JOIN sacatalog sc ON sc.areasymbol = l.areasymbol\nJOIN component c ON c.mukey = mu.mukey JOIN corestrictions r ON r.cokey = c.cokey\nWHERE c.compname = 'Brookston' AND c.majcompflag = 'Yes' AND r.reskind = 'Densic material'\nORDER BY mu.muacres DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r",
+  "SELECT cokey, reskind, reshard, resdept_r, resdepb_r FROM corestrictions WHERE cokey = '{cokey}'",
+  "SELECT cm.month, cs.soimoistdept_r, cs.soimoistdepb_r, cs.soimoiststat FROM comonth cm JOIN cosoilmoist cs ON cs.comonthkey = cm.comonthkey WHERE cm.cokey = '{cokey}' ORDER BY cm.monthseq, cs.soimoistdept_r"
+ ],
+ "candidates": [
+  {
+   "mukey": "2393950",
+   "muname": "Brookston loam, dense substratum, 0 to 1 percent slopes",
+   "muacres": "32263",
+   "areaname": "Shiawassee County, Michigan",
+   "areasymbol": "MI155",
+   "saverest": "8/31/2026 10:37:24 AM",
+   "cokey": "27985665",
+   "compname": "Brookston",
+   "comppct_r": "81",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Argiaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "2386582",
+   "muname": "Brookston loam, dense substratum, 0 to 1 percent slopes",
+   "muacres": "13452",
+   "areaname": "Genesee County, Michigan",
+   "areasymbol": "MI049",
+   "saverest": "8/26/2026 11:15:53 AM",
+   "cokey": "27918015",
+   "compname": "Brookston",
+   "comppct_r": "81",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Argiaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "2393950",
+  "muname": "Brookston loam, dense substratum, 0 to 1 percent slopes",
+  "muacres": "32263",
+  "areaname": "Shiawassee County, Michigan",
+  "areasymbol": "MI155",
+  "saverest": "8/31/2026 10:37:24 AM",
+  "cokey": "27985665",
+  "compname": "Brookston",
+  "comppct_r": "81",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Argiaquolls",
+  "hydgrp": "C/D",
+  "slope_r": "1",
+  "drainagecl": "Poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "25",
+   "dbthirdbar_r": "1.34",
+   "wthirdbar_r": "31",
+   "wfifteenbar_r": "18.5",
+   "wsatiated_r": "41",
+   "ksat_r": "1",
+   "om_r": "5.8",
+   "ph1to1h2o_r": "6.8",
+   "claytotal_r": "23",
+   "silttotal_r": "40",
+   "sandtotal_r": "37"
+  },
+  {
+   "hzname": "Btg",
+   "hzdept_r": "25",
+   "hzdepb_r": "76",
+   "dbthirdbar_r": "1.59",
+   "wthirdbar_r": "31.2",
+   "wfifteenbar_r": "18.8",
+   "wsatiated_r": "36",
+   "ksat_r": "0.55",
+   "om_r": "0.8",
+   "ph1to1h2o_r": "7.2",
+   "claytotal_r": "28",
+   "silttotal_r": "32",
+   "sandtotal_r": "40"
+  },
+  {
+   "hzname": "Cg",
+   "hzdept_r": "76",
+   "hzdepb_r": "127",
+   "dbthirdbar_r": "1.75",
+   "wthirdbar_r": "26.8",
+   "wfifteenbar_r": "15.9",
+   "wsatiated_r": "30",
+   "ksat_r": "0.55",
+   "om_r": "0.4",
+   "ph1to1h2o_r": "7.9",
+   "claytotal_r": "23",
+   "silttotal_r": "39",
+   "sandtotal_r": "38"
+  },
+  {
+   "hzname": "Cd",
+   "hzdept_r": "127",
+   "hzdepb_r": "203",
+   "dbthirdbar_r": "1.95",
+   "wthirdbar_r": "21.9",
+   "wfifteenbar_r": "17.7",
+   "wsatiated_r": "23",
+   "ksat_r": "0.005",
+   "om_r": "0.4",
+   "ph1to1h2o_r": "7.9",
+   "claytotal_r": "23",
+   "silttotal_r": "39",
+   "sandtotal_r": "38"
+  }
+ ],
+ "restrictions": [
+  {
+   "cokey": "27985665",
+   "reskind": "Densic material",
+   "reshard": "noncoherent",
+   "resdept_r": "127",
+   "resdepb_r": "203"
+  }
+ ],
+ "cosoilmoist": [
+  {
+   "month": "January",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "January",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "February",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "February",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "March",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "March",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "April",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "April",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "May",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "15",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "May",
+   "soimoistdept_r": "15",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "May",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "June",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "30",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "June",
+   "soimoistdept_r": "30",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "June",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "July",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "61",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "July",
+   "soimoistdept_r": "61",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "July",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "August",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "107",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "August",
+   "soimoistdept_r": "107",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "August",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "September",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "76",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "September",
+   "soimoistdept_r": "76",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "September",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "October",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "15",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "October",
+   "soimoistdept_r": "15",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "October",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "November",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "November",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "December",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "127",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "December",
+   "soimoistdept_r": "127",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  }
+ ]
+}

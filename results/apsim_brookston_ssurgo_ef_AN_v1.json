@@ -1,0 +1,60 @@
+{
+ "wet_months": [
+  "April",
+  "August",
+  "December",
+  "February",
+  "January",
+  "July",
+  "June",
+  "March",
+  "May",
+  "November",
+  "October",
+  "September"
+ ],
+ "cases": {
+  "tile_1956": {
+   "EF_pct": 3.29953488372093,
+   "EF_maize_years_only_pct": 1.9252325581395349,
+   "soybean_year_share": 0.4165139554553143,
+   "N2O_N_kg_ha_172N": 4.6223,
+   "denitrification_N2_N_kg_ha_172N": 24.1461,
+   "tile_flow_mm_172N": 46.4429,
+   "NO3_N_tile_kg_ha_172N": 6.6433,
+   "base_drainage_mm_172N": 52.6817,
+   "NO3_N_leached_base_kg_ha_172N": 6.895,
+   "wt_janapr_mean_cm_172N": 84.8757,
+   "wt_janapr_min_cm_172N": 0.264,
+   "N2O_N_kg_ha_0N": 1.7847,
+   "denitrification_N2_N_kg_ha_0N": 9.6468,
+   "tile_flow_mm_0N": 42.0676,
+   "NO3_N_tile_kg_ha_0N": 3.4321,
+   "base_drainage_mm_0N": 47.6191,
+   "NO3_N_leached_base_kg_ha_0N": 3.4024,
+   "wt_janapr_mean_cm_0N": 89.496,
+   "wt_janapr_min_cm_0N": 0.264
+  },
+  "tile_2rod": {
+   "EF_pct": 3.203372093023255,
+   "EF_maize_years_only_pct": 1.8438372093023256,
+   "soybean_year_share": 0.42442831215970966,
+   "N2O_N_kg_ha_172N": 4.5024,
+   "denitrification_N2_N_kg_ha_172N": 23.4352,
+   "tile_flow_mm_172N": 54.0268,
+   "NO3_N_tile_kg_ha_172N": 7.6491,
+   "base_drainage_mm_172N": 51.9665,
+   "NO3_N_leached_base_kg_ha_172N": 6.8387,
+   "wt_janapr_mean_cm_172N": 88.2682,
+   "wt_janapr_min_cm_172N": 0.3564,
+   "N2O_N_kg_ha_0N": 1.7475,
+   "denitrification_N2_N_kg_ha_0N": 9.395,
+   "tile_flow_mm_0N": 48.7999,
+   "NO3_N_tile_kg_ha_0N": 3.9731,
+   "base_drainage_mm_0N": 47.0084,
+   "NO3_N_leached_base_kg_ha_0N": 3.3749,
+   "wt_janapr_mean_cm_0N": 92.5177,
+   "wt_janapr_min_cm_0N": 0.3564
+  }
+ }
+}

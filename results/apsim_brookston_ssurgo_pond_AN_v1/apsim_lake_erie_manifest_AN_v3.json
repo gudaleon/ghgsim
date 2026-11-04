@@ -1,0 +1,461 @@
+{
+ "apsim": {
+  "version": "APSIM 2026.11.8142.0",
+  "commit": "d1dca5e97aa4930a2015722362483b1216005037",
+  "models_dll_sha256": "b19b31cfa21a9f9420ecb37c6433edc977c3353fe2845a89a0c15b2b98b9c0d0"
+ },
+ "sites": {
+  "essex_brookston_ssurgo": {
+   "source": "USDA-NRCS SSURGO via Soil Data Access",
+   "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+   "retrieved_utc": "2026-11-04T15:19:10+00:00",
+   "point_wgs84": [
+    42.1631,
+    -82.7793
+   ],
+   "point_note": "Essex Brookston point (CanSIS run); soil properties are the SSURGO series proxy",
+   "queries": [
+    "SELECT mu.mukey, mu.muname, mu.muacres, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname,\nc.comppct_r, c.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM legend l JOIN mapunit mu ON mu.lkey = l.lkey JOIN sacatalog sc ON sc.areasymbol = l.areasymbol\nJOIN component c ON c.mukey = mu.mukey JOIN corestrictions r ON r.cokey = c.cokey\nWHERE c.compname = 'Brookston' AND c.majcompflag = 'Yes' AND r.reskind = 'Densic material'\nORDER BY mu.muacres DESC",
+    "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r",
+    "SELECT cokey, reskind, reshard, resdept_r, resdepb_r FROM corestrictions WHERE cokey = '{cokey}'",
+    "SELECT cm.month, cs.soimoistdept_r, cs.soimoistdepb_r, cs.soimoiststat FROM comonth cm JOIN cosoilmoist cs ON cs.comonthkey = cm.comonthkey WHERE cm.cokey = '{cokey}' ORDER BY cm.monthseq, cs.soimoistdept_r"
+   ],
+   "candidates": [
+    {
+     "mukey": "2393950",
+     "muname": "Brookston loam, dense substratum, 0 to 1 percent slopes",
+     "muacres": "32263",
+     "areaname": "Shiawassee County, Michigan",
+     "areasymbol": "MI155",
+     "saverest": "8/31/2026 10:37:24 AM",
+     "cokey": "27985665",
+     "compname": "Brookston",
+     "comppct_r": "81",
+     "majcompflag": "Yes",
+     "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Argiaquolls",
+     "hydgrp": "C/D",
+     "slope_r": "1",
+     "drainagecl": "Poorly drained"
+    },
+    {
+     "mukey": "2386582",
+     "muname": "Brookston loam, dense substratum, 0 to 1 percent slopes",
+     "muacres": "13452",
+     "areaname": "Genesee County, Michigan",
+     "areasymbol": "MI049",
+     "saverest": "8/26/2026 11:15:53 AM",
+     "cokey": "27918015",
+     "compname": "Brookston",
+     "comppct_r": "81",
+     "majcompflag": "Yes",
+     "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Argiaquolls",
+     "hydgrp": "C/D",
+     "slope_r": "1",
+     "drainagecl": "Poorly drained"
+    }
+   ],
+   "dominant": {
+    "mukey": "2393950",
+    "muname": "Brookston loam, dense substratum, 0 to 1 percent slopes",
+    "muacres": "32263",
+    "areaname": "Shiawassee County, Michigan",
+    "areasymbol": "MI155",
+    "saverest": "8/31/2026 10:37:24 AM",
+    "cokey": "27985665",
+    "compname": "Brookston",
+    "comppct_r": "81",
+    "majcompflag": "Yes",
+    "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Argiaquolls",
+    "hydgrp": "C/D",
+    "slope_r": "1",
+    "drainagecl": "Poorly drained"
+   },
+   "restrictions": [
+    {
+     "cokey": "27985665",
+     "reskind": "Densic material",
+     "reshard": "noncoherent",
+     "resdept_r": "127",
+     "resdepb_r": "203"
+    }
+   ],
+   "cosoilmoist": [
+    {
+     "month": "January",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "January",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "February",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "February",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "March",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "March",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "April",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "April",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "May",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "15",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "May",
+     "soimoistdept_r": "15",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "May",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "June",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "30",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "June",
+     "soimoistdept_r": "30",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "June",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "July",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "61",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "July",
+     "soimoistdept_r": "61",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "July",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "August",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "107",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "August",
+     "soimoistdept_r": "107",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "August",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "September",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "76",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "September",
+     "soimoistdept_r": "76",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "September",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "October",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "15",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "October",
+     "soimoistdept_r": "15",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "October",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "November",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "November",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "December",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "127",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "December",
+     "soimoistdept_r": "127",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    }
+   ],
+   "horizons": [
+    {
+     "hzname": "Ap",
+     "hzdept_r": "0",
+     "hzdepb_r": "25",
+     "dbthirdbar_r": "1.34",
+     "wthirdbar_r": "31",
+     "wfifteenbar_r": "18.5",
+     "wsatiated_r": "41",
+     "ksat_r": "1",
+     "om_r": "5.8",
+     "ph1to1h2o_r": "6.8",
+     "claytotal_r": "23",
+     "silttotal_r": "40",
+     "sandtotal_r": "37"
+    },
+    {
+     "hzname": "Btg",
+     "hzdept_r": "25",
+     "hzdepb_r": "76",
+     "dbthirdbar_r": "1.59",
+     "wthirdbar_r": "31.2",
+     "wfifteenbar_r": "18.8",
+     "wsatiated_r": "36",
+     "ksat_r": "0.55",
+     "om_r": "0.8",
+     "ph1to1h2o_r": "7.2",
+     "claytotal_r": "28",
+     "silttotal_r": "32",
+     "sandtotal_r": "40"
+    },
+    {
+     "hzname": "Cg",
+     "hzdept_r": "76",
+     "hzdepb_r": "127",
+     "dbthirdbar_r": "1.75",
+     "wthirdbar_r": "26.8",
+     "wfifteenbar_r": "15.9",
+     "wsatiated_r": "30",
+     "ksat_r": "0.55",
+     "om_r": "0.4",
+     "ph1to1h2o_r": "7.9",
+     "claytotal_r": "23",
+     "silttotal_r": "39",
+     "sandtotal_r": "38"
+    }
+   ]
+  }
+ },
+ "met": {
+  "essex_brookston_ssurgo": {
+   "tav": 9.68,
+   "amp": 25.47,
+   "days": 10958,
+   "power_file": "data\\apsim_site_lake_erie_AN_v2\\nasa_power_daily_1991_2020_42.1631_-82.7793_AN_v2.json.gz",
+   "filled_missing": [
+    {
+     "parameter": "ALLSKY_SFC_SW_DWN",
+     "day": "19930201",
+     "filled": 3.45
+    }
+   ]
+  }
+ },
+ "runs": {
+  "essex_brookston_ssurgo_undrained": {
+   "lower_bc_gradient": -0.990909090909091,
+   "pond_surface": true,
+   "eo_durn_min": 720.0,
+   "site": "essex_brookston_ssurgo",
+   "case": "undrained",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": null,
+   "sat_caps": [],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "essex_brookston_ssurgo_undrained_0N": {
+   "lower_bc_gradient": -0.990909090909091,
+   "pond_surface": true,
+   "eo_durn_min": 720.0,
+   "site": "essex_brookston_ssurgo",
+   "case": "undrained",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": null,
+   "sat_caps": [],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "essex_brookston_ssurgo_tile_1956": {
+   "lower_bc_gradient": -0.990909090909091,
+   "pond_surface": true,
+   "eo_durn_min": 720.0,
+   "site": "essex_brookston_ssurgo",
+   "case": "tile_1956",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 12200.0
+   },
+   "sat_caps": []
+  },
+  "essex_brookston_ssurgo_tile_1956_0N": {
+   "lower_bc_gradient": -0.990909090909091,
+   "pond_surface": true,
+   "eo_durn_min": 720.0,
+   "site": "essex_brookston_ssurgo",
+   "case": "tile_1956",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 12200.0
+   },
+   "sat_caps": []
+  },
+  "essex_brookston_ssurgo_tile_2rod": {
+   "lower_bc_gradient": -0.990909090909091,
+   "pond_surface": true,
+   "eo_durn_min": 720.0,
+   "site": "essex_brookston_ssurgo",
+   "case": "tile_2rod",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 10058.4
+   },
+   "sat_caps": []
+  },
+  "essex_brookston_ssurgo_tile_2rod_0N": {
+   "lower_bc_gradient": -0.990909090909091,
+   "pond_surface": true,
+   "eo_durn_min": 720.0,
+   "site": "essex_brookston_ssurgo",
+   "case": "tile_2rod",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 10058.4
+   },
+   "sat_caps": []
+  }
+ },
+ "windows_NASS_2010": {
+  "OH": {
+   "Maize": [
+    "24-apr",
+    "24-may"
+   ],
+   "Soybean": [
+    "3-may",
+    "30-may"
+   ]
+  },
+  "MI": {
+   "Maize": [
+    "1-may",
+    "27-may"
+   ],
+   "Soybean": [
+    "11-may",
+    "9-jun"
+   ]
+  },
+  "MI_SSURGO": {
+   "Maize": [
+    "1-may",
+    "27-may"
+   ],
+   "Soybean": [
+    "11-may",
+    "9-jun"
+   ]
+  }
+ },
+ "lower_bc_gradient": {
+  "brookston_ssurgo": -0.990909090909091
+ },
+ "SpaceWeightingFactor": 0.5,
+ "corn_N": 172.0,
+ "outputs_sha256": {
+  "lake_erie_essex_brookston_ssurgo_tile_1956_0N_AN_v3.apsimx": "e206d2fc75414abbd072efa7c46e6788b231e980b6ae9d3530f67aaa372d9daa",
+  "lake_erie_essex_brookston_ssurgo_tile_1956_0N_AN_v3.Daily.csv.gz": "b09be73dbec8f486f3116098e400169c2d516f75b4350d029d81cbae02b2be78",
+  "lake_erie_essex_brookston_ssurgo_tile_1956_0N_AN_v3.Report.csv.gz": "b921f9ad2cf935c5e757ec63cb10de5651c777a0b4309b5a70a00eb1191bd7e1",
+  "lake_erie_essex_brookston_ssurgo_tile_1956_AN_v3.apsimx": "a2b863ca374e8a6ad8b81c0f6d047111db281f711252624509af4d04f4fe63af",
+  "lake_erie_essex_brookston_ssurgo_tile_1956_AN_v3.Daily.csv.gz": "b79f411965811da676034bfe1b204e2587a13b8d89145a8e2cc19c0c742611b8",
+  "lake_erie_essex_brookston_ssurgo_tile_1956_AN_v3.Report.csv.gz": "962c179cb013c036b9a43febd5114badc95ca525ca80b3bad1f4ac858e360116",
+  "lake_erie_essex_brookston_ssurgo_tile_2rod_0N_AN_v3.apsimx": "e8fae37fabe91c46b0b533e177c0065cbdba157e2419e3471644e190c3cb27ac",
+  "lake_erie_essex_brookston_ssurgo_tile_2rod_0N_AN_v3.Daily.csv.gz": "64c836eb2d50cc7d0576a9748f1cb4c85eb27b75502e9a8510d8db5d1d3bde52",
+  "lake_erie_essex_brookston_ssurgo_tile_2rod_0N_AN_v3.Report.csv.gz": "4ce10fcf48b891c19314e6c3533cdf042827724b90b804c15929f58733f11b80",
+  "lake_erie_essex_brookston_ssurgo_tile_2rod_AN_v3.apsimx": "b0a5a40cff13dc694302351119338f5313a4789f4c3519f238d551fe5e4bf489",
+  "lake_erie_essex_brookston_ssurgo_tile_2rod_AN_v3.Daily.csv.gz": "fb791ed6ab4af16295bd88a506bb70987ca3f82ce171fd8ea14a0da7531f3591",
+  "lake_erie_essex_brookston_ssurgo_tile_2rod_AN_v3.Report.csv.gz": "cf478984d87b250f03b369d2cb389cf9709b40bee2a0882787cf38f3b6862907",
+  "lake_erie_essex_brookston_ssurgo_undrained_0N_AN_v3.apsimx": "a9501b8a27bc873594418815fc477b6f97ee98a71ee3dbfeb24f917bfbdecf33",
+  "lake_erie_essex_brookston_ssurgo_undrained_0N_AN_v3.Daily.csv.gz": "638d9b0697e69074ace086b10ccc632dbf6aecd2563fd2330b8cbaa5f8a89ae4",
+  "lake_erie_essex_brookston_ssurgo_undrained_0N_AN_v3.Report.csv.gz": "e9c49b0c04aed4bb46367dbe583a2bf05da8fd6b98c17613476e0591e1e6ece7",
+  "lake_erie_essex_brookston_ssurgo_undrained_AN_v3.apsimx": "96d9b484346a9ac0330f26f38cf00197ceb9eee518f72feed0ecf97b89f560ee",
+  "lake_erie_essex_brookston_ssurgo_undrained_AN_v3.Daily.csv.gz": "de074d739c851dacebe944e2855c6fc69ce9a786250f42db080a9d693e9f5716",
+  "lake_erie_essex_brookston_ssurgo_undrained_AN_v3.Report.csv.gz": "c4fa915730a4f09181d309fec4581705eb3f4856e57593fe0e92c74c379b3413"
+ }
+}
