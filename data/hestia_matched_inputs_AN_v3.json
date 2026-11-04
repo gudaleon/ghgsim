@@ -1,0 +1,2713 @@
+{
+ "nodes": [
+  {
+   "id": "actor-alex-neumann",
+   "type": "Actor",
+   "name": "Alex Neumann",
+   "firstName": "Alex",
+   "lastName": "Neumann",
+   "dataPrivate": true
+  },
+  {
+   "id": "ghgsim-src",
+   "type": "Source",
+   "name": "ghgsim stylized farms AN_v6 (matched HESTIA run AN_v1)",
+   "bibliography": {
+    "type": "Bibliography",
+    "name": "ghgsim stylized farms AN_v6",
+    "title": "ghgsim stylized farms AN_v6, data/stylized_farms_AN_v6.yaml",
+    "authors": [
+     {
+      "id": "actor-alex-neumann",
+      "type": "Actor"
+     }
+    ],
+    "outlet": "ghgsim repository (gudaleon/ghgsim)",
+    "year": 2026
+   }
+  },
+  {
+   "id": "site-dairy_forage_uncovered",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-dairy_forage_uncovered",
+   "type": "Cycle",
+   "site": {
+    "id": "site-dairy_forage_uncovered",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "dairy_forage_uncovered-dairy_cow",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCowLactating",
+      "termType": "liveAnimal"
+     },
+     "value": 100.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_forage_uncovered-dairy_heifer",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleHeifer",
+      "termType": "liveAnimal"
+     },
+     "value": 40.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_forage_uncovered-dairy_calf",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCalf",
+      "termType": "liveAnimal"
+     },
+     "value": 20.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      19342.0446
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      303422.6665
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "milkCowRaw",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      981755.326
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-dairy_forage_covered_crust",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-dairy_forage_covered_crust",
+   "type": "Cycle",
+   "site": {
+    "id": "site-dairy_forage_covered_crust",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "dairy_forage_covered_crust-dairy_cow",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCowLactating",
+      "termType": "liveAnimal"
+     },
+     "value": 100.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_forage_covered_crust-dairy_heifer",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleHeifer",
+      "termType": "liveAnimal"
+     },
+     "value": 40.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_forage_covered_crust-dairy_calf",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCalf",
+      "termType": "liveAnimal"
+     },
+     "value": 20.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      19342.0446
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      303422.6665
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "milkCowRaw",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      981755.326
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-dairy_forage_covered_solid",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-dairy_forage_covered_solid",
+   "type": "Cycle",
+   "site": {
+    "id": "site-dairy_forage_covered_solid",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "dairy_forage_covered_solid-dairy_cow",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCowLactating",
+      "termType": "liveAnimal"
+     },
+     "value": 100.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_forage_covered_solid-dairy_heifer",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleHeifer",
+      "termType": "liveAnimal"
+     },
+     "value": 40.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_forage_covered_solid-dairy_calf",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCalf",
+      "termType": "liveAnimal"
+     },
+     "value": 20.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      19342.0446
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      303422.6665
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "milkCowRaw",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      981755.326
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-dairy_high_grain_uncovered",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-dairy_high_grain_uncovered",
+   "type": "Cycle",
+   "site": {
+    "id": "site-dairy_high_grain_uncovered",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "dairy_high_grain_uncovered-dairy_cow",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCowLactating",
+      "termType": "liveAnimal"
+     },
+     "value": 100.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_high_grain_uncovered-dairy_heifer",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleHeifer",
+      "termType": "liveAnimal"
+     },
+     "value": 40.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_high_grain_uncovered-dairy_calf",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCalf",
+      "termType": "liveAnimal"
+     },
+     "value": 20.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      19342.0446
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      118510.3656
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "milkCowRaw",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      981755.326
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-dairy_high_grain_covered_crust",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-dairy_high_grain_covered_crust",
+   "type": "Cycle",
+   "site": {
+    "id": "site-dairy_high_grain_covered_crust",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "dairy_high_grain_covered_crust-dairy_cow",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCowLactating",
+      "termType": "liveAnimal"
+     },
+     "value": 100.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_high_grain_covered_crust-dairy_heifer",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleHeifer",
+      "termType": "liveAnimal"
+     },
+     "value": 40.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "dairy_high_grain_covered_crust-dairy_calf",
+     "term": {
+      "@type": "Term",
+      "@id": "dairyCattleCalf",
+      "termType": "liveAnimal"
+     },
+     "value": 20.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      19342.0446
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaDairyCattleKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      118510.3656
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "milkCowRaw",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      981755.326
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-beef_cowcalf_uncovered",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-beef_cowcalf_uncovered",
+   "type": "Cycle",
+   "site": {
+    "id": "site-beef_cowcalf_uncovered",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "beef_cowcalf_uncovered-beef_cow",
+     "term": {
+      "@type": "Term",
+      "@id": "beefCattleCow",
+      "termType": "liveAnimal"
+     },
+     "value": 100.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "beef_cowcalf_uncovered-beef_calf",
+     "term": {
+      "@type": "Term",
+      "@id": "beefCattleCalf",
+      "termType": "liveAnimal"
+     },
+     "value": 90.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaBeefCattleExceptFeedlotFedKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      9015.2152
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaBeefCattleExceptFeedlotFedKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      126540.2219
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "meatBeefCattleLiveweight",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-beef_cowcalf_covered_crust",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-beef_cowcalf_covered_crust",
+   "type": "Cycle",
+   "site": {
+    "id": "site-beef_cowcalf_covered_crust",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "beef_cowcalf_covered_crust-beef_cow",
+     "term": {
+      "@type": "Term",
+      "@id": "beefCattleCow",
+      "termType": "liveAnimal"
+     },
+     "value": 100.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "beef_cowcalf_covered_crust-beef_calf",
+     "term": {
+      "@type": "Term",
+      "@id": "beefCattleCalf",
+      "termType": "liveAnimal"
+     },
+     "value": 90.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaBeefCattleExceptFeedlotFedKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      9015.2152
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaBeefCattleExceptFeedlotFedKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      126540.2219
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "meatBeefCattleLiveweight",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-beef_cowcalf_covered_solid",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-beef_cowcalf_covered_solid",
+   "type": "Cycle",
+   "site": {
+    "id": "site-beef_cowcalf_covered_solid",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "beef_cowcalf_covered_solid-beef_cow",
+     "term": {
+      "@type": "Term",
+      "@id": "beefCattleCow",
+      "termType": "liveAnimal"
+     },
+     "value": 100.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "beef_cowcalf_covered_solid-beef_calf",
+     "term": {
+      "@type": "Term",
+      "@id": "beefCattleCalf",
+      "termType": "liveAnimal"
+     },
+     "value": 90.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaBeefCattleExceptFeedlotFedKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      9015.2152
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaBeefCattleExceptFeedlotFedKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      126540.2219
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "meatBeefCattleLiveweight",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-broiler_litter",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-broiler_litter",
+   "type": "Cycle",
+   "site": {
+    "id": "site-broiler_litter",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "broiler_litter-broilers",
+     "term": {
+      "@type": "Term",
+      "@id": "broilerChicken",
+      "termType": "liveAnimal"
+     },
+     "value": 20000.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "poultryManureWithLitter",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPoultryKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      10446.3
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPoultryKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      146000.0
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "meatChickenLiveweight",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-layer_litter",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-layer_litter",
+   "type": "Cycle",
+   "site": {
+    "id": "site-layer_litter",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "layer_litter-layers",
+     "term": {
+      "@type": "Term",
+      "@id": "layerChickenHen",
+      "termType": "liveAnimal"
+     },
+     "value": 10000.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "poultryManureWithLitter",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPoultryKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      7424.1
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPoultryKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      73000.0
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "eggsHenInShell",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-layer_highrise",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-layer_highrise",
+   "type": "Cycle",
+   "site": {
+    "id": "site-layer_highrise",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "layer_highrise-layers",
+     "term": {
+      "@type": "Term",
+      "@id": "layerChickenHen",
+      "termType": "liveAnimal"
+     },
+     "value": 10000.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "poultryManureWithoutLitter",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPoultryKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      7424.1
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPoultryKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      73000.0
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "eggsHenInShell",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-turkey_litter",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-turkey_litter",
+   "type": "Cycle",
+   "site": {
+    "id": "site-turkey_litter",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "turkey_litter-turkeys",
+     "term": {
+      "@type": "Term",
+      "@id": "turkey",
+      "termType": "liveAnimal"
+     },
+     "value": 5000.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "poultryManureWithLitter",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaTurkeysKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      9183.4
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaTurkeysKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      127750.0
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "meatTurkeyLiveweight",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-market_swine_liquid",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-market_swine_liquid",
+   "type": "Cycle",
+   "site": {
+    "id": "site-market_swine_liquid",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "market_swine_liquid-market_swine",
+     "term": {
+      "@type": "Term",
+      "@id": "pig",
+      "termType": "liveAnimal"
+     },
+     "value": 1000.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPigsKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      7723.4
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPigsKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      98550.0
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "meatPigLiveweight",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-breeding_swine_liquid",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-breeding_swine_liquid",
+   "type": "Cycle",
+   "site": {
+    "id": "site-breeding_swine_liquid",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "breeding_swine_liquid-breeding_swine",
+     "term": {
+      "@type": "Term",
+      "@id": "pigSow",
+      "termType": "liveAnimal"
+     },
+     "value": 200.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "liquidSlurryWithoutNaturalCrustCover",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPigsKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      3468.96
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPigsKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      36500.0
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "meatPigLiveweight",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-farrow_to_finish",
+   "type": "Site",
+   "siteType": "animal housing",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-farrow_to_finish",
+   "type": "Cycle",
+   "site": {
+    "id": "site-farrow_to_finish",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "farrow_to_finish-breeding_swine",
+     "term": {
+      "@type": "Term",
+      "@id": "pigSow",
+      "termType": "liveAnimal"
+     },
+     "value": 200.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "farrow_to_finish-market_swine",
+     "term": {
+      "@type": "Term",
+      "@id": "pig",
+      "termType": "liveAnimal"
+     },
+     "value": 1000.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "pitStorageBelowAnimalConfinements",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPigsKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      11192.36
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaPigsKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      135050.0
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "meatPigLiveweight",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-beef_pasture_field",
+   "type": "Site",
+   "siteType": "permanent pasture",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-beef_pasture_field",
+   "type": "Cycle",
+   "site": {
+    "id": "site-beef_pasture_field",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "relative",
+   "startDateDefinition": "start of year",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-01-01",
+   "endDate": "2022-12-31",
+   "cycleDuration": 365,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": false,
+    "animalPopulation": true,
+    "cropResidue": true,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": false,
+    "ingredient": true,
+    "liveAnimalInput": false,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": false,
+    "seed": true,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": false
+   },
+   "animals": [
+    {
+     "@type": "Animal",
+     "animalId": "beef_pasture_field-beef_cow",
+     "term": {
+      "@type": "Term",
+      "@id": "beefCattleCow",
+      "termType": "liveAnimal"
+     },
+     "value": 100.0,
+     "referencePeriod": "average"
+    },
+    {
+     "@type": "Animal",
+     "animalId": "beef_pasture_field-beef_calf",
+     "term": {
+      "@type": "Term",
+      "@id": "beefCattleCalf",
+      "termType": "liveAnimal"
+     },
+     "value": 90.0,
+     "referencePeriod": "average"
+    }
+   ],
+   "practices": [
+    {
+     "@type": "Practice",
+     "term": {
+      "@type": "Term",
+      "@id": "pastureRangePaddockExcretaManagement",
+      "termType": "excretaManagement"
+     },
+     "value": [
+      100
+     ]
+    }
+   ],
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaBeefCattleExceptFeedlotFedKgN",
+      "termType": "excreta"
+     },
+     "value": [
+      9015.2152
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "excretaBeefCattleExceptFeedlotFedKgVs",
+      "termType": "excreta"
+     },
+     "value": [
+      126540.2219
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "meatBeefCattleLiveweight",
+      "termType": "animalProduct"
+     },
+     "primary": true,
+     "value": [
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "id": "site-crop_urea_lime",
+   "type": "Site",
+   "siteType": "cropland",
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "country": {
+    "@type": "Term",
+    "@id": "GADM-USA",
+    "termType": "region"
+   },
+   "dataPrivate": true,
+   "measurements": [
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "ecoClimateZone",
+      "termType": "measurement"
+     },
+     "value": [
+      1
+     ],
+     "methodClassification": "regional statistical data"
+    },
+    {
+     "@type": "Measurement",
+     "term": {
+      "@type": "Term",
+      "@id": "temperatureAnnual",
+      "termType": "measurement"
+     },
+     "value": [
+      15
+     ],
+     "methodClassification": "regional statistical data",
+     "startDate": "2022-01-01",
+     "endDate": "2022-12-31"
+    }
+   ]
+  },
+  {
+   "id": "cycle-crop_urea_lime",
+   "type": "Cycle",
+   "site": {
+    "id": "site-crop_urea_lime",
+    "type": "Site"
+   },
+   "defaultSource": {
+    "id": "ghgsim-src",
+    "type": "Source"
+   },
+   "functionalUnit": "1 ha",
+   "startDateDefinition": "sowing date",
+   "defaultMethodClassification": "modelled",
+   "defaultMethodClassificationDescription": "ghgsim stylized-farm activity data (data/stylized_farms_AN_v6.yaml; IPCC/EPA/NRC-cited, some ILLUSTRATIVE)",
+   "startDate": "2022-05-01",
+   "endDate": "2022-10-15",
+   "cycleDuration": 168,
+   "dataPrivate": true,
+   "completeness": {
+    "@type": "Completeness",
+    "animalFeed": true,
+    "animalPopulation": true,
+    "cropResidue": false,
+    "electricityFuel": false,
+    "excreta": true,
+    "fertiliser": true,
+    "freshForage": true,
+    "ingredient": true,
+    "liveAnimalInput": true,
+    "material": false,
+    "operation": false,
+    "otherChemical": false,
+    "pesticideVeterinaryDrug": false,
+    "product": true,
+    "seed": false,
+    "soilAmendment": true,
+    "transport": false,
+    "waste": true,
+    "water": true
+   },
+   "inputs": [
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "inorganicNitrogenFertiliserUnspecifiedKgN",
+      "termType": "inorganicFertiliser"
+     },
+     "value": [
+      100.0
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "agriculturalLimestone",
+      "termType": "soilAmendment"
+     },
+     "value": [
+      200.0
+     ]
+    },
+    {
+     "@type": "Input",
+     "term": {
+      "@type": "Term",
+      "@id": "dolomiticLime",
+      "termType": "soilAmendment"
+     },
+     "value": [
+      100.0
+     ]
+    }
+   ],
+   "products": [
+    {
+     "@type": "Product",
+     "term": {
+      "@type": "Term",
+      "@id": "maizeGrain",
+      "termType": "crop"
+     },
+     "value": [
+      8000.0
+     ],
+     "primary": true
+    }
+   ]
+  }
+ ]
+}
