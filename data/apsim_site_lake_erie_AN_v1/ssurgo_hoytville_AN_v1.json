@@ -1,0 +1,274 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "retrieved_utc": "2026-11-04T11:35:04+00:00",
+ "point_wgs84": [
+  41.22,
+  -83.76
+ ],
+ "queries": [
+  "SELECT TOP 5 mu.mukey, mu.muname, mu.muacres, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname,\nc.comppct_r, c.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM legend l JOIN mapunit mu ON mu.lkey = l.lkey JOIN sacatalog sc ON sc.areasymbol = l.areasymbol\nJOIN component c ON c.mukey = mu.mukey\nWHERE l.areasymbol = 'OH173' AND c.compname = 'Hoytville'\nAND c.comppct_r = (SELECT MAX(c2.comppct_r) FROM component c2 WHERE c2.mukey = mu.mukey)\nORDER BY mu.muacres DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r",
+  "SELECT cokey, reskind, reshard, resdept_r, resdepb_r FROM corestrictions WHERE cokey = '{cokey}'",
+  "SELECT cm.month, cs.soimoistdept_r, cs.soimoistdepb_r, cs.soimoiststat FROM comonth cm JOIN cosoilmoist cs ON cs.comonthkey = cm.comonthkey WHERE cm.cokey = '{cokey}' ORDER BY cm.monthseq, cs.soimoistdept_r"
+ ],
+ "candidates": [
+  {
+   "mukey": "2399822",
+   "muname": "Hoytville clay loam, 0 to 1 percent slopes",
+   "muacres": "157145",
+   "areaname": "Wood County, Ohio",
+   "areasymbol": "OH173",
+   "saverest": "9/16/2026 11:56:55 AM",
+   "cokey": "29298947",
+   "compname": "Hoytville",
+   "comppct_r": "90",
+   "majcompflag": "Yes",
+   "taxclname": "Fine, illitic, mesic Mollic Epiaqualfs",
+   "hydgrp": "C/D",
+   "slope_r": "0",
+   "drainagecl": "Very poorly drained"
+  },
+  {
+   "mukey": "2399821",
+   "muname": "Hoytville silty clay loam, 0 to 1 percent slopes",
+   "muacres": "75939",
+   "areaname": "Wood County, Ohio",
+   "areasymbol": "OH173",
+   "saverest": "9/16/2026 11:56:55 AM",
+   "cokey": "29298952",
+   "compname": "Hoytville",
+   "comppct_r": "90",
+   "majcompflag": "Yes",
+   "taxclname": "Fine, illitic, mesic Mollic Epiaqualfs",
+   "hydgrp": "C/D",
+   "slope_r": "0",
+   "drainagecl": "Very poorly drained"
+  },
+  {
+   "mukey": "168316",
+   "muname": "Hoytville-Urban land complex, 0 to 1 percent slopes",
+   "muacres": "1734",
+   "areaname": "Wood County, Ohio",
+   "areasymbol": "OH173",
+   "saverest": "9/16/2026 11:56:55 AM",
+   "cokey": "29298950",
+   "compname": "Hoytville",
+   "comppct_r": "60",
+   "majcompflag": "Yes",
+   "taxclname": "Fine, illitic, mesic Mollic Epiaqualfs",
+   "hydgrp": "C/D",
+   "slope_r": "0",
+   "drainagecl": "Very poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "2399822",
+  "muname": "Hoytville clay loam, 0 to 1 percent slopes",
+  "muacres": "157145",
+  "areaname": "Wood County, Ohio",
+  "areasymbol": "OH173",
+  "saverest": "9/16/2026 11:56:55 AM",
+  "cokey": "29298947",
+  "compname": "Hoytville",
+  "comppct_r": "90",
+  "majcompflag": "Yes",
+  "taxclname": "Fine, illitic, mesic Mollic Epiaqualfs",
+  "hydgrp": "C/D",
+  "slope_r": "0",
+  "drainagecl": "Very poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "20",
+   "dbthirdbar_r": "1.32",
+   "wthirdbar_r": "33.8",
+   "wfifteenbar_r": "20.9",
+   "wsatiated_r": "43",
+   "ksat_r": "7.76",
+   "om_r": "4.75",
+   "ph1to1h2o_r": "6.7",
+   "claytotal_r": "36",
+   "silttotal_r": "39",
+   "sandtotal_r": "25"
+  },
+  {
+   "hzname": "Btg",
+   "hzdept_r": "20",
+   "hzdepb_r": "89",
+   "dbthirdbar_r": "1.55",
+   "wthirdbar_r": "34.8",
+   "wfifteenbar_r": "28",
+   "wsatiated_r": "37",
+   "ksat_r": "2.82",
+   "om_r": "1",
+   "ph1to1h2o_r": "7",
+   "claytotal_r": "46",
+   "silttotal_r": "36",
+   "sandtotal_r": "18"
+  },
+  {
+   "hzname": "BC",
+   "hzdept_r": "89",
+   "hzdepb_r": "145",
+   "dbthirdbar_r": "1.58",
+   "wthirdbar_r": "33.6",
+   "wfifteenbar_r": "24.3",
+   "wsatiated_r": "36",
+   "ksat_r": "0.92",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "7.8",
+   "claytotal_r": "38",
+   "silttotal_r": "39",
+   "sandtotal_r": "23"
+  },
+  {
+   "hzname": "Cd",
+   "hzdept_r": "145",
+   "hzdepb_r": "203",
+   "dbthirdbar_r": "1.8",
+   "wthirdbar_r": "27",
+   "wfifteenbar_r": "25",
+   "wsatiated_r": "29",
+   "ksat_r": "0.005",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "7.9",
+   "claytotal_r": "37",
+   "silttotal_r": "38",
+   "sandtotal_r": "25"
+  }
+ ],
+ "restrictions": [
+  {
+   "cokey": "29298947",
+   "reskind": "Densic material",
+   "reshard": "noncoherent",
+   "resdept_r": "145",
+   "resdepb_r": "203"
+  }
+ ],
+ "cosoilmoist": [
+  {
+   "month": "January",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "15",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "January",
+   "soimoistdept_r": "15",
+   "soimoistdepb_r": "152",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "January",
+   "soimoistdept_r": "152",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "February",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "15",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "February",
+   "soimoistdept_r": "15",
+   "soimoistdepb_r": "152",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "February",
+   "soimoistdept_r": "152",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "March",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "15",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "March",
+   "soimoistdept_r": "15",
+   "soimoistdepb_r": "152",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "March",
+   "soimoistdept_r": "152",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "April",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "15",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "April",
+   "soimoistdept_r": "15",
+   "soimoistdepb_r": "152",
+   "soimoiststat": "Wet"
+  },
+  {
+   "month": "April",
+   "soimoistdept_r": "152",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "May",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "June",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "July",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "August",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "September",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "October",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "November",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  },
+  {
+   "month": "December",
+   "soimoistdept_r": "0",
+   "soimoistdepb_r": "203",
+   "soimoiststat": "Moist"
+  }
+ ]
+}

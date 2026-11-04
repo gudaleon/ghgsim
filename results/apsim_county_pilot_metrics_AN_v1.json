@@ -1,0 +1,33 @@
+{
+ "n_counties": 17,
+ "spearman_EF_apsim_vs": {
+  "ipcc2019_EF_pct": 0.2041241452319315,
+  "holos_base_EF_pct": 0.5906862745098039,
+  "p_over_pe_may_oct": 0.5122549019607843
+ },
+ "spearman_total_apsim_vs": {
+  "ipcc2006_EF_pct": 0.3897058823529412,
+  "ipcc2019_EF_pct": 0.3946078431372549,
+  "holos_base_EF_pct": 0.6029411764705882
+ },
+ "top_decile_share_of_total": {
+  "apsim_EF_pct": 0.21744185203445687,
+  "ipcc2006_EF_pct": 0.15853990111609065,
+  "ipcc2019_EF_pct": 0.22622174344007323,
+  "holos_base_EF_pct": 0.19885150282961184
+ },
+ "sum_total_N2O_N_t": {
+  "apsim_EF_pct": 3432.9223560226105,
+  "ipcc2006_EF_pct": 3968.902753,
+  "ipcc2019_EF_pct": 2207.7567753,
+  "holos_base_EF_pct": 3483.1548128582913
+ },
+ "mean_apsim_EF_pct_by_drainage": {
+  "well": 0.7913977984817089,
+  "poor": 0.9365500996186102
+ },
+ "spearman_apsim_over_ipcc2019_vs_ppe": 0.22794117647058823,
+ "mean_share_top5pct_days": 0.5901073047949772,
+ "n_counties_ge15_sown_years": 15,
+ "spearman_EF_apsim_vs_ppe_ge15_sown": 0.3678571428571429
+}

@@ -1,0 +1,122 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  40.00077,
+  -102.421649
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-102.421649 40.00077)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "95080",
+   "muname": "Platte fine sandy loam",
+   "areaname": "Yuma County, Colorado",
+   "areasymbol": "CO125",
+   "saverest": "8/31/2026 4:06:15 PM",
+   "cokey": "28149072",
+   "compname": "Platte",
+   "comppct_r": "90",
+   "majcompflag": "Yes",
+   "taxclname": "Sandy, mixed, mesic Mollic Fluvaquents",
+   "hydgrp": "A",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "95080",
+   "muname": "Platte fine sandy loam",
+   "areaname": "Yuma County, Colorado",
+   "areasymbol": "CO125",
+   "saverest": "8/31/2026 4:06:15 PM",
+   "cokey": "28149071",
+   "compname": "Bankard",
+   "comppct_r": "9",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": null,
+   "drainagecl": null
+  },
+  {
+   "mukey": "95080",
+   "muname": "Platte fine sandy loam",
+   "areaname": "Yuma County, Colorado",
+   "areasymbol": "CO125",
+   "saverest": "8/31/2026 4:06:15 PM",
+   "cokey": "28149070",
+   "compname": "Las Animas, frequently flooded",
+   "comppct_r": "1",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": null,
+   "drainagecl": null
+  }
+ ],
+ "dominant": {
+  "mukey": "95080",
+  "muname": "Platte fine sandy loam",
+  "areaname": "Yuma County, Colorado",
+  "areasymbol": "CO125",
+  "saverest": "8/31/2026 4:06:15 PM",
+  "cokey": "28149072",
+  "compname": "Platte",
+  "comppct_r": "90",
+  "majcompflag": "Yes",
+  "taxclname": "Sandy, mixed, mesic Mollic Fluvaquents",
+  "hydgrp": "A",
+  "slope_r": "1",
+  "drainagecl": "Poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "H1",
+   "hzdept_r": "0",
+   "hzdepb_r": "15",
+   "dbthirdbar_r": "1.43",
+   "wthirdbar_r": "18.2",
+   "wfifteenbar_r": "8.5",
+   "wsatiated_r": "42",
+   "ksat_r": "28",
+   "om_r": "2",
+   "ph1to1h2o_r": "7.5",
+   "claytotal_r": "10",
+   "silttotal_r": "26.5",
+   "sandtotal_r": "63.5"
+  },
+  {
+   "hzname": "H2",
+   "hzdept_r": "15",
+   "hzdepb_r": "33",
+   "dbthirdbar_r": "1.53",
+   "wthirdbar_r": "10.9",
+   "wfifteenbar_r": "4.2",
+   "wsatiated_r": "39",
+   "ksat_r": "141",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "7.5",
+   "claytotal_r": "5",
+   "silttotal_r": "0.6",
+   "sandtotal_r": "94.4"
+  },
+  {
+   "hzname": "H3",
+   "hzdept_r": "33",
+   "hzdepb_r": "152",
+   "dbthirdbar_r": "1.53",
+   "wthirdbar_r": "5.2",
+   "wfifteenbar_r": "1",
+   "wsatiated_r": "27",
+   "ksat_r": "141",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "7.5",
+   "claytotal_r": "1.5",
+   "silttotal_r": "6.6",
+   "sandtotal_r": "91.9"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T11:30:25+00:00"
+}

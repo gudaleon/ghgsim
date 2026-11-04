@@ -1,0 +1,395 @@
+{
+ "apsim": {
+  "version": "APSIM 2026.11.8142.0",
+  "commit": "d1dca5e97aa4930a2015722362483b1216005037",
+  "models_dll_sha256": "b19b31cfa21a9f9420ecb37c6433edc977c3353fe2845a89a0c15b2b98b9c0d0"
+ },
+ "example": {
+  "file": "Examples/Maize.apsimx",
+  "sha256": "6a80346616dea495668b2b73abe063a15870fa15b730308ad887eb855ca83ef7"
+ },
+ "management": {
+  "StartDate": "19-apr",
+  "EndDate": "26-may",
+  "CultivarName": "B_110",
+  "urea_N_kg_ha": {
+   "100N": 100.0,
+   "0N": 0.0
+  }
+ },
+ "runs": {
+  "08125": {
+   "met": {
+    "tav": 12.0,
+    "amp": 25.01,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "CO125",
+    "mukey": "95080",
+    "muname": "Platte fine sandy loam",
+    "cokey": "28149072",
+    "compname": "Platte",
+    "comppct_r": "90",
+    "drainagecl": "Poorly drained",
+    "hydgrp": "A"
+   }
+  },
+  "20009": {
+   "met": {
+    "tav": 13.39,
+    "amp": 27.46,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "KS009",
+    "mukey": "1440486",
+    "muname": "Kisiwa loam, depressional",
+    "cokey": "27972091",
+    "compname": "Kisiwa",
+    "comppct_r": "100",
+    "drainagecl": "Poorly drained",
+    "hydgrp": "D"
+   }
+  },
+  "38101": {
+   "met": {
+    "tav": 5.64,
+    "amp": 33.02,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "ND101",
+    "mukey": "2585129",
+    "muname": "Forman-Aastad loams, west, 0 to 3 percent slopes",
+    "cokey": "28766300",
+    "compname": "Forman",
+    "comppct_r": "52",
+    "drainagecl": "Well drained",
+    "hydgrp": "C"
+   }
+  },
+  "38105": {
+   "met": {
+    "tav": 5.99,
+    "amp": 32.43,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "ND105",
+    "mukey": "2567011",
+    "muname": "Williams-Bowbells loams, 3 to 6 percent slopes",
+    "cokey": "28768780",
+    "compname": "Williams",
+    "comppct_r": "45",
+    "drainagecl": "Well drained",
+    "hydgrp": "B"
+   }
+  },
+  "38017": {
+   "met": {
+    "tav": 6.07,
+    "amp": 34.7,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "ND017",
+    "mukey": "2521590",
+    "muname": "Fargo silty clay loam, 0 to 1 percent slopes",
+    "cokey": "28059980",
+    "compname": "Fargo",
+    "comppct_r": "85",
+    "drainagecl": "Poorly drained",
+    "hydgrp": "C/D"
+   }
+  },
+  "38019": {
+   "met": {
+    "tav": 3.74,
+    "amp": 35.37,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "ND019",
+    "mukey": "2587519",
+    "muname": "Vallers, saline-Manfred complex, 0 to 1 percent slopes",
+    "cokey": "28061196",
+    "compname": "Vallers",
+    "comppct_r": "45",
+    "drainagecl": "Poorly drained",
+    "hydgrp": "B/D"
+   }
+  },
+  "27119": {
+   "met": {
+    "tav": 4.61,
+    "amp": 36.03,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "MN119",
+    "mukey": "2799739",
+    "muname": "Sandberg loamy sand, 6 to 15 percent slopes",
+    "cokey": "28833559",
+    "compname": "Sandberg",
+    "comppct_r": "90",
+    "drainagecl": "Excessively drained",
+    "hydgrp": "A"
+   }
+  },
+  "31041": {
+   "met": {
+    "tav": 10.49,
+    "amp": 27.32,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "NE041",
+    "mukey": "3030740",
+    "muname": "Hersh-Valentine complex, 11 to 30 percent slopes",
+    "cokey": "29186604",
+    "compname": "Hersh",
+    "comppct_r": "60",
+    "drainagecl": "Well drained",
+    "hydgrp": "A"
+   }
+  },
+  "17019": {
+   "met": {
+    "tav": 11.21,
+    "amp": 27.09,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "IL019",
+    "mukey": "242965",
+    "muname": "Flanagan silt loam, 0 to 2 percent slopes",
+    "cokey": "27802015",
+    "compname": "Flanagan",
+    "comppct_r": "95",
+    "drainagecl": "Somewhat poorly drained",
+    "hydgrp": "C/D"
+   }
+  },
+  "17113": {
+   "met": {
+    "tav": 10.63,
+    "amp": 27.66,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "IL113",
+    "mukey": "199053",
+    "muname": "Ipava silt loam, 0 to 2 percent slopes",
+    "cokey": "27813604",
+    "compname": "Ipava",
+    "comppct_r": "85",
+    "drainagecl": "Somewhat poorly drained",
+    "hydgrp": "C/D"
+   }
+  },
+  "27127": {
+   "met": {
+    "tav": 7.69,
+    "amp": 32.72,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "MN127",
+    "mukey": "2374074",
+    "muname": "Normania loam, 1 to 3 percent slopes",
+    "cokey": "28835833",
+    "compname": "Normania",
+    "comppct_r": "85",
+    "drainagecl": "Moderately well drained",
+    "hydgrp": "C"
+   }
+  },
+  "17075": {
+   "met": {
+    "tav": 10.68,
+    "amp": 27.33,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "IL075",
+    "mukey": "175559",
+    "muname": "Gilford fine sandy loam, 0 to 2 percent slopes",
+    "cokey": "27808109",
+    "compname": "Gilford",
+    "comppct_r": "90",
+    "drainagecl": "Poorly drained",
+    "hydgrp": "A/D"
+   }
+  },
+  "19155": {
+   "met": {
+    "tav": 10.21,
+    "amp": 30.06,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "IA155",
+    "mukey": "410435",
+    "muname": "Ackmore-Colo-Judson complex, 0 to 5 percent slopes",
+    "cokey": "29189185",
+    "compname": "Ackmore",
+    "comppct_r": "40",
+    "drainagecl": "Somewhat poorly drained",
+    "hydgrp": "C/D"
+   }
+  },
+  "27129": {
+   "met": {
+    "tav": 7.69,
+    "amp": 32.72,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "MN129",
+    "mukey": "436130",
+    "muname": "Clarion-Storden-Hawick complex, 2 to 6 percent slopes",
+    "cokey": "28835479",
+    "compname": "Clarion",
+    "comppct_r": "50",
+    "drainagecl": "Well drained",
+    "hydgrp": "B"
+   }
+  },
+  "19047": {
+   "met": {
+    "tav": 9.62,
+    "amp": 30.42,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "IA047",
+    "mukey": "399927",
+    "muname": "Monona silty clay loam, 14 to 20 percent slopes, severely eroded",
+    "cokey": "28623646",
+    "compname": "Monona",
+    "comppct_r": "80",
+    "drainagecl": "Well drained",
+    "hydgrp": "C"
+   }
+  },
+  "19019": {
+   "met": {
+    "tav": 8.43,
+    "amp": 30.42,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "IA019",
+    "mukey": "403243",
+    "muname": "Spillville loam, 0 to 2 percent slopes, occasionally flooded",
+    "cokey": "28560188",
+    "compname": "Spillville",
+    "comppct_r": "90",
+    "drainagecl": "Somewhat poorly drained",
+    "hydgrp": "B/D"
+   }
+  },
+  "19031": {
+   "met": {
+    "tav": 9.16,
+    "amp": 29.95,
+    "days": 10958
+   },
+   "soil": {
+    "areasymbol": "IA031",
+    "mukey": "1397061",
+    "muname": "Tama silty clay loam, 2 to 5 percent slopes",
+    "cokey": "28637468",
+    "compname": "Tama",
+    "comppct_r": "95",
+    "drainagecl": "Well drained",
+    "hydgrp": "C"
+   }
+  }
+ },
+ "skipped": {
+  "19193": {
+   "reason": "APSIM soil physical check: rock content, bulk density and saturated water content inconsistent",
+   "soil": "Napier"
+  },
+  "19081": {
+   "reason": "APSIM soil physical check: rock content, bulk density and saturated water content inconsistent",
+   "soil": "Spicer"
+  },
+  "19109": {
+   "reason": "APSIM soil physical check: rock content, bulk density and saturated water content inconsistent",
+   "soil": "Clarion"
+  }
+ },
+ "outputs_sha256": {
+  "county_08125_0N_AN_v1.Daily.csv.gz": "9d52240e8feb5259d68e87bb00327b62da7da5ef1ad9ac6805c01b7dc5ac65b0",
+  "county_08125_0N_AN_v1.Report.csv.gz": "f9c516e14ec751763c9d34e5c1691fef8e4de59a026d445d8e79d4b5f4481c75",
+  "county_08125_100N_AN_v1.Daily.csv.gz": "239dc9849328f3f94bebc5c38628d34aadeba6f443f612e65ffa3096d61429b9",
+  "county_08125_100N_AN_v1.Report.csv.gz": "c1c923cc4187ada78bfadfa93ac085d666c768f69a7ed542f37256c6e38498d0",
+  "county_17019_0N_AN_v1.Daily.csv.gz": "9c129952901569f10306217ebd0d63032454e52f1dc66c39030493c0a23a3142",
+  "county_17019_0N_AN_v1.Report.csv.gz": "6b592936b6ead7e7ebeba6c3f36bc8a32a5609561cbed0fe6028afaec15990cd",
+  "county_17019_100N_AN_v1.Daily.csv.gz": "e324dc46099b13f5e372461657f15d2bee186070a6a8f8a55e4ae6c01c5ff359",
+  "county_17019_100N_AN_v1.Report.csv.gz": "2938cc1a566ae075b1afc70ca361539b0cdf2abae071951150bb69deb7c888b6",
+  "county_17075_0N_AN_v1.Daily.csv.gz": "4db6f3a93b010360be5e238705f2c7aa267e1c592501c65354edc561648234d8",
+  "county_17075_0N_AN_v1.Report.csv.gz": "d93e75ccb603e39e069de7f0043edd4c636218631ae1f6e38ab771c4e13b6a2e",
+  "county_17075_100N_AN_v1.Daily.csv.gz": "601017c21e405d8aed8addef95cf6950e6dd27a6ba6d223c894f34a572787f6a",
+  "county_17075_100N_AN_v1.Report.csv.gz": "25ca2c9899ba36c398656afc05bbc743b4fd85e481fb3c6f4155d123134fe297",
+  "county_17113_0N_AN_v1.Daily.csv.gz": "1dabc8983810f87ec827efa6ea28d7d28c25654a207fc2dbbda2eec689943a62",
+  "county_17113_0N_AN_v1.Report.csv.gz": "4bb3faf12d6f90b721529f4615182e9f3d234060b34282febe0f2bdab8ecb896",
+  "county_17113_100N_AN_v1.Daily.csv.gz": "a12dbf2b6240e8e662ceda5ec110a2beb8b9132d6c3f0935cfe999a97a5c96f7",
+  "county_17113_100N_AN_v1.Report.csv.gz": "ba22e75f39ee9a0b1fcc1758154754569664c533bcb62b5b879f904507614e9f",
+  "county_19019_0N_AN_v1.Daily.csv.gz": "90b30ef53b87b9d64ec13bb70d34a8d214fcf785ae0c08c3332be2b1c1faccad",
+  "county_19019_0N_AN_v1.Report.csv.gz": "4e10debbd2ce10df4b82d51328e6f5f9d83a428f5bd50795a5b9f2226c011b89",
+  "county_19019_100N_AN_v1.Daily.csv.gz": "f05c74855dbc2b30f536d359ee24d2f2ac012a4227c60fce5d769a5b66bd7651",
+  "county_19019_100N_AN_v1.Report.csv.gz": "614f5260a1bdf1f6f71e809d15ad4f49549a76f1d19dab98f6011c8ba54d329e",
+  "county_19031_0N_AN_v1.Daily.csv.gz": "d2aaa96926282e367ac0a9ae05fa9ba8b082d03c964cd9f519faeec55b8c51cf",
+  "county_19031_0N_AN_v1.Report.csv.gz": "1545e1b883f90933b308bb24de60cabd90d15c45860608328631ee4095e163a9",
+  "county_19031_100N_AN_v1.Daily.csv.gz": "69db91fff8d5920888fc128bd996ef9e7e421316829e48bfe163d0af6e7d8550",
+  "county_19031_100N_AN_v1.Report.csv.gz": "40222168a073d17400db7d8bd201433909689d588fd259047031ead4b52594df",
+  "county_19047_0N_AN_v1.Daily.csv.gz": "4c94978fec9f4c70f5f7fe883fe8e660918b91588599fec3b42eb6a46d33b728",
+  "county_19047_0N_AN_v1.Report.csv.gz": "a3c726cd30a1a7b84792285be0e4128b6ce478d60872d2c76fcbd8476a117418",
+  "county_19047_100N_AN_v1.Daily.csv.gz": "2a339760d1fe77f83d7ada04af02da3a9e72d99b8d2dad00a9e3bf959104a393",
+  "county_19047_100N_AN_v1.Report.csv.gz": "877909dfd10a1b482ef6bfa45fdb0289e65b9041195d19cd48915515fed13668",
+  "county_19155_0N_AN_v1.Daily.csv.gz": "17f590c2a280f450a358cf811aca692ed47b66bbd7668d7ad9e554a9fba5e838",
+  "county_19155_0N_AN_v1.Report.csv.gz": "3079e3d0dc98a8a9741466c275da5358c08bacfce283b90da342168116c266d9",
+  "county_19155_100N_AN_v1.Daily.csv.gz": "f311590b2308e3625a405be1d36d980e9f960bedf011410c8169a38124d2fa0a",
+  "county_19155_100N_AN_v1.Report.csv.gz": "426d3e88a8075d4d5e6d4555c9be61a62b429ac6b87dfb9eaf6ba3508000994a",
+  "county_20009_0N_AN_v1.Daily.csv.gz": "e6783d95a914422656e493aa398d415352cca82026801d023ad6304801a53b48",
+  "county_20009_0N_AN_v1.Report.csv.gz": "4b59553810b535f906946c0dff58950a56a4a940af5b63c33d8a86277feebcbd",
+  "county_20009_100N_AN_v1.Daily.csv.gz": "dbde39663254a53d7e915551ee7c50b90be7b8cf0fb6fa26c6049373f0648a0e",
+  "county_20009_100N_AN_v1.Report.csv.gz": "401bade1841978446c551caff1c73962924451d835bf69e3faa5c6c8d318760a",
+  "county_27119_0N_AN_v1.Daily.csv.gz": "5be5a0b76c2940c9c8e0675f76fab6d840c4742361b6efbe954e7fdebe69df3e",
+  "county_27119_0N_AN_v1.Report.csv.gz": "d5af35936773521ed8230accb3b81a4c83f912fe968aab406b209b2850144d8e",
+  "county_27119_100N_AN_v1.Daily.csv.gz": "35a139a9b03b1dd3659487fa7ba71a1dc1ebf42566f68e12c3abe2743edb8413",
+  "county_27119_100N_AN_v1.Report.csv.gz": "5fa025dec06c948907d1b7b3e48282e0cd3ecade65086766ecc8468a97cfa154",
+  "county_27127_0N_AN_v1.Daily.csv.gz": "92d0a001acc969b3285e29a65cb76b8bbeaebdf49ab59a4b39990642bd6c604a",
+  "county_27127_0N_AN_v1.Report.csv.gz": "624f276366199d90a7f4032aba794f5abe0df9c6be270c47d27e3d73af899789",
+  "county_27127_100N_AN_v1.Daily.csv.gz": "ce998ef687e4f628aed271da4334adafb642be36d09164bb188a907c76163010",
+  "county_27127_100N_AN_v1.Report.csv.gz": "21a1d1e42f2528e579d7b3fac46b8a87c3a4579d8b1649d4c390ff8b11d26794",
+  "county_27129_0N_AN_v1.Daily.csv.gz": "c734fc0938cae748c0306486c013adaef05717024b21c720b24ca13146a0bb4f",
+  "county_27129_0N_AN_v1.Report.csv.gz": "698bcfb17eff42f476ab1b497e8522d710030e4ef39e0fb35f8df828e6817cd6",
+  "county_27129_100N_AN_v1.Daily.csv.gz": "e2ba1c0f7a47232abe7ed33ff75b0611ea21217db84c461dd550732031a63718",
+  "county_27129_100N_AN_v1.Report.csv.gz": "83c8b1c07260d5faf10d343c6a64aacf02c572d95d6878705d132fab1fe93052",
+  "county_31041_0N_AN_v1.Daily.csv.gz": "949ef52cf41d93171f7ec40d4767fe016563568c8b95c4501dfa03d8294a35ff",
+  "county_31041_0N_AN_v1.Report.csv.gz": "70fbd20b82baeaa09859b873191ec5fe427225b4193cf8d36f3a4764c34b91b6",
+  "county_31041_100N_AN_v1.Daily.csv.gz": "4ce331c141e3262c752da5e2cc344fc00e05d42df321ef42b282e68938903a0b",
+  "county_31041_100N_AN_v1.Report.csv.gz": "d3c1cd49d603e991a137d96dbb9a221adb1577dd8f5ee3fe0f6a26e88b145f6b",
+  "county_38017_0N_AN_v1.Daily.csv.gz": "d6d1f44db0ee2e45a8ca1c1fe7449d767d12150bb90bb34d64691e265c57e638",
+  "county_38017_0N_AN_v1.Report.csv.gz": "794f9c75f6a38b636e8b2f61321423e6975377a3c17b2096ca20138e748cd6b0",
+  "county_38017_100N_AN_v1.Daily.csv.gz": "a9f22f26989f33c5171287c02d87296bd87ac908874b8075321e3f67fd2c6dab",
+  "county_38017_100N_AN_v1.Report.csv.gz": "219b9b3cba4979b5e1125e5e6e0f28aeba143a209d5e0fffcb6c4b6ccd190e0a",
+  "county_38019_0N_AN_v1.Daily.csv.gz": "9dcf9c7cbdfffc725435c00b61135f2e61f0493828b63300a280d51ed85fbd1b",
+  "county_38019_0N_AN_v1.Report.csv.gz": "2406979c10c6c6e60cdb7e5b33abd8c663f8f6924bda442c64c31e6349aa0768",
+  "county_38019_100N_AN_v1.Daily.csv.gz": "30621ad0df48d8750ec5366fb4fb274b649d6e818e0e8ed96aa71dffcbbf14c5",
+  "county_38019_100N_AN_v1.Report.csv.gz": "9be82c60cf35a884b3f8b5b547b7fbd93ee803dac1e8804ab079b6193bb9354e",
+  "county_38101_0N_AN_v1.Daily.csv.gz": "fb276e59409f326492a2c7b832f5bd0d18e969667649db13f1f337463beeb740",
+  "county_38101_0N_AN_v1.Report.csv.gz": "b70acbbfbbead09804273d6d048958fff196cd5d1a2bc0b3b057078f0b4f1d60",
+  "county_38101_100N_AN_v1.Daily.csv.gz": "7b840b437c60da7c921d5da1c72b264bbd94979512dcef9283cd87fe6a8ff04a",
+  "county_38101_100N_AN_v1.Report.csv.gz": "9afe527957f2861d5d32150401200f29e882fd8e8deeabae85d45e065c928ba1",
+  "county_38105_0N_AN_v1.Daily.csv.gz": "57de2498e4b31585f2b69327b8702215183b05bc5ca869621bee73bd190b08c0",
+  "county_38105_0N_AN_v1.Report.csv.gz": "73a23c7e323fca16863eb8c3ab0d61fbe13c855194af90f9aaad96bbb7d0e93f",
+  "county_38105_100N_AN_v1.Daily.csv.gz": "5943342bce03003b352fc6c0ed0f6fbac64e4eb1004dff75b6645554767fd185",
+  "county_38105_100N_AN_v1.Report.csv.gz": "6f5b8fb5976f1e8fb00b72717c0e81860e192c86e5a7c67bf68ee785871bf8f7"
+ }
+}

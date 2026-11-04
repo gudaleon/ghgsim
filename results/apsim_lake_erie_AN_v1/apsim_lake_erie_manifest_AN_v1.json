@@ -1,0 +1,88 @@
+{
+ "apsim": {
+  "version": "APSIM 2026.11.8142.0",
+  "commit": "d1dca5e97aa4930a2015722362483b1216005037",
+  "models_dll_sha256": "b19b31cfa21a9f9420ecb37c6433edc977c3353fe2845a89a0c15b2b98b9c0d0"
+ },
+ "soil": {
+  "areasymbol": "OH173",
+  "mukey": "2399822",
+  "muname": "Hoytville clay loam, 0 to 1 percent slopes",
+  "muacres": "157145",
+  "cokey": "29298947",
+  "compname": "Hoytville",
+  "comppct_r": "90",
+  "taxclname": "Fine, illitic, mesic Mollic Epiaqualfs",
+  "drainagecl": "Very poorly drained",
+  "hydgrp": "C/D"
+ },
+ "restrictions": [
+  {
+   "cokey": "29298947",
+   "reskind": "Densic material",
+   "reshard": "noncoherent",
+   "resdept_r": "145",
+   "resdepb_r": "203"
+  }
+ ],
+ "met": {
+  "tav": 10.26,
+  "amp": 26.56,
+  "days": 10958
+ },
+ "runs": {
+  "erie_undrained": {
+   "case": "erie_undrained",
+   "tile": null,
+   "urea_N_kg_ha": 100.0
+  },
+  "erie_undrained_0N": {
+   "case": "erie_undrained",
+   "failed": "---> System.Exception: newTemps(1) is outside range of -50.0 to 100.0",
+   "last_day": "1992-12-29"
+  },
+  "erie_tile_1956": {
+   "case": "erie_tile_1956",
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 12200.0,
+    "DrainRadius": 150.0,
+    "ImpermDepth": 1450.0,
+    "Open": true
+   },
+   "urea_N_kg_ha": 100.0
+  },
+  "erie_tile_1956_0N": {
+   "case": "erie_tile_1956",
+   "failed": "---> System.Exception: newTemps(1) is outside range of -50.0 to 100.0",
+   "last_day": "1992-12-29"
+  },
+  "erie_tile_lt": {
+   "case": "erie_tile_lt",
+   "tile": {
+    "DrainDepth": 1200.0,
+    "DrainSpacing": 17000.0,
+    "DrainRadius": 150.0,
+    "ImpermDepth": 1450.0,
+    "Open": true
+   },
+   "urea_N_kg_ha": 100.0
+  },
+  "erie_tile_lt_0N": {
+   "case": "erie_tile_lt",
+   "failed": "---> System.Exception: newTemps(1) is outside range of -50.0 to 100.0",
+   "last_day": "1992-12-29"
+  }
+ },
+ "outputs_sha256": {
+  "lake_erie_erie_tile_1956_AN_v1.apsimx": "e114ddb4616cdd476013296e90f66d88f110e5fb1f6f1a188a302cc8fb4eee78",
+  "lake_erie_erie_tile_1956_AN_v1.Daily.csv.gz": "ba45dea8eb65a848747921efa19841f35eb5e62a1915dd0c898f97b29600916e",
+  "lake_erie_erie_tile_1956_AN_v1.Report.csv.gz": "99851a2b75fd7567be1dbf25300e7d8f82f35448445b38cea86efdd6b7134eb0",
+  "lake_erie_erie_tile_lt_AN_v1.apsimx": "3a9368b28ccd4169f96c5414bff8919b2da0650851071ad921aa8a092fabc6bf",
+  "lake_erie_erie_tile_lt_AN_v1.Daily.csv.gz": "6f6c8cef0133ce1fe630e8b621159ebf2b5fccf67306904e975a9c3b21272366",
+  "lake_erie_erie_tile_lt_AN_v1.Report.csv.gz": "b42a7ad3f5628ae0d516bc3ef0f4368912bbe5b472602650983f66d01d5fd72e",
+  "lake_erie_erie_undrained_AN_v1.apsimx": "ed091fd8401dc76ed9bac387bdbdd5ed86bd56523ed7c5f79c8afa7ddc494282",
+  "lake_erie_erie_undrained_AN_v1.Daily.csv.gz": "8c699078b3b1c940cb0824c0b74db0fa8ec7cf822f7a9d1be942c91a54dfbd5d",
+  "lake_erie_erie_undrained_AN_v1.Report.csv.gz": "205b4a7a29e06545d6b085bab4173e7952711b623a9cbb63ea6a7c958aa19d57"
+ }
+}

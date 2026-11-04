@@ -1,0 +1,122 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  41.393893,
+  -99.726866
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-99.726866 41.393893)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "3030740",
+   "muname": "Hersh-Valentine complex, 11 to 30 percent slopes",
+   "areaname": "Custer County, Nebraska",
+   "areasymbol": "NE041",
+   "saverest": "9/11/2026 12:59:14 PM",
+   "cokey": "29186604",
+   "compname": "Hersh",
+   "comppct_r": "60",
+   "majcompflag": "Yes",
+   "taxclname": "Coarse-loamy, mixed, superactive, nonacid, mesic Typic Ustorthents",
+   "hydgrp": "A",
+   "slope_r": "22",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "3030740",
+   "muname": "Hersh-Valentine complex, 11 to 30 percent slopes",
+   "areaname": "Custer County, Nebraska",
+   "areasymbol": "NE041",
+   "saverest": "9/11/2026 12:59:14 PM",
+   "cokey": "29186605",
+   "compname": "Valentine",
+   "comppct_r": "30",
+   "majcompflag": "Yes",
+   "taxclname": "Mixed, mesic Typic Ustipsamments",
+   "hydgrp": "A",
+   "slope_r": "15",
+   "drainagecl": "Excessively drained"
+  },
+  {
+   "mukey": "3030740",
+   "muname": "Hersh-Valentine complex, 11 to 30 percent slopes",
+   "areaname": "Custer County, Nebraska",
+   "areasymbol": "NE041",
+   "saverest": "9/11/2026 12:59:14 PM",
+   "cokey": "29186603",
+   "compname": "Gates",
+   "comppct_r": "10",
+   "majcompflag": "No ",
+   "taxclname": "Coarse-silty, mixed, nonacid, mesic Typic Ustorthents",
+   "hydgrp": "B",
+   "slope_r": "25",
+   "drainagecl": "Well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "3030740",
+  "muname": "Hersh-Valentine complex, 11 to 30 percent slopes",
+  "areaname": "Custer County, Nebraska",
+  "areasymbol": "NE041",
+  "saverest": "9/11/2026 12:59:14 PM",
+  "cokey": "29186604",
+  "compname": "Hersh",
+  "comppct_r": "60",
+  "majcompflag": "Yes",
+  "taxclname": "Coarse-loamy, mixed, superactive, nonacid, mesic Typic Ustorthents",
+  "hydgrp": "A",
+  "slope_r": "22",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "A",
+   "hzdept_r": "0",
+   "hzdepb_r": "18",
+   "dbthirdbar_r": "1.46",
+   "wthirdbar_r": "20.4",
+   "wfifteenbar_r": "10.9",
+   "wsatiated_r": "42",
+   "ksat_r": "28",
+   "om_r": "1.25",
+   "ph1to1h2o_r": "7.2",
+   "claytotal_r": "14",
+   "silttotal_r": "20",
+   "sandtotal_r": "66"
+  },
+  {
+   "hzname": "AC",
+   "hzdept_r": "18",
+   "hzdepb_r": "33",
+   "dbthirdbar_r": "1.48",
+   "wthirdbar_r": "19.4",
+   "wfifteenbar_r": "9.7",
+   "wsatiated_r": "41",
+   "ksat_r": "28",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "6.7",
+   "claytotal_r": "13",
+   "silttotal_r": "20",
+   "sandtotal_r": "67"
+  },
+  {
+   "hzname": "C",
+   "hzdept_r": "33",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.53",
+   "wthirdbar_r": "19.6",
+   "wfifteenbar_r": "10",
+   "wsatiated_r": "40",
+   "ksat_r": "28",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "7.2",
+   "claytotal_r": "14",
+   "silttotal_r": "20",
+   "sandtotal_r": "66"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T11:30:25+00:00"
+}
