@@ -1,0 +1,40 @@
+name: Living paper recompute (AN_v1)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-and-recompute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements_AN_v1.txt
+      - name: Install pinned environment
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements_AN_v1.txt
+          pip install -e . --no-deps
+      - name: Tests
+        run: pytest tests/ -q --tb=short
+      - name: Lightweight recompute (repo-only inputs run; Bubble-only steps are hashed, not run)
+        run: python scripts/recompute_all_AN_v1.py --profile light --out build/results_manifest_ci.json
+      - name: Diff against the latest committed full-run manifest
+        run: |
+          latest=$(ls results/results_manifest_AN_v*.json | sort -V | tail -1)
+          python scripts/diff_results_AN_v1.py "$latest" build/results_manifest_ci.json --out build/diff_ci.md
+          cat build/diff_ci.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: recompute-light
+          path: |
+            build/results_manifest_ci.json
+            build/diff_ci.md

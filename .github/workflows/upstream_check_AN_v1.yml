@@ -1,0 +1,44 @@
+name: Upstream source check (AN_v1)
+
+on:
+  schedule:
+    - cron: "17 11 * * 1"   # Mondays 11:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests==2.34.2 lxml==6.1.3
+      - id: chk
+        name: Compare upstream fingerprints with data/upstream_sources_AN_v*.json
+        run: |
+          set +e
+          python scripts/check_upstream_AN_v1.py --report build/upstream_report.md --json build/upstream.json
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat build/upstream_report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Open (or comment on) an issue when an upstream changed
+        if: steps.chk.outputs.code == '2'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create upstream-change --color D93F0B --description "An upstream source behind a Paper B number changed" 2>/dev/null || true
+          n=$(gh issue list --label upstream-change --state open --json number -q '.[0].number')
+          if [ -n "$n" ]; then
+            gh issue comment "$n" --body-file build/upstream_report.md
+          else
+            gh issue create --title "Upstream source changed ($(date -u +%F))" --label upstream-change --body-file build/upstream_report.md
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: upstream-check
+          path: build/upstream*
