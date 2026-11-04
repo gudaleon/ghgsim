@@ -21,6 +21,11 @@ def test_csv_v2_reproducible(tmp_path, monkeypatch):
     spec.loader.exec_module(mod)
     out = tmp_path / "out.csv"
     monkeypatch.setattr(mod, "OUT_CSV", out)
+    # AN_v2 predates DECISIONS_AN_v21 (climate EF4): reproduce it with the aggregated-EF4 sensitivity mode.
+    from ghgsim.modules.ipcc2019.manure import IPCC2019Manure
+    orig = IPCC2019Manure.compute
+    monkeypatch.setattr(IPCC2019Manure, "compute",
+                        lambda self, i, p: orig(self, {**i, "ef4_mode": "aggregated"}, p))
     mod.main()
     # params_file label changes when a newer ipcc_params_AN_vN.csv is added; values must not.
     def strip(rs):

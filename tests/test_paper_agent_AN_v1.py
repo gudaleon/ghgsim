@@ -13,7 +13,7 @@ T = pytest.importorskip("paper_agent_tools_AN_v1")
 
 
 def test_run_farm_reproduces_committed_csv():
-    with (ROOT / "data" / "ipcc_2006_vs_2019_stylized_AN_v2.csv").open(encoding="utf-8") as f:
+    with (ROOT / "data" / "ipcc_2006_vs_2019_stylized_AN_v3.csv").open(encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     for farm in sorted({r["farm_id"] for r in rows})[:4]:
         live = T.run_farm(farm, params_file=rows[0]["params_file"])["results"]

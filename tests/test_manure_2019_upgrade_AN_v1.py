@@ -43,7 +43,7 @@ def test_2019_cattle_liquid_mcf_b0_fracgas():
     ch4 = 100 * 5.0 * 365 * 0.19 * P19["CH4_M3_TO_KG"] * 0.31  # Table 10.17 12 mo cool temp moist = 31 %
     assert out["CH4"] == pytest.approx(ch4)
     n = 100 * 70.0
-    assert out["N2O_indirect_vol"] == pytest.approx(n * 0.48 * 0.01 * 44 / 28)  # Table 10.22 other cattle 0.48
+    assert out["N2O_indirect_vol"] == pytest.approx(n * 0.48 * 0.014 * 44 / 28)  # Table 10.22 other cattle 0.48; EF4 wet (AN_v21)
     assert out["N_MMS_Avb_kg"] == pytest.approx(n * (1 - 0.48))
     assert "cool_temperate_moist" in out["MCF_basis"]
 
