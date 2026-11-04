@@ -1,0 +1,83 @@
+{
+  "inputs_sha256": {
+    "fig1_architecture_AN_v1.png": {
+      "results/results_manifest_AN_v2.json": "7ffc1951590b512770eb22682f5f4131159de9c8ec3195fbcdb6374edad6cdf6"
+    },
+    "fig2_stylized_2006_vs_2019_AN_v1.png": {
+      "data/ipcc_2006_vs_2019_stylized_AN_v2.csv": "486ae898fc76f59faaf00f7373cfbbbe203aa70c92cca067cfb3c23a2c53ea09"
+    },
+    "fig3_us_county_and_epa_AN_v1.png": {
+      "data/us_county_2006_vs_2019_AN_v2.csv.gz": "0beb435fea4cdd0985e3dd0afc4e9c937384b55fa31c1eadcd5ef7c44ed5f425",
+      "data/us_national_2006_vs_2019_vs_epa_AN_v2.csv": "fd02be8a2b6ab432e72e844f2b89161f68557d0d471b1b3012252c8cd9ae58f0"
+    },
+    "fig4_zone_sensitivity_AN_v1.png": {
+      "data/us_county_zone_sensitivity_AN_v1.csv": "248aad5ac310ad7d62af0ecb820c78b699c81a82fd097d99154abbfe1e1b18f5"
+    },
+    "fig5_inventory_recalculations_AN_v1.png": {
+      "data/inventories_AN_v1/AUS_recalc_AN_v1.csv": "68e0903320b3e7c3522dc777f52c90b72633dd93598c876a6ee8a5d159e5d8a7",
+      "data/inventories_AN_v1/CAN_recalc_AN_v1.csv": "b7ab0d07738b724e7bc0fbeae10d0b21d3169d6945cf6630e32a0ab14d6aaa7c",
+      "data/inventories_AN_v1/DEU_recalc_AN_v1.csv": "e8ae4c721950270ace46032740a61677a548bf1c9c68962164c8f7b9cae3cae7",
+      "data/inventories_AN_v1/GBR_recalc_AN_v1.csv": "202aed14f558bc4e0b80bb5ec7a166da7094fe5fdf9554c1e4aa364fcebb8da9",
+      "data/inventories_AN_v1/IRL_recalc_AN_v1.csv": "72b7c10e0ca00c91e3712e1f834f8b6e8db09a82b138e7fafd008c8594cb9223",
+      "data/inventories_AN_v1/NZL_recalc_AN_v1.csv": "64b08dd63603c5c6fed40593eabdcfd91cea68cebf537a359ae49fbbee888a18",
+      "data/inventories_US_AN_v1/US_recalc_2024to2025_AN_v1.csv": "bc60f4322bfccc387e1815cf77a694fe54cd25f3ae473aa457eabef636dbbd62"
+    }
+  },
+  "checks": {
+    "fig2_pct_range": [
+      -18.498415951505176,
+      88.4246461490272
+    ],
+    "fig3": {
+      "n": 3075,
+      "median": 10.728617757471648,
+      "up": 1971,
+      "down": 1104,
+      "p05": -26.67028820310396,
+      "p95": 32.91771784232825
+    },
+    "fig4_soil_n2o": {
+      "IPCC 2019 map": 62.1,
+      "Hargreaves": 57.5,
+      "Thornthwaite": 93.8
+    },
+    "fig5": {
+      "1990": {
+        "AUS": -4.68,
+        "CAN": 0.53,
+        "DEU": 1.08,
+        "GBR": 0.91,
+        "IRL": 0.0,
+        "NZL": -0.45,
+        "USA*": 0.07
+      },
+      "2005": {
+        "AUS": -4.57,
+        "CAN": 0.9,
+        "DEU": 0.34,
+        "GBR": 0.97,
+        "IRL": 0.0,
+        "NZL": -0.58,
+        "USA*": 0.12
+      },
+      "2022": {
+        "AUS": NaN,
+        "CAN": NaN,
+        "DEU": NaN,
+        "GBR": NaN,
+        "IRL": NaN,
+        "NZL": NaN,
+        "USA*": -0.02
+      },
+      "2023": {
+        "AUS": -4.38,
+        "CAN": 0.51,
+        "DEU": 0.75,
+        "GBR": 1.44,
+        "IRL": 0.21,
+        "NZL": -0.8,
+        "USA*": NaN
+      }
+    }
+  }
+}
