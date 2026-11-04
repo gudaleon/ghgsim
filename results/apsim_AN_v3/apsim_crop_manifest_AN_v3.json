@@ -1,0 +1,248 @@
+{
+ "apsim": {
+  "version": "APSIM 2026.11.8142.0",
+  "commit": "d1dca5e97aa4930a2015722362483b1216005037",
+  "models_dll_sha256": "b19b31cfa21a9f9420ecb37c6433edc977c3353fe2845a89a0c15b2b98b9c0d0"
+ },
+ "main_run": "results/apsim_AN_v2 (Webster, SoilWater; unchanged)",
+ "weather": "results/apsim_AN_v2/boone_ia_nasa_power_1991_2020_AN_v1.met",
+ "swim_template": "Examples/Tutorials/SWIM.apsimx, HowToAddTileDrainage (Swim3 + SwimSubsurfaceDrain)",
+ "tile": {
+  "DrainDepth": 1200.0,
+  "DrainSpacing": 28500.0,
+  "DrainRadius": 150.0,
+  "ImpermDepth": 2000.0,
+  "Open": true,
+  "source": "Malone, R. W. et al. Evaluating and predicting agricultural management effects under tile drainage using modified APSIM. Geoderma 140, 310-322 (2007), doi:10.1016/j.geoderma.2007.04.014 (Nashua, IA: 1.2 m depth, 28.5 m spacing)",
+  "Klat": "SSURGO ksat_r of the horizon at drain depth x 86.4 (mm/d)",
+  "ImpermDepth_basis": "bottom of SSURGO profile; no corestrictions record"
+ },
+ "clarion": {
+  "areasymbol": "IA015",
+  "saverest": "9/8/2026 6:01:24 PM",
+  "mukey": "2765522",
+  "muname": "Clarion loam, Bemis moraine, 2 to 6 percent slopes",
+  "muacres": "48216",
+  "cokey": "28627767",
+  "compname": "Clarion",
+  "comppct_r": "85",
+  "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Hapludolls",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "borrowed_sensitivity": "one at a time on Webster: initial NO3+NH4 x0.5, x2; FBiom x0.5, x1.5; FInert x0.75, x1.25 (cap 0.99)",
+ "runs": {
+  "webster_swim": {
+   "case": "webster_swim",
+   "soil": "webster",
+   "swim": true,
+   "tile": false,
+   "urea_N_kg_ha": 100.0
+  },
+  "webster_swim_0N": {
+   "case": "webster_swim",
+   "soil": "webster",
+   "swim": true,
+   "tile": false,
+   "urea_N_kg_ha": 0.0
+  },
+  "webster_seep": {
+   "case": "webster_seep",
+   "soil": "webster",
+   "swim": true,
+   "tile": false,
+   "seepage": true,
+   "urea_N_kg_ha": 100.0
+  },
+  "webster_seep_0N": {
+   "case": "webster_seep",
+   "soil": "webster",
+   "swim": true,
+   "tile": false,
+   "seepage": true,
+   "urea_N_kg_ha": 0.0
+  },
+  "webster_tile": {
+   "case": "webster_tile",
+   "soil": "webster",
+   "swim": true,
+   "tile": true,
+   "seepage": true,
+   "urea_N_kg_ha": 100.0
+  },
+  "webster_tile_0N": {
+   "case": "webster_tile",
+   "soil": "webster",
+   "swim": true,
+   "tile": true,
+   "seepage": true,
+   "urea_N_kg_ha": 0.0
+  },
+  "webster_wt": {
+   "case": "webster_wt",
+   "soil": "webster",
+   "swim": true,
+   "tile": false,
+   "watertable_mm": 660.0,
+   "urea_N_kg_ha": 100.0
+  },
+  "webster_wt_0N": {
+   "case": "webster_wt",
+   "soil": "webster",
+   "swim": true,
+   "tile": false,
+   "watertable_mm": 660.0,
+   "urea_N_kg_ha": 0.0
+  },
+  "clarion": {
+   "case": "clarion",
+   "soil": "clarion",
+   "urea_N_kg_ha": 100.0
+  },
+  "clarion_0N": {
+   "case": "clarion",
+   "soil": "clarion",
+   "urea_N_kg_ha": 0.0
+  },
+  "initN_x0.5": {
+   "case": "initN_x0.5",
+   "soil": "webster",
+   "initN": 0.5,
+   "urea_N_kg_ha": 100.0
+  },
+  "initN_x0.5_0N": {
+   "case": "initN_x0.5",
+   "soil": "webster",
+   "initN": 0.5,
+   "urea_N_kg_ha": 0.0
+  },
+  "initN_x2": {
+   "case": "initN_x2",
+   "soil": "webster",
+   "initN": 2.0,
+   "urea_N_kg_ha": 100.0
+  },
+  "initN_x2_0N": {
+   "case": "initN_x2",
+   "soil": "webster",
+   "initN": 2.0,
+   "urea_N_kg_ha": 0.0
+  },
+  "FBiom_x0.5": {
+   "case": "FBiom_x0.5",
+   "soil": "webster",
+   "FBiom": 0.5,
+   "urea_N_kg_ha": 100.0
+  },
+  "FBiom_x0.5_0N": {
+   "case": "FBiom_x0.5",
+   "soil": "webster",
+   "FBiom": 0.5,
+   "urea_N_kg_ha": 0.0
+  },
+  "FBiom_x1.5": {
+   "case": "FBiom_x1.5",
+   "soil": "webster",
+   "FBiom": 1.5,
+   "urea_N_kg_ha": 100.0
+  },
+  "FBiom_x1.5_0N": {
+   "case": "FBiom_x1.5",
+   "soil": "webster",
+   "FBiom": 1.5,
+   "urea_N_kg_ha": 0.0
+  },
+  "FInert_x0.75": {
+   "case": "FInert_x0.75",
+   "soil": "webster",
+   "FInert": 0.75,
+   "urea_N_kg_ha": 100.0
+  },
+  "FInert_x0.75_0N": {
+   "case": "FInert_x0.75",
+   "soil": "webster",
+   "FInert": 0.75,
+   "urea_N_kg_ha": 0.0
+  },
+  "FInert_x1.25": {
+   "case": "FInert_x1.25",
+   "soil": "webster",
+   "FInert": 1.25,
+   "urea_N_kg_ha": 100.0
+  },
+  "FInert_x1.25_0N": {
+   "case": "FInert_x1.25",
+   "soil": "webster",
+   "FInert": 1.25,
+   "urea_N_kg_ha": 0.0
+  }
+ },
+ "outputs_sha256": {
+  "crop_urea_lime_clarion_0N_AN_v3.apsimx": "652a8d36d30338d3eda9ad0c3622d001f15dab4743d91beacc320aaa358e206b",
+  "crop_urea_lime_clarion_0N_AN_v3.Daily.csv.gz": "9be4cba850b8c970196b9de19ed5aadea239fd32a076658052e8b8b97dc7d38e",
+  "crop_urea_lime_clarion_0N_AN_v3.Report.csv.gz": "963c0e9da804603398a5e5697f226055e0c271bd561838ae3daacd617fb4e4cc",
+  "crop_urea_lime_clarion_AN_v3.apsimx": "5547628f45009e42193c416977e52a88c1e619dcae1ced3b6c5f16d11f59ceeb",
+  "crop_urea_lime_clarion_AN_v3.Daily.csv.gz": "f47fc7af002fd2f4ce9d458ff86361429618ea26e69658785e3151fb6accb40c",
+  "crop_urea_lime_clarion_AN_v3.Report.csv.gz": "740c2ce2a196c19764427eb2bdb7aff1475212fd46a421f6b7b878888087daa5",
+  "crop_urea_lime_FBiom_x0.5_0N_AN_v3.apsimx": "57919448b338eab6e48b35a37523b48e3a341885fe4a67ff13cafbb41beb0ed6",
+  "crop_urea_lime_FBiom_x0.5_0N_AN_v3.Daily.csv.gz": "b9d2d45e3839a3fde7c7ec061749b15f740d0a342462eece83f9b2f006563b21",
+  "crop_urea_lime_FBiom_x0.5_0N_AN_v3.Report.csv.gz": "01a27c1d1334f1952c2db668237319d100e370da225a948a6fc940fa2ac94e6d",
+  "crop_urea_lime_FBiom_x0.5_AN_v3.apsimx": "061884aad9b5b7fc255da8874680cfe9445f799253679484b0ad066cbebe25c0",
+  "crop_urea_lime_FBiom_x0.5_AN_v3.Daily.csv.gz": "6da4acb86d63b376869e44d458b5b651f14c2b9b5942a540b5e4f0528ec7c8eb",
+  "crop_urea_lime_FBiom_x0.5_AN_v3.Report.csv.gz": "2f6d859edb839aef7d93d3af7002e17e63ec4e7b469afe459db7acb3d9a9dfb2",
+  "crop_urea_lime_FBiom_x1.5_0N_AN_v3.apsimx": "effbf07cddc26c456653db429a6962d8553153af3ce20d5f4f53df8ca2f48298",
+  "crop_urea_lime_FBiom_x1.5_0N_AN_v3.Daily.csv.gz": "d6f7be02ec68b972d765434bd3eeb32a8d2fe96dbfba454a5f545d9031410ad0",
+  "crop_urea_lime_FBiom_x1.5_0N_AN_v3.Report.csv.gz": "df1bc35aaba9d501538f5190ac644f598eaa16e972783a31cc7c0121590c80d8",
+  "crop_urea_lime_FBiom_x1.5_AN_v3.apsimx": "fa2a0b91d33db3ebb4d1dc400cdea77fdacb81f38ab20da6905a592ca3def0b4",
+  "crop_urea_lime_FBiom_x1.5_AN_v3.Daily.csv.gz": "6c5c94dae83c75ce81141a2e1d12626998a0b5592fd23637db263380bc8e02c6",
+  "crop_urea_lime_FBiom_x1.5_AN_v3.Report.csv.gz": "c97cb7eacea068429a4e7f1df53cd0904007430c6ccebaccf31257e35df9fd0c",
+  "crop_urea_lime_FInert_x0.75_0N_AN_v3.apsimx": "874c13d493f5aa43a8b3723102b73b6f0b4db15a6b1049d9a33d2f11119f02e1",
+  "crop_urea_lime_FInert_x0.75_0N_AN_v3.Daily.csv.gz": "92bedb0dd15ec45f1b3bc9acd86fd1860d84acd691884bd7c6aebea67f69ed25",
+  "crop_urea_lime_FInert_x0.75_0N_AN_v3.Report.csv.gz": "9f72c53d992ea1936bf2563e51c40162258cc73d528df361865ea7149fa1bbdc",
+  "crop_urea_lime_FInert_x0.75_AN_v3.apsimx": "e071189aa22bb71f0f77227b2f598eef2cae110a83c6ba00f9076c57488d5349",
+  "crop_urea_lime_FInert_x0.75_AN_v3.Daily.csv.gz": "cdf1c1b4506918c13b0e4ebaa0a13e1c959f186bcc7ff37f48744175442535f7",
+  "crop_urea_lime_FInert_x0.75_AN_v3.Report.csv.gz": "a2910f501f000f888b2d3b28a0040dfe9fc7fb03168d47d5590e9deddf2f743f",
+  "crop_urea_lime_FInert_x1.25_0N_AN_v3.apsimx": "ea65e229d8e698a18c264c4d39b3e0e1b6202d683aee0c5f978140b234f1bf21",
+  "crop_urea_lime_FInert_x1.25_0N_AN_v3.Daily.csv.gz": "666b4ec7af26ca5eb0232d8c09edf587b05d95ee59785af162c0b8f05c92ae1f",
+  "crop_urea_lime_FInert_x1.25_0N_AN_v3.Report.csv.gz": "8c8354833624b07902192b54933bc5cc663e3b4468ee55fdcab6d0c880cd4b72",
+  "crop_urea_lime_FInert_x1.25_AN_v3.apsimx": "944f997aebd0b985568a79a4f72bf8a24938ba4fdbdc8f4e0831f00f45b07f47",
+  "crop_urea_lime_FInert_x1.25_AN_v3.Daily.csv.gz": "3f0e9b9f79341c03ee670e5b4253419ef5e79b6d7fc149e761e1050fcf5fa65e",
+  "crop_urea_lime_FInert_x1.25_AN_v3.Report.csv.gz": "e44b85f95bea3675b45ed793e09d96466e36ae9660afc8d824684cb5a84a3f61",
+  "crop_urea_lime_initN_x0.5_0N_AN_v3.apsimx": "769f7a6fbaeb37b69ad8ef02d37a2d0b37b69b139dda7e9c19b5a423c7c9c9cf",
+  "crop_urea_lime_initN_x0.5_0N_AN_v3.Daily.csv.gz": "cd2bed2420e17aaddf3dba93040106624279aee42c2358162da8eb142d5ab12c",
+  "crop_urea_lime_initN_x0.5_0N_AN_v3.Report.csv.gz": "b0a2274bc95af11011cd813cbdd4cc7d629e6a5708a01aa19d678bb52e8794a8",
+  "crop_urea_lime_initN_x0.5_AN_v3.apsimx": "0d6b7e9aa23624ab9ffacc3a99643e715ff929160aa764a99fbdf73a7f1e113a",
+  "crop_urea_lime_initN_x0.5_AN_v3.Daily.csv.gz": "8e1320123e0c69e48c59e4f2ecd8a9223004b11f0a92412220cbc50104f4b5d2",
+  "crop_urea_lime_initN_x0.5_AN_v3.Report.csv.gz": "1a20141341aacca46f32cafac4cce5fe7e4b35da76ce7f32a65f9367c44bf107",
+  "crop_urea_lime_initN_x2_0N_AN_v3.apsimx": "a103f33470786faa4d367aa9a58e447ee6ab9b082136c994d7df45813cc81367",
+  "crop_urea_lime_initN_x2_0N_AN_v3.Daily.csv.gz": "f137664662741fbe0aeef83a4cfa3a249dd410fdb83b9cf1984e7ce3d6357c87",
+  "crop_urea_lime_initN_x2_0N_AN_v3.Report.csv.gz": "d95ebda97896110da1c6a1879cca1afea6754fb6dce455406fcc43820d51da58",
+  "crop_urea_lime_initN_x2_AN_v3.apsimx": "903895f86422f20525d2224e481f886f800278267b4da5365d7646f30c3a44d6",
+  "crop_urea_lime_initN_x2_AN_v3.Daily.csv.gz": "7d086dcef750a1647923bd51707cbcddbdf9f50adebb5e388bb9b13eaf505e02",
+  "crop_urea_lime_initN_x2_AN_v3.Report.csv.gz": "a15421a059d3ed472f4f2c91e200b78105c94a9a8b72a77ceb62cf4b8ef96368",
+  "crop_urea_lime_webster_seep_0N_AN_v3.apsimx": "46bd541209752cb26005c67939bd053a5370673495a0a2d515993ff9332717f4",
+  "crop_urea_lime_webster_seep_0N_AN_v3.Daily.csv.gz": "1ba75a4fd0b7c67f8fc40a603dd666e4eeb9fe0bf04c11b8e8cfa8635cc35344",
+  "crop_urea_lime_webster_seep_0N_AN_v3.Report.csv.gz": "90fd4ea22d98c4e11dc700946474155ceae34f37b61a6d9d413afd8a42a95f7b",
+  "crop_urea_lime_webster_seep_AN_v3.apsimx": "a793b0093865a47d88794b703e248c7e323cd52d165e81fd7a01f3f4f1786de7",
+  "crop_urea_lime_webster_seep_AN_v3.Daily.csv.gz": "0f6c2666765c842b3baf019ae01255247db7e5e9ac30d6ead90403c02e74e5ab",
+  "crop_urea_lime_webster_seep_AN_v3.Report.csv.gz": "e18d894959407f23f1bd28cf4d8789e5d81250eecfc1c415c5964adef49fe5a8",
+  "crop_urea_lime_webster_swim_0N_AN_v3.apsimx": "f67cc4628f09f78c5183e43e5bc41aaf80c84e94f410cb16eea464c75ade1218",
+  "crop_urea_lime_webster_swim_0N_AN_v3.Daily.csv.gz": "657c2d7a0a3f061bdb89605f6468d5e074dcc9dc5e1e6a3914c364dc4f083f98",
+  "crop_urea_lime_webster_swim_0N_AN_v3.Report.csv.gz": "550fdcdd782f5eaeb32eba4e1f595097fa1971617cebb124cea6522b0b792cff",
+  "crop_urea_lime_webster_swim_AN_v3.apsimx": "5f04fd6d988f6d5ffc97440d075bad5521fcff014ef70a6ec69b1b1d5c1769fb",
+  "crop_urea_lime_webster_swim_AN_v3.Daily.csv.gz": "76b16279b50276c5460e557c49b3ee091f66b929121d7d11550f680aa1e3c7dd",
+  "crop_urea_lime_webster_swim_AN_v3.Report.csv.gz": "0f4a580a7a59e7a42a57f5672e9ff50bfa3af6871ddd47af9ef207ed1f2c1245",
+  "crop_urea_lime_webster_tile_0N_AN_v3.apsimx": "9fcb9b32c1cc362d0a063dd4c2cbf165a782601846939a550e6a5d1df71dad05",
+  "crop_urea_lime_webster_tile_0N_AN_v3.Daily.csv.gz": "89a060296afbd63cdd425eb5edaedfc86db8a801ed1d1d21bfd4f800bd8989cf",
+  "crop_urea_lime_webster_tile_0N_AN_v3.Report.csv.gz": "d2a31e0a9215d812a1d0609419adbeb583ccc83fb5398afb6c95adc2962ca010",
+  "crop_urea_lime_webster_tile_AN_v3.apsimx": "0dc4e7a946a95076f6377024100a9e4f30ffa81dc666e13f55b582b4e635af84",
+  "crop_urea_lime_webster_tile_AN_v3.Daily.csv.gz": "477f2016b3e5e789f1d1cd72a7bf7429a568e982cf55561710b521d418727721",
+  "crop_urea_lime_webster_tile_AN_v3.Report.csv.gz": "48a6aeaa334e700e71f885b495a1e5bf907724dcff3b1613e1449d2ab24b232e",
+  "crop_urea_lime_webster_wt_0N_AN_v3.apsimx": "aaa4edf00fb6ff8f42602bce133bd3053b7d61f841a65e82201b5821e0cb108c",
+  "crop_urea_lime_webster_wt_0N_AN_v3.Daily.csv.gz": "f46b268666c2f283acd0e01a798ad6956fe602e99286799b09ce12859ba7383f",
+  "crop_urea_lime_webster_wt_0N_AN_v3.Report.csv.gz": "2faa660386637b734c42440878e9dc1ec87c577d132d35a37f027ccd3802af5a",
+  "crop_urea_lime_webster_wt_AN_v3.apsimx": "289c393b0e83649a0086ed864374e60a04477724fec6c498f3bce7aeea31046c",
+  "crop_urea_lime_webster_wt_AN_v3.Daily.csv.gz": "fb7c08404da4bb4f2f5f7c3aadbb8f50c7d3b3434ae3ab4601453b05a216109b",
+  "crop_urea_lime_webster_wt_AN_v3.Report.csv.gz": "e1fc928c33a02846f7523b0b9dbadf2139076e84574586a23258a6d7268f3cb4"
+ }
+}
