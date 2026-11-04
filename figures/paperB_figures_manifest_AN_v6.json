@@ -1,0 +1,45 @@
+{
+  "inputs_sha256": {
+    "data/ipcc_2006_vs_2019_stylized_AN_v3.csv": "a0ee24868c4def2e761f5c0ff4c52dc7926133a42cf1341f1ce18b9546fb449a",
+    "results/gleam_vs_ghgsim_stylized_AN_v3.csv": "d0e260200bc96bd02ddfef90a3ae65333e2c27f57a8586d4a11418c500baa811",
+    "data/hestia_matched_vs_ipcc_stylized_AN_v3.csv": "1d92cffc9e5c1ce629d61576455137b45d47d77ad13539afe3136ab446a61112",
+    "results/apsim_vs_ghgsim_hestia_crop_AN_v1.csv": "e6600854370d623e856088b77160fcf2fcad5d45d6625685a3668f69f6c07113",
+    "results/apsim_AN_v1/crop_urea_lime_dalby_AN_v1.Daily.csv.gz": "cc0b4d977327df06776432df31660f7e2bc414d5d4e6e163a6271529b80a48c0",
+    "results/apsim_AN_v1/crop_urea_lime_hamilton_AN_v1.Daily.csv.gz": "c7b333d8381b641bf705ff4d05ce4cfc38212f492dc9422621e400fc3b1050ab"
+  },
+  "outputs": {
+    "figures/fig6_four_way_AN_v1.png": "3445808d9de933119a564a88d8981df6ec162f06b3f6edf03d35ef69c4c33e6c"
+  },
+  "checks": {
+    "a": [
+      115.1191,
+      204.252,
+      204.252,
+      63.8,
+      null
+    ],
+    "b": [
+      329.6951,
+      164.0512,
+      164.0512,
+      85.0,
+      null
+    ],
+    "c": [
+      2.7217,
+      3.2044,
+      null,
+      3.088,
+      1.5771,
+      1.8922
+    ],
+    "apsim_dalby": {
+      "max_day": 0.313,
+      "constant_rate": 0.0055867496886674965
+    },
+    "apsim_hamilton": {
+      "max_day": 0.12,
+      "constant_rate": 0.0055867496886674965
+    }
+  }
+}

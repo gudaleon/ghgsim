@@ -1,0 +1,54 @@
+{
+  "apsim": {
+    "version": "APSIM 2026.11.8142.0",
+    "commit": "d1dca5e97aa4930a2015722362483b1216005037",
+    "pr": "https://github.com/APSIMInitiative/ApsimX/pull/11706",
+    "licence": "APSIM General Use Licence / ApsimX repository licence (run unmodified, not redistributed)",
+    "install": "portable: official build 8142 package contents in a user folder, .NET 10 user runtime",
+    "models_dll_sha256": "b19b31cfa21a9f9420ecb37c6433edc977c3353fe2845a89a0c15b2b98b9c0d0"
+  },
+  "dotnet": "runtime only",
+  "python": "3.12.10",
+  "example": {
+    "file": "Examples/Maize.apsimx",
+    "sha256": "6a80346616dea495668b2b73abe063a15870fa15b730308ad887eb855ca83ef7"
+  },
+  "soil": "APSoil No. 900, Black Vertosol (Norwin, Darling Downs, Qld); CSIRO Sustainable Ecosystems, Toowoomba, GRDC project 'Doing it better, doing it smarter, managing soil water in Australian agriculture' (2011); as shipped in Examples/Maize.apsimx",
+  "weather_sha256": {
+    "AU_Dalby.met": "8575af4fcbd72217ef42d80786314005e8dd54e0a03ded5d59b87da488d25f03",
+    "NZ_Hamilton.met": "2079678d9462624050900a67ad2caa5c4c81661cd2e5028f31cd30af389ae949"
+  },
+  "runs": {
+    "dalby": {
+      "weather": "AU_Dalby.met",
+      "urea_N_kg_ha": 100.0
+    },
+    "dalby_0N": {
+      "weather": "AU_Dalby.met",
+      "urea_N_kg_ha": 0.0
+    },
+    "hamilton": {
+      "weather": "NZ_Hamilton.met",
+      "urea_N_kg_ha": 100.0
+    },
+    "hamilton_0N": {
+      "weather": "NZ_Hamilton.met",
+      "urea_N_kg_ha": 0.0
+    }
+  },
+  "outputs": {
+    "results/apsim_AN_v1/crop_urea_lime_dalby_0N_AN_v1.apsimx": "20ffd9491b09335022b43126a0be4b12f6b6da48cb787f43b0239997a25c3786",
+    "results/apsim_AN_v1/crop_urea_lime_dalby_0N_AN_v1.Daily.csv.gz": "e047141a95aabba19a216f991152bf8a3f803a15819901a683fac7d462873caa",
+    "results/apsim_AN_v1/crop_urea_lime_dalby_0N_AN_v1.Report.csv.gz": "4adae1ee9adfaa8ce07259b55a3204f8acaf05a6e324b928bd3653397473c4e0",
+    "results/apsim_AN_v1/crop_urea_lime_dalby_AN_v1.apsimx": "210409768fac2db2dab220d27cfa606ca8719b5b1b09cfa18045c4aa231d67cf",
+    "results/apsim_AN_v1/crop_urea_lime_dalby_AN_v1.Daily.csv.gz": "cc0b4d977327df06776432df31660f7e2bc414d5d4e6e163a6271529b80a48c0",
+    "results/apsim_AN_v1/crop_urea_lime_dalby_AN_v1.Report.csv.gz": "487afaf1bb8f9d51f534d6f2b85d0e32da1de0d2874b338f49baa5842ef00c15",
+    "results/apsim_AN_v1/crop_urea_lime_hamilton_0N_AN_v1.apsimx": "73cb105e9a2c131c83f4fe1899e672e0da056230f1376ac366d310b66bcc8e26",
+    "results/apsim_AN_v1/crop_urea_lime_hamilton_0N_AN_v1.Daily.csv.gz": "64f52763c664e045884d540d6b3a61fcbf9abee401699ca6978630800a30fba4",
+    "results/apsim_AN_v1/crop_urea_lime_hamilton_0N_AN_v1.Report.csv.gz": "7c6fd3b70e0fec8db378d988d25d8cbc11c5be44389e4691fbf790f12950cad0",
+    "results/apsim_AN_v1/crop_urea_lime_hamilton_AN_v1.apsimx": "cf3398472dcd245f295477f7ef403dabed17da3acf6886784804e20a5fc45e98",
+    "results/apsim_AN_v1/crop_urea_lime_hamilton_AN_v1.Daily.csv.gz": "c7b333d8381b641bf705ff4d05ce4cfc38212f492dc9422621e400fc3b1050ab",
+    "results/apsim_AN_v1/crop_urea_lime_hamilton_AN_v1.Report.csv.gz": "4d39ba1ee11a2c38b48f798cfef97a1379b7f978aa9c86d0b7cc8dc90ac3bf8f"
+  },
+  "note": "consistency check, not validation"
+}

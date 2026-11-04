@@ -1,0 +1,6 @@
+farm_id,model,basis,direct_N2O_kg_ha,total_N2O_kg_ha,direct_N2O_kg_ha_min_year,direct_N2O_kg_ha_max_year,fertiliser_induced_EF_pct,note
+crop_urea_lime,ghgsim IPCC 2006,"Tier 1 annual EF, wet climate",2.7217,3.4912,nan,nan,nan,"N inputs 173.2 kg N/ha (synthetic 100, residue, SOM)"
+crop_urea_lime,ghgsim IPCC 2019,"Tier 1 annual EF, wet climate",3.2044,4.1649,nan,nan,nan,"N inputs 173.2 kg N/ha (synthetic 100, residue, SOM)"
+crop_urea_lime,HESTIA CE 7.1.0 (models 0.90.0),IPCC 2019 Tier 1 as implemented in HESTIA,3.088,3.969,nan,nan,nan,"consistency check, not validation"
+crop_urea_lime,APSIM NG 2026.11.8142.0,Dalby weather (example as shipped),1.5771,nan,0.2844,4.0873,0.7795,daily process model; direct N2O only; 10-crop mean (Jul-Jun years 1990/91-1999/2000); EF = (100 kg N/ha run - 0 N control) / 100
+crop_urea_lime,APSIM NG 2026.11.8142.0,Hamilton weather (warm temperate moist),1.8922,nan,1.2964,2.9197,0.8512,daily process model; direct N2O only; 10-crop mean (Jul-Jun years 1990/91-1999/2000); EF = (100 kg N/ha run - 0 N control) / 100

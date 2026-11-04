@@ -1,0 +1,5 @@
+run,days,total_N2O_N_kgha,share_top5pct_days,max_day_N2O_N_kgha,max_day_over_mean_day,share_days,share_N2O_within_window_after_rain,rain_event_mm,window_days
+dalby,3653,10.036,0.8366,0.313,113.9288,0.0862,0.6206,20.0,3
+dalby_0N,3653,2.241,0.8126,0.12,195.6091,0.0862,0.5779,20.0,3
+hamilton,3653,12.041,0.5234,0.12,36.4056,0.1284,0.3633,20.0,3
+hamilton_0N,3653,3.529,0.3534,0.017,17.5973,0.1284,0.3293,20.0,3
