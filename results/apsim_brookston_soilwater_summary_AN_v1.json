@@ -1,0 +1,19 @@
+{
+ "years": 30,
+ "maize_years": 15,
+ "soy_years_with_grain": 18,
+ "maize_year_parity": [
+  1
+ ],
+ "N2O_fert": 1.304,
+ "N2O_0N": 0.47,
+ "N2_fert": 5.234,
+ "drainage_mm": 230.799,
+ "runoff_mm": 2.778,
+ "leachNO3_fert": 31.364,
+ "leachNO3_0N": 13.068,
+ "rain": 787.393,
+ "EF_pct": 0.969,
+ "soy_share": 0.303,
+ "EF_maize_year_only_pct": 0.675
+}
