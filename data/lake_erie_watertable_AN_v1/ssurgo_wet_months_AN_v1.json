@@ -1,0 +1,154 @@
+{
+ "retrieved_utc": "2026-11-04T12:52:14+00:00",
+ "source": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "queries": {
+  "hoytville": "SELECT c.cokey, c.compname, c.comppct_r, c.drainagecl, mu.muname, mu.mukey, l.areasymbol, m.month, m.monthseq, s.soimoistdept_r, s.soimoistdepb_r, s.soimoiststat FROM legend l JOIN mapunit mu ON mu.lkey = l.lkey JOIN component c ON c.mukey = mu.mukey JOIN comonth m ON m.cokey = c.cokey JOIN cosoilmoist s ON s.comonthkey = m.comonthkey WHERE c.cokey = '29298947' AND s.soimoiststat = 'Wet' ORDER BY c.cokey, m.monthseq, s.soimoistdept_r",
+  "brookston_MI115": "SELECT c.cokey, c.compname, c.comppct_r, c.drainagecl, mu.muname, mu.mukey, l.areasymbol, m.month, m.monthseq, s.soimoistdept_r, s.soimoistdepb_r, s.soimoiststat FROM legend l JOIN mapunit mu ON mu.lkey = l.lkey JOIN component c ON c.mukey = mu.mukey JOIN comonth m ON m.cokey = c.cokey JOIN cosoilmoist s ON s.comonthkey = m.comonthkey WHERE l.areasymbol = 'MI115' AND c.compname = 'Brookston' AND c.majcompflag = 'Yes' AND s.soimoiststat = 'Wet' ORDER BY c.cokey, m.monthseq, s.soimoistdept_r"
+ },
+ "rows": {
+  "hoytville": [
+   {
+    "cokey": "29298947",
+    "compname": "Hoytville",
+    "comppct_r": "90",
+    "drainagecl": "Very poorly drained",
+    "muname": "Hoytville clay loam, 0 to 1 percent slopes",
+    "mukey": "2399822",
+    "areasymbol": "OH173",
+    "month": "January",
+    "monthseq": "1",
+    "soimoistdept_r": "15",
+    "soimoistdepb_r": "152",
+    "soimoiststat": "Wet"
+   },
+   {
+    "cokey": "29298947",
+    "compname": "Hoytville",
+    "comppct_r": "90",
+    "drainagecl": "Very poorly drained",
+    "muname": "Hoytville clay loam, 0 to 1 percent slopes",
+    "mukey": "2399822",
+    "areasymbol": "OH173",
+    "month": "February",
+    "monthseq": "2",
+    "soimoistdept_r": "15",
+    "soimoistdepb_r": "152",
+    "soimoiststat": "Wet"
+   },
+   {
+    "cokey": "29298947",
+    "compname": "Hoytville",
+    "comppct_r": "90",
+    "drainagecl": "Very poorly drained",
+    "muname": "Hoytville clay loam, 0 to 1 percent slopes",
+    "mukey": "2399822",
+    "areasymbol": "OH173",
+    "month": "March",
+    "monthseq": "3",
+    "soimoistdept_r": "15",
+    "soimoistdepb_r": "152",
+    "soimoiststat": "Wet"
+   },
+   {
+    "cokey": "29298947",
+    "compname": "Hoytville",
+    "comppct_r": "90",
+    "drainagecl": "Very poorly drained",
+    "muname": "Hoytville clay loam, 0 to 1 percent slopes",
+    "mukey": "2399822",
+    "areasymbol": "OH173",
+    "month": "April",
+    "monthseq": "4",
+    "soimoistdept_r": "15",
+    "soimoistdepb_r": "152",
+    "soimoiststat": "Wet"
+   }
+  ],
+  "brookston_MI115": [
+   {
+    "cokey": "27976056",
+    "compname": "Brookston",
+    "comppct_r": "93",
+    "drainagecl": "Very poorly drained",
+    "muname": "Brookston loam",
+    "mukey": "187266",
+    "areasymbol": "MI115",
+    "month": "January",
+    "monthseq": "1",
+    "soimoistdept_r": "0",
+    "soimoistdepb_r": "75",
+    "soimoiststat": "Wet"
+   },
+   {
+    "cokey": "27976056",
+    "compname": "Brookston",
+    "comppct_r": "93",
+    "drainagecl": "Very poorly drained",
+    "muname": "Brookston loam",
+    "mukey": "187266",
+    "areasymbol": "MI115",
+    "month": "February",
+    "monthseq": "2",
+    "soimoistdept_r": "0",
+    "soimoistdepb_r": "75",
+    "soimoiststat": "Wet"
+   },
+   {
+    "cokey": "27976056",
+    "compname": "Brookston",
+    "comppct_r": "93",
+    "drainagecl": "Very poorly drained",
+    "muname": "Brookston loam",
+    "mukey": "187266",
+    "areasymbol": "MI115",
+    "month": "March",
+    "monthseq": "3",
+    "soimoistdept_r": "0",
+    "soimoistdepb_r": "75",
+    "soimoiststat": "Wet"
+   },
+   {
+    "cokey": "27976056",
+    "compname": "Brookston",
+    "comppct_r": "93",
+    "drainagecl": "Very poorly drained",
+    "muname": "Brookston loam",
+    "mukey": "187266",
+    "areasymbol": "MI115",
+    "month": "April",
+    "monthseq": "4",
+    "soimoistdept_r": "0",
+    "soimoistdepb_r": "75",
+    "soimoiststat": "Wet"
+   },
+   {
+    "cokey": "27976056",
+    "compname": "Brookston",
+    "comppct_r": "93",
+    "drainagecl": "Very poorly drained",
+    "muname": "Brookston loam",
+    "mukey": "187266",
+    "areasymbol": "MI115",
+    "month": "May",
+    "monthseq": "5",
+    "soimoistdept_r": "0",
+    "soimoistdepb_r": "75",
+    "soimoiststat": "Wet"
+   },
+   {
+    "cokey": "27976056",
+    "compname": "Brookston",
+    "comppct_r": "93",
+    "drainagecl": "Very poorly drained",
+    "muname": "Brookston loam",
+    "mukey": "187266",
+    "areasymbol": "MI115",
+    "month": "December",
+    "monthseq": "12",
+    "soimoistdept_r": "0",
+    "soimoistdepb_r": "75",
+    "soimoiststat": "Wet"
+   }
+  ]
+ }
+}

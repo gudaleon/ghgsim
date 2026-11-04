@@ -1,0 +1,24 @@
+{
+ "n_units": 32,
+ "v2": {
+  "n_ge5_sown": 25,
+  "mean_sown_years": 11.46875,
+  "mean_apsim_EF_pct": 0.29416800000000004,
+  "mean_holos_base_EF_pct_same_units": 0.5162126213991762,
+  "spearman_apsim_vs_holos": 0.38714649513643395
+ },
+ "rule": {
+  "n_ge5_sown": 25,
+  "mean_sown_years": 10.59375,
+  "mean_apsim_EF_pct": 0.27313247720906497,
+  "mean_holos_base_EF_pct_same_units": 0.5162126213991762,
+  "spearman_apsim_vs_holos": 0.5337695713262762
+ },
+ "omafra": {
+  "n_ge5_sown": 32,
+  "mean_sown_years": 24.9375,
+  "mean_apsim_EF_pct": 0.5239499536313337,
+  "mean_holos_base_EF_pct_same_units": 0.51975769432974,
+  "spearman_apsim_vs_holos": 0.627947964811942
+ }
+}

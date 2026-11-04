@@ -1,0 +1,1119 @@
+{
+ "apsim": {
+  "version": "APSIM 2026.11.8142.0",
+  "commit": "d1dca5e97aa4930a2015722362483b1216005037",
+  "models_dll_sha256": "b19b31cfa21a9f9420ecb37c6433edc977c3353fe2845a89a0c15b2b98b9c0d0"
+ },
+ "sites": {
+  "essex_brookston": {
+   "retrieved_utc": "2026-11-04T11:54:44+00:00",
+   "slc": "https://sis.agr.gc.ca/nsdb/ca/cac003/cac003.20110308.v3.2/ca_all_slc_v3r2.zip",
+   "soil_tables": "soil_name_on / soil_layer_on v2r20140203",
+   "soil_tables_index": "https://sis.agr.gc.ca/cansis/nsdb/soil/v2/snt/index.html",
+   "boundaries": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open03/MapServer/13|14/query",
+   "caveat": "CanSIS soil layer values are modal estimates for a named soil, not measured pedons.",
+   "county": "Essex",
+   "slc_poly_id": 570007,
+   "component_percent": 80,
+   "soil_id": "ONBKN~~~~~A",
+   "soilname": "BROOKSTON",
+   "drainage": "P",
+   "watertbl": "YU",
+   "parent_material": [
+    "MF",
+    "TILL"
+   ],
+   "classification": [
+    "GL",
+    "HG",
+    "O"
+   ],
+   "point_wgs84": [
+    42.1631,
+    -82.7793
+   ],
+   "dominant": {
+    "muname": "Brookston",
+    "compname": "Brookston",
+    "areaname": "Essex County, Ontario",
+    "areasymbol": "SLC v3.2 polygon 570007",
+    "saverest": "CanSIS soil layer table v2r20140203",
+    "mukey": "ONBKN~~~~~A",
+    "cokey": "ONBKN~~~~~A",
+    "comppct_r": 80
+   },
+   "horizons": [
+    {
+     "hzname": "Ap",
+     "hzdept_r": "0",
+     "hzdepb_r": "25",
+     "dbthirdbar_r": "1.27",
+     "wthirdbar_r": "41",
+     "wfifteenbar_r": "21",
+     "wsatiated_r": "53",
+     "ksat_r": "0.9333",
+     "om_r": "3.448",
+     "ph1to1h2o_r": "5.3",
+     "sandtotal_r": "16",
+     "silttotal_r": "47",
+     "claytotal_r": "37",
+     "cansis_ksat_cm_h": 0.336,
+     "cansis_orgcarb_pct": 2.0
+    },
+    {
+     "hzname": "Btg",
+     "hzdept_r": "25",
+     "hzdepb_r": "65",
+     "dbthirdbar_r": "1.47",
+     "wthirdbar_r": "36",
+     "wfifteenbar_r": "31",
+     "wsatiated_r": "45",
+     "ksat_r": "0.5694",
+     "om_r": "1.0344",
+     "ph1to1h2o_r": "6.2",
+     "sandtotal_r": "11",
+     "silttotal_r": "38",
+     "claytotal_r": "51",
+     "cansis_ksat_cm_h": 0.205,
+     "cansis_orgcarb_pct": 0.6
+    },
+    {
+     "hzname": "Ckg",
+     "hzdept_r": "65",
+     "hzdepb_r": "100",
+     "dbthirdbar_r": "1.61",
+     "wthirdbar_r": "32",
+     "wfifteenbar_r": "30",
+     "wsatiated_r": "39",
+     "ksat_r": "0.4",
+     "om_r": "0.0",
+     "ph1to1h2o_r": "7.4",
+     "sandtotal_r": "16",
+     "silttotal_r": "41",
+     "claytotal_r": "43",
+     "cansis_ksat_cm_h": 0.144,
+     "cansis_orgcarb_pct": 0.0
+    }
+   ]
+  },
+  "essex_berrien": {
+   "retrieved_utc": "2026-11-04T11:54:44+00:00",
+   "slc": "https://sis.agr.gc.ca/nsdb/ca/cac003/cac003.20110308.v3.2/ca_all_slc_v3r2.zip",
+   "soil_tables": "soil_name_on / soil_layer_on v2r20140203",
+   "soil_tables_index": "https://sis.agr.gc.ca/cansis/nsdb/soil/v2/snt/index.html",
+   "boundaries": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open03/MapServer/13|14/query",
+   "caveat": "CanSIS soil layer values are modal estimates for a named soil, not measured pedons.",
+   "county": "Essex",
+   "slc_poly_id": 570007,
+   "component_percent": 10,
+   "soil_id": "ONBRR~~~~~A",
+   "soilname": "BERRIEN",
+   "drainage": "I",
+   "watertbl": "YU",
+   "parent_material": [
+    "MF",
+    "GLLC"
+   ],
+   "classification": [
+    "LU",
+    "GBL",
+    "GLBR"
+   ],
+   "point_wgs84": [
+    42.1631,
+    -82.7793
+   ],
+   "dominant": {
+    "muname": "Berrien",
+    "compname": "Berrien",
+    "areaname": "Essex County, Ontario",
+    "areasymbol": "SLC v3.2 polygon 570007",
+    "saverest": "CanSIS soil layer table v2r20140203",
+    "mukey": "ONBRR~~~~~A",
+    "cokey": "ONBRR~~~~~A",
+    "comppct_r": 10
+   },
+   "horizons": [
+    {
+     "hzname": "Ap",
+     "hzdept_r": "0",
+     "hzdepb_r": "27",
+     "dbthirdbar_r": "1.3",
+     "wthirdbar_r": "28",
+     "wfifteenbar_r": "10",
+     "wsatiated_r": "51",
+     "ksat_r": "6.8417",
+     "om_r": "2.7584",
+     "ph1to1h2o_r": "7.3",
+     "sandtotal_r": "68",
+     "silttotal_r": "20",
+     "claytotal_r": "12",
+     "cansis_ksat_cm_h": 2.463,
+     "cansis_orgcarb_pct": 1.6
+    },
+    {
+     "hzname": "Bm",
+     "hzdept_r": "27",
+     "hzdepb_r": "37",
+     "dbthirdbar_r": "1.39",
+     "wthirdbar_r": "16",
+     "wfifteenbar_r": "6",
+     "wsatiated_r": "48",
+     "ksat_r": "15.4222",
+     "om_r": "0.862",
+     "ph1to1h2o_r": "7.0",
+     "sandtotal_r": "84",
+     "silttotal_r": "11",
+     "claytotal_r": "5",
+     "cansis_ksat_cm_h": 5.552,
+     "cansis_orgcarb_pct": 0.5
+    },
+    {
+     "hzname": "Bmgj",
+     "hzdept_r": "37",
+     "hzdepb_r": "44",
+     "dbthirdbar_r": "1.39",
+     "wthirdbar_r": "16",
+     "wfifteenbar_r": "6",
+     "wsatiated_r": "48",
+     "ksat_r": "15.2806",
+     "om_r": "0.5172",
+     "ph1to1h2o_r": "7.2",
+     "sandtotal_r": "82",
+     "silttotal_r": "13",
+     "claytotal_r": "5",
+     "cansis_ksat_cm_h": 5.501,
+     "cansis_orgcarb_pct": 0.3
+    },
+    {
+     "hzname": "Btgj",
+     "hzdept_r": "44",
+     "hzdepb_r": "60",
+     "dbthirdbar_r": "1.47",
+     "wthirdbar_r": "35",
+     "wfifteenbar_r": "24",
+     "wsatiated_r": "45",
+     "ksat_r": "0.6806",
+     "om_r": "0.6896",
+     "ph1to1h2o_r": "7.3",
+     "sandtotal_r": "27",
+     "silttotal_r": "37",
+     "claytotal_r": "36",
+     "cansis_ksat_cm_h": 0.245,
+     "cansis_orgcarb_pct": 0.4
+    },
+    {
+     "hzname": "Bt",
+     "hzdept_r": "60",
+     "hzdepb_r": "85",
+     "dbthirdbar_r": "1.47",
+     "wthirdbar_r": "36",
+     "wfifteenbar_r": "26",
+     "wsatiated_r": "45",
+     "ksat_r": "0.5889",
+     "om_r": "0.5172",
+     "ph1to1h2o_r": "7.7",
+     "sandtotal_r": "13",
+     "silttotal_r": "48",
+     "claytotal_r": "39",
+     "cansis_ksat_cm_h": 0.212,
+     "cansis_orgcarb_pct": 0.3
+    },
+    {
+     "hzname": "Ck",
+     "hzdept_r": "85",
+     "hzdepb_r": "100",
+     "dbthirdbar_r": "1.61",
+     "wthirdbar_r": "32",
+     "wfifteenbar_r": "24",
+     "wsatiated_r": "39",
+     "ksat_r": "0.3806",
+     "om_r": "0.3448",
+     "ph1to1h2o_r": "8.2",
+     "sandtotal_r": "6",
+     "silttotal_r": "63",
+     "claytotal_r": "31",
+     "cansis_ksat_cm_h": 0.137,
+     "cansis_orgcarb_pct": 0.2
+    }
+   ]
+  },
+  "maumee_hoytville": {
+   "source": "USDA-NRCS SSURGO via Soil Data Access",
+   "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+   "retrieved_utc": "2026-11-04T11:35:04+00:00",
+   "point_wgs84": [
+    41.22,
+    -83.76
+   ],
+   "queries": [
+    "SELECT TOP 5 mu.mukey, mu.muname, mu.muacres, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname,\nc.comppct_r, c.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM legend l JOIN mapunit mu ON mu.lkey = l.lkey JOIN sacatalog sc ON sc.areasymbol = l.areasymbol\nJOIN component c ON c.mukey = mu.mukey\nWHERE l.areasymbol = 'OH173' AND c.compname = 'Hoytville'\nAND c.comppct_r = (SELECT MAX(c2.comppct_r) FROM component c2 WHERE c2.mukey = mu.mukey)\nORDER BY mu.muacres DESC",
+    "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r",
+    "SELECT cokey, reskind, reshard, resdept_r, resdepb_r FROM corestrictions WHERE cokey = '{cokey}'",
+    "SELECT cm.month, cs.soimoistdept_r, cs.soimoistdepb_r, cs.soimoiststat FROM comonth cm JOIN cosoilmoist cs ON cs.comonthkey = cm.comonthkey WHERE cm.cokey = '{cokey}' ORDER BY cm.monthseq, cs.soimoistdept_r"
+   ],
+   "candidates": [
+    {
+     "mukey": "2399822",
+     "muname": "Hoytville clay loam, 0 to 1 percent slopes",
+     "muacres": "157145",
+     "areaname": "Wood County, Ohio",
+     "areasymbol": "OH173",
+     "saverest": "9/16/2026 11:56:55 AM",
+     "cokey": "29298947",
+     "compname": "Hoytville",
+     "comppct_r": "90",
+     "majcompflag": "Yes",
+     "taxclname": "Fine, illitic, mesic Mollic Epiaqualfs",
+     "hydgrp": "C/D",
+     "slope_r": "0",
+     "drainagecl": "Very poorly drained"
+    },
+    {
+     "mukey": "2399821",
+     "muname": "Hoytville silty clay loam, 0 to 1 percent slopes",
+     "muacres": "75939",
+     "areaname": "Wood County, Ohio",
+     "areasymbol": "OH173",
+     "saverest": "9/16/2026 11:56:55 AM",
+     "cokey": "29298952",
+     "compname": "Hoytville",
+     "comppct_r": "90",
+     "majcompflag": "Yes",
+     "taxclname": "Fine, illitic, mesic Mollic Epiaqualfs",
+     "hydgrp": "C/D",
+     "slope_r": "0",
+     "drainagecl": "Very poorly drained"
+    },
+    {
+     "mukey": "168316",
+     "muname": "Hoytville-Urban land complex, 0 to 1 percent slopes",
+     "muacres": "1734",
+     "areaname": "Wood County, Ohio",
+     "areasymbol": "OH173",
+     "saverest": "9/16/2026 11:56:55 AM",
+     "cokey": "29298950",
+     "compname": "Hoytville",
+     "comppct_r": "60",
+     "majcompflag": "Yes",
+     "taxclname": "Fine, illitic, mesic Mollic Epiaqualfs",
+     "hydgrp": "C/D",
+     "slope_r": "0",
+     "drainagecl": "Very poorly drained"
+    }
+   ],
+   "dominant": {
+    "mukey": "2399822",
+    "muname": "Hoytville clay loam, 0 to 1 percent slopes",
+    "muacres": "157145",
+    "areaname": "Wood County, Ohio",
+    "areasymbol": "OH173",
+    "saverest": "9/16/2026 11:56:55 AM",
+    "cokey": "29298947",
+    "compname": "Hoytville",
+    "comppct_r": "90",
+    "majcompflag": "Yes",
+    "taxclname": "Fine, illitic, mesic Mollic Epiaqualfs",
+    "hydgrp": "C/D",
+    "slope_r": "0",
+    "drainagecl": "Very poorly drained"
+   },
+   "restrictions": [
+    {
+     "cokey": "29298947",
+     "reskind": "Densic material",
+     "reshard": "noncoherent",
+     "resdept_r": "145",
+     "resdepb_r": "203"
+    }
+   ],
+   "cosoilmoist": [
+    {
+     "month": "January",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "15",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "January",
+     "soimoistdept_r": "15",
+     "soimoistdepb_r": "152",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "January",
+     "soimoistdept_r": "152",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "February",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "15",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "February",
+     "soimoistdept_r": "15",
+     "soimoistdepb_r": "152",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "February",
+     "soimoistdept_r": "152",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "March",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "15",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "March",
+     "soimoistdept_r": "15",
+     "soimoistdepb_r": "152",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "March",
+     "soimoistdept_r": "152",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "April",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "15",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "April",
+     "soimoistdept_r": "15",
+     "soimoistdepb_r": "152",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "April",
+     "soimoistdept_r": "152",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "May",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "June",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "July",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "August",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "September",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "October",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "November",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    },
+    {
+     "month": "December",
+     "soimoistdept_r": "0",
+     "soimoistdepb_r": "203",
+     "soimoiststat": "Moist"
+    }
+   ],
+   "horizons": [
+    {
+     "hzname": "Ap",
+     "hzdept_r": "0",
+     "hzdepb_r": "20",
+     "dbthirdbar_r": "1.32",
+     "wthirdbar_r": "33.8",
+     "wfifteenbar_r": "20.9",
+     "wsatiated_r": "43",
+     "ksat_r": "7.76",
+     "om_r": "4.75",
+     "ph1to1h2o_r": "6.7",
+     "claytotal_r": "36",
+     "silttotal_r": "39",
+     "sandtotal_r": "25"
+    },
+    {
+     "hzname": "Btg",
+     "hzdept_r": "20",
+     "hzdepb_r": "89",
+     "dbthirdbar_r": "1.55",
+     "wthirdbar_r": "34.8",
+     "wfifteenbar_r": "28",
+     "wsatiated_r": "37",
+     "ksat_r": "2.82",
+     "om_r": "1",
+     "ph1to1h2o_r": "7",
+     "claytotal_r": "46",
+     "silttotal_r": "36",
+     "sandtotal_r": "18"
+    },
+    {
+     "hzname": "BC",
+     "hzdept_r": "89",
+     "hzdepb_r": "145",
+     "dbthirdbar_r": "1.58",
+     "wthirdbar_r": "33.6",
+     "wfifteenbar_r": "24.3",
+     "wsatiated_r": "36",
+     "ksat_r": "0.92",
+     "om_r": "0.75",
+     "ph1to1h2o_r": "7.8",
+     "claytotal_r": "38",
+     "silttotal_r": "39",
+     "sandtotal_r": "23"
+    }
+   ]
+  }
+ },
+ "met": {
+  "essex_brookston": {
+   "tav": 9.68,
+   "amp": 25.47,
+   "days": 10958,
+   "power_file": "data\\apsim_site_lake_erie_AN_v2\\nasa_power_daily_1991_2020_42.1631_-82.7793_AN_v2.json.gz",
+   "filled_missing": [
+    {
+     "parameter": "ALLSKY_SFC_SW_DWN",
+     "day": "19930201",
+     "filled": 3.45
+    }
+   ]
+  },
+  "essex_berrien": {
+   "tav": 9.68,
+   "amp": 25.47,
+   "days": 10958,
+   "power_file": "data\\apsim_site_lake_erie_AN_v2\\nasa_power_daily_1991_2020_42.1631_-82.7793_AN_v2.json.gz",
+   "filled_missing": [
+    {
+     "parameter": "ALLSKY_SFC_SW_DWN",
+     "day": "19930201",
+     "filled": 3.45
+    }
+   ]
+  },
+  "maumee_hoytville": {
+   "tav": 10.26,
+   "amp": 26.56,
+   "days": 10958,
+   "power_file": "data\\apsim_site_lake_erie_AN_v1\\nasa_power_daily_1991_2020_AN_v1.json.gz",
+   "filled_missing": [
+    {
+     "parameter": "ALLSKY_SFC_SW_DWN",
+     "day": "19920114",
+     "filled": 2.85
+    },
+    {
+     "parameter": "ALLSKY_SFC_SW_DWN",
+     "day": "19921230",
+     "filled": 1.23
+    }
+   ]
+  }
+ },
+ "runs": {
+  "essex_brookston_undrained": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_brookston",
+   "case": "undrained",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": null,
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.53,
+     "SAT_used": 0.52,
+     "BD": 1.27
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "essex_brookston_undrained_0N": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_brookston",
+   "case": "undrained",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": null,
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.53,
+     "SAT_used": 0.52,
+     "BD": 1.27
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "essex_brookston_tile_1956": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_brookston",
+   "case": "tile_1956",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 12200.0
+   },
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.53,
+     "SAT_used": 0.52,
+     "BD": 1.27
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "essex_brookston_tile_1956_0N": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_brookston",
+   "case": "tile_1956",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 12200.0
+   },
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.53,
+     "SAT_used": 0.52,
+     "BD": 1.27
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "essex_brookston_tile_2rod": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_brookston",
+   "case": "tile_2rod",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 10058.4
+   },
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.53,
+     "SAT_used": 0.52,
+     "BD": 1.27
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "essex_brookston_tile_2rod_0N": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_brookston",
+   "case": "tile_2rod",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 10058.4
+   },
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.53,
+     "SAT_used": 0.52,
+     "BD": 1.27
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "essex_berrien_undrained": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_berrien",
+   "case": "undrained",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": null,
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.51,
+     "SAT_used": 0.509,
+     "BD": 1.3
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 2,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 3,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    },
+    {
+     "node": 4,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ]
+  },
+  "essex_berrien_undrained_0N": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_berrien",
+   "case": "undrained",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": null,
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.51,
+     "SAT_used": 0.509,
+     "BD": 1.3
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 2,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 3,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    },
+    {
+     "node": 4,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ]
+  },
+  "essex_berrien_tile_1956": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_berrien",
+   "case": "tile_1956",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 12200.0
+   },
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.51,
+     "SAT_used": 0.509,
+     "BD": 1.3
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 2,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 3,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    },
+    {
+     "node": 4,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ]
+  },
+  "essex_berrien_tile_1956_0N": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_berrien",
+   "case": "tile_1956",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 12200.0
+   },
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.51,
+     "SAT_used": 0.509,
+     "BD": 1.3
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 2,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 3,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    },
+    {
+     "node": 4,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ]
+  },
+  "essex_berrien_tile_2rod": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_berrien",
+   "case": "tile_2rod",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 10058.4
+   },
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.51,
+     "SAT_used": 0.509,
+     "BD": 1.3
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 2,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 3,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    },
+    {
+     "node": 4,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ]
+  },
+  "essex_berrien_tile_2rod_0N": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "essex_berrien",
+   "case": "tile_2rod",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 10058.4
+   },
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.51,
+     "SAT_used": 0.509,
+     "BD": 1.3
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 2,
+     "SAT_from_source": 0.48,
+     "SAT_used": 0.475,
+     "BD": 1.39
+    },
+    {
+     "node": 3,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    },
+    {
+     "node": 4,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ]
+  },
+  "maumee_hoytville_undrained": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "maumee_hoytville",
+   "case": "undrained",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": null,
+   "sat_caps": [],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "maumee_hoytville_undrained_0N": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "maumee_hoytville",
+   "case": "undrained",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": null,
+   "sat_caps": [],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  },
+  "maumee_hoytville_tile_1956": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "maumee_hoytville",
+   "case": "tile_1956",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 12200.0
+   },
+   "sat_caps": []
+  },
+  "maumee_hoytville_tile_1956_0N": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "maumee_hoytville",
+   "case": "tile_1956",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": {
+    "DrainDepth": 760.0,
+    "DrainSpacing": 12200.0
+   },
+   "sat_caps": []
+  },
+  "maumee_hoytville_tile_lt": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "maumee_hoytville",
+   "case": "tile_lt",
+   "corn_urea_N_kg_ha": 172.0,
+   "tile": {
+    "DrainDepth": 1200.0,
+    "DrainSpacing": 17000.0
+   },
+   "sat_caps": []
+  },
+  "maumee_hoytville_tile_lt_0N": {
+   "lower_bc_gradient": -0.9945652173913043,
+   "pond_surface": true,
+   "eo_durn_min": 1440.0,
+   "site": "maumee_hoytville",
+   "case": "tile_lt",
+   "corn_urea_N_kg_ha": 0.0,
+   "tile": {
+    "DrainDepth": 1200.0,
+    "DrainSpacing": 17000.0
+   },
+   "sat_caps": [],
+   "failed": "---> System.Exception: Swim failed to find solution"
+  }
+ },
+ "windows_NASS_2010": {
+  "OH": {
+   "Maize": [
+    "24-apr",
+    "24-may"
+   ],
+   "Soybean": [
+    "3-may",
+    "30-may"
+   ]
+  },
+  "MI": {
+   "Maize": [
+    "1-may",
+    "27-may"
+   ],
+   "Soybean": [
+    "11-may",
+    "9-jun"
+   ]
+  }
+ },
+ "lower_bc_gradient": {
+  "hoytville": -0.9945652173913043,
+  "essex": -0.9945652173913043
+ },
+ "SpaceWeightingFactor": 0.5,
+ "corn_N": 172.0,
+ "outputs_sha256": {
+  "lake_erie_essex_berrien_tile_1956_0N_AN_v3.apsimx": "e59a7e6cc64793defcf686773f3b7b9d0910ee9d6d4a202b3b2356babf025186",
+  "lake_erie_essex_berrien_tile_1956_0N_AN_v3.Daily.csv.gz": "85def7b6314af58467523ec882db5301f8569153b11cec048c106b794863a7ff",
+  "lake_erie_essex_berrien_tile_1956_0N_AN_v3.Report.csv.gz": "853e1f75006ffe77a01cf337b59fc8d4008c9d3c6ed4813348e95e2af968c1e8",
+  "lake_erie_essex_berrien_tile_1956_AN_v3.apsimx": "db1a30db7dfbcbf1d3b1d44371babcebd5eaaa278d243fb7cb56e5fc56246ba1",
+  "lake_erie_essex_berrien_tile_1956_AN_v3.Daily.csv.gz": "477f36a7525828cbf716b219a2c196d293301643cc883a3aa93da1bd1d5d58ff",
+  "lake_erie_essex_berrien_tile_1956_AN_v3.Report.csv.gz": "8fb1f947520fda158a74bcbad56faa93aa658c0f6150c30f182b5dc1c98dfb3a",
+  "lake_erie_essex_berrien_tile_2rod_0N_AN_v3.apsimx": "8e84d92e8fdd66f0946f50a1e2dec036883a37203f699d88192b8149ffc67cce",
+  "lake_erie_essex_berrien_tile_2rod_0N_AN_v3.Daily.csv.gz": "a3737770fb2b8d6aa0481999334daf1d9a7c3cc6277e1628cc554fb9667fa9ec",
+  "lake_erie_essex_berrien_tile_2rod_0N_AN_v3.Report.csv.gz": "aaa1fc1dee44b062487d7f61e305eaa6519dfee12aba3b8d7ea9f86e96bfe27e",
+  "lake_erie_essex_berrien_tile_2rod_AN_v3.apsimx": "f8fb1ebe2ee8e885b0c8c5a13438c6521e361f37623cbacaf762c8274e89c7bf",
+  "lake_erie_essex_berrien_tile_2rod_AN_v3.Daily.csv.gz": "ab68377a0f0437d893e6254bc7665558eea31d63f47f0b56ec6c7b52878d3e04",
+  "lake_erie_essex_berrien_tile_2rod_AN_v3.Report.csv.gz": "aeb1f6de3ef89d053bc9296eed25f44f14e1b1c7dcbb1753bc65dad3d4b7ed75",
+  "lake_erie_essex_berrien_undrained_0N_AN_v3.apsimx": "43425571f18631b85c3cb3544d0c0bb4058bcf318522ad2ba8d988a170734537",
+  "lake_erie_essex_berrien_undrained_0N_AN_v3.Daily.csv.gz": "e38b853f76db574ff5b15c7d1bb613ebeb7f9b95b76475af4e70dd83df69a8f9",
+  "lake_erie_essex_berrien_undrained_0N_AN_v3.Report.csv.gz": "36bf3d895ded0fc1edb13f5f0ed742839d64ee67585abf08d0971a5a665b8212",
+  "lake_erie_essex_berrien_undrained_AN_v3.apsimx": "cfbb3e4c513b9f6192a1fae19bc300f062f7e1924cc72d4bcda6e562f2bd0bdd",
+  "lake_erie_essex_berrien_undrained_AN_v3.Daily.csv.gz": "5b62d730e546c6b3f7da416bfa48f4fcf1cb84d091bdb9d41a1dab22e8d8aa41",
+  "lake_erie_essex_berrien_undrained_AN_v3.Report.csv.gz": "8e6c62be818a94f6a14857762b2c596975b4c1e2b244908e9e36b27f3ec100bc",
+  "lake_erie_essex_brookston_tile_1956_0N_AN_v3.apsimx": "80ee865c3becb8c9ca37440ff81daefe5de40466c04d9c233d98d9c9239e64e2",
+  "lake_erie_essex_brookston_tile_1956_0N_AN_v3.Daily.csv.gz": "9c2f612c8f186275e748b3d9c934a658d13f78e734a0db5a1f74ccc7e50b6522",
+  "lake_erie_essex_brookston_tile_1956_AN_v3.apsimx": "92bbc2f6759c1d3691f755f112ad2dc00448579ec4a387ea272a4178ee96b8fe",
+  "lake_erie_essex_brookston_tile_1956_AN_v3.Daily.csv.gz": "a22bf3e274e7531f89217f3f05aabb97afa743ab0549a1077e376109f6a2fa47",
+  "lake_erie_essex_brookston_tile_1956_AN_v3.Report.csv.gz": "852c386e33bfb121b1ae924c1ad5eaca0af0c129102f6842cee1df998bfffb00",
+  "lake_erie_essex_brookston_tile_2rod_0N_AN_v3.apsimx": "e52bd1ef4ef821022babb5efb57d783e04418c3a696a051ba5b1bdb2ee48785f",
+  "lake_erie_essex_brookston_tile_2rod_0N_AN_v3.Daily.csv.gz": "66f15a65e3cff685f6bc4d076fcb2ca8e87c587129e5126ecdf7d9fcc997fba2",
+  "lake_erie_essex_brookston_tile_2rod_AN_v3.apsimx": "3bacd42e68f5ab5f0d3f5ec38a33f7dbc8cf1d7e35972cbecb4626f78e1e5ced",
+  "lake_erie_essex_brookston_tile_2rod_AN_v3.Daily.csv.gz": "5b25f856c3b33dd56c0dc6737b38f8392aa1820c79b1414178cd7112b411c6fd",
+  "lake_erie_essex_brookston_tile_2rod_AN_v3.Report.csv.gz": "f9bb9384b9c09af077b5c878f1cb0653d94f6e4d19c64c9764558f9504312e37",
+  "lake_erie_essex_brookston_undrained_0N_AN_v3.apsimx": "023de726affe2ef327234f648821d852b7c906422a55c23335d6b499edb6df63",
+  "lake_erie_essex_brookston_undrained_0N_AN_v3.Daily.csv.gz": "b05d191549b85149b09a4d4ee4a8125c080cfb04d1fc6e1256d99184c4db7e38",
+  "lake_erie_essex_brookston_undrained_AN_v3.apsimx": "f9504976d6046f6d3335699e4b996e00572fa5a5dbc26715a993553a26dde47a",
+  "lake_erie_essex_brookston_undrained_AN_v3.Daily.csv.gz": "a6208894936c9cd252892aa8e01e9c23818e1f2be709fe304ee04e308f91d9f7",
+  "lake_erie_essex_brookston_undrained_AN_v3.Report.csv.gz": "7b1125420db1da6ceb329aa32fbaa6849efac2e645767b1eba2a9e2dbe7ac1dd",
+  "lake_erie_maumee_hoytville_tile_1956_0N_AN_v3.apsimx": "b5f92a7cecfe43dd0b9ec3368cd4c1d33a087459b9847a904b6c8d6c02a8f03a",
+  "lake_erie_maumee_hoytville_tile_1956_0N_AN_v3.Daily.csv.gz": "951bb0c057845720d35575a5edaea09b2a8d5b9cd109cee42ae831397ef348c0",
+  "lake_erie_maumee_hoytville_tile_1956_0N_AN_v3.Report.csv.gz": "9aca9c85c72ec9519c9f7cc17615e1cc8b9e02994ff3ecc57b3392214682c8da",
+  "lake_erie_maumee_hoytville_tile_1956_AN_v3.apsimx": "43cf8828b16c7c9b75fa7ac11fa56e1586a365b141a30681e1de19d9af2cdf6d",
+  "lake_erie_maumee_hoytville_tile_1956_AN_v3.Daily.csv.gz": "329fcd31772a5e7ea7feca180a8be49d93fdf49775b13b571c323127435ca436",
+  "lake_erie_maumee_hoytville_tile_1956_AN_v3.Report.csv.gz": "1ac76c81fcf183ad726e411949ae5c2037b6a63726a5ff1b1d96bf8739447d3d",
+  "lake_erie_maumee_hoytville_tile_lt_0N_AN_v3.apsimx": "4eea729d907fec6358f3bceec359abf143ebf20ab5524a3ae579d1b1464d90bb",
+  "lake_erie_maumee_hoytville_tile_lt_0N_AN_v3.Daily.csv.gz": "d8609d1879783b7f60bbc3e5457c6e9e1af7e93100b1af00897ad87a0deae350",
+  "lake_erie_maumee_hoytville_tile_lt_0N_AN_v3.Report.csv.gz": "ef2f0f2c4fda873ebdd1802210f8bb711ca0b88dbe811d0e24a83464fb33939d",
+  "lake_erie_maumee_hoytville_tile_lt_AN_v3.apsimx": "e9b92ff6692a21aea0e58b38df94cbe8fe75360841e1f57437312e8d3fcf9d7e",
+  "lake_erie_maumee_hoytville_tile_lt_AN_v3.Daily.csv.gz": "2be486304aa11221b30f77ee2be672e7ba6539db8a8399e962d65bdea108b70c",
+  "lake_erie_maumee_hoytville_tile_lt_AN_v3.Report.csv.gz": "b644d91b0e90d8c54d7e15b4e97d93351ec0ca49d61affb05bc0b2224f6287ae",
+  "lake_erie_maumee_hoytville_undrained_0N_AN_v3.apsimx": "f710b12bb053b0e4cc163355b03aaaaeaab8530dce611a9a09014c5c9b5b484b",
+  "lake_erie_maumee_hoytville_undrained_0N_AN_v3.Daily.csv.gz": "a4b32e05cef7bc93e85dc004f391be07a5c9db60a69487da42b4e64857d55a8a",
+  "lake_erie_maumee_hoytville_undrained_0N_AN_v3.Report.csv.gz": "88f985da5f1d96d974512d9bfe8a9c0dd4e826a9835487b4d8f91a7b030ca88b",
+  "lake_erie_maumee_hoytville_undrained_AN_v3.apsimx": "4fdf46ade7efdb7108523e93e3614dbcdfcccd1c5bb8fe8aaff1f9bfb7023f4a",
+  "lake_erie_maumee_hoytville_undrained_AN_v3.Daily.csv.gz": "7cacfe06fb32f6b9af91bbaf26fc96e060324253556fb6f50a2b489c062868cb",
+  "lake_erie_maumee_hoytville_undrained_AN_v3.Report.csv.gz": "28c80355cdc7da5e9776cad3363e5fdbcddb449cca5a7607e0e64454471a746a"
+ }
+}

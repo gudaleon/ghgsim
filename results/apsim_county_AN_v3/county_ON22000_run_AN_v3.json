@@ -1,0 +1,107 @@
+{
+ "id": "ON22000",
+ "country": "CA",
+ "chu_m1_mean_1991_2020": 3093.0,
+ "chu_m1_by_year": {
+  "1991": 3206.3,
+  "1992": 2676.8,
+  "1993": 2840.9,
+  "1994": 2947.6,
+  "1995": 3055.1,
+  "1996": 2838.8,
+  "1997": 2621.1,
+  "1998": 3358.0,
+  "1999": 3287.2,
+  "2000": 2773.3,
+  "2001": 2989.5,
+  "2002": 3221.6,
+  "2003": 2882.5,
+  "2004": 2927.7,
+  "2005": 3516.5,
+  "2006": 3099.5,
+  "2007": 3428.3,
+  "2008": 2921.8,
+  "2009": 2842.9,
+  "2010": 3241.1,
+  "2011": 3137.1,
+  "2012": 3177.4,
+  "2013": 3315.4,
+  "2014": 2703.3,
+  "2015": 3256.7,
+  "2016": 3498.0,
+  "2017": 3227.5,
+  "2018": 3428.8,
+  "2019": 3116.5,
+  "2020": 3254.0
+ },
+ "sowing_window": {
+  "StartDate": "26-apr",
+  "EndDate": "15-may"
+ },
+ "met": {
+  "tav": 6.93,
+  "amp": 28.17,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930113",
+   "filled": 4.6
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19940225",
+   "filled": 7.88
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19950227",
+   "filled": 13.26
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19990118",
+   "filled": 5.47
+  }
+ ],
+ "soil": {
+  "areaname": "COUNTY OF DUFFERIN",
+  "mukey": "ONBNG~~~~~A",
+  "compname": "BENNINGTON",
+  "comppct_r": 38,
+  "drainagecl": "W"
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.51,
+   "SAT_used": 0.509,
+   "BD": 1.3
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.47,
+   "SAT_used": 0.467,
+   "BD": 1.41
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  },
+  {
+   "layer": 4,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ]
+}

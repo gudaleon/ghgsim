@@ -1,0 +1,121 @@
+{
+ "id": "ON41000",
+ "country": "CA",
+ "chu_m1_mean_1991_2020": 2542.1,
+ "chu_m1_by_year": {
+  "1991": 2623.5,
+  "1992": 1819.6,
+  "1993": 2186.7,
+  "1994": 2163.5,
+  "1995": 2255.7,
+  "1996": 2099.4,
+  "1997": 2197.0,
+  "1998": 3097.5,
+  "1999": 2727.4,
+  "2000": 2321.1,
+  "2001": 2348.3,
+  "2002": 2823.7,
+  "2003": 2126.5,
+  "2004": 2445.4,
+  "2005": 3275.9,
+  "2006": 2879.1,
+  "2007": 2695.4,
+  "2008": 2369.4,
+  "2009": 2173.2,
+  "2010": 2924.9,
+  "2011": 2561.0,
+  "2012": 2998.3,
+  "2013": 2830.2,
+  "2014": 2124.9,
+  "2015": 2479.4,
+  "2016": 3194.7,
+  "2017": 2915.1,
+  "2018": 2602.1,
+  "2019": 2227.2,
+  "2020": 2776.5
+ },
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "15-may"
+ },
+ "met": {
+  "tav": 7.11,
+  "amp": 22.56,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930113",
+   "filled": 4.05
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930116",
+   "filled": 3.22
+  }
+ ],
+ "soil": {
+  "areaname": "COUNTY OF BRUCE",
+  "mukey": "ONPFD~~~~~A",
+  "compname": "PLAINFIELD",
+  "comppct_r": 40,
+  "drainagecl": "W"
+ },
+ "sat_caps": [
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 4,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 5,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 6,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 7,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 8,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 9,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  }
+ ]
+}

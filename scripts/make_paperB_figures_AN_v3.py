@@ -9,7 +9,6 @@ Usage: python scripts/make_paperB_figures_AN_v3.py [3]   (default: 3)
 """
 from __future__ import annotations
 
-import hashlib
 import importlib.util
 import json
 import os
