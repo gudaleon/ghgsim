@@ -1,0 +1,783 @@
+{
+  "schema": "ghgsim.results_manifest/1",
+  "generated": "2026-11-03T20:08:19-05:00",
+  "profile": "full",
+  "host": "Bubble",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "pint": "0.26.2",
+    "pyyaml": "6.0.3",
+    "matplotlib": "3.11.2",
+    "lxml": "6.1.3",
+    "geopandas": "1.2.0",
+    "pyogrio": "0.13.0",
+    "pyproj": "3.8.0",
+    "shapely": "2.2.0",
+    "rasterio": "1.5.2",
+    "pymupdf": "2.1",
+    "requests": "2.34.2"
+  },
+  "code": {
+    "commit": "faf608e9324b6644423d3db20c1ca2287f0fd684",
+    "branch": "living-recompute-AN-v1",
+    "dirty": false
+  },
+  "parameter_file": {
+    "path": "data/ipcc_params_AN_v10.csv",
+    "sha256": "fd7d6952505f2a925ad5800ad12803d31d7b6ca0672501f87376e760f7988e97"
+  },
+  "upstream_sources": {
+    "path": "data/upstream_sources_AN_v1.json",
+    "pins": {
+      "created": "2026-11-03T19:59:14-05:00",
+      "note": "Fingerprints of upstream sources behind Paper B numbers; compared weekly by scripts/check_upstream_AN_v1.py (.github/workflows/upstream_check_AN_v1.yml).",
+      "urls": {
+        "ipcc_2006_v4_ch10": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_10_Ch10_Livestock.pdf",
+        "ipcc_2006_v4_ch11": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O%26CO2.pdf",
+        "ipcc_2019r_v4_ch10": "https://www.ipcc-nggip.iges.or.jp/public/2019rf/pdf/4_Volume4/19R_V4_Ch10_Livestock.pdf",
+        "ipcc_2019r_v4_ch11": "https://www.ipcc-nggip.iges.or.jp/public/2019rf/pdf/4_Volume4/19R_V4_Ch11_Soils_N2O_CO2.pdf",
+        "epa_ghgi_editions": "https://www.epa.gov/ghgemissions/inventory-us-greenhouse-gas-emissions-and-sinks",
+        "nass_census2022": "https://www.nass.usda.gov/datasets/qs.census2022.txt.gz",
+        "nclimdiv": "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/",
+        "unfccc_crt_2026": "https://unfccc.int/ghg-inventories-annex-i-parties/2026",
+        "gleam_release": "https://api.github.com/repos/un-fao/GLEAM/tags"
+      },
+      "sources": {
+        "ipcc_2006_v4_ch10": {
+          "sha256": "b8dd649b7858ae63462e5e47ddf2ebb36722c1058c28f0655ae6fb8b4a8de053",
+          "bytes": 1249922
+        },
+        "ipcc_2006_v4_ch11": {
+          "sha256": "9e621e34d3515d76a4c7531ac04fab8c23f149ce7cbdc50a5c5eef3c95e1905b",
+          "bytes": 961809
+        },
+        "ipcc_2019r_v4_ch10": {
+          "sha256": "915ca99a248262c530a39083cf835deb01a12988fedca7e3f0675931276865a1",
+          "bytes": 3373054
+        },
+        "ipcc_2019r_v4_ch11": {
+          "sha256": "337f18ceb618a858526ec01b5abed289843e1e8a69c957f0f62d22fa2a5761b3",
+          "bytes": 944749
+        },
+        "epa_ghgi_editions": {
+          "time_series_end_years_listed": [
+            "2022",
+            "2023"
+          ],
+          "latest": "2023"
+        },
+        "nass_census2022": {
+          "content_length": "309188711",
+          "last_modified": "Wed, 14 Feb 2024 19:25:51 GMT"
+        },
+        "nclimdiv": {
+          "latest": "v1.0.0-20261006"
+        },
+        "unfccc_crt_2026": null,
+        "gleam_release": {
+          "latest_tag": "v0.8.0-alpha",
+          "sha": "b0937d2",
+          "n_tags": 1
+        }
+      }
+    }
+  },
+  "steps": [
+    {
+      "name": "county_p_pe",
+      "where": "bubble_only",
+      "script": "scripts/build_county_p_pe_AN_v2.py",
+      "script_sha256": "f24d6e1d0037717236101028bbd924d3144c3a8f41ae67bd1d1b211b87cd0b70",
+      "args": [
+        "--raw",
+        "C:\\ghgsim-data/climate/nclimdiv",
+        "--version-date",
+        "20261006",
+        "--start",
+        "1991",
+        "--end",
+        "2020"
+      ],
+      "inputs_sha256": {
+        "RAW:climate/nclimdiv/climdiv-pcpncy-v1.0.0-20261006": "739fc3e9b529e04d406e914be1add2736ca3129c1103246ccebc2e5c76fd9d3a",
+        "RAW:climate/nclimdiv/climdiv-tmaxcy-v1.0.0-20261006": "a226e4ca307a39762401993fa3cb84e68425fe39afa89cab8639d17346750260",
+        "RAW:climate/nclimdiv/climdiv-tmincy-v1.0.0-20261006": "6251c07aedaffda0ba70d9456462beba0cc7701ab08a4246413986b106f4dec4",
+        "RAW:climate/nclimdiv/county-to-climdivs.txt": "2343d4b245f7b37c092e20863ecaeb47904f99f497132610e7beafd4dcda9270",
+        "RAW:climate/nclimdiv/2020_Gaz_counties_national.zip": "02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef"
+      },
+      "status": "ok",
+      "seconds": 8.9,
+      "log_tail": "wrote 3142 counties -> data\\county_p_pe_may_oct_AN_v2.csv; issues [('no_gazetteer_latitude', 0), ('incomplete_years', 0), ('remapped_nclimdiv_codes', 1)]\n",
+      "outputs": {
+        "data/county_p_pe_may_oct_AN_v2.csv": {
+          "sha256": "3bdfd4db384af25269a8866ac1aa7b0f94543bd5d8a6f4dc7efd527c827252d1",
+          "committed_sha256": "3bdfd4db384af25269a8866ac1aa7b0f94543bd5d8a6f4dc7efd527c827252d1",
+          "reproduced": true
+        },
+        "data/county_p_pe_manifest_AN_v2.json": {
+          "sha256": "dcad8fb52b63848e70d715f1a3a8d810c6b4daefcc1ebcb898a597a99ea9f282",
+          "committed_sha256": "980e280d5d422dbc1380632069cbb157f288713e3bf10b82377afaa7263ca206",
+          "reproduced": true,
+          "json_keys_differing": [
+            "created"
+          ],
+          "reproduced_basis": "all content equal except run metadata: created"
+        }
+      },
+      "paper_numbers": [
+        "county_p_pe.median_p_over_pe_hargreaves",
+        "county_p_pe.n_counties",
+        "county_p_pe.n_dry_hargreaves",
+        "county_p_pe.n_dry_thornthwaite"
+      ]
+    },
+    {
+      "name": "county_climate_annual",
+      "where": "bubble_only",
+      "script": "scripts/build_county_climate_annual_AN_v1.py",
+      "script_sha256": "fa37febfdd10d7c90b2c2591f75411439fad676a00563928b83c6b0b6124af3b",
+      "args": [
+        "--raw",
+        "C:\\ghgsim-data/climate/nclimdiv",
+        "--version-date",
+        "20261006",
+        "--start",
+        "1991",
+        "--end",
+        "2020"
+      ],
+      "inputs_sha256": {
+        "RAW:climate/nclimdiv/climdiv-pcpncy-v1.0.0-20261006": "739fc3e9b529e04d406e914be1add2736ca3129c1103246ccebc2e5c76fd9d3a",
+        "RAW:climate/nclimdiv/climdiv-tmaxcy-v1.0.0-20261006": "a226e4ca307a39762401993fa3cb84e68425fe39afa89cab8639d17346750260",
+        "RAW:climate/nclimdiv/climdiv-tmincy-v1.0.0-20261006": "6251c07aedaffda0ba70d9456462beba0cc7701ab08a4246413986b106f4dec4",
+        "RAW:climate/nclimdiv/county-to-climdivs.txt": "2343d4b245f7b37c092e20863ecaeb47904f99f497132610e7beafd4dcda9270",
+        "RAW:climate/nclimdiv/2020_Gaz_counties_national.zip": "02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef"
+      },
+      "status": "ok",
+      "seconds": 8.9,
+      "log_tail": "wrote 3142 counties; zones {'tropical_unresolved': 478, 'warm_temperate_moist': 797, 'warm_temperate_dry': 928, 'cool_temperate_moist': 242, 'boreal_moist': 7, 'boreal_dry': 5, 'cool_temperate_dry': 685}\n",
+      "outputs": {
+        "data/county_climate_annual_AN_v1.csv": {
+          "sha256": "d6edff6cdad99e61eb26aa1658ce531fad226281ac60743ba1519ac5e9873797",
+          "committed_sha256": "d6edff6cdad99e61eb26aa1658ce531fad226281ac60743ba1519ac5e9873797",
+          "reproduced": true
+        },
+        "data/county_climate_annual_manifest_AN_v1.json": {
+          "sha256": "739199335682cb92782201b0965fbea7601681a8bf50590f4c5ce50075d185f6",
+          "committed_sha256": "d9ec6e8f204ced880deef13ba42ae8f788d2bcd7464e155769f43abf4d6ebd37",
+          "reproduced": true,
+          "json_keys_differing": [
+            "created"
+          ],
+          "reproduced_basis": "all content equal except run metadata: created"
+        }
+      }
+    },
+    {
+      "name": "county_climate_zones",
+      "where": "bubble_only",
+      "script": "scripts/build_county_climate_zones_AN_v1.py",
+      "script_sha256": "7ffec7d1371ea65b5e94767cfe15dd2c6c19fdaf1f2073652219896faf7524bb",
+      "args": [
+        "--raw",
+        "C:\\ghgsim-data/climate",
+        "--version-date",
+        "20261006"
+      ],
+      "inputs_sha256": {
+        "RAW:climate/nclimdiv/climdiv-pcpncy-v1.0.0-20261006": "739fc3e9b529e04d406e914be1add2736ca3129c1103246ccebc2e5c76fd9d3a",
+        "RAW:climate/nclimdiv/climdiv-tmaxcy-v1.0.0-20261006": "a226e4ca307a39762401993fa3cb84e68425fe39afa89cab8639d17346750260",
+        "RAW:climate/nclimdiv/climdiv-tmincy-v1.0.0-20261006": "6251c07aedaffda0ba70d9456462beba0cc7701ab08a4246413986b106f4dec4",
+        "RAW:climate/nclimdiv/county-to-climdivs.txt": "2343d4b245f7b37c092e20863ecaeb47904f99f497132610e7beafd4dcda9270",
+        "RAW:climate/nclimdiv/2020_Gaz_counties_national.zip": "02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef",
+        "RAW:climate/ipcc_zones_zenodo7303808/IPCC_Climate_Zones_ts_3.25.tif": "7e811b6d43daffdd84ddb17c04dce491472d201ab4d5789d1d0ddbcc175ccbc9"
+      },
+      "status": "ok",
+      "seconds": 10.0,
+      "log_tail": "wrote C:\\ghgsim\\build\\recompute_stage_20261103T200635\\data\\county_climate_zones_AN_v1.csv (3142)\n",
+      "outputs": {
+        "data/county_climate_zones_AN_v1.csv": {
+          "sha256": "4fa15553b1869303f2d111387c23041480f5e865501935fa14f4bc9833da2a6c",
+          "committed_sha256": "4fa15553b1869303f2d111387c23041480f5e865501935fa14f4bc9833da2a6c",
+          "reproduced": true
+        },
+        "data/county_climate_zones_manifest_AN_v1.json": {
+          "sha256": "b76b15d82718ee52a71b34b610df043f83a3d97f7ca3ef1c536f611f57259b84",
+          "committed_sha256": "b76b15d82718ee52a71b34b610df043f83a3d97f7ca3ef1c536f611f57259b84",
+          "reproduced": true
+        }
+      },
+      "paper_numbers": [
+        "climate_zones.n_counties.boreal_dry",
+        "climate_zones.n_counties.boreal_moist",
+        "climate_zones.n_counties.cool_temperate_dry",
+        "climate_zones.n_counties.cool_temperate_moist",
+        "climate_zones.n_counties.polar_dry",
+        "climate_zones.n_counties.polar_moist",
+        "climate_zones.n_counties.tropical_dry",
+        "climate_zones.n_counties.tropical_moist",
+        "climate_zones.n_counties.warm_temperate_dry",
+        "climate_zones.n_counties.warm_temperate_moist"
+      ]
+    },
+    {
+      "name": "stylized_2006_vs_2019",
+      "where": "ci",
+      "script": "scripts/compare_ipcc_2006_2019_stylized_AN_v2.py",
+      "script_sha256": "482db7797eb647deccf050a817a328d8112854b988c6cb60eddc8a2f372a103c",
+      "args": [],
+      "inputs_sha256": {
+        "data/stylized_farms_AN_v6.yaml": "e4cedd9ee179e65252b5e72e7c78f3f427765ae0c596f63340c9774397074c3c",
+        "data/ipcc_params_AN_v10.csv": "fd7d6952505f2a925ad5800ad12803d31d7b6ca0672501f87376e760f7988e97"
+      },
+      "status": "ok",
+      "seconds": 0.4,
+      "log_tail": "wrote C:\\ghgsim\\build\\recompute_stage_20261103T200635\\data\\ipcc_2006_vs_2019_stylized_AN_v2.csv (76 rows)\n",
+      "outputs": {
+        "data/ipcc_2006_vs_2019_stylized_AN_v2.csv": {
+          "sha256": "ca59d7671b3a9a93f45c9118d3353c29d2f9853f749af278d6c91a1d6f14386f",
+          "committed_sha256": "486ae898fc76f59faaf00f7373cfbbbe203aa70c92cca067cfb3c23a2c53ea09",
+          "reproduced": false,
+          "diff_vs_committed": {
+            "rows_new": 76,
+            "rows_committed": 76,
+            "cells_differing_by_column": {
+              "params_file": 76
+            },
+            "example": {
+              "params_file": [
+                "ipcc_params_AN_v8.csv",
+                "ipcc_params_AN_v10.csv"
+              ]
+            }
+          }
+        }
+      },
+      "paper_numbers": [
+        "stylized.beef_cowcalf_covered_crust.pct_change_total",
+        "stylized.beef_cowcalf_covered_solid.pct_change_total",
+        "stylized.beef_cowcalf_uncovered.pct_change_total",
+        "stylized.beef_pasture_field.pct_change_total",
+        "stylized.breeding_swine_liquid.pct_change_total",
+        "stylized.broiler_litter.pct_change_total",
+        "stylized.broiler_litter_field.pct_change_total",
+        "stylized.crop_urea_lime.pct_change_total",
+        "stylized.dairy_forage_covered_crust.pct_change_total",
+        "stylized.dairy_forage_covered_solid.pct_change_total",
+        "stylized.dairy_forage_uncovered.pct_change_total",
+        "stylized.dairy_high_grain_covered_crust.pct_change_total",
+        "stylized.dairy_high_grain_uncovered.pct_change_total",
+        "stylized.farrow_to_finish.pct_change_total",
+        "stylized.layer_highrise.pct_change_total",
+        "stylized.layer_litter.pct_change_total",
+        "stylized.market_swine_field.pct_change_total",
+        "stylized.market_swine_liquid.pct_change_total",
+        "stylized.turkey_litter.pct_change_total"
+      ]
+    },
+    {
+      "name": "fig_stylized",
+      "where": "ci",
+      "script": "scripts/plot_ipcc_2006_vs_2019_stylized_AN_v2.py",
+      "script_sha256": "1c337508522f4aa9d741b074b78ca053483fcaf54efed0edf08474def7fb7dd0",
+      "args": [],
+      "inputs_sha256": {
+        "data/ipcc_2006_vs_2019_stylized_AN_v2.csv": "ca59d7671b3a9a93f45c9118d3353c29d2f9853f749af278d6c91a1d6f14386f"
+      },
+      "status": "ok",
+      "seconds": 1.7,
+      "log_tail": "wrote C:\\ghgsim\\build\\recompute_stage_20261103T200635\\docs\\figures\\ipcc_2006_vs_2019_stylized_AN_v2.png\n",
+      "outputs": {
+        "docs/figures/ipcc_2006_vs_2019_stylized_AN_v2.png": {
+          "sha256": "9d9b26c97f87bb9dc7a2574c591c664fd30e47b9f2933ae7a84ae7a422a20715",
+          "committed_sha256": "9d9b26c97f87bb9dc7a2574c591c664fd30e47b9f2933ae7a84ae7a422a20715",
+          "reproduced": true
+        }
+      }
+    },
+    {
+      "name": "us_county_run",
+      "where": "bubble_only",
+      "script": "scripts/run_us_county_2006_vs_2019_AN_v2.py",
+      "script_sha256": "5962bbca0c9c8b4e8c75c355b672b8cd6795cf3b03678d5e910697eb7383d3de",
+      "args": [
+        "--nass",
+        "C:\\ghgsim-data/nass/qs.census2022.txt.gz",
+        "--fert",
+        "C:\\ghgsim-data/fert/epa_commercial_fertilizer_purchased_20261103.html",
+        "--shp",
+        "C:\\ghgsim-data/nass/cb_2021_us_county_20m.zip"
+      ],
+      "inputs_sha256": {
+        "data/ipcc_params_AN_v10.csv": "fd7d6952505f2a925ad5800ad12803d31d7b6ca0672501f87376e760f7988e97",
+        "data/mms_north_america_ipcc2006_AN_v1.csv": "9da903930a13c9d0105a4f84b760b92328bdbff7abd9b01c53d64453cc1f662a",
+        "data/county_climate_zones_AN_v1.csv": "4fa15553b1869303f2d111387c23041480f5e865501935fa14f4bc9833da2a6c",
+        "RAW:nass/qs.census2022.txt.gz": "eca0f82dea58e1b128b82ac15f54e8bfc70cfb097e3e87710b74e7e93877dbbd",
+        "RAW:fert/epa_commercial_fertilizer_purchased_20261103.html": "021f09a6e2ff14a603e47c3469469aba2513e729ab14fff463dd17f783476923",
+        "RAW:nass/cb_2021_us_county_20m.zip": "b91964d40b7332e410eb22bde239d6f2495271175c17338d5f0c30c4bb3bc16d"
+      },
+      "status": "ok",
+      "seconds": 60.1,
+      "log_tail": "map counties without value: 41\n{\n \"disclosed|enteric_CH4|2006\": 121.6598,\n \"disclosed|enteric_CH4|2019\": 142.2264,\n \"disclosed|manure_CH4|2006\": 37.0917,\n \"disclosed|manure_CH4|2019\": 52.5877,\n \"disclosed|manure_N2O|2006\": 8.7997,\n \"disclosed|manure_N2O|2019\": 13.6458,\n \"disclosed|soil_N2O|2006\": 111.3364,\n \"disclosed|soil_N2O|2019\": 79.1441,\n \"reconstructed|enteric_CH4|2006\": 121.6598,\n \"reconstructed|enteric_CH4|2019\": 142.2264,\n \"reconstructed|manure_CH4|2006\": 37.0917,\n \"reconstructed|manure_CH4|2019\": 52.5877,\n \"reconstructed|manure_N2O|2006\": 8.7997,\n \"reconstructed|manure_N2O|2019\": 13.6458,\n \"reconstructed|soil_N2O|2006\": 111.3364,\n \"reconstructed|soil_N2O|2019\": 79.1441,\n \"D_allocated|enteric_CH4|2006\": 155.9119,\n \"D_allocated|enteric_CH4|2019\": 183.1638,\n \"D_allocated|manure_CH4|2006\": 42.1853,\n \"D_allocated|manure_CH4|2019\": 59.2453,\n \"D_allocated|manure_N2O|2006\": 11.1162,\n \"D_allocated|manure_N2O|2019\": 16.5912,\n \"D_allocated|soil_N2O|2006\": 120.1975,\n \"D_allocated|soil_N2O|2019\": 82.3851\n}\n",
+      "outputs": {
+        "data/us_county_2006_vs_2019_AN_v2.csv.gz": {
+          "sha256": "8a198b257a6c0a02cc57a021c7586b0a449a64bb51be94d1c0fdcc490cb307c6",
+          "committed_sha256": "0beb435fea4cdd0985e3dd0afc4e9c937384b55fa31c1eadcd5ef7c44ed5f425",
+          "reproduced": true,
+          "content_sha256": "e85d99466b862a92ed4610a742eefac5cdb15f5554cd248d59a03323a5f4f14b",
+          "committed_content_sha256": "e85d99466b862a92ed4610a742eefac5cdb15f5554cd248d59a03323a5f4f14b",
+          "reproduced_basis": "decompressed content (gzip header timestamp differs)"
+        },
+        "data/us_national_2006_vs_2019_vs_epa_AN_v2.csv": {
+          "sha256": "fd02be8a2b6ab432e72e844f2b89161f68557d0d471b1b3012252c8cd9ae58f0",
+          "committed_sha256": "fd02be8a2b6ab432e72e844f2b89161f68557d0d471b1b3012252c8cd9ae58f0",
+          "reproduced": true
+        },
+        "data/us_county_run_manifest_AN_v2.json": {
+          "sha256": "0fedfead475c0204cf20b31a4732d4bb7dcdbaf7a6e475e803bce04db7ea1635",
+          "committed_sha256": "ac3763d8da2128aec3e216c35b5c85892d9b2ffc50af7cf6f70d6d11c4df5b5d",
+          "reproduced": true,
+          "json_keys_differing": [
+            "inputs.fert.path",
+            "inputs.nass.path",
+            "inputs.shp.path"
+          ],
+          "reproduced_basis": "all content equal except run metadata: inputs.fert.path, inputs.nass.path, inputs.shp.path"
+        },
+        "docs/figures/us_county_pct_change_2006_2019_AN_v2.png": {
+          "sha256": "85383674a82a8799ea4933408263c970e0e8c1ad3d3f18ffb45e4d3173148910",
+          "committed_sha256": "85383674a82a8799ea4933408263c970e0e8c1ad3d3f18ffb45e4d3173148910",
+          "reproduced": true
+        }
+      },
+      "paper_numbers": [
+        "us_county.D_allocated.county_pct_change.median",
+        "us_county.D_allocated.county_pct_change.n_counties",
+        "us_county.D_allocated.county_pct_change.n_down",
+        "us_county.D_allocated.county_pct_change.n_up",
+        "us_county.D_allocated.county_pct_change.p05",
+        "us_county.D_allocated.county_pct_change.p95",
+        "us_county.D_allocated.enteric_CH4.2006_MMT",
+        "us_county.D_allocated.enteric_CH4.2019_MMT",
+        "us_county.D_allocated.enteric_CH4.pct_change",
+        "us_county.D_allocated.manure_CH4.2006_MMT",
+        "us_county.D_allocated.manure_CH4.2019_MMT",
+        "us_county.D_allocated.manure_CH4.pct_change",
+        "us_county.D_allocated.manure_N2O.2006_MMT",
+        "us_county.D_allocated.manure_N2O.2019_MMT",
+        "us_county.D_allocated.manure_N2O.pct_change",
+        "us_county.D_allocated.soil_N2O.2006_MMT",
+        "us_county.D_allocated.soil_N2O.2019_MMT",
+        "us_county.D_allocated.soil_N2O.pct_change",
+        "us_county.D_allocated.total_in_scope.2006_MMT",
+        "us_county.D_allocated.total_in_scope.2019_MMT",
+        "us_county.D_allocated.total_in_scope.pct_change",
+        "us_county.disclosed.county_pct_change.median",
+        "us_county.disclosed.county_pct_change.n_counties",
+        "us_county.disclosed.county_pct_change.n_down",
+        "us_county.disclosed.county_pct_change.n_up",
+        "us_county.disclosed.county_pct_change.p05",
+        "us_county.disclosed.county_pct_change.p95",
+        "us_county.disclosed.enteric_CH4.2006_MMT",
+        "us_county.disclosed.enteric_CH4.2019_MMT",
+        "us_county.disclosed.enteric_CH4.pct_change",
+        "us_county.disclosed.manure_CH4.2006_MMT",
+        "us_county.disclosed.manure_CH4.2019_MMT",
+        "us_county.disclosed.manure_CH4.pct_change",
+        "us_county.disclosed.manure_N2O.2006_MMT",
+        "us_county.disclosed.manure_N2O.2019_MMT",
+        "us_county.disclosed.manure_N2O.pct_change",
+        "us_county.disclosed.soil_N2O.2006_MMT",
+        "us_county.disclosed.soil_N2O.2019_MMT",
+        "us_county.disclosed.soil_N2O.pct_change",
+        "us_county.disclosed.total_in_scope.2006_MMT",
+        "us_county.disclosed.total_in_scope.2019_MMT",
+        "us_county.disclosed.total_in_scope.pct_change",
+        "us_county.reconstructed.enteric_CH4.2006_MMT",
+        "us_county.reconstructed.enteric_CH4.2019_MMT",
+        "us_county.reconstructed.enteric_CH4.pct_change",
+        "us_county.reconstructed.manure_CH4.2006_MMT",
+        "us_county.reconstructed.manure_CH4.2019_MMT",
+        "us_county.reconstructed.manure_CH4.pct_change",
+        "us_county.reconstructed.manure_N2O.2006_MMT",
+        "us_county.reconstructed.manure_N2O.2019_MMT",
+        "us_county.reconstructed.manure_N2O.pct_change",
+        "us_county.reconstructed.soil_N2O.2006_MMT",
+        "us_county.reconstructed.soil_N2O.2019_MMT",
+        "us_county.reconstructed.soil_N2O.pct_change",
+        "us_county.reconstructed.total_in_scope.2006_MMT",
+        "us_county.reconstructed.total_in_scope.2019_MMT",
+        "us_county.reconstructed.total_in_scope.pct_change"
+      ]
+    },
+    {
+      "name": "inventories_crt2026",
+      "where": "bubble_only",
+      "script": "scripts/fetch_inventories_AN_v1.py",
+      "script_sha256": "ced8eb58707dc61441c8bb233b385d0dc3880f339010ab5b374ea88389a2e36f",
+      "args": [
+        "--zip-dir",
+        "C:\\ghgsim-data/crt2026",
+        "--out",
+        "data/inventories_AN_v1"
+      ],
+      "inputs_sha256": {
+        "RAW:crt2026/CAN-CRT-2026-V2.0.zip": "0023e7443bb4bbcee17341733988bcb5a1ae5eb54eb8b37c7bc7804c5158133c",
+        "RAW:crt2026/GBRJ-CRT-2026-V1.0.zip": null,
+        "RAW:crt2026/NZL-CRT-2026-V1.0_.zip": null,
+        "RAW:crt2026/IRL-CRT-2026-V1.0.zip": null,
+        "RAW:crt2026/DEU-CRT-2026-V1.0.zip": null,
+        "RAW:crt2026/AUS-CRT-2026-V1.0.zip": null
+      },
+      "status": "skipped: raw input missing (committed outputs hashed instead)",
+      "missing_raw": [
+        "crt2026/GBRJ-CRT-2026-V1.0.zip",
+        "crt2026/NZL-CRT-2026-V1.0_.zip",
+        "crt2026/IRL-CRT-2026-V1.0.zip",
+        "crt2026/DEU-CRT-2026-V1.0.zip",
+        "crt2026/AUS-CRT-2026-V1.0.zip"
+      ],
+      "outputs": {
+        "data/inventories_AN_v1/AUS_recalc_AN_v1.csv": {
+          "sha256": "68e0903320b3e7c3522dc777f52c90b72633dd93598c876a6ee8a5d159e5d8a7",
+          "committed_sha256": "68e0903320b3e7c3522dc777f52c90b72633dd93598c876a6ee8a5d159e5d8a7",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/AUS_summary3_AN_v1.csv": {
+          "sha256": "869e7e3ea8a3f2117b202e2cddb230a51300fd4cb0ddc8c25e258f4d5c8f2806",
+          "committed_sha256": "869e7e3ea8a3f2117b202e2cddb230a51300fd4cb0ddc8c25e258f4d5c8f2806",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/AUS_table3_AN_v1.csv": {
+          "sha256": "1989badadb446fe903711a05140f43e1fd1e4e3cdedb1eb9a2f555ed285ce19b",
+          "committed_sha256": "1989badadb446fe903711a05140f43e1fd1e4e3cdedb1eb9a2f555ed285ce19b",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/AUS_table8_AN_v1.csv": {
+          "sha256": "879c57f9b6f8a34a54c35fce80649fb65454d06158ea8f9199eea9f4b8aeff7f",
+          "committed_sha256": "879c57f9b6f8a34a54c35fce80649fb65454d06158ea8f9199eea9f4b8aeff7f",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/CAN_recalc_AN_v1.csv": {
+          "sha256": "b7ab0d07738b724e7bc0fbeae10d0b21d3169d6945cf6630e32a0ab14d6aaa7c",
+          "committed_sha256": "b7ab0d07738b724e7bc0fbeae10d0b21d3169d6945cf6630e32a0ab14d6aaa7c",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/CAN_summary3_AN_v1.csv": {
+          "sha256": "ef92f58f74311ea818738b8f4d2618f0aba3312a30ed14ba50b0225f3d4e8f7d",
+          "committed_sha256": "ef92f58f74311ea818738b8f4d2618f0aba3312a30ed14ba50b0225f3d4e8f7d",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/CAN_table3_AN_v1.csv": {
+          "sha256": "a6c6f5ec32c27ff601930baefe2a4b9b16285a616c95efd4357a06d1ef5c5b2a",
+          "committed_sha256": "a6c6f5ec32c27ff601930baefe2a4b9b16285a616c95efd4357a06d1ef5c5b2a",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/CAN_table8_AN_v1.csv": {
+          "sha256": "432d42e26679b10318cef6130028267b8f073b91c0c5e673f155ccc1bed5c9d1",
+          "committed_sha256": "432d42e26679b10318cef6130028267b8f073b91c0c5e673f155ccc1bed5c9d1",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/DEU_recalc_AN_v1.csv": {
+          "sha256": "e8ae4c721950270ace46032740a61677a548bf1c9c68962164c8f7b9cae3cae7",
+          "committed_sha256": "e8ae4c721950270ace46032740a61677a548bf1c9c68962164c8f7b9cae3cae7",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/DEU_summary3_AN_v1.csv": {
+          "sha256": "83237ba670b5dd41248b1bad7c98635c470f7c5e8ae9558bbd15de752bdbe040",
+          "committed_sha256": "83237ba670b5dd41248b1bad7c98635c470f7c5e8ae9558bbd15de752bdbe040",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/DEU_table3_AN_v1.csv": {
+          "sha256": "88038ecc7b9927430344307b8d3c921d09e0e0a711e1066e787b5ac334bda4c2",
+          "committed_sha256": "88038ecc7b9927430344307b8d3c921d09e0e0a711e1066e787b5ac334bda4c2",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/DEU_table8_AN_v1.csv": {
+          "sha256": "473840258856bb098c3ccd5e06e6a4b1027797cbbbbefb63a3214b3046e766b8",
+          "committed_sha256": "473840258856bb098c3ccd5e06e6a4b1027797cbbbbefb63a3214b3046e766b8",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/GBR_recalc_AN_v1.csv": {
+          "sha256": "202aed14f558bc4e0b80bb5ec7a166da7094fe5fdf9554c1e4aa364fcebb8da9",
+          "committed_sha256": "202aed14f558bc4e0b80bb5ec7a166da7094fe5fdf9554c1e4aa364fcebb8da9",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/GBR_summary3_AN_v1.csv": {
+          "sha256": "20bb208af8657af1507c0640a383f86c2878b3b3021dd7e035e9c9477abda02b",
+          "committed_sha256": "20bb208af8657af1507c0640a383f86c2878b3b3021dd7e035e9c9477abda02b",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/GBR_table3_AN_v1.csv": {
+          "sha256": "4bfb914a992c49ab9e4ffea4d88d2d700bfbbe1db7ab8bd4065d214461efdf23",
+          "committed_sha256": "4bfb914a992c49ab9e4ffea4d88d2d700bfbbe1db7ab8bd4065d214461efdf23",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/GBR_table8_AN_v1.csv": {
+          "sha256": "d832f48330957b2c3e4e3800f7030c933cf6b7efb3d033d6478459c17f02c4c3",
+          "committed_sha256": "d832f48330957b2c3e4e3800f7030c933cf6b7efb3d033d6478459c17f02c4c3",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/IRL_recalc_AN_v1.csv": {
+          "sha256": "72b7c10e0ca00c91e3712e1f834f8b6e8db09a82b138e7fafd008c8594cb9223",
+          "committed_sha256": "72b7c10e0ca00c91e3712e1f834f8b6e8db09a82b138e7fafd008c8594cb9223",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/IRL_summary3_AN_v1.csv": {
+          "sha256": "e1426005595633f5e5035e6de48e68a6f6ace7e431d3bf58b0ff840dc60964d1",
+          "committed_sha256": "e1426005595633f5e5035e6de48e68a6f6ace7e431d3bf58b0ff840dc60964d1",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/IRL_table3_AN_v1.csv": {
+          "sha256": "36274d00ef7ecc0cfaca1cc8b755dc25c75c547a9b9d573a99dc8bb040799a5f",
+          "committed_sha256": "36274d00ef7ecc0cfaca1cc8b755dc25c75c547a9b9d573a99dc8bb040799a5f",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/IRL_table8_AN_v1.csv": {
+          "sha256": "04a5c245287bacb9e2bcd93723de9dbf16053ef30463b1ac6669c19f8b632b15",
+          "committed_sha256": "04a5c245287bacb9e2bcd93723de9dbf16053ef30463b1ac6669c19f8b632b15",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/NZL_recalc_AN_v1.csv": {
+          "sha256": "64b08dd63603c5c6fed40593eabdcfd91cea68cebf537a359ae49fbbee888a18",
+          "committed_sha256": "64b08dd63603c5c6fed40593eabdcfd91cea68cebf537a359ae49fbbee888a18",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/NZL_summary3_AN_v1.csv": {
+          "sha256": "748e715d774fa85ce4cddba7b80a8f5db89ca2f61625afad200eca3aa650bb40",
+          "committed_sha256": "748e715d774fa85ce4cddba7b80a8f5db89ca2f61625afad200eca3aa650bb40",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/NZL_table3_AN_v1.csv": {
+          "sha256": "d803d84606bb59247f15b14761b67598ac71059d0b4eab96df8374aa0b1cac81",
+          "committed_sha256": "d803d84606bb59247f15b14761b67598ac71059d0b4eab96df8374aa0b1cac81",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/NZL_table8_AN_v1.csv": {
+          "sha256": "5e4d4ff657b0a3173101e6d5af56a726cbd72f4278074f2b3fd2449c4c0ac3cc",
+          "committed_sha256": "5e4d4ff657b0a3173101e6d5af56a726cbd72f4278074f2b3fd2449c4c0ac3cc",
+          "reproduced": true
+        },
+        "data/inventories_AN_v1/run_manifest_AN_v1.json": {
+          "sha256": "a6243f5384faafc9f45325847df56833bb57e2ffb1c2c08303ba32bd51aab484",
+          "committed_sha256": "a6243f5384faafc9f45325847df56833bb57e2ffb1c2c08303ba32bd51aab484",
+          "reproduced": true
+        }
+      },
+      "paper_numbers": [
+        "inventory.AUS.agriculture.1990.recalc_pct",
+        "inventory.AUS.agriculture.2005.recalc_pct",
+        "inventory.AUS.agriculture.2023.recalc_pct",
+        "inventory.CAN.agriculture.1990.recalc_pct",
+        "inventory.CAN.agriculture.2005.recalc_pct",
+        "inventory.CAN.agriculture.2023.recalc_pct",
+        "inventory.DEU.agriculture.1990.recalc_pct",
+        "inventory.DEU.agriculture.2005.recalc_pct",
+        "inventory.DEU.agriculture.2023.recalc_pct",
+        "inventory.GBR.agriculture.1990.recalc_pct",
+        "inventory.GBR.agriculture.2005.recalc_pct",
+        "inventory.GBR.agriculture.2023.recalc_pct",
+        "inventory.IRL.agriculture.1990.recalc_pct",
+        "inventory.IRL.agriculture.2005.recalc_pct",
+        "inventory.IRL.agriculture.2023.recalc_pct",
+        "inventory.NZL.agriculture.1990.recalc_pct",
+        "inventory.NZL.agriculture.2005.recalc_pct",
+        "inventory.NZL.agriculture.2023.recalc_pct"
+      ]
+    },
+    {
+      "name": "inventories_us_epa",
+      "where": "bubble_only",
+      "script": "scripts/fetch_epa_ghgi_AN_v1.py",
+      "script_sha256": "89fb1262381568c5cf513e35abff70f71cdf0533875a025de0d27e580e0f3e3e",
+      "args": [
+        "--pdf-dir",
+        "C:\\ghgsim-data/epa_ghgi",
+        "--out",
+        "data/inventories_US_AN_v1"
+      ],
+      "inputs_sha256": {
+        "RAW:epa_ghgi/ghgi_2024_main.pdf": "f3a3309d3f9308f58d5f467bd82445dfa887ce0393b359c50da6c5fdb00872a3",
+        "RAW:epa_ghgi/ghgi_2025_nepis.pdf": "fe9739931419e35125576acecda847a07264cec77e2edbc68492b23e1682bbd0"
+      },
+      "status": "ok",
+      "seconds": 6.1,
+      "log_tail": "ok 39 recalc rows\n",
+      "outputs": {
+        "data/inventories_US_AN_v1/EPA2024_table5-1_AN_v1.csv": {
+          "sha256": "8ef33fc619676cada215da56be0a7363e4d5e09f89904b829361d2abed59819c",
+          "committed_sha256": "8ef33fc619676cada215da56be0a7363e4d5e09f89904b829361d2abed59819c",
+          "reproduced": true
+        },
+        "data/inventories_US_AN_v1/EPA2025_table5-1_AN_v1.csv": {
+          "sha256": "b9c78b39a47e9e9cffb62c49f51acdbe0d0d626473d0b84c60cd9d25ba0ea8d9",
+          "committed_sha256": "b9c78b39a47e9e9cffb62c49f51acdbe0d0d626473d0b84c60cd9d25ba0ea8d9",
+          "reproduced": true
+        },
+        "data/inventories_US_AN_v1/EPA2025_table9-2_agriculture_AN_v1.csv": {
+          "sha256": "feea102b70794b3014f105f2fcaf80a122b0daf84ca2340f144d57f08e5d3656",
+          "committed_sha256": "feea102b70794b3014f105f2fcaf80a122b0daf84ca2340f144d57f08e5d3656",
+          "reproduced": true
+        },
+        "data/inventories_US_AN_v1/US_recalc_2024to2025_AN_v1.csv": {
+          "sha256": "bc60f4322bfccc387e1815cf77a694fe54cd25f3ae473aa457eabef636dbbd62",
+          "committed_sha256": "bc60f4322bfccc387e1815cf77a694fe54cd25f3ae473aa457eabef636dbbd62",
+          "reproduced": true
+        },
+        "data/inventories_US_manifest_AN_v1.json": {
+          "sha256": "7ef55e8c06f93f3126fcd84754cb9c52abf05ab29556296cc4bdb320bebde55f",
+          "committed_sha256": "7ef55e8c06f93f3126fcd84754cb9c52abf05ab29556296cc4bdb320bebde55f",
+          "reproduced": true
+        }
+      },
+      "paper_numbers": [
+        "inventory.USA.CH4.2022.recalc_MMT",
+        "inventory.USA.CH4:Enteric Fermentation.2022.recalc_MMT",
+        "inventory.USA.CH4:Field Burning of Agricultural Residues.2022.recalc_MMT",
+        "inventory.USA.CH4:Manure Management.2022.recalc_MMT",
+        "inventory.USA.CH4:Rice Cultivation.2022.recalc_MMT",
+        "inventory.USA.CO2.2022.recalc_MMT",
+        "inventory.USA.CO2:Liming.2022.recalc_MMT",
+        "inventory.USA.CO2:Urea Fertilization.2022.recalc_MMT",
+        "inventory.USA.N2O.2022.recalc_MMT",
+        "inventory.USA.N2O:Agricultural Soil Management.2022.recalc_MMT",
+        "inventory.USA.N2O:Field Burning of Agricultural Residues.2022.recalc_MMT",
+        "inventory.USA.N2O:Manure Management.2022.recalc_MMT",
+        "inventory.USA.Total.2022.recalc_MMT"
+      ]
+    }
+  ],
+  "paper_numbers": {
+    "climate_zones.n_counties.boreal_dry": 11,
+    "climate_zones.n_counties.boreal_moist": 5,
+    "climate_zones.n_counties.cool_temperate_dry": 612,
+    "climate_zones.n_counties.cool_temperate_moist": 288,
+    "climate_zones.n_counties.polar_dry": 1,
+    "climate_zones.n_counties.polar_moist": 3,
+    "climate_zones.n_counties.tropical_dry": 30,
+    "climate_zones.n_counties.tropical_moist": 62,
+    "climate_zones.n_counties.warm_temperate_dry": 898,
+    "climate_zones.n_counties.warm_temperate_moist": 1232,
+    "county_p_pe.median_p_over_pe_hargreaves": 0.726,
+    "county_p_pe.n_counties": 3142,
+    "county_p_pe.n_dry_hargreaves": 3041,
+    "county_p_pe.n_dry_thornthwaite": 2352,
+    "inventory.AUS.agriculture.1990.recalc_pct": -4.675,
+    "inventory.AUS.agriculture.2005.recalc_pct": -4.565,
+    "inventory.AUS.agriculture.2023.recalc_pct": -4.377,
+    "inventory.CAN.agriculture.1990.recalc_pct": 0.53,
+    "inventory.CAN.agriculture.2005.recalc_pct": 0.902,
+    "inventory.CAN.agriculture.2023.recalc_pct": 0.507,
+    "inventory.DEU.agriculture.1990.recalc_pct": 1.075,
+    "inventory.DEU.agriculture.2005.recalc_pct": 0.336,
+    "inventory.DEU.agriculture.2023.recalc_pct": 0.75,
+    "inventory.GBR.agriculture.1990.recalc_pct": 0.908,
+    "inventory.GBR.agriculture.2005.recalc_pct": 0.967,
+    "inventory.GBR.agriculture.2023.recalc_pct": 1.437,
+    "inventory.IRL.agriculture.1990.recalc_pct": 0.0,
+    "inventory.IRL.agriculture.2005.recalc_pct": 0.0,
+    "inventory.IRL.agriculture.2023.recalc_pct": 0.212,
+    "inventory.NZL.agriculture.1990.recalc_pct": -0.447,
+    "inventory.NZL.agriculture.2005.recalc_pct": -0.579,
+    "inventory.NZL.agriculture.2023.recalc_pct": -0.804,
+    "inventory.USA.CH4.2022.recalc_MMT": -0.9,
+    "inventory.USA.CH4:Enteric Fermentation.2022.recalc_MMT": 0.0,
+    "inventory.USA.CH4:Field Burning of Agricultural Residues.2022.recalc_MMT": 0.0,
+    "inventory.USA.CH4:Manure Management.2022.recalc_MMT": 0.0,
+    "inventory.USA.CH4:Rice Cultivation.2022.recalc_MMT": -0.9,
+    "inventory.USA.CO2.2022.recalc_MMT": -0.2,
+    "inventory.USA.CO2:Liming.2022.recalc_MMT": -0.1,
+    "inventory.USA.CO2:Urea Fertilization.2022.recalc_MMT": -0.1,
+    "inventory.USA.N2O.2022.recalc_MMT": 1.0,
+    "inventory.USA.N2O:Agricultural Soil Management.2022.recalc_MMT": 1.0,
+    "inventory.USA.N2O:Field Burning of Agricultural Residues.2022.recalc_MMT": 0.0,
+    "inventory.USA.N2O:Manure Management.2022.recalc_MMT": 0.0,
+    "inventory.USA.Total.2022.recalc_MMT": -0.1,
+    "stylized.beef_cowcalf_covered_crust.pct_change_total": 37.1,
+    "stylized.beef_cowcalf_covered_solid.pct_change_total": 37.1,
+    "stylized.beef_cowcalf_uncovered.pct_change_total": 37.1,
+    "stylized.beef_pasture_field.pct_change_total": -18.5,
+    "stylized.breeding_swine_liquid.pct_change_total": 88.42,
+    "stylized.broiler_litter.pct_change_total": 22.46,
+    "stylized.broiler_litter_field.pct_change_total": 29.09,
+    "stylized.crop_urea_lime.pct_change_total": 19.3,
+    "stylized.dairy_forage_covered_crust.pct_change_total": 37.94,
+    "stylized.dairy_forage_covered_solid.pct_change_total": 37.94,
+    "stylized.dairy_forage_uncovered.pct_change_total": 37.94,
+    "stylized.dairy_high_grain_covered_crust.pct_change_total": 19.52,
+    "stylized.dairy_high_grain_uncovered.pct_change_total": 19.52,
+    "stylized.farrow_to_finish.pct_change_total": 85.77,
+    "stylized.layer_highrise.pct_change_total": 13.92,
+    "stylized.layer_litter.pct_change_total": 21.19,
+    "stylized.market_swine_field.pct_change_total": 77.52,
+    "stylized.market_swine_liquid.pct_change_total": 84.48,
+    "stylized.turkey_litter.pct_change_total": 0.0,
+    "us_county.D_allocated.county_pct_change.median": 10.73,
+    "us_county.D_allocated.county_pct_change.n_counties": 3075,
+    "us_county.D_allocated.county_pct_change.n_down": 1104,
+    "us_county.D_allocated.county_pct_change.n_up": 1971,
+    "us_county.D_allocated.county_pct_change.p05": -26.69,
+    "us_county.D_allocated.county_pct_change.p95": 32.94,
+    "us_county.D_allocated.enteric_CH4.2006_MMT": 155.912,
+    "us_county.D_allocated.enteric_CH4.2019_MMT": 183.164,
+    "us_county.D_allocated.enteric_CH4.pct_change": 17.48,
+    "us_county.D_allocated.manure_CH4.2006_MMT": 42.185,
+    "us_county.D_allocated.manure_CH4.2019_MMT": 59.245,
+    "us_county.D_allocated.manure_CH4.pct_change": 40.44,
+    "us_county.D_allocated.manure_N2O.2006_MMT": 11.116,
+    "us_county.D_allocated.manure_N2O.2019_MMT": 16.591,
+    "us_county.D_allocated.manure_N2O.pct_change": 49.25,
+    "us_county.D_allocated.soil_N2O.2006_MMT": 120.198,
+    "us_county.D_allocated.soil_N2O.2019_MMT": 82.385,
+    "us_county.D_allocated.soil_N2O.pct_change": -31.46,
+    "us_county.D_allocated.total_in_scope.2006_MMT": 329.411,
+    "us_county.D_allocated.total_in_scope.2019_MMT": 341.385,
+    "us_county.D_allocated.total_in_scope.pct_change": 3.64,
+    "us_county.disclosed.county_pct_change.median": 10.38,
+    "us_county.disclosed.county_pct_change.n_counties": 3067,
+    "us_county.disclosed.county_pct_change.n_down": 1201,
+    "us_county.disclosed.county_pct_change.n_up": 1866,
+    "us_county.disclosed.county_pct_change.p05": -47.09,
+    "us_county.disclosed.county_pct_change.p95": 39.74,
+    "us_county.disclosed.enteric_CH4.2006_MMT": 121.66,
+    "us_county.disclosed.enteric_CH4.2019_MMT": 142.226,
+    "us_county.disclosed.enteric_CH4.pct_change": 16.91,
+    "us_county.disclosed.manure_CH4.2006_MMT": 37.092,
+    "us_county.disclosed.manure_CH4.2019_MMT": 52.588,
+    "us_county.disclosed.manure_CH4.pct_change": 41.78,
+    "us_county.disclosed.manure_N2O.2006_MMT": 8.8,
+    "us_county.disclosed.manure_N2O.2019_MMT": 13.646,
+    "us_county.disclosed.manure_N2O.pct_change": 55.07,
+    "us_county.disclosed.soil_N2O.2006_MMT": 111.336,
+    "us_county.disclosed.soil_N2O.2019_MMT": 79.144,
+    "us_county.disclosed.soil_N2O.pct_change": -28.91,
+    "us_county.disclosed.total_in_scope.2006_MMT": 278.888,
+    "us_county.disclosed.total_in_scope.2019_MMT": 287.604,
+    "us_county.disclosed.total_in_scope.pct_change": 3.13,
+    "us_county.reconstructed.enteric_CH4.2006_MMT": 121.66,
+    "us_county.reconstructed.enteric_CH4.2019_MMT": 142.226,
+    "us_county.reconstructed.enteric_CH4.pct_change": 16.91,
+    "us_county.reconstructed.manure_CH4.2006_MMT": 37.092,
+    "us_county.reconstructed.manure_CH4.2019_MMT": 52.588,
+    "us_county.reconstructed.manure_CH4.pct_change": 41.78,
+    "us_county.reconstructed.manure_N2O.2006_MMT": 8.8,
+    "us_county.reconstructed.manure_N2O.2019_MMT": 13.646,
+    "us_county.reconstructed.manure_N2O.pct_change": 55.07,
+    "us_county.reconstructed.soil_N2O.2006_MMT": 111.336,
+    "us_county.reconstructed.soil_N2O.2019_MMT": 79.144,
+    "us_county.reconstructed.soil_N2O.pct_change": -28.91,
+    "us_county.reconstructed.total_in_scope.2006_MMT": 278.888,
+    "us_county.reconstructed.total_in_scope.2019_MMT": 287.604,
+    "us_county.reconstructed.total_in_scope.pct_change": 3.13
+  },
+  "summary": {
+    "failed": [],
+    "not_reproduced": [
+      "data/ipcc_2006_vs_2019_stylized_AN_v2.csv"
+    ]
+  }
+}
