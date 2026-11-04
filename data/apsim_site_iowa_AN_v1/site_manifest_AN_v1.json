@@ -1,0 +1,8 @@
+{
+ "retrieved_utc": "2026-11-04T06:17:05+00:00",
+ "power_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX,T2M_MIN,PRECTOTCORR,ALLSKY_SFC_SW_DWN&community=AG&longitude=-93.774&latitude=42.02&start=19910101&end=20201231&format=JSON",
+ "sha256": {
+  "nasa_power_daily_1991_2020_AN_v1.json.gz": "0f217e07926643d89f5aa9fffe052ffbea22e751fa792a68b3d8dc49615dbb4d",
+  "ssurgo_point_AN_v1.json": "610e8f0542ce98631ce328956126636bdcccdfdaf3ac0bf0403bbad00650f810"
+ }
+}
