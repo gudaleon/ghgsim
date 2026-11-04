@@ -1,0 +1,30 @@
+{
+ "id": "19147",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.51,
+  "amp": 31.55,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911129",
+   "filled": 3.7
+  }
+ ],
+ "soil": {
+  "areaname": "Palo Alto County, Iowa",
+  "mukey": "410271",
+  "compname": "Dickman",
+  "comppct_r": "100",
+  "drainagecl": "Well drained",
+  "hydgrp": "A"
+ },
+ "sat_caps": []
+}

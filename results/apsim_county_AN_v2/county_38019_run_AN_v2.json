@@ -1,0 +1,30 @@
+{
+ "id": "38019",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "28-may"
+ },
+ "window_state": "North Dakota",
+ "met": {
+  "tav": 3.74,
+  "amp": 35.37,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911207",
+   "filled": 2.39
+  }
+ ],
+ "soil": {
+  "areaname": "Cavalier County, North Dakota",
+  "mukey": "2587519",
+  "compname": "Vallers",
+  "comppct_r": "45",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "B/D"
+ },
+ "sat_caps": []
+}

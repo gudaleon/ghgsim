@@ -1,0 +1,122 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  42.183225,
+  -98.058037
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-98.058037 42.183225)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "427007",
+   "muname": "Valentine fine sand, 0 to 6 percent slopes",
+   "areaname": "Antelope County, Nebraska",
+   "areasymbol": "NE003",
+   "saverest": "9/8/2026 5:01:35 PM",
+   "cokey": "27952143",
+   "compname": "Valentine",
+   "comppct_r": "90",
+   "majcompflag": "Yes",
+   "taxclname": "Mixed, mesic Typic Ustipsamments",
+   "hydgrp": "A",
+   "slope_r": "3",
+   "drainagecl": "Excessively drained"
+  },
+  {
+   "mukey": "427007",
+   "muname": "Valentine fine sand, 0 to 6 percent slopes",
+   "areaname": "Antelope County, Nebraska",
+   "areasymbol": "NE003",
+   "saverest": "9/8/2026 5:01:35 PM",
+   "cokey": "27952144",
+   "compname": "Boelus",
+   "comppct_r": "7",
+   "majcompflag": "No ",
+   "taxclname": "Sandy over loamy, mixed, superactive, mesic Udic Haplustolls",
+   "hydgrp": "C",
+   "slope_r": "3",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "427007",
+   "muname": "Valentine fine sand, 0 to 6 percent slopes",
+   "areaname": "Antelope County, Nebraska",
+   "areasymbol": "NE003",
+   "saverest": "9/8/2026 5:01:35 PM",
+   "cokey": "27952142",
+   "compname": "Loup",
+   "comppct_r": "3",
+   "majcompflag": "No ",
+   "taxclname": "Sandy, mixed, mesic Typic Endoaquolls",
+   "hydgrp": "A/D",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "427007",
+  "muname": "Valentine fine sand, 0 to 6 percent slopes",
+  "areaname": "Antelope County, Nebraska",
+  "areasymbol": "NE003",
+  "saverest": "9/8/2026 5:01:35 PM",
+  "cokey": "27952143",
+  "compname": "Valentine",
+  "comppct_r": "90",
+  "majcompflag": "Yes",
+  "taxclname": "Mixed, mesic Typic Ustipsamments",
+  "hydgrp": "A",
+  "slope_r": "3",
+  "drainagecl": "Excessively drained"
+ },
+ "horizons": [
+  {
+   "hzname": "A",
+   "hzdept_r": "0",
+   "hzdepb_r": "13",
+   "dbthirdbar_r": "1.59",
+   "wthirdbar_r": "10",
+   "wfifteenbar_r": "3.4",
+   "wsatiated_r": "38",
+   "ksat_r": "92",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "3",
+   "silttotal_r": "3",
+   "sandtotal_r": "94"
+  },
+  {
+   "hzname": "AC",
+   "hzdept_r": "13",
+   "hzdepb_r": "30",
+   "dbthirdbar_r": "1.57",
+   "wthirdbar_r": "9.4",
+   "wfifteenbar_r": "2.9",
+   "wsatiated_r": "39",
+   "ksat_r": "92",
+   "om_r": "0.5",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "3",
+   "silttotal_r": "2",
+   "sandtotal_r": "95"
+  },
+  {
+   "hzname": "C",
+   "hzdept_r": "30",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.56",
+   "wthirdbar_r": "8.8",
+   "wfifteenbar_r": "2.5",
+   "wsatiated_r": "39",
+   "ksat_r": "92",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "3",
+   "silttotal_r": "2",
+   "sandtotal_r": "95"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

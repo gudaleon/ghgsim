@@ -1,0 +1,61 @@
+{
+ "id": "ON28005",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 9.07,
+  "amp": 24.07,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "HALDIMAND COUNTY",
+  "mukey": "ONHIM~~~~~A",
+  "compname": "HALDIMAND",
+  "comppct_r": 60,
+  "drainagecl": "I",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.53,
+   "SAT_used": 0.524,
+   "BD": 1.26
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.47,
+   "SAT_used": 0.467,
+   "BD": 1.41
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.47,
+   "SAT_used": 0.467,
+   "BD": 1.41
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 4,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  },
+  {
+   "layer": 5,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ]
+}

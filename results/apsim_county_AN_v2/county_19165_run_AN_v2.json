@@ -1,0 +1,24 @@
+{
+ "id": "19165",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 9.78,
+  "amp": 29.94,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Shelby County, Iowa",
+  "mukey": "437523",
+  "compname": "Zook",
+  "comppct_r": "85",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "D"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,152 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  34.07373,
+  -101.303274
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-101.303274 34.07373)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "695974",
+   "muname": "Randall clay, 0 to 1 percent slopes, frequently ponded",
+   "areaname": "Floyd County, Texas",
+   "areasymbol": "TX153",
+   "saverest": "9/3/2026 2:10:17 PM",
+   "cokey": "28118020",
+   "compname": "Randall",
+   "comppct_r": "85",
+   "majcompflag": "Yes",
+   "taxclname": "Very-fine, smectitic, thermic Ustic Epiaquerts",
+   "hydgrp": "D",
+   "slope_r": "0.3",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "695974",
+   "muname": "Randall clay, 0 to 1 percent slopes, frequently ponded",
+   "areaname": "Floyd County, Texas",
+   "areasymbol": "TX153",
+   "saverest": "9/3/2026 2:10:17 PM",
+   "cokey": "28118017",
+   "compname": "McLean",
+   "comppct_r": "10",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, thermic Udic Haplusterts",
+   "hydgrp": "D",
+   "slope_r": "0.3",
+   "drainagecl": "Somewhat poorly drained"
+  },
+  {
+   "mukey": "695974",
+   "muname": "Randall clay, 0 to 1 percent slopes, frequently ponded",
+   "areaname": "Floyd County, Texas",
+   "areasymbol": "TX153",
+   "saverest": "9/3/2026 2:10:17 PM",
+   "cokey": "28118018",
+   "compname": "Lockney",
+   "comppct_r": "4",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, thermic Typic Haplusterts",
+   "hydgrp": "D",
+   "slope_r": "0.5",
+   "drainagecl": "Moderately well drained"
+  },
+  {
+   "mukey": "695974",
+   "muname": "Randall clay, 0 to 1 percent slopes, frequently ponded",
+   "areaname": "Floyd County, Texas",
+   "areasymbol": "TX153",
+   "saverest": "9/3/2026 2:10:17 PM",
+   "cokey": "28118019",
+   "compname": "Lazbuddie",
+   "comppct_r": "1",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, thermic Calcic Haplusterts",
+   "hydgrp": "D",
+   "slope_r": "0.5",
+   "drainagecl": "Moderately well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "695974",
+  "muname": "Randall clay, 0 to 1 percent slopes, frequently ponded",
+  "areaname": "Floyd County, Texas",
+  "areasymbol": "TX153",
+  "saverest": "9/3/2026 2:10:17 PM",
+  "cokey": "28118020",
+  "compname": "Randall",
+  "comppct_r": "85",
+  "majcompflag": "Yes",
+  "taxclname": "Very-fine, smectitic, thermic Ustic Epiaquerts",
+  "hydgrp": "D",
+  "slope_r": "0.3",
+  "drainagecl": "Poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "A",
+   "hzdept_r": "0",
+   "hzdepb_r": "23",
+   "dbthirdbar_r": "1.2",
+   "wthirdbar_r": "45.3",
+   "wfifteenbar_r": "34.7",
+   "wsatiated_r": "50",
+   "ksat_r": "0.21",
+   "om_r": "3.1",
+   "ph1to1h2o_r": "6.9",
+   "claytotal_r": "59.9",
+   "silttotal_r": "32.4",
+   "sandtotal_r": "7.7"
+  },
+  {
+   "hzname": "Bw",
+   "hzdept_r": "23",
+   "hzdepb_r": "43",
+   "dbthirdbar_r": "1.18",
+   "wthirdbar_r": "45.7",
+   "wfifteenbar_r": "32.4",
+   "wsatiated_r": "51",
+   "ksat_r": "0.6",
+   "om_r": "0.98",
+   "ph1to1h2o_r": "6.8",
+   "claytotal_r": "59.7",
+   "silttotal_r": "32.4",
+   "sandtotal_r": "7.9"
+  },
+  {
+   "hzname": "Bss",
+   "hzdept_r": "43",
+   "hzdepb_r": "157",
+   "dbthirdbar_r": "1.19",
+   "wthirdbar_r": "45.5",
+   "wfifteenbar_r": "32.3",
+   "wsatiated_r": "51",
+   "ksat_r": "0.6",
+   "om_r": "0.71",
+   "ph1to1h2o_r": "6.9",
+   "claytotal_r": "59.6",
+   "silttotal_r": "33.1",
+   "sandtotal_r": "7.3"
+  },
+  {
+   "hzname": "Bkss",
+   "hzdept_r": "157",
+   "hzdepb_r": "203",
+   "dbthirdbar_r": "1.17",
+   "wthirdbar_r": "45.8",
+   "wfifteenbar_r": "31.5",
+   "wsatiated_r": "51",
+   "ksat_r": "0.6",
+   "om_r": "0.33",
+   "ph1to1h2o_r": "8.2",
+   "claytotal_r": "59.3",
+   "silttotal_r": "34.1",
+   "sandtotal_r": "6.6"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:15:58+00:00"
+}

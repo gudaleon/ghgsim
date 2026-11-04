@@ -1,0 +1,107 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  42.472937,
+  -91.366767
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-91.366767 42.472937)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "405025",
+   "muname": "Goss loam, 2 to 9 percent slopes",
+   "areaname": "Delaware County, Iowa",
+   "areasymbol": "IA055",
+   "saverest": "9/8/2026 6:10:24 PM",
+   "cokey": "28561182",
+   "compname": "Goss",
+   "comppct_r": "95",
+   "majcompflag": "Yes",
+   "taxclname": "TYPIC PALEUDALFS, CLAYEY-SKELETAL, MIXED, MESIC",
+   "hydgrp": "D",
+   "slope_r": "6",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "405025",
+   "muname": "Goss loam, 2 to 9 percent slopes",
+   "areaname": "Delaware County, Iowa",
+   "areasymbol": "IA055",
+   "saverest": "9/8/2026 6:10:24 PM",
+   "cokey": "28561183",
+   "compname": "Nordness",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "LITHIC HAPLUDALFS, LOAMY, MIXED, MESIC",
+   "hydgrp": "D",
+   "slope_r": "4",
+   "drainagecl": "Well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "405025",
+  "muname": "Goss loam, 2 to 9 percent slopes",
+  "areaname": "Delaware County, Iowa",
+  "areasymbol": "IA055",
+  "saverest": "9/8/2026 6:10:24 PM",
+  "cokey": "28561182",
+  "compname": "Goss",
+  "comppct_r": "95",
+  "majcompflag": "Yes",
+  "taxclname": "TYPIC PALEUDALFS, CLAYEY-SKELETAL, MIXED, MESIC",
+  "hydgrp": "D",
+  "slope_r": "6",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "H1",
+   "hzdept_r": "0",
+   "hzdepb_r": "10",
+   "dbthirdbar_r": "1.25",
+   "wthirdbar_r": "29.1",
+   "wfifteenbar_r": "14.1",
+   "wsatiated_r": "49",
+   "ksat_r": "9",
+   "om_r": "2.5",
+   "ph1to1h2o_r": "5.5",
+   "claytotal_r": "22.5",
+   "silttotal_r": "37.7",
+   "sandtotal_r": "39.8"
+  },
+  {
+   "hzname": "H2",
+   "hzdept_r": "10",
+   "hzdepb_r": "46",
+   "dbthirdbar_r": "1.25",
+   "wthirdbar_r": "27.4",
+   "wfifteenbar_r": "11.9",
+   "wsatiated_r": "50",
+   "ksat_r": "9",
+   "om_r": "0.55",
+   "ph1to1h2o_r": "5.5",
+   "claytotal_r": "22.5",
+   "silttotal_r": "37.7",
+   "sandtotal_r": "39.8"
+  },
+  {
+   "hzname": "H3",
+   "hzdept_r": "46",
+   "hzdepb_r": "152",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "25.3",
+   "wfifteenbar_r": "16.9",
+   "wsatiated_r": "29",
+   "ksat_r": "0.04",
+   "om_r": "0.1",
+   "ph1to1h2o_r": "5.3",
+   "claytotal_r": "47.5",
+   "silttotal_r": "29.2",
+   "sandtotal_r": "23.3"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

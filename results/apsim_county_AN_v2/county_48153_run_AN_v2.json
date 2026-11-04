@@ -1,0 +1,24 @@
+{
+ "id": "48153",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "8-mar",
+  "EndDate": "7-may"
+ },
+ "window_state": "Texas",
+ "met": {
+  "tav": 16.75,
+  "amp": 22.94,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Floyd County, Texas",
+  "mukey": "695974",
+  "compname": "Randall",
+  "comppct_r": "85",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "D"
+ },
+ "sat_caps": []
+}

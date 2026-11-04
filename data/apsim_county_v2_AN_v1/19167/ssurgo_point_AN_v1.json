@@ -1,0 +1,152 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  43.082646,
+  -96.17801
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-96.17801 43.082646)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "411270",
+   "muname": "Primghar silty clay loam, 0 to 2 percent slopes",
+   "areaname": "Sioux County, Iowa",
+   "areasymbol": "IA167",
+   "saverest": "9/8/2026 7:01:27 PM",
+   "cokey": "28626684",
+   "compname": "Primghar",
+   "comppct_r": "90",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Aquic Hapludolls",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Somewhat poorly drained"
+  },
+  {
+   "mukey": "411270",
+   "muname": "Primghar silty clay loam, 0 to 2 percent slopes",
+   "areaname": "Sioux County, Iowa",
+   "areasymbol": "IA167",
+   "saverest": "9/8/2026 7:01:27 PM",
+   "cokey": "28626685",
+   "compname": "Galva",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Typic Hapludolls",
+   "hydgrp": "C",
+   "slope_r": "1",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "411270",
+   "muname": "Primghar silty clay loam, 0 to 2 percent slopes",
+   "areaname": "Sioux County, Iowa",
+   "areasymbol": "IA167",
+   "saverest": "9/8/2026 7:01:27 PM",
+   "cokey": "28626686",
+   "compname": "Marcus",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Typic Endoaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "411270",
+  "muname": "Primghar silty clay loam, 0 to 2 percent slopes",
+  "areaname": "Sioux County, Iowa",
+  "areasymbol": "IA167",
+  "saverest": "9/8/2026 7:01:27 PM",
+  "cokey": "28626684",
+  "compname": "Primghar",
+  "comppct_r": "90",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-silty, mixed, superactive, mesic Aquic Hapludolls",
+  "hydgrp": "C/D",
+  "slope_r": "1",
+  "drainagecl": "Somewhat poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "20",
+   "dbthirdbar_r": "1.25",
+   "wthirdbar_r": "35.4",
+   "wfifteenbar_r": "24.6",
+   "wsatiated_r": "48",
+   "ksat_r": "0.7",
+   "om_r": "6.2",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "36",
+   "silttotal_r": "61",
+   "sandtotal_r": "3"
+  },
+  {
+   "hzname": "A",
+   "hzdept_r": "20",
+   "hzdepb_r": "43",
+   "dbthirdbar_r": "1.3",
+   "wthirdbar_r": "34.9",
+   "wfifteenbar_r": "23.7",
+   "wsatiated_r": "46",
+   "ksat_r": "0.7",
+   "om_r": "4",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "37",
+   "silttotal_r": "61",
+   "sandtotal_r": "2"
+  },
+  {
+   "hzname": "Bw",
+   "hzdept_r": "43",
+   "hzdepb_r": "91",
+   "dbthirdbar_r": "1.29",
+   "wthirdbar_r": "32.3",
+   "wfifteenbar_r": "18.9",
+   "wsatiated_r": "47",
+   "ksat_r": "3",
+   "om_r": "3",
+   "ph1to1h2o_r": "7.3",
+   "claytotal_r": "30",
+   "silttotal_r": "67",
+   "sandtotal_r": "3"
+  },
+  {
+   "hzname": "Bkg",
+   "hzdept_r": "91",
+   "hzdepb_r": "124",
+   "dbthirdbar_r": "1.31",
+   "wthirdbar_r": "29.7",
+   "wfifteenbar_r": "14.9",
+   "wsatiated_r": "47",
+   "ksat_r": "9",
+   "om_r": "2",
+   "ph1to1h2o_r": "7.9",
+   "claytotal_r": "24",
+   "silttotal_r": "71",
+   "sandtotal_r": "5"
+  },
+  {
+   "hzname": "Cg",
+   "hzdept_r": "124",
+   "hzdepb_r": "152",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "30.4",
+   "wfifteenbar_r": "15.9",
+   "wsatiated_r": "44",
+   "ksat_r": "9",
+   "om_r": "1.5",
+   "ph1to1h2o_r": "8.2",
+   "claytotal_r": "25",
+   "silttotal_r": "67",
+   "sandtotal_r": "8"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

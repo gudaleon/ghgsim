@@ -1,0 +1,64 @@
+{
+ "id": "ON42000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 6.71,
+  "amp": 26.05,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930113",
+   "filled": 4.6
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19940225",
+   "filled": 7.88
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19950227",
+   "filled": 13.26
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19990118",
+   "filled": 5.47
+  }
+ ],
+ "soil": {
+  "areaname": "COUNTY OF GREY",
+  "mukey": "ONVCT~~~~~A",
+  "compname": "VINCENT",
+  "comppct_r": 46,
+  "drainagecl": "W",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.53,
+   "SAT_used": 0.52,
+   "BD": 1.27
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  }
+ ]
+}

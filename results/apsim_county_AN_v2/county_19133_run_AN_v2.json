@@ -1,0 +1,24 @@
+{
+ "id": "19133",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 10.05,
+  "amp": 30.42,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Monona County, Iowa",
+  "mukey": "447313",
+  "compname": "Napier",
+  "comppct_r": "90",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,24 @@
+{
+ "id": "17105",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 10.35,
+  "amp": 28.08,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Livingston County, Illinois",
+  "mukey": "176947",
+  "compname": "Bryce",
+  "comppct_r": "95",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

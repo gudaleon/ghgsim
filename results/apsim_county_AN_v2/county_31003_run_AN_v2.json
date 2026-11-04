@@ -1,0 +1,24 @@
+{
+ "id": "31003",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "27-apr",
+  "EndDate": "15-may"
+ },
+ "window_state": "Nebraska",
+ "met": {
+  "tav": 9.97,
+  "amp": 29.06,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Antelope County, Nebraska",
+  "mukey": "427007",
+  "compname": "Valentine",
+  "comppct_r": "90",
+  "drainagecl": "Excessively drained",
+  "hydgrp": "A"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,30 @@
+{
+ "id": "38101",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "28-may"
+ },
+ "window_state": "North Dakota",
+ "met": {
+  "tav": 5.64,
+  "amp": 33.02,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19940124",
+   "filled": 7.93
+  }
+ ],
+ "soil": {
+  "areaname": "Ward County, North Dakota",
+  "mukey": "2585129",
+  "compname": "Forman",
+  "comppct_r": "52",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

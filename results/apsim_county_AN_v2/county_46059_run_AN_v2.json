@@ -1,0 +1,30 @@
+{
+ "id": "46059",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "South Dakota",
+ "met": {
+  "tav": 8.51,
+  "amp": 31.78,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930121",
+   "filled": 6.56
+  }
+ ],
+ "soil": {
+  "areaname": "Hand County, South Dakota",
+  "mukey": "352618",
+  "compname": "Houdek",
+  "comppct_r": "62",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

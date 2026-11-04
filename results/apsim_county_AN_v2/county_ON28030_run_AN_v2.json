@@ -1,0 +1,49 @@
+{
+ "id": "ON28030",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 9.32,
+  "amp": 25.21,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930121",
+   "filled": 4.91
+  }
+ ],
+ "soil": {
+  "areaname": "NORFOLK COUNTY",
+  "mukey": "ONZDN~~~~~N",
+  "compname": "DUNE",
+  "comppct_r": 45,
+  "drainagecl": "R",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.47,
+   "SAT_used": 0.467,
+   "BD": 1.41
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.47,
+   "SAT_used": 0.467,
+   "BD": 1.41
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.47,
+   "SAT_used": 0.467,
+   "BD": 1.41
+  }
+ ]
+}

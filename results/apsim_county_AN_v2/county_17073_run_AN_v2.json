@@ -1,0 +1,24 @@
+{
+ "id": "17073",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 9.89,
+  "amp": 29.26,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Henry County, Illinois",
+  "mukey": "244815",
+  "compname": "Greenbush",
+  "comppct_r": "95",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,24 @@
+{
+ "id": "18083",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "1-jun"
+ },
+ "window_state": "Indiana",
+ "met": {
+  "tav": 12.8,
+  "amp": 25.5,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Knox County, Indiana",
+  "mukey": "164501",
+  "compname": "Reesville",
+  "comppct_r": "95",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

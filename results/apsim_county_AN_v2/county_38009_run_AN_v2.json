@@ -1,0 +1,30 @@
+{
+ "id": "38009",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "28-may"
+ },
+ "window_state": "North Dakota",
+ "met": {
+  "tav": 4.07,
+  "amp": 34.91,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19940124",
+   "filled": 7.93
+  }
+ ],
+ "soil": {
+  "areaname": "Bottineau County, North Dakota",
+  "mukey": "2989620",
+  "compname": "Hamlet",
+  "comppct_r": "50",
+  "drainagecl": "Moderately well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

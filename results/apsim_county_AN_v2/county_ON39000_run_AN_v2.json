@@ -1,0 +1,73 @@
+{
+ "id": "ON39000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 8.8,
+  "amp": 26.49,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19950227",
+   "filled": 10.7
+  }
+ ],
+ "soil": {
+  "areaname": "COUNTY OF MIDDLESEX",
+  "mukey": "ONWAM~~~~~A",
+  "compname": "WALSINGHAM",
+  "comppct_r": 49,
+  "drainagecl": "I",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.47,
+   "SAT_used": 0.467,
+   "BD": 1.41
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 4,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 5,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 6,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ]
+}

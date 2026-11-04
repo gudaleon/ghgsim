@@ -1,0 +1,24 @@
+{
+ "id": "20181",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "15-apr",
+  "EndDate": "15-may"
+ },
+ "window_state": "Kansas",
+ "met": {
+  "tav": 12.27,
+  "amp": 25.54,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Sherman County, Kansas",
+  "mukey": "1149618",
+  "compname": "Keith",
+  "comppct_r": "95",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

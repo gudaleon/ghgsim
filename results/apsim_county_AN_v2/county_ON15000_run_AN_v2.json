@@ -1,0 +1,53 @@
+{
+ "id": "ON15000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 6.89,
+  "amp": 30.44,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19910123",
+   "filled": 3.12
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19950307",
+   "filled": 4.66
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19950321",
+   "filled": 8.48
+  }
+ ],
+ "soil": {
+  "areaname": "COUNTY OF PETERBOROUGH",
+  "mukey": "ONDMM~~~~~A",
+  "compname": "DUMMER",
+  "comppct_r": 46,
+  "drainagecl": "W",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.52,
+   "SAT_used": 0.513,
+   "BD": 1.29
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  }
+ ]
+}

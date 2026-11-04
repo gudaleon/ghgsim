@@ -1,0 +1,30 @@
+{
+ "id": "27045",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "26-apr",
+  "EndDate": "19-may"
+ },
+ "window_state": "Minnesota",
+ "met": {
+  "tav": 7.21,
+  "amp": 31.3,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19921222",
+   "filled": 5.92
+  }
+ ],
+ "soil": {
+  "areaname": "Fillmore County, Minnesota",
+  "mukey": "2216741",
+  "compname": "Fayette",
+  "comppct_r": "85",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

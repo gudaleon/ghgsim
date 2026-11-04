@@ -1,0 +1,107 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  39.265914,
+  -89.92633
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-89.92633 39.265914)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "199155",
+   "muname": "Fishhook silt loam, 5 to 10 percent slopes, eroded",
+   "areaname": "Macoupin County, Illinois",
+   "areasymbol": "IL117",
+   "saverest": "8/23/2026 8:07:06 PM",
+   "cokey": "27814097",
+   "compname": "Fishhook",
+   "comppct_r": "90",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Aquic Hapludalfs",
+   "hydgrp": "C/D",
+   "slope_r": "7.5",
+   "drainagecl": "Somewhat poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "199155",
+  "muname": "Fishhook silt loam, 5 to 10 percent slopes, eroded",
+  "areaname": "Macoupin County, Illinois",
+  "areasymbol": "IL117",
+  "saverest": "8/23/2026 8:07:06 PM",
+  "cokey": "27814097",
+  "compname": "Fishhook",
+  "comppct_r": "90",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-silty, mixed, superactive, mesic Aquic Hapludalfs",
+  "hydgrp": "C/D",
+  "slope_r": "7.5",
+  "drainagecl": "Somewhat poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "H1",
+   "hzdept_r": "0",
+   "hzdepb_r": "15",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "30.4",
+   "wfifteenbar_r": "15.9",
+   "wsatiated_r": "44",
+   "ksat_r": "9.17",
+   "om_r": "1.5",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "25",
+   "silttotal_r": "70",
+   "sandtotal_r": "5"
+  },
+  {
+   "hzname": "H2",
+   "hzdept_r": "15",
+   "hzdepb_r": "81",
+   "dbthirdbar_r": "1.5",
+   "wthirdbar_r": "32.5",
+   "wfifteenbar_r": "19.3",
+   "wsatiated_r": "41",
+   "ksat_r": "9.17",
+   "om_r": "0.5",
+   "ph1to1h2o_r": "5.9",
+   "claytotal_r": "31",
+   "silttotal_r": "64",
+   "sandtotal_r": "5"
+  },
+  {
+   "hzname": "H3",
+   "hzdept_r": "81",
+   "hzdepb_r": "129",
+   "dbthirdbar_r": "1.65",
+   "wthirdbar_r": "31.4",
+   "wfifteenbar_r": "24.5",
+   "wsatiated_r": "33",
+   "ksat_r": "0.92",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "38",
+   "silttotal_r": "33",
+   "sandtotal_r": "29"
+  },
+  {
+   "hzname": "H4",
+   "hzdept_r": "129",
+   "hzdepb_r": "203",
+   "dbthirdbar_r": "1.65",
+   "wthirdbar_r": "31.4",
+   "wfifteenbar_r": "23.6",
+   "wsatiated_r": "33",
+   "ksat_r": "0.92",
+   "om_r": "0.5",
+   "ph1to1h2o_r": "7.3",
+   "claytotal_r": "36",
+   "silttotal_r": "35",
+   "sandtotal_r": "29"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

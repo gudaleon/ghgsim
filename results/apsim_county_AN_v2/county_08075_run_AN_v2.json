@@ -1,0 +1,24 @@
+{
+ "id": "08075",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "28-apr",
+  "EndDate": "20-may"
+ },
+ "window_state": "Colorado",
+ "met": {
+  "tav": 11.47,
+  "amp": 25.18,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Logan County, Colorado",
+  "mukey": "94491",
+  "compname": "Westplain",
+  "comppct_r": "55",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

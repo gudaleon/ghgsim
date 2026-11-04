@@ -1,0 +1,152 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  41.223388,
+  -96.642097
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-96.642097 41.223388)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "1691454",
+   "muname": "Yutan, eroded-Judson complex, 6 to 11 percent slopes",
+   "areaname": "Saunders County, Nebraska",
+   "areasymbol": "NE155",
+   "saverest": "9/11/2026 1:08:00 PM",
+   "cokey": "29178053",
+   "compname": "Yutan",
+   "comppct_r": "64",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Mollic Hapludalfs",
+   "hydgrp": "C",
+   "slope_r": "8",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "1691454",
+   "muname": "Yutan, eroded-Judson complex, 6 to 11 percent slopes",
+   "areaname": "Saunders County, Nebraska",
+   "areasymbol": "NE155",
+   "saverest": "9/11/2026 1:08:00 PM",
+   "cokey": "29178054",
+   "compname": "Judson",
+   "comppct_r": "25",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Cumulic Hapludolls",
+   "hydgrp": "B",
+   "slope_r": "7",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "1691454",
+   "muname": "Yutan, eroded-Judson complex, 6 to 11 percent slopes",
+   "areaname": "Saunders County, Nebraska",
+   "areasymbol": "NE155",
+   "saverest": "9/11/2026 1:08:00 PM",
+   "cokey": "29178055",
+   "compname": "Aksarben",
+   "comppct_r": "11",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, mesic Typic Argiudolls",
+   "hydgrp": "C",
+   "slope_r": "4",
+   "drainagecl": "Well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "1691454",
+  "muname": "Yutan, eroded-Judson complex, 6 to 11 percent slopes",
+  "areaname": "Saunders County, Nebraska",
+  "areasymbol": "NE155",
+  "saverest": "9/11/2026 1:08:00 PM",
+  "cokey": "29178053",
+  "compname": "Yutan",
+  "comppct_r": "64",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-silty, mixed, superactive, mesic Mollic Hapludalfs",
+  "hydgrp": "C",
+  "slope_r": "8",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "15",
+   "dbthirdbar_r": "1.45",
+   "wthirdbar_r": "35.1",
+   "wfifteenbar_r": "24",
+   "wsatiated_r": "43",
+   "ksat_r": "2.7",
+   "om_r": "2.3",
+   "ph1to1h2o_r": "5.9",
+   "claytotal_r": "36",
+   "silttotal_r": "57",
+   "sandtotal_r": "7"
+  },
+  {
+   "hzname": "Bt1",
+   "hzdept_r": "15",
+   "hzdepb_r": "33",
+   "dbthirdbar_r": "1.42",
+   "wthirdbar_r": "33.1",
+   "wfifteenbar_r": "20.2",
+   "wsatiated_r": "44",
+   "ksat_r": "0.91",
+   "om_r": "0.9",
+   "ph1to1h2o_r": "6.7",
+   "claytotal_r": "34",
+   "silttotal_r": "57",
+   "sandtotal_r": "9"
+  },
+  {
+   "hzname": "Bt2",
+   "hzdept_r": "33",
+   "hzdepb_r": "81",
+   "dbthirdbar_r": "1.34",
+   "wthirdbar_r": "32.2",
+   "wfifteenbar_r": "18.8",
+   "wsatiated_r": "47",
+   "ksat_r": "2.7",
+   "om_r": "0.5",
+   "ph1to1h2o_r": "7.2",
+   "claytotal_r": "34",
+   "silttotal_r": "58",
+   "sandtotal_r": "8"
+  },
+  {
+   "hzname": "BC",
+   "hzdept_r": "81",
+   "hzdepb_r": "109",
+   "dbthirdbar_r": "1.35",
+   "wthirdbar_r": "27.2",
+   "wfifteenbar_r": "11.6",
+   "wsatiated_r": "47",
+   "ksat_r": "2.7",
+   "om_r": "0.1",
+   "ph1to1h2o_r": "7.8",
+   "claytotal_r": "21",
+   "silttotal_r": "64",
+   "sandtotal_r": "15"
+  },
+  {
+   "hzname": "C",
+   "hzdept_r": "109",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.35",
+   "wthirdbar_r": "26.8",
+   "wfifteenbar_r": "11.1",
+   "wsatiated_r": "47",
+   "ksat_r": "2.7",
+   "om_r": "0.1",
+   "ph1to1h2o_r": "7.5",
+   "claytotal_r": "21",
+   "silttotal_r": "59",
+   "sandtotal_r": "20"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

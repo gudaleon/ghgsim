@@ -1,0 +1,49 @@
+{
+ "id": "ON14000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 7.86,
+  "amp": 26.12,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "COUNTY OF NORTHUMBERLAND",
+  "mukey": "ONTUH~~~~~A",
+  "compname": "TECUMSETH",
+  "comppct_r": 24,
+  "drainagecl": "I",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.51,
+   "SAT_used": 0.509,
+   "BD": 1.3
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ]
+}

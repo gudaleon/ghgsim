@@ -1,0 +1,122 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  38.688391,
+  -87.420354
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-87.420354 38.688391)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "164501",
+   "muname": "Reesville silt loam, 0 to 2 percent slopes",
+   "areaname": "Knox County, Indiana",
+   "areasymbol": "IN083",
+   "saverest": "9/1/2026 4:33:49 PM",
+   "cokey": "28329635",
+   "compname": "Reesville",
+   "comppct_r": "95",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Aquic Hapludalfs",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Somewhat poorly drained"
+  },
+  {
+   "mukey": "164501",
+   "muname": "Reesville silt loam, 0 to 2 percent slopes",
+   "areaname": "Knox County, Indiana",
+   "areasymbol": "IN083",
+   "saverest": "9/1/2026 4:33:49 PM",
+   "cokey": "28329636",
+   "compname": "Ragsdale",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Typic Argiaquolls",
+   "hydgrp": "B/D",
+   "slope_r": "0.5",
+   "drainagecl": "Poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "164501",
+  "muname": "Reesville silt loam, 0 to 2 percent slopes",
+  "areaname": "Knox County, Indiana",
+  "areasymbol": "IN083",
+  "saverest": "9/1/2026 4:33:49 PM",
+  "cokey": "28329635",
+  "compname": "Reesville",
+  "comppct_r": "95",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-silty, mixed, superactive, mesic Aquic Hapludalfs",
+  "hydgrp": "C/D",
+  "slope_r": "1",
+  "drainagecl": "Somewhat poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "30",
+   "dbthirdbar_r": "1.43",
+   "wthirdbar_r": "27.8",
+   "wfifteenbar_r": "12.4",
+   "wsatiated_r": "43",
+   "ksat_r": "9.17",
+   "om_r": "2",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "17",
+   "silttotal_r": "75",
+   "sandtotal_r": "8"
+  },
+  {
+   "hzname": "Bt",
+   "hzdept_r": "30",
+   "hzdepb_r": "86",
+   "dbthirdbar_r": "1.44",
+   "wthirdbar_r": "31.5",
+   "wfifteenbar_r": "17.7",
+   "wsatiated_r": "42",
+   "ksat_r": "9.17",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "29",
+   "silttotal_r": "67",
+   "sandtotal_r": "4"
+  },
+  {
+   "hzname": "C",
+   "hzdept_r": "86",
+   "hzdepb_r": "147",
+   "dbthirdbar_r": "1.37",
+   "wthirdbar_r": "27.4",
+   "wfifteenbar_r": "11.9",
+   "wsatiated_r": "45",
+   "ksat_r": "2.82",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "7.9",
+   "claytotal_r": "20",
+   "silttotal_r": "76",
+   "sandtotal_r": "4"
+  },
+  {
+   "hzname": "2C",
+   "hzdept_r": "147",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.55",
+   "wthirdbar_r": "25.7",
+   "wfifteenbar_r": "11.7",
+   "wsatiated_r": "36",
+   "ksat_r": "2.72",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "7.9",
+   "claytotal_r": "20",
+   "silttotal_r": "49",
+   "sandtotal_r": "31"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

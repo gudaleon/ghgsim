@@ -1,0 +1,30 @@
+{
+ "id": "46115",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "South Dakota",
+ "met": {
+  "tav": 7.77,
+  "amp": 32.96,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911129",
+   "filled": 4.85
+  }
+ ],
+ "soil": {
+  "areaname": "Spink County, South Dakota",
+  "mukey": "2800050",
+  "compname": "Harmony",
+  "comppct_r": "55",
+  "drainagecl": "Moderately well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

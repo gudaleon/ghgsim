@@ -1,0 +1,59 @@
+{
+ "id": "ON11000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 8.16,
+  "amp": 25.78,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "COUNTY OF LENNOX AND ADDINGTON",
+  "mukey": "ONNPE~~~~~A",
+  "compname": "NAPANEE",
+  "comppct_r": 55,
+  "drainagecl": "P",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.61,
+   "SAT_used": 0.6,
+   "BD": 1.06
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  },
+  {
+   "layer": 4,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ],
+ "missing_output": [
+  "100N.Report",
+  "0N.Report"
+ ]
+}

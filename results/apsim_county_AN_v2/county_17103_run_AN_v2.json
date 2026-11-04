@@ -1,0 +1,24 @@
+{
+ "id": "17103",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 9.81,
+  "amp": 28.89,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Lee County, Illinois",
+  "mukey": "921552",
+  "compname": "Wyanet",
+  "comppct_r": "85",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

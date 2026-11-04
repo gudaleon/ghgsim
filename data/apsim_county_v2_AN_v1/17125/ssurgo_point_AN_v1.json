@@ -1,0 +1,107 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  40.236993,
+  -89.913575
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-89.913575 40.236993)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "177814",
+   "muname": "Udolpho fine sandy loam, 0 to 2 percent slopes",
+   "areaname": "Mason County, Illinois",
+   "areasymbol": "IL125",
+   "saverest": "8/23/2026 8:09:36 PM",
+   "cokey": "27815066",
+   "compname": "Udolpho",
+   "comppct_r": "100",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-loamy over sandy or sandy-skeletal, mixed, superactive, mesic Mollic Endoaqualfs",
+   "hydgrp": "B/D",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "177814",
+  "muname": "Udolpho fine sandy loam, 0 to 2 percent slopes",
+  "areaname": "Mason County, Illinois",
+  "areasymbol": "IL125",
+  "saverest": "8/23/2026 8:09:36 PM",
+  "cokey": "27815066",
+  "compname": "Udolpho",
+  "comppct_r": "100",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-loamy over sandy or sandy-skeletal, mixed, superactive, mesic Mollic Endoaqualfs",
+  "hydgrp": "B/D",
+  "slope_r": "1",
+  "drainagecl": "Poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "H1",
+   "hzdept_r": "0",
+   "hzdepb_r": "23",
+   "dbthirdbar_r": "1.35",
+   "wthirdbar_r": "20",
+   "wfifteenbar_r": "10.4",
+   "wsatiated_r": "45",
+   "ksat_r": "9.17",
+   "om_r": "2",
+   "ph1to1h2o_r": "6",
+   "claytotal_r": "13",
+   "silttotal_r": "30.1",
+   "sandtotal_r": "56.9"
+  },
+  {
+   "hzname": "H2",
+   "hzdept_r": "23",
+   "hzdepb_r": "36",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "26",
+   "wfifteenbar_r": "18.7",
+   "wsatiated_r": "45",
+   "ksat_r": "9.17",
+   "om_r": "0.4",
+   "ph1to1h2o_r": "5.8",
+   "claytotal_r": "31",
+   "silttotal_r": "22.5",
+   "sandtotal_r": "46.5"
+  },
+  {
+   "hzname": "H3",
+   "hzdept_r": "36",
+   "hzdepb_r": "79",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "18.8",
+   "wfifteenbar_r": "9.1",
+   "wsatiated_r": "45",
+   "ksat_r": "9.17",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "5.8",
+   "claytotal_r": "15",
+   "silttotal_r": "19.1",
+   "sandtotal_r": "65.9"
+  },
+  {
+   "hzname": "H4",
+   "hzdept_r": "79",
+   "hzdepb_r": "152",
+   "dbthirdbar_r": "1.45",
+   "wthirdbar_r": "9.9",
+   "wfifteenbar_r": "3.4",
+   "wsatiated_r": "42",
+   "ksat_r": "91.74",
+   "om_r": "0.1",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "5",
+   "silttotal_r": "5",
+   "sandtotal_r": "90"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

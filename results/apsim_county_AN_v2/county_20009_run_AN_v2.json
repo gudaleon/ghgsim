@@ -1,0 +1,24 @@
+{
+ "id": "20009",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "15-apr",
+  "EndDate": "15-may"
+ },
+ "window_state": "Kansas",
+ "met": {
+  "tav": 13.39,
+  "amp": 27.46,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Barton County, Kansas",
+  "mukey": "1440486",
+  "compname": "Kisiwa",
+  "comppct_r": "100",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "D"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,24 @@
+{
+ "id": "41071",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "5-jun"
+ },
+ "window_state": "Oregon",
+ "met": {
+  "tav": 11.05,
+  "amp": 14.36,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Yamhill County, Oregon",
+  "mukey": "2711414",
+  "compname": "Panther",
+  "comppct_r": "50",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "D"
+ },
+ "sat_caps": []
+}

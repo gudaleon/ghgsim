@@ -1,0 +1,152 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  29.27848,
+  -96.229674
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-96.229674 29.27848)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "373252",
+   "muname": "Edna loam, 0 to 1 percent slopes",
+   "areaname": "Wharton County, Texas",
+   "areasymbol": "TX481",
+   "saverest": "9/8/2026 1:22:15 PM",
+   "cokey": "28679907",
+   "compname": "Edna",
+   "comppct_r": "87",
+   "majcompflag": "Yes",
+   "taxclname": "Fine, smectitic, hyperthermic Aquertic Chromic Hapludalfs",
+   "hydgrp": "D",
+   "slope_r": "0.5",
+   "drainagecl": "Somewhat poorly drained"
+  },
+  {
+   "mukey": "373252",
+   "muname": "Edna loam, 0 to 1 percent slopes",
+   "areaname": "Wharton County, Texas",
+   "areasymbol": "TX481",
+   "saverest": "9/8/2026 1:22:15 PM",
+   "cokey": "28679906",
+   "compname": "Bernard",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, hyperthermic Oxyaquic Vertic Argiudolls",
+   "hydgrp": null,
+   "slope_r": "0.5",
+   "drainagecl": "Somewhat poorly drained"
+  },
+  {
+   "mukey": "373252",
+   "muname": "Edna loam, 0 to 1 percent slopes",
+   "areaname": "Wharton County, Texas",
+   "areasymbol": "TX481",
+   "saverest": "9/8/2026 1:22:15 PM",
+   "cokey": "28679908",
+   "compname": "Cieno",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine-loamy, siliceous, active, hyperthermic Typic Vermaqualfs",
+   "hydgrp": null,
+   "slope_r": "0.2",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "373252",
+   "muname": "Edna loam, 0 to 1 percent slopes",
+   "areaname": "Wharton County, Texas",
+   "areasymbol": "TX481",
+   "saverest": "9/8/2026 1:22:15 PM",
+   "cokey": "28679905",
+   "compname": "Telferner",
+   "comppct_r": "3",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": "0.5",
+   "drainagecl": "Moderately well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "373252",
+  "muname": "Edna loam, 0 to 1 percent slopes",
+  "areaname": "Wharton County, Texas",
+  "areasymbol": "TX481",
+  "saverest": "9/8/2026 1:22:15 PM",
+  "cokey": "28679907",
+  "compname": "Edna",
+  "comppct_r": "87",
+  "majcompflag": "Yes",
+  "taxclname": "Fine, smectitic, hyperthermic Aquertic Chromic Hapludalfs",
+  "hydgrp": "D",
+  "slope_r": "0.5",
+  "drainagecl": "Somewhat poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "A",
+   "hzdept_r": "0",
+   "hzdepb_r": "23",
+   "dbthirdbar_r": "1.43",
+   "wthirdbar_r": "17.9",
+   "wfifteenbar_r": "9.3",
+   "wsatiated_r": "42",
+   "ksat_r": "0.6",
+   "om_r": "3.03",
+   "ph1to1h2o_r": "5.5",
+   "claytotal_r": "20.6",
+   "silttotal_r": "41.5",
+   "sandtotal_r": "37.9"
+  },
+  {
+   "hzname": "Bt1",
+   "hzdept_r": "23",
+   "hzdepb_r": "97",
+   "dbthirdbar_r": "1.42",
+   "wthirdbar_r": "30.4",
+   "wfifteenbar_r": "18.5",
+   "wsatiated_r": "43",
+   "ksat_r": "0.2",
+   "om_r": "1.51",
+   "ph1to1h2o_r": "7.3",
+   "claytotal_r": "42.9",
+   "silttotal_r": "19.1",
+   "sandtotal_r": "38"
+  },
+  {
+   "hzname": "Bt2",
+   "hzdept_r": "97",
+   "hzdepb_r": "127",
+   "dbthirdbar_r": "1.48",
+   "wthirdbar_r": "30.2",
+   "wfifteenbar_r": "23.5",
+   "wsatiated_r": "41",
+   "ksat_r": "0.2",
+   "om_r": "1.01",
+   "ph1to1h2o_r": "6.8",
+   "claytotal_r": "40.5",
+   "silttotal_r": "36.8",
+   "sandtotal_r": "22.7"
+  },
+  {
+   "hzname": "Btk",
+   "hzdept_r": "127",
+   "hzdepb_r": "203",
+   "dbthirdbar_r": "1.63",
+   "wthirdbar_r": "21.5",
+   "wfifteenbar_r": "19.9",
+   "wsatiated_r": "36",
+   "ksat_r": "0.2",
+   "om_r": "0.3",
+   "ph1to1h2o_r": "8.1",
+   "claytotal_r": "28.5",
+   "silttotal_r": "17.2",
+   "sandtotal_r": "54.3"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

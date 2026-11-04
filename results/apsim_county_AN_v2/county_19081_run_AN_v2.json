@@ -1,0 +1,30 @@
+{
+ "id": "19081",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.16,
+  "amp": 31.17,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911129",
+   "filled": 5.58
+  }
+ ],
+ "soil": {
+  "areaname": "Hancock County, Iowa",
+  "mukey": "406515",
+  "compname": "Spicer",
+  "comppct_r": "90",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

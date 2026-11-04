@@ -1,0 +1,71 @@
+{
+ "id": "ON29002",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 8.61,
+  "amp": 27.34,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19910123",
+   "filled": 4.34
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930121",
+   "filled": 5.67
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19990118",
+   "filled": 8.07
+  }
+ ],
+ "soil": {
+  "areaname": "COUNTY OF BRANT",
+  "mukey": "ONFOX~~~~~A",
+  "compname": "FOX",
+  "comppct_r": 25,
+  "drainagecl": "W",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.52,
+   "SAT_used": 0.516,
+   "BD": 1.28
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  },
+  {
+   "layer": 4,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ]
+}

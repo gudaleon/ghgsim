@@ -1,0 +1,152 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  40.894376,
+  -88.552852
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-88.552852 40.894376)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "176947",
+   "muname": "Bryce silty clay, 0 to 2 percent slopes",
+   "areaname": "Livingston County, Illinois",
+   "areasymbol": "IL105",
+   "saverest": "8/23/2026 8:05:36 PM",
+   "cokey": "27812489",
+   "compname": "Bryce",
+   "comppct_r": "95",
+   "majcompflag": "Yes",
+   "taxclname": "Fine, mixed, superactive, mesic Vertic Endoaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "0.5",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "176947",
+   "muname": "Bryce silty clay, 0 to 2 percent slopes",
+   "areaname": "Livingston County, Illinois",
+   "areasymbol": "IL105",
+   "saverest": "8/23/2026 8:05:36 PM",
+   "cokey": "27812490",
+   "compname": "Rantoul",
+   "comppct_r": "2",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, mesic Cumulic Vertic Endoaquolls",
+   "hydgrp": "D",
+   "slope_r": "0.5",
+   "drainagecl": "Very poorly drained"
+  },
+  {
+   "mukey": "176947",
+   "muname": "Bryce silty clay, 0 to 2 percent slopes",
+   "areaname": "Livingston County, Illinois",
+   "areasymbol": "IL105",
+   "saverest": "8/23/2026 8:05:36 PM",
+   "cokey": "27812491",
+   "compname": "Orthents, clayey",
+   "comppct_r": "2",
+   "majcompflag": "No ",
+   "taxclname": "Fine, mixed, active, nonacid, mesic Aquic Udorthents",
+   "hydgrp": "D",
+   "slope_r": "0.9",
+   "drainagecl": "Moderately well drained"
+  },
+  {
+   "mukey": "176947",
+   "muname": "Bryce silty clay, 0 to 2 percent slopes",
+   "areaname": "Livingston County, Illinois",
+   "areasymbol": "IL105",
+   "saverest": "8/23/2026 8:05:36 PM",
+   "cokey": "27812492",
+   "compname": "Urban land",
+   "comppct_r": "1",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": "0.1",
+   "drainagecl": null
+  }
+ ],
+ "dominant": {
+  "mukey": "176947",
+  "muname": "Bryce silty clay, 0 to 2 percent slopes",
+  "areaname": "Livingston County, Illinois",
+  "areasymbol": "IL105",
+  "saverest": "8/23/2026 8:05:36 PM",
+  "cokey": "27812489",
+  "compname": "Bryce",
+  "comppct_r": "95",
+  "majcompflag": "Yes",
+  "taxclname": "Fine, mixed, superactive, mesic Vertic Endoaquolls",
+  "hydgrp": "C/D",
+  "slope_r": "0.5",
+  "drainagecl": "Poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "33",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "35.1",
+   "wfifteenbar_r": "28",
+   "wsatiated_r": "41",
+   "ksat_r": "2.82",
+   "om_r": "5.5",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "45",
+   "silttotal_r": "50",
+   "sandtotal_r": "5"
+  },
+  {
+   "hzname": "Btg",
+   "hzdept_r": "33",
+   "hzdepb_r": "114",
+   "dbthirdbar_r": "1.46",
+   "wthirdbar_r": "33.3",
+   "wfifteenbar_r": "27.4",
+   "wsatiated_r": "41",
+   "ksat_r": "0.92",
+   "om_r": "1.7",
+   "ph1to1h2o_r": "6.4",
+   "claytotal_r": "47",
+   "silttotal_r": "48",
+   "sandtotal_r": "5"
+  },
+  {
+   "hzname": "2BCg",
+   "hzdept_r": "114",
+   "hzdepb_r": "147",
+   "dbthirdbar_r": "1.6",
+   "wthirdbar_r": "31.5",
+   "wfifteenbar_r": "24.2",
+   "wsatiated_r": "37",
+   "ksat_r": "0.21",
+   "om_r": "0.5",
+   "ph1to1h2o_r": "7.6",
+   "claytotal_r": "50",
+   "silttotal_r": "45",
+   "sandtotal_r": "5"
+  },
+  {
+   "hzname": "2Cg",
+   "hzdept_r": "147",
+   "hzdepb_r": "168",
+   "dbthirdbar_r": "1.68",
+   "wthirdbar_r": "30.4",
+   "wfifteenbar_r": "23",
+   "wsatiated_r": "33",
+   "ksat_r": "0.21",
+   "om_r": "0.3",
+   "ph1to1h2o_r": "8",
+   "claytotal_r": "47",
+   "silttotal_r": "45",
+   "sandtotal_r": "8"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

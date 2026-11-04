@@ -1,0 +1,30 @@
+{
+ "id": "46119",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "South Dakota",
+ "met": {
+  "tav": 9.06,
+  "amp": 31.31,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19940119",
+   "filled": 6.98
+  }
+ ],
+ "soil": {
+  "areaname": "Sully County, South Dakota",
+  "mukey": "353084",
+  "compname": "Highmore",
+  "comppct_r": "85",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

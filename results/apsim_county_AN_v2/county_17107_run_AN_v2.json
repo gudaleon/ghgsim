@@ -1,0 +1,24 @@
+{
+ "id": "17107",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 11.43,
+  "amp": 27.67,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Logan County, Illinois",
+  "mukey": "1595801",
+  "compname": "Sawmill",
+  "comppct_r": "90",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "B/D"
+ },
+ "sat_caps": []
+}

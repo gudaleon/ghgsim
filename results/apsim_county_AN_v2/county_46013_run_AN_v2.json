@@ -1,0 +1,24 @@
+{
+ "id": "46013",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "South Dakota",
+ "met": {
+  "tav": 7.42,
+  "amp": 33.46,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Brown County, South Dakota",
+  "mukey": "2797807",
+  "compname": "Great Bend",
+  "comppct_r": "53",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,24 @@
+{
+ "id": "17195",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 9.21,
+  "amp": 29.62,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Whiteside County, Illinois",
+  "mukey": "793070",
+  "compname": "Richwood",
+  "comppct_r": "90",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

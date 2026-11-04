@@ -1,0 +1,49 @@
+{
+ "id": "ON2000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 5.31,
+  "amp": 32.27,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "UNITED COUNTIES OF PRESCOTT AND RUSSELL",
+  "mukey": "ONAHG~~~~~A",
+  "compname": "ACHIGAN",
+  "comppct_r": 55,
+  "drainagecl": "I",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.69,
+   "SAT_used": 0.679,
+   "BD": 0.85
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "id": "19079",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.78,
+  "amp": 30.88,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Hamilton County, Iowa",
+  "mukey": "406481",
+  "compname": "Kossuth",
+  "comppct_r": "85",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

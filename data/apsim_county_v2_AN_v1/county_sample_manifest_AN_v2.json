@@ -1,0 +1,1745 @@
+{
+ "retrieved_utc": "2026-11-04T12:15:58+00:00",
+ "universe": 1000,
+ "ppe_quintile_cuts": [
+  0.546,
+  0.687,
+  0.741,
+  0.797
+ ],
+ "tried": [
+  {
+   "fips": "38017",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "56029",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "19109",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38019",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38101",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38077",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38099",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17075",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "27119",
+   "drainagecl": "Excessively drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38105",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38067",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31089",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31041",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38009",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "42029",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "38035",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17019",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17113",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17105",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "46013",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38055",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19155",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "46115",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "27129",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17099",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "31019",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38093",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31111",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31003",
+   "drainagecl": "Excessively drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19031",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "48481",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19019",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19081",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "08125",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19193",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19149",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "46059",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "27089",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "48205",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "20113",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "20191",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38097",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17011",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31047",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "30015",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "46119",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19099",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19167",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17167",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19047",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "18083",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19083",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "20181",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19033",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "46045",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "27127",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17073",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19067",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19133",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19065",
+   "drainagecl": "Excessively drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38041",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48215",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "17183",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "56015",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "19055",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19043",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31067",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19197",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19023",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19079",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31135",
+   "drainagecl": "Excessively drained",
+   "complete": true
+  },
+  {
+   "fips": "27045",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "20055",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "17117",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19011",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17103",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38103",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "38061",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "31155",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "56021",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "19165",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "27013",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "20151",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "17107",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19113",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19075",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "20193",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "17125",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "27091",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19161",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "27067",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "19147",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "40139",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38075",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "27111",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "27145",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17135",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "55097",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "46107",
+   "drainagecl": null,
+   "complete": false,
+   "error": "SDA HTTP 400"
+  },
+  {
+   "fips": "17179",
+   "drainagecl": "Poorly drained",
+   "complete": true
+  },
+  {
+   "fips": "26063",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true
+  },
+  {
+   "fips": "19151",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31053",
+   "drainagecl": "Moderately well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31039",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true
+  },
+  {
+   "fips": "31029",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "17091",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "17195",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "17037",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "30041",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "17021",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "46011",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38029",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "19085",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19027",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "38089",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "26151",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "18131",
+   "drainagecl": "Very poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "19049",
+   "drainagecl": "Well drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "48111",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "46085",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "38053",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "20189",
+   "drainagecl": "Somewhat excessively drained",
+   "complete": true
+  },
+  {
+   "fips": "08063",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48369",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38059",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "38049",
+   "drainagecl": "Excessively drained",
+   "complete": true
+  },
+  {
+   "fips": "20185",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "16043",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "31013",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "30091",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "46049",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20119",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48421",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "08121",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20009",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "20183",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20057",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30085",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38023",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20081",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48355",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20069",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "08095",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38001",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "38043",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38013",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "48195",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20063",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "31065",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48145",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "30099",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "20145",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48217",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "48117",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30105",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "46129",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38037",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "46021",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "46015",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20093",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20171",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20203",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20153",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20199",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38069",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "31157",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "16019",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "41071",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "31063",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "46065",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20175",
+   "drainagecl": "Excessively drained",
+   "complete": true
+  },
+  {
+   "fips": "48189",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "40003",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "46123",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20047",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20179",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20023",
+   "drainagecl": "Excessively drained",
+   "complete": true
+  },
+  {
+   "fips": "40093",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38083",
+   "drainagecl": "Poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "20187",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "40025",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "08075",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true,
+   "reused": true
+  },
+  {
+   "fips": "20039",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30019",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "31057",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "46031",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "30055",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "46117",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30073",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "20135",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38015",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "46055",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "20163",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30101",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38087",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "40065",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "31073",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20147",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48069",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48163",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48309",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "30027",
+   "drainagecl": "Somewhat excessively drained",
+   "complete": true
+  },
+  {
+   "fips": "31083",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30031",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20071",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "41067",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "31101",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "31123",
+   "drainagecl": "Excessively drained",
+   "complete": true
+  },
+  {
+   "fips": "40149",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "38025",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20137",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48279",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48445",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48491",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "20083",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20109",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20067",
+   "drainagecl": "Somewhat excessively drained",
+   "complete": true
+  },
+  {
+   "fips": "56033",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "20129",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20141",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48061",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "20075",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48489",
+   "drainagecl": "Somewhat poorly drained",
+   "complete": true
+  },
+  {
+   "fips": "48065",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30083",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "31033",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20195",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "40039",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "16057",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "20007",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "46069",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "48325",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "40075",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30111",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "46075",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "40141",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30035",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20051",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "08009",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48115",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "40151",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "08087",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "30013",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "31145",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48027",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "20165",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20065",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30021",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48219",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "41053",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "48357",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "08017",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48437",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48331",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38011",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "31161",
+   "drainagecl": "Excessively drained",
+   "complete": true
+  },
+  {
+   "fips": "16029",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "31087",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30003",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "48107",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30005",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48153",
+   "drainagecl": "Poorly drained",
+   "complete": true
+  },
+  {
+   "fips": "20101",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "31085",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48341",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "20167",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "46105",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "08061",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48303",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38057",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "08115",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "46137",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "16061",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48093",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "20097",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "08109",
+   "drainagecl": null,
+   "complete": false
+  },
+  {
+   "fips": "31049",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48207",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "08099",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "40033",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48249",
+   "drainagecl": "Moderately well drained",
+   "complete": true
+  },
+  {
+   "fips": "41003",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "38033",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "30071",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48079",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "56001",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "08001",
+   "drainagecl": "Well drained",
+   "complete": true
+  },
+  {
+   "fips": "48305",
+   "drainagecl": "Well drained",
+   "complete": true
+  }
+ ],
+ "sha256": {
+  "08075\\nasa_power_daily_1991_2020_AN_v1.json.gz": "e849de537fd96c6e274c04520ea3bcea11af75c02702d32a8949eaf646a45453",
+  "08075\\ssurgo_point_AN_v1.json": "3284d2e41272c2e251bdfbd47a5a43d031b7d010c65626866c4f3df3a9fc932d",
+  "08125\\nasa_power_daily_1991_2020_AN_v1.json.gz": "cbd42377cb98bf824616847128e13d14ffeb656dd31daa8f74a5269c978d12b1",
+  "08125\\ssurgo_point_AN_v1.json": "86ed19ea92a3db59689a08aac3c1955fcd34f9a1426d4269fe57820e6a92d926",
+  "17011\\nasa_power_daily_1991_2020_AN_v1.json.gz": "ee55c3f5a77a2d341f3b6fce11ad8aeaba133aa5b97a37b74a2a8fffe403667b",
+  "17011\\ssurgo_point_AN_v1.json": "67e93ca32058206b411ef3489d4b8a7e30bfa6ec490818751316c7948f253460",
+  "17019\\nasa_power_daily_1991_2020_AN_v1.json.gz": "b272760b5c15cd90f3bb87d8379fab4f1402b591e28c426cb7816f2221cc4ab1",
+  "17019\\ssurgo_point_AN_v1.json": "193d7e9525999e143e8691739f9c7954a1cdb2d2522bca835ea50c0369a75bae",
+  "17021\\nasa_power_daily_1991_2020_AN_v1.json.gz": "b4c46d92640a21849688cb2df01034b0fc8729d862b3acf363f3b9df4ceffbdd",
+  "17021\\ssurgo_point_AN_v1.json": "601a087e73650ec97c7360f577e4166bc263ca542f85569e16889404bda7ef68",
+  "17037\\nasa_power_daily_1991_2020_AN_v1.json.gz": "e0172edd81a34e4aa0b32d9498450e569ee4af8c4940409ffdda072ac2e7a512",
+  "17037\\ssurgo_point_AN_v1.json": "06b8422d80bdff43fbd0629d255147c43d8be0bd57ca06722c92d109a63234c3",
+  "17073\\nasa_power_daily_1991_2020_AN_v1.json.gz": "619f5d08888a23603b2440382ab0a1474cd0e4eb4e05cf10eae8cbd683aa34e5",
+  "17073\\ssurgo_point_AN_v1.json": "6e371e43e001f7cca68f92fe876a8f46e5541af687243074a628c45224a4d923",
+  "17075\\nasa_power_daily_1991_2020_AN_v1.json.gz": "37388a115ac83a7b9550674463c0b4eee7a4b4fb1ee3704a8823ec870ab4462e",
+  "17075\\ssurgo_point_AN_v1.json": "eb362c3c73dea31c312eec06b0ccb393be8f80579d1ece29031a498d1c90dfc3",
+  "17103\\nasa_power_daily_1991_2020_AN_v1.json.gz": "27c193631561179bbc907689bf7c406f837b6c14083a414c5f62b335ff1ad6be",
+  "17103\\ssurgo_point_AN_v1.json": "9fa8eb527c0e6eb84020aa2fd52446326fb4ef3d8efabdada5da628156ff3f08",
+  "17105\\nasa_power_daily_1991_2020_AN_v1.json.gz": "8e9c3d391c875f44bf5c650739e4135dccae828ba107f247ac4cf3c9c4c26b81",
+  "17105\\ssurgo_point_AN_v1.json": "74f351d86b3d23fb989f650fab0ee5645a8f62e114846a46644d36127197ed83",
+  "17107\\nasa_power_daily_1991_2020_AN_v1.json.gz": "1cb7b52eed6c893e7f3ac48b0a6e500263e4cfe9899a40ec8719049993d5a112",
+  "17107\\ssurgo_point_AN_v1.json": "8f9a7a0bc49a0b2fb1dd8470995f0936a0a023f444a5b10027e7c0fea8b7222e",
+  "17113\\nasa_power_daily_1991_2020_AN_v1.json.gz": "14f3d6c28913e8b502e6e7be8968eb58d389a870985f0b5ed00d699962ecf56a",
+  "17113\\ssurgo_point_AN_v1.json": "3edb44ee6744382061e68da1607c9e5dba8457c78d97cd784682655fc94177e6",
+  "17117\\nasa_power_daily_1991_2020_AN_v1.json.gz": "8d9e67f8192b4e05f971848bd97cfc7f950b0280ab8ace0e90c72f88a6a1a10c",
+  "17117\\ssurgo_point_AN_v1.json": "41ee6b59519296eed6e3f496b68a01778383fd70d0ff327ab6fc33ad8973f17f",
+  "17125\\nasa_power_daily_1991_2020_AN_v1.json.gz": "42702a3bf6c12466a39d5ef31f52a52f54453f1454c070891be9128c580c2db4",
+  "17125\\ssurgo_point_AN_v1.json": "c72f3c99de7a456a4764b0ba1e16309ddb0a8551c63f124f9ab4b86fe0980aa6",
+  "17135\\nasa_power_daily_1991_2020_AN_v1.json.gz": "37f1151b2a97f613ce454ec36f6192ece5b9e2412a1410adaa76ba9b0372415a",
+  "17135\\ssurgo_point_AN_v1.json": "234f9de39799e618ba70fd38b5d1ceb1348ab08bb23bdd0289fb94a657e3a815",
+  "17167\\nasa_power_daily_1991_2020_AN_v1.json.gz": "7f69541793a198491b14a3c87e5c2e65441795c32c01f1db1f6b01382d1e7a03",
+  "17167\\ssurgo_point_AN_v1.json": "0f22fbc9890f13694f8d7616c22c554511a76a9f687f2cb8e8e1c9b930fee753",
+  "17183\\nasa_power_daily_1991_2020_AN_v1.json.gz": "1f1bb693b7603af9e3b2f53bce050a757b2a84d2b0ec960c1bc2d2368aff1bc4",
+  "17183\\ssurgo_point_AN_v1.json": "3e0e1ad28ce714b4608deff8e0fae83358694ca2c1339e6f2cfff55555d8fe33",
+  "17195\\nasa_power_daily_1991_2020_AN_v1.json.gz": "2c3d33a0c39698057edf972eb1474aee464afeec71d495b02eeff19f605ccd75",
+  "17195\\ssurgo_point_AN_v1.json": "010d17b082840e6e8e438f80e5e9c3ad57b08c367453cfc59c360b4cba7d3cec",
+  "18083\\nasa_power_daily_1991_2020_AN_v1.json.gz": "26b88eee17d1bea1317d1d958f72962568e91e1d2d1fecf89cb187f1c3fe303c",
+  "18083\\ssurgo_point_AN_v1.json": "12e84dd9fb9f7fb9bf3e3a4542298826d1282adb469cefbdde9f9a98f1fd5b94",
+  "18131\\nasa_power_daily_1991_2020_AN_v1.json.gz": "158245b5815935ff274386781e59f35bbef5fbc5be4d7f0a8dd67fc4adc1a118",
+  "18131\\ssurgo_point_AN_v1.json": "025b0a321d164373c5b9452012785228f643a0810b0f67a073aae32a97922aaa",
+  "19011\\nasa_power_daily_1991_2020_AN_v1.json.gz": "698568de00db67938dc10b22e27ad04fb34131764b62c6f5eb435016eea18f05",
+  "19011\\ssurgo_point_AN_v1.json": "dbf9677911efaaf020d0038462c91e3624902bb581d20e1f8039099b84fec4f6",
+  "19019\\nasa_power_daily_1991_2020_AN_v1.json.gz": "64624f2efe94dc934f3609184bb77c2ada6d9733f40c2b70fb8082ff8e7cb8e9",
+  "19019\\ssurgo_point_AN_v1.json": "117fbb6cee7ac94ea37d367f0daf77b9e8a83dd914fdab884897f0baac07001e",
+  "19023\\nasa_power_daily_1991_2020_AN_v1.json.gz": "c2679e51ea3433789fe897a783ada71ccde12d89ec3bc35627e29bdf80ce59f9",
+  "19023\\ssurgo_point_AN_v1.json": "f000eb3dfc9aaea9936e485b549e6f3d186c3ea6467d867ffea92de8e791730b",
+  "19027\\nasa_power_daily_1991_2020_AN_v1.json.gz": "fbc714831e201463d2a0a05a8b990623a7c16dff2823480653a9e5438ed5a906",
+  "19027\\ssurgo_point_AN_v1.json": "72c4ea4670dbe3d34cd20a43fb390c9d2fe7b90f07c9ed24e2410699e53d384b",
+  "19031\\nasa_power_daily_1991_2020_AN_v1.json.gz": "ee167ecf7bb61bdc0ba8c1a82106a61d0599334d705554db761e5aec99a9ccd8",
+  "19031\\ssurgo_point_AN_v1.json": "8a3a3373f162a3c7425ba4f7664b0d624e8cc7d3e40065671e9423806834f0c8",
+  "19033\\nasa_power_daily_1991_2020_AN_v1.json.gz": "2f0fa0ec0fdbabba209b9c119efa3a74b3da28c8b91d5ff4bb9b59798c0b4306",
+  "19033\\ssurgo_point_AN_v1.json": "09d4b9110a68a7e9768731e4dc3aa0a0f0f930b024d4b0a7ea90ff9ce3993b7d",
+  "19043\\nasa_power_daily_1991_2020_AN_v1.json.gz": "e9afa51b32cf9d0c124ac1db0875765cc71e89cdd4b063261a8d2a7922397361",
+  "19043\\ssurgo_point_AN_v1.json": "4fbc4094858487f6635098a8bc1d3bc292a3b94af62c85d637ccae7de3d5e8bb",
+  "19047\\nasa_power_daily_1991_2020_AN_v1.json.gz": "88f39dcf6870a568f2541421392cc530e32454616df8b66574018af42e7318ef",
+  "19047\\ssurgo_point_AN_v1.json": "29791ab5d9bd2cc0b13aab501c856007cc8df2d3c991658e72303e3c27f7387a",
+  "19049\\nasa_power_daily_1991_2020_AN_v1.json.gz": "5d33ce2395093f98937cf1e6180f845cf3a77a191227e6d10dc7e56abba40d35",
+  "19049\\ssurgo_point_AN_v1.json": "b061af3d70f29f31c4029469cb8a698e2692f225ad0a9c431e0cea95c6599ac3",
+  "19055\\nasa_power_daily_1991_2020_AN_v1.json.gz": "a7dad3a17213b34cb68719d15e2d6bfc7ff4ae8d9adc33b2694e2b5a8826bcf2",
+  "19055\\ssurgo_point_AN_v1.json": "fd2c7be5545e86bc9dc4dc10833c6bf35dec43828d2476ee4a21983eb014a7bc",
+  "19065\\nasa_power_daily_1991_2020_AN_v1.json.gz": "d51e1f9c785ac70ba13cd5fc4a7b3d9c55ec63e462bd3f4177fc9fb8006e71e2",
+  "19065\\ssurgo_point_AN_v1.json": "e8e715f0824242aa1a39ef7b65ee2322b0487edcc4bc662e803cd20f6f9c03bf",
+  "19067\\nasa_power_daily_1991_2020_AN_v1.json.gz": "8a2eb61bf2a858f5579b11cc65c7ddb283c022f16b96bd40cb73de031d50c16a",
+  "19067\\ssurgo_point_AN_v1.json": "ce1ffb8fac5354a7f016647c918a41143b8504ff0c089c8e38408d4b605a1e24",
+  "19075\\nasa_power_daily_1991_2020_AN_v1.json.gz": "5672ec75f5dc4929e8182693aa68f3ef5eef792f2b8cf38026d2f022ed8d18c4",
+  "19075\\ssurgo_point_AN_v1.json": "0e9818e3f1d47e600866623559a2eee7f41dd4d0d86ec42971b380b56d863570",
+  "19079\\nasa_power_daily_1991_2020_AN_v1.json.gz": "e7ebb59bbcd1e4eb03a2760241a9c585e9428cb2b0ca796cbbd0053d8c941d7e",
+  "19079\\ssurgo_point_AN_v1.json": "ea9020b6b2cdc7cb24e176cd8374bcbd89d3364a70cc6da33df0dab9a0efbc8f",
+  "19081\\nasa_power_daily_1991_2020_AN_v1.json.gz": "acdbf629f51cf1b878bd4e834cab55887bd168f176029315b3eb3ae9a3755956",
+  "19081\\ssurgo_point_AN_v1.json": "259273ccf5fe2682f7d2f265f9495dcf5e80ec241ec4c2caf5b662e60a3f6ee5",
+  "19083\\nasa_power_daily_1991_2020_AN_v1.json.gz": "1363c418743a6acbb9f8d5b0e594262d35af8a8ba2845d0dbf9624d83afe926b",
+  "19083\\ssurgo_point_AN_v1.json": "566004ad5d172c4bfe8201b7c8a2c152321c494574885e3cd93be7050a877018",
+  "19085\\nasa_power_daily_1991_2020_AN_v1.json.gz": "015b38a78726ea66a783b7060259153cad951ea29d8a571a7d1ca60197b5dda6",
+  "19085\\ssurgo_point_AN_v1.json": "30699201f0f775e3272f42f248239cc91cd8a3c9ea726c590b7147e1f33d9ea5",
+  "19099\\nasa_power_daily_1991_2020_AN_v1.json.gz": "e5425835d44dae8b9ada96f5598caa611cbcad3b4cc58abdb30ea22d195422f0",
+  "19099\\ssurgo_point_AN_v1.json": "13f8fb3fe9db81ce73db472b8e44785207d545e2dbe9d1e24aad25923cd72a0c",
+  "19109\\nasa_power_daily_1991_2020_AN_v1.json.gz": "cc4f87b92317d29afb060e9a4b092f9052863d8944a327f56e32d6d4c849f03a",
+  "19109\\ssurgo_point_AN_v1.json": "acdaedb995339a204027330964c9f3433bf307aebf576fc7f92025b5fd5d529d",
+  "19113\\nasa_power_daily_1991_2020_AN_v1.json.gz": "2f83ce310bb06d5a628ee2a8b36474e49a88f8d4cacdc21d54263226358b3475",
+  "19113\\ssurgo_point_AN_v1.json": "3ab37a4260fe0f55d1767502e98a17b3944d6b549d851584ef5c54d67d497b1a",
+  "19133\\nasa_power_daily_1991_2020_AN_v1.json.gz": "d9679a6e3e43ac73f91ad764a3c81bed53bf57d279458723b99dbe904d8b57a5",
+  "19133\\ssurgo_point_AN_v1.json": "9bf07a0617282e0511b782568e9741a7ca79f3a42a1530a300d0a7a92adb3eb9",
+  "19147\\nasa_power_daily_1991_2020_AN_v1.json.gz": "3f30e4eedf0196062bd03988b8cdf4d77f6310168fb8f8cfba4c186ec9d6ea13",
+  "19147\\ssurgo_point_AN_v1.json": "0ac1313da5076e39d191fe1f7d54b61998fbef92bd34af59fdd6a66fcb184233",
+  "19149\\nasa_power_daily_1991_2020_AN_v1.json.gz": "0d0379fbd1e3895db3738490fcfb4b6dfca1344df1c3a90f8113cebcc1d6cfc5",
+  "19149\\ssurgo_point_AN_v1.json": "5107bb64a53a63af8c8d7738823ce6a763bd530f1685acedc00bd1e4df8e6062",
+  "19151\\nasa_power_daily_1991_2020_AN_v1.json.gz": "feeba68015409c8c4b9d8ad92dec69986d666635d02b2e3b28f39eb919b8898b",
+  "19151\\ssurgo_point_AN_v1.json": "ddb4c0b3d5a172d938e4717d60e34b002f7fc0ebdffe6e0792ce5f269c642818",
+  "19155\\nasa_power_daily_1991_2020_AN_v1.json.gz": "d664ac6d5d79146ec9673d2fde25ac6d35db52cf8d1ba2dc762c7162249e7647",
+  "19155\\ssurgo_point_AN_v1.json": "10517b24897e218f824129cb6fa22e3c56bc6b04922cb56d00f055a319ee7dbc",
+  "19161\\nasa_power_daily_1991_2020_AN_v1.json.gz": "7180ee15e8fe89c116becb635b78e7943c3305b780572b3eba84f51b1ef0a242",
+  "19161\\ssurgo_point_AN_v1.json": "2800aaacdd9e06d24affe3ffa782896f2d5cf7e7b8f20e9d81db96bfd648a555",
+  "19165\\nasa_power_daily_1991_2020_AN_v1.json.gz": "8766ce4f028ff9eacec5d36b7da6993fed476e8b236a36f6c1a02a1c4befdaa8",
+  "19165\\ssurgo_point_AN_v1.json": "6051506b93f9473c24c5f6d372e185e6e4129ec127763a3bbc8acfec410d9720",
+  "19167\\nasa_power_daily_1991_2020_AN_v1.json.gz": "83891619a8a585d2be17e8685ebbe61c2bd8b8bde12add9154290b30c0b668c2",
+  "19167\\ssurgo_point_AN_v1.json": "48d50b8d712da9ff1bd39c6b72d229d0bdfbe01712dc797ed0a9c93c51974a1d",
+  "19193\\nasa_power_daily_1991_2020_AN_v1.json.gz": "b680b9c86f63806bda298c4a9d854aee9cfb508dabbf6ed20f3bd36542c3746a",
+  "19193\\ssurgo_point_AN_v1.json": "af50882e33314fc737d208865248840d0cf6eb0d3b4a42c0f18e9fff7b140f22",
+  "19197\\nasa_power_daily_1991_2020_AN_v1.json.gz": "37cfdaf155c070e231da345e16c5dbd5134bab54a8a076aca359432de76a3646",
+  "19197\\ssurgo_point_AN_v1.json": "af1f9a45de36abf5fe4a3c304885c60ed475a71a1fae000b2ad61be0e4cdbf35",
+  "20009\\nasa_power_daily_1991_2020_AN_v1.json.gz": "411b2497f8bf973ee9e366f572ff2d2f29df14b26e512222bd6e2f3a591e50cc",
+  "20009\\ssurgo_point_AN_v1.json": "ee7ce587586fd9c6fd5bc2bd929667e525fcde80b1e903e01d1e31d7c1149d59",
+  "20113\\nasa_power_daily_1991_2020_AN_v1.json.gz": "184186548929418c5a97d4d7d16022f02d41903dd08ab471a7d500c1120f7edf",
+  "20113\\ssurgo_point_AN_v1.json": "1a28a6878fd06d4f62eef3b7aec9a95f41e88865e40bcfe3632add685de867c8",
+  "20181\\nasa_power_daily_1991_2020_AN_v1.json.gz": "69556e3414374240662f2ad996ca2ea363e4cd6eaba905503187e992e3c464f0",
+  "20181\\ssurgo_point_AN_v1.json": "d1d7a06f20e305dfe05d86347e3ddc25eeefcb07a3886c3a4e1c25d41fe60d70",
+  "20191\\nasa_power_daily_1991_2020_AN_v1.json.gz": "9504db8cd66d2435572754f6b72dc6af5e27a35e9e00c12ab0f04f863ac97840",
+  "20191\\ssurgo_point_AN_v1.json": "10959410418ec808e1213bfd2d4cbd71dbe760a5aa794d691d6d15488b81c51a",
+  "26151\\nasa_power_daily_1991_2020_AN_v1.json.gz": "ff80943cbfee2bd97d4c76df0f81f0a9baa405fa53b0b5329d40d64c7466ce9d",
+  "26151\\ssurgo_point_AN_v1.json": "acad81b518bf00369fa8f33a03e7314f88cb41b31e3ab0914cfc5e6a78d86f04",
+  "27013\\nasa_power_daily_1991_2020_AN_v1.json.gz": "966887b9dc6a698885126a5a474730216540d52f92a158afa7399649236116ad",
+  "27013\\ssurgo_point_AN_v1.json": "5af2fc5995e10651f60aadf09bbab2c2d11d42b8bea33e70f6145c46bb496364",
+  "27045\\nasa_power_daily_1991_2020_AN_v1.json.gz": "82533df32c7811e47bdf0ffc97682fdcadcff932c8f66e671c835855030a3b76",
+  "27045\\ssurgo_point_AN_v1.json": "254eea33414319498d03f5766d7cad9f2b3dcbf057624a84185f6bc1b78c7342",
+  "27089\\nasa_power_daily_1991_2020_AN_v1.json.gz": "9f1fdaed3eb72f1e60c9be2db54d1b2553358f586bb8a5d8b5513d8f1e8f4d6f",
+  "27089\\ssurgo_point_AN_v1.json": "255718ab1090e8a684bed2fd3061fcbcd8fe9967288ecaa06bf066901feafebf",
+  "27091\\nasa_power_daily_1991_2020_AN_v1.json.gz": "4c4e6a1b6ae23576d0b96c5f76ee935384a13216ee3db2195029245b17594f20",
+  "27091\\ssurgo_point_AN_v1.json": "c5d062b9c65354ad9faad0c29df3b0f234e4347eca8cc3d0b960c795dc9def81",
+  "27119\\nasa_power_daily_1991_2020_AN_v1.json.gz": "a426f84bd8c826581dca43686687e43108773ae9c2e0128ba61deaaa3f6b9cc2",
+  "27119\\ssurgo_point_AN_v1.json": "92cbe3a10bcb449df081b42f834dc801bf18f98ebbee76b828ba7141156d5788",
+  "27127\\nasa_power_daily_1991_2020_AN_v1.json.gz": "e6e7a173d2367e3fa4fe27f1ac141e9dbb51d33b51e7aa62a23ef923df4c2556",
+  "27127\\ssurgo_point_AN_v1.json": "84e25064c3f318996d1cf08d3697d89555339c3b3b41a1603d3ca533069d10ba",
+  "27129\\nasa_power_daily_1991_2020_AN_v1.json.gz": "0693fb45c590bc05f01a435638a0c624118245e6ed4b55dee174e7563eeb6193",
+  "27129\\ssurgo_point_AN_v1.json": "c0828642cd15c4393c7128852547085ed5079543e4b9f6df1234cd67ee3c052d",
+  "27145\\nasa_power_daily_1991_2020_AN_v1.json.gz": "0528afbf0f004bd01406bc4a5e6086bb8212a5219863103b2a66bdc01f1d85bf",
+  "27145\\ssurgo_point_AN_v1.json": "1bfb67b5c1ce5adb514889b202b2d8dffd7551913d42ec3f5ee6ffd2efe4c2e4",
+  "30015\\nasa_power_daily_1991_2020_AN_v1.json.gz": "a07b076a1d68d2fb6484c3fcf4a9e54c813a27f433f808a55747bdfeb66c3c33",
+  "30015\\ssurgo_point_AN_v1.json": "44320900c48bb8e46009c143be2dd14176094ebd5e5f97d3b615e39d3121073f",
+  "31003\\nasa_power_daily_1991_2020_AN_v1.json.gz": "55e70cb923f005913036288ed9b7cfc30646908bbdbca12d57d56e0f23857219",
+  "31003\\ssurgo_point_AN_v1.json": "3ffa09631f802821c3bb846df19c526520266cefa602aad0a48a231325af32d9",
+  "31019\\nasa_power_daily_1991_2020_AN_v1.json.gz": "b456063203a17417b5e04f5063707af0d0348a0e1593acbc9f2c43773196d7b7",
+  "31019\\ssurgo_point_AN_v1.json": "9d2b1335c053c8c974c394acb967cb6f529eb990d0058f927ec0f9d677610794",
+  "31041\\nasa_power_daily_1991_2020_AN_v1.json.gz": "f501f5cff24ba6b3e2972921a03e4c13eab054339b991d7f37aa82ccb952c000",
+  "31041\\ssurgo_point_AN_v1.json": "944aa39e1aefa782b074fcc88acfc4a4814f5833e3bc4494439ced3f9f476ce2",
+  "31047\\nasa_power_daily_1991_2020_AN_v1.json.gz": "4f178bc98c09dc0b3cd5f12607f45452199e7df2074b41d04952a469b5113fa1",
+  "31047\\ssurgo_point_AN_v1.json": "1bd0527d8b86bff75d480e2efae593f1f1737fc134681efe5e60ef8701e055d0",
+  "31053\\nasa_power_daily_1991_2020_AN_v1.json.gz": "871bdedbfe243fa0b09825fb9cc28660a6cff56429402e391c1b8d365045f7a8",
+  "31053\\ssurgo_point_AN_v1.json": "01395d5b1e04ebff073ee109b25beb8c7d6a862126add6665fc7f326d781a621",
+  "31067\\nasa_power_daily_1991_2020_AN_v1.json.gz": "88feca80e101cc4d47e37ff8f571814a64e7c14d1117cb75f9c07b7600191138",
+  "31067\\ssurgo_point_AN_v1.json": "e61c70147a2aee8b22179fa95c027fd9b0ed2e1228f9a57fcaed22a1762b8969",
+  "31089\\nasa_power_daily_1991_2020_AN_v1.json.gz": "7ae08eb2c59fed1147d4ddaf61c4e221f32dd3047f717c515b61935a51498422",
+  "31089\\ssurgo_point_AN_v1.json": "056dda30932896df5bc28743f9388873d1994a8eef5327d4a232e61c7ab836f0",
+  "31111\\nasa_power_daily_1991_2020_AN_v1.json.gz": "2beff3973a61ed20dde6cef7d86c1532aca5a6861114882d4a4d6af75fa52f72",
+  "31111\\ssurgo_point_AN_v1.json": "f00f77b4e6969dca1fbdd48ab466f39c069ae73bd094856e6d66f578bb0d0b09",
+  "31155\\nasa_power_daily_1991_2020_AN_v1.json.gz": "617e34ff821524a7fbd53e796f68f58d78bc2da3ae1b50cd76e99a0c06254c91",
+  "31155\\ssurgo_point_AN_v1.json": "c96351762138788031aa74672dcab84ef99b0c57d7cfc2b601ca3c0ac567d0ae",
+  "38009\\nasa_power_daily_1991_2020_AN_v1.json.gz": "cdcea973503122f64da231042353f3a91e3f70a995c1d3cb9069ea5f210f2017",
+  "38009\\ssurgo_point_AN_v1.json": "8938c12f09c98bd375818b44a4d77d4dd6183d741cb6ffa68bba7dae48e5bd7e",
+  "38017\\nasa_power_daily_1991_2020_AN_v1.json.gz": "683cc56f9b8c56f0ea2a32a9ef0f74abb1e71183dc0c5f83ecdb5a9a95702214",
+  "38017\\ssurgo_point_AN_v1.json": "713d281e1fdc87e9ea45c504c2f2fcccdd65d7f35e6c5e7cc74cdf4c54f259ff",
+  "38019\\nasa_power_daily_1991_2020_AN_v1.json.gz": "3708106b4302deff53e26b42c3556b0237c2990269ca19f19e84d08d0092e94b",
+  "38019\\ssurgo_point_AN_v1.json": "98aa57a1596940c33dbf8fa8e03d75d255ef803d3d4f2170c93906a8f1f66e80",
+  "38035\\nasa_power_daily_1991_2020_AN_v1.json.gz": "8b88d3fdd2eb0d212539dd0cf27fe57ea6da2611fce9470c7c54afc04cff49d2",
+  "38035\\ssurgo_point_AN_v1.json": "b201f82baaaf88b04a705a29b35f0779a42a466f8c01b5175fa8c3d5369ca283",
+  "38055\\nasa_power_daily_1991_2020_AN_v1.json.gz": "551e9bef4d6d048946949b0ed3239edb5656c8a760f2418bffd247162778332d",
+  "38055\\ssurgo_point_AN_v1.json": "e61840c500cdc9ff5b6908641e3c57d5c0578bb5162b0505b60a114e17a3e8ec",
+  "38067\\nasa_power_daily_1991_2020_AN_v1.json.gz": "992ebad431bca39e5b320b9d6d9980572c0f11f3f14510307b9254785f8bc827",
+  "38067\\ssurgo_point_AN_v1.json": "f15566fb21348f87f49b67f3880be936a995896ba4c2f4bac740613272bafbda",
+  "38077\\nasa_power_daily_1991_2020_AN_v1.json.gz": "616c286331a550540382c2edb308256bccbe77e95da5fced00d2fbf15527ef0d",
+  "38077\\ssurgo_point_AN_v1.json": "443a1e4bc435b03e29e8af3101ae3ee39ff4b440db6df27f2faf46a9079e8e51",
+  "38083\\nasa_power_daily_1991_2020_AN_v1.json.gz": "82f0fb937c48708d9d6dbfe371731ffa8182c1ad477138d73e8804570643cbfd",
+  "38083\\ssurgo_point_AN_v1.json": "1ceaf445efafdb5d12ae7b497079c4098324935a26ed63e3a125610dbf2c4ace",
+  "38093\\nasa_power_daily_1991_2020_AN_v1.json.gz": "9f4c1a274889868bdaf45eeac434d7d291b530ced7fa225df5821c3e617dce3c",
+  "38093\\ssurgo_point_AN_v1.json": "383b8885b138ac10b6d2bf253b080ed30060ed3074721784d4036f17d3803937",
+  "38097\\nasa_power_daily_1991_2020_AN_v1.json.gz": "22d1ca34320eae32869f18d33e23ab6c4910a7caa2b2757a52062ca2840d9b5f",
+  "38097\\ssurgo_point_AN_v1.json": "b764c7712d278cb278d3c706fee20f6bc06a67c5f681eae92e0e31100f075470",
+  "38099\\nasa_power_daily_1991_2020_AN_v1.json.gz": "3c74a75807af018519ff795185a70b89f921d70bf1240b357307b12dad483c8c",
+  "38099\\ssurgo_point_AN_v1.json": "c2b42ce3ce554d2f05629600f018e2362795d6a9699366bce9d9e3279d195e2b",
+  "38101\\nasa_power_daily_1991_2020_AN_v1.json.gz": "8b6b01040eadcab7cbf7d056e136ea6436237693761dd6d8df2f7466a5bcbb7b",
+  "38101\\ssurgo_point_AN_v1.json": "571a04ec27234a6074d883835969c88d50788c14e2e2dae21b252f447f1ecb1d",
+  "38105\\nasa_power_daily_1991_2020_AN_v1.json.gz": "9546d89522c36f6cf8286a855ac46c2c7bc0d44656d91237db2ad1e5a6bc5933",
+  "38105\\ssurgo_point_AN_v1.json": "540da76773f0c64ab3ede504104a21832e1cb5cd0b3b0ce75c78f54dc5a26233",
+  "41071\\nasa_power_daily_1991_2020_AN_v1.json.gz": "8d3d68ba0cff3acb4b454a142433327b1e378aa6c71892c8c6cd362a05dbf247",
+  "41071\\ssurgo_point_AN_v1.json": "8347cd5e51cfeb8867b91aac9ffba34943088da689fe268c9d70c424d9c670c1",
+  "46011\\nasa_power_daily_1991_2020_AN_v1.json.gz": "a1a74048c99ef31c398096902e6dc69f2a7c10247bc3d68846401718d3922685",
+  "46011\\ssurgo_point_AN_v1.json": "c5f3009db8db638bdea205caa51df69a985bd12e36bfef636298225d08a83a69",
+  "46013\\nasa_power_daily_1991_2020_AN_v1.json.gz": "327b263857ae6397cc43ac5e8fcfb0158e9fd09c8fd57f3c44f8ee1498ba218d",
+  "46013\\ssurgo_point_AN_v1.json": "975fc0bc8debbea3c3b1bd16f5e02d10b268ebdb5c53d8ae0059415295d8371f",
+  "46059\\nasa_power_daily_1991_2020_AN_v1.json.gz": "c577b3755ab454601dbc861cf6c88379990f09d84666c8fb7dc8633d51de5d3d",
+  "46059\\ssurgo_point_AN_v1.json": "fe39e95ae7ef76c09073507ce79b2ec02a4a85b7584a576a02746a866d3103b5",
+  "46115\\nasa_power_daily_1991_2020_AN_v1.json.gz": "47a0b532d97752a239695a3b90df2b4c7ebfa5774943517ecd95f509f28b78e2",
+  "46115\\ssurgo_point_AN_v1.json": "17da7c6efbedc22b8c75206fd2ccf0d74087ece1f16eb0e9037ac22416cae9c5",
+  "46119\\nasa_power_daily_1991_2020_AN_v1.json.gz": "0fc699711708fe2fa5264bb4cc8b64f073fa07fda638704a55b7ad8ab1040ce2",
+  "46119\\ssurgo_point_AN_v1.json": "97c3c1e4443713854c8bb5ac9f90a116d3c3245a38e3fcf8af10a3e190d154a7",
+  "48153\\nasa_power_daily_1991_2020_AN_v1.json.gz": "78ae1a73287bb56e259cc1af6c6482edf4f0936b46b6249ca4f17a73c8deff0b",
+  "48153\\ssurgo_point_AN_v1.json": "b101b82c26a79a923bca1681e38c7f8fec1254fe3091972b8435ab9e756c4e9e",
+  "48205\\nasa_power_daily_1991_2020_AN_v1.json.gz": "44252fccf724ffbfb8852b14ecff13962d3c2093fed22d587c17a9f69d184be9",
+  "48205\\ssurgo_point_AN_v1.json": "361aa7246b8eb487d140ef4fa40b38006cf3461053f3b815fdd52ad4847c91d0",
+  "48481\\nasa_power_daily_1991_2020_AN_v1.json.gz": "1fe07fee19cf74e2e9debba6a0b0707b16fb98ab48ab1964394b14a8f81da431",
+  "48481\\ssurgo_point_AN_v1.json": "cc9832992957bfc81338f576d9416141da0501f9f7c596d212562421072f436f",
+  "48489\\nasa_power_daily_1991_2020_AN_v1.json.gz": "3be385a6e372a68ae254164d5d0269159a6ec01610df9f991694f58f653cda6b",
+  "48489\\ssurgo_point_AN_v1.json": "f6cf11973f2fe30889e7a86a84c5515c8ce57a80fa475134b7bb65d94a265452",
+  "55097\\nasa_power_daily_1991_2020_AN_v1.json.gz": "598e41039775c78b4a22363c5de0f117778865dd3035cef67133c1cbb43b25b0",
+  "55097\\ssurgo_point_AN_v1.json": "2f29d5df3c385e3664c1ce266f05f19fce90cd45804d1b0a7defba6a09eb1380",
+  "county_sample_AN_v2.csv": "a59e3c88d26feef7ef4337ab438878cf36b373e92e85826d275f8d49cd3e5561"
+ }
+}

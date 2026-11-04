@@ -1,0 +1,79 @@
+{
+ "n_us": 95,
+ "n_ontario": 25,
+ "n_us_failed_or_lt5_sown": 2,
+ "n_ontario_failed_or_lt5_sown": 7,
+ "us_spearman_EF_apsim_vs": {
+  "ipcc2019_EF_pct": 0.057535971226539896,
+  "holos_base_EF_pct": 0.3972242247033509,
+  "p_over_pe_may_oct": 0.34608695069195344
+ },
+ "us_mean_apsim_EF_pct_by_drainage": {
+  "well": 0.9234515782493888,
+  "poor": 1.3489127655670796
+ },
+ "us_mean_apsim_EF_pct_by_ppe_quintile": {
+  "0": 0.9223043954745691,
+  "1": 0.8929460066121726,
+  "2": 1.1375891134009444,
+  "3": 1.2889849204320252,
+  "4": 1.3324343310983324
+ },
+ "us_log_ratio_ols": {
+  "terms": [
+   "intercept",
+   "p_over_pe",
+   "poor_drainage"
+  ],
+  "beta": [
+   -0.030704004335863188,
+   0.6777047540900771,
+   0.29243564641469677
+  ],
+  "se": [
+   0.2668937272361168,
+   0.3809843111226696,
+   0.10503265074389181
+  ],
+  "r2": 0.1185102610669958,
+  "n": 95,
+  "n_dropped_nonpositive_ratio": 0
+ },
+ "us_aggregation_error_vs_apsim": {
+  "ipcc2006_EF_pct": {
+   "point": -0.07117486844815024,
+   "boot95": [
+    -0.1649272608266461,
+    0.023912783927962034
+   ]
+  },
+  "ipcc2019_EF_pct": {
+   "point": -0.444658250665649,
+   "boot95": [
+    -0.5125604611222168,
+    -0.36793650042284753
+   ]
+  },
+  "holos_base_EF_pct": {
+   "point": -0.06606030525038742,
+   "boot95": [
+    -0.17023165154315356,
+    0.04249284569880052
+   ]
+  }
+ },
+ "us_top_decile_share_of_total": {
+  "apsim_EF_pct": 0.21535516553651676,
+  "ipcc2019_EF_pct": 0.2417308654590055,
+  "holos_base_EF_pct": 0.18603149603967686
+ },
+ "us_mean_share_top5pct_days": 0.5658438008958707,
+ "ontario_spearman_EF_apsim_vs_holos": 0.38714649513643395,
+ "ontario_mean_EF_pct": {
+  "apsim": 0.2941708358395984,
+  "holos_base": 0.5162126213991762
+ },
+ "ontario_mean_share_top5pct_days": 0.5029078499325652,
+ "sat_caps_units": 32,
+ "filled_missing_units": 53
+}

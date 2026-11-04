@@ -1,0 +1,24 @@
+{
+ "id": "17011",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 9.81,
+  "amp": 28.89,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Bureau County, Illinois",
+  "mukey": "1862661",
+  "compname": "Muscatune",
+  "comppct_r": "95",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "B/D"
+ },
+ "sat_caps": []
+}

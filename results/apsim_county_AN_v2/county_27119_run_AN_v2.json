@@ -1,0 +1,24 @@
+{
+ "id": "27119",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "26-apr",
+  "EndDate": "19-may"
+ },
+ "window_state": "Minnesota",
+ "met": {
+  "tav": 4.61,
+  "amp": 36.03,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Polk County, Minnesota",
+  "mukey": "2799739",
+  "compname": "Sandberg",
+  "comppct_r": "90",
+  "drainagecl": "Excessively drained",
+  "hydgrp": "A"
+ },
+ "sat_caps": []
+}

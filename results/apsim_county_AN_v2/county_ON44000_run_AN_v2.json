@@ -1,0 +1,74 @@
+{
+ "id": "ON44000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 6.92,
+  "amp": 24.69,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930113",
+   "filled": 4.6
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19940225",
+   "filled": 7.88
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19950227",
+   "filled": 13.26
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19990118",
+   "filled": 5.47
+  }
+ ],
+ "soil": {
+  "areaname": "DISTRICT MUNICIPALITY OF MUSKOKA",
+  "mukey": "ONTIG~~~~~A",
+  "compname": "TIOGA",
+  "comppct_r": 28,
+  "drainagecl": "W",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.5,
+   "SAT_used": 0.494,
+   "BD": 1.34
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ],
+ "missing_output": [
+  "100N.Report",
+  "0N.Report"
+ ]
+}

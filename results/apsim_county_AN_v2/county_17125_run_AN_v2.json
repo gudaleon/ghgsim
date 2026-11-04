@@ -1,0 +1,24 @@
+{
+ "id": "17125",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 11.62,
+  "amp": 28.11,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Mason County, Illinois",
+  "mukey": "177814",
+  "compname": "Udolpho",
+  "comppct_r": "100",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "B/D"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,30 @@
+{
+ "id": "19193",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 9.57,
+  "amp": 30.91,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911129",
+   "filled": 4.95
+  }
+ ],
+ "soil": {
+  "areaname": "Woodbury County, Iowa",
+  "mukey": "401837",
+  "compname": "Napier",
+  "comppct_r": "95",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

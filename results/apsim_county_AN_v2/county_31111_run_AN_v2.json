@@ -1,0 +1,24 @@
+{
+ "id": "31111",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "27-apr",
+  "EndDate": "15-may"
+ },
+ "window_state": "Nebraska",
+ "met": {
+  "tav": 11.19,
+  "amp": 26.84,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Lincoln County, Nebraska",
+  "mukey": "2745909",
+  "compname": "Holdrege",
+  "comppct_r": "94",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

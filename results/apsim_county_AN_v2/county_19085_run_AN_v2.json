@@ -1,0 +1,24 @@
+{
+ "id": "19085",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 10.21,
+  "amp": 30.06,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Harrison County, Iowa",
+  "mukey": "406726",
+  "compname": "Napier",
+  "comppct_r": "85",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

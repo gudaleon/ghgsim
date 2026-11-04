@@ -1,0 +1,24 @@
+{
+ "id": "19083",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.51,
+  "amp": 30.51,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Hardin County, Iowa",
+  "mukey": "2884321",
+  "compname": "Webster",
+  "comppct_r": "50",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

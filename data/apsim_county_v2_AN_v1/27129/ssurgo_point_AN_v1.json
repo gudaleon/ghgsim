@@ -1,0 +1,152 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  44.723697,
+  -94.955617
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-94.955617 44.723697)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "436130",
+   "muname": "Clarion-Storden-Hawick complex, 2 to 6 percent slopes",
+   "areaname": "Renville County, Minnesota",
+   "areasymbol": "MN129",
+   "saverest": "9/8/2026 2:42:37 PM",
+   "cokey": "28835479",
+   "compname": "Clarion",
+   "comppct_r": "50",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Hapludolls",
+   "hydgrp": "B",
+   "slope_r": "4",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "436130",
+   "muname": "Clarion-Storden-Hawick complex, 2 to 6 percent slopes",
+   "areaname": "Renville County, Minnesota",
+   "areasymbol": "MN129",
+   "saverest": "9/8/2026 2:42:37 PM",
+   "cokey": "28835478",
+   "compname": "Storden",
+   "comppct_r": "20",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Eutrudepts",
+   "hydgrp": "B",
+   "slope_r": "4",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "436130",
+   "muname": "Clarion-Storden-Hawick complex, 2 to 6 percent slopes",
+   "areaname": "Renville County, Minnesota",
+   "areasymbol": "MN129",
+   "saverest": "9/8/2026 2:42:37 PM",
+   "cokey": "28835480",
+   "compname": "Hawick",
+   "comppct_r": "15",
+   "majcompflag": "Yes",
+   "taxclname": "Sandy, mixed, mesic Entic Hapludolls",
+   "hydgrp": "A",
+   "slope_r": "4",
+   "drainagecl": "Excessively drained"
+  },
+  {
+   "mukey": "436130",
+   "muname": "Clarion-Storden-Hawick complex, 2 to 6 percent slopes",
+   "areaname": "Renville County, Minnesota",
+   "areasymbol": "MN129",
+   "saverest": "9/8/2026 2:42:37 PM",
+   "cokey": "28835481",
+   "compname": "Webster",
+   "comppct_r": "10",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": null,
+   "drainagecl": null
+  },
+  {
+   "mukey": "436130",
+   "muname": "Clarion-Storden-Hawick complex, 2 to 6 percent slopes",
+   "areaname": "Renville County, Minnesota",
+   "areasymbol": "MN129",
+   "saverest": "9/8/2026 2:42:37 PM",
+   "cokey": "28835482",
+   "compname": "Glencoe",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": null,
+   "drainagecl": null
+  }
+ ],
+ "dominant": {
+  "mukey": "436130",
+  "muname": "Clarion-Storden-Hawick complex, 2 to 6 percent slopes",
+  "areaname": "Renville County, Minnesota",
+  "areasymbol": "MN129",
+  "saverest": "9/8/2026 2:42:37 PM",
+  "cokey": "28835479",
+  "compname": "Clarion",
+  "comppct_r": "50",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Hapludolls",
+  "hydgrp": "B",
+  "slope_r": "4",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap,A",
+   "hzdept_r": "0",
+   "hzdepb_r": "36",
+   "dbthirdbar_r": "1.43",
+   "wthirdbar_r": "31.5",
+   "wfifteenbar_r": "18.7",
+   "wsatiated_r": "40",
+   "ksat_r": "9.17",
+   "om_r": "4.5",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "23.5",
+   "silttotal_r": "37.3",
+   "sandtotal_r": "39.2"
+  },
+  {
+   "hzname": "Bw",
+   "hzdept_r": "36",
+   "hzdepb_r": "66",
+   "dbthirdbar_r": "1.43",
+   "wthirdbar_r": "28.7",
+   "wfifteenbar_r": "15.2",
+   "wsatiated_r": "41",
+   "ksat_r": "9.17",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "6.7",
+   "claytotal_r": "26.5",
+   "silttotal_r": "35.6",
+   "sandtotal_r": "37.9"
+  },
+  {
+   "hzname": "C",
+   "hzdept_r": "66",
+   "hzdepb_r": "152",
+   "dbthirdbar_r": "1.43",
+   "wthirdbar_r": "28",
+   "wfifteenbar_r": "14.2",
+   "wsatiated_r": "41",
+   "ksat_r": "9.17",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "7.9",
+   "claytotal_r": "26",
+   "silttotal_r": "36",
+   "sandtotal_r": "38"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

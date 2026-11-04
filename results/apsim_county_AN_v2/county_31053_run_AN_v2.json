@@ -1,0 +1,24 @@
+{
+ "id": "31053",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "27-apr",
+  "EndDate": "15-may"
+ },
+ "window_state": "Nebraska",
+ "met": {
+  "tav": 10.49,
+  "amp": 29.66,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Dodge County, Nebraska",
+  "mukey": "426892",
+  "compname": "Kennebec",
+  "comppct_r": "98",
+  "drainagecl": "Moderately well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

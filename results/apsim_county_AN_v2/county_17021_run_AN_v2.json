@@ -1,0 +1,24 @@
+{
+ "id": "17021",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 11.84,
+  "amp": 27.18,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Christian County, Illinois",
+  "mukey": "261759",
+  "compname": "Martinsville",
+  "comppct_r": "95",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

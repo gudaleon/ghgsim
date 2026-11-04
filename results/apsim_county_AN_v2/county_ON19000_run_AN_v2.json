@@ -1,0 +1,37 @@
+{
+ "id": "ON19000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 7.16,
+  "amp": 27.29,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "REGIONAL MUNICIPALITY OF YORK",
+  "mukey": "ONOBE~~~~~A",
+  "compname": "OTONABEE",
+  "comppct_r": 48,
+  "drainagecl": "W",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.5,
+   "SAT_used": 0.498,
+   "BD": 1.33
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  }
+ ]
+}

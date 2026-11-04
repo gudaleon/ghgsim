@@ -1,0 +1,30 @@
+{
+ "id": "27145",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "26-apr",
+  "EndDate": "19-may"
+ },
+ "window_state": "Minnesota",
+ "met": {
+  "tav": 6.22,
+  "amp": 33.75,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19921213",
+   "filled": 2.26
+  }
+ ],
+ "soil": {
+  "areaname": "Stearns County, Minnesota",
+  "mukey": "428075",
+  "compname": "Beltrami",
+  "comppct_r": "80",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

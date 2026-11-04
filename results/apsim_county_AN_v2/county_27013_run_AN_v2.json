@@ -1,0 +1,24 @@
+{
+ "id": "27013",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "26-apr",
+  "EndDate": "19-may"
+ },
+ "window_state": "Minnesota",
+ "met": {
+  "tav": 7.92,
+  "amp": 32.33,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Blue Earth County, Minnesota",
+  "mukey": "396184",
+  "compname": "Minnetonka",
+  "comppct_r": "90",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

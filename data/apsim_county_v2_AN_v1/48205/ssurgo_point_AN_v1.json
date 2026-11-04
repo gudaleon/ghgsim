@@ -1,0 +1,152 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  35.840244,
+  -102.610047
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-102.610047 35.840244)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "367460",
+   "muname": "Spurlock fine sandy loam, 0 to 3 percent slopes",
+   "areaname": "Hartley County, Texas",
+   "areasymbol": "TX205",
+   "saverest": "9/3/2026 2:24:33 PM",
+   "cokey": "28126221",
+   "compname": "Spurlock",
+   "comppct_r": "85",
+   "majcompflag": "Yes",
+   "taxclname": "Coarse-loamy, carbonatic, mesic Calcidic Paleustalfs",
+   "hydgrp": "B",
+   "slope_r": "2",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "367460",
+   "muname": "Spurlock fine sandy loam, 0 to 3 percent slopes",
+   "areaname": "Hartley County, Texas",
+   "areasymbol": "TX205",
+   "saverest": "9/3/2026 2:24:33 PM",
+   "cokey": "28126223",
+   "compname": "Dallam",
+   "comppct_r": "7",
+   "majcompflag": "No ",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Aridic Paleustalfs",
+   "hydgrp": "B",
+   "slope_r": "2",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "367460",
+   "muname": "Spurlock fine sandy loam, 0 to 3 percent slopes",
+   "areaname": "Hartley County, Texas",
+   "areasymbol": "TX205",
+   "saverest": "9/3/2026 2:24:33 PM",
+   "cokey": "28126224",
+   "compname": "Perico",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Aridic Paleustalfs",
+   "hydgrp": "B",
+   "slope_r": "2",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "367460",
+   "muname": "Spurlock fine sandy loam, 0 to 3 percent slopes",
+   "areaname": "Hartley County, Texas",
+   "areasymbol": "TX205",
+   "saverest": "9/3/2026 2:24:33 PM",
+   "cokey": "28126222",
+   "compname": "Guy",
+   "comppct_r": "3",
+   "majcompflag": "No ",
+   "taxclname": "Coarse-loamy, mixed, superactive, mesic Aridic Calciustolls",
+   "hydgrp": "A",
+   "slope_r": "2",
+   "drainagecl": "Well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "367460",
+  "muname": "Spurlock fine sandy loam, 0 to 3 percent slopes",
+  "areaname": "Hartley County, Texas",
+  "areasymbol": "TX205",
+  "saverest": "9/3/2026 2:24:33 PM",
+  "cokey": "28126221",
+  "compname": "Spurlock",
+  "comppct_r": "85",
+  "majcompflag": "Yes",
+  "taxclname": "Coarse-loamy, carbonatic, mesic Calcidic Paleustalfs",
+  "hydgrp": "B",
+  "slope_r": "2",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "A",
+   "hzdept_r": "0",
+   "hzdepb_r": "25",
+   "dbthirdbar_r": "1.5",
+   "wthirdbar_r": "20.2",
+   "wfifteenbar_r": "11",
+   "wsatiated_r": "40",
+   "ksat_r": "28",
+   "om_r": "0.4",
+   "ph1to1h2o_r": "8.2",
+   "claytotal_r": "16",
+   "silttotal_r": "19",
+   "sandtotal_r": "65"
+  },
+  {
+   "hzname": "Bk",
+   "hzdept_r": "25",
+   "hzdepb_r": "41",
+   "dbthirdbar_r": "1.54",
+   "wthirdbar_r": "23.6",
+   "wfifteenbar_r": "15.5",
+   "wsatiated_r": "39",
+   "ksat_r": "9",
+   "om_r": "0.35",
+   "ph1to1h2o_r": "8.3",
+   "claytotal_r": "24",
+   "silttotal_r": "18",
+   "sandtotal_r": "58"
+  },
+  {
+   "hzname": "Bkk",
+   "hzdept_r": "41",
+   "hzdepb_r": "98",
+   "dbthirdbar_r": "1.56",
+   "wthirdbar_r": "29.9",
+   "wfifteenbar_r": "19.4",
+   "wsatiated_r": "35",
+   "ksat_r": "9",
+   "om_r": "0.3",
+   "ph1to1h2o_r": "8.4",
+   "claytotal_r": "33",
+   "silttotal_r": "34",
+   "sandtotal_r": "33"
+  },
+  {
+   "hzname": "2Btk",
+   "hzdept_r": "98",
+   "hzdepb_r": "203",
+   "dbthirdbar_r": "1.55",
+   "wthirdbar_r": "31",
+   "wfifteenbar_r": "19.1",
+   "wsatiated_r": "37",
+   "ksat_r": "9",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "8.3",
+   "claytotal_r": "31",
+   "silttotal_r": "34",
+   "sandtotal_r": "35"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

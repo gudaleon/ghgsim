@@ -1,0 +1,137 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  39.351352,
+  -101.719859
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-101.719859 39.351352)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "1149618",
+   "muname": "Keith silt loam, 0 to 1 percent slopes",
+   "areaname": "Sherman County, Kansas",
+   "areasymbol": "KS181",
+   "saverest": "8/27/2026 2:37:06 PM",
+   "cokey": "27879320",
+   "compname": "Keith",
+   "comppct_r": "95",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Aridic Argiustolls",
+   "hydgrp": "C",
+   "slope_r": "1",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "1149618",
+   "muname": "Keith silt loam, 0 to 1 percent slopes",
+   "areaname": "Sherman County, Kansas",
+   "areasymbol": "KS181",
+   "saverest": "8/27/2026 2:37:06 PM",
+   "cokey": "27879321",
+   "compname": "Lodgepole",
+   "comppct_r": "3",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, mesic Vertic Argiaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "1149618",
+   "muname": "Keith silt loam, 0 to 1 percent slopes",
+   "areaname": "Sherman County, Kansas",
+   "areasymbol": "KS181",
+   "saverest": "8/27/2026 2:37:06 PM",
+   "cokey": "27879322",
+   "compname": "Ness",
+   "comppct_r": "2",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, mesic Ustic Epiaquerts",
+   "hydgrp": "D",
+   "slope_r": "0",
+   "drainagecl": "Poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "1149618",
+  "muname": "Keith silt loam, 0 to 1 percent slopes",
+  "areaname": "Sherman County, Kansas",
+  "areasymbol": "KS181",
+  "saverest": "8/27/2026 2:37:06 PM",
+  "cokey": "27879320",
+  "compname": "Keith",
+  "comppct_r": "95",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-silty, mixed, superactive, mesic Aridic Argiustolls",
+  "hydgrp": "C",
+  "slope_r": "1",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "25",
+   "dbthirdbar_r": "1.25",
+   "wthirdbar_r": "28.1",
+   "wfifteenbar_r": "12.8",
+   "wsatiated_r": "49",
+   "ksat_r": "6",
+   "om_r": "2",
+   "ph1to1h2o_r": "7",
+   "claytotal_r": "21",
+   "silttotal_r": "68",
+   "sandtotal_r": "11"
+  },
+  {
+   "hzname": "Bt1",
+   "hzdept_r": "25",
+   "hzdepb_r": "42",
+   "dbthirdbar_r": "1.15",
+   "wthirdbar_r": "29.3",
+   "wfifteenbar_r": "14.4",
+   "wsatiated_r": "52",
+   "ksat_r": "3",
+   "om_r": "1.5",
+   "ph1to1h2o_r": "7.5",
+   "claytotal_r": "28",
+   "silttotal_r": "63",
+   "sandtotal_r": "9"
+  },
+  {
+   "hzname": "Bt2",
+   "hzdept_r": "42",
+   "hzdepb_r": "56",
+   "dbthirdbar_r": "1.15",
+   "wthirdbar_r": "28.8",
+   "wfifteenbar_r": "13.7",
+   "wsatiated_r": "53",
+   "ksat_r": "3",
+   "om_r": "0.8",
+   "ph1to1h2o_r": "7.5",
+   "claytotal_r": "28",
+   "silttotal_r": "63",
+   "sandtotal_r": "9"
+  },
+  {
+   "hzname": "Bk",
+   "hzdept_r": "56",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.35",
+   "wthirdbar_r": "24.6",
+   "wfifteenbar_r": "8.7",
+   "wsatiated_r": "46",
+   "ksat_r": "6",
+   "om_r": "0.5",
+   "ph1to1h2o_r": "7.9",
+   "claytotal_r": "15",
+   "silttotal_r": "71",
+   "sandtotal_r": "14"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}
