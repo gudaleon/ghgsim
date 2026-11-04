@@ -15,7 +15,7 @@ Source: 2006 IPCC Guidelines for National Greenhouse Gas Inventories,
 from collections.abc import Mapping
 from typing import Any
 
-from ghgsim.core.module import Citation, Module, ParamRef, VarSpec
+from ghgsim.core.module import Citation, ParamRef, VarSpec
 from ghgsim.modules.livestock_types import is_poultry, is_swine
 
 
@@ -112,7 +112,7 @@ class IPCC2006Enteric:
 
 
 # Validate module on import
-from ghgsim.core.module import validate_module
+from ghgsim.core.module import validate_module  # noqa: E402
 
 errors = validate_module(IPCC2006Enteric())
 if errors:

@@ -1,12 +1,10 @@
-﻿"""County annual climate -> IPCC zone -> 2019 manure MCF (AN v1)."""
+"""County annual climate -> IPCC zone -> 2019 manure MCF (AN v1)."""
 import csv
-from pathlib import Path
 
 import pytest
 
 from ghgsim.modules.county_climate_annual import COUNTY_CLIMATE_ANNUAL_FILE, county_climate_annual
 from ghgsim.modules.ipcc2019.manure import IPCC2019Manure, climate_zone_2019
-
 from test_manure_2019_upgrade_AN_v1 import BASE, P19
 
 ROWS = list(csv.DictReader(open(COUNTY_CLIMATE_ANNUAL_FILE, encoding="utf-8")))

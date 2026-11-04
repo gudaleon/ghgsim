@@ -9,7 +9,6 @@ This implementation wraps the legacy v3 data files from legacy/livingghg_AN_v3/d
 
 import hashlib
 from pathlib import Path
-from typing import Any
 
 import pandas as pd
 

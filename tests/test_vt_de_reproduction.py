@@ -10,7 +10,6 @@ This is Acceptance Test #2 and must pass before Phase 7 is complete.
 import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 import pytest
 
@@ -19,8 +18,8 @@ legacy_root = Path(__file__).parents[1] / "legacy" / "livingghg_AN_v3"
 if str(legacy_root) not in sys.path:
     sys.path.insert(0, str(legacy_root))
 
-from ghgsim.compat.farm import FarmModel
-from ghgsim.core.registry import load_parameter_csv
+from ghgsim.compat.farm import FarmModel  # noqa: E402
+from ghgsim.core.registry import load_parameter_csv  # noqa: E402
 
 
 @pytest.fixture
@@ -194,7 +193,7 @@ def test_vt_essex_county_reproduction_2006(param_registry, v3_vt_results):
     
     # Report differences
     print(f"\n{'='*60}")
-    print(f"VT Essex County (50009) IPCC 2006 Reproduction Test")
+    print("VT Essex County (50009) IPCC 2006 Reproduction Test")
     print(f"{'='*60}")
     print(f"CO2e: v3={v3_co2e:.6f}, v4={v4_co2e:.6f}, rel_diff={rel_diff_co2e:.2e}")
     print(f"CH4:  v3={v3_ch4:.6f}, v4={v4_ch4:.6f}, rel_diff={rel_diff_ch4:.2e}")

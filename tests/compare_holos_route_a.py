@@ -7,7 +7,6 @@ Runs all three approaches side-by-side to evaluate differences.
 import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 
 # Add paths
@@ -15,9 +14,8 @@ sys.path.insert(0, str(Path(__file__).parents[1]))
 legacy_root = Path(__file__).parents[1] / "legacy" / "livingghg_AN_v3"
 sys.path.insert(0, str(legacy_root))
 
-from ghgsim.modules.ipcc2006 import IPCC2006Enteric, IPCC2006Manure, IPCC2006SoilN2O
-from ghgsim.modules.holos import HolosEnteric, HolosManure, HolosSoilN2O
-from ghgsim.core.registry import load_parameter_csv
+from ghgsim.core.registry import load_parameter_csv  # noqa: E402
+from ghgsim.modules.holos import HolosEnteric, HolosManure, HolosSoilN2O  # noqa: E402
 
 
 def load_epa_assumptions():

@@ -5,7 +5,6 @@ Uses SALib to compute first-order, second-order, and total-order
 sensitivity indices for model outputs with respect to parameters.
 """
 
-from collections.abc import Mapping
 from typing import Any
 
 import numpy as np

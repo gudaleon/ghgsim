@@ -10,7 +10,6 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
@@ -178,7 +177,7 @@ async def get_run(run_id: str, results_dir: str = "results") -> dict[str, Any]:
         raise
     except Exception as e:
         logger.error(f"Error loading run {run_id}: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))  # noqa: B904
 
 
 @app.get("/api/manifest/{run_id}")

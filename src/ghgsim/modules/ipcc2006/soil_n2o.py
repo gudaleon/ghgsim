@@ -11,7 +11,7 @@ Source: 2006 IPCC Guidelines for National Greenhouse Gas Inventories,
 from collections.abc import Mapping
 from typing import Any
 
-from ghgsim.core.module import Citation, Module, ParamRef, VarSpec
+from ghgsim.core.module import Citation, ParamRef, VarSpec
 
 # Molecular weight conversion: N2O-N to N2O
 N2ON_TO_N2O = 44.0 / 28.0
@@ -90,7 +90,7 @@ class IPCC2006SoilN2O:
         FCR = inputs["F_CR"]
         FSOM = inputs["F_SOM"]
         FPRP = inputs["F_PRP_CPP"]
-        climate = inputs["climate"]
+        inputs["climate"]
 
         # Extract parameters
         ef1 = params["EF1"]
@@ -125,7 +125,7 @@ class IPCC2006SoilN2O:
 
 
 # Validate module on import
-from ghgsim.core.module import validate_module
+from ghgsim.core.module import validate_module  # noqa: E402
 
 errors = validate_module(IPCC2006SoilN2O())
 if errors:

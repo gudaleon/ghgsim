@@ -34,6 +34,9 @@ ALLOWED_PATTERNS = [
     re.compile(r"BSD\s+License", re.IGNORECASE),
 ]
 
+# Phrases that declare independence from GPL sources (not violations)
+NEGATION_PHRASES = ("no gpl code", "not a translation of the gpl", "not copied from gpl")
+
 # Paths to check
 CORE_DIRS = [
     "src/ghgsim/core",
@@ -75,7 +78,11 @@ def check_file(path: Path) -> tuple[bool, list[str]]:
             for i, line in enumerate(lines, 1):
                 if pattern.search(line):
                     # Allow citations and references
-                    if "cite" in line.lower() or "reference" in line.lower():
+                    # Statements that GPL code was NOT copied are compliance notes
+                    low = line.lower()
+                    if any(n in low for n in NEGATION_PHRASES):
+                        continue
+                    if "cite" in low or "reference" in low:
                         continue
                     if "#" in line or "//" in line or "/*" in line:
                         # Comment - check context
@@ -90,6 +97,8 @@ def check_file(path: Path) -> tuple[bool, list[str]]:
 
 def main():
     """Run license checks."""
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     root = Path(".")
     violations_found = False
     

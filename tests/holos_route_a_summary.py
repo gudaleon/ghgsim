@@ -1,7 +1,7 @@
 """Simple Holos Route A comparison - VT/DE counties."""
 
-import sys
 from pathlib import Path
+
 import pandas as pd
 
 legacy_root = Path(__file__).parents[1] / "legacy" / "livingghg_AN_v3"

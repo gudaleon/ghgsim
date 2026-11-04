@@ -2,11 +2,9 @@
 Tests for ghgsim services: Monte Carlo, Sobol, and Fork registry.
 """
 
-import json
 import tempfile
 from pathlib import Path
 
-import numpy as np
 import pytest
 
 from ghgsim.core.registry import DistributionType, ParameterRegistry, ParameterValue, VerificationStatus
@@ -86,7 +84,7 @@ def test_montecarlo_determinism(simple_registry):
     samples1 = mc1.sample_parameters(simple_registry, param_keys, n_samples=10)
     samples2 = mc2.sample_parameters(simple_registry, param_keys, n_samples=10)
     
-    for s1, s2 in zip(samples1, samples2):
+    for s1, s2 in zip(samples1, samples2, strict=False):
         for key in param_keys:
             assert abs(s1[key] - s2[key]) < 1e-10
 
@@ -112,7 +110,7 @@ def test_montecarlo_run_ensemble(simple_registry):
     assert len(output_samples) == 50
     
     # Verify outputs match computation
-    for params, outputs in zip(param_samples, output_samples):
+    for params, outputs in zip(param_samples, output_samples, strict=False):
         expected = params["test.param1.all"] + params["test.param2.all"]
         assert abs(outputs["sum"] - expected) < 1e-10
 

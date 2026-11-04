@@ -1,10 +1,13 @@
-﻿"""Tests for scripts/build_county_p_pe_AN_v1.py (county May-Oct P and PE)."""
-import csv, importlib.util, math, pathlib
+"""Tests for scripts/build_county_p_pe_AN_v1.py (county May-Oct P and PE)."""
+import csv
+import importlib.util
+import pathlib
+
 import pytest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("bpp", ROOT / "scripts" / "build_county_p_pe_AN_v1.py")
-bpp = importlib.util.module_from_spec(spec); spec.loader.exec_module(bpp)
+bpp = importlib.util.module_from_spec(spec); spec.loader.exec_module(bpp)  # noqa: E702
 DATA = ROOT / "data" / "county_p_pe_may_oct_AN_v1.csv"
 
 

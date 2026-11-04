@@ -1,5 +1,6 @@
-﻿"""US county 2006 vs 2019 run (AN_v1): parameter rows and calculation spot checks."""
-import csv, sys
+"""US county 2006 vs 2019 run (AN_v1): parameter rows and calculation spot checks."""
+import csv
+import sys
 from pathlib import Path
 
 import pytest

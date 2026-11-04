@@ -5,9 +5,9 @@ Based on Reichert (1995) Environmental Software 10(3):199-210.
 Four variable types: State, Input, Parameter, Program.
 """
 
-from abc import ABC, abstractmethod
-from typing import Any, Optional, Union
 import math
+from abc import ABC, abstractmethod
+from typing import Any
 
 
 class Variable(ABC):
@@ -17,7 +17,7 @@ class Variable(ABC):
         self.name = name
         self.units = units
         self.description = description
-        self.value: Optional[float] = None
+        self.value: float | None = None
     
     @abstractmethod
     def get_type(self) -> str:
@@ -45,7 +45,7 @@ class StateVariable(Variable):
 class InputVariable(Variable):
     """External input/forcing variable."""
     
-    def __init__(self, name: str, units: str, description: str, value: Optional[float] = None):
+    def __init__(self, name: str, units: str, description: str, value: float | None = None):
         super().__init__(name, units, description)
         self.value = value
     
@@ -66,10 +66,10 @@ class ParameterVariable(Variable):
         units: str, 
         description: str, 
         value: float, 
-        distribution: Optional[str] = None,
-        dist_lower: Optional[float] = None,
-        dist_upper: Optional[float] = None,
-        source: Optional[str] = None
+        distribution: str | None = None,
+        dist_lower: float | None = None,
+        dist_upper: float | None = None,
+        source: str | None = None
     ):
         super().__init__(name, units, description)
         self.value = value
@@ -114,7 +114,7 @@ class ProgramVariable(Variable):
             self.value = float(result)
             return self.value
         except Exception as e:
-            raise ValueError(
+            raise ValueError(  # noqa: B904
                 f"Error evaluating equation for {self.name}: {self.equation}\n"
                 f"Context: {context}\n"
                 f"Error: {e}"

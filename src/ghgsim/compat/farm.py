@@ -9,6 +9,7 @@ from collections.abc import Mapping
 from typing import Any
 
 from ghgsim.core.registry import ParameterRegistry
+
 # Load holos before ipcc2006: ipcc2006.lime_urea -> holos.process_defs -> holos/__init__
 # -> holos.lime_urea -> ipcc2006.lime_urea is circular when ipcc2006 loads first.
 import ghgsim.modules.holos  # noqa: F401  isort: skip
@@ -183,7 +184,7 @@ class FarmModel:
 
     def _get_manure_params(self, herd: dict, registry: ParameterRegistry) -> dict[str, float]:
         """Get manure management parameters from registry."""
-        animal = herd["manure"]["animal"]
+        herd["manure"]["animal"]
         region = herd["manure"]["region"]
         zone = self._by_guideline(herd["manure"]["mcf_zone"])
         
@@ -208,7 +209,7 @@ class FarmModel:
         
         # Pasture MCF (both zones)
         params[f"MCF_pasture_{zone}"] = registry.get_value(f"IPCC2006.MCF.pasture|{zone}")
-        params["MCF_pasture_le10C"] = registry.get_value(f"IPCC2006.MCF.pasture|le10C")
+        params["MCF_pasture_le10C"] = registry.get_value("IPCC2006.MCF.pasture|le10C")
         
         # EF3 values (use 2006 values for both guidelines - no updates in 2019)
         for system in ["liquid_nocrust", "liquid_crust", "lagoon", "solid_storage", "dry_lot", "daily_spread"]:
