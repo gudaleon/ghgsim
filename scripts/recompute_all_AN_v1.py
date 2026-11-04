@@ -230,6 +230,28 @@ def csv_diff(new: Path, old: Path) -> dict:
                              for rn, ro in zip(n, o) if rn != ro), None)}
 
 
+VOLATILE_KEYS = {"created", "generated", "path"}  # run timestamp / how a raw path was spelled; not results
+
+
+def content_sha256(p: Path) -> str:
+    """Hash of the decompressed bytes of a .gz (the gzip header carries a timestamp)."""
+    with gzip.open(p, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+def json_diff(new: Path, old: Path, prefix: str = "") -> list:
+    def walk(a, b, k):
+        if isinstance(a, dict) and isinstance(b, dict):
+            for x in sorted(a.keys() | b.keys()):
+                yield from walk(a.get(x), b.get(x), f"{k}.{x}" if k else x)
+        elif a != b:
+            yield k
+    try:
+        return list(walk(json.loads(new.read_text(encoding="utf-8")), json.loads(old.read_text(encoding="utf-8")), prefix))[:20]
+    except Exception as e:
+        return [repr(e)]
+
+
 # ---------------------------------------------------------------- runner
 def stage_copy(dst: Path) -> None:
     ign = shutil.ignore_patterns(".git", ".venv", "build", "__pycache__", "*.pyc", ".pytest_cache", ".ruff_cache",
@@ -289,6 +311,15 @@ def main(argv=None) -> int:
             outs[o] = {"sha256": sha256(p) if p.exists() else None,
                        "committed_sha256": sha256(ref) if ref.exists() else None}
             outs[o]["reproduced"] = outs[o]["sha256"] is not None and outs[o]["sha256"] == outs[o]["committed_sha256"]
+            if o.endswith(".gz") and p.exists() and ref.exists() and not outs[o]["reproduced"]:
+                outs[o]["content_sha256"], outs[o]["committed_content_sha256"] = content_sha256(p), content_sha256(ref)
+                outs[o]["reproduced"] = outs[o]["content_sha256"] == outs[o]["committed_content_sha256"]
+                outs[o]["reproduced_basis"] = "decompressed content (gzip header timestamp differs)"
+            if o.endswith(".json") and run and p.exists() and ref.exists() and not outs[o]["reproduced"]:
+                outs[o]["json_keys_differing"] = jd = json_diff(p, ref)
+                if jd and all(k.rsplit(".", 1)[-1] in VOLATILE_KEYS for k in jd):
+                    outs[o]["reproduced"] = True
+                    outs[o]["reproduced_basis"] = "all content equal except run metadata: " + ", ".join(jd)
             if run and not missing and not outs[o]["reproduced"]:
                 mism.append(o)
                 if ref.exists() and p.exists() and (o.endswith(".csv") or o.endswith(".csv.gz")):
