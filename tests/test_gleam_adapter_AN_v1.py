@@ -32,7 +32,7 @@ def test_adapter_inputs_reproduce_committed_inputs():
     with mod.F_INPUT.open(encoding="utf-8") as fh:
         committed = list(csv.DictReader(fh))
     assert len(committed) == len(inputs)
-    for a, b in zip(inputs, committed):
+    for a, b in zip(inputs, committed, strict=True):
         assert a["herd_id"] == b["herd_id"]
         assert float(a["ration_intake"]) == pytest.approx(float(b["ration_intake"]), rel=1e-9)
         assert float(a["nitrogen_excretion"]) == pytest.approx(float(b["nitrogen_excretion"]), rel=1e-9)
@@ -70,7 +70,7 @@ def test_gleam_rerun_matches_committed(tmp_path):
     with out.open(encoding="utf-8") as a, (res / "gleam_stylized_cohort_results_AN_v1.csv").open(encoding="utf-8") as b:
         ra, rb = list(csv.DictReader(a)), list(csv.DictReader(b))
     assert len(ra) == len(rb)
-    for x, y in zip(ra, rb):
+    for x, y in zip(ra, rb, strict=True):
         assert (x["herd_id"], x["cohort_short"]) == (y["herd_id"], y["cohort_short"])
         assert float(x["ch4_enteric"]) == pytest.approx(float(y["ch4_enteric"]), rel=1e-9)
         assert float(x["ch4_manure_other"]) == pytest.approx(float(y["ch4_manure_other"]), rel=1e-9)

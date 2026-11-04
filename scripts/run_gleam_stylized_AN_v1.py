@@ -52,13 +52,18 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
+import compare_ipcc_2006_2019_stylized_AN_v2 as cmp  # noqa: E402
+
 import ghgsim.modules.holos  # noqa: F401,E402  (import order as in the comparison script)
 from ghgsim.core.registry import load_parameter_csv  # noqa: E402
 from ghgsim.report.emissions_sankey import (  # noqa: E402
-    _const, gwp_from_spec, herd_de_tdn, load_stylized_spec, net_energy, nex_kg_yr,
+    _const,
+    gwp_from_spec,
+    herd_de_tdn,
+    load_stylized_spec,
+    net_energy,
+    nex_kg_yr,
 )
-
-import compare_ipcc_2006_2019_stylized_AN_v2 as cmp  # noqa: E402
 
 SPEC = ROOT / "data" / "stylized_farms_AN_v6.yaml"
 PARAMS = ROOT / "data" / "ipcc_params_AN_v10.csv"
