@@ -1,0 +1,21 @@
+fips,state,county,ppe_quintile,drainage,p_over_pe_may_oct,zone_primary,synthetic_N_kg,sown_years,apsim_N2O_kg_ha,apsim_control_N2O_kg_ha,apsim_EF_pct,share_top5pct_days,max_day_over_mean_day,share_N2O_within_window_after_rain,holos_base_EF_pct,holos_base_EF_upper_pct,ipcc2006_EF_pct,ipcc2019_EF_pct,note
+08125,CO,Yuma County,0,poor,0.371,warm_temperate_dry,19820195.9,5,0.9573,0.1559,0.51,0.6757,111.1059,0.2954,0.2989,7.3458,1.0,0.5,
+20009,KS,Barton County,0,poor,0.54,warm_temperate_dry,11398339.7,29,1.9179,0.3452,1.0008,0.6006,49.7633,0.4193,0.7055,7.3294,1.0,0.5,
+38101,ND,Ward County,0,well,0.489,cool_temperate_dry,27803497.8,15,1.6179,0.2381,0.8781,0.7077,137.8684,0.3597,0.3189,2.4607,1.0,0.5,
+38105,ND,Williams County,0,well,0.401,cool_temperate_dry,25981502.0,12,1.1423,0.2073,0.595,0.7804,77.061,0.3409,0.2418,2.9533,1.0,0.5,
+38017,ND,Cass County,1,poor,0.618,cool_temperate_dry,34926946.8,19,2.605,0.6112,1.2688,0.6261,60.6515,0.3511,0.5684,2.7177,1.0,0.5,
+38019,ND,Cavalier County,1,poor,0.612,cool_temperate_dry,27995998.2,17,1.0481,0.3954,0.4153,0.67,107.6181,0.3096,0.4507,1.9304,1.0,0.5,
+27119,MN,Polk County,1,well,0.658,cool_temperate_dry,26537975.2,18,1.0453,0.2493,0.5066,0.6284,59.9022,0.2543,0.6004,2.3052,1.0,0.5,
+31041,NE,Custer County,1,well,0.547,cool_temperate_dry,25622531.1,23,1.1512,0.1055,0.6655,0.6329,50.0725,0.3056,0.578,4.7482,1.0,0.5,
+17019,IL,Champaign County,2,poor,0.723,warm_temperate_dry,24163013.0,29,2.8317,1.0258,1.1492,0.4829,34.4503,0.3585,1.2013,4.2208,1.0,0.5,
+17113,IL,McLean County,2,poor,0.72,warm_temperate_dry,23773103.1,29,2.5479,0.9767,0.9999,0.4989,33.4023,0.3799,1.165,4.13,1.0,0.5,
+19193,IA,Woodbury County,2,well,0.7,cool_temperate_dry,19752617.4,0,,,,,,,0.9702,3.6023,1.0,0.5,dropped: APSIM soil physical check failed on SSURGO values (no tuning)
+27127,MN,Redwood County,2,well,0.735,cool_temperate_dry,17797406.4,28,1.4531,0.2774,0.7481,0.562,55.6203,0.3552,0.9631,2.9043,1.0,0.5,
+17075,IL,Iroquois County,3,poor,0.741,warm_temperate_dry,26783585.4,30,1.7905,0.669,0.7137,0.4909,36.5459,0.3865,1.2759,4.0956,1.0,0.5,
+19155,IA,Pottawattamie County,3,poor,0.79,warm_temperate_dry,22887544.5,27,2.7778,0.7304,1.3029,0.5095,37.4804,0.3592,1.4743,3.7291,1.0,0.5,
+27129,MN,Renville County,3,well,0.754,cool_temperate_dry,22134721.8,25,1.5929,0.3837,0.7695,0.613,68.8509,0.4224,0.9893,2.7101,1.0,0.5,
+19047,IA,Crawford County,3,well,0.784,cool_temperate_dry,18601931.7,28,1.2281,0.1615,0.6788,0.5432,38.3508,0.3447,1.332,3.3746,1.0,0.5,
+19019,IA,Buchanan County,4,poor,0.863,cool_temperate_moist,20300490.8,29,2.4295,0.7506,1.0684,0.4908,50.4412,0.3664,1.7285,3.0864,1.0,1.6,
+19081,IA,Hancock County,4,poor,0.827,cool_temperate_dry,20260328.6,0,,,,,,,1.4108,2.8945,1.0,0.5,dropped: APSIM soil physical check failed on SSURGO values (no tuning)
+19109,IA,Kossuth County,4,well,0.797,cool_temperate_dry,28261705.3,0,,,,,,,1.2604,2.9385,1.0,0.5,dropped: APSIM soil physical check failed on SSURGO values (no tuning)
+19031,IA,Cedar County,4,well,0.835,warm_temperate_dry,20361491.9,30,3.0516,0.7107,1.4896,0.519,36.1147,0.3604,1.5932,3.2219,1.0,0.5,

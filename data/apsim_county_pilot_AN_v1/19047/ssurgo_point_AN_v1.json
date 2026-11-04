@@ -1,0 +1,137 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  42.043119,
+  -95.38909
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-95.38909 42.043119)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "399927",
+   "muname": "Monona silty clay loam, 14 to 20 percent slopes, severely eroded",
+   "areaname": "Crawford County, Iowa",
+   "areasymbol": "IA047",
+   "saverest": "9/8/2026 6:07:24 PM",
+   "cokey": "28623646",
+   "compname": "Monona",
+   "comppct_r": "80",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Dystric Eutrudepts",
+   "hydgrp": "C",
+   "slope_r": "17",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "399927",
+   "muname": "Monona silty clay loam, 14 to 20 percent slopes, severely eroded",
+   "areaname": "Crawford County, Iowa",
+   "areasymbol": "IA047",
+   "saverest": "9/8/2026 6:07:24 PM",
+   "cokey": "28623647",
+   "compname": "Ida",
+   "comppct_r": "10",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, calcareous, mesic Typic Udorthents",
+   "hydgrp": "B",
+   "slope_r": "17",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "399927",
+   "muname": "Monona silty clay loam, 14 to 20 percent slopes, severely eroded",
+   "areaname": "Crawford County, Iowa",
+   "areasymbol": "IA047",
+   "saverest": "9/8/2026 6:07:24 PM",
+   "cokey": "28623645",
+   "compname": "Judson",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Cumulic Hapludolls",
+   "hydgrp": "C",
+   "slope_r": "7",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "399927",
+   "muname": "Monona silty clay loam, 14 to 20 percent slopes, severely eroded",
+   "areaname": "Crawford County, Iowa",
+   "areasymbol": "IA047",
+   "saverest": "9/8/2026 6:07:24 PM",
+   "cokey": "28623648",
+   "compname": "Burchard",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Argiudolls",
+   "hydgrp": "C",
+   "slope_r": "17",
+   "drainagecl": "Well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "399927",
+  "muname": "Monona silty clay loam, 14 to 20 percent slopes, severely eroded",
+  "areaname": "Crawford County, Iowa",
+  "areasymbol": "IA047",
+  "saverest": "9/8/2026 6:07:24 PM",
+  "cokey": "28623646",
+  "compname": "Monona",
+  "comppct_r": "80",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-silty, mixed, superactive, mesic Dystric Eutrudepts",
+  "hydgrp": "C",
+  "slope_r": "17",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "13",
+   "dbthirdbar_r": "1.38",
+   "wthirdbar_r": "32.5",
+   "wfifteenbar_r": "19.2",
+   "wsatiated_r": "44",
+   "ksat_r": "3",
+   "om_r": "1.5",
+   "ph1to1h2o_r": "5.7",
+   "claytotal_r": "30",
+   "silttotal_r": "66",
+   "sandtotal_r": "4"
+  },
+  {
+   "hzname": "Bw",
+   "hzdept_r": "13",
+   "hzdepb_r": "71",
+   "dbthirdbar_r": "1.33",
+   "wthirdbar_r": "25.2",
+   "wfifteenbar_r": "11.8",
+   "wsatiated_r": "47",
+   "ksat_r": "9",
+   "om_r": "0.6",
+   "ph1to1h2o_r": "6.6",
+   "claytotal_r": "24",
+   "silttotal_r": "72",
+   "sandtotal_r": "4"
+  },
+  {
+   "hzname": "C",
+   "hzdept_r": "71",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.38",
+   "wthirdbar_r": "29.7",
+   "wfifteenbar_r": "10.5",
+   "wsatiated_r": "45",
+   "ksat_r": "9",
+   "om_r": "0.3",
+   "ph1to1h2o_r": "7.3",
+   "claytotal_r": "20",
+   "silttotal_r": "74",
+   "sandtotal_r": "6"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T11:30:25+00:00"
+}

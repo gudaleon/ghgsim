@@ -1,0 +1,21 @@
+fips,state,county,ppe_quintile,drainage,p_over_pe_may_oct,zone_primary,synthetic_N_kg,lat,lon
+08125,CO,Yuma County,0,poor,0.371,warm_temperate_dry,19820195.9,40.00077,-102.421649
+20009,KS,Barton County,0,poor,0.54,warm_temperate_dry,11398339.7,38.481239,-98.767837
+38101,ND,Ward County,0,well,0.489,cool_temperate_dry,27803497.8,48.216686,-101.540537
+38105,ND,Williams County,0,well,0.401,cool_temperate_dry,25981502.0,48.355765,-103.501333
+38017,ND,Cass County,1,poor,0.618,cool_temperate_dry,34926946.8,46.927003,-97.252375
+38019,ND,Cavalier County,1,poor,0.612,cool_temperate_dry,27995998.2,48.768439,-98.46379
+27119,MN,Polk County,1,well,0.658,cool_temperate_dry,26537975.2,47.774254,-96.400027
+31041,NE,Custer County,1,well,0.547,cool_temperate_dry,25622531.1,41.393893,-99.726866
+17019,IL,Champaign County,2,poor,0.723,warm_temperate_dry,24163013.0,40.138985,-88.196975
+17113,IL,McLean County,2,poor,0.72,warm_temperate_dry,23773103.1,40.494559,-88.844539
+19193,IA,Woodbury County,2,well,0.7,cool_temperate_dry,19752617.4,42.39322,-96.053296
+27127,MN,Redwood County,2,well,0.735,cool_temperate_dry,17797406.4,44.403536,-95.254241
+17075,IL,Iroquois County,3,poor,0.741,warm_temperate_dry,26783585.4,40.748867,-87.833601
+19155,IA,Pottawattamie County,3,poor,0.79,warm_temperate_dry,22887544.5,41.340184,-95.544905
+27129,MN,Renville County,3,well,0.754,cool_temperate_dry,22134721.8,44.723697,-94.955617
+19047,IA,Crawford County,3,well,0.784,cool_temperate_dry,18601931.7,42.043119,-95.38909
+19019,IA,Buchanan County,4,poor,0.863,cool_temperate_moist,20300490.8,42.470328,-91.838666
+19081,IA,Hancock County,4,poor,0.827,cool_temperate_dry,20260328.6,43.075411,-93.743697
+19109,IA,Kossuth County,4,well,0.797,cool_temperate_dry,28261705.3,43.212356,-94.213965
+19031,IA,Cedar County,4,well,0.835,warm_temperate_dry,20361491.9,41.77236,-91.132611

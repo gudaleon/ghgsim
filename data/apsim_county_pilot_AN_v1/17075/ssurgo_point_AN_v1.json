@@ -1,0 +1,152 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  40.748867,
+  -87.833601
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-87.833601 40.748867)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "175559",
+   "muname": "Gilford fine sandy loam, 0 to 2 percent slopes",
+   "areaname": "Iroquois County, Illinois",
+   "areasymbol": "IL075",
+   "saverest": "8/23/2026 8:00:06 PM",
+   "cokey": "27808109",
+   "compname": "Gilford",
+   "comppct_r": "90",
+   "majcompflag": "Yes",
+   "taxclname": "Coarse-loamy, mixed, superactive, mesic Typic Endoaquolls",
+   "hydgrp": "A/D",
+   "slope_r": "0.5",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "175559",
+   "muname": "Gilford fine sandy loam, 0 to 2 percent slopes",
+   "areaname": "Iroquois County, Illinois",
+   "areasymbol": "IL075",
+   "saverest": "8/23/2026 8:00:06 PM",
+   "cokey": "27808107",
+   "compname": "Orthents, loamy",
+   "comppct_r": "4",
+   "majcompflag": "No ",
+   "taxclname": "Fine-loamy, mixed, active, nonacid, mesic Oxyaquic Udorthents",
+   "hydgrp": "C",
+   "slope_r": "0.5",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "175559",
+   "muname": "Gilford fine sandy loam, 0 to 2 percent slopes",
+   "areaname": "Iroquois County, Illinois",
+   "areasymbol": "IL075",
+   "saverest": "8/23/2026 8:00:06 PM",
+   "cokey": "27808108",
+   "compname": "Fieldon",
+   "comppct_r": "4",
+   "majcompflag": "No ",
+   "taxclname": "Coarse-loamy, mixed, superactive, calcareous, mesic Typic Endoaquolls",
+   "hydgrp": "B/D",
+   "slope_r": "0.5",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "175559",
+   "muname": "Gilford fine sandy loam, 0 to 2 percent slopes",
+   "areaname": "Iroquois County, Illinois",
+   "areasymbol": "IL075",
+   "saverest": "8/23/2026 8:00:06 PM",
+   "cokey": "27808106",
+   "compname": "Urban land",
+   "comppct_r": "2",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": "0.1",
+   "drainagecl": null
+  }
+ ],
+ "dominant": {
+  "mukey": "175559",
+  "muname": "Gilford fine sandy loam, 0 to 2 percent slopes",
+  "areaname": "Iroquois County, Illinois",
+  "areasymbol": "IL075",
+  "saverest": "8/23/2026 8:00:06 PM",
+  "cokey": "27808109",
+  "compname": "Gilford",
+  "comppct_r": "90",
+  "majcompflag": "Yes",
+  "taxclname": "Coarse-loamy, mixed, superactive, mesic Typic Endoaquolls",
+  "hydgrp": "A/D",
+  "slope_r": "0.5",
+  "drainagecl": "Poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "38",
+   "dbthirdbar_r": "1.55",
+   "wthirdbar_r": "23.7",
+   "wfifteenbar_r": "15.4",
+   "wsatiated_r": "37",
+   "ksat_r": "28.23",
+   "om_r": "4",
+   "ph1to1h2o_r": "7.2",
+   "claytotal_r": "14",
+   "silttotal_r": "23",
+   "sandtotal_r": "63"
+  },
+  {
+   "hzname": "Bg",
+   "hzdept_r": "38",
+   "hzdepb_r": "94",
+   "dbthirdbar_r": "1.65",
+   "wthirdbar_r": "18.2",
+   "wfifteenbar_r": "8.6",
+   "wsatiated_r": "35",
+   "ksat_r": "28.23",
+   "om_r": "0.8",
+   "ph1to1h2o_r": "6.9",
+   "claytotal_r": "10",
+   "silttotal_r": "22",
+   "sandtotal_r": "68"
+  },
+  {
+   "hzname": "BCg",
+   "hzdept_r": "94",
+   "hzdepb_r": "122",
+   "dbthirdbar_r": "1.7",
+   "wthirdbar_r": "12.8",
+   "wfifteenbar_r": "4.1",
+   "wsatiated_r": "32",
+   "ksat_r": "91.74",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "6.7",
+   "claytotal_r": "5",
+   "silttotal_r": "11",
+   "sandtotal_r": "84"
+  },
+  {
+   "hzname": "Cg",
+   "hzdept_r": "122",
+   "hzdepb_r": "152",
+   "dbthirdbar_r": "1.75",
+   "wthirdbar_r": "9.6",
+   "wfifteenbar_r": "3.3",
+   "wsatiated_r": "31",
+   "ksat_r": "91.74",
+   "om_r": "0.2",
+   "ph1to1h2o_r": "7.5",
+   "claytotal_r": "4",
+   "silttotal_r": "7",
+   "sandtotal_r": "89"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T11:30:25+00:00"
+}
