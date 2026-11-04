@@ -1,0 +1,223 @@
+{
+ "sites": {
+  "crop_urea_lime_iowa_AN_v2": {
+   "n_crop_years": {
+    "maize": 27,
+    "soy": 0
+   },
+   "calendar_mean_dN2O": 1.277,
+   "sowing_year_mean_dN2O": 1.323,
+   "calendar_sd": 0.555,
+   "sowing_year_sd": 0.514
+  },
+  "crop_urea_lime_clarion_AN_v3": {
+   "n_crop_years": {
+    "maize": 27,
+    "soy": 0
+   },
+   "calendar_mean_dN2O": 1.01,
+   "sowing_year_mean_dN2O": 1.04,
+   "calendar_sd": 0.443,
+   "sowing_year_sd": 0.42
+  },
+  "crop_urea_lime_webster_seep_AN_v3": {
+   "n_crop_years": {
+    "maize": 27,
+    "soy": 0
+   },
+   "calendar_mean_dN2O": 0.82,
+   "sowing_year_mean_dN2O": 0.853,
+   "calendar_sd": 0.631,
+   "sowing_year_sd": 0.708
+  },
+  "crop_urea_lime_webster_swim_AN_v3": {
+   "n_crop_years": {
+    "maize": 27,
+    "soy": 0
+   },
+   "calendar_mean_dN2O": 0.594,
+   "sowing_year_mean_dN2O": 0.628,
+   "calendar_sd": 0.347,
+   "sowing_year_sd": 0.342
+  },
+  "crop_urea_lime_webster_tile_AN_v3": {
+   "n_crop_years": {
+    "maize": 27,
+    "soy": 0
+   },
+   "calendar_mean_dN2O": 0.82,
+   "sowing_year_mean_dN2O": 0.853,
+   "calendar_sd": 0.631,
+   "sowing_year_sd": 0.708
+  },
+  "crop_urea_lime_webster_wt_AN_v3": {
+   "n_crop_years": {
+    "maize": 27,
+    "soy": 0
+   },
+   "calendar_mean_dN2O": 3.402,
+   "sowing_year_mean_dN2O": 3.434,
+   "calendar_sd": 0.934,
+   "sowing_year_sd": 0.813
+  },
+  "brookston_soilwater_AN_v1": {
+   "n_crop_years": {
+    "maize": 15,
+    "soy": 14
+   },
+   "calendar_soy_share": 0.303,
+   "sowing_year_soy_share": 0.191,
+   "calendar_EF_pct": 0.97,
+   "sowing_year_EF_pct": 0.97,
+   "sowing_maize_dN2O": 1.356,
+   "sowing_soy_dN2O": 0.32
+  },
+  "lake_erie_essex_brookston_ssurgo_tile_1956_AN_v3": {
+   "n_crop_years": {
+    "maize": 15,
+    "soy": 14
+   },
+   "calendar_soy_share": 0.417,
+   "sowing_year_soy_share": 0.186,
+   "calendar_EF_pct": 3.3,
+   "sowing_year_EF_pct": 3.33,
+   "sowing_maize_dN2O": 4.666,
+   "sowing_soy_dN2O": 1.066
+  },
+  "lake_erie_essex_brookston_ssurgo_tile_2rod_AN_v3": {
+   "n_crop_years": {
+    "maize": 15,
+    "soy": 14
+   },
+   "calendar_soy_share": 0.424,
+   "sowing_year_soy_share": 0.188,
+   "calendar_EF_pct": 3.2,
+   "sowing_year_EF_pct": 3.24,
+   "sowing_maize_dN2O": 4.518,
+   "sowing_soy_dN2O": 1.047
+  },
+  "lake_erie_essex_brookston_ssurgo_undrained_AN_v3": {
+   "skipped": "only 709 days (failed run)"
+  },
+  "lake_erie_essex_berrien_tile_1956_AN_v3": {
+   "n_crop_years": {
+    "maize": 15,
+    "soy": 14
+   },
+   "calendar_soy_share": 0.366,
+   "sowing_year_soy_share": 0.156,
+   "calendar_EF_pct": 2.26,
+   "sowing_year_EF_pct": 2.28,
+   "sowing_maize_dN2O": 3.31,
+   "sowing_soy_dN2O": 0.61
+  },
+  "lake_erie_essex_berrien_tile_2rod_AN_v3": {
+   "n_crop_years": {
+    "maize": 15,
+    "soy": 14
+   },
+   "calendar_soy_share": 0.367,
+   "sowing_year_soy_share": 0.156,
+   "calendar_EF_pct": 2.26,
+   "sowing_year_EF_pct": 2.27,
+   "sowing_maize_dN2O": 3.301,
+   "sowing_soy_dN2O": 0.609
+  },
+  "lake_erie_essex_berrien_undrained_AN_v3": {
+   "n_crop_years": {
+    "maize": 15,
+    "soy": 14
+   },
+   "calendar_soy_share": 0.364,
+   "sowing_year_soy_share": 0.154,
+   "calendar_EF_pct": 2.28,
+   "sowing_year_EF_pct": 2.3,
+   "sowing_maize_dN2O": 3.343,
+   "sowing_soy_dN2O": 0.61
+  },
+  "lake_erie_essex_brookston_tile_1956_AN_v3": {
+   "skipped": "only 160 days (failed run)"
+  },
+  "lake_erie_essex_brookston_tile_2rod_AN_v3": {
+   "skipped": "only 160 days (failed run)"
+  },
+  "lake_erie_essex_brookston_undrained_AN_v3": {
+   "skipped": "only 160 days (failed run)"
+  },
+  "lake_erie_maumee_hoytville_tile_1956_AN_v3": {
+   "n_crop_years": {
+    "maize": 15,
+    "soy": 14
+   },
+   "calendar_soy_share": 0.494,
+   "sowing_year_soy_share": 0.187,
+   "calendar_EF_pct": 3.15,
+   "sowing_year_EF_pct": 3.19,
+   "sowing_maize_dN2O": 4.455,
+   "sowing_soy_dN2O": 1.024
+  },
+  "lake_erie_maumee_hoytville_tile_lt_AN_v3": {
+   "n_crop_years": {
+    "maize": 15,
+    "soy": 14
+   },
+   "calendar_soy_share": 0.508,
+   "sowing_year_soy_share": 0.178,
+   "calendar_EF_pct": 3.59,
+   "sowing_year_EF_pct": 3.62,
+   "sowing_maize_dN2O": 5.118,
+   "sowing_soy_dN2O": 1.111
+  },
+  "lake_erie_maumee_hoytville_undrained_AN_v3": {
+   "skipped": "only 442 days (failed run)"
+  },
+  "crop_urea_lime_webster_gr_tile_AN_v3": {
+   "n_crop_years": {
+    "maize": 27,
+    "soy": 0
+   },
+   "calendar_mean_dN2O": 0.629,
+   "sowing_year_mean_dN2O": 0.665,
+   "calendar_sd": 0.382,
+   "sowing_year_sd": 0.403
+  },
+  "crop_urea_lime_webster_gr_AN_v3": {
+   "n_crop_years": {
+    "maize": 27,
+    "soy": 0
+   },
+   "calendar_mean_dN2O": 0.629,
+   "sowing_year_mean_dN2O": 0.665,
+   "calendar_sd": 0.382,
+   "sowing_year_sd": 0.403
+  }
+ },
+ "counties": {
+  "CA": {
+   "n": 32,
+   "mean_cal_EF_pct": 0.524,
+   "mean_sow_EF_pct": 0.611,
+   "median_rel_change_pct": 12.8,
+   "rel_change_range_pct": [
+    -0.2,
+    205.7
+   ],
+   "spearman_cal_vs_sow": 0.917,
+   "top10pct_overlap": "3/3",
+   "median_sd_ratio_sow_over_cal": 0.948
+  },
+  "US": {
+   "n": 97,
+   "mean_cal_EF_pct": 1.114,
+   "mean_sow_EF_pct": 1.185,
+   "median_rel_change_pct": 1.3,
+   "rel_change_range_pct": [
+    -8.9,
+    123.4
+   ],
+   "spearman_cal_vs_sow": 0.93,
+   "top10pct_overlap": "8/10",
+   "median_sd_ratio_sow_over_cal": 0.941
+  }
+ }
+}
