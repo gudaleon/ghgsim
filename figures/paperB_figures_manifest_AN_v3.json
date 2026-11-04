@@ -1,0 +1,17 @@
+{
+  "inputs_sha256": {
+    "fig3_us_county_and_epa_AN_v3.png": {
+      "data/us_county_2006_vs_2019_AN_v2.csv.gz": "0beb435fea4cdd0985e3dd0afc4e9c937384b55fa31c1eadcd5ef7c44ed5f425",
+      "data/us_national_2006_vs_2019_vs_epa_AN_v2.csv": "fd02be8a2b6ab432e72e844f2b89161f68557d0d471b1b3012252c8cd9ae58f0",
+      "boundary:cb_2021_us_county_20m.zip": "b91964d40b7332e410eb22bde239d6f2495271175c17338d5f0c30c4bb3bc16d"
+    }
+  },
+  "checks": {
+    "3": {
+      "mapped": 3075,
+      "no_estimate": 68,
+      "allocated": 2846,
+      "median": 10.728617757471671
+    }
+  }
+}
