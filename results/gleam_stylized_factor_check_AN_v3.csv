@@ -1,0 +1,231 @@
+herd_id,manure_management_system,climate,gleam_column,gleam_value_v2,ghgsim_module,ghgsim_param,ghgsim_value,v1_value,changed_from_v1
+dairy_forage_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_forage_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_forage_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_forage_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_forage_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_forage_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_forage_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_forage_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_forage_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_forage_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_forage_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_forage_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_forage_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_forage_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_forage_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_forage_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_forage_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_forage_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_forage_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_forage_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_forage_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_forage_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_forage_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_forage_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_forage_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_forage_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_forage_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_forage_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_forage_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_forage_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_forage_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_forage_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_forage_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_forage_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_forage_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_forage_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_forage_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_forage_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_forage_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_forage_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_forage_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_forage_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_forage_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_forage_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_forage_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_forage_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_forage_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_forage_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_forage_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_forage_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_forage_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_solid|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_solid|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_forage_covered_solid|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_forage_covered_solid|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_forage_covered_solid|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_forage_covered_solid|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_solid|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_forage_covered_solid|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_forage_covered_solid|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_forage_covered_solid|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_forage_covered_solid|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_solid|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_forage_covered_solid|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_forage_covered_solid|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_forage_covered_solid|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_forage_covered_solid|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_solid|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_forage_covered_solid|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_forage_covered_solid|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_forage_covered_solid|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_solid|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_solid|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_forage_covered_solid|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_forage_covered_solid|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_forage_covered_solid|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_solid|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_forage_covered_solid|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_forage_covered_solid|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_forage_covered_solid|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_forage_covered_solid|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_high_grain_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_high_grain_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_high_grain_uncovered|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_high_grain_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_high_grain_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_high_grain_uncovered|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_high_grain_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_high_grain_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_high_grain_uncovered|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_high_grain_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_high_grain_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_high_grain_uncovered|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_high_grain_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_high_grain_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_high_grain_uncovered|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_high_grain_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_high_grain_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_high_grain_uncovered|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_high_grain_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_high_grain_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_high_grain_covered_crust|dairy_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+dairy_high_grain_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+dairy_high_grain_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,0.4,IPCC2006.manure,FracGasMS_dairy_liquid_slurry,0.4,0.4,0
+dairy_high_grain_covered_crust|dairy_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_high_grain_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_high_grain_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_high_grain_covered_crust|dairy_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_high_grain_covered_crust|dairy_heifer|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+dairy_high_grain_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+dairy_high_grain_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+dairy_high_grain_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_dairy_liquid_nocrust,0.48,0.48,0
+dairy_high_grain_covered_crust|dairy_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_dairy_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_uncovered|beef_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_uncovered|beef_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+beef_cowcalf_uncovered|beef_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+beef_cowcalf_uncovered|beef_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,nan,IPCC2006.manure,FracGasMS_other_cattle_liquid_slurry (not published),nan,nan,0
+beef_cowcalf_uncovered|beef_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+beef_cowcalf_uncovered|beef_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_uncovered|beef_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+beef_cowcalf_uncovered|beef_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+beef_cowcalf_uncovered|beef_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,nan,IPCC2006.manure,FracGasMS_other_cattle_liquid_slurry (not published),nan,nan,0
+beef_cowcalf_uncovered|beef_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+beef_cowcalf_uncovered|beef_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_uncovered|beef_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+beef_cowcalf_uncovered|beef_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+beef_cowcalf_uncovered|beef_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_other_cattle_liquid_nocrust,0.48,0.48,0
+beef_cowcalf_uncovered|beef_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_other_cattle_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_uncovered|beef_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_uncovered|beef_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+beef_cowcalf_uncovered|beef_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+beef_cowcalf_uncovered|beef_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_other_cattle_liquid_nocrust,0.48,0.48,0
+beef_cowcalf_uncovered|beef_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_other_cattle_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_crust|beef_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_crust|beef_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+beef_cowcalf_covered_crust|beef_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+beef_cowcalf_covered_crust|beef_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,nan,IPCC2006.manure,FracGasMS_other_cattle_liquid_slurry (not published),nan,nan,0
+beef_cowcalf_covered_crust|beef_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+beef_cowcalf_covered_crust|beef_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_crust|beef_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+beef_cowcalf_covered_crust|beef_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+beef_cowcalf_covered_crust|beef_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,nan,IPCC2006.manure,FracGasMS_other_cattle_liquid_slurry (not published),nan,nan,0
+beef_cowcalf_covered_crust|beef_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+beef_cowcalf_covered_crust|beef_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_crust|beef_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+beef_cowcalf_covered_crust|beef_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+beef_cowcalf_covered_crust|beef_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_other_cattle_liquid_nocrust,0.48,0.48,0
+beef_cowcalf_covered_crust|beef_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_other_cattle_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_crust|beef_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_crust|beef_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+beef_cowcalf_covered_crust|beef_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+beef_cowcalf_covered_crust|beef_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_other_cattle_liquid_nocrust,0.48,0.48,0
+beef_cowcalf_covered_crust|beef_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_other_cattle_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_solid|beef_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_solid|beef_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+beef_cowcalf_covered_solid|beef_cow|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+beef_cowcalf_covered_solid|beef_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,nan,IPCC2006.manure,FracGasMS_other_cattle_liquid_slurry (not published),nan,nan,0
+beef_cowcalf_covered_solid|beef_cow|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+beef_cowcalf_covered_solid|beef_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2006.manure,EF3_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_solid|beef_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef4,0.01,IPCC2006.manure,EF4,0.01,0.01,0
+beef_cowcalf_covered_solid|beef_calf|IPCC2006,mms_liquid_nocrust,wet,n2o_ef5,0.0075,IPCC2006.manure,EF5,0.0075,0.0075,0
+beef_cowcalf_covered_solid|beef_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracgas,nan,IPCC2006.manure,FracGasMS_other_cattle_liquid_slurry (not published),nan,nan,0
+beef_cowcalf_covered_solid|beef_calf|IPCC2006,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2006.manure,IPCC2006 manure: no MMS leaching,0.0,0.0,0
+beef_cowcalf_covered_solid|beef_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_solid|beef_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+beef_cowcalf_covered_solid|beef_cow|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+beef_cowcalf_covered_solid|beef_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_other_cattle_liquid_nocrust,0.48,0.48,0
+beef_cowcalf_covered_solid|beef_cow|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_other_cattle_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_solid|beef_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef3,0.0,IPCC2019.manure,EF3_19_liquid_nocrust,0.0,0.0,0
+beef_cowcalf_covered_solid|beef_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef4,0.014,IPCC2019.manure,"EF4 via IPCC2019Manure._ef4 (Table 11.3 (Updated) wet, zone warm_temperate_moist)",0.014,0.01,1
+beef_cowcalf_covered_solid|beef_calf|IPCC2019,mms_liquid_nocrust,wet,n2o_ef5,0.011,IPCC2019.manure,EF5,0.011,0.011,0
+beef_cowcalf_covered_solid|beef_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracgas,0.48,IPCC2019.manure,FracGasMS19_other_cattle_liquid_nocrust,0.48,0.48,0
+beef_cowcalf_covered_solid|beef_calf|IPCC2019,mms_liquid_nocrust,wet,nitrogen_fracleach,0.0,IPCC2019.manure,FracLeachMS19_other_cattle_liquid_nocrust,0.0,0.0,0
+beef_pasture_field|beef_cow|IPCC2006,mms_pasture,wet,n2o_ef3,0.02,IPCC2006.soil,EF3PRP_CPP,0.02,0.02,0
+beef_pasture_field|beef_cow|IPCC2006,mms_pasture,wet,n2o_ef4,0.01,IPCC2006.soil,EF4,0.01,0.01,0
+beef_pasture_field|beef_cow|IPCC2006,mms_pasture,wet,n2o_ef5,0.0075,IPCC2006.soil,EF5,0.0075,0.0075,0
+beef_pasture_field|beef_cow|IPCC2006,mms_pasture,wet,nitrogen_fracgas,0.2,IPCC2006.soil,FracGASM,0.2,0.2,0
+beef_pasture_field|beef_cow|IPCC2006,mms_pasture,wet,nitrogen_fracleach,0.3,IPCC2006.soil,FracLEACH_wet,0.3,0.3,0
+beef_pasture_field|beef_calf|IPCC2006,mms_pasture,wet,n2o_ef3,0.02,IPCC2006.soil,EF3PRP_CPP,0.02,0.02,0
+beef_pasture_field|beef_calf|IPCC2006,mms_pasture,wet,n2o_ef4,0.01,IPCC2006.soil,EF4,0.01,0.01,0
+beef_pasture_field|beef_calf|IPCC2006,mms_pasture,wet,n2o_ef5,0.0075,IPCC2006.soil,EF5,0.0075,0.0075,0
+beef_pasture_field|beef_calf|IPCC2006,mms_pasture,wet,nitrogen_fracgas,0.2,IPCC2006.soil,FracGASM,0.2,0.2,0
+beef_pasture_field|beef_calf|IPCC2006,mms_pasture,wet,nitrogen_fracleach,0.3,IPCC2006.soil,FracLEACH_wet,0.3,0.3,0
+beef_pasture_field|beef_cow|IPCC2019,mms_pasture,wet,n2o_ef3,0.006,IPCC2019.soil,EF3PRP_CPP_wet,0.006,0.006,0
+beef_pasture_field|beef_cow|IPCC2019,mms_pasture,wet,n2o_ef4,0.014,IPCC2019.soil,EF4_wet,0.014,0.01,1
+beef_pasture_field|beef_cow|IPCC2019,mms_pasture,wet,n2o_ef5,0.011,IPCC2019.soil,EF5,0.011,0.011,0
+beef_pasture_field|beef_cow|IPCC2019,mms_pasture,wet,nitrogen_fracgas,0.21,IPCC2019.soil,FracGASM,0.21,0.21,0
+beef_pasture_field|beef_cow|IPCC2019,mms_pasture,wet,nitrogen_fracleach,0.24,IPCC2019.soil,FracLEACH_wet,0.24,0.24,0
+beef_pasture_field|beef_calf|IPCC2019,mms_pasture,wet,n2o_ef3,0.006,IPCC2019.soil,EF3PRP_CPP_wet,0.006,0.006,0
+beef_pasture_field|beef_calf|IPCC2019,mms_pasture,wet,n2o_ef4,0.014,IPCC2019.soil,EF4_wet,0.014,0.01,1
+beef_pasture_field|beef_calf|IPCC2019,mms_pasture,wet,n2o_ef5,0.011,IPCC2019.soil,EF5,0.011,0.011,0
+beef_pasture_field|beef_calf|IPCC2019,mms_pasture,wet,nitrogen_fracgas,0.21,IPCC2019.soil,FracGASM,0.21,0.21,0
+beef_pasture_field|beef_calf|IPCC2019,mms_pasture,wet,nitrogen_fracleach,0.24,IPCC2019.soil,FracLEACH_wet,0.24,0.24,0
