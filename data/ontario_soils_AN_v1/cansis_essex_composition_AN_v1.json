@@ -1,0 +1,161 @@
+{
+ "retrieved_utc": "2026-11-04T11:54:44+00:00",
+ "slc": "https://sis.agr.gc.ca/nsdb/ca/cac003/cac003.20110308.v3.2/ca_all_slc_v3r2.zip",
+ "soil_tables": "soil_name_on / soil_layer_on v2r20140203",
+ "soil_tables_index": "https://sis.agr.gc.ca/cansis/nsdb/soil/v2/snt/index.html",
+ "boundaries": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open03/MapServer/13|14/query",
+ "caveat": "CanSIS soil layer values are modal estimates for a named soil, not measured pedons.",
+ "essex_area_km2": 3705.2,
+ "ranking": [
+  {
+   "soil_id": "ONBKN~~~~~A",
+   "soilname": "BROOKSTON",
+   "drainage": "P",
+   "kind": "M",
+   "pmtex1": "MF",
+   "area_km2": 1543.7,
+   "share_pct": 41.7,
+   "n_layers": 3
+  },
+  {
+   "soil_id": "ONBRR~~~~~A",
+   "soilname": "BERRIEN",
+   "drainage": "I",
+   "kind": "M",
+   "pmtex1": "MF",
+   "area_km2": 428.0,
+   "share_pct": 11.6,
+   "n_layers": 6
+  },
+  {
+   "soil_id": "ONTLD~~~~~A",
+   "soilname": "TOLEDO",
+   "drainage": "P",
+   "kind": "M",
+   "pmtex1": "F",
+   "area_km2": 351.9,
+   "share_pct": 9.5,
+   "n_layers": 4
+  },
+  {
+   "soil_id": "ONPTH~~~~~A",
+   "soilname": "PERTH",
+   "drainage": "I",
+   "kind": "M",
+   "pmtex1": "MF",
+   "area_km2": 267.8,
+   "share_pct": 7.2,
+   "n_layers": 5
+  },
+  {
+   "soil_id": "ONMAR~~~~~A",
+   "soilname": "MARSH",
+   "drainage": "VP",
+   "kind": "O",
+   "pmtex1": "M",
+   "area_km2": 236.0,
+   "share_pct": 6.4,
+   "n_layers": 1
+  },
+  {
+   "soil_id": "ONCTR~~~~~A",
+   "soilname": "CAISTOR",
+   "drainage": "I",
+   "kind": "M",
+   "pmtex1": "F",
+   "area_km2": 169.4,
+   "share_pct": 4.6,
+   "n_layers": 4
+  },
+  {
+   "soil_id": "ONHRW~~~~~A",
+   "soilname": "HARROW",
+   "drainage": "W",
+   "kind": "M",
+   "pmtex1": "VC",
+   "area_km2": 133.1,
+   "share_pct": 3.6,
+   "n_layers": 4
+  },
+  {
+   "soil_id": "ONFOX~~~~~A",
+   "soilname": "FOX",
+   "drainage": "W",
+   "kind": "M",
+   "pmtex1": "VC",
+   "area_km2": 104.8,
+   "share_pct": 2.8,
+   "n_layers": 4
+  },
+  {
+   "soil_id": "ONTUC~~~~~A",
+   "soilname": "TUSCOLA",
+   "drainage": "I",
+   "kind": "M",
+   "pmtex1": "M",
+   "area_km2": 94.3,
+   "share_pct": 2.5,
+   "n_layers": 6
+  },
+  {
+   "soil_id": "ONETP~~~~~A",
+   "soilname": "EASTPORT",
+   "drainage": "R",
+   "kind": "M",
+   "pmtex1": "VC",
+   "area_km2": 87.3,
+   "share_pct": 2.4,
+   "n_layers": 3
+  },
+  {
+   "soil_id": "ONFRM~~~~~N",
+   "soilname": "FARMINGTON",
+   "drainage": "W",
+   "kind": "M",
+   "pmtex1": "FR",
+   "area_km2": 70.5,
+   "share_pct": 1.9,
+   "n_layers": 0
+  },
+  {
+   "soil_id": "ONPLL~~~~~A",
+   "soilname": "PARKHILL",
+   "drainage": "P",
+   "kind": "M",
+   "pmtex1": "M",
+   "area_km2": 62.4,
+   "share_pct": 1.7,
+   "n_layers": 3
+  },
+  {
+   "soil_id": "ONBUF~~~~~A",
+   "soilname": "BURFORD",
+   "drainage": "W",
+   "kind": "M",
+   "pmtex1": "VC",
+   "area_km2": 50.0,
+   "share_pct": 1.3,
+   "n_layers": 5
+  },
+  {
+   "soil_id": "ONALU~~~~~A",
+   "soilname": "ALLUVIUM",
+   "drainage": "I",
+   "kind": "M",
+   "pmtex1": "M",
+   "area_km2": 33.7,
+   "share_pct": 0.9,
+   "n_layers": 4
+  },
+  {
+   "soil_id": "ONSCL~~~~~A",
+   "soilname": "ST.CLAIR",
+   "drainage": "P",
+   "kind": "M",
+   "pmtex1": "MC",
+   "area_km2": 28.3,
+   "share_pct": 0.8,
+   "n_layers": 4
+  }
+ ]
+}
