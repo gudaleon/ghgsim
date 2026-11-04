@@ -1,0 +1,9 @@
+# DECISIONS_AN_v17 — GLEAM adapter v2: climate-specific N2O factors
+
+Date: 2026-11-03. Author: Alex Neumann.
+
+1. **Adapter v2 (`scripts/run_gleam_stylized_AN_v2.py`).** Every N2O factor passed to GLEAM (n2o_ef3, n2o_ef4, n2o_ef5, nitrogen_fracgas, nitrogen_fracleach) is now taken from the parameters ghgsim's own modules resolve for the same run (`compare_ipcc_2006_2019_stylized_AN_v2.resolve`): managed systems from the factor set's manure module, pasture from its soil module, using `X_{climate}` when the module defines it, else `X`. Climate is the farm field's `climate` (default wet, as ghgsim). The R driver `scripts/run_gleam_stylized_AN_v1.R` is unchanged; v1 outputs are retained.
+2. **Factor check.** `results/gleam_stylized_factor_check_AN_v2.csv` lists each GLEAM factor with the ghgsim module and parameter it came from and whether it changed from v1. Only one changed: 2019 pasture EF4, 0.010 (`EF4` aggregated) to 0.014 (`EF4_wet`), for both beef_pasture_field cohorts. EF3PRP, FracGASM, FracLEACH and EF5 already matched (2019 EF5 has a single "all" value, 0.011). 2006 manure has no MMS leaching; EF5 is passed as the 2006 soil EF5 (0.0075) and is unused because FracLeach = 0.
+3. **Result.** 2019 pasture N2O on beef_pasture_field: GLEAM 164.0512 kg = ghgsim soil N2O 164.0512 kg (ratio 1.000; v1 152.15, 0.927). 2006: 329.6951 = 329.6951. This closes the gap explained in DECISIONS_AN_v15. A `pasture_N2O_vs_soil_N2O` row is added to the comparison only for farms that are all pasture and whose field has no other N input, where ghgsim soil N2O equals PRP N2O. All other ratios are unchanged from v1. Consistency check, not validation.
+4. **Provenance quirk (no numeric effect).** ghgsim's `ipcc2019` manure module reads EF4 from registry key `IPCC2006.EF4.all` (0.01), which has the same value as `IPCC2019.EF4.all`. Recorded here; not changed in this PR.
+5. **Paper.** Draft v11 and SI v4 update the GLEAM paragraph and Supplementary Table S6.
