@@ -1,0 +1,74 @@
+{
+ "apsim": {
+  "version": "APSIM 2026.11.8142.0",
+  "commit": "d1dca5e97aa4930a2015722362483b1216005037",
+  "pr": "https://github.com/APSIMInitiative/ApsimX/pull/11706",
+  "models_dll_sha256": "b19b31cfa21a9f9420ecb37c6433edc977c3353fe2845a89a0c15b2b98b9c0d0"
+ },
+ "example": {
+  "file": "Examples/Maize.apsimx",
+  "sha256": "6a80346616dea495668b2b73abe063a15870fa15b730308ad887eb855ca83ef7"
+ },
+ "site": {
+  "point_wgs84": [
+   42.02,
+   -93.774
+  ],
+  "soil": {
+   "areaname": "Boone County, Iowa",
+   "areasymbol": "IA015",
+   "saverest": "9/8/2026 6:01:24 PM",
+   "mukey": "2835012",
+   "muname": "Webster clay loam, Bemis moraine, 0 to 2 percent slopes",
+   "cokey": "28627783",
+   "compname": "Webster",
+   "comppct_r": "90",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Endoaquolls",
+   "drainagecl": "Poorly drained",
+   "hydgrp": "C/D"
+  },
+  "soil_source": "USDA-NRCS Soil Survey Staff, SSURGO, via Soil Data Access",
+  "weather_source": "NASA POWER daily API v2.10.2",
+  "met": {
+   "tav": 9.48,
+   "amp": 30.43,
+   "days": 10958
+  }
+ },
+ "borrowed_from_APSoil_900": [
+  "KL",
+  "XF",
+  "FBiom",
+  "FInert",
+  "SoilCNRatio",
+  "FOM",
+  "FOMCNRatio",
+  "SWCON",
+  "CN2Bare",
+  "initial NO3",
+  "initial NH4"
+ ],
+ "management": {
+  "StartDate": "19-apr",
+  "EndDate": "26-may",
+  "CultivarName": "B_110",
+  "planting_source": "USDA NASS (2010) Field Crops Usual Planting and Harvesting Dates, Agricultural Handbook 628, Iowa corn for grain"
+ },
+ "runs": {
+  "iowa": {
+   "urea_N_kg_ha": 100.0
+  },
+  "iowa_0N": {
+   "urea_N_kg_ha": 0.0
+  }
+ },
+ "outputs_sha256": {
+  "boone_ia_nasa_power_1991_2020_AN_v1.met": "009beca020d41bf5aa7a5d384880c0c1db69e21625d941fe2693653d1cdc03c6",
+  "crop_urea_lime_iowa_0N_AN_v2.apsimx": "37a9144c4e3b84d0745d03f8f4855a770b8ae17cd0da62c1df3070bf9da673c6",
+  "crop_urea_lime_iowa_0N_AN_v2.Daily.csv.gz": "7f9eb96b894b4fbc30ec697e7d980b0756872afbd3fee4aff555ff46fdfda4fc",
+  "crop_urea_lime_iowa_0N_AN_v2.Report.csv.gz": "817aa7e59a178a4abd305d1f91afd2d3991bea16870b34d4dd269efaa64dfb73",
+  "crop_urea_lime_iowa_AN_v2.apsimx": "dc1379bfad6ebeea3d069e37207a95ed6499948cbb510fd4afdb6800743f492d",
+  "crop_urea_lime_iowa_AN_v2.Daily.csv.gz": "bd66525046d7c69951e98971ab393e4db7708983bd7b8b7c2533a6c29449c6d6",
+  "crop_urea_lime_iowa_AN_v2.Report.csv.gz": "76501690c5c8bc88a7e0a80cd658e9926d81f2807d0faa1647dc1a356efd99ee"
+ }
+}

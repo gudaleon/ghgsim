@@ -1,0 +1,46 @@
+{
+  "inputs_sha256": {
+    "data/ipcc_2006_vs_2019_stylized_AN_v3.csv": "a0ee24868c4def2e761f5c0ff4c52dc7926133a42cf1341f1ce18b9546fb449a",
+    "results/gleam_vs_ghgsim_stylized_AN_v3.csv": "d0e260200bc96bd02ddfef90a3ae65333e2c27f57a8586d4a11418c500baa811",
+    "data/hestia_matched_vs_ipcc_stylized_AN_v3.csv": "1d92cffc9e5c1ce629d61576455137b45d47d77ad13539afe3136ab446a61112",
+    "results/apsim_vs_ghgsim_hestia_crop_AN_v2.csv": "dc01c2181f76497e3cd9ec158e8f7b2669ae750789f774238b9d2573985b6b1e",
+    "results/apsim_AN_v2/crop_urea_lime_iowa_AN_v2.Daily.csv.gz": "bd66525046d7c69951e98971ab393e4db7708983bd7b8b7c2533a6c29449c6d6",
+    "results/apsim_AN_v1/crop_urea_lime_dalby_AN_v1.Daily.csv.gz": "cc0b4d977327df06776432df31660f7e2bc414d5d4e6e163a6271529b80a48c0"
+  },
+  "outputs": {
+    "figures/fig6_four_way_AN_v2.png": "a2ac5259ea0580217e501717c26931bbd17622a22cc2cc727dde2d7f256509b3"
+  },
+  "checks": {
+    "a": [
+      115.1191,
+      204.252,
+      204.252,
+      63.8,
+      null
+    ],
+    "b": [
+      329.6951,
+      164.0512,
+      164.0512,
+      85.0,
+      null
+    ],
+    "c": [
+      2.7217,
+      3.2044,
+      null,
+      3.088,
+      2.9203,
+      1.5771,
+      1.8922
+    ],
+    "apsim_iowa": {
+      "max_day": 0.232,
+      "constant_rate": 0.0055867496886674965
+    },
+    "apsim_dalby": {
+      "max_day": 0.313,
+      "constant_rate": 0.0055867496886674965
+    }
+  }
+}
