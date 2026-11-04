@@ -1,0 +1,15 @@
+run,site,case,corn_N,failed,last_day,years,N2O_N_kg_ha,denitrification_N2_N_kg_ha,NO3_N_tile_kg_ha,NO3_N_leached_base_kg_ha,tile_flow_mm,base_drainage_mm,rain_mm,N2O_kg_ha,water_table_mean_mm,water_table_min_mm,N2O_N_maize_years,N2O_N_soybean_years,days,total_N2O_N_kgha,share_top5pct_days,max_day_N2O_N_kgha,max_day_over_mean_day,share_days,share_N2O_within_window_after_rain
+essex_brookston_undrained,essex_brookston,undrained,172.0,---> System.Exception: Swim failed to find solution,1996-06-22,,,,,,,,,,,,,,,,,,,,
+essex_brookston_undrained_0N,essex_brookston,undrained,0.0,---> System.Exception: Swim failed to find solution,1996-06-22,,,,,,,,,,,,,,,,,,,,
+essex_brookston_tile_1956,essex_brookston,tile_1956,172.0,---> System.Exception: Swim failed to find solution,1996-06-22,,,,,,,,,,,,,,,,,,,,
+essex_brookston_tile_1956_0N,essex_brookston,tile_1956,0.0,---> System.Exception: Swim failed to find solution,1996-06-22,,,,,,,,,,,,,,,,,,,,
+essex_berrien_undrained,essex_berrien,undrained,172.0,,,30,2.3517,10.1418,0.0,14.134,0.0,96.2665,787.3933,3.6956,1000.0,1000.0,2.5589,2.1445,10958,70.552,0.3372,0.101,15.6871,0.0192,0.0252
+essex_berrien_undrained_0N,essex_berrien,undrained,0.0,,,30,1.1369,5.1263,0.0,6.6279,0.0,87.8083,787.3933,1.7866,1000.0,1000.0,1.1247,1.1491,10958,34.108,0.296,0.031,9.9595,0.0192,0.0246
+essex_berrien_tile_1956,essex_berrien,tile_1956,172.0,,,30,2.3517,10.1418,0.0,14.134,0.0,96.2665,787.3933,3.6956,1000.0,1000.0,2.5589,2.1445,10958,70.552,0.3372,0.101,15.6871,0.0192,0.0252
+essex_berrien_tile_1956_0N,essex_berrien,tile_1956,0.0,,,30,1.1369,5.1263,0.0,6.6279,0.0,87.8083,787.3933,1.7866,1000.0,1000.0,1.1247,1.1491,10958,34.108,0.296,0.031,9.9595,0.0192,0.0246
+maumee_hoytville_undrained,maumee_hoytville,undrained,172.0,,,30,3.7381,19.8805,0.0,18.148,0.0,144.002,914.6607,5.8741,1450.0,1450.0,3.3682,4.1079,10958,112.142,0.317,0.167,16.3185,0.0718,0.1193
+maumee_hoytville_undrained_0N,maumee_hoytville,undrained,0.0,,,30,1.4172,7.6836,0.0,7.2348,0.0,135.691,914.6607,2.227,1450.0,1450.0,1.4697,1.3646,10958,42.515,0.3078,0.047,12.114,0.0718,0.1176
+maumee_hoytville_tile_1956,maumee_hoytville,tile_1956,172.0,,,30,3.7381,19.8805,0.0,18.148,0.0,144.002,914.6607,5.8741,1450.0,1450.0,3.3682,4.1079,10958,112.142,0.317,0.167,16.3185,0.0718,0.1193
+maumee_hoytville_tile_1956_0N,maumee_hoytville,tile_1956,0.0,,,30,1.4172,7.6836,0.0,7.2348,0.0,135.691,914.6607,2.227,1450.0,1450.0,1.4697,1.3646,10958,42.515,0.3078,0.047,12.114,0.0718,0.1176
+maumee_hoytville_tile_lt,maumee_hoytville,tile_lt,172.0,,,30,3.7381,19.8805,0.0,18.148,0.0,144.002,914.6607,5.8741,1450.0,1450.0,3.3682,4.1079,10958,112.142,0.317,0.167,16.3185,0.0718,0.1193
+maumee_hoytville_tile_lt_0N,maumee_hoytville,tile_lt,0.0,,,30,1.4172,7.6836,0.0,7.2348,0.0,135.691,914.6607,2.227,1450.0,1450.0,1.4697,1.3646,10958,42.515,0.3078,0.047,12.114,0.0718,0.1176
