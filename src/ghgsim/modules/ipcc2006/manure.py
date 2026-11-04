@@ -18,6 +18,7 @@ Source: 2006 IPCC Guidelines for National Greenhouse Gas Inventories,
         Volume 4, Chapter 10.
 """
 
+import math
 from collections.abc import Mapping
 from typing import Any
 
@@ -53,6 +54,19 @@ def _fracgas_ms(params: Mapping[str, Any], animal: str, fracgas_key: str) -> flo
         if name in params:
             return float(params[name])
     raise KeyError(f"Missing FracGasMS for animal '{animal}' system '{fracgas_key}'")
+
+
+def _fraclossms(params: Mapping[str, Any], animal: str, fracgas_key: str) -> float:
+    """2006 Table 10.23 FracLossMS; NaN when the table has no cell for this animal/system."""
+    candidates = [f"FracLossMS_{animal}_{fracgas_key}"]
+    if is_swine(animal):
+        candidates.append(f"FracLossMS_swine_{fracgas_key}")
+    if is_poultry(animal):
+        candidates.append(f"FracLossMS_poultry_{fracgas_key}")
+    for name in candidates:
+        if name in params and params[name] is not None:
+            return float(params[name])
+    return math.nan
 
 
 class IPCC2006Manure:
@@ -167,6 +181,25 @@ class IPCC2006Manure:
             "IPCC2006.FracGasMS.poultry|poultry_without_litter", "FracGasMS poultry without litter"
         ),
         "FracGasMS_poultry_lagoon": ParamRef("IPCC2006.FracGasMS.poultry|lagoon", "FracGasMS poultry lagoon"),
+        # Table 10.23 FracLossMS (total N loss incl. leaching/runoff) for Eq 10.34.
+        # fallback NaN: no published cell (e.g. other-cattle liquid) -> N_MMS_Avb NaN, never invented.
+        "FracLossMS_swine_lagoon": ParamRef("IPCC2006.FracLossMS.swine|lagoon", "Table 10.23 total N loss swine lagoon", math.nan),
+        "FracLossMS_swine_pit": ParamRef("IPCC2006.FracLossMS.swine|pit", "Table 10.23 total N loss swine pit", math.nan),
+        "FracLossMS_swine_deep_bedding": ParamRef("IPCC2006.FracLossMS.swine|deep_bedding", "Table 10.23 total N loss swine deep_bedding", math.nan),
+        "FracLossMS_swine_liquid_slurry": ParamRef("IPCC2006.FracLossMS.swine|liquid_slurry", "Table 10.23 total N loss swine liquid_slurry", math.nan),
+        "FracLossMS_swine_solid_storage": ParamRef("IPCC2006.FracLossMS.swine|solid_storage", "Table 10.23 total N loss swine solid_storage", math.nan),
+        "FracLossMS_dairy_lagoon": ParamRef("IPCC2006.FracLossMS.dairy|lagoon", "Table 10.23 total N loss dairy lagoon", math.nan),
+        "FracLossMS_dairy_liquid_slurry": ParamRef("IPCC2006.FracLossMS.dairy|liquid_slurry", "Table 10.23 total N loss dairy liquid_slurry", math.nan),
+        "FracLossMS_dairy_pit": ParamRef("IPCC2006.FracLossMS.dairy|pit", "Table 10.23 total N loss dairy pit", math.nan),
+        "FracLossMS_dairy_dry_lot": ParamRef("IPCC2006.FracLossMS.dairy|dry_lot", "Table 10.23 total N loss dairy dry_lot", math.nan),
+        "FracLossMS_dairy_solid_storage": ParamRef("IPCC2006.FracLossMS.dairy|solid_storage", "Table 10.23 total N loss dairy solid_storage", math.nan),
+        "FracLossMS_dairy_daily_spread": ParamRef("IPCC2006.FracLossMS.dairy|daily_spread", "Table 10.23 total N loss dairy daily_spread", math.nan),
+        "FracLossMS_poultry_poultry_without_litter": ParamRef("IPCC2006.FracLossMS.poultry|poultry_without_litter", "Table 10.23 total N loss poultry poultry_without_litter", math.nan),
+        "FracLossMS_poultry_lagoon": ParamRef("IPCC2006.FracLossMS.poultry|lagoon", "Table 10.23 total N loss poultry lagoon", math.nan),
+        "FracLossMS_poultry_poultry_with_litter": ParamRef("IPCC2006.FracLossMS.poultry|poultry_with_litter", "Table 10.23 total N loss poultry poultry_with_litter", math.nan),
+        "FracLossMS_other_cattle_dry_lot": ParamRef("IPCC2006.FracLossMS.other_cattle|dry_lot", "Table 10.23 total N loss other_cattle dry_lot", math.nan),
+        "FracLossMS_other_cattle_solid_storage": ParamRef("IPCC2006.FracLossMS.other_cattle|solid_storage", "Table 10.23 total N loss other_cattle solid_storage", math.nan),
+        "FracLossMS_other_cattle_deep_bedding": ParamRef("IPCC2006.FracLossMS.other_cattle|deep_bedding", "Table 10.23 total N loss other_cattle deep_bedding", math.nan),
     }
 
     outputs = {
@@ -177,6 +210,10 @@ class IPCC2006Manure:
         "N_PRP_kg": VarSpec("N_PRP_kg", "kg N / year", "Nitrogen from pasture/range/paddock (to Ch11)", "scalar", True),
         "Nex_kg_head": VarSpec("Nex_kg_head", "kg N / year", "Nitrogen excretion per head", "scalar", True),
         "N_managed_kg": VarSpec("N_managed_kg", "kg N / year", "Managed manure N (non-PRP)", "scalar", True),
+        "N_MMS_Avb_kg": VarSpec(
+            "N_MMS_Avb_kg", "kg N / year",
+            "Managed manure N reaching soil after Table 10.23 FracLossMS (Eq 10.34, no bedding); NaN if no cell",
+            "scalar", True),
     }
 
     sources = [
@@ -231,6 +268,7 @@ class IPCC2006Manure:
         n_vol = 0.0
         n_prp = 0.0  # Pasture nitrogen (goes to Ch11 EF3PRP)
         n_managed = 0.0
+        n_loss = 0.0
 
         for system, fraction in systems.items():
             mcf_key, ef3_key, fracgas_key = SYSTEM_MAP_2006[system]
@@ -253,6 +291,9 @@ class IPCC2006Manure:
                 # Volatilization
                 fracgas = _fracgas_ms(params, animal, fracgas_key)
                 n_vol += head * nex * fraction * fracgas
+
+                # Eq 10.34: total N loss (volatilisation + N2O + N2 + leaching/runoff)
+                n_loss += head * nex * fraction * _fraclossms(params, animal, fracgas_key)
 
             ch4_sum_mcf += mcf * fraction
 
@@ -277,6 +318,7 @@ class IPCC2006Manure:
             "N_PRP_kg": n_prp,
             "Nex_kg_head": nex,
             "N_managed_kg": n_managed,
+            "N_MMS_Avb_kg": n_managed - n_loss,
         }
 
 

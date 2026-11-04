@@ -88,6 +88,11 @@ def holos_ecodistrict_ef1(
 
 
 FALLBACK_IPCC_DEFAULT = "fallback-IPCC-default"
+FALLBACK_IPCC2019_DRY = "fallback-IPCC2019-dry"
+# Sensitivity switch for the dry-county fallback (input "dry_fallback_ef1"):
+#   "ipcc_default" (default) -> params["EF1"] = 0.01 (2006 Table 11.1; 2019 aggregated 0.010)
+#   "ipcc2019_dry"           -> params["EF1_dry_2019"] = 0.005 (2019 Table 11.1 Updated, dry climates)
+DRY_FALLBACK_OPTIONS = ("ipcc_default", "ipcc2019_dry")
 
 
 def _is_dry_without_topo(precip, pe, fr_topo, irrigation_mm) -> bool:
@@ -213,12 +218,20 @@ class HolosSoilN2O:
             False,
         ),
         "forks": VarSpec("forks", "dimensionless", "Dict of fork_id -> option", "scalar", False),
+        "dry_fallback_ef1": VarSpec(
+            "dry_fallback_ef1",
+            "dimensionless",
+            "Sensitivity: EF1 for the holos_liang2020 dry-county fallback, ipcc_default (0.01, default) or ipcc2019_dry (0.005)",
+            "scalar",
+            False,
+        ),
     }
 
     parameters = {
         # Direct emissions - uses IPCC 2006 defaults
         # (Holos documentation indicates following IPCC guidelines)
         "EF1": ParamRef("IPCC2006.EF1.all", "Direct N2O EF for managed soils"),
+        "EF1_dry_2019": ParamRef("IPCC2019.EF1.dry", "2019 Table 11.1 (Updated) dry-climate EF1 (sensitivity only)", 0.005),
         "EF3PRP_CPP": ParamRef("IPCC2006.EF3PRP_CPP.all", "Direct N2O EF for pasture/range/paddock"),
         
         # Indirect emissions
@@ -345,7 +358,14 @@ class HolosSoilN2O:
                     # Alex 2026-11-03: dry (P/PE < 1) with no FR_Topo -> IPCC default EF1
                     # (2006 GL Vol4 Ch11 Table 11.1 = 0.01; 2019 Refinement Table 11.1
                     # aggregated = 0.010). ef1 stays at params["EF1"].
-                    ef1_status = FALLBACK_IPCC_DEFAULT
+                    opt = str(inputs.get("dry_fallback_ef1") or "ipcc_default")
+                    if opt not in DRY_FALLBACK_OPTIONS:
+                        raise ValueError(f"dry_fallback_ef1 must be one of {DRY_FALLBACK_OPTIONS}")
+                    if opt == "ipcc2019_dry":
+                        ef1 = float(params.get("EF1_dry_2019", 0.005))
+                        ef1_status = FALLBACK_IPCC2019_DRY
+                    else:
+                        ef1_status = FALLBACK_IPCC_DEFAULT
                 else:
                     ef1_status = "UNVERIFIED-input"
             else:
