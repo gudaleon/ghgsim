@@ -1,0 +1,12 @@
+iso,year,category,method_ef_pairs_CO2_CH4_N2O
+AUS,2024,3. Agriculture,"[""T1,T2,NA"", ""D,CS,NA"", ""T1,T2,T3,NA"", ""D,CS,NA"", ""T1,T2,T3,NA"", ""D,CS,NA""]"
+AUS,2024,3.A. Enteric fermentation,"[""T1,T2,T3,NA"", ""D,CS,NA""]"
+AUS,2024,3.B. Manure management,"[""T2,T3,NA"", ""D,CS,NA"", ""T2,T3,NA"", ""CS,NA""]"
+AUS,2024,3.C. Rice cultivation,"[""T2,NA"", ""D,CS,NA""]"
+AUS,2024,3.D. Agricultural soils,"[""NA"", ""NA"", ""T1,T2,NA"", ""D,CS,NA""]"
+AUS,2024,3.E. Prescribed burning of savannahs,"[""NA"", ""NA"", ""NA"", ""NA""]"
+AUS,2024,3.F. Field burning of agricultural residues,"[""T2,NA"", ""CS,NA"", ""T2,NA"", ""CS,NA""]"
+AUS,2024,3.G. Liming,"[""T2"", ""CS""]"
+AUS,2024,3.H. Urea application,"[""T1"", ""D""]"
+AUS,2024,3.I. Other carbon-containing fertilizers,"[""NA"", ""NA""]"
+AUS,2024,3.J. Other,"[""NA"", ""NA"", ""NA"", ""NA"", ""NA"", ""NA""]"

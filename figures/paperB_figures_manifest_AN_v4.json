@@ -1,0 +1,48 @@
+{
+  "inputs_sha256": {
+    "fig5_inventory_recalculations_AN_v3.png": {
+      "data/inventories_AN_v2/AUS_recalc_AN_v2.csv": "68e0903320b3e7c3522dc777f52c90b72633dd93598c876a6ee8a5d159e5d8a7",
+      "data/inventories_AN_v2/CAN_recalc_AN_v2.csv": "b7ab0d07738b724e7bc0fbeae10d0b21d3169d6945cf6630e32a0ab14d6aaa7c",
+      "data/inventories_AN_v2/DEU_recalc_AN_v2.csv": "e8ae4c721950270ace46032740a61677a548bf1c9c68962164c8f7b9cae3cae7",
+      "data/inventories_AN_v2/GBR_recalc_AN_v2.csv": "202aed14f558bc4e0b80bb5ec7a166da7094fe5fdf9554c1e4aa364fcebb8da9",
+      "data/inventories_AN_v2/IRL_recalc_AN_v2.csv": "72b7c10e0ca00c91e3712e1f834f8b6e8db09a82b138e7fafd008c8594cb9223",
+      "data/inventories_AN_v2/NZL_recalc_AN_v2.csv": "64b08dd63603c5c6fed40593eabdcfd91cea68cebf537a359ae49fbbee888a18",
+      "data/inventories_AN_v2/RUS_recalc_AN_v2.csv": "64c0c95b3d5ee6fc9f245a248404b9abcab718edb26c60f7b3a5fa87aa5f9994",
+      "data/inventories_US_AN_v1/US_recalc_2024to2025_AN_v1.csv": "bc60f4322bfccc387e1815cf77a694fe54cd25f3ae473aa457eabef636dbbd62"
+    }
+  },
+  "checks": {
+    "5": {
+      "1990": {
+        "AUS": -4.68,
+        "CAN": 0.53,
+        "DEU": 1.08,
+        "GBR": 0.91,
+        "IRL": 0.0,
+        "NZL": -0.45,
+        "RUS*": 0.12,
+        "USA": 0.07
+      },
+      "2005": {
+        "AUS": -4.57,
+        "CAN": 0.9,
+        "DEU": 0.34,
+        "GBR": 0.97,
+        "IRL": 0.0,
+        "NZL": -0.58,
+        "RUS*": -0.24,
+        "USA": 0.12
+      },
+      "Latest year (2023; USA 2022)": {
+        "AUS": -4.38,
+        "CAN": 0.51,
+        "DEU": 0.75,
+        "GBR": 1.44,
+        "IRL": 0.21,
+        "NZL": -0.8,
+        "RUS*": 1.91,
+        "USA": -0.02
+      }
+    }
+  }
+}
