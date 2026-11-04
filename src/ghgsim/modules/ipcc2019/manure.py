@@ -30,6 +30,7 @@ from collections.abc import Mapping
 from typing import Any
 
 from ghgsim.core.module import Citation, ParamRef, VarSpec, validate_module
+from ghgsim.modules.county_climate_annual import county_climate_annual
 from ghgsim.modules.ipcc2006.manure import SYSTEM_MAP_2006, IPCC2006Manure, _fracgas_ms
 from ghgsim.modules.livestock_types import is_poultry, is_swine
 
@@ -136,6 +137,10 @@ class IPCC2019Manure:
                                       "Mean annual temperature (county/farm) to derive the climate zone", "scalar", False),
         "moisture_ratio": VarSpec("moisture_ratio", "dimensionless",
                                   "Annual MAP/PET (county/farm) to derive the climate zone", "scalar", False),
+        "county_fips": VarSpec("county_fips", "dimensionless",
+                               "US county FIPS; derives MAT + annual P/PE zone from "
+                               "data/county_climate_annual_AN_v1.csv (nClimDiv 1991-2020, Hargreaves). "
+                               "Explicit climate_zone_2019 or MAT/moisture_ratio win.", "scalar", False),
         "storage_months": VarSpec("storage_months", "month",
                                   "Liquid/pit storage time for Table 10.17 (6 or 12; default 12)", "scalar", False),
     }
@@ -186,6 +191,13 @@ class IPCC2019Manure:
         t, r = inputs.get("mean_annual_temp_c"), inputs.get("moisture_ratio")
         if t not in (None, "") and r not in (None, ""):
             return climate_zone_2019(float(t), float(r))
+        fips = inputs.get("county_fips")
+        if fips not in (None, ""):
+            c = county_climate_annual(fips)
+            if c is None:
+                raise KeyError(f"county_fips {fips!r} not in county_climate_annual_AN_v1.csv")
+            # Boreal / tropical zones have no registered 2019 liquid MCF cells: fall back to 2006.
+            return c["ipcc_zone"] if c["ipcc_zone"] in ZONES_2019 else None
         return None
 
     @staticmethod
