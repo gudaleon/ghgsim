@@ -1,0 +1,82 @@
+﻿{
+ "excreta": {
+  "excretaDairyCattleKgN": {
+   "IPCC_2019_FRACGASM_NH3-N": 0.197,
+   "ipcc2019PrpCategory": "Cattle poultry and pigs"
+  },
+  "excretaBeefCattleExceptFeedlotFedKgN": {
+   "IPCC_2019_FRACGASM_NH3-N": 0.197,
+   "ipcc2019PrpCategory": "Cattle poultry and pigs"
+  },
+  "excretaPoultryKgN": {
+   "IPCC_2019_FRACGASM_NH3-N": 0.197,
+   "ipcc2019PrpCategory": "Cattle poultry and pigs"
+  },
+  "excretaTurkeysKgN": {
+   "IPCC_2019_FRACGASM_NH3-N": 0.197,
+   "ipcc2019PrpCategory": "Cattle poultry and pigs"
+  },
+  "excretaPigsKgN": {
+   "IPCC_2019_FRACGASM_NH3-N": 0.197,
+   "ipcc2019PrpCategory": "Cattle poultry and pigs"
+  }
+ },
+ "excretaManagement_EF_N2O-N": {
+  "liquidSlurryWithoutNaturalCrustCover": 0.0,
+  "poultryManureWithLitter": 0.001,
+  "poultryManureWithoutLitter": 0.001,
+  "pitStorageBelowAnimalConfinements": 0.002,
+  "pastureRangePaddockExcretaManagement": ""
+ },
+ "emission": {
+  "n2OToAirExcretaDirect": {
+   "IPCC_2019_EF3_PRP_CPP_FACTORS": "default:0.004;wet:0.006;dry:0.002"
+  },
+  "nh3ToAirExcreta": {
+   "IPCC_2019_EF4_FACTORS": "default:0.01;wet:0.014;dry:0.005"
+  },
+  "noxToAirExcreta": {
+   "IPCC_2019_EF4_FACTORS": "default:0.01;wet:0.014;dry:0.005"
+  },
+  "no3ToGroundwaterExcreta": {
+   "IPCC_2019_EF5_FACTORS": 0.011
+  }
+ },
+ "NO3_EF_2019": {
+  "liquidSlurryWithoutNaturalCrustCover": {
+   "excretaDairyCattleKgN": 0.0,
+   "excretaBeefCattleExceptFeedlotFedKgN": 0.0,
+   "excretaPoultryKgN": 0.0,
+   "excretaTurkeysKgN": 0.0,
+   "excretaPigsKgN": 0.0
+  },
+  "poultryManureWithLitter": {
+   "excretaDairyCattleKgN": "",
+   "excretaBeefCattleExceptFeedlotFedKgN": "",
+   "excretaPoultryKgN": 0.0,
+   "excretaTurkeysKgN": 0.0,
+   "excretaPigsKgN": ""
+  },
+  "poultryManureWithoutLitter": {
+   "excretaDairyCattleKgN": "",
+   "excretaBeefCattleExceptFeedlotFedKgN": "",
+   "excretaPoultryKgN": 0.0,
+   "excretaTurkeysKgN": 0.0,
+   "excretaPigsKgN": ""
+  },
+  "pitStorageBelowAnimalConfinements": {
+   "excretaDairyCattleKgN": 0.0,
+   "excretaBeefCattleExceptFeedlotFedKgN": 0.0,
+   "excretaPoultryKgN": 0.0,
+   "excretaTurkeysKgN": 0.0,
+   "excretaPigsKgN": 0.0
+  },
+  "pastureRangePaddockExcretaManagement": {
+   "excretaDairyCattleKgN": "",
+   "excretaBeefCattleExceptFeedlotFedKgN": "",
+   "excretaPoultryKgN": "",
+   "excretaTurkeysKgN": "",
+   "excretaPigsKgN": ""
+  }
+ }
+}
