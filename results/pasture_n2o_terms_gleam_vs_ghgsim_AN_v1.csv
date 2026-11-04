@@ -1,0 +1,9 @@
+farm_id,factor_set,term,ghgsim_kg_N2O,gleam_kg_N2O,ghgsim_minus_gleam_kg,ghgsim_F_PRP_kgN,ghgsim_EF4_used
+beef_pasture_field,IPCC2006,direct,271.9135,271.9135,-0.0,8651.7918,0.01
+beef_pasture_field,IPCC2006,indirect_volatilisation,27.1913,27.1913,-0.0,8651.7918,0.01
+beef_pasture_field,IPCC2006,indirect_leaching,30.5903,30.5903,-0.0,8651.7918,0.01
+beef_pasture_field,IPCC2006,total,329.6951,329.6951,-0.0,8651.7918,0.01
+beef_pasture_field,IPCC2019,direct,85.0006,85.0006,-0.0,9015.2152,0.014
+beef_pasture_field,IPCC2019,indirect_volatilisation,41.6503,29.7502,11.9001,9015.2152,0.014
+beef_pasture_field,IPCC2019,indirect_leaching,37.4003,37.4003,-0.0,9015.2152,0.014
+beef_pasture_field,IPCC2019,total,164.0512,152.1511,11.9001,9015.2152,0.014
