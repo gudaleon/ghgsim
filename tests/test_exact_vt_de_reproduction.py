@@ -13,7 +13,6 @@ This is the REAL reproduction test. Previous test was a framework stub.
 import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 import pytest
 
@@ -23,13 +22,12 @@ if str(legacy_root) not in sys.path:
     sys.path.insert(0, str(legacy_root))
 
 # Import v3's engine and parameter loader
-from livingghg import engine as v3_engine
-from livingghg import params as v3_params
+from livingghg import params as v3_params  # noqa: E402
+
+from ghgsim.core.registry import load_parameter_csv  # noqa: E402
 
 # Import new v4 modules
-from ghgsim.modules.ipcc2006 import IPCC2006Enteric, IPCC2006Manure, IPCC2006SoilN2O
-from ghgsim.modules.ipcc2019 import IPCC2019Enteric, IPCC2019SoilN2O
-from ghgsim.core.registry import load_parameter_csv
+from ghgsim.modules.ipcc2006 import IPCC2006Enteric, IPCC2006Manure, IPCC2006SoilN2O  # noqa: E402
 
 
 @pytest.fixture
@@ -206,7 +204,7 @@ def run_v4_farm_ipcc2006(farm, params_v4):
         for system in ["liquid_nocrust", "liquid_crust", "lagoon", "solid_storage", "dry_lot", "daily_spread"]:
             params[f"MCF_{system}_{zone}"] = params_v4.get_value(f"IPCC2006.MCF.{system}|{zone}")
         params[f"MCF_pasture_{zone}"] = params_v4.get_value(f"IPCC2006.MCF.pasture|{zone}")
-        params["MCF_pasture_le10C"] = params_v4.get_value(f"IPCC2006.MCF.pasture|le10C")
+        params["MCF_pasture_le10C"] = params_v4.get_value("IPCC2006.MCF.pasture|le10C")
         
         # EF3 values
         for system in ["liquid_nocrust", "liquid_crust", "lagoon", "solid_storage", "dry_lot", "daily_spread"]:
@@ -280,7 +278,7 @@ def test_vt_counties_exact_reproduction_2006(vt_counties_data, v4_params_registr
     
     failures = []
     
-    for idx, row in vt_counties_data.iterrows():
+    for _idx, row in vt_counties_data.iterrows():
         fips = row["fips"]
         state_code = row["STATE_ALPHA"]
         
@@ -318,7 +316,7 @@ def test_vt_counties_exact_reproduction_2006(vt_counties_data, v4_params_registr
               f"CO2e={rel_diff_co2e:.2e}, CH4={rel_diff_ch4:.2e}, N2O={rel_diff_n2o:.2e}")
     
     print("\n" + "-"*80)
-    print(f"MAX Relative Differences:")
+    print("MAX Relative Differences:")
     print(f"  CO2e: {max_rel_diff_co2e:.2e}")
     print(f"  CH4:  {max_rel_diff_ch4:.2e}")
     print(f"  N2O:  {max_rel_diff_n2o:.2e}")
@@ -351,7 +349,7 @@ def test_de_counties_exact_reproduction_2006(de_counties_data, v4_params_registr
     
     failures = []
     
-    for idx, row in de_counties_data.iterrows():
+    for _idx, row in de_counties_data.iterrows():
         fips = row["fips"]
         state_code = row["STATE_ALPHA"]
         
@@ -389,7 +387,7 @@ def test_de_counties_exact_reproduction_2006(de_counties_data, v4_params_registr
               f"CO2e={rel_diff_co2e:.2e}, CH4={rel_diff_ch4:.2e}, N2O={rel_diff_n2o:.2e}")
     
     print("\n" + "-"*80)
-    print(f"MAX Relative Differences:")
+    print("MAX Relative Differences:")
     print(f"  CO2e: {max_rel_diff_co2e:.2e}")
     print(f"  CH4:  {max_rel_diff_ch4:.2e}")
     print(f"  N2O:  {max_rel_diff_n2o:.2e}")

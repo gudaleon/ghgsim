@@ -1,4 +1,5 @@
-import csv, math, subprocess, sys
+import csv
+import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -11,7 +12,7 @@ def _rows(path):
         return list(csv.DictReader(fh))
 
 
-import pytest
+import pytest  # noqa: E402
 
 
 @pytest.mark.skip(reason="AN_v1 CSV was produced by ipcc2019.manure 1.x and the 2006 EF4 back-out; superseded by AN_v2 (tests/test_ipcc_2006_vs_2019_stylized_AN_v2.py). v1 file kept unchanged.")

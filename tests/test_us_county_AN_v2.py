@@ -1,9 +1,12 @@
-import csv, importlib.util, pathlib
+import csv
+import importlib.util
+import pathlib
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 def _load():
     s = importlib.util.spec_from_file_location("v2", ROOT / "scripts" / "run_us_county_2006_vs_2019_AN_v2.py")
-    m = importlib.util.module_from_spec(s); s.loader.exec_module(m); return m
+    m = importlib.util.module_from_spec(s); s.loader.exec_module(m); return m  # noqa: E702
 
 def test_reconstruct_identity():
     m = _load()

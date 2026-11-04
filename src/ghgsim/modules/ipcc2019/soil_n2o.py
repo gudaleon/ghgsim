@@ -15,7 +15,7 @@ Source: 2019 Refinement to the 2006 IPCC Guidelines,
 from collections.abc import Mapping
 from typing import Any
 
-from ghgsim.core.module import Citation, Module, ParamRef, VarSpec
+from ghgsim.core.module import Citation, ParamRef, VarSpec
 
 # Molecular weight conversion: N2O-N to N2O
 N2ON_TO_N2O = 44.0 / 28.0
@@ -140,7 +140,7 @@ class IPCC2019SoilN2O:
 
 
 # Validate module on import
-from ghgsim.core.module import validate_module
+from ghgsim.core.module import validate_module  # noqa: E402
 
 errors = validate_module(IPCC2019SoilN2O())
 if errors:

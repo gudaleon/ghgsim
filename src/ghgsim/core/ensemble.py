@@ -6,7 +6,6 @@ Runs GHG calculations across many counties in parallel with worker pools.
 
 import logging
 import multiprocessing as mp
-from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 

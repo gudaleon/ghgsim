@@ -40,6 +40,10 @@ test = [
 sobol = [
     "SALib>=1.4",
 ]
+agent = [
+    "mcp>=2.3,<3",
+    "pandas>=1.3",
+]
 api = [
     "fastapi>=0.100",
     "uvicorn>=0.20",

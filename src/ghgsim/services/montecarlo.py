@@ -5,7 +5,6 @@ Performs uncertainty analysis by sampling parameter distributions
 and running the model N times to estimate output variability.
 """
 
-from collections.abc import Mapping
 from typing import Any
 
 import numpy as np

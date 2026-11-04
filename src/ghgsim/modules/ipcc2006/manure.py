@@ -22,7 +22,7 @@ import math
 from collections.abc import Mapping
 from typing import Any
 
-from ghgsim.core.module import Citation, Module, ParamRef, VarSpec
+from ghgsim.core.module import Citation, ParamRef, VarSpec
 from ghgsim.modules.livestock_types import is_poultry, is_swine
 
 # Molecular weight conversion: N2O-N to N2O
@@ -323,7 +323,7 @@ class IPCC2006Manure:
 
 
 # Validate module on import
-from ghgsim.core.module import validate_module
+from ghgsim.core.module import validate_module  # noqa: E402
 
 errors = validate_module(IPCC2006Manure())
 if errors:
