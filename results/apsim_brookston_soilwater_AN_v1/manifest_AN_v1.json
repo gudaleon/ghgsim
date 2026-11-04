@@ -1,0 +1,65 @@
+{
+ "apsim": {
+  "version": "APSIM 2026.11.8142.0",
+  "models_dll_sha256": "b19b31cfa21a9f9420ecb37c6433edc977c3353fe2845a89a0c15b2b98b9c0d0"
+ },
+ "met": {
+  "tav": 9.68,
+  "amp": 25.47,
+  "days": 10958,
+  "power_file": "data\\apsim_site_lake_erie_AN_v2\\nasa_power_daily_1991_2020_42.1631_-82.7793_AN_v2.json.gz",
+  "filled_missing": [
+   {
+    "parameter": "ALLSKY_SFC_SW_DWN",
+    "day": "19930201",
+    "filled": 3.45
+   }
+  ]
+ },
+ "runs": {
+  "brookston_soilwater_AN_v1": {
+   "corn_urea_N_kg_ha": 172.0,
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.53,
+     "SAT_used": 0.52,
+     "BD": 1.27
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ],
+   "returncode": 0
+  },
+  "brookston_soilwater_0N_AN_v1": {
+   "corn_urea_N_kg_ha": 0.0,
+   "sat_caps": [
+    {
+     "node": 0,
+     "SAT_from_source": 0.53,
+     "SAT_used": 0.52,
+     "BD": 1.27
+    },
+    {
+     "node": 1,
+     "SAT_from_source": 0.45,
+     "SAT_used": 0.445,
+     "BD": 1.47
+    }
+   ],
+   "returncode": 0
+  }
+ },
+ "outputs_sha256": {
+  "brookston_soilwater_0N_AN_v1.apsimx": "9e3850eee8d795f790acae944e27ad3fe0c138c6c445b684880b56ecadf11548",
+  "brookston_soilwater_0N_AN_v1.Daily.csv.gz": "9245f38b7181d7e2147c1da6a4ced2ca56436606b018e779d993d35401ab8f60",
+  "brookston_soilwater_0N_AN_v1.Report.csv.gz": "768bcfcc40aa25b61fa2e7bf925c96d8b8315a07e6a6572ec1681733cc256c76",
+  "brookston_soilwater_AN_v1.apsimx": "d864e9b2548ccbbde943d741997f047c4a2bcb29645e40e4f73d7920c042e460",
+  "brookston_soilwater_AN_v1.Daily.csv.gz": "d6aad63598241c41f3c6f8f0b023fca81db8e2b03d3233e5b5d0af7d31e972ad",
+  "brookston_soilwater_AN_v1.Report.csv.gz": "715cfeda42d975763dbb519f9be26ca9390ab599d9fb75dddca0d750abfdbe69"
+ }
+}
