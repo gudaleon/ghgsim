@@ -1,0 +1,82 @@
+{
+ "apsim": {
+  "version": "APSIM 2026.11.8142.0",
+  "commit": "d1dca5e97aa4930a2015722362483b1216005037",
+  "models_dll_sha256": "b19b31cfa21a9f9420ecb37c6433edc977c3353fe2845a89a0c15b2b98b9c0d0"
+ },
+ "main_run": "results/apsim_AN_v2 (Webster, SoilWater; unchanged)",
+ "weather": "results/apsim_AN_v2/boone_ia_nasa_power_1991_2020_AN_v1.met",
+ "swim_template": "Examples/Tutorials/SWIM.apsimx, HowToAddTileDrainage (Swim3 + SwimSubsurfaceDrain)",
+ "tile": {
+  "DrainDepth": 1200.0,
+  "DrainSpacing": 28500.0,
+  "DrainRadius": 150.0,
+  "ImpermDepth": 2000.0,
+  "Open": true,
+  "source": "Malone, R. W. et al. Evaluating and predicting agricultural management effects under tile drainage using modified APSIM. Geoderma 140, 310-322 (2007), doi:10.1016/j.geoderma.2007.04.014 (Nashua, IA: 1.2 m depth, 28.5 m spacing)",
+  "Klat": "SSURGO ksat_r of the horizon at drain depth x 86.4 (mm/d)",
+  "ImpermDepth_basis": "bottom of SSURGO profile; no corestrictions record"
+ },
+ "clarion": {
+  "areasymbol": "IA015",
+  "saverest": "9/8/2026 6:01:24 PM",
+  "mukey": "2765522",
+  "muname": "Clarion loam, Bemis moraine, 2 to 6 percent slopes",
+  "muacres": "48216",
+  "cokey": "28627767",
+  "compname": "Clarion",
+  "comppct_r": "85",
+  "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Hapludolls",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "borrowed_sensitivity": "one at a time on Webster: initial NO3+NH4 x0.5, x2; FBiom x0.5, x1.5; FInert x0.75, x1.25 (cap 0.99)",
+ "runs": {
+  "webster_gr": {
+   "case": "webster_gr",
+   "soil": "webster",
+   "swim": true,
+   "tile": false,
+   "seepage": true,
+   "urea_N_kg_ha": 100.0
+  },
+  "webster_gr_0N": {
+   "case": "webster_gr",
+   "soil": "webster",
+   "swim": true,
+   "tile": false,
+   "seepage": true,
+   "urea_N_kg_ha": 0.0
+  },
+  "webster_gr_tile": {
+   "case": "webster_gr_tile",
+   "soil": "webster",
+   "swim": true,
+   "tile": true,
+   "seepage": true,
+   "urea_N_kg_ha": 100.0
+  },
+  "webster_gr_tile_0N": {
+   "case": "webster_gr_tile",
+   "soil": "webster",
+   "swim": true,
+   "tile": true,
+   "seepage": true,
+   "urea_N_kg_ha": 0.0
+  }
+ },
+ "outputs_sha256": {
+  "crop_urea_lime_webster_gr_0N_AN_v3.apsimx": "ad7bc03d0d5f9b0385dfadbf55a8562920cd1482c50024b37f9c26d5c04efafe",
+  "crop_urea_lime_webster_gr_0N_AN_v3.Daily.csv.gz": "1d4e53b3279e24a79b3ff44d9c8d7c11638a3ae9d707ebf547d251e84cf4acfd",
+  "crop_urea_lime_webster_gr_0N_AN_v3.Report.csv.gz": "706abbc140cf20a248ec32ac7e9a9413d600bfab5b3e56ffca9622259510315a",
+  "crop_urea_lime_webster_gr_AN_v3.apsimx": "69c029c158263ce58f027ceadfa72ca80dff899c814418911d376f88a584c8de",
+  "crop_urea_lime_webster_gr_AN_v3.Daily.csv.gz": "c4e07493525c1aa27372f6ff58fb836677126a2c8637efe4bf0ba952e3ed43b6",
+  "crop_urea_lime_webster_gr_AN_v3.Report.csv.gz": "c706dc1ee4b542c03c97b84ad3816897beb218af5900c0ee995424abc8c913f8",
+  "crop_urea_lime_webster_gr_tile_0N_AN_v3.apsimx": "632bff7439f15a4ae2551ecc8800819788df4fec6609f7f96eb4bd63b37e0c54",
+  "crop_urea_lime_webster_gr_tile_0N_AN_v3.Daily.csv.gz": "c680568e7950e4f27e0014c79f171689e757a915c63146b90fdf275b442e0ef3",
+  "crop_urea_lime_webster_gr_tile_0N_AN_v3.Report.csv.gz": "5d4de8c2804bb95698ed4914185a30181749b085bb235214cdce847eebc9eb42",
+  "crop_urea_lime_webster_gr_tile_AN_v3.apsimx": "f48343faf4e9862ac553d4ef5acf704e1c0cd1a6fa3394c87b43f40b4bcdf7cb",
+  "crop_urea_lime_webster_gr_tile_AN_v3.Daily.csv.gz": "37725989ccabebe055461cd456735d6b5895d3dfc906bc2f26051fc81c80d1f5",
+  "crop_urea_lime_webster_gr_tile_AN_v3.Report.csv.gz": "bf44c67caf4a2fd912bfdd445b57d6547064ac5399277d093600734acf7d086e"
+ }
+}
