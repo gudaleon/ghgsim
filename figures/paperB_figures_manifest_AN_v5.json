@@ -1,0 +1,13 @@
+{
+  "inputs_sha256": {
+    "fig2_stylized_2006_vs_2019_AN_v3.png": {
+      "data/ipcc_2006_vs_2019_stylized_AN_v3.csv": "a0ee24868c4def2e761f5c0ff4c52dc7926133a42cf1341f1ce18b9546fb449a"
+    }
+  },
+  "checks": {
+    "2": [
+      -18.498415951505176,
+      91.08951797863685
+    ]
+  }
+}
