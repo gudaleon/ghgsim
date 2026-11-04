@@ -25,3 +25,6 @@
 7. County tools read the committed full-run CSV (`variant` disclosed by default; `D_allocated` is the sensitivity).
 8. Dashboard: new `dashboard/app_AN_v2.py` (v1 kept) with an "Ask the paper" tab calling the same functions; no LLM.
 9. CI installs the new `agent` extra (`mcp>=2.3,<3`) so the MCP test runs; tests skip if `mcp` is absent.
+10. `data/us_county_2006_vs_2019_AN_v2.csv.gz` (10.5 MB) was ignored by `*.csv.gz` in .gitignore, so CI and any
+    other checkout lacked the county results the agent serves. Force-added; SHA-256 `0beb435f...` equals the reference
+    `committed_sha256` in `results/results_manifest_AN_v2.json`. .gitignore rule kept for other gz files.
