@@ -1,0 +1,42 @@
+{
+ "version": "AN_v1",
+ "run_utc": "2026-11-04T05:07:42Z",
+ "hestia_api": "http://localhost/api",
+ "draft_id": "ghgsim-matched-an-v1-2c1341",
+ "hestia_version": {
+  "current": "7.1.0",
+  "date": "",
+  "commit": "",
+  "schema": "39.2.0",
+  "models": "0.90.0",
+  "latest": "7.2.0",
+  "isPrerelease": false,
+  "isLatest": false,
+  "validation": "0.41.13",
+  "aggregation": "0.23.1",
+  "glossary": "0.103.0"
+ },
+ "glossary_pinned": "0.103.0",
+ "route": "drafts: /drafts/upload -> PATCH /drafts/{id}/validate -> POST /drafts/{id}/calculate (not /recalculate)",
+ "earth_engine": "not configured (empty ee folder); site inputs supplied, methodClassification='regional statistical data'",
+ "gwp_ar5": {
+  "CH4": 28.0,
+  "N2O": 265.0
+ },
+ "framing": "consistency check, not validation",
+ "inputs_sha256": {
+  "stylized_farms_AN_v6.yaml": "e4cedd9ee179e65252b5e72e7c78f3f427765ae0c596f63340c9774397074c3c",
+  "ipcc_2006_vs_2019_stylized_AN_v2.csv": "486ae898fc76f59faaf00f7373cfbbbe203aa70c92cca067cfb3c23a2c53ea09",
+  "hestia_matched_inputs_AN_v1.json": "25320af0d1435b3cbef44f1a08b8782ff2565627e8af45de59fecdeda31e914e",
+  "hestia_matched_activity_AN_v1.csv": "0fb21d9ec5248b5cb52b8392ef39d6a30c7451ea317ee9bfef94bae55bfe519d",
+  "compare_ipcc_2006_2019_stylized_AN_v2.py": "482db7797eb647deccf050a817a328d8112854b988c6cb60eddc8a2f372a103c"
+ },
+ "outputs_sha256": {
+  "hestia_matched_emissions_raw_AN_v1.csv": "96d03da061dec9a2e743b1492aad9991355def5aab94d38e1a7afbe9a4760740",
+  "hestia_matched_vs_ipcc_stylized_AN_v1.csv": "1031e8863e86bf554a9b1fe99e1afe736d5115817384577dfc037466bbf850b1"
+ },
+ "skipped_farms": [
+  "broiler_litter_field",
+  "market_swine_field"
+ ]
+}
