@@ -51,11 +51,12 @@ whose `/api/system/data` reports `ready: true`.
 `python scripts/decompose_hestia_n2o_AN_v1.py fetch` (needs the CE API), then `... build` (offline) writes
 `data/hestia_matched_vs_ipcc_stylized_AN_v2.csv`: direct, volatilisation-indirect and leaching-indirect N2O per farm, with each model's
 N basis and factors. HESTIA's lookups are in `data/hestia_n2o_lookups_AN_v1.json` and its N flows in `data/hestia_matched_nflows_AN_v1.csv`.
-Full reasoning in `docs/DECISIONS_AN_v19.md`. In short:
+Full reasoning in `docs/DECISIONS_AN_v20.md`. In short:
 - Manure direct N2O agrees (same Table 10.21 EF3; liquid slurry without crust is 0 in IPCC 2019 too).
 - The manure gap is the volatilisation term: HESTIA takes NH3 from EMEP/EEA 2019 and NOx from Daemmgen 2009 (0.08-0.25 of excreted N),
-  not IPCC FracGasMS (0.25-0.48), then applies EF4 wet 0.014. ghgsim's manure module applies EF4 0.010 (flagged, D19.3).
+  not IPCC FracGasMS (0.25-0.48), then applies EF4 wet 0.014. ghgsim's manure module applies EF4 0.010 (flagged, D20.3).
 - Leaching from confined manure is 0 in both.
 - Pasture: direct agrees except for the N basis (81.6 vs 85.0 kg). HESTIA returned no indirect PRP N2O because no NO3 leaching
   emission was produced without site leaching inputs; that is the missing 79 kg.
 - v1 supplied 2006-based Nex to HESTIA while ghgsim 2019 uses 2019 Nrate, so HESTIA's N is 0-31% lower (largest for poultry).
+
