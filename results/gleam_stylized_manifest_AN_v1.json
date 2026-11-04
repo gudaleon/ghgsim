@@ -1,0 +1,45 @@
+{
+  "version": "AN_v1",
+  "purpose": "GLEAM run unmodified as an outside model; consistency check, not validation",
+  "gleam": {
+    "package": "gleam",
+    "version": "0.8.0",
+    "tag": "v0.8.0-alpha",
+    "commit": "b0937d260ea8c8022c241275220709c9294bae5f",
+    "licence": "AGPL-3",
+    "source": "https://codeload.github.com/un-fao/GLEAM/tar.gz/b0937d260ea8c8022c241275220709c9294bae5f",
+    "tarball_sha256": "2b0bf605dc46d0e04a552a033a025e9db787c06c2582cb7007fbd293aa2d8d75",
+    "modified": false
+  },
+  "r": {
+    "r_version": "R version 4.6.2 (2026-10-29 ucrt)",
+    "platform": "x86_64-w64-mingw32",
+    "gleam_version": "0.8.0",
+    "gleam_libpath": "D:/R/library_AN_v1",
+    "gleam_remote_sha": null,
+    "data_table_version": "1.18.6.1",
+    "cli_version": "3.6.6"
+  },
+  "python": "3.12.10",
+  "inputs": {
+    "data/stylized_farms_AN_v6.yaml": "e4cedd9ee179e65252b5e72e7c78f3f427765ae0c596f63340c9774397074c3c",
+    "data/ipcc_params_AN_v10.csv": "fd7d6952505f2a925ad5800ad12803d31d7b6ca0672501f87376e760f7988e97",
+    "data/ipcc_2006_vs_2019_stylized_AN_v2.csv": "486ae898fc76f59faaf00f7373cfbbbe203aa70c92cca067cfb3c23a2c53ea09",
+    "scripts/compare_ipcc_2006_2019_stylized_AN_v2.py": "482db7797eb647deccf050a817a328d8112854b988c6cb60eddc8a2f372a103c",
+    "scripts/run_gleam_stylized_AN_v1.py": "330cbcc6dc8ae1b8303c5322d7bfb3971524ef45eafba418cd5766ae51e37d5f",
+    "scripts/run_gleam_stylized_AN_v1.R": "bdbddef220987308a55e5978e6908cdf7081768d5870f155c3756f7375e9587a"
+  },
+  "outputs": {
+    "results/gleam_stylized_inputs_AN_v1.csv": "615161cfe5fcf58ffa6a9791fa7e357b45f1723b23e3bedb98179b8dcc413605",
+    "results/gleam_stylized_mms_fraction_AN_v1.csv": "324c5236d4ac7da06fcac09e045147f6a30280e3e89268bccd3411b5797bc95b",
+    "results/gleam_stylized_mms_factors_AN_v1.csv": "325bf5a7e6d93e7d8dd3f5b768a1f9623e3f1078292aca430e1ea9e4c5e568a2",
+    "results/gleam_stylized_cohort_results_AN_v1.csv": "9694ac2c3c3f98fee9503029322b99383444f83f318e0f3a5a695694fc1486f6",
+    "results/gleam_vs_ghgsim_stylized_AN_v1.csv": "934ced7093eeea89c7f5f5a5b5c9045a1577fbe0a520d8d0769f6421051ffc3f"
+  },
+  "notes": [
+    "beef_cowcalf_covered_crust IPCC2006: FracGasMS not published for other_cattle liquid_nocrust; GLEAM run with 0 and manure N2O reported blank",
+    "beef_cowcalf_covered_solid IPCC2006: FracGasMS not published for other_cattle liquid_nocrust; GLEAM run with 0 and manure N2O reported blank",
+    "beef_cowcalf_uncovered IPCC2006: FracGasMS not published for other_cattle liquid_nocrust; GLEAM run with 0 and manure N2O reported blank"
+  ],
+  "not_run": "swine and poultry farms (no ration inputs in the spec); see DECISIONS_AN_v13"
+}
