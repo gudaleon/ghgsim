@@ -1,0 +1,105 @@
+{
+ "id": "ON44000",
+ "country": "CA",
+ "chu_m1_mean_1991_2020": 2761.4,
+ "chu_m1_by_year": {
+  "1991": 2697.9,
+  "1992": 2029.7,
+  "1993": 2342.5,
+  "1994": 2323.4,
+  "1995": 2431.0,
+  "1996": 2238.5,
+  "1997": 2455.3,
+  "1998": 3273.0,
+  "1999": 2902.4,
+  "2000": 2462.3,
+  "2001": 2376.0,
+  "2002": 2806.2,
+  "2003": 2249.2,
+  "2004": 2654.0,
+  "2005": 3513.8,
+  "2006": 3023.6,
+  "2007": 3007.4,
+  "2008": 2582.2,
+  "2009": 2446.9,
+  "2010": 3143.4,
+  "2011": 2733.0,
+  "2012": 3230.4,
+  "2013": 3123.4,
+  "2014": 2542.8,
+  "2015": 2924.8,
+  "2016": 3479.5,
+  "2017": 3126.3,
+  "2018": 3109.7,
+  "2019": 2641.4,
+  "2020": 2971.3
+ },
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "15-may"
+ },
+ "met": {
+  "tav": 6.92,
+  "amp": 24.69,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930113",
+   "filled": 4.6
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19940225",
+   "filled": 7.88
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19950227",
+   "filled": 13.26
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19990118",
+   "filled": 5.47
+  }
+ ],
+ "soil": {
+  "areaname": "DISTRICT MUNICIPALITY OF MUSKOKA",
+  "mukey": "ONTIG~~~~~A",
+  "compname": "TIOGA",
+  "comppct_r": 28,
+  "drainagecl": "W"
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.5,
+   "SAT_used": 0.494,
+   "BD": 1.34
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ],
+ "missing_output": [
+  "rule_100N.Report",
+  "rule_0N.Report"
+ ]
+}
