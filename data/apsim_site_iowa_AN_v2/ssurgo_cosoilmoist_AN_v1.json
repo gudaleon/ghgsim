@@ -1,0 +1,164 @@
+{
+ "source": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "query": "SELECT cm.month, cs.soimoistdept_r, cs.soimoistdepb_r, cs.soimoiststat FROM comonth cm JOIN cosoilmoist cs ON cs.comonthkey = cm.comonthkey WHERE cm.cokey = '{cokey}' AND cs.soimoiststat = 'Wet'",
+ "components": {
+  "webster": {
+   "cokey": "28627783",
+   "compname": "Webster",
+   "months": [
+    {
+     "month": "February",
+     "soimoistdept_r": "80",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "January",
+     "soimoistdept_r": "90",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "April",
+     "soimoistdept_r": "15",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "March",
+     "soimoistdept_r": "30",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "May",
+     "soimoistdept_r": "30",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "June",
+     "soimoistdept_r": "50",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "July",
+     "soimoistdept_r": "90",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "August",
+     "soimoistdept_r": "110",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "September",
+     "soimoistdept_r": "100",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "October",
+     "soimoistdept_r": "70",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "November",
+     "soimoistdept_r": "50",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "December",
+     "soimoistdept_r": "80",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    }
+   ],
+   "mean_wet_top_cm": 66.2
+  },
+  "clarion": {
+   "cokey": "28627767",
+   "compname": "Clarion",
+   "months": [
+    {
+     "month": "February",
+     "soimoistdept_r": "200",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "January",
+     "soimoistdept_r": "200",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "April",
+     "soimoistdept_r": "150",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "March",
+     "soimoistdept_r": "160",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "May",
+     "soimoistdept_r": "170",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "June",
+     "soimoistdept_r": "170",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "July",
+     "soimoistdept_r": "200",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "August",
+     "soimoistdept_r": "200",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "September",
+     "soimoistdept_r": "200",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "October",
+     "soimoistdept_r": "200",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "November",
+     "soimoistdept_r": "170",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    },
+    {
+     "month": "December",
+     "soimoistdept_r": "190",
+     "soimoistdepb_r": "200",
+     "soimoiststat": "Wet"
+    }
+   ],
+   "mean_wet_top_cm": 184.2
+  }
+ }
+}

@@ -1,0 +1,13 @@
+case,basis,sown_years,direct_N2O_kg_ha,direct_N2O_kg_ha_min_year,direct_N2O_kg_ha_max_year,fertiliser_induced_EF_pct,control_N2O_kg_ha,share_top5pct_days,max_day_over_mean_day,share_N2O_within_window_after_rain,N2_N_kg_ha,leach_NO3_N_kg_ha,drainage_mm,tile_drainage_mm,grain_yield_kg_ha
+main_webster,"main: Webster, APSIM SoilWater, APSoil 900 organic parameters",29,2.9203,0.9586,4.8494,1.3151,0.8537,0.5441,46.5623,0.4252,7.5398,12.2122,137.1611,,8856.3594
+webster_swim,"Webster, SWIM3, free (unit-gradient) base, no drains",29,1.2803,0.3709,3.0941,0.614,0.3155,0.5884,51.7475,0.4733,2.5046,12.4856,100.13,0.0,8090.2934
+webster_seep,"Webster, SWIM3, seepage base, no drains",29,2.0713,0.3929,6.4004,0.8458,0.7421,0.4287,36.0319,0.3398,4.8671,7.3203,80.2497,0.0,8499.44
+webster_tile,"Webster, SWIM3, seepage base, tile drains 1.2 m depth / 28.5 m spacing",29,2.0713,0.3929,6.4004,0.8458,0.7421,0.4287,36.0319,0.3398,4.8671,7.3203,80.2497,0.0,8499.44
+webster_wt,"Webster, SWIM3, undrained, fixed water table 660 mm (SSURGO)",29,10.2128,8.4857,20.9141,3.466,4.7661,0.2226,8.7897,0.1287,31.7555,1.2627,-54.7342,0.0,8599.8168
+clarion,"Clarion (well drained), APSIM SoilWater",29,2.234,0.7291,3.5671,1.0402,0.5994,0.5211,37.807,0.3866,5.6158,9.4001,127.3705,,8246.3294
+initN_x0.5,"Webster, initial NO3/NH4 x0.5",29,2.913,0.9586,4.8494,1.3133,0.8493,0.5448,46.676,0.4254,7.52,11.8562,137.1537,,8848.9808
+initN_x2,"Webster, initial NO3/NH4 x2",29,2.9332,0.9586,4.851,1.3171,0.8635,0.543,46.3585,0.4251,7.5798,12.91,137.2348,,8870.844
+FBiom_x0.5,"Webster, FBiom x0.5",29,2.8604,0.9601,4.8683,1.3001,0.8173,0.5517,47.5366,0.4288,7.3797,11.9401,137.1371,,8648.3833
+FBiom_x1.5,"Webster, FBiom x1.5",29,2.977,0.9523,4.8337,1.3265,0.8926,0.5365,45.4738,0.423,7.696,12.4277,136.6875,,9006.881
+FInert_x0.75,"Webster, FInert x0.75",29,3.4867,1.0733,7.4171,1.4754,1.1682,0.5087,42.6244,0.4115,8.9597,16.2865,134.3242,,9504.2329
+FInert_x1.25,"Webster, FInert x1.25 (cap 0.99)",29,2.4515,0.814,4.1313,1.1994,0.5666,0.5969,50.7758,0.4473,6.3434,8.8223,137.5922,,7723.937
