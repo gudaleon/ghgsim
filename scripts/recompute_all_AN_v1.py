@@ -59,9 +59,9 @@ STEPS = [
          args=["--raw", "{RAW}/climate", "--version-date", NCV], repo_inputs=[],
          raw_inputs=NCLIMDIV + ["climate/ipcc_zones_zenodo7303808/IPCC_Climate_Zones_ts_3.25.tif"],
          outputs=["data/county_climate_zones_AN_v1.csv", "data/county_climate_zones_manifest_AN_v1.json"], extract="zones"),
-    dict(name="stylized_2006_vs_2019", where="ci", script="scripts/compare_ipcc_2006_2019_stylized_AN_v2.py", args=[],
+    dict(name="stylized_2006_vs_2019", where="ci", script="scripts/compare_ipcc_2006_2019_stylized_AN_v3.py", args=[],
          repo_inputs=["data/stylized_farms_AN_v6.yaml", "{PARAMS}"], raw_inputs=[],
-         outputs=["data/ipcc_2006_vs_2019_stylized_AN_v2.csv"], extract="stylized"),
+         outputs=["data/ipcc_2006_vs_2019_stylized_AN_v3.csv"], extract="stylized"),
     dict(name="fig_stylized", where="ci", script="scripts/plot_ipcc_2006_vs_2019_stylized_AN_v2.py", args=[],
          repo_inputs=["data/ipcc_2006_vs_2019_stylized_AN_v2.csv"], raw_inputs=[],
          outputs=["docs/figures/ipcc_2006_vs_2019_stylized_AN_v2.png"], extract=None),
@@ -140,7 +140,7 @@ def ex_zones(d: Path) -> dict:
 
 def ex_stylized(d: Path) -> dict:
     t6, t9 = defaultdict(float), defaultdict(float)
-    for x in read_csv(d / "data/ipcc_2006_vs_2019_stylized_AN_v2.csv"):
+    for x in read_csv(d / "data/ipcc_2006_vs_2019_stylized_AN_v3.csv"):
         try:
             a, b = float(x["ipcc2006_tCO2e"]), float(x["ipcc2019_tCO2e"])
         except ValueError:

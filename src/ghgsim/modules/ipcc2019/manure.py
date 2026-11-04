@@ -136,7 +136,7 @@ class IPCC2019Manure:
     """IPCC 2019 manure CH4 + direct/indirect N2O (2019 MCF, B0, Nrate, FracGasMS, EF3)."""
 
     id = "ipcc2019.manure"
-    version = "2.0.0"
+    version = "2.1.0"
 
     inputs = {
         **IPCC2006Manure.inputs,
@@ -152,6 +152,10 @@ class IPCC2019Manure:
                                "US county FIPS; derives MAT + annual P/PE zone from "
                                "data/county_climate_annual_AN_v1.csv (nClimDiv 1991-2020, Hargreaves). "
                                "Explicit climate_zone_2019 or MAT/moisture_ratio win.", "scalar", False),
+        "ef4_mode": VarSpec("ef4_mode", "dimensionless",
+                            "EF4 for manure volatilisation: 'climate' (default; 2019 Ch11 Table 11.3 (Updated) wet 0.014 / "
+                            "dry 0.005 from the climate zone, aggregated 0.010 if no zone) or 'aggregated' (0.010, "
+                            "sensitivity; behaviour before DECISIONS_AN_v21)", "scalar", False),
         "storage_months": VarSpec("storage_months", "month",
                                   "Liquid/pit storage time for Table 10.17 (6 or 12; default 12)", "scalar", False),
     }
@@ -171,6 +175,9 @@ class IPCC2019Manure:
         "B0_layers_2019": ParamRef("IPCC2019.B0.layers|north_america", "2019 layer B0"),
         "B0_other_poultry_2019": ParamRef("IPCC2019.B0.other_poultry|north_america", "2019 other poultry B0"),
         "EF5": ParamRef("IPCC2019.EF5.all", "2019 EF5 leaching"),
+        "EF4_2019_all": ParamRef("IPCC2019.EF4.all", "2019 EF4 aggregated (Ch11 Table 11.3 Updated)"),
+        "EF4_2019_wet": ParamRef("IPCC2019.EF4.wet", "2019 EF4 wet climate (Ch11 Table 11.3 Updated)"),
+        "EF4_2019_dry": ParamRef("IPCC2019.EF4.dry", "2019 EF4 dry climate (Ch11 Table 11.3 Updated)"),
         **_MCF_REFS,
         **_FRAC_REFS,
         **_EF3_REFS,
@@ -182,6 +189,8 @@ class IPCC2019Manure:
         "N_MMS_Avb_kg": VarSpec("N_MMS_Avb_kg", "kg N / year",
                                 "Managed manure N after gas+leach loss (Eq 10.34, no bedding)", "scalar", True),
         "MCF_basis": VarSpec("MCF_basis", "dimensionless", "Which MCF table/zone was used", "scalar", True),
+        "EF4_used": VarSpec("EF4_used", "kg N2O-N / kg (NH3-N + NOx-N)", "EF4 applied to manure volatilisation", "scalar", True),
+        "EF4_basis": VarSpec("EF4_basis", "dimensionless", "Which EF4 (Table 11.3 Updated) was used", "scalar", True),
     }
 
     sources = [
@@ -260,6 +269,23 @@ class IPCC2019Manure:
             return float(p[f"MCF19_{system}_{ZONE_GROUP_2019[zone]}"])
         raise KeyError(f"No 2019 MCF mapping for system '{system}'")
 
+    @staticmethod
+    def _ef4(p: Mapping[str, Any], zone: str | None, mode: str) -> tuple[float, str]:
+        """EF4 for manure NH3+NOx volatilisation (Eq 10.27), consistent with IPCC2019SoilN2O.
+
+        2019 Refinement Vol 4 Ch11 Table 11.3 (Updated): aggregated 0.010, wet 0.014, dry 0.005. Wet/dry follows
+        the climate-zone moisture (moist/wet -> wet, dry -> dry). 'aggregated' keeps 0.010 as a sensitivity case.
+        """
+        agg = float(p["EF4_2019_all"]) if "EF4_2019_all" in p else float(p["EF4"])
+        if mode == "aggregated":
+            return agg, "Table 11.3 (Updated) aggregated (sensitivity)"
+        if mode != "climate":
+            raise ValueError("ef4_mode must be 'climate' or 'aggregated'")
+        if zone is None:
+            return agg, "Table 11.3 (Updated) aggregated (no climate zone)"
+        wet = not zone.endswith("_dry")
+        return float(p["EF4_2019_wet" if wet else "EF4_2019_dry"]), f"Table 11.3 (Updated) {'wet' if wet else 'dry'}"
+
     # ------------------------------------------------------------------ compute
     def compute(self, inputs: Mapping[str, Any], params: Mapping[str, Any]) -> dict[str, Any]:
         p = dict(params)
@@ -290,7 +316,8 @@ class IPCC2019Manure:
             b0 = float(p.get("B0_other_poultry_2019", p[f"B0_{animal}"]))
 
         include_leach = bool(inputs.get("include_leach", True))
-        ef4, ef5 = float(p["EF4"]), float(p["EF5"]) if include_leach else 0.0
+        ef4, ef4_basis = self._ef4(p, zone, str(inputs.get("ef4_mode") or "climate"))
+        ef5 = float(p["EF5"]) if include_leach else 0.0
         sum_mcf = n_direct = n_vol = n_leach = n_lost = n_prp = n_managed = 0.0
         for system, frac in systems.items():
             frac = float(frac)
@@ -330,6 +357,8 @@ class IPCC2019Manure:
             "N_managed_kg": n_managed,
             "N_MMS_Avb_kg": n_managed - n_lost,
             "MCF_basis": basis,
+            "EF4_used": ef4,
+            "EF4_basis": ef4_basis,
         }
 
 
