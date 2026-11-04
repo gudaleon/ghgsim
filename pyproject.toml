@@ -52,6 +52,15 @@ dev = [
     "mypy>=1.0",
     "SALib>=1.4",
 ]
+geo = [  # pinned; full pin set in requirements_AN_v1.txt
+    "lxml==6.1.3",
+    "geopandas==1.2.0",
+    "pyogrio==0.13.0",
+    "pyproj==3.8.0",
+    "shapely==2.2.0",
+    "rasterio==1.5.2",
+    "matplotlib==3.11.2",
+]
 figures = [
     "plotly>=6",
     "kaleido>=1",
