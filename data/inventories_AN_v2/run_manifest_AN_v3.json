@@ -1,0 +1,127 @@
+[
+  {
+    "country": "Canada",
+    "doc": "https://unfccc.int/documents/656423",
+    "zip": "https://unfccc.int/sites/default/files/resource/CAN-CRT-2026-V2.0.zip",
+    "iso": "CAN",
+    "zip_sha256": "0023e7443bb4bbcee17341733988bcb5a1ae5eb54eb8b37c7bc7804c5158133c",
+    "zip_bytes": 14969618,
+    "extract_sha256": {
+      "CAN_recalc_AN_v2.csv": "b7ab0d07738b724e7bc0fbeae10d0b21d3169d6945cf6630e32a0ab14d6aaa7c",
+      "CAN_summary3_AN_v2.csv": "ef92f58f74311ea818738b8f4d2618f0aba3312a30ed14ba50b0225f3d4e8f7d",
+      "CAN_table3_AN_v2.csv": "a6c6f5ec32c27ff601930baefe2a4b9b16285a616c95efd4357a06d1ef5c5b2a",
+      "CAN_table8_AN_v2.csv": "432d42e26679b10318cef6130028267b8f073b91c0c5e673f155ccc1bed5c9d1"
+    }
+  },
+  {
+    "country": "United Kingdom",
+    "doc": "https://unfccc.int/documents/656567",
+    "zip": "https://unfccc.int/sites/default/files/resource/GBRJ-CRT-2026-V1.0.zip",
+    "iso": "GBR",
+    "zip_sha256": "7331bf33c5d5b309ae6704cc1cb6157b7a820a6876f1c966181ddd6bf7d27bda",
+    "zip_bytes": 47413136,
+    "extract_sha256": {
+      "GBR_recalc_AN_v2.csv": "202aed14f558bc4e0b80bb5ec7a166da7094fe5fdf9554c1e4aa364fcebb8da9",
+      "GBR_summary3_AN_v2.csv": "20bb208af8657af1507c0640a383f86c2878b3b3021dd7e035e9c9477abda02b",
+      "GBR_table3_AN_v2.csv": "4bfb914a992c49ab9e4ffea4d88d2d700bfbbe1db7ab8bd4065d214461efdf23",
+      "GBR_table8_AN_v2.csv": "d832f48330957b2c3e4e3800f7030c933cf6b7efb3d033d6478459c17f02c4c3"
+    }
+  },
+  {
+    "country": "New Zealand",
+    "doc": "https://unfccc.int/documents/656539",
+    "zip": "https://unfccc.int/sites/default/files/resource/NZL-CRT-2026-V1.0_.zip",
+    "iso": "NZL",
+    "zip_sha256": "d5016da55034d3b4256de97bc00e33c2f4b4d4d16c2d645d529d2ce2552c7aef",
+    "zip_bytes": 44257086,
+    "extract_sha256": {
+      "NZL_recalc_AN_v2.csv": "64b08dd63603c5c6fed40593eabdcfd91cea68cebf537a359ae49fbbee888a18",
+      "NZL_summary3_AN_v2.csv": "748e715d774fa85ce4cddba7b80a8f5db89ca2f61625afad200eca3aa650bb40",
+      "NZL_table3_AN_v2.csv": "d803d84606bb59247f15b14761b67598ac71059d0b4eab96df8374aa0b1cac81",
+      "NZL_table8_AN_v2.csv": "5e4d4ff657b0a3173101e6d5af56a726cbd72f4278074f2b3fd2449c4c0ac3cc"
+    }
+  },
+  {
+    "country": "Ireland",
+    "doc": "https://unfccc.int/documents/656399",
+    "zip": "https://unfccc.int/sites/default/files/resource/IRL-CRT-2026-V1.0.zip",
+    "iso": "IRL",
+    "zip_sha256": "75ae65b98e270630ade08ebed98b0adedc465e4d3d735048b3d7abb85852b31a",
+    "zip_bytes": 40816340,
+    "extract_sha256": {
+      "IRL_recalc_AN_v2.csv": "72b7c10e0ca00c91e3712e1f834f8b6e8db09a82b138e7fafd008c8594cb9223",
+      "IRL_summary3_AN_v2.csv": "e1426005595633f5e5035e6de48e68a6f6ace7e431d3bf58b0ff840dc60964d1",
+      "IRL_table3_AN_v2.csv": "36274d00ef7ecc0cfaca1cc8b755dc25c75c547a9b9d573a99dc8bb040799a5f",
+      "IRL_table8_AN_v2.csv": "04a5c245287bacb9e2bcd93723de9dbf16053ef30463b1ac6669c19f8b632b15"
+    }
+  },
+  {
+    "country": "Germany",
+    "doc": "https://unfccc.int/documents/656483",
+    "zip": "https://unfccc.int/sites/default/files/resource/DEU-CRT-2026-V1.0.zip",
+    "iso": "DEU",
+    "zip_sha256": "d4a6702b11c4e23ea12f07259a5aa2df39622906e4b412d7c375b95a3efcfcbb",
+    "zip_bytes": 45097103,
+    "extract_sha256": {
+      "DEU_recalc_AN_v2.csv": "e8ae4c721950270ace46032740a61677a548bf1c9c68962164c8f7b9cae3cae7",
+      "DEU_summary3_AN_v2.csv": "83237ba670b5dd41248b1bad7c98635c470f7c5e8ae9558bbd15de752bdbe040",
+      "DEU_table3_AN_v2.csv": "88038ecc7b9927430344307b8d3c921d09e0e0a711e1066e787b5ac334bda4c2",
+      "DEU_table8_AN_v2.csv": "473840258856bb098c3ccd5e06e6a4b1027797cbbbbefb63a3214b3046e766b8"
+    }
+  },
+  {
+    "country": "Australia",
+    "doc": "https://unfccc.int/documents/656438",
+    "zip": "https://unfccc.int/sites/default/files/resource/AUS-CRT-2026-V1.0.zip",
+    "iso": "AUS",
+    "zip_sha256": "dc7893664331e0747d23c3a800b812df624c3c2ad8032c300bfc34dfde75cddb",
+    "zip_bytes": 47087115,
+    "extract_sha256": {
+      "AUS_recalc_AN_v2.csv": "68e0903320b3e7c3522dc777f52c90b72633dd93598c876a6ee8a5d159e5d8a7",
+      "AUS_summary3_AN_v2.csv": "869e7e3ea8a3f2117b202e2cddb230a51300fd4cb0ddc8c25e258f4d5c8f2806",
+      "AUS_table3_AN_v2.csv": "1989badadb446fe903711a05140f43e1fd1e4e3cdedb1eb9a2f555ed285ce19b",
+      "AUS_table8_AN_v2.csv": "879c57f9b6f8a34a54c35fce80649fb65454d06158ea8f9199eea9f4b8aeff7f"
+    }
+  },
+  {
+    "country": "Russian Federation (extra comparison)",
+    "doc": "https://unfccc.int/documents/659495",
+    "zip": "local:RUS-CRT-2026-V1.0_0.zip",
+    "iso": "RUS",
+    "zip_sha256": "9159d2c66786dc2fbc2faabb883fc383d0ee290644a29649a8f6a025a6864be8",
+    "zip_bytes": 41418200,
+    "extract_sha256": {
+      "RUS_recalc_AN_v2.csv": "64c0c95b3d5ee6fc9f245a248404b9abcab718edb26c60f7b3a5fa87aa5f9994",
+      "RUS_summary3_AN_v2.csv": "c3c1fddb66b67d7d73732508dda06506b978c9b140366d5ceb1ed97f6400dd92",
+      "RUS_table3_AN_v2.csv": "c017548d6860c40c4120c7422a962e573af601fe4b2473a52f3106cd878fcd5c",
+      "RUS_table8_AN_v2.csv": "b5563c690d051cba487875d5722164359ce11b1485d7cf2e68e81465571a1cee"
+    },
+    "nid": "https://unfccc.int/documents/659493",
+    "nid_annex": "https://unfccc.int/documents/659494",
+    "crt_submitted": "2026-06-25",
+    "crt_published": "2026-06-26",
+    "listed_size_MB": 39.5,
+    "listing": "https://unfccc.int/ghg-inventories-annex-i-parties/2026",
+    "size_check": "local zip 41418200 bytes = 39.5 MB matches UNFCCC listing"
+  },
+  {
+    "country": "European Union (extra comparison)",
+    "doc": "https://unfccc.int/documents/656557",
+    "zip": "local:EUA_CRT_2026.zip",
+    "iso": "EUA",
+    "zip_sha256": "d7a7299f2827d2f6dc311c0853c3936df5b1db78bdb8778019bac50a3c204dc6",
+    "zip_bytes": 21714000,
+    "extract_sha256": {
+      "EUA_summary3_AN_v2.csv": "4067754370896af77d74170dce44a5aa90d00b9a3ea5bd14fe15ef0691c19257",
+      "EUA_table3_AN_v2.csv": "ad3a6aab409beafea1cd1049d1630e03ac7499bc8f8e4ba7eb23eb155bf9bd82",
+      "EUA_table8_AN_v2.csv": "006552ac0edd2d8fde19acc7690c8e1f7afdcb45ab5c8b659e1ae4fd42d864d2"
+    },
+    "nid": "https://unfccc.int/documents/656551",
+    "nid_annex": "https://unfccc.int/documents/656553",
+    "crt_submitted": "2026-04-15",
+    "crt_published": "2026-04-17",
+    "listed_size_MB": 20.71,
+    "listing": "https://unfccc.int/ghg-inventories-annex-i-parties/2026",
+    "size_check": "local zip 21714000 bytes = 20.71 MB matches UNFCCC listing"
+  }
+]
