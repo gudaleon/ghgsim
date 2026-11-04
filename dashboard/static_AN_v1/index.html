@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- Paper B living-paper dashboard, static Gradio-Lite build (AN_v1).
+     Runs dashboard/app_AN_v2.py in the visitor's browser (Pyodide). bundle.zip is built by
+     scripts/deploy_static_space_AN_v1.py from the ghgsim commit recorded in its COMMIT file. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paper B living-paper dashboard</title>
+  <script type="module" crossorigin src="https://cdn.jsdelivr.net/npm/@gradio/lite@5.45.0/dist/lite.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gradio/lite@5.45.0/dist/lite.css" />
+  <style>body{font-family:sans-serif;margin:0} #note{padding:8px 16px;background:#eef6ee;font-size:14px}</style>
+</head>
+<body>
+  <div id="note">Runs ghgsim entirely in your browser. The first load downloads Python (Pyodide) and the
+    ghgsim bundle and can take 1-2 minutes; later loads are cached.</div>
+  <gradio-lite>
+    <gradio-requirements>
+pandas
+numpy
+scipy
+pyyaml
+pint
+plotly
+click
+    </gradio-requirements>
+    <gradio-file name="bundle.zip" url="bundle.zip"></gradio-file>
+    <gradio-file name="app.py" entrypoint>
+import os, sys, zipfile, pathlib
+
+R = pathlib.Path("/home/pyodide/ghgsim_bundle")
+if not (R / "app_AN_v2.py").exists():
+    zipfile.ZipFile("bundle.zip").extractall(R)
+os.environ["GHGSIM_ROOT"] = str(R)
+os.environ.setdefault("GHGSIM_COMMIT", (R / "COMMIT").read_text().strip())
+sys.path.insert(0, str(R))
+
+import app_AN_v2 as dashboard  # noqa: E402
+
+demo = dashboard.build_app()
+demo.launch()
+    </gradio-file>
+  </gradio-lite>
+</body>
+</html>

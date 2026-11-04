@@ -1,4 +1,4 @@
-# ghgsim
+﻿# ghgsim
 
 Open, Apache-2.0 GHG simulation framework for agricultural greenhouse gas estimation.
 
@@ -89,3 +89,11 @@ This is currently a private research repository. For questions, contact the auth
 ## US county IPCC 2006 vs 2019 run (AN_v1)
 See `docs/US_COUNTY_RUN_AN_v1.md` (inputs, hashes, headline numbers, gaps), `docs/CLIMATE_ZONES_AN_v1.md` and `docs/DECISIONS_AN_v4.md`.
 Parameters: `data/ipcc_params_AN_v9.csv` (adds 2019 Table 10.17 boreal/tropical MCFs, 2006 per-degree MCFs, Tier 1 cattle enteric EFs).
+
+## Living-paper dashboard on Hugging Face (static, AN_v1)
+
+The dashboard (`dashboard/app_AN_v2.py`) is hosted as a PRIVATE static Space at
+https://huggingface.co/spaces/globaltrotter/paperB-living-dashboard (sign in as an account with access).
+It runs ghgsim in the browser with Gradio-Lite/Pyodide; the first load takes 1-2 minutes.
+Redeploy after a change: `python scripts/deploy_static_space_AN_v1.py` with `HF_TOKEN` set (write token,
+never committed). `diff_manifests` in "Ask the paper" does not work in the browser. See `docs/DECISIONS_AN_v19.md`.
