@@ -1,0 +1,8 @@
+﻿fips_class,ipcc_table,page,lagoon,liquid_slurry,solid_storage,dry_lot,pasture,daily_spread,digester,burned,other_deep_pit,pit_lt1mo,pit_gt1mo,notes
+dairy,Table 10A-4,10.77,0.150,0.270,0.263,0.000,0.108,0.184,0.000,0.000,0.026,,,"North America dairy cows; 'Other' = deep pit (fn d), modelled as pit >1 month"
+other_cattle,Table 10A-5,10.78,0.000,0.002,0.000,0.184,0.815,0.000,0.000,0.000,0.000,,,North America other cattle (row sums to 1.001 as published)
+market_swine,Table 10A-7,10.80,0.328,0.185,0.042,0.040,,0.000,0.000,,0.000,0.000,0.406,North America market swine
+breeding_swine,Table 10A-8,10.81,0.328,0.185,0.042,0.040,,0.000,0.000,,0.000,0.000,0.406,North America breeding swine
+layers,Table 10A-9,10.82-10.83,,,,,,,,,,,,"Text: all poultry except Layers (wet) in dry systems; no NA split given -> modelled 100% poultry_without_litter (assumption, see DECISIONS_AN_v4)"
+broilers,Table 10A-9,10.82-10.83,,,,,,,,,,,,"Modelled 100% poultry_with_litter (assumption)"
+turkeys,Table 10A-9,10.82-10.83,,,,,,,,,,,,"Modelled 100% poultry_with_litter (assumption)"

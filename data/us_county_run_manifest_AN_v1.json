@@ -1,0 +1,68 @@
+{
+  "inputs": {
+    "nass": {
+      "path": "C:\\ghgsim-data\\nass\\qs.census2022.txt.gz",
+      "sha256": "eca0f82dea58e1b128b82ac15f54e8bfc70cfb097e3e87710b74e7e93877dbbd"
+    },
+    "fert": {
+      "path": "C:\\ghgsim-data\\fert\\epa_commercial_fertilizer_purchased_20261103.html",
+      "sha256": "021f09a6e2ff14a603e47c3469469aba2513e729ab14fff463dd17f783476923"
+    },
+    "shp": {
+      "path": "C:\\ghgsim-data\\nass\\cb_2022_us_county_20m.zip",
+      "sha256": "337192bcf4348d278304ebfbe2fceaeb936b368cc476c2aba51b59bd9e0b2e13"
+    },
+    "params": {
+      "path": "data\\ipcc_params_AN_v9.csv",
+      "sha256": "adcdf82141988f0927dd019a282afff1b34b990c4b15bfda03719dc458c86139"
+    },
+    "mms": {
+      "path": "data\\mms_north_america_ipcc2006_AN_v1.csv",
+      "sha256": "9da903930a13c9d0105a4f84b760b92328bdbff7abd9b01c53d64453cc1f662a"
+    },
+    "zones": {
+      "path": "data\\county_climate_zones_AN_v1.csv",
+      "sha256": "4fa15553b1869303f2d111387c23041480f5e865501935fa14f4bc9833da2a6c"
+    }
+  },
+  "n_counties": 3073,
+  "n_rows": 73688,
+  "flag_counts": {
+    "swine": 515,
+    "broilers": 587,
+    "layers_hens": 348,
+    "dairy": 850,
+    "turkeys": 688,
+    "roosters": 524,
+    "pullets": 613,
+    "no_climate_zone": 1,
+    "cattle_total": 48,
+    "other_cattle=NaN": 32,
+    "fert_expense": 26
+  },
+  "national_MMT_CO2e": {
+    "enteric_CH4|2006": 118.9496,
+    "enteric_CH4|2019": 139.1025,
+    "manure_CH4|2006": 36.8893,
+    "manure_CH4|2019": 53.3195,
+    "manure_N2O|2006": 8.7686,
+    "manure_N2O|2019": 11.809,
+    "soil_N2O|2006": 86.608,
+    "soil_N2O|2019": 62.114
+  },
+  "national_MMT_CO2e_Dimputed_sensitivity": {
+    "enteric_CH4|2006": 153.1502,
+    "enteric_CH4|2019": 179.9755,
+    "manure_CH4|2006": 42.0249,
+    "manure_CH4|2019": 60.2659,
+    "manure_N2O|2006": 11.1649,
+    "manure_N2O|2019": 14.7601,
+    "soil_N2O|2006": 95.2887,
+    "soil_N2O|2019": 65.2073
+  },
+  "gwp": {
+    "CH4": 28.0,
+    "N2O": 265.0
+  },
+  "epa_reference": "EPA Inventory of U.S. GHG Emissions and Sinks 1990-2023 (2025), Table 5-1 p.5-3, 2022 column"
+}

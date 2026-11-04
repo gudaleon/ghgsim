@@ -1,4 +1,4 @@
-"""Unit tests for ipcc2019.manure 2.0, 2006 FracLossMS and the dry-fallback EF1 sensitivity."""
+﻿"""Unit tests for ipcc2019.manure 2.0, 2006 FracLossMS and the dry-fallback EF1 sensitivity."""
 import math
 from pathlib import Path
 
@@ -10,7 +10,7 @@ from ghgsim.modules.ipcc2006.manure import IPCC2006Manure
 from ghgsim.modules.ipcc2019.manure import IPCC2019Manure, climate_zone_2019
 
 ROOT = Path(__file__).resolve().parents[1]
-REG = load_parameter_csv(ROOT / "data" / "ipcc_params_AN_v8.csv", allow_unverified=False)
+REG = load_parameter_csv(ROOT / "data" / "ipcc_params_AN_v9.csv", allow_unverified=False)
 DENS = None
 
 

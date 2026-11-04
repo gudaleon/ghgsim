@@ -1,4 +1,4 @@
-"""County annual climate -> IPCC zone -> 2019 manure MCF (AN v1)."""
+﻿"""County annual climate -> IPCC zone -> 2019 manure MCF (AN v1)."""
 import csv
 from pathlib import Path
 
@@ -52,10 +52,23 @@ def test_explicit_zone_wins_over_county():
     assert "warm_temperate_moist" in out["MCF_basis"]
 
 
-def test_tropical_and_boreal_fall_back_to_2006():
-    for fips in ("12086", "02090"):  # Miami-Dade (MAT > 18), Fairbanks (boreal)
+def test_tropical_and_boreal_use_2019_columns():
+    # AN_v9 params add Table 10.17 (Updated) boreal/tropical columns; zone from IPCC 2019 map (DECISIONS_AN_v4).
+    from ghgsim.modules.county_climate_annual import county_zone_primary
+    for fips in ("12086", "02090"):  # Miami-Dade, Fairbanks North Star
+        z = county_zone_primary(fips)
+        assert z.startswith(("tropical", "boreal"))
         out = _ch4(county_fips=fips)
-        assert "IPCC2006" in out["MCF_basis"]
+        assert z in out["MCF_basis"]
+        assert out["CH4"] == pytest.approx(_ch4(climate_zone_2019=z)["CH4"])
+
+
+def test_polar_falls_back_to_2006():
+    from ghgsim.modules.county_climate_annual import COUNTY_CLIMATE_ZONES_FILE
+    polar = [r["fips"] for r in csv.DictReader(open(COUNTY_CLIMATE_ZONES_FILE, encoding="utf-8"))
+             if r["zone_primary"].startswith("polar")]
+    assert polar
+    assert "IPCC2006" in _ch4(county_fips=polar[0])["MCF_basis"]
 
 
 def test_unknown_county_raises():

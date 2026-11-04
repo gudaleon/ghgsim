@@ -85,3 +85,7 @@ If you use this software in your research, please cite it using the metadata in 
 ## Contributing
 
 This is currently a private research repository. For questions, contact the author.
+
+## US county IPCC 2006 vs 2019 run (AN_v1)
+See `docs/US_COUNTY_RUN_AN_v1.md` (inputs, hashes, headline numbers, gaps), `docs/CLIMATE_ZONES_AN_v1.md` and `docs/DECISIONS_AN_v4.md`.
+Parameters: `data/ipcc_params_AN_v9.csv` (adds 2019 Table 10.17 boreal/tropical MCFs, 2006 per-degree MCFs, Tier 1 cattle enteric EFs).

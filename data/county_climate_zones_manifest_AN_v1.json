@@ -1,0 +1,33 @@
+{
+  "output": "county_climate_zones_AN_v1.csv",
+  "output_sha256": "4fa15553b1869303f2d111387c23041480f5e865501935fa14f4bc9833da2a6c",
+  "n_counties": 3142,
+  "inputs": {
+    "county_map": {
+      "file": "county-to-climdivs.txt",
+      "sha256": "2343d4b245f7b37c092e20863ecaeb47904f99f497132610e7beafd4dcda9270"
+    },
+    "pcp": {
+      "file": "climdiv-pcpncy-v1.0.0-20261006",
+      "sha256": "739fc3e9b529e04d406e914be1add2736ca3129c1103246ccebc2e5c76fd9d3a"
+    },
+    "tmax": {
+      "file": "climdiv-tmaxcy-v1.0.0-20261006",
+      "sha256": "a226e4ca307a39762401993fa3cb84e68425fe39afa89cab8639d17346750260"
+    },
+    "tmin": {
+      "file": "climdiv-tmincy-v1.0.0-20261006",
+      "sha256": "6251c07aedaffda0ba70d9456462beba0cc7701ab08a4246413986b106f4dec4"
+    },
+    "gazetteer": {
+      "file": "2020_Gaz_counties_national.zip",
+      "sha256": "02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef"
+    },
+    "ipcc_raster": {
+      "file": "IPCC_Climate_Zones_ts_3.25.tif",
+      "sha256": "7e811b6d43daffdd84ddb17c04dce491472d201ab4d5789d1d0ddbcc175ccbc9"
+    }
+  },
+  "ipcc_raster_source": "Lewis M. (2022) IPCC Climate Zones (2019 Refinement), Zenodo doi:10.5281/zenodo.7303808; md5 f4fa673bd3cb4e0992931b0aff555eb8",
+  "nclimdiv": "v1.0.0-20261006, doi:10.7289/V5M32STR (Vose et al. 2014)"
+}
