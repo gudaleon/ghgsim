@@ -526,3 +526,18 @@ def test_liang_fallback_not_used_when_topo_irrigated_or_missing(soil_params):
     assert missing["EF1_status"] == "UNVERIFIED-input"
     zero_pe = HolosSoilN2O().compute(_county_inputs(growing_season_precip_mm=400.0, growing_season_pe_mm=0.0), soil_params)
     assert zero_pe["EF1_status"] == "UNVERIFIED-input"
+
+
+def test_liang_dry_fallback_ef1_sensitivity_0005(soil_params):
+    dry = _county_inputs(growing_season_precip_mm=400.0, growing_season_pe_mm=500.0)
+    default = HolosSoilN2O().compute(dry, soil_params)
+    sens = HolosSoilN2O().compute({**dry, "dry_fallback_ef1": "ipcc2019_dry"}, soil_params)
+    assert default["EF1_used"] == pytest.approx(0.01)
+    assert sens["EF1_status"] == "fallback-IPCC2019-dry"
+    assert sens["EF1_used"] == pytest.approx(0.005)  # 2019 Table 11.1 (Updated) dry climates
+    assert sens["N2O_direct"] == pytest.approx(1000.0 * 0.005 * 44.0 / 28.0)
+    wet = HolosSoilN2O().compute({**_county_inputs(growing_season_precip_mm=700.0, growing_season_pe_mm=500.0),
+                                  "dry_fallback_ef1": "ipcc2019_dry"}, soil_params)
+    assert wet["EF1_status"] == "holos_liang2020"
+    with pytest.raises(ValueError):
+        HolosSoilN2O().compute({**dry, "dry_fallback_ef1": "bogus"}, soil_params)
