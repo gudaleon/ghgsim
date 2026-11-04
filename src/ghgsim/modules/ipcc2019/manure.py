@@ -30,7 +30,7 @@ from collections.abc import Mapping
 from typing import Any
 
 from ghgsim.core.module import Citation, ParamRef, VarSpec, validate_module
-from ghgsim.modules.county_climate_annual import county_climate_annual
+from ghgsim.modules.county_climate_annual import county_climate_annual, county_zone_primary
 from ghgsim.modules.ipcc2006.manure import SYSTEM_MAP_2006, IPCC2006Manure, _fracgas_ms
 from ghgsim.modules.livestock_types import is_poultry, is_swine
 
@@ -41,6 +41,13 @@ ZONES_2019 = (
     "cool_temperate_dry",
     "warm_temperate_moist",
     "warm_temperate_dry",
+    # Added in AN_v9 parameters (Table 10.17 (Updated) p. 10.68 boreal and tropical columns).
+    "boreal_moist",
+    "boreal_dry",
+    "tropical_montane",
+    "tropical_wet",
+    "tropical_moist",
+    "tropical_dry",
 )
 # Table 10.17 (Updated) three-column systems: Cool / Temperate / Warm groups.
 ZONE_GROUP_2019 = {
@@ -50,6 +57,10 @@ ZONE_GROUP_2019 = {
     "boreal_dry": "cool",
     "warm_temperate_moist": "temperate",
     "warm_temperate_dry": "temperate",
+    "tropical_montane": "warm",
+    "tropical_wet": "warm",
+    "tropical_moist": "warm",
+    "tropical_dry": "warm",
 }
 # 2019 system key -> (FracGasMS/FracLeachMS/EF3 key)
 SYSTEM_KEY_2019 = {
@@ -193,11 +204,14 @@ class IPCC2019Manure:
             return climate_zone_2019(float(t), float(r))
         fips = inputs.get("county_fips")
         if fips not in (None, ""):
-            c = county_climate_annual(fips)
-            if c is None:
-                raise KeyError(f"county_fips {fips!r} not in county_climate_annual_AN_v1.csv")
-            # Boreal / tropical zones have no registered 2019 liquid MCF cells: fall back to 2006.
-            return c["ipcc_zone"] if c["ipcc_zone"] in ZONES_2019 else None
+            z = county_zone_primary(fips)
+            if z is None:
+                c = county_climate_annual(fips)
+                if c is None:
+                    raise KeyError(f"county_fips {fips!r} not in county climate files")
+                z = c["ipcc_zone"]
+            # Polar (no Table 10.17 column) or unresolved zones fall back to 2006 Table 10.17.
+            return z if z in ZONES_2019 else None
         return None
 
     @staticmethod

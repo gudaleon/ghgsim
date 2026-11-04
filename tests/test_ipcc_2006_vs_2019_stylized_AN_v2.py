@@ -21,7 +21,9 @@ def test_csv_v2_reproducible(tmp_path, monkeypatch):
     out = tmp_path / "out.csv"
     monkeypatch.setattr(mod, "OUT_CSV", out)
     mod.main()
-    assert _rows(out) == _rows(CSV)
+    # params_file label changes when a newer ipcc_params_AN_vN.csv is added; values must not.
+    strip = lambda rs: [{k: v for k, v in r.items() if k != "params_file"} for r in rs]
+    assert strip(_rows(out)) == strip(_rows(CSV))
 
 
 def test_v2_directions_and_gaps():

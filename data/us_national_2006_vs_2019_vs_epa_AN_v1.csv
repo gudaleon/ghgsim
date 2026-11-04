@@ -1,0 +1,12 @@
+category,ghgsim_2006_MMT_CO2e,ghgsim_2019_MMT_CO2e,pct_change_2019_vs_2006,EPA_2025ed_Table5-1_2022_MMT_CO2e,ghgsim_2019_over_EPA
+enteric_CH4,118.95,139.102,16.94,192.6,0.722
+manure_CH4,36.889,53.319,44.54,64.7,0.824
+manure_N2O,8.769,11.809,34.67,17.0,0.695
+soil_N2O,86.608,62.114,-28.28,291.8,0.213
+total_in_scope,251.216,266.345,6.02,566.1,0.47
+
+# sensitivity: (D) cells imputed by state-residual method (DECISIONS_AN_v4 #7); not used in county CSV
+enteric_CH4_Dimputed,153.15,179.976,17.52,192.6,0.934
+manure_CH4_Dimputed,42.025,60.266,43.41,64.7,0.931
+manure_N2O_Dimputed,11.165,14.76,32.2,17.0,0.868
+soil_N2O_Dimputed,95.289,65.207,-31.57,291.8,0.223

@@ -36,3 +36,20 @@ def county_climate_annual(fips, path: Path | str = COUNTY_CLIMATE_ANNUAL_FILE) -
         "ipcc_zone": row["ipcc_zone"] or None,
         "period": row["period"],
     }
+
+
+COUNTY_CLIMATE_ZONES_FILE = _ROOT / "data" / "county_climate_zones_AN_v1.csv"
+
+
+def county_zone_primary(fips, path: Path | str = COUNTY_CLIMATE_ZONES_FILE) -> str | None:
+    """Adopted IPCC 2019 climate zone for a county (DECISIONS_AN_v4 #2).
+
+    From data/county_climate_zones_AN_v1.csv ``zone_primary``: the IPCC 2019 Refinement
+    climate-zone map (Zenodo doi:10.5281/zenodo.7303808) sampled at the county internal point.
+    Returns None if the file or county is absent.
+    """
+    if not Path(path).exists():
+        return None
+    s = str(fips).strip().zfill(5)
+    row = _table(str(path)).get(s)
+    return (row or {}).get("zone_primary") or None
