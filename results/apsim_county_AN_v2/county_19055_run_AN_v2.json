@@ -1,0 +1,30 @@
+{
+ "id": "19055",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.35,
+  "amp": 30.26,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911202",
+   "filled": 2.31
+  }
+ ],
+ "soil": {
+  "areaname": "Delaware County, Iowa",
+  "mukey": "405025",
+  "compname": "Goss",
+  "comppct_r": "95",
+  "drainagecl": "Well drained",
+  "hydgrp": "D"
+ },
+ "sat_caps": []
+}

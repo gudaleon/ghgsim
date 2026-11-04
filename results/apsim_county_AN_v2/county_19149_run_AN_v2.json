@@ -1,0 +1,30 @@
+{
+ "id": "19149",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 9.57,
+  "amp": 30.91,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911129",
+   "filled": 4.95
+  }
+ ],
+ "soil": {
+  "areaname": "Plymouth County, Iowa",
+  "mukey": "410320",
+  "compname": "Colo",
+  "comppct_r": "85",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

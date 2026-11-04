@@ -1,0 +1,30 @@
+{
+ "id": "31047",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "27-apr",
+  "EndDate": "15-may"
+ },
+ "window_state": "Nebraska",
+ "met": {
+  "tav": 11.02,
+  "amp": 27.32,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19921230",
+   "filled": 6.02
+  }
+ ],
+ "soil": {
+  "areaname": "Dawson County, Nebraska",
+  "mukey": "1699670",
+  "compname": "Cozad",
+  "comppct_r": "99",
+  "drainagecl": "Moderately well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

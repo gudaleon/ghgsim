@@ -1,0 +1,24 @@
+{
+ "id": "19099",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 10.02,
+  "amp": 29.99,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Jasper County, Iowa",
+  "mukey": "407607",
+  "compname": "Downs",
+  "comppct_r": "90",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

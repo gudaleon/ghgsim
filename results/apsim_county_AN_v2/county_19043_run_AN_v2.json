@@ -1,0 +1,30 @@
+{
+ "id": "19043",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 7.84,
+  "amp": 30.84,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911202",
+   "filled": 2.31
+  }
+ ],
+ "soil": {
+  "areaname": "Clayton County, Iowa",
+  "mukey": "404323",
+  "compname": "Orion",
+  "comppct_r": "93",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "B/D"
+ },
+ "sat_caps": []
+}

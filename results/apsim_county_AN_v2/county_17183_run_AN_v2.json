@@ -1,0 +1,24 @@
+{
+ "id": "17183",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 11.17,
+  "amp": 26.76,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Vermilion County, Illinois",
+  "mukey": "1612762",
+  "compname": "Ozaukee",
+  "comppct_r": "96",
+  "drainagecl": "Moderately well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

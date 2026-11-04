@@ -1,0 +1,24 @@
+{
+ "id": "38083",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "28-may"
+ },
+ "window_state": "North Dakota",
+ "met": {
+  "tav": 5.8,
+  "amp": 32.94,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Sheridan County, North Dakota",
+  "mukey": "3312334",
+  "compname": "Vallers",
+  "comppct_r": "40",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "B/D"
+ },
+ "sat_caps": []
+}

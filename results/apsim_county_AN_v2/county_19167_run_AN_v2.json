@@ -1,0 +1,30 @@
+{
+ "id": "19167",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.9,
+  "amp": 31.37,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19961214",
+   "filled": 6.34
+  }
+ ],
+ "soil": {
+  "areaname": "Sioux County, Iowa",
+  "mukey": "411270",
+  "compname": "Primghar",
+  "comppct_r": "90",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

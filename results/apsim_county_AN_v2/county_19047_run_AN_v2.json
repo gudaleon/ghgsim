@@ -1,0 +1,24 @@
+{
+ "id": "19047",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 9.62,
+  "amp": 30.42,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Crawford County, Iowa",
+  "mukey": "399927",
+  "compname": "Monona",
+  "comppct_r": "80",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

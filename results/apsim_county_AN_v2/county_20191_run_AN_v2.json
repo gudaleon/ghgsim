@@ -1,0 +1,24 @@
+{
+ "id": "20191",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "15-apr",
+  "EndDate": "15-may"
+ },
+ "window_state": "Kansas",
+ "met": {
+  "tav": 14.99,
+  "amp": 26.84,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Sumner County, Kansas",
+  "mukey": "1444647",
+  "compname": "Bethany",
+  "comppct_r": "85",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

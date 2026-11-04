@@ -1,0 +1,122 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  42.864122,
+  -91.840376
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-91.840376 42.864122)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "405774",
+   "muname": "Sparta loamy sand, 2 to 5 percent slopes",
+   "areaname": "Fayette County, Iowa",
+   "areasymbol": "IA065",
+   "saverest": "9/8/2026 6:11:24 PM",
+   "cokey": "28562288",
+   "compname": "Sparta",
+   "comppct_r": "95",
+   "majcompflag": "Yes",
+   "taxclname": "Sandy, mixed, mesic Entic Hapludolls",
+   "hydgrp": "A",
+   "slope_r": "4",
+   "drainagecl": "Excessively drained"
+  },
+  {
+   "mukey": "405774",
+   "muname": "Sparta loamy sand, 2 to 5 percent slopes",
+   "areaname": "Fayette County, Iowa",
+   "areasymbol": "IA065",
+   "saverest": "9/8/2026 6:11:24 PM",
+   "cokey": "28562289",
+   "compname": "Dickinson",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Coarse-loamy, mixed, superactive, mesic Typic Hapludolls",
+   "hydgrp": "A",
+   "slope_r": "3",
+   "drainagecl": "Well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "405774",
+  "muname": "Sparta loamy sand, 2 to 5 percent slopes",
+  "areaname": "Fayette County, Iowa",
+  "areasymbol": "IA065",
+  "saverest": "9/8/2026 6:11:24 PM",
+  "cokey": "28562288",
+  "compname": "Sparta",
+  "comppct_r": "95",
+  "majcompflag": "Yes",
+  "taxclname": "Sandy, mixed, mesic Entic Hapludolls",
+  "hydgrp": "A",
+  "slope_r": "4",
+  "drainagecl": "Excessively drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "28",
+   "dbthirdbar_r": "1.63",
+   "wthirdbar_r": "16.5",
+   "wfifteenbar_r": "6.8",
+   "wsatiated_r": "36",
+   "ksat_r": "92",
+   "om_r": "1.5",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "6",
+   "silttotal_r": "10",
+   "sandtotal_r": "84"
+  },
+  {
+   "hzname": "AB",
+   "hzdept_r": "28",
+   "hzdepb_r": "38",
+   "dbthirdbar_r": "1.65",
+   "wthirdbar_r": "15.2",
+   "wfifteenbar_r": "5.7",
+   "wsatiated_r": "36",
+   "ksat_r": "92",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "6",
+   "silttotal_r": "9",
+   "sandtotal_r": "85"
+  },
+  {
+   "hzname": "Bw",
+   "hzdept_r": "38",
+   "hzdepb_r": "183",
+   "dbthirdbar_r": "1.67",
+   "wthirdbar_r": "13.2",
+   "wfifteenbar_r": "4.2",
+   "wsatiated_r": "35",
+   "ksat_r": "92",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "5",
+   "silttotal_r": "8",
+   "sandtotal_r": "87"
+  },
+  {
+   "hzname": "E and Bt",
+   "hzdept_r": "183",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.7",
+   "wthirdbar_r": "9.9",
+   "wfifteenbar_r": "3.4",
+   "wsatiated_r": "34",
+   "ksat_r": "200",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "6.3",
+   "claytotal_r": "4",
+   "silttotal_r": "5",
+   "sandtotal_r": "91"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

@@ -1,0 +1,137 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  43.052741,
+  -92.787367
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-92.787367 43.052741)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "405937",
+   "muname": "Oran loam, 2 to 5 percent slopes",
+   "areaname": "Floyd County, Iowa",
+   "areasymbol": "IA067",
+   "saverest": "9/8/2026 6:11:24 PM",
+   "cokey": "28562564",
+   "compname": "Oran",
+   "comppct_r": "95",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Aquollic Hapludalfs",
+   "hydgrp": "C/D",
+   "slope_r": "4",
+   "drainagecl": "Somewhat poorly drained"
+  },
+  {
+   "mukey": "405937",
+   "muname": "Oran loam, 2 to 5 percent slopes",
+   "areaname": "Floyd County, Iowa",
+   "areasymbol": "IA067",
+   "saverest": "9/8/2026 6:11:24 PM",
+   "cokey": "28562565",
+   "compname": "Clyde",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Endoaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "405937",
+  "muname": "Oran loam, 2 to 5 percent slopes",
+  "areaname": "Floyd County, Iowa",
+  "areasymbol": "IA067",
+  "saverest": "9/8/2026 6:11:24 PM",
+  "cokey": "28562564",
+  "compname": "Oran",
+  "comppct_r": "95",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-loamy, mixed, superactive, mesic Aquollic Hapludalfs",
+  "hydgrp": "C/D",
+  "slope_r": "4",
+  "drainagecl": "Somewhat poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "20",
+   "dbthirdbar_r": "1.42",
+   "wthirdbar_r": "30.3",
+   "wfifteenbar_r": "16.5",
+   "wsatiated_r": "42",
+   "ksat_r": "9",
+   "om_r": "2.5",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "24",
+   "silttotal_r": "41",
+   "sandtotal_r": "35"
+  },
+  {
+   "hzname": "E",
+   "hzdept_r": "20",
+   "hzdepb_r": "33",
+   "dbthirdbar_r": "1.42",
+   "wthirdbar_r": "27.1",
+   "wfifteenbar_r": "11.9",
+   "wsatiated_r": "42",
+   "ksat_r": "9",
+   "om_r": "0.65",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "20",
+   "silttotal_r": "45",
+   "sandtotal_r": "35"
+  },
+  {
+   "hzname": "BE",
+   "hzdept_r": "33",
+   "hzdepb_r": "46",
+   "dbthirdbar_r": "1.5",
+   "wthirdbar_r": "28.4",
+   "wfifteenbar_r": "13.6",
+   "wsatiated_r": "40",
+   "ksat_r": "9",
+   "om_r": "0.5",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "22",
+   "silttotal_r": "43",
+   "sandtotal_r": "35"
+  },
+  {
+   "hzname": "2Bt",
+   "hzdept_r": "46",
+   "hzdepb_r": "114",
+   "dbthirdbar_r": "1.83",
+   "wthirdbar_r": "26.4",
+   "wfifteenbar_r": "16.4",
+   "wsatiated_r": "27",
+   "ksat_r": "0.7",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "6.3",
+   "claytotal_r": "23",
+   "silttotal_r": "33",
+   "sandtotal_r": "44"
+  },
+  {
+   "hzname": "2BC",
+   "hzdept_r": "114",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.83",
+   "wthirdbar_r": "26.2",
+   "wfifteenbar_r": "16.3",
+   "wsatiated_r": "27",
+   "ksat_r": "0.7",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "7.2",
+   "claytotal_r": "23",
+   "silttotal_r": "33",
+   "sandtotal_r": "44"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

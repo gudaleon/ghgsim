@@ -1,0 +1,24 @@
+{
+ "id": "38099",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "28-may"
+ },
+ "window_state": "North Dakota",
+ "met": {
+  "tav": 4.76,
+  "amp": 36.2,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Walsh County, North Dakota",
+  "mukey": "2642852",
+  "compname": "Gilby",
+  "comppct_r": "80",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

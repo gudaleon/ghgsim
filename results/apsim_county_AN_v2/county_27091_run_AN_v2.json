@@ -1,0 +1,30 @@
+{
+ "id": "27091",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "26-apr",
+  "EndDate": "19-may"
+ },
+ "window_state": "Minnesota",
+ "met": {
+  "tav": 8.08,
+  "amp": 31.82,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911129",
+   "filled": 3.7
+  }
+ ],
+ "soil": {
+  "areaname": "Martin County, Minnesota",
+  "mukey": "1674432",
+  "compname": "Canisteo",
+  "comppct_r": "50",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

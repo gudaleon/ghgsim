@@ -1,0 +1,35 @@
+{
+ "id": "17037",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 9.02,
+  "amp": 28.89,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911202",
+   "filled": 3.12
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930103",
+   "filled": 0.84
+  }
+ ],
+ "soil": {
+  "areaname": "DeKalb County, Illinois",
+  "mukey": "183889",
+  "compname": "Flanagan",
+  "comppct_r": "95",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,24 @@
+{
+ "id": "48481",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "8-mar",
+  "EndDate": "7-may"
+ },
+ "window_state": "Texas",
+ "met": {
+  "tav": 21.2,
+  "amp": 18.23,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Wharton County, Texas",
+  "mukey": "373252",
+  "compname": "Edna",
+  "comppct_r": "87",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "D"
+ },
+ "sat_caps": []
+}

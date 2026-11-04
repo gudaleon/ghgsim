@@ -1,0 +1,30 @@
+{
+ "id": "19151",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 9.1,
+  "amp": 31.29,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911129",
+   "filled": 6.04
+  }
+ ],
+ "soil": {
+  "areaname": "Pocahontas County, Iowa",
+  "mukey": "410408",
+  "compname": "Nicollet",
+  "comppct_r": "85",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

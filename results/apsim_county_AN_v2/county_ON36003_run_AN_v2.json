@@ -1,0 +1,43 @@
+{
+ "id": "ON36003",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 9.78,
+  "amp": 24.71,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19950227",
+   "filled": 10.7
+  }
+ ],
+ "soil": {
+  "areaname": "MUNICIPALITY OF CHATHAM-KENT",
+  "mukey": "ONGOB~~~~~A",
+  "compname": "GOBLES",
+  "comppct_r": 42,
+  "drainagecl": "I",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.54,
+   "SAT_used": 0.535,
+   "BD": 1.23
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  }
+ ]
+}

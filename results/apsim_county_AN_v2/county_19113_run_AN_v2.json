@@ -1,0 +1,30 @@
+{
+ "id": "19113",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 9.22,
+  "amp": 30.12,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911202",
+   "filled": 2.31
+  }
+ ],
+ "soil": {
+  "areaname": "Linn County, Iowa",
+  "mukey": "408684",
+  "compname": "Kenyon",
+  "comppct_r": "90",
+  "drainagecl": "Moderately well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

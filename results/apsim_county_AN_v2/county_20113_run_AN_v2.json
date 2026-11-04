@@ -1,0 +1,24 @@
+{
+ "id": "20113",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "15-apr",
+  "EndDate": "15-may"
+ },
+ "window_state": "Kansas",
+ "met": {
+  "tav": 13.52,
+  "amp": 27.93,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "McPherson County, Kansas",
+  "mukey": "1429194",
+  "compname": "Tobin",
+  "comppct_r": "85",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

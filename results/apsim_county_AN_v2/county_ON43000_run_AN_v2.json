@@ -1,0 +1,37 @@
+{
+ "id": "ON43000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 6.92,
+  "amp": 27.08,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "COUNTY OF SIMCOE",
+  "mukey": "ONPLL~~~~~A",
+  "compname": "PARKHILL",
+  "comppct_r": 48,
+  "drainagecl": "P",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.63,
+   "SAT_used": 0.615,
+   "BD": 1.02
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  }
+ ]
+}

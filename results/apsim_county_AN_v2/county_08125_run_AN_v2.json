@@ -1,0 +1,24 @@
+{
+ "id": "08125",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "28-apr",
+  "EndDate": "20-may"
+ },
+ "window_state": "Colorado",
+ "met": {
+  "tav": 12.0,
+  "amp": 25.01,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Yuma County, Colorado",
+  "mukey": "95080",
+  "compname": "Platte",
+  "comppct_r": "90",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "A"
+ },
+ "sat_caps": []
+}

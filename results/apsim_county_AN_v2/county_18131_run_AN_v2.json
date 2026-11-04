@@ -1,0 +1,24 @@
+{
+ "id": "18131",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "1-jun"
+ },
+ "window_state": "Indiana",
+ "met": {
+  "tav": 10.29,
+  "amp": 27.3,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Pulaski County, Indiana",
+  "mukey": "184958",
+  "compname": "Maumee",
+  "comppct_r": "90",
+  "drainagecl": "Very poorly drained",
+  "hydgrp": "A/D"
+ },
+ "sat_caps": []
+}

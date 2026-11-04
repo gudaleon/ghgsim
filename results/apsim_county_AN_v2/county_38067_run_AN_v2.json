@@ -1,0 +1,24 @@
+{
+ "id": "38067",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "28-may"
+ },
+ "window_state": "North Dakota",
+ "met": {
+  "tav": 4.45,
+  "amp": 36.91,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Pembina County, North Dakota",
+  "mukey": "2642997",
+  "compname": "Bearden",
+  "comppct_r": "70",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,30 @@
+{
+ "id": "19067",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 7.83,
+  "amp": 30.94,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19921222",
+   "filled": 5.92
+  }
+ ],
+ "soil": {
+  "areaname": "Floyd County, Iowa",
+  "mukey": "405937",
+  "compname": "Oran",
+  "comppct_r": "95",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

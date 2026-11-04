@@ -1,0 +1,122 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  39.228068,
+  -89.478141
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-89.478141 39.228068)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "1721370",
+   "muname": "Cowden silt loam, 0 to 2 percent slopes",
+   "areaname": "Montgomery County, Illinois",
+   "areasymbol": "IL135",
+   "saverest": "8/23/2026 8:11:36 PM",
+   "cokey": "27816159",
+   "compname": "Cowden",
+   "comppct_r": "94",
+   "majcompflag": "Yes",
+   "taxclname": "Fine, smectitic, mesic Mollic Albaqualfs",
+   "hydgrp": "C/D",
+   "slope_r": "0.5",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "1721370",
+   "muname": "Cowden silt loam, 0 to 2 percent slopes",
+   "areaname": "Montgomery County, Illinois",
+   "areasymbol": "IL135",
+   "saverest": "8/23/2026 8:11:36 PM",
+   "cokey": "27816158",
+   "compname": "Piasa",
+   "comppct_r": "6",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, mesic Mollic Natraqualfs",
+   "hydgrp": "D",
+   "slope_r": "0.5",
+   "drainagecl": "Poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "1721370",
+  "muname": "Cowden silt loam, 0 to 2 percent slopes",
+  "areaname": "Montgomery County, Illinois",
+  "areasymbol": "IL135",
+  "saverest": "8/23/2026 8:11:36 PM",
+  "cokey": "27816159",
+  "compname": "Cowden",
+  "comppct_r": "94",
+  "majcompflag": "Yes",
+  "taxclname": "Fine, smectitic, mesic Mollic Albaqualfs",
+  "hydgrp": "C/D",
+  "slope_r": "0.5",
+  "drainagecl": "Poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "20",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "26.4",
+   "wfifteenbar_r": "10.7",
+   "wsatiated_r": "44",
+   "ksat_r": "9.17",
+   "om_r": "1.75",
+   "ph1to1h2o_r": "5.8",
+   "claytotal_r": "15",
+   "silttotal_r": "79",
+   "sandtotal_r": "6"
+  },
+  {
+   "hzname": "Eg",
+   "hzdept_r": "20",
+   "hzdepb_r": "48",
+   "dbthirdbar_r": "1.45",
+   "wthirdbar_r": "28.8",
+   "wfifteenbar_r": "13.6",
+   "wsatiated_r": "43",
+   "ksat_r": "2.82",
+   "om_r": "0.65",
+   "ph1to1h2o_r": "5.3",
+   "claytotal_r": "22",
+   "silttotal_r": "72",
+   "sandtotal_r": "6"
+  },
+  {
+   "hzname": "Btg",
+   "hzdept_r": "48",
+   "hzdepb_r": "127",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "33.9",
+   "wfifteenbar_r": "21.7",
+   "wsatiated_r": "45",
+   "ksat_r": "0.92",
+   "om_r": "0.35",
+   "ph1to1h2o_r": "5.8",
+   "claytotal_r": "38",
+   "silttotal_r": "59",
+   "sandtotal_r": "3"
+  },
+  {
+   "hzname": "Cg",
+   "hzdept_r": "127",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.45",
+   "wthirdbar_r": "28.9",
+   "wfifteenbar_r": "14.4",
+   "wsatiated_r": "42",
+   "ksat_r": "2.82",
+   "om_r": "0.15",
+   "ph1to1h2o_r": "6.7",
+   "claytotal_r": "25",
+   "silttotal_r": "71",
+   "sandtotal_r": "4"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

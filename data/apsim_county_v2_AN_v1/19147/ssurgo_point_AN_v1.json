@@ -1,0 +1,107 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  43.075337,
+  -94.669055
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-94.669055 43.075337)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "410271",
+   "muname": "Dickman fine sandy loam, loamy substratum, 0 to 2 percent slope",
+   "areaname": "Palo Alto County, Iowa",
+   "areasymbol": "IA147",
+   "saverest": "9/8/2026 6:56:57 PM",
+   "cokey": "28625814",
+   "compname": "Dickman",
+   "comppct_r": "100",
+   "majcompflag": "Yes",
+   "taxclname": "TYPIC HAPLUDOLLS, COARSE-LOAMY, MIXED, MESIC",
+   "hydgrp": "A",
+   "slope_r": "1",
+   "drainagecl": "Well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "410271",
+  "muname": "Dickman fine sandy loam, loamy substratum, 0 to 2 percent slope",
+  "areaname": "Palo Alto County, Iowa",
+  "areasymbol": "IA147",
+  "saverest": "9/8/2026 6:56:57 PM",
+  "cokey": "28625814",
+  "compname": "Dickman",
+  "comppct_r": "100",
+  "majcompflag": "Yes",
+  "taxclname": "TYPIC HAPLUDOLLS, COARSE-LOAMY, MIXED, MESIC",
+  "hydgrp": "A",
+  "slope_r": "1",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap,A",
+   "hzdept_r": "0",
+   "hzdepb_r": "30",
+   "dbthirdbar_r": "1.35",
+   "wthirdbar_r": "19.2",
+   "wfifteenbar_r": "9.7",
+   "wsatiated_r": "45",
+   "ksat_r": "28",
+   "om_r": "2",
+   "ph1to1h2o_r": "6.1",
+   "claytotal_r": "12",
+   "silttotal_r": "19.7",
+   "sandtotal_r": "68.3"
+  },
+  {
+   "hzname": "BW1,BW2",
+   "hzdept_r": "30",
+   "hzdepb_r": "48",
+   "dbthirdbar_r": "1.35",
+   "wthirdbar_r": "18.9",
+   "wfifteenbar_r": "9.4",
+   "wsatiated_r": "45",
+   "ksat_r": "28",
+   "om_r": "2.1",
+   "ph1to1h2o_r": "6.1",
+   "claytotal_r": "12",
+   "silttotal_r": "19.7",
+   "sandtotal_r": "68.3"
+  },
+  {
+   "hzname": "2Bw",
+   "hzdept_r": "48",
+   "hzdepb_r": "84",
+   "dbthirdbar_r": "1.43",
+   "wthirdbar_r": "17.7",
+   "wfifteenbar_r": "8.4",
+   "wsatiated_r": "41",
+   "ksat_r": "92",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "12",
+   "silttotal_r": "4.3",
+   "sandtotal_r": "83.7"
+  },
+  {
+   "hzname": "2C1,2C2",
+   "hzdept_r": "84",
+   "hzdepb_r": "203",
+   "dbthirdbar_r": "1.6",
+   "wthirdbar_r": "7.8",
+   "wfifteenbar_r": "2.1",
+   "wsatiated_r": "36",
+   "ksat_r": "200",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "2.5",
+   "silttotal_r": "1.5",
+   "sandtotal_r": "96"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

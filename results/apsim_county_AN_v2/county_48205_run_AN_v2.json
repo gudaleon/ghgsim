@@ -1,0 +1,24 @@
+{
+ "id": "48205",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "8-mar",
+  "EndDate": "7-may"
+ },
+ "window_state": "Texas",
+ "met": {
+  "tav": 14.82,
+  "amp": 23.74,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Hartley County, Texas",
+  "mukey": "367460",
+  "compname": "Spurlock",
+  "comppct_r": "85",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

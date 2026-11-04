@@ -1,0 +1,30 @@
+{
+ "id": "31019",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "27-apr",
+  "EndDate": "15-may"
+ },
+ "window_state": "Nebraska",
+ "met": {
+  "tav": 10.96,
+  "amp": 27.62,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19921230",
+   "filled": 6.02
+  }
+ ],
+ "soil": {
+  "areaname": "Buffalo County, Nebraska",
+  "mukey": "1700058",
+  "compname": "Holdrege",
+  "comppct_r": "45",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,137 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  44.03371,
+  -94.064012
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-94.064012 44.03371)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "396184",
+   "muname": "Minnetonka silty clay loam, silty substratum",
+   "areaname": "Blue Earth County, Minnesota",
+   "areasymbol": "MN013",
+   "saverest": "9/6/2026 9:18:56 PM",
+   "cokey": "28660632",
+   "compname": "Minnetonka",
+   "comppct_r": "90",
+   "majcompflag": "Yes",
+   "taxclname": "Fine, smectitic, mesic Vertic Argiaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "396184",
+   "muname": "Minnetonka silty clay loam, silty substratum",
+   "areaname": "Blue Earth County, Minnesota",
+   "areasymbol": "MN013",
+   "saverest": "9/6/2026 9:18:56 PM",
+   "cokey": "28660635",
+   "compname": "Shorewood",
+   "comppct_r": "4",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": null,
+   "drainagecl": null
+  },
+  {
+   "mukey": "396184",
+   "muname": "Minnetonka silty clay loam, silty substratum",
+   "areaname": "Blue Earth County, Minnesota",
+   "areasymbol": "MN013",
+   "saverest": "9/6/2026 9:18:56 PM",
+   "cokey": "28660633",
+   "compname": "Lura",
+   "comppct_r": "3",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": null,
+   "drainagecl": null
+  },
+  {
+   "mukey": "396184",
+   "muname": "Minnetonka silty clay loam, silty substratum",
+   "areaname": "Blue Earth County, Minnesota",
+   "areasymbol": "MN013",
+   "saverest": "9/6/2026 9:18:56 PM",
+   "cokey": "28660634",
+   "compname": "Barbert",
+   "comppct_r": "3",
+   "majcompflag": "No ",
+   "taxclname": null,
+   "hydgrp": null,
+   "slope_r": null,
+   "drainagecl": null
+  }
+ ],
+ "dominant": {
+  "mukey": "396184",
+  "muname": "Minnetonka silty clay loam, silty substratum",
+  "areaname": "Blue Earth County, Minnesota",
+  "areasymbol": "MN013",
+  "saverest": "9/6/2026 9:18:56 PM",
+  "cokey": "28660632",
+  "compname": "Minnetonka",
+  "comppct_r": "90",
+  "majcompflag": "Yes",
+  "taxclname": "Fine, smectitic, mesic Vertic Argiaquolls",
+  "hydgrp": "C/D",
+  "slope_r": "1",
+  "drainagecl": "Poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap,A",
+   "hzdept_r": "0",
+   "hzdepb_r": "48",
+   "dbthirdbar_r": "1.3",
+   "wthirdbar_r": "34.1",
+   "wfifteenbar_r": "22.7",
+   "wsatiated_r": "45",
+   "ksat_r": "3",
+   "om_r": "6",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "31",
+   "silttotal_r": "49",
+   "sandtotal_r": "20"
+  },
+  {
+   "hzname": "Bt",
+   "hzdept_r": "48",
+   "hzdepb_r": "102",
+   "dbthirdbar_r": "1.28",
+   "wthirdbar_r": "32.2",
+   "wfifteenbar_r": "25.3",
+   "wsatiated_r": "48",
+   "ksat_r": "1",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "47.5",
+   "silttotal_r": "47",
+   "sandtotal_r": "5.5"
+  },
+  {
+   "hzname": "C",
+   "hzdept_r": "102",
+   "hzdepb_r": "152",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "28.4",
+   "wfifteenbar_r": "14.3",
+   "wsatiated_r": "42",
+   "ksat_r": "8",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "7.2",
+   "claytotal_r": "26",
+   "silttotal_r": "56.4",
+   "sandtotal_r": "17.6"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

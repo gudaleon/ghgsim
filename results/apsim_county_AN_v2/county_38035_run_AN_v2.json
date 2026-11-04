@@ -1,0 +1,24 @@
+{
+ "id": "38035",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "28-may"
+ },
+ "window_state": "North Dakota",
+ "met": {
+  "tav": 5.14,
+  "amp": 35.5,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Grand Forks County, North Dakota",
+  "mukey": "2642514",
+  "compname": "Divide",
+  "comppct_r": "70",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,24 @@
+{
+ "id": "30015",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "4-may",
+  "EndDate": "28-may"
+ },
+ "window_state": "Montana",
+ "met": {
+  "tav": 8.06,
+  "amp": 26.36,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Chouteau County Area, Montana",
+  "mukey": "346750",
+  "compname": "Ethridge",
+  "comppct_r": "85",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

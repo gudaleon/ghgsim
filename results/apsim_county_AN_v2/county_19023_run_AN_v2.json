@@ -1,0 +1,24 @@
+{
+ "id": "19023",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.57,
+  "amp": 30.54,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Butler County, Iowa",
+  "mukey": "403442",
+  "compname": "Kenyon",
+  "comppct_r": "90",
+  "drainagecl": "Moderately well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

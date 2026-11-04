@@ -1,0 +1,137 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  42.387526,
+  -95.105224
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-95.105224 42.387526)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "410830",
+   "muname": "Sac silty clay loam, loam substratum, 2 to 5 percent slopes",
+   "areaname": "Sac County, Iowa",
+   "areasymbol": "IA161",
+   "saverest": "9/8/2026 7:01:27 PM",
+   "cokey": "28626477",
+   "compname": "Sac",
+   "comppct_r": "85",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Oxyaquic Hapludolls",
+   "hydgrp": "C",
+   "slope_r": "4",
+   "drainagecl": "Moderately well drained"
+  },
+  {
+   "mukey": "410830",
+   "muname": "Sac silty clay loam, loam substratum, 2 to 5 percent slopes",
+   "areaname": "Sac County, Iowa",
+   "areasymbol": "IA161",
+   "saverest": "9/8/2026 7:01:27 PM",
+   "cokey": "28626478",
+   "compname": "Annieville",
+   "comppct_r": "10",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Typic Hapludolls",
+   "hydgrp": "C",
+   "slope_r": "4",
+   "drainagecl": "Moderately well drained"
+  },
+  {
+   "mukey": "410830",
+   "muname": "Sac silty clay loam, loam substratum, 2 to 5 percent slopes",
+   "areaname": "Sac County, Iowa",
+   "areasymbol": "IA161",
+   "saverest": "9/8/2026 7:01:27 PM",
+   "cokey": "28626479",
+   "compname": "McCreath",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Aquic Hapludolls",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Somewhat poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "410830",
+  "muname": "Sac silty clay loam, loam substratum, 2 to 5 percent slopes",
+  "areaname": "Sac County, Iowa",
+  "areasymbol": "IA161",
+  "saverest": "9/8/2026 7:01:27 PM",
+  "cokey": "28626477",
+  "compname": "Sac",
+  "comppct_r": "85",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-silty, mixed, superactive, mesic Oxyaquic Hapludolls",
+  "hydgrp": "C",
+  "slope_r": "4",
+  "drainagecl": "Moderately well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "15",
+   "dbthirdbar_r": "1.37",
+   "wthirdbar_r": "35.1",
+   "wfifteenbar_r": "23.9",
+   "wsatiated_r": "46",
+   "ksat_r": "3",
+   "om_r": "4.2",
+   "ph1to1h2o_r": "5.9",
+   "claytotal_r": "35",
+   "silttotal_r": "60",
+   "sandtotal_r": "5"
+  },
+  {
+   "hzname": "A",
+   "hzdept_r": "15",
+   "hzdepb_r": "41",
+   "dbthirdbar_r": "1.27",
+   "wthirdbar_r": "33.8",
+   "wfifteenbar_r": "21.5",
+   "wsatiated_r": "48",
+   "ksat_r": "0.7",
+   "om_r": "3",
+   "ph1to1h2o_r": "6.4",
+   "claytotal_r": "36",
+   "silttotal_r": "59",
+   "sandtotal_r": "5"
+  },
+  {
+   "hzname": "Bw",
+   "hzdept_r": "41",
+   "hzdepb_r": "81",
+   "dbthirdbar_r": "1.31",
+   "wthirdbar_r": "31.7",
+   "wfifteenbar_r": "18",
+   "wsatiated_r": "47",
+   "ksat_r": "3",
+   "om_r": "1.5",
+   "ph1to1h2o_r": "6.8",
+   "claytotal_r": "31",
+   "silttotal_r": "61",
+   "sandtotal_r": "8"
+  },
+  {
+   "hzname": "2C",
+   "hzdept_r": "81",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.5",
+   "wthirdbar_r": "28.1",
+   "wfifteenbar_r": "14.6",
+   "wsatiated_r": "38",
+   "ksat_r": "9",
+   "om_r": "0.5",
+   "ph1to1h2o_r": "8.1",
+   "claytotal_r": "25",
+   "silttotal_r": "40",
+   "sandtotal_r": "35"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

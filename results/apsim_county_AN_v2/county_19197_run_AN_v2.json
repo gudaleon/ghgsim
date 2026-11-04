@@ -1,0 +1,24 @@
+{
+ "id": "19197",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.78,
+  "amp": 30.88,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Wright County, Iowa",
+  "mukey": "2800483",
+  "compname": "Nicollet",
+  "comppct_r": "85",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

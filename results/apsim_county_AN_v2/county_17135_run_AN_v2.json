@@ -1,0 +1,24 @@
+{
+ "id": "17135",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 12.32,
+  "amp": 26.76,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Montgomery County, Illinois",
+  "mukey": "1721370",
+  "compname": "Cowden",
+  "comppct_r": "94",
+  "drainagecl": "Poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

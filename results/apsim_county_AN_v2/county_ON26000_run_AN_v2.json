@@ -1,0 +1,59 @@
+{
+ "id": "ON26000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 8.86,
+  "amp": 25.85,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930121",
+   "filled": 5.2
+  }
+ ],
+ "soil": {
+  "areaname": "REGIONAL MUNICIPALITY OF NIAGARA",
+  "mukey": "ONLIC~~~~~A",
+  "compname": "LINCOLN",
+  "comppct_r": 35,
+  "drainagecl": "P",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.55,
+   "SAT_used": 0.543,
+   "BD": 1.21
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ],
+ "missing_output": [
+  "100N.Report",
+  "0N.Report"
+ ]
+}

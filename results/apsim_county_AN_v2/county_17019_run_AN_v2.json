@@ -1,0 +1,24 @@
+{
+ "id": "17019",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 11.21,
+  "amp": 27.09,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Champaign County, Illinois",
+  "mukey": "242965",
+  "compname": "Flanagan",
+  "comppct_r": "95",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

@@ -1,0 +1,59 @@
+{
+ "id": "ON30000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 7.37,
+  "amp": 27.6,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19910123",
+   "filled": 4.34
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930121",
+   "filled": 5.67
+  },
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19990118",
+   "filled": 8.07
+  }
+ ],
+ "soil": {
+  "areaname": "REGIONAL MUNICIPALITY OF WATERLOO",
+  "mukey": "ONWTO~~~~~A",
+  "compname": "WATERLOO",
+  "comppct_r": 29,
+  "drainagecl": "W",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.5,
+   "SAT_used": 0.494,
+   "BD": 1.34
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.48,
+   "SAT_used": 0.475,
+   "BD": 1.39
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  }
+ ]
+}

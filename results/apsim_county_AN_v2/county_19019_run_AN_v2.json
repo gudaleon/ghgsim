@@ -1,0 +1,30 @@
+{
+ "id": "19019",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.43,
+  "amp": 30.42,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911202",
+   "filled": 2.31
+  }
+ ],
+ "soil": {
+  "areaname": "Buchanan County, Iowa",
+  "mukey": "403243",
+  "compname": "Spillville",
+  "comppct_r": "90",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "B/D"
+ },
+ "sat_caps": []
+}

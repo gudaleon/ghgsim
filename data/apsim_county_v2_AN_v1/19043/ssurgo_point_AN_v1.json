@@ -1,0 +1,137 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  42.840985,
+  -91.323576
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-91.323576 42.840985)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "404323",
+   "muname": "Orion silt loam, 2 to 5 percent slopes, occassionally flooded",
+   "areaname": "Clayton County, Iowa",
+   "areasymbol": "IA043",
+   "saverest": "9/8/2026 6:07:24 PM",
+   "cokey": "28561038",
+   "compname": "Orion",
+   "comppct_r": "93",
+   "majcompflag": "Yes",
+   "taxclname": "Coarse-silty, mixed, superactive, nonacid, mesic Aquic Udifluvents",
+   "hydgrp": "B/D",
+   "slope_r": "3",
+   "drainagecl": "Somewhat poorly drained"
+  },
+  {
+   "mukey": "404323",
+   "muname": "Orion silt loam, 2 to 5 percent slopes, occassionally flooded",
+   "areaname": "Clayton County, Iowa",
+   "areasymbol": "IA043",
+   "saverest": "9/8/2026 6:07:24 PM",
+   "cokey": "28561036",
+   "compname": "Arenzville",
+   "comppct_r": "5",
+   "majcompflag": "No ",
+   "taxclname": "Coarse-silty, mixed, superactive, nonacid, mesic Typic Udifluvents",
+   "hydgrp": "B",
+   "slope_r": "3",
+   "drainagecl": "Moderately well drained"
+  },
+  {
+   "mukey": "404323",
+   "muname": "Orion silt loam, 2 to 5 percent slopes, occassionally flooded",
+   "areaname": "Clayton County, Iowa",
+   "areasymbol": "IA043",
+   "saverest": "9/8/2026 6:07:24 PM",
+   "cokey": "28561037",
+   "compname": "Ettrick",
+   "comppct_r": "2",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Fluvaquentic Endoaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "3",
+   "drainagecl": "Poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "404323",
+  "muname": "Orion silt loam, 2 to 5 percent slopes, occassionally flooded",
+  "areaname": "Clayton County, Iowa",
+  "areasymbol": "IA043",
+  "saverest": "9/8/2026 6:07:24 PM",
+  "cokey": "28561038",
+  "compname": "Orion",
+  "comppct_r": "93",
+  "majcompflag": "Yes",
+  "taxclname": "Coarse-silty, mixed, superactive, nonacid, mesic Aquic Udifluvents",
+  "hydgrp": "B/D",
+  "slope_r": "3",
+  "drainagecl": "Somewhat poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "20",
+   "dbthirdbar_r": "1.43",
+   "wthirdbar_r": "27.8",
+   "wfifteenbar_r": "12.4",
+   "wsatiated_r": "42",
+   "ksat_r": "9.17",
+   "om_r": "2",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "17",
+   "silttotal_r": "74",
+   "sandtotal_r": "9"
+  },
+  {
+   "hzname": "C",
+   "hzdept_r": "20",
+   "hzdepb_r": "81",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "26.2",
+   "wfifteenbar_r": "10.5",
+   "wsatiated_r": "44",
+   "ksat_r": "9.17",
+   "om_r": "0.75",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "17",
+   "silttotal_r": "75",
+   "sandtotal_r": "8"
+  },
+  {
+   "hzname": "Ab",
+   "hzdept_r": "81",
+   "hzdepb_r": "100",
+   "dbthirdbar_r": "1.3",
+   "wthirdbar_r": "30.7",
+   "wfifteenbar_r": "16.4",
+   "wsatiated_r": "47",
+   "ksat_r": "9.17",
+   "om_r": "2.5",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "26",
+   "silttotal_r": "68",
+   "sandtotal_r": "6"
+  },
+  {
+   "hzname": "Cg",
+   "hzdept_r": "100",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "24.9",
+   "wfifteenbar_r": "9.8",
+   "wsatiated_r": "43",
+   "ksat_r": "9.17",
+   "om_r": "0.5",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "17",
+   "silttotal_r": "75",
+   "sandtotal_r": "8"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

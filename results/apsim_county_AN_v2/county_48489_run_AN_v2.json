@@ -1,0 +1,24 @@
+{
+ "id": "48489",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "8-mar",
+  "EndDate": "7-may"
+ },
+ "window_state": "Texas",
+ "met": {
+  "tav": 24.32,
+  "amp": 12.55,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Willacy County, Texas",
+  "mukey": "373509",
+  "compname": "Willamar",
+  "comppct_r": "85",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "D"
+ },
+ "sat_caps": []
+}

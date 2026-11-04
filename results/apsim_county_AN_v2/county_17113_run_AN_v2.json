@@ -1,0 +1,24 @@
+{
+ "id": "17113",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 10.63,
+  "amp": 27.66,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "McLean County, Illinois",
+  "mukey": "199053",
+  "compname": "Ipava",
+  "comppct_r": "85",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

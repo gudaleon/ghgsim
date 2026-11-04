@@ -1,0 +1,152 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  42.390208,
+  -93.241669
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-93.241669 42.390208)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "2884321",
+   "muname": "Webster-Nicollet complex, Bemis moraine, 0 to 3 percent slopes",
+   "areaname": "Hardin County, Iowa",
+   "areasymbol": "IA083",
+   "saverest": "9/8/2026 6:19:25 PM",
+   "cokey": "28566591",
+   "compname": "Webster",
+   "comppct_r": "50",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Endoaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "1",
+   "drainagecl": "Poorly drained"
+  },
+  {
+   "mukey": "2884321",
+   "muname": "Webster-Nicollet complex, Bemis moraine, 0 to 3 percent slopes",
+   "areaname": "Hardin County, Iowa",
+   "areasymbol": "IA083",
+   "saverest": "9/8/2026 6:19:25 PM",
+   "cokey": "28566592",
+   "compname": "Nicollet",
+   "comppct_r": "35",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Aquic Hapludolls",
+   "hydgrp": "B/D",
+   "slope_r": "2",
+   "drainagecl": "Somewhat poorly drained"
+  },
+  {
+   "mukey": "2884321",
+   "muname": "Webster-Nicollet complex, Bemis moraine, 0 to 3 percent slopes",
+   "areaname": "Hardin County, Iowa",
+   "areasymbol": "IA083",
+   "saverest": "9/8/2026 6:19:25 PM",
+   "cokey": "28566593",
+   "compname": "Clarion",
+   "comppct_r": "12",
+   "majcompflag": "No ",
+   "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Hapludolls",
+   "hydgrp": "B",
+   "slope_r": "3",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "2884321",
+   "muname": "Webster-Nicollet complex, Bemis moraine, 0 to 3 percent slopes",
+   "areaname": "Hardin County, Iowa",
+   "areasymbol": "IA083",
+   "saverest": "9/8/2026 6:19:25 PM",
+   "cokey": "28566594",
+   "compname": "Okoboji",
+   "comppct_r": "3",
+   "majcompflag": "No ",
+   "taxclname": "Fine, smectitic, mesic Cumulic Vertic Endoaquolls",
+   "hydgrp": "C/D",
+   "slope_r": "0",
+   "drainagecl": "Very poorly drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "2884321",
+  "muname": "Webster-Nicollet complex, Bemis moraine, 0 to 3 percent slopes",
+  "areaname": "Hardin County, Iowa",
+  "areasymbol": "IA083",
+  "saverest": "9/8/2026 6:19:25 PM",
+  "cokey": "28566591",
+  "compname": "Webster",
+  "comppct_r": "50",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-loamy, mixed, superactive, mesic Typic Endoaquolls",
+  "hydgrp": "C/D",
+  "slope_r": "1",
+  "drainagecl": "Poorly drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "20",
+   "dbthirdbar_r": "1.05",
+   "wthirdbar_r": "31.5",
+   "wfifteenbar_r": "19.4",
+   "wsatiated_r": "51",
+   "ksat_r": "2.82",
+   "om_r": "7",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "32",
+   "silttotal_r": "47",
+   "sandtotal_r": "21"
+  },
+  {
+   "hzname": "A",
+   "hzdept_r": "20",
+   "hzdepb_r": "58",
+   "dbthirdbar_r": "1.25",
+   "wthirdbar_r": "32.8",
+   "wfifteenbar_r": "21.6",
+   "wsatiated_r": "46",
+   "ksat_r": "2.82",
+   "om_r": "5",
+   "ph1to1h2o_r": "6.9",
+   "claytotal_r": "33",
+   "silttotal_r": "42",
+   "sandtotal_r": "25"
+  },
+  {
+   "hzname": "Bg",
+   "hzdept_r": "58",
+   "hzdepb_r": "97",
+   "dbthirdbar_r": "1.35",
+   "wthirdbar_r": "29",
+   "wfifteenbar_r": "15.2",
+   "wsatiated_r": "44",
+   "ksat_r": "9.17",
+   "om_r": "1.5",
+   "ph1to1h2o_r": "7.3",
+   "claytotal_r": "26",
+   "silttotal_r": "41",
+   "sandtotal_r": "33"
+  },
+  {
+   "hzname": "Cg",
+   "hzdept_r": "97",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.6",
+   "wthirdbar_r": "24.6",
+   "wfifteenbar_r": "9.5",
+   "wsatiated_r": "36",
+   "ksat_r": "9.17",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "8",
+   "claytotal_r": "15",
+   "silttotal_r": "36",
+   "sandtotal_r": "49"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

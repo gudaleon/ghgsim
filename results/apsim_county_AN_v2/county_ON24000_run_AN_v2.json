@@ -1,0 +1,67 @@
+{
+ "id": "ON24000",
+ "country": "CA",
+ "sowing_window": {
+  "StartDate": "1-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "Michigan",
+ "met": {
+  "tav": 8.53,
+  "amp": 23.84,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19930121",
+   "filled": 5.2
+  }
+ ],
+ "soil": {
+  "areaname": "REGIONAL MUNICIPALITY OF HALTON",
+  "mukey": "ONOID~~~~~A",
+  "compname": "ONEIDA",
+  "comppct_r": 58,
+  "drainagecl": "W",
+  "hydgrp": null
+ },
+ "sat_caps": [
+  {
+   "layer": 0,
+   "SAT_from_source": 0.55,
+   "SAT_used": 0.547,
+   "BD": 1.2
+  },
+  {
+   "layer": 1,
+   "SAT_from_source": 0.47,
+   "SAT_used": 0.467,
+   "BD": 1.41
+  },
+  {
+   "layer": 2,
+   "SAT_from_source": 0.47,
+   "SAT_used": 0.467,
+   "BD": 1.41
+  },
+  {
+   "layer": 3,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 4,
+   "SAT_from_source": 0.45,
+   "SAT_used": 0.445,
+   "BD": 1.47
+  },
+  {
+   "layer": 5,
+   "SAT_from_source": 0.44,
+   "SAT_used": 0.437,
+   "BD": 1.49
+  }
+ ]
+}

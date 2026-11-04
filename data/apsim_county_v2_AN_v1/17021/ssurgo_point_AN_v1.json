@@ -1,0 +1,122 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  39.545524,
+  -89.279593
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-89.279593 39.545524)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "261759",
+   "muname": "Martinsville loam, 18 to 35 percent slopes",
+   "areaname": "Christian County, Illinois",
+   "areasymbol": "IL021",
+   "saverest": "8/23/2026 7:50:50 PM",
+   "cokey": "27802111",
+   "compname": "Martinsville",
+   "comppct_r": "95",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-loamy, mixed, active, mesic Typic Hapludalfs",
+   "hydgrp": "B",
+   "slope_r": "26.5",
+   "drainagecl": "Well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "261759",
+  "muname": "Martinsville loam, 18 to 35 percent slopes",
+  "areaname": "Christian County, Illinois",
+  "areasymbol": "IL021",
+  "saverest": "8/23/2026 7:50:50 PM",
+  "cokey": "27802111",
+  "compname": "Martinsville",
+  "comppct_r": "95",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-loamy, mixed, active, mesic Typic Hapludalfs",
+  "hydgrp": "B",
+  "slope_r": "26.5",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "H1",
+   "hzdept_r": "0",
+   "hzdepb_r": "13",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "26.6",
+   "wfifteenbar_r": "10.9",
+   "wsatiated_r": "44",
+   "ksat_r": "9.17",
+   "om_r": "1.5",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "16",
+   "silttotal_r": "44",
+   "sandtotal_r": "40"
+  },
+  {
+   "hzname": "H2",
+   "hzdept_r": "13",
+   "hzdepb_r": "25",
+   "dbthirdbar_r": "1.4",
+   "wthirdbar_r": "25.1",
+   "wfifteenbar_r": "9.3",
+   "wsatiated_r": "44",
+   "ksat_r": "9.17",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "16",
+   "silttotal_r": "44",
+   "sandtotal_r": "40"
+  },
+  {
+   "hzname": "H3",
+   "hzdept_r": "25",
+   "hzdepb_r": "86",
+   "dbthirdbar_r": "1.5",
+   "wthirdbar_r": "26.2",
+   "wfifteenbar_r": "18.9",
+   "wsatiated_r": "41",
+   "ksat_r": "9.17",
+   "om_r": "0.25",
+   "ph1to1h2o_r": "6.2",
+   "claytotal_r": "31",
+   "silttotal_r": "21",
+   "sandtotal_r": "48"
+  },
+  {
+   "hzname": "H4",
+   "hzdept_r": "86",
+   "hzdepb_r": "112",
+   "dbthirdbar_r": "1.5",
+   "wthirdbar_r": "19.4",
+   "wfifteenbar_r": "9.7",
+   "wsatiated_r": "41",
+   "ksat_r": "9.17",
+   "om_r": "0.1",
+   "ph1to1h2o_r": "6.5",
+   "claytotal_r": "11",
+   "silttotal_r": "35",
+   "sandtotal_r": "54"
+  },
+  {
+   "hzname": "H5",
+   "hzdept_r": "112",
+   "hzdepb_r": "152",
+   "dbthirdbar_r": "1.6",
+   "wthirdbar_r": "16.3",
+   "wfifteenbar_r": "6.6",
+   "wsatiated_r": "37",
+   "ksat_r": "23.29",
+   "om_r": "0.1",
+   "ph1to1h2o_r": "7.3",
+   "claytotal_r": "10",
+   "silttotal_r": "40",
+   "sandtotal_r": "50"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

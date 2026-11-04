@@ -1,0 +1,24 @@
+{
+ "id": "46011",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "27-may"
+ },
+ "window_state": "South Dakota",
+ "met": {
+  "tav": 7.26,
+  "amp": 32.22,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Brookings County, South Dakota",
+  "mukey": "418818",
+  "compname": "Vienna",
+  "comppct_r": "70",
+  "drainagecl": "Well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}

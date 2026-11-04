@@ -1,0 +1,30 @@
+{
+ "id": "38093",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "2-may",
+  "EndDate": "28-may"
+ },
+ "window_state": "North Dakota",
+ "met": {
+  "tav": 5.93,
+  "amp": 33.65,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19921101",
+   "filled": 3.34
+  }
+ ],
+ "soil": {
+  "areaname": "Stutsman County, North Dakota",
+  "mukey": "2581318",
+  "compname": "Barnes",
+  "comppct_r": "28",
+  "drainagecl": "Well drained",
+  "hydgrp": "B"
+ },
+ "sat_caps": []
+}

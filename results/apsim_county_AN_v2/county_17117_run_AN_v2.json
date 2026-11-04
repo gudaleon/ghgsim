@@ -1,0 +1,24 @@
+{
+ "id": "17117",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "21-apr",
+  "EndDate": "23-may"
+ },
+ "window_state": "Illinois",
+ "met": {
+  "tav": 11.97,
+  "amp": 27.57,
+  "days": 10958
+ },
+ "filled_missing": [],
+ "soil": {
+  "areaname": "Macoupin County, Illinois",
+  "mukey": "199155",
+  "compname": "Fishhook",
+  "comppct_r": "90",
+  "drainagecl": "Somewhat poorly drained",
+  "hydgrp": "C/D"
+ },
+ "sat_caps": []
+}

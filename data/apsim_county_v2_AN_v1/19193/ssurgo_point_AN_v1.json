@@ -1,0 +1,137 @@
+{
+ "source": "USDA-NRCS SSURGO via Soil Data Access",
+ "url": "https://sdmdataaccess.sc.egov.usda.gov/Tabular/post.rest",
+ "point_wgs84": [
+  42.39322,
+  -96.053296
+ ],
+ "queries": [
+  "SELECT mu.mukey, mu.muname, l.areaname, l.areasymbol, sc.saverest, c.cokey, c.compname, c.comppct_r,\nc.majcompflag, c.taxclname, c.hydgrp, c.slope_r, c.drainagecl\nFROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-96.053296 42.39322)') k\nJOIN mapunit mu ON mu.mukey = k.mukey JOIN legend l ON l.lkey = mu.lkey\nJOIN sacatalog sc ON sc.areasymbol = l.areasymbol JOIN component c ON c.mukey = mu.mukey\nORDER BY c.comppct_r DESC",
+  "SELECT hzname, hzdept_r, hzdepb_r, dbthirdbar_r, wthirdbar_r, wfifteenbar_r, wsatiated_r, ksat_r,\nom_r, ph1to1h2o_r, claytotal_r, silttotal_r, sandtotal_r FROM chorizon WHERE cokey = '{cokey}' ORDER BY hzdept_r"
+ ],
+ "components": [
+  {
+   "mukey": "401837",
+   "muname": "Napier silt loam, 5 to 9 percent slopes",
+   "areaname": "Woodbury County, Iowa",
+   "areasymbol": "IA193",
+   "saverest": "9/8/2026 8:57:33 PM",
+   "cokey": "28626873",
+   "compname": "Napier",
+   "comppct_r": "95",
+   "majcompflag": "Yes",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Cumulic Hapludolls",
+   "hydgrp": "B",
+   "slope_r": "7",
+   "drainagecl": "Well drained"
+  },
+  {
+   "mukey": "401837",
+   "muname": "Napier silt loam, 5 to 9 percent slopes",
+   "areaname": "Woodbury County, Iowa",
+   "areasymbol": "IA193",
+   "saverest": "9/8/2026 8:57:33 PM",
+   "cokey": "28626875",
+   "compname": "Rawles",
+   "comppct_r": "3",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, calcareous, mesic Oxyaquic Udifluvents",
+   "hydgrp": "C",
+   "slope_r": "1",
+   "drainagecl": "Moderately well drained"
+  },
+  {
+   "mukey": "401837",
+   "muname": "Napier silt loam, 5 to 9 percent slopes",
+   "areaname": "Woodbury County, Iowa",
+   "areasymbol": "IA193",
+   "saverest": "9/8/2026 8:57:33 PM",
+   "cokey": "28626874",
+   "compname": "Monona",
+   "comppct_r": "2",
+   "majcompflag": "No ",
+   "taxclname": "Fine-silty, mixed, superactive, mesic Typic Hapludolls",
+   "hydgrp": "B",
+   "slope_r": "7",
+   "drainagecl": "Well drained"
+  }
+ ],
+ "dominant": {
+  "mukey": "401837",
+  "muname": "Napier silt loam, 5 to 9 percent slopes",
+  "areaname": "Woodbury County, Iowa",
+  "areasymbol": "IA193",
+  "saverest": "9/8/2026 8:57:33 PM",
+  "cokey": "28626873",
+  "compname": "Napier",
+  "comppct_r": "95",
+  "majcompflag": "Yes",
+  "taxclname": "Fine-silty, mixed, superactive, mesic Cumulic Hapludolls",
+  "hydgrp": "B",
+  "slope_r": "7",
+  "drainagecl": "Well drained"
+ },
+ "horizons": [
+  {
+   "hzname": "Ap",
+   "hzdept_r": "0",
+   "hzdepb_r": "20",
+   "dbthirdbar_r": "1.2",
+   "wthirdbar_r": "31.4",
+   "wfifteenbar_r": "17.5",
+   "wsatiated_r": "44",
+   "ksat_r": "9",
+   "om_r": "3.5",
+   "ph1to1h2o_r": "6.7",
+   "claytotal_r": "24",
+   "silttotal_r": "69",
+   "sandtotal_r": "7"
+  },
+  {
+   "hzname": "A",
+   "hzdept_r": "20",
+   "hzdepb_r": "74",
+   "dbthirdbar_r": "1.3",
+   "wthirdbar_r": "30.8",
+   "wfifteenbar_r": "16.5",
+   "wsatiated_r": "46",
+   "ksat_r": "9",
+   "om_r": "3.3",
+   "ph1to1h2o_r": "6.7",
+   "claytotal_r": "24",
+   "silttotal_r": "70",
+   "sandtotal_r": "6"
+  },
+  {
+   "hzname": "Bw",
+   "hzdept_r": "74",
+   "hzdepb_r": "122",
+   "dbthirdbar_r": "1.3",
+   "wthirdbar_r": "28.8",
+   "wfifteenbar_r": "13.7",
+   "wsatiated_r": "47",
+   "ksat_r": "9",
+   "om_r": "1.5",
+   "ph1to1h2o_r": "7.3",
+   "claytotal_r": "23",
+   "silttotal_r": "72",
+   "sandtotal_r": "5"
+  },
+  {
+   "hzname": "C",
+   "hzdept_r": "122",
+   "hzdepb_r": "200",
+   "dbthirdbar_r": "1.3",
+   "wthirdbar_r": "26.9",
+   "wfifteenbar_r": "11.3",
+   "wsatiated_r": "46",
+   "ksat_r": "9",
+   "om_r": "0.3",
+   "ph1to1h2o_r": "7.3",
+   "claytotal_r": "20",
+   "silttotal_r": "75",
+   "sandtotal_r": "5"
+  }
+ ],
+ "retrieved_utc": "2026-11-04T12:02:43+00:00"
+}

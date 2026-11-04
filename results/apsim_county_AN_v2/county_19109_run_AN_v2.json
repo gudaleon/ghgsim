@@ -1,0 +1,30 @@
+{
+ "id": "19109",
+ "country": "US",
+ "sowing_window": {
+  "StartDate": "25-apr",
+  "EndDate": "18-may"
+ },
+ "window_state": "Iowa",
+ "met": {
+  "tav": 8.51,
+  "amp": 31.55,
+  "days": 10958
+ },
+ "filled_missing": [
+  {
+   "parameter": "ALLSKY_SFC_SW_DWN",
+   "day": "19911129",
+   "filled": 3.7
+  }
+ ],
+ "soil": {
+  "areaname": "Kossuth County, Iowa",
+  "mukey": "408342",
+  "compname": "Clarion",
+  "comppct_r": "85",
+  "drainagecl": "Moderately well drained",
+  "hydgrp": "C"
+ },
+ "sat_caps": []
+}
