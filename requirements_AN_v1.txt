@@ -1,0 +1,21 @@
+# requirements_AN_v1.txt - pinned environment for the living-paper recompute (AN_v1).
+# Versions are the ones in the Bubble PC .venv that produced results/results_manifest_AN_v1.json (Python 3.12).
+# Install: pip install -r requirements_AN_v1.txt && pip install -e . --no-deps
+numpy==2.5.4
+pandas==2.3.3
+scipy==1.18.1
+Pint==0.26.2
+PyYAML==6.0.3
+click==8.5.0
+matplotlib==3.11.2
+lxml==6.1.3
+geopandas==1.2.0
+pyogrio==0.13.0
+pyproj==3.8.0
+shapely==2.2.0
+rasterio==1.5.2
+pymupdf==2.1
+requests==2.34.2
+openpyxl==3.1.5
+pytest==9.2.0
+SALib==1.6.0

@@ -1,0 +1,53 @@
+{
+  "created": "2026-11-03T19:59:14-05:00",
+  "note": "Fingerprints of upstream sources behind Paper B numbers; compared weekly by scripts/check_upstream_AN_v1.py (.github/workflows/upstream_check_AN_v1.yml).",
+  "urls": {
+    "ipcc_2006_v4_ch10": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_10_Ch10_Livestock.pdf",
+    "ipcc_2006_v4_ch11": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/4_Volume4/V4_11_Ch11_N2O%26CO2.pdf",
+    "ipcc_2019r_v4_ch10": "https://www.ipcc-nggip.iges.or.jp/public/2019rf/pdf/4_Volume4/19R_V4_Ch10_Livestock.pdf",
+    "ipcc_2019r_v4_ch11": "https://www.ipcc-nggip.iges.or.jp/public/2019rf/pdf/4_Volume4/19R_V4_Ch11_Soils_N2O_CO2.pdf",
+    "epa_ghgi_editions": "https://www.epa.gov/ghgemissions/inventory-us-greenhouse-gas-emissions-and-sinks",
+    "nass_census2022": "https://www.nass.usda.gov/datasets/qs.census2022.txt.gz",
+    "nclimdiv": "https://www.ncei.noaa.gov/pub/data/cirs/climdiv/",
+    "unfccc_crt_2026": "https://unfccc.int/ghg-inventories-annex-i-parties/2026",
+    "gleam_release": "https://api.github.com/repos/un-fao/GLEAM/tags"
+  },
+  "sources": {
+    "ipcc_2006_v4_ch10": {
+      "sha256": "b8dd649b7858ae63462e5e47ddf2ebb36722c1058c28f0655ae6fb8b4a8de053",
+      "bytes": 1249922
+    },
+    "ipcc_2006_v4_ch11": {
+      "sha256": "9e621e34d3515d76a4c7531ac04fab8c23f149ce7cbdc50a5c5eef3c95e1905b",
+      "bytes": 961809
+    },
+    "ipcc_2019r_v4_ch10": {
+      "sha256": "915ca99a248262c530a39083cf835deb01a12988fedca7e3f0675931276865a1",
+      "bytes": 3373054
+    },
+    "ipcc_2019r_v4_ch11": {
+      "sha256": "337f18ceb618a858526ec01b5abed289843e1e8a69c957f0f62d22fa2a5761b3",
+      "bytes": 944749
+    },
+    "epa_ghgi_editions": {
+      "time_series_end_years_listed": [
+        "2022",
+        "2023"
+      ],
+      "latest": "2023"
+    },
+    "nass_census2022": {
+      "content_length": "309188711",
+      "last_modified": "Wed, 14 Feb 2024 19:25:51 GMT"
+    },
+    "nclimdiv": {
+      "latest": "v1.0.0-20261006"
+    },
+    "unfccc_crt_2026": null,
+    "gleam_release": {
+      "latest_tag": "v0.8.0-alpha",
+      "sha": "b0937d2",
+      "n_tags": 1
+    }
+  }
+}
