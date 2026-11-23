@@ -51,6 +51,7 @@ def test_registered_forks_include_turkey_zero():
         "HOLOS.STORAGE.year_reset",
         "HOLOS.STORAGE.temp_window",
         "HOLOS.STORAGE.cli_no_drain",
+        "HOLOS.STORAGE.carbon_removal",
         "HOLOS.NEX.calf_nrate",
         "HOLOS.N2O.ef1",
     }

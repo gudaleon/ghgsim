@@ -54,6 +54,7 @@ STAGE_PREFERRED_IDS: dict[str, tuple[str, ...]] = {
         "HOLOS.STORAGE.year_reset",
         "HOLOS.STORAGE.temp_window",
         "HOLOS.STORAGE.cli_no_drain",
+        "HOLOS.STORAGE.carbon_removal",
     ),
     "N_excretion": ("HOLOS.NEX.calf_nrate",),
     "N2O": ("HOLOS.N2O.ef1",),

@@ -1,0 +1,72 @@
+flowchart TD
+    classDef verified fill:#C8E6C9,stroke:#2E7D32,color:#1B5E20
+    classDef sourcetraced fill:#FFE082,stroke:#F9A825,color:#374400
+    classDef holosonly fill:#FFCDD2,stroke:#C62828,color:#7F1D1D
+    classDef unverified fill:#CFD8DC,stroke:#546E7A,color:#263238
+    classDef stage fill:#ECEFF1,stroke:#546E7A,color:#263238
+    start["Inputs"]
+    F_HOLOS_GE_digestibility{"HOLOS.GE.digestibility<br/>HOLOS-ONLY"}
+    F_HOLOS_ENTERIC_calf_zero{"HOLOS.ENTERIC.calf_zero<br/>VERIFIED"}
+    F_HOLOS_YM_dairy{"HOLOS.YM.dairy<br/>HOLOS-ONLY"}
+    F_HOLOS_VS_digestibility{"HOLOS.VS.digestibility<br/>HOLOS-ONLY"}
+    F_HOLOS_VS_urinary_energy{"HOLOS.VS.urinary_energy<br/>VERIFIED"}
+    F_HOLOS_VS_calf_coeff{"HOLOS.VS.calf_coeff<br/>HOLOS-ONLY"}
+    F_HOLOS_CH4_cover_reduction{"HOLOS.CH4.cover_reduction<br/>SOURCE-TRACED"}
+    F_HOLOS_CH4_turkey_zero{"HOLOS.CH4.turkey_zero<br/>SOURCE-TRACED"}
+    F_HOLOS_CH4_liquid_tank{"HOLOS.CH4.liquid_tank<br/>SOURCE-TRACED"}
+    F_HOLOS_STORAGE_year_reset{"HOLOS.STORAGE.year_reset<br/>HOLOS-ONLY"}
+    F_HOLOS_STORAGE_temp_window{"HOLOS.STORAGE.temp_window<br/>HOLOS-ONLY"}
+    F_HOLOS_STORAGE_cli_no_drain{"HOLOS.STORAGE.cli_no_drain<br/>HOLOS-ONLY"}
+    F_HOLOS_STORAGE_carbon_removal{"HOLOS.STORAGE.carbon_removal<br/>HOLOS-ONLY"}
+    F_HOLOS_NEX_calf_nrate{"HOLOS.NEX.calf_nrate<br/>SOURCE-TRACED"}
+    F_HOLOS_N2O_ef1{"HOLOS.N2O.ef1<br/>VERIFIED"}
+    N2O["N2O"]
+    CO2e["CO2e"]
+    start --> F_HOLOS_GE_digestibility
+    F_HOLOS_GE_digestibility -->|"source_correct"| F_HOLOS_ENTERIC_calf_zero
+    F_HOLOS_GE_digestibility -->|"holos_as_coded<br/>-7.199 to +5.429% CO2e · HOLOS-ONLY"| F_HOLOS_ENTERIC_calf_zero
+    F_HOLOS_ENTERIC_calf_zero -->|"source_correct"| F_HOLOS_YM_dairy
+    F_HOLOS_ENTERIC_calf_zero -->|"holos_as_coded<br/>-13.094 to +0.000% CO2e · VERIFIED"| F_HOLOS_YM_dairy
+    F_HOLOS_YM_dairy -->|"eccc_2022_canada"| F_HOLOS_VS_digestibility
+    F_HOLOS_YM_dairy -->|"ipcc2006_table_10_12<br/>+0.000 to +10.655% CO2e · HOLOS-ONLY"| F_HOLOS_VS_digestibility
+    F_HOLOS_VS_digestibility -->|"source_correct"| F_HOLOS_VS_urinary_energy
+    F_HOLOS_VS_digestibility -->|"holos_as_coded<br/>-4.169 to +6.418% CO2e · HOLOS-ONLY"| F_HOLOS_VS_urinary_energy
+    F_HOLOS_VS_urinary_energy -->|"source_correct"| F_HOLOS_VS_calf_coeff
+    F_HOLOS_VS_urinary_energy -->|"holos_as_coded<br/>+0.000 to +2.853% CO2e · VERIFIED"| F_HOLOS_VS_calf_coeff
+    F_HOLOS_VS_calf_coeff -->|"source_correct"| F_HOLOS_CH4_cover_reduction
+    F_HOLOS_VS_calf_coeff -->|"holos_as_coded<br/>+0.000 to +3.778% CO2e · HOLOS-ONLY"| F_HOLOS_CH4_cover_reduction
+    F_HOLOS_CH4_cover_reduction -->|"source_correct"| F_HOLOS_CH4_turkey_zero
+    F_HOLOS_CH4_cover_reduction -->|"holos_as_coded<br/>-17.248 to +0.000% CO2e · SOURCE-TRACED"| F_HOLOS_CH4_turkey_zero
+    F_HOLOS_CH4_turkey_zero -->|"source_correct"| F_HOLOS_CH4_liquid_tank
+    F_HOLOS_CH4_turkey_zero -->|"holos_as_coded<br/>-40.363 to +0.000% CO2e · SOURCE-TRACED"| F_HOLOS_CH4_liquid_tank
+    F_HOLOS_CH4_liquid_tank -->|"ipcc2006_eq10_23"| F_HOLOS_STORAGE_year_reset
+    F_HOLOS_CH4_liquid_tank -->|"holos_v4_liquid_tank<br/>no MEASURED Δ · SOURCE-TRACED"| F_HOLOS_STORAGE_year_reset
+    F_HOLOS_STORAGE_year_reset -->|"source_correct"| F_HOLOS_STORAGE_temp_window
+    F_HOLOS_STORAGE_year_reset -->|"holos_as_coded<br/>no MEASURED Δ · HOLOS-ONLY"| F_HOLOS_STORAGE_temp_window
+    F_HOLOS_STORAGE_temp_window -->|"source_correct"| F_HOLOS_STORAGE_cli_no_drain
+    F_HOLOS_STORAGE_temp_window -->|"holos_as_coded<br/>no MEASURED Δ · HOLOS-ONLY"| F_HOLOS_STORAGE_cli_no_drain
+    F_HOLOS_STORAGE_cli_no_drain -->|"source_correct"| F_HOLOS_STORAGE_carbon_removal
+    F_HOLOS_STORAGE_cli_no_drain -->|"holos_as_coded<br/>no MEASURED Δ · HOLOS-ONLY"| F_HOLOS_STORAGE_carbon_removal
+    F_HOLOS_STORAGE_carbon_removal -->|"source_correct"| F_HOLOS_NEX_calf_nrate
+    F_HOLOS_STORAGE_carbon_removal -->|"holos_as_coded<br/>no MEASURED Δ · HOLOS-ONLY"| F_HOLOS_NEX_calf_nrate
+    F_HOLOS_NEX_calf_nrate -->|"source_correct"| F_HOLOS_N2O_ef1
+    F_HOLOS_NEX_calf_nrate -->|"holos_as_coded<br/>+0.000 to +4.482% CO2e · SOURCE-TRACED"| F_HOLOS_N2O_ef1
+    F_HOLOS_N2O_ef1 -->|"ipcc2006_ef1"| N2O
+    F_HOLOS_N2O_ef1 -->|"holos_liang2020<br/>+0.000% CO2e · VERIFIED"| N2O
+    N2O --> CO2e
+    class start,N2O,CO2e stage
+    class F_HOLOS_GE_digestibility holosonly
+    class F_HOLOS_ENTERIC_calf_zero verified
+    class F_HOLOS_YM_dairy holosonly
+    class F_HOLOS_VS_digestibility holosonly
+    class F_HOLOS_VS_urinary_energy verified
+    class F_HOLOS_VS_calf_coeff holosonly
+    class F_HOLOS_CH4_cover_reduction sourcetraced
+    class F_HOLOS_CH4_turkey_zero sourcetraced
+    class F_HOLOS_CH4_liquid_tank sourcetraced
+    class F_HOLOS_STORAGE_year_reset holosonly
+    class F_HOLOS_STORAGE_temp_window holosonly
+    class F_HOLOS_STORAGE_cli_no_drain holosonly
+    class F_HOLOS_STORAGE_carbon_removal holosonly
+    class F_HOLOS_NEX_calf_nrate sourcetraced
+    class F_HOLOS_N2O_ef1 verified

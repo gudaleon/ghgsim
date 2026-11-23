@@ -259,6 +259,57 @@ def liquid_tank_ch4_process() -> ProcessDef:
     return process
 
 
+def manure_carbon_from_methane_process() -> ProcessDef:
+    """Holos V4 Eq 4.1.3-13. Carbon leaving storage as methane, all animal groups."""
+    process = ProcessDef(
+        name="manure_carbon_from_methane",
+        description=(
+            "Carbon lost as manure CH4 (Holos V4 Eq 4.1.3-13). "
+            "Applies to every animal group's manure methane, not only the liquid tank."
+        ),
+        rate_equation="CH4 * (12.0 / 16.0)",
+        stoichiometry={"C_kg": 1.0},
+        unit="kg C",
+    )
+    process.add_source(
+        doi_or_url=(
+            "Pogue et al. 2026 Holos Version 4.0 Algorithm Documentation, "
+            "print PDF, holos-aafc/Holos @913bc8c"
+        ),
+        equation="Equation 4.1.3-13",
+        page="163",
+        notes="C_manureCH4 = CH4_manure * 12/16. The 12/16 factor is the printed CH4-to-C conversion.",
+    )
+    return process
+
+
+def storage_carbon_flow_process() -> ProcessDef:
+    """Holos V4 Eq 4.1.3-14."""
+    process = ProcessDef(
+        name="storage_carbon_flow",
+        description=(
+            "Daily carbon flowing into manure storage after housing methane "
+            "(Holos V4 Eq 4.1.3-14)"
+        ),
+        rate_equation="C_excreted + C_bedding - C_as_methane",
+        stoichiometry={"C_flow_kg_day": 1.0},
+        unit="kg C / day",
+    )
+    process.add_source(
+        doi_or_url=(
+            "Pogue et al. 2026 Holos Version 4.0 Algorithm Documentation, "
+            "print PDF, holos-aafc/Holos @913bc8c"
+        ),
+        equation="Equation 4.1.3-14",
+        page="163",
+        notes=(
+            "C_flowstorage = (C_excretion + C_bedding) - C_manureCH4. "
+            "C_excretion and C_bedding are inputs; they are not calculated here."
+        ),
+    )
+    return process
+
+
 def manure_n2o_direct_process() -> ProcessDef:
     """Direct manure N2O-N, IPCC 2006 Eq 10.25 (before 44/28)."""
     process = ProcessDef(

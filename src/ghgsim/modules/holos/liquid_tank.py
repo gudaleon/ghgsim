@@ -154,6 +154,7 @@ def run_liquid_tank(
     prev_available = float(vs_available_initial)
     prev_consumed = float(vs_consumed_initial)
     ch4_total = 0.0
+    ch4_daily: list[float] = []
     vs_produced_total = 0.0
     for index, _temp in enumerate(temps):
         is_new_year = bool(
@@ -187,6 +188,7 @@ def run_liquid_tank(
         )
         if not math.isfinite(day_ch4):
             raise ValueError(f"non-finite tank CH4 on day index {index}")
+        ch4_daily.append(day_ch4)
         ch4_total += day_ch4
         vs_produced_total += vs_produced
         prev_available = vs_available
@@ -199,6 +201,7 @@ def run_liquid_tank(
         mcf = ch4_total / (ch4_density * b0 * vs_produced_total)
     return {
         "CH4": ch4_total,
+        "CH4_daily": ch4_daily,
         "MCF_implied": mcf,
         "VS_produced_kg": vs_produced_total,
         "days": n,
