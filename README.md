@@ -97,3 +97,9 @@ https://huggingface.co/spaces/globaltrotter/paperB-living-dashboard (sign in as 
 It runs ghgsim in the browser with Gradio-Lite/Pyodide; the first load takes 1-2 minutes.
 Redeploy after a change: `python scripts/deploy_static_space_AN_v1.py` with `HF_TOKEN` set (write token,
 never committed). `diff_manifests` in "Ask the paper" does not work in the browser. See `docs/DECISIONS_AN_v19.md`.
+
+## Tier 1 extras and county-year runner (AN_v1)
+F_SOM (soil organic matter N), hay / haylage / silage residue N, crop N removal with a closed N budget, and lime/urea
+CO2 for both guideline versions: `src/ghgsim/modules/tier1_extras/`. Any state and Census year:
+`scripts/run_county_year_tier1_AN_v1.py` (writes only to `--out-dir`, never overwrites). Parameters:
+`data/ipcc_params_AN_v11.csv`. See `docs/TIER1_EXTRAS_AN_v1.md` and `docs/DECISIONS_AN_v28.md`.
